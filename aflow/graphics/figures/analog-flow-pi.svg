@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="analog-flow-pi.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.1">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="TriangleInL"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleInL"
+       style="overflow:visible">
+      <path
+         id="path3435"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(-0.8)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Send"
+       style="overflow:visible;">
+      <path
+         id="path3455"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mstart"
+       style="overflow:visible">
+      <path
+         id="path3446"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(0.4) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;">
+      <path
+         id="path3467"
+         style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path3449"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;">
+      <path
+         id="path3461"
+         style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3443"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective9" />
+    <inkscape:perspective
+       id="perspective2496"
+       inkscape:persp3d-origin="360 : 240 : 1"
+       inkscape:vp_z="720 : 360 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 360 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.79223936"
+     inkscape:cx="471.82323"
+     inkscape:cy="902.29717"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="1366"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-maximized="1">
+    <sodipodi:guide
+       orientation="1,0"
+       position="455.03023,812.49231"
+       id="guide6349" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="588.86265,808.17513"
+       id="guide9593" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="323.3564,834.5099"
+       id="guide9595" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       id="text15649"
+       y="6.2312298"
+       x="87.518364"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="6.2312298"
+         x="87.518364"
+         id="tspan15651"
+         sodipodi:role="line" /></text>
+    <flowRoot
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       id="flowRoot15691"
+       xml:space="preserve"
+       transform="matrix(494.98815,0,0,494.98815,102.08025,23.929131)"><flowRegion
+         id="flowRegion15693"><rect
+           y="433.19006"
+           x="44.168156"
+           height="13.086861"
+           width="48.257801"
+           id="rect15695" /></flowRegion><flowPara
+         id="flowPara15697" /></flowRoot>    <flowRoot
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       id="flowRoot15767"
+       xml:space="preserve"
+       transform="matrix(494.98815,0,0,494.98815,102.08025,23.929131)"><flowRegion
+         id="flowRegion15769"><rect
+           y="309.95764"
+           x="-6.4669385"
+           height="279.37173"
+           width="746.28473"
+           id="rect15771" /></flowRegion><flowPara
+         id="flowPara15773" /></flowRoot>    <g
+       id="g3316"
+       transform="matrix(0.8593489,0,0,-0.8593489,18.780147,673.06348)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#83a3ff;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299">
+      <path
+         style="fill:#83a3ff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:square"
+         d="M 307.28176,564.37611 L 389.71756,564.37611 C 409.53425,564.37611 425.47465,551.35993 425.47465,535.20192 C 425.47465,519.0303 409.53425,506.01412 389.71756,506.01412 L 307.28176,506.01412 C 287.47867,506.01412 271.52467,519.0303 271.52467,535.20192 C 271.52467,551.35993 287.47867,564.37611 307.28176,564.37611 z"
+         id="path2475" />
+      <path
+         style="fill:#83a3ff;fill-opacity:1;stroke-width:3.2397635;stroke-linecap:square"
+         d="M 307.28176,564.37611 L 389.71756,564.37611 C 409.53425,564.37611 425.47465,551.35993 425.47465,535.20192 C 425.47465,519.0303 409.53425,506.01412 389.71756,506.01412 L 307.28176,506.01412 C 287.47867,506.01412 271.52467,519.0303 271.52467,535.20192 C 271.52467,551.35993 287.47867,564.37611 307.28176,564.37611 z"
+         id="path2477" />
+      <text
+         y="-528.7619"
+         x="304.68729"
+         style="font-size:19.08957863px;fill:#83a3ff;fill-opacity:1;stroke:none;font-family:'Helvetica,sans-serif'"
+         transform="scale(1,-1)"
+         font-size="20px"
+         id="text2479">Simulation</text>
+    </g>
+    <line
+       id="line2409"
+       y2="126.49764"
+       x2="494.63782"
+       y1="126.49764"
+       x1="461.67761"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill-opacity:1;stroke:#000000;stroke-width:2.33760619;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <path
+       id="path2411"
+       d="M 482.41217,120.8406 L 497.73517,126.47423 L 482.41217,132.10786 C 484.85497,128.78846 484.84328,124.23013 482.41217,120.8406 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <text
+       id="text2413"
+       font-size="20px"
+       style="font-size:19.32474899px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:'Helvetica,sans-serif'"
+       x="363.34625"
+       y="131.51175"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299">Layout</text>
+    <line
+       id="line2415"
+       y2="126.49764"
+       x2="322.20441"
+       y1="126.49764"
+       x1="276.22372"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#ef2929;fill-opacity:1;stroke:#ef2929;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <line
+       id="line2417"
+       y2="126.49764"
+       x2="322.20441"
+       y1="126.49764"
+       x1="276.22372"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill-opacity:1;stroke:#000000;stroke-width:2.38018012;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43000031;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <path
+       id="path2419"
+       d="M 315.57732,122.32498 L 326.86795,126.47423 L 315.57732,130.62348 C 317.38896,128.18068 317.37727,124.82622 315.57732,122.32498 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <path
+       id="path2425"
+       d="M 185.87063,101.40342 L 256.71642,101.40342 C 273.73419,101.40342 287.43255,112.58886 287.43255,126.47423 C 287.43255,140.37129 273.73419,151.54504 256.71642,151.54504 L 185.87063,151.54504 C 168.85053,151.54504 155.14398,140.37129 155.14398,126.47423 C 155.14398,112.58886 168.85053,101.40342 185.87063,101.40342 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <path
+       id="path2427"
+       d="M 185.87063,101.40342 L 256.71642,101.40342 C 273.73419,101.40342 287.43255,112.58886 287.43255,126.47423 C 287.43255,140.37129 273.73419,151.54504 256.71642,151.54504 L 185.87063,151.54504 C 168.85053,151.54504 155.14398,140.37129 155.14398,126.47423 C 155.14398,112.58886 168.85053,101.40342 185.87063,101.40342 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#ffffb0;fill-opacity:1;stroke:#000000;stroke-width:2.78408551;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <text
+       id="text2429"
+       font-size="20px"
+       style="font-size:16.40460968px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:'Helvetica,sans-serif'"
+       x="176.64206"
+       y="129.99672"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299">Esquematico</text>
+    <path
+       id="path2455"
+       d="M 154.55023,124.34701 C 93.521798,124.52233 93.471656,214.35648 154.55023,214.48505"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.40799856;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <path
+       id="path2463"
+       d="M 358.18016,101.40342 L 429.03296,101.40342 C 446.05072,101.40342 459.74909,112.58886 459.74909,126.47423 C 459.74909,140.37129 446.05072,151.54504 429.03296,151.54504 L 358.18016,151.54504 C 341.1624,151.54504 327.46404,140.37129 327.46404,126.47423 C 327.46404,112.58886 341.1624,101.40342 358.18016,101.40342 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <path
+       id="path2465"
+       d="M 358.18016,101.40342 L 429.03296,101.40342 C 446.05072,101.40342 459.74909,112.58886 459.74909,126.47423 C 459.74909,140.37129 446.05072,151.54504 429.03296,151.54504 L 358.18016,151.54504 C 341.1624,151.54504 327.46404,140.37129 327.46404,126.47423 C 327.46404,112.58886 341.1624,101.40342 358.18016,101.40342 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#ffffb0;fill-opacity:1;stroke:#000000;stroke-width:2.78408551;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <text
+       id="text2467"
+       font-size="20px"
+       style="font-size:16.40460968px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:'Helvetica,sans-serif'"
+       x="365.11115"
+       y="130.75206"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299">Layout</text>
+    <path
+       id="path2469"
+       d="M 529.59672,101.97613 L 600.43784,101.97613 C 617.4556,101.97613 631.16565,113.16157 631.16565,127.05863 C 631.16565,140.944 617.4556,152.12944 600.43784,152.12944 L 529.59672,152.12944 C 512.57896,152.12944 498.8689,140.944 498.8689,127.05863 C 498.8689,113.16157 512.57896,101.97613 529.59672,101.97613 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <path
+       id="path2471"
+       d="M 529.59672,101.97613 L 600.43784,101.97613 C 617.4556,101.97613 631.16565,113.16157 631.16565,127.05863 C 631.16565,140.944 617.4556,152.12944 600.43784,152.12944 L 529.59672,152.12944 C 512.57896,152.12944 498.8689,140.944 498.8689,127.05863 C 498.8689,113.16157 512.57896,101.97613 529.59672,101.97613 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#24a000;fill-opacity:1;stroke:#000000;stroke-width:2.78408551;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <line
+       id="line2481"
+       y2="214.40222"
+       x2="389.46976"
+       y1="214.40222"
+       x1="501.08716"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill-opacity:1;stroke:#000000;stroke-width:2.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-mid:none;marker-end:url(#Arrow1Send)"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <path
+       id="path6329"
+       d="M 529.42259,189.43684 L 600.26838,189.43684 C 617.28615,189.43684 630.98451,200.62228 630.98451,214.50765 C 630.98451,228.40472 617.28615,239.57847 600.26838,239.57847 L 529.42259,239.57847 C 512.40249,239.57847 498.69595,228.40472 498.69595,214.50765 C 498.69595,200.62228 512.40249,189.43684 529.42259,189.43684 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#a3a3a3;fill-opacity:1;stroke:#000000;stroke-width:2.78408551;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <text
+       xml:space="preserve"
+       style="font-size:12.00000286px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;letter-spacing:normal;word-spacing:normal;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="565.65637"
+       y="208.40225"
+       id="text6331"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299"><tspan
+         sodipodi:role="line"
+         x="567.84503"
+         y="208.40225"
+         id="tspan6335"
+         style="font-size:13.74958229px">Pre-procesado </tspan><tspan
+         sodipodi:role="line"
+         x="565.65637"
+         y="225.58923"
+         style="font-size:13.74958229px"
+         id="tspan3950">del Netlist</tspan></text>
+    <line
+       id="line9597"
+       y2="186.06746"
+       x2="564.83264"
+       y1="151.41808"
+       x1="564.83264"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.46124434;stroke-linecap:butt;stroke-linejoin:miter;marker-mid:none;marker-end:url(#Arrow1Send);stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <path
+       id="path9601"
+       d="M 280.95883,278.16686 L 351.80462,278.16686 C 368.82239,278.16686 382.52075,289.3523 382.52075,303.23767 C 382.52075,317.13473 368.82239,328.30849 351.80462,328.30849 L 280.95883,328.30849 C 263.93873,328.30849 250.23218,317.13473 250.23218,303.23767 C 250.23218,289.3523 263.93873,278.16686 280.95883,278.16686 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#edf650;fill-opacity:1;stroke:#000000;stroke-width:2.78408551;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <text
+       xml:space="preserve"
+       style="font-size:9.55063915px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;letter-spacing:normal;word-spacing:normal;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="317.73456"
+       y="301.42453"
+       id="text9603"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299"><tspan
+         sodipodi:role="line"
+         x="317.73456"
+         y="301.42453"
+         id="tspan9607"
+         style="font-size:10.94310474px">Postprocesamiento</tspan><tspan
+         id="tspan9611"
+         sodipodi:role="line"
+         x="317.73456"
+         y="315.10342"
+         style="font-size:10.94310474px">&amp; Visualización</tspan></text>
+    <line
+       id="line9628"
+       y2="272.8811"
+       x2="304.93872"
+       y1="238.23174"
+       x1="304.93872"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.46124434;stroke-linecap:butt;stroke-linejoin:miter;marker-mid:none;marker-end:url(#Arrow1Send);stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <line
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill-opacity:1;stroke:#000000;stroke-width:2.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43000031;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-mid:none;marker-end:url(#Arrow1Send)"
+       x1="151.95801"
+       y1="214.12874"
+       x2="245.32121"
+       y2="214.12874"
+       id="line11326"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <text
+       y="218.58704"
+       x="278.6423"
+       style="font-size:16.40460968px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:'Helvetica,sans-serif'"
+       font-size="20px"
+       id="text15643"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299">Simulación</text>
+    <g
+       id="g2478"
+       transform="translate(73.970406,100.83631)"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299">
+      <path
+         transform="matrix(0.5386617,0,0,0.5386617,163.77462,-13.883735)"
+         d="m 139.33676,-23.167059 c 0,19.9663334 -16.18591,36.152245 -36.15224,36.152245 -19.966336,0 -36.152248,-16.1859116 -36.152248,-36.152245 0,-19.966333 16.185912,-36.152245 36.152248,-36.152245 19.96633,0 36.15224,16.185912 36.15224,36.152245 z"
+         sodipodi:ry="36.152245"
+         sodipodi:rx="36.152245"
+         sodipodi:cy="-23.167059"
+         sodipodi:cx="103.18452"
+         id="path2454"
+         style="fill:#ffffb0;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+         sodipodi:type="arc" />
+      <text
+         id="text2452"
+         font-size="20px"
+         style="font-size:13.69517326px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:'Helvetica,sans-serif'"
+         x="206.22505"
+         y="-20.741076">LVS</text>
+    </g>
+    <path
+       sodipodi:type="arc"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.43975782;stroke-linecap:square;stroke-linejoin:miter;marker-start:url(#Arrow1Mstart);marker-mid:none;stroke-miterlimit:10.43000031;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       id="path2490"
+       sodipodi:cx="176.41127"
+       sodipodi:cy="-46.761318"
+       sodipodi:rx="12.020006"
+       sodipodi:ry="12.020006"
+       d="M 188.43128,-46.761318 A 12.020006,12.020006 0 0 1 176.79848,-34.74755"
+       sodipodi:start="0"
+       sodipodi:end="1.5385772"
+       sodipodi:open="true"
+       transform="matrix(0,-2.4281171,2.271327,0,520.95527,531.40596)"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <path
+       transform="matrix(-2.4281171,0,0,-2.271327,804.36729,-5.88001)"
+       sodipodi:open="true"
+       sodipodi:end="1.5385772"
+       sodipodi:start="0"
+       d="M 188.43128,-46.761318 A 12.020006,12.020006 0 0 1 176.79848,-34.74755"
+       sodipodi:ry="12.020006"
+       sodipodi:rx="12.020006"
+       sodipodi:cy="-46.761318"
+       sodipodi:cx="176.41127"
+       id="path5767"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.43975782;stroke-linecap:square;stroke-linejoin:miter;marker-start:url(#Arrow1Mstart);marker-mid:none;stroke-miterlimit:10.43000031;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       sodipodi:type="arc"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <g
+       id="g2482"
+       transform="translate(34.662227,106.33359)"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299">
+      <g
+         id="g2460"
+         transform="translate(222.93884,5.2722022)">
+        <g
+           id="g2472">
+          <path
+             sodipodi:type="arc"
+             style="fill:#ffffb0;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+             id="path2462"
+             sodipodi:cx="103.18452"
+             sodipodi:cy="-23.167059"
+             sodipodi:rx="36.152245"
+             sodipodi:ry="36.152245"
+             d="m 139.33676,-23.167059 c 0,19.9663334 -16.18591,36.152245 -36.15224,36.152245 -19.966336,0 -36.152248,-16.1859116 -36.152248,-36.152245 0,-19.966333 16.185912,-36.152245 36.152248,-36.152245 19.96633,0 36.15224,16.185912 36.15224,36.152245 z"
+             transform="matrix(0.5386617,0,0,0.5386617,80.423948,-24.814918)" />
+          <text
+             y="-32.315929"
+             x="121.26101"
+             style="font-size:13.69517326px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:'Helvetica,sans-serif'"
+             font-size="20px"
+             id="text2464">DRC</text>
+        </g>
+      </g>
+    </g>
+    <path
+       transform="matrix(0,-2.5866934,2.2686876,0,420.84727,561.42559)"
+       sodipodi:open="true"
+       sodipodi:end="1.5385772"
+       sodipodi:start="0"
+       d="M 188.43128,-46.761318 A 12.020006,12.020006 0 0 1 176.79848,-34.74755"
+       sodipodi:ry="12.020006"
+       sodipodi:rx="12.020006"
+       sodipodi:cy="-46.761318"
+       sodipodi:cx="176.41127"
+       id="path5769"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.43975782;stroke-linecap:square;stroke-linejoin:miter;marker-start:url(#Arrow1Mstart);marker-mid:none;stroke-miterlimit:10.43000031;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       sodipodi:type="arc"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.43975782;stroke-linecap:square;stroke-linejoin:miter;marker-start:url(#Arrow1Mstart);marker-mid:none;stroke-miterlimit:10.43000031;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       id="path5771"
+       sodipodi:cx="176.41127"
+       sodipodi:cy="-46.761318"
+       sodipodi:rx="12.020006"
+       sodipodi:ry="12.020006"
+       d="M 188.43128,-46.761318 A 12.020006,12.020006 0 0 1 176.79848,-34.74755"
+       sodipodi:start="0"
+       sodipodi:end="1.5385772"
+       sodipodi:open="true"
+       transform="matrix(-2.4281171,0,0,-2.271327,702.36729,-5.88001)"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299" />
+    <text
+       id="text2473"
+       font-size="20px"
+       style="font-size:16.40460968px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:'Helvetica,sans-serif'"
+       x="508.14017"
+       y="-32.117329" />
+    <text
+       y="497.54312"
+       x="64.273964"
+       style="font-size:16.40460968px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:'Helvetica,sans-serif'"
+       font-size="20px"
+       id="text6124" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3904"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Domestic Manners;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:Domestic Manners;font-stretch:normal;font-variant:normal"><flowRegion
+         id="flowRegion3906"><rect
+           id="rect3908"
+           width="91.039268"
+           height="43.28828"
+           x="527.49225"
+           y="52.269043" /></flowRegion><flowPara
+         id="flowPara3910"></flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:14.40171337px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Domestic Manners;-inkscape-font-specification:Domestic Manners"
+       x="566.07312"
+       y="119.04523"
+       id="text3912"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/media/c711b733-b8ca-4a56-a8c3-c1823ef3d35c/home/leandro/tfinal/pi/aflow/graphics/figures/aflow-pi.png"
+       inkscape:export-xdpi="299"
+       inkscape:export-ydpi="299"><tspan
+         sodipodi:role="line"
+         id="tspan3914"
+         x="568.07025"
+         y="119.04523"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:helvetica;-inkscape-font-specification:helvetica">Extracción </tspan><tspan
+         sodipodi:role="line"
+         x="566.07312"
+         y="137.04738"
+         id="tspan3916"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:helvetica;-inkscape-font-specification:helvetica">de parásitos</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3918"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Domestic Manners;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:Domestic Manners;font-stretch:normal;font-variant:normal"><flowRegion
+         id="flowRegion3920"><rect
+           id="rect3922"
+           width="12.622448"
+           height="51.752037"
+           x="497.32443"
+           y="-34.430576" /></flowRegion><flowPara
+         id="flowPara3924"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3926"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Domestic Manners;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:Domestic Manners;font-stretch:normal;font-variant:normal"><flowRegion
+         id="flowRegion3928"><rect
+           id="rect3930"
+           width="271.38263"
+           height="76.996933"
+           x="508.68466"
+           y="-30.643843" /></flowRegion><flowPara
+         id="flowPara3932"></flowPara></flowRoot>  </g>
+</svg>

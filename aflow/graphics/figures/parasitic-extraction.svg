@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg14296"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="parasitic-extraction.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs14298">
+    <linearGradient
+       id="linearGradient5193">
+      <stop
+         style="stop-color:#ff0300;stop-opacity:0.62352943;"
+         offset="0"
+         id="stop5199" />
+      <stop
+         id="stop5201"
+         offset="1"
+         style="stop-color:#30ff01;stop-opacity:0.43529412;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3689">
+      <stop
+         style="stop-color:#1fbd00;stop-opacity:1;"
+         offset="0"
+         id="stop3691" />
+      <stop
+         style="stop-color:#ff0012;stop-opacity:0.24705882;"
+         offset="1"
+         id="stop3699" />
+    </linearGradient>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;">
+      <path
+         id="path3467"
+         style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mstart"
+       style="overflow:visible">
+      <path
+         id="path3446"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(0.4) translate(10,0)" />
+    </marker>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient14126"
+       id="radialGradient14132"
+       cx="344.75699"
+       cy="382.47848"
+       fx="344.75699"
+       fy="382.47848"
+       r="206.52702"
+       gradientTransform="matrix(1.1182337,0,0,0.2103394,296.99505,-418.58616)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient14126">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop14128" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop14130" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient14126"
+       id="radialGradient14134"
+       cx="269.45298"
+       cy="-462.34589"
+       fx="269.45298"
+       fy="-462.34589"
+       r="238.90196"
+       gradientTransform="matrix(0.9622302,0,0,0.1514732,424.19001,-346.62648)"
+       gradientUnits="userSpaceOnUse" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective14304" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient14126"
+       id="radialGradient14422"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.9622302,0,0,0.1514732,424.19001,-346.62648)"
+       cx="269.45298"
+       cy="-462.34589"
+       fx="269.45298"
+       fy="-462.34589"
+       r="238.90196" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient14126"
+       id="radialGradient14424"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1182337,0,0,0.2103394,296.99505,-418.58616)"
+       cx="344.75699"
+       cy="382.47848"
+       fx="344.75699"
+       fy="382.47848"
+       r="206.52702" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient14126"
+       id="radialGradient14464"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1541869,0,0,0.1806193,-114.36145,542.14445)"
+       cx="344.75699"
+       cy="382.47848"
+       fx="344.75699"
+       fy="382.47848"
+       r="206.52702" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient14126"
+       id="radialGradient14467"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.9931676,0,0,0.1300707,16.923052,603.93655)"
+       cx="269.45298"
+       cy="-462.34589"
+       fx="269.45298"
+       fy="-462.34589"
+       r="238.90196" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5193"
+       id="linearGradient3695"
+       x1="610.99585"
+       y1="518.09204"
+       x2="637.14368"
+       y2="518.09204"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(11.393794,0,0,0.6591704,-7621.4078,-958.70378)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.0393788"
+     inkscape:cx="560.68208"
+     inkscape:cy="637.8474"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1711"
+     inkscape:window-height="937"
+     inkscape:window-x="0"
+     inkscape:window-y="25" />
+  <metadata
+     id="metadata14301">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="g14247"
+       transform="matrix(0.8593489,0,0,-0.8593489,-342.95984,901.85867)">
+      <text
+         xml:space="preserve"
+         style="font-size:13.96406078px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         x="397.29889"
+         y="-447.23923"
+         id="text14112"
+         transform="scale(1,-1)"><tspan
+           sodipodi:role="line"
+           id="tspan14114"
+           x="397.29889"
+           y="-447.23923">0.25um</tspan></text>
+    </g>
+    <rect
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#e0c03c;fill-opacity:1;fill-rule:evenodd;stroke:url(#radialGradient14467);stroke-width:1.84746408;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       id="rect14124"
+       width="474.53934"
+       height="62.148273"
+       x="47.265335"
+       y="512.72473" />
+    <rect
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#a46800;fill-opacity:1;fill-rule:evenodd;stroke:url(#radialGradient14464);stroke-width:1.93904078;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       id="rect14120"
+       width="476.74161"
+       height="74.60556"
+       x="45.181763"
+       y="573.92462" />
+    <rect
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#ffffb0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       id="rect14136"
+       width="476.4653"
+       height="83.366165"
+       x="44.412506"
+       y="427.74014" />
+    <path
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.486;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 46.148412,575.06306 L 521.31868,575.06306"
+       id="path11908"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="57.050232"
+       y="595.63654"
+       id="text11910"><tspan
+         sodipodi:role="line"
+         id="tspan11912"
+         x="57.050232"
+         y="595.63654">Nanometer Process</tspan><tspan
+         sodipodi:role="line"
+         x="57.050232"
+         y="610.63654"
+         id="tspan14118">technologies</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="56.409195"
+       y="539.17493"
+       id="text11914"><tspan
+         sodipodi:role="line"
+         id="tspan11916"
+         x="56.409195"
+         y="539.17493">Deep Submicron</tspan><tspan
+         sodipodi:role="line"
+         x="56.409195"
+         y="554.17493"
+         id="tspan14116">Process technologies</tspan></text>
+    <rect
+       y="372.41565"
+       x="44.412506"
+       height="54.690651"
+       width="474.95609"
+       id="rect14523"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#fcfcc7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+    <path
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.59581208;stroke-linecap:butt;stroke-linejoin:miter;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow2Mend);stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 46.364872,365.87737 L 46.364872,656.02406"
+       id="path11918" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="6.4585104"
+       y="579.52411"
+       id="text14100"><tspan
+         sodipodi:role="line"
+         id="tspan14102"
+         x="6.4585104"
+         y="579.52411">0.1um</tspan></text>
+    <path
+       id="path14110"
+       d="M 46.148412,513.14093 L 521.31868,513.14093"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.18585324;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.18585324;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 46.148412,427.24895 L 521.31868,427.24895"
+       id="path14138"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="12.458457"
+       y="431.52417"
+       id="text14140"><tspan
+         sodipodi:role="line"
+         id="tspan14142"
+         x="12.458457"
+         y="431.52417">1um</tspan></text>
+    <text
+       id="text14150"
+       y="465.1749"
+       x="56.409195"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="465.1749"
+         x="56.409195"
+         id="tspan14152"
+         sodipodi:role="line">Submicron</tspan><tspan
+         id="tspan14154"
+         y="480.1749"
+         x="56.409195"
+         sodipodi:role="line">Process technologies</tspan></text>
+    <text
+       id="text14168"
+       y="592.23993"
+       x="217.11043"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="592.23993"
+         x="217.11043"
+         id="tspan14170"
+         sodipodi:role="line">extraction tools not</tspan><tspan
+         id="tspan14172"
+         y="607.23993"
+         x="217.11043"
+         sodipodi:role="line">available</tspan><tspan
+         y="622.23993"
+         x="217.11043"
+         sodipodi:role="line"
+         id="tspan7008">Handmade parasitic</tspan><tspan
+         y="637.23993"
+         x="217.11043"
+         sodipodi:role="line"
+         id="tspan7012">estimation not suitable</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="217.11043"
+       y="540.23993"
+       id="text14174"><tspan
+         sodipodi:role="line"
+         id="tspan14176"
+         x="217.11043"
+         y="540.23993">extraction tool</tspan><tspan
+         sodipodi:role="line"
+         x="217.11043"
+         y="555.23993"
+         id="tspan14178">available</tspan></text>
+    <text
+       id="text14180"
+       y="465.80841"
+       x="217.11043"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="465.80841"
+         x="217.11043"
+         id="tspan14182"
+         sodipodi:role="line">accurate extraction</tspan><tspan
+         id="tspan14184"
+         y="480.80841"
+         x="217.11043"
+         sodipodi:role="line">tools available</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="50.954605"
+       y="325.38867"
+       id="text14190"><tspan
+         sodipodi:role="line"
+         x="50.954605"
+         y="325.38867"
+         id="tspan14194"
+         style="font-weight:bold">Parasitic Extraction tools for</tspan><tspan
+         sodipodi:role="line"
+         x="50.954605"
+         y="340.38867"
+         style="font-weight:bold"
+         id="tspan14200">Interconection Noise &amp; Crosstalk Impact</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="374.76474"
+       y="466.39996"
+       id="text14497"><tspan
+         sodipodi:role="line"
+         id="tspan14499"
+         x="374.76474"
+         y="466.39996">Electric built-in tool</tspan><tspan
+         sodipodi:role="line"
+         x="374.76474"
+         y="481.39996"
+         id="tspan14501">Magic extraction tool</tspan></text>
+    <text
+       id="text14503"
+       y="546.39996"
+       x="374.76474"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         id="tspan14507"
+         y="546.39996"
+         x="374.76474"
+         sodipodi:role="line">Magic extraction tool</tspan></text>
+    <text
+       id="text14511"
+       y="592.39996"
+       x="374.76474"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         id="tspan14515"
+         y="592.39996"
+         x="374.76474"
+         sodipodi:role="line">Export to GDS2 or CIF</tspan><tspan
+         y="607.39996"
+         x="374.76474"
+         sodipodi:role="line"
+         id="tspan14519">and use comercial</tspan><tspan
+         y="622.39996"
+         x="374.76474"
+         sodipodi:role="line"
+         id="tspan14521">tools</tspan></text>
+    <g
+       id="g6997">
+      <text
+         id="text14471"
+         y="398.44733"
+         x="58.35257"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           id="tspan14475"
+           y="398.44733"
+           x="58.35257"
+           sodipodi:role="line">Mosis Educational</tspan><tspan
+           id="tspan14483"
+           y="413.44733"
+           x="58.35257"
+           sodipodi:role="line">Program technologies</tspan></text>
+      <text
+         id="text14489"
+         y="405.94733"
+         x="217.11043"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           id="tspan14493"
+           y="405.94733"
+           x="217.11043"
+           sodipodi:role="line">Very low impact</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         x="374.76474"
+         y="407.11041"
+         id="text15046"><tspan
+           sodipodi:role="line"
+           x="374.76474"
+           y="407.11041"
+           id="tspan15050">Electric built-in tool</tspan></text>
+    </g>
+    <rect
+       style="opacity:1;fill:url(#linearGradient3695);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.30076933;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       id="rect2905"
+       width="275.13507"
+       height="191.01009"
+       x="-648.45306"
+       y="-712.69855"
+       transform="matrix(0,-1,-1,0,0,0)" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 521.91542,648.22613 L 521.91542,371.28104"
+       id="path5203" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.88637066px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="621.5528"
+       y="366.31406"
+       id="text5205"><tspan
+         sodipodi:role="line"
+         x="621.5528"
+         y="366.31406"
+         id="tspan5211">Suitable tools &amp; availble PDKs</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="611.87408"
+       y="407.0108"
+       id="text6951"><tspan
+         sodipodi:role="line"
+         id="tspan6953"
+         x="611.87408"
+         y="407.0108">ALL</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="529.16229"
+       y="592.47211"
+       id="text6959"><tspan
+         sodipodi:role="line"
+         x="529.16229"
+         y="592.47211"
+         id="tspan6963">Only Schematic &amp; Layout . </tspan><tspan
+         sodipodi:role="line"
+         x="529.16229"
+         y="607.47211"
+         id="tspan6985">TSMC 90nm and 45nm</tspan><tspan
+         sodipodi:role="line"
+         x="529.16229"
+         y="622.47211"
+         id="tspan6993">available</tspan><tspan
+         sodipodi:role="line"
+         x="529.16229"
+         y="637.47211"
+         id="tspan6995">Simulation models available</tspan></text>
+    <text
+       id="text6965"
+       y="474.96344"
+       x="611.87408"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="474.96344"
+         x="611.87408"
+         id="tspan6967"
+         sodipodi:role="line">ALL</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="531.60706"
+       y="532.02203"
+       id="text6969"><tspan
+         sodipodi:role="line"
+         x="531.60706"
+         y="532.02203"
+         id="tspan6977">Electric: Schematic &amp; Layout</tspan><tspan
+         sodipodi:role="line"
+         x="531.60706"
+         y="547.02203"
+         id="tspan6981">TSMC 180nm available </tspan><tspan
+         sodipodi:role="line"
+         x="531.60706"
+         y="562.02203"
+         id="tspan6983">Magic Techfiles (hand edited)</tspan></text>
+  </g>
+</svg>

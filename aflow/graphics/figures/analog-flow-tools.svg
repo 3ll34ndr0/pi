@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg7739"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="analog-flow-tools.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs7741">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective7747" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.74958687"
+     inkscape:cx="235.83106"
+     inkscape:cy="812.20326"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1528"
+     inkscape:window-height="929"
+     inkscape:window-x="0"
+     inkscape:window-y="25" />
+  <metadata
+     id="metadata7744">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       y="23.445072"
+       x="20.185818"
+       height="51.443916"
+       width="124.80901"
+       id="rect5354"
+       style="fill:#ffffb0;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.0499562;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+    <text
+       id="text5356"
+       y="53.640663"
+       x="40.235832"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold"
+         id="tspan5358"
+         y="53.640663"
+         x="40.235832"
+         sodipodi:role="line">Electric VLSI</tspan><tspan
+         id="tspan5362"
+         y="68.640663"
+         x="40.235832"
+         sodipodi:role="line" /></text>
+    <rect
+       y="92.81662"
+       x="172.26955"
+       height="51.443916"
+       width="124.80901"
+       id="rect5912"
+       style="fill:#24a000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.0499562;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+    <text
+       id="text5388"
+       y="121.80225"
+       x="195.02953"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         id="tspan5420"
+         style="font-weight:bold"
+         y="121.80225"
+         x="195.02953"
+         sodipodi:role="line">Magic VLSI<tspan
+   style="font-weight:normal"
+   id="tspan6880">: </tspan></tspan></text>
+    <rect
+       style="fill:#83a3ff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.0499562;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       id="rect5914"
+       width="124.80901"
+       height="51.443916"
+       x="172.26955"
+       y="23.445072" />
+    <text
+       id="text5424"
+       y="52.372108"
+       x="209.25609"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold"
+         id="tspan5484"
+         y="52.372108"
+         x="209.25609"
+         sodipodi:role="line">Gnucap</tspan></text>
+    <rect
+       style="fill:#a3a3a3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.0499562;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       id="rect5910"
+       width="124.80901"
+       height="51.443916"
+       x="617.84399"
+       y="21.443975" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="653.99261"
+       y="50.429592"
+       id="text5939"><tspan
+         sodipodi:role="line"
+         x="653.99261"
+         y="50.429592"
+         id="tspan5941"
+         style="font-weight:bold">Pyspice</tspan></text>
+    <rect
+       y="93.483658"
+       x="20.185818"
+       height="51.443916"
+       width="124.80901"
+       id="rect6734"
+       style="fill:#67e0f5;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.0499562;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="55.432121"
+       y="122.46928"
+       id="text6760"><tspan
+         sodipodi:role="line"
+         x="55.432121"
+         y="122.46928"
+         id="tspan6762"
+         style="font-weight:bold">Ngspice</tspan></text>
+    <rect
+       style="fill:#b3f0fa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.0499562;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       id="rect6736"
+       width="124.80901"
+       height="51.443916"
+       x="321.01819"
+       y="93.483658" />
+    <text
+       id="text6764"
+       y="122.51616"
+       x="357.92856"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold"
+         id="tspan6766"
+         y="122.51616"
+         x="357.92856"
+         sodipodi:role="line">LTSpice</tspan></text>
+    <rect
+       style="fill:#edf650;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.0499562;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       id="rect6223"
+       width="124.80901"
+       height="51.443916"
+       x="472.43488"
+       y="21.443975" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.73099327px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="478.38116"
+       y="44.037792"
+       id="text6845"><tspan
+         sodipodi:role="line"
+         x="478.38116"
+         y="44.037792"
+         id="tspan6851"
+         style="font-weight:bold">Matplotlib, Numpy </tspan><tspan
+         sodipodi:role="line"
+         x="478.38116"
+         y="57.451534"
+         style="font-weight:bold"
+         id="tspan7987">Octave/Matlab</tspan></text>
+    <rect
+       y="93.483658"
+       x="472.43488"
+       height="51.443916"
+       width="124.80901"
+       id="rect6859"
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.0499562;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+    <text
+       id="text6861"
+       y="123.57964"
+       x="521.25446"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;fill:#000000;fill-opacity:1"
+         id="tspan6863"
+         y="123.57964"
+         x="521.25446"
+         sodipodi:role="line">NYE</tspan></text>
+    <rect
+       y="23.445072"
+       x="321.01819"
+       height="51.443916"
+       width="124.80901"
+       id="rect7016"
+       style="fill:#d577ff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.0499562;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+    <text
+       id="text7018"
+       y="52.430702"
+       x="383.38168"
+       style="font-size:12px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1"
+         id="tspan7020"
+         y="52.430702"
+         x="383.38168"
+         sodipodi:role="line">Icarus Verilog</tspan></text>
+  </g>
+</svg>

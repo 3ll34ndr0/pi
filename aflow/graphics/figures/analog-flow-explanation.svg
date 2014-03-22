@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg15933"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="analog-flow-explanation.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs15935">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective15941" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4229411"
+     inkscape:cx="515.47194"
+     inkscape:cy="458.84848"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1005"
+     inkscape:window-x="0"
+     inkscape:window-y="25" />
+  <metadata
+     id="metadata15938">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       y="-1.6755341"
+       x="13.059255"
+       height="216.8317"
+       width="339.52103"
+       id="rect15655"
+       style="fill:#ffffb0;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3.55529714;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+    <text
+       id="text15657"
+       y="21.266727"
+       x="31.911884"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold"
+         id="tspan15663"
+         y="21.266727"
+         x="31.911884"
+         sodipodi:role="line">Electric VLSI:</tspan><tspan
+         id="tspan15667"
+         y="36.266727"
+         x="31.911884"
+         sodipodi:role="line">Schematic, Layout, DRC, LVS, spice netlist</tspan><tspan
+         id="tspan15661"
+         y="51.266727"
+         x="31.911884"
+         sodipodi:role="line" /></text>
+    <text
+       id="text15669"
+       y="63.799023"
+       x="31.911884"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold"
+         y="63.799023"
+         x="31.911884"
+         id="tspan15671"
+         sodipodi:role="line">Pros:</tspan><tspan
+         id="tspan15673"
+         y="78.799019"
+         x="31.911884"
+         sodipodi:role="line">Actively maintained: fast bugs corrections, periodic</tspan><tspan
+         id="tspan15675"
+         y="93.799011"
+         x="31.911884"
+         sodipodi:role="line">releases with new features. </tspan><tspan
+         id="tspan15689"
+         y="108.79901"
+         x="31.911884"
+         sodipodi:role="line">Netlisting targets several simulators</tspan><tspan
+         id="tspan15699"
+         y="123.79901"
+         x="31.911884"
+         sodipodi:role="line">Accept several simulator data output</tspan><tspan
+         id="tspan15701"
+         y="138.79901"
+         x="31.911884"
+         sodipodi:role="line">TSMC PDK avaiable for 180nm, 90nm and 45nm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:11.99999809px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="31.911884"
+       y="167.79904"
+       id="text15677"><tspan
+         style="font-weight:bold"
+         sodipodi:role="line"
+         id="tspan15679"
+         x="31.911884"
+         y="167.79904">Cons:</tspan><tspan
+         sodipodi:role="line"
+         x="31.911884"
+         y="182.79904"
+         id="tspan15683">Schematic lacks finger/multiplier params</tspan><tspan
+         id="tspan15687"
+         sodipodi:role="line"
+         x="31.911884"
+         y="197.79904">Layout is done in a different way, easy to learn</tspan></text>
+    <rect
+       style="fill:#24a000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3.30217981;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+       id="rect15703"
+       width="339.77414"
+       height="186.9164"
+       x="12.932698"
+       y="238.19806" />
+    <text
+       id="text15705"
+       y="262.41412"
+       x="37.690418"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold"
+         id="tspan15709"
+         y="262.41412"
+         x="37.690418"
+         sodipodi:role="line">Magic: <tspan
+   id="tspan15779"
+   style="font-weight:normal">We use only parasitic extraction and netlist</tspan></tspan><tspan
+         id="tspan15777"
+         style="font-weight:normal"
+         y="277.41412"
+         x="37.690418"
+         sodipodi:role="line">generation feature of this layout tool</tspan><tspan
+         id="tspan15715"
+         y="292.41412"
+         x="37.690418"
+         sodipodi:role="line"><tspan
+   id="tspan15721"
+   style="font-weight:bold">Pros</tspan>: More accurate than Electric, widely used</tspan><tspan
+         id="tspan15775"
+         y="307.41412"
+         x="37.690418"
+         sodipodi:role="line">for old processes (0.25um and above)</tspan><tspan
+         id="tspan15719"
+         y="322.41412"
+         x="37.690418"
+         sodipodi:role="line"><tspan
+   id="tspan15723"
+   style="font-weight:bold">Cons</tspan>: Need to write another techfile for this tool</tspan><tspan
+         id="tspan15743"
+         y="337.41412"
+         x="37.690418"
+         sodipodi:role="line">Not acceptable for nanometer processes.</tspan><tspan
+         style="font-weight:bold"
+         id="tspan15725"
+         y="352.41412"
+         x="37.690418"
+         sodipodi:role="line" /><tspan
+         id="tspan15741"
+         style="font-weight:bold"
+         y="367.41412"
+         x="37.690418"
+         sodipodi:role="line">Electric:</tspan><tspan
+         id="tspan15731"
+         style="font-weight:bold"
+         y="382.41412"
+         x="37.690418"
+         sodipodi:role="line">Pros: <tspan
+   id="tspan15737"
+   style="font-weight:normal">Back annotation available</tspan></tspan><tspan
+         id="tspan15729"
+         style="font-weight:bold"
+         y="397.41412"
+         x="37.690418"
+         sodipodi:role="line">Cons: <tspan
+   id="tspan15739"
+   style="font-weight:normal">Not acceptable for nanometers</tspan></tspan><tspan
+         id="tspan15735"
+         style="font-weight:normal"
+         y="412.41412"
+         x="37.690418"
+         sodipodi:role="line">processes and Deep Submicron is a grey zone</tspan></text>
+    <rect
+       y="-0.06545718"
+       x="392.90601"
+       height="422.34372"
+       width="338.12466"
+       id="rect15757"
+       style="fill:#83a3ff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.95168781;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+    <text
+       id="text15759"
+       y="27.017582"
+       x="401.13232"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold"
+         y="27.017582"
+         x="401.13232"
+         id="tspan15761"
+         sodipodi:role="line">Gnucap:</tspan><tspan
+         id="tspan15763"
+         y="42.017582"
+         x="401.13232"
+         sodipodi:role="line"><tspan
+   id="tspan15813"
+   style="font-weight:bold">Pros</tspan>: Fast simulator, scales better than ngspice and</tspan><tspan
+         id="tspan15795"
+         y="57.017582"
+         x="401.13232"
+         sodipodi:role="line">LTSpice. Plugins system usefull for use other netlist</tspan><tspan
+         id="tspan15807"
+         y="72.017578"
+         x="401.13232"
+         sodipodi:role="line">syntax (such as spectre, spice3f5, verilog-ams) or</tspan><tspan
+         id="tspan15809"
+         y="87.017578"
+         x="401.13232"
+         sodipodi:role="line">compile new simulation models without compiling</tspan><tspan
+         id="tspan15811"
+         y="102.01758"
+         x="401.13232"
+         sodipodi:role="line">the whole simulator.</tspan><tspan
+         id="tspan15849"
+         y="117.01758"
+         x="401.13232"
+         sodipodi:role="line">There is a fork which implements icarus <tspan
+   id="tspan15865"
+   style="font-weight:bold">verilog </tspan></tspan><tspan
+         id="tspan15851"
+         y="132.01758"
+         x="401.13232"
+         sodipodi:role="line"><tspan
+   id="tspan15867"
+   style="font-weight:bold">cosimulation</tspan>, mot-adms model compiler, among</tspan><tspan
+         id="tspan15903"
+         y="147.01758"
+         x="401.13232"
+         sodipodi:role="line">other minor enhancements.</tspan><tspan
+         id="tspan15765"
+         y="162.01758"
+         x="401.13232"
+         sodipodi:role="line"><tspan
+   id="tspan15817"
+   style="font-weight:bold">Cons</tspan>: Lacks some simulation analisys such as</tspan><tspan
+         id="tspan15799"
+         y="177.01758"
+         x="401.13232"
+         sodipodi:role="line">noise (it is being developed now, not yet available </tspan><tspan
+         id="tspan15797"
+         y="192.01758"
+         x="401.13232"
+         sodipodi:role="line">for beta testing) or PSS.</tspan><tspan
+         id="tspan15819"
+         y="207.01758"
+         x="401.13232"
+         sodipodi:role="line" /><tspan
+         id="tspan15911"
+         y="222.01758"
+         x="401.13232"
+         sodipodi:role="line"><tspan
+   id="tspan15863"
+   style="font-weight:bold">Ngspice</tspan>: Merges 3 different simulators: Berkeley </tspan><tspan
+         id="tspan15925"
+         y="237.01758"
+         x="401.13232"
+         sodipodi:role="line">spice3f5, Cider and Xspice which gives us a mixed-</tspan><tspan
+         id="tspan15929"
+         y="252.01758"
+         x="401.13232"
+         sodipodi:role="line">signal/mixed-level simulator.</tspan><tspan
+         id="tspan15823"
+         y="267.01758"
+         x="401.13232"
+         sodipodi:role="line"><tspan
+   id="tspan15855"
+   style="font-weight:bold">Pros</tspan>: Widely used and support several analysis and</tspan><tspan
+         id="tspan15835"
+         y="282.01758"
+         x="401.13232"
+         sodipodi:role="line">simulation models, mot-adms model compiler can </tspan><tspan
+         id="tspan15877"
+         y="297.01758"
+         x="401.13232"
+         sodipodi:role="line">be used for verilog-ams models. Output can be</tspan><tspan
+         id="tspan15889"
+         y="312.01758"
+         x="401.13232"
+         sodipodi:role="line">retrieved by the electric waveform viewer, or using </tspan><tspan
+         id="tspan15893"
+         y="327.01758"
+         x="401.13232"
+         sodipodi:role="line">its built-in viewer.</tspan><tspan
+         id="tspan15885"
+         y="342.01758"
+         x="401.13232"
+         sodipodi:role="line"><tspan
+   id="tspan15887"
+   style="font-weight:bold">Cons</tspan>: It is slower than gnucap and needs to be </tspan><tspan
+         id="tspan15897"
+         y="357.01758"
+         x="401.13232"
+         sodipodi:role="line">recompiled when a new simulation model is added.</tspan></text>
+    <rect
+       y="545.04236"
+       x="45.77496"
+       height="51.392017"
+       width="300.32806"
+       id="rect5354"
+       style="fill:#ffffb0;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.62789726;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+    <text
+       id="text5356"
+       y="568.9483"
+       x="65.591286"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold"
+         id="tspan5358"
+         y="568.9483"
+         x="65.591286"
+         sodipodi:role="line">Electric VLSI:</tspan><tspan
+         id="tspan5360"
+         y="583.9483"
+         x="65.591286"
+         sodipodi:role="line">Schematic, Layout, DRC, LVS, spice netlist</tspan><tspan
+         id="tspan5362"
+         y="598.9483"
+         x="65.591286"
+         sodipodi:role="line" /></text>
+    <rect
+       y="602.85107"
+       x="45.774956"
+       height="51.392017"
+       width="300.32806"
+       id="rect5912"
+       style="fill:#24a000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.62789726;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+    <text
+       id="text5388"
+       y="630.83099"
+       x="62.804131"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         id="tspan5420"
+         style="font-weight:bold"
+         y="630.83099"
+         x="62.804131"
+         sodipodi:role="line">Magic VLSI<tspan
+   style="font-weight:normal"
+   id="tspan6880">:  Parasitic Extraction, netlist gen.</tspan></tspan></text>
+    <g
+       id="g6835"
+       transform="translate(0,3.8146973e-6)">
+      <rect
+         y="545.04236"
+         x="366.05432"
+         height="51.392017"
+         width="300.32806"
+         id="rect5914"
+         style="fill:#83a3ff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.62789726;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         x="490.80042"
+         y="573.94342"
+         id="text5424"><tspan
+           sodipodi:role="line"
+           x="490.80042"
+           y="573.94342"
+           id="tspan5484"
+           style="font-weight:bold">Gnucap</tspan></text>
+    </g>
+    <g
+       id="g6820">
+      <rect
+         y="727.08441"
+         x="366.05432"
+         height="51.392017"
+         width="300.32806"
+         id="rect5910"
+         style="fill:#a3a3a3;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.62789726;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+      <text
+         id="text5939"
+         y="756.04407"
+         x="489.96252"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           style="font-weight:bold"
+           id="tspan5941"
+           y="756.04407"
+           x="489.96252"
+           sodipodi:role="line">Pyspice</tspan></text>
+    </g>
+    <text
+       id="text5943"
+       y="837.31464"
+       x="189.74783"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="837.31464"
+         x="189.74783"
+         id="tspan5945"
+         sodipodi:role="line"></tspan></text>
+    <text
+       id="text5947"
+       y="748.76562"
+       x="171.47581"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="748.76562"
+         x="171.47581"
+         id="tspan5949"
+         sodipodi:role="line"></tspan></text>
+    <g
+       id="g6830"
+       transform="translate(0,2.8719711)">
+      <rect
+         style="fill:#67e0f5;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.62789726;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+         id="rect6734"
+         width="300.32806"
+         height="51.392017"
+         x="366.05432"
+         y="602.85107" />
+      <text
+         id="text6760"
+         y="631.81073"
+         x="489.06018"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           style="font-weight:bold"
+           id="tspan6762"
+           y="631.81073"
+           x="489.06018"
+           sodipodi:role="line">Ngspice</tspan></text>
+    </g>
+    <g
+       id="g6825"
+       transform="translate(0,-2.0425606)">
+      <rect
+         y="668.44629"
+         x="366.05432"
+         height="51.392017"
+         width="300.32806"
+         id="rect6736"
+         style="fill:#b3f0fa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.62789726;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         x="490.72424"
+         y="697.45282"
+         id="text6764"><tspan
+           sodipodi:role="line"
+           x="490.72424"
+           y="697.45282"
+           id="tspan6766"
+           style="font-weight:bold">LTSpice</tspan></text>
+    </g>
+    <g
+       id="g6873"
+       transform="translate(1.006133,-12)">
+      <rect
+         y="678.38495"
+         x="45.774956"
+         height="51.392017"
+         width="300.32806"
+         id="rect6223"
+         style="fill:#edf650;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.62789726;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+      <text
+         id="text6845"
+         y="699.89148"
+         x="69.080589"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           style="font-weight:bold"
+           id="tspan6847"
+           y="699.89148"
+           x="69.080589"
+           sodipodi:role="line">Matplotlib, Numpy <tspan
+   id="tspan6853"
+   style="font-weight:normal">(python libraries)</tspan></tspan><tspan
+           style="font-weight:bold"
+           id="tspan6851"
+           y="714.89148"
+           x="69.080589"
+           sodipodi:role="line">Octave/Matlab</tspan></text>
+    </g>
+    <g
+       id="g6868"
+       transform="translate(6.760801,-25.84053)">
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.62789726;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1"
+         id="rect6859"
+         width="300.32806"
+         height="51.392017"
+         x="39.072231"
+         y="752.92493" />
+      <text
+         xml:space="preserve"
+         style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+         x="162.98044"
+         y="781.88458"
+         id="text6861"><tspan
+           sodipodi:role="line"
+           x="162.98044"
+           y="781.88458"
+           id="tspan6863"
+           style="font-weight:bold;fill:#000000;fill-opacity:1">NYE</tspan></text>
+    </g>
+    <rect
+       y="797.64893"
+       x="366.04205"
+       height="51.392017"
+       width="300.32806"
+       id="rect7016"
+       style="fill:#d577ff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.62789726;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:1.81999985;stroke-opacity:1" />
+    <text
+       id="text7018"
+       y="826.60858"
+       x="516.17737"
+       style="font-size:12px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1"
+         id="tspan7020"
+         y="826.60858"
+         x="516.17737"
+         sodipodi:role="line">Icarus Verilog</tspan></text>
+  </g>
+</svg>

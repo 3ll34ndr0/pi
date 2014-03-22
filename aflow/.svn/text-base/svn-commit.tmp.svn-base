@@ -1,0 +1,13 @@
+agrego archivos de la presentacion
+--This line, and those below, will be ignored--
+
+A    .
+A    graphics
+A    graphics/figures
+A    graphics/figures/analog-flow.svg
+A    graphics/figures/analog-flow-explanation.svg
+A    graphics/figures/EDA-setup.svg
+A    graphics/figures/parasitic-extraction.svg
+AM   analog-flow.tex
+AM   ClariphyArgentina.eps
+AM   PPRclariphy.sty
