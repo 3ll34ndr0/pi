@@ -1,0 +1,8 @@
+@conference{
+  Shee07,
+  author = "Sheeran, M.",
+  title = "Parallel prefix network generation: an application of functional programming {I}n {H}ardware {D}esign and {F}unctional {L}anguages", 
+  booktitle = "{Hardware design and Functional Languages (HFL´07), Braga, Portugal}",
+  year = "2007",
+  month = "March"
+}

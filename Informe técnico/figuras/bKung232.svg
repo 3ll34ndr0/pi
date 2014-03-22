@@ -1,0 +1,888 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: fig2dev Version 3.2 Patchlevel 5-alpha7 -->
+<!-- CreationDate: Mon Apr 14 01:30:22 2008 -->
+<!-- Magnification: 1.000 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="10.4in" height="3.8in" viewBox="362 -12 12476 4539">
+<g style="stroke-width:.025in; stroke:black; fill:none">
+<!-- Circle -->
+<circle cx="800" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="1600" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="2400" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="3200" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4000" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4800" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="5600" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6400" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="7200" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8000" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8800" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="9600" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="10400" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="11200" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="12000" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="12800" cy="400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="1600" cy="800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="3200" cy="800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4800" cy="800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6400" cy="800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8000" cy="800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="9600" cy="800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="11200" cy="800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="12800" cy="800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="1200" cy="1200" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="3200" cy="1200" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6400" cy="1200" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="9600" cy="1200" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="12800" cy="1200" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="2400" cy="1600" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6400" cy="1600" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="12800" cy="1600" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="2000" cy="2000" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="2800" cy="2000" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4800" cy="2000" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="12800" cy="2000" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4000" cy="2400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="5600" cy="2400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="9600" cy="2400" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="3600" cy="2800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4400" cy="2800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="5200" cy="2800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6000" cy="2800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8000" cy="2800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="11200" cy="2800" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="7200" cy="3200" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8800" cy="3200" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="10400" cy="3200" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="12000" cy="3200" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6800" cy="3600" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="7600" cy="3600" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8400" cy="3600" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="9200" cy="3600" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="10000" cy="3600" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="10800" cy="3600" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="11600" cy="3600" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="12400" cy="3600" r="30"
+ style="fill:#000000;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="400" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="1200" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="2000" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="2800" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="3600" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4400" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="5200" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6000" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6800" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="7600" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8400" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="9200" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="10000" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="10800" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="11600" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="12400" cy="400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="800" cy="800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="2400" cy="800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4000" cy="800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="5600" cy="800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="7200" cy="800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8800" cy="800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="10400" cy="800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="12000" cy="800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="800" cy="1200" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="1600" cy="1200" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4800" cy="1200" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8000" cy="1200" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="11200" cy="1200" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="1600" cy="1600" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="3200" cy="1600" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="9600" cy="1600" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="1600" cy="2000" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="2400" cy="2000" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="3200" cy="2000" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6400" cy="2000" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="3200" cy="2400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4800" cy="2400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6400" cy="2400" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="3200" cy="2800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4000" cy="2800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="4800" cy="2800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="5600" cy="2800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6400" cy="2800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="9600" cy="2800" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6400" cy="3200" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8000" cy="3200" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="9600" cy="3200" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="11200" cy="3200" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="6400" cy="3600" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="7200" cy="3600" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8000" cy="3600" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="8800" cy="3600" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="9600" cy="3600" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="10400" cy="3600" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="11200" cy="3600" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Circle -->
+<circle cx="12000" cy="3600" r="30"
+ style="fill:#ffffff;stroke:#000000;stroke-width:7;"/>
+<!-- Line -->
+<polyline points="400,0
+800,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1200,0
+1600,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2000,0
+2400,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2800,0
+3200,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3600,0
+4000,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4400,0
+4800,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="5200,0
+5600,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="6000,0
+6400,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="6800,0
+7200,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="7600,0
+8000,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8400,0
+8800,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9200,0
+9600,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="10000,0
+10400,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="10800,0
+11200,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11600,0
+12000,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="12400,0
+12800,400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="800,400
+1600,800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2400,400
+3200,800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4000,400
+4800,800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="5600,400
+6400,800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="7200,400
+8000,800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8800,400
+9600,800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="10400,400
+11200,800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="12000,400
+12800,800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="800,800
+1200,1200
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1600,800
+3200,1200
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4800,800
+6400,1200
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8000,800
+9600,1200
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11200,800
+12800,1200
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1600,1200
+2400,1600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3200,1200
+6400,1600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9600,1200
+12800,1600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1600,1600
+2000,2000
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2400,1600
+2800,2000
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3200,1600
+4800,2000
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="6400,1600
+12800,2000
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3200,2000
+4000,2400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4800,2000
+5600,2400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="6400,2000
+9600,2400
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3200,2400
+3600,2800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4000,2400
+4400,2800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4800,2400
+5200,2800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="5600,2400
+6000,2800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="6400,2400
+8000,2800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9600,2400
+11200,2800
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="6400,2800
+7200,3200
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8000,2800
+8800,3200
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9600,2800
+10400,3200
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11200,2800
+12000,3200
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="6400,3200
+6800,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="7200,3200
+7600,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8000,3200
+8400,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8800,3200
+9200,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9600,3200
+10000,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="10400,3200
+10800,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11200,3200
+11600,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="12000,3200
+12400,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="400,0
+400,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="800,0
+800,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1200,0
+1200,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1600,0
+1600,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2000,0
+2000,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2400,0
+2400,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2800,0
+2800,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3200,0
+3200,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3600,0
+3600,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4000,0
+4000,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4400,0
+4400,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4800,0
+4800,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="5200,0
+5200,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="5600,0
+5600,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="6000,0
+6000,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="6400,0
+6400,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="6800,0
+6800,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="7200,0
+7200,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="7600,0
+7600,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8000,0
+8000,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8400,0
+8400,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8800,0
+8800,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9200,0
+9200,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9600,0
+9600,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="10000,0
+10000,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="10400,0
+10400,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="10800,0
+10800,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11200,0
+11200,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11600,0
+11600,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="12000,0
+12000,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="12400,0
+12400,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="12800,0
+12800,3600
+" style="stroke:#000000;stroke-width:7;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="400" y="4400" stroke="#000000" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="288" text-anchor="start">32 lines, 9 stages, 57 operators.</text>
+</g>
+</svg>

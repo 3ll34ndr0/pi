@@ -1,0 +1,12 @@
+\BOOKMARK [0][]{chapter.1}{1 \040 Dise\361o Digital \040}{}% 1
+\BOOKMARK [1][]{section.1.1}{1.1 Introducci\363n}{chapter.1}% 2
+\BOOKMARK [2][]{subsection.1.1.1}{1.1.1 Semisumador y sumador completo}{section.1.1}% 3
+\BOOKMARK [1][]{section.1.2}{1.2 Selecci\363n de la arquitectura del sumador}{chapter.1}% 4
+\BOOKMARK [2][]{subsection.1.2.1}{1.2.1 Costo y Retardo de los circuitos combinacionales}{section.1.2}% 5
+\BOOKMARK [2][]{subsection.1.2.2}{1.2.2 Clasificaci\363n de los sumadores}{section.1.2}% 6
+\BOOKMARK [2][]{subsection.1.2.3}{1.2.3 Carry Lookahead Adders}{section.1.2}% 7
+\BOOKMARK [2][]{subsection.1.2.4}{1.2.4 Lower Bounds}{section.1.2}% 8
+\BOOKMARK [2][]{subsection.1.2.5}{1.2.5 Parallel Prefix Networks}{section.1.2}% 9
+\BOOKMARK [2][]{subsection.1.2.6}{1.2.6 Sumador R\341pido de Brent-Kung}{section.1.2}% 10
+\BOOKMARK [0][]{chapter*.4}{\315ndice de figuras}{}% 11
+\BOOKMARK [0][]{chapter*.5}{\315ndice de cuadros}{}% 12

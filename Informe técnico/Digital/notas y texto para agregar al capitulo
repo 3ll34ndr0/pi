@@ -1,0 +1,67 @@
+
+CRA, CLA, Prefix Adders, CA, BBCLA, CSkA, CondSumA, CSeA, HybAd
+
+RCA: Ripple Carry Adder
+
+CLA: Carry Look-Ahead Adder
+
+Canonical Adders
+
+BBCLA: Block-based Look-ahead Adders
+
+CSkA: Carry Skeep Adder
+
+CondSumA: Conditional Sum Adder
+
+Carry Select Adder
+
+Hybrid Adders
+
+Ripple Carry Adder: Este sumador se implementa conectando como muestra la figura\ref{RCA} el bloque FA (Full Adder). El camino crítico de la señal se determina considerando el peor camino de propagación de la señal. Si suponemos que el  
+Prefix Adders: Ladner and Fischer adder, Kogge-Stone adder, Brent-Kung adder, etc.
+Canonic adders implement the parallel carry generation using multilevel AND and OR gates, while the AND network is used to generate \(p_ip_{i-1}...g_j\) and the OR network is used to generate $$c_i = g_i + p_ig_{i-1}g_{i-2}+ ...+ p_ip_{i-1}...p_1p_0c_{-1}$$
+$$c_{-1} = c_{in}$$
+Delay of canonic adders: $$2[log_r(n-1)]+2-\delta$$ techo[], pero dice que usa mucho hardware
+
+Block-based CLA adders dividen (normalmente) en grupos de 4 que implementan la lógica de CLA, y luego conecto como un Ripple Carry.
+El método de dividir en grupos para generar el acarreo también se usa en los Carry Skip Adders. Un sumador de n bits se divide ent grupos que implementan el esquema de Ripple Carry. Cada grupo genera un una señal group-carry-propagate que es 1 si todas las etapas internas del grupo satisfacen \(p_j=1\)
+
+Conditional Sum Adders: generan bits de suma directamente en vez de generar 
+fco operator introduced by Brent-Kung
+
+Ladner and Fisher definieron el operador (punto):
+$$(g_i,p_i)*(gj,p_j)=(g_i+p_ig_j,p_ip_j)$$
+y el acarreo se computa:
+$$c_i+(g/k)_i*(g/k)_{i-1}*...*(g/k)_0*(c_{-1}/1)$$
+
+CRA, CLA, Prefix Adders, CA, BBCLA, CSkA, CondSumA, CSeA, HybAd
+
+Block-based carry-look-ahead adders (es el que hace de a grupos de Gg Gp, creo)
+
+conditional-sum adders
+
+prefix adder
+
+canonic adders
+
+hybrid adders
+
+Ling's carries
+
+carries for signed-digit based addition algorithms 
+
+9 Clases de sumadores:
+Luego está el operador de Brent-Kung:
+
+The $\circ$ operator is defined as:
+$$(g,p) \circ (\hat{g},\hat{p}) = (g\vee(p\wedge\hat{g}),p\wedge\hat{g})$$
+
+PLan:
+Lunes: Resumen arquitectura (si o si) - Desarrollo BK (Empezar al menos)
+Martes: Sacar entradas de los espectáculos del MOMUSIx
+Miercoles
+Martes
+Jueves
+Viernes
+
+

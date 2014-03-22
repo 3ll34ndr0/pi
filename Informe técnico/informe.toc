@@ -1,0 +1,4 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1} \textsc { Dise\IeC {\~n}o Digital } }{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introducci\IeC {\'o}n}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Selecci\IeC {\'o}n de la arquitectura del sumador}{1}{section.1.2}

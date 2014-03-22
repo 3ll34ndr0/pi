@@ -1,0 +1,73 @@
+@misc{
+	Lava-tutorial:claessen,
+	author = "K.~Claessen and M.~Sheeran",
+	title ="A tutorial on {L}ava: A hardware descritption and verification system",
+        howpublished = "Website",
+	year = {2000},
+	note = {\url{http://www.cs.chalmers.se/~koen/Lava}}
+}
+
+@article{
+  brent-kung,
+  author = "Brent, R. P. and Kung, H. T.",
+  year = "2006",
+  title = "{A Regular Layout for parallel Adders}",
+  journal = "IEEE Transaction on Computers",
+  volume = "C-31, Issue: 3",
+  pages = "260--264"
+}
+
+@article{
+  estrada-gimenez,
+  author = "Adrián Estrada, Carlos J. Jiménez, Manuel Valencia",
+  year = "1982",
+  title = "{Características de Sumadores en Tecnologías Fuertemente Submicrónicas}",
+  journal = "IBERCHIP",
+  volume = " DOC (TEC 2004-01509/MIC)",
+  pages = ""
+}
+
+
+@INPROCEEDINGS{6120598,
+author={Baliga, A. and Yagain, D.},
+booktitle={Emerging Trends in Engineering and Technology (ICETET), 2011 4th International Conference on},
+title={Design of High Speed Adders Using CMOS and Transmission Gates in Submicron Technology: A Comparative Study},
+year={2011},
+pages={284-289},
+keywords={CMOS logic circuits;SPICE;VLSI;adders;application specific integrated circuits;digital signal processing chips;logic gates;microprocessor chips;ASIC;Brent-Kung adders;CMOS logic;DSP;Kogge-Stone adders;Ling adders;Sklansky adders;TSMC MOSIS Level-49 model;TSPICE simulator;Tanner EDA;VLSI implementations;arithmetic circuits;arithmetic units;binary addition problem;comparators;data-processing application-specific integrated circuit;deep submicron technology file;digital signal processor;high speed adders;microprocessor;multipliers;parallel-prefix adders;power consumption;size 130 nm;transmission gate logic;word length 16 bit;word length 32 bit;word length 8 bit;Adders;CMOS integrated circuits;Computer architecture;Delay;Logic gates;Mathematical model;Microprocessors;Black cell;Brent-Kung;Generate and propagate block;Grey cell;Kogge-Stone;Ling adders by Kogge-Stone;Sklansky;parallel-prefix adders},
+doi={10.1109/ICETET.2011.25},
+ISSN={2157-0477},}
+
+
+
+@conference{
+  Shee07,
+  author = "Sheeran, M.",
+  title = "Parallel prefix network generation: an application of functional programming {I}n {H}ardware {D}esign and {F}unctional {L}anguages", 
+  booktitle = "{Hardware design and Functional Languages (HFL´07), Braga, Portugal}",
+  year = "2007",
+  month = "March"
+}
+
+@conference{
+  sat,
+  author = "Claessen, Koen and Een, Niklas and Sheeran, Mary and Sorensson, Niklas",
+  title = "S{A}{T}-{S}olving in Practice", 
+  booktitle = "{9th International Workshop on Discrete Event Systems (WODES'08), G\"oteborg, Sweden}",
+  year = "2008",
+  month = "May"
+}
+
+@inproceedings{ charme05-wired
+  , title       = { Wired: Wire-aware Circuit Design }
+  , author      = { Emil Axelsson
+                and Koen Claessen
+                and Mary Sheeran }
+  , booktitle   = { Proc.\ of Conference on Correct Hardware Design and
+                              Verification Methods (CHARME) }
+  , series      = { Lecture Notes in Computer Science }
+  , volume      = { 3725 }
+  , publisher   = { Springer Verlag }
+  , month       = { October }
+  , year        = { 2005 }
+}
