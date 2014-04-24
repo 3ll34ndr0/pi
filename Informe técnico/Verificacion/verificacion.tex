@@ -1,0 +1,40 @@
+% Etiquetas que uso para editar en la próxima iteración:
+% FALTA, VER
+
+
+\chapter{ \textsc{ Verificación Formal } }\label{CONAMURI}
+
+\textsl{ Bla bla bla bla bla bla bla ...\footnote{ Un groso } } 
+
+%\vspace{10mm}
+
+%\textbf{Por Magui Balbuena}\footnote{ Maguiorina (Magui) Balbuena  es dirigente de CONAMURI }
+
+\vspace{10mm}
+
+\section{Propiedades de la suma}
+Conmutativa, asociativa, distributiva y existencia del elemento neutro.
+\subsection{Herramientas}
+\subsubsection{SAT Solvers}
+Algo 
+\subsubsection{Sumador Completo}
+Algo mas
+
+
+\end{figure}
+
+\vspace{0.5cm}
+
+
+
+\section{Selección de la arquitectura del sumador}
+
+Proponemos el uso de Celdas estándard CMOS (Complementary Metal Oxide Silicon) para la implementación\footnote{Para ver otras posibilidades de implementación lógica, ver (FALTA CITA) RABAEY}. El carácter de nuestro flujo de diseño así lo requiere, ya que se utilizarán herramientas de síntesis de circuitos digitales basadas en celdas estándars. Quedan entonces descartadas las implementaciones utilizando transmition gates, lógica dinámica u otro tipo de implementacion lógica.
+
+\subsection{Costo y Retardo de los circuitos combinacionales}
+Cada circuito combinacional \(G\) tiene un costo y un retardo. El costo de un circuito combinacional es la suma de los costos de las compuertas en un circuito. Le asignamos un costo unitario a cada compuerta, y el costo del circuito combinacional \(c(G)\) es igual al número de compuertas en el circuito.
+
+El retardo de un circuito combinacional \(d(G)\) se define igual al del retardo de una compuerta. Es el menor tiempo requerido para que las salidas se estabilicen, asumiendo que todas las entradas están estables. Para simplificar el análisis, se le asigna un retardo unitario a cada compuerta.
+
+
+
