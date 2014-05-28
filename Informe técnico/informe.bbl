@@ -1,12 +1,67 @@
-@inproceedings{
-6120598,
-author={Baliga, A. and Yagain, D.},
-booktitle={Emerging Trends in Engineering and Technology (ICETET), 2011 4th International Conference on},
-title={Design of High Speed Adders Using CMOS and Transmission Gates in Submicron Technology: A Comparative Study},
-year={2011},
-pages={284-289},
-keywords={CMOS logic circuits;SPICE;VLSI;adders;application specific integrated circuits;digital signal processing chips;logic gates;microprocessor chips;ASIC;Brent-Kung adders;CMOS logic;DSP;Kogge-Stone adders;Ling adders;Sklansky adders;TSMC MOSIS Level-49 model;TSPICE simulator;Tanner EDA;VLSI implementations;arithmetic circuits;arithmetic units;binary addition problem;comparators;data-processing application-specific integrated circuit;deep submicron technology file;digital signal processor;high speed adders;microprocessor;multipliers;parallel-prefix adders;power consumption;size 130 nm;transmission gate logic;word length 16 bit;word length 32 bit;word length 8 bit;Adders;CMOS integrated circuits;Computer architecture;Delay;Logic gates;Mathematical model;Microprocessors;Black cell;Brent-Kung;Generate and propagate block;Grey cell;Kogge-Stone;Ling adders by Kogge-Stone;Sklansky;parallel-prefix adders},
-doi={10.1109/ICETET.2011.25},
-ISSN={2157-0477},}
+\begin{thebibliography}{10}
 
+\bibitem{estrada-gimenez}
+{\sc Manuel~Valencia Adrián~Estrada, Carlos J.~Jiménez}.
+\newblock {Características de Sumadores en Tecnologías Fuertemente
+  Submicrónicas}.
+\newblock {\em IBERCHIP}, {\bf DOC (TEC 2004-01509/MIC)}, 1982.
 
+\bibitem{6120598}
+{\sc A.~Baliga and D.~Yagain}.
+\newblock Design of high speed adders using cmos and transmission gates in
+  submicron technology: A comparative study.
+\newblock In {\em Emerging Trends in Engineering and Technology (ICETET), 2011
+  4th International Conference on}, pages 284--289, 2011.
+
+\bibitem{brent-kung}
+{\sc R.~P. Brent and H.~T. Kung}.
+\newblock {}.
+\newblock {\em IEEE Transaction on Computers}, {\bf C-31, Issue: 3}:260--264,
+  2006.
+
+\bibitem{Lava-tutorial}
+{\sc K.~Claessen and M.~Sheeran}.
+\newblock A tutorial on {L}ava: A hardware descritption and verification
+  system.
+\newblock Website, 2014.
+\newblock \url{http://projects.haskell.org/chalmers-lava2000/Doc/}.
+
+\bibitem{knowles}
+{\sc S.~Knowles}.
+\newblock A family of adders.
+\newblock In {\em Computer Arithmetic, 2001. Proceedings. 15th IEEE Symposium
+  on}, pages 277--281, 2001.
+
+\bibitem{kogge-stone}
+{\sc Peter~M. Kogge and Harold~S. Stone}.
+\newblock A parallel algorithm for the efficient solution of a general class of
+  recurrence equations.
+\newblock {\em Computers, IEEE Transactions on}, {\bf C-22}(8):786--793, Aug
+  1973.
+
+\bibitem{ladner-fischer}
+{\sc Richar~E. Ladner and Michael~J. Fischer}.
+\newblock Parallel prefix computation.
+\newblock {\em JACM, Journal of the ACM}, {\bf C-27}(4):831,838, Oct 1980.
+
+\bibitem{4638988}
+{\sc L.~Marso}.
+\newblock Brent-kung fast adder dscription, simulation and formal verification
+  using lava.
+\newblock In {\em Micro-Nanoelectronics, Technology and Applications, 2008.
+  EAMTA 2008. Argentine School of}, pages 111--114, Sept 2008.
+
+\bibitem{arithmeticComputer}
+{\sc B.~Parhami}.
+\newblock {\em Computer Arithmetic: Algorithms and Hardware Designs}.
+\newblock Computer Arithmetic: Algorithms and Hardware Designs. Oxford
+  University Press, 2000.
+
+\bibitem{Shee07}
+{\sc M.~Sheeran}.
+\newblock Parallel prefix network generation: an application of functional
+  programming {I}n {H}ardware {D}esign and {F}unctional {L}anguages.
+\newblock In {\em {Hardware design and Functional Languages (HFL´07), Braga,
+  Portugal}}, March 2007.
+
+\end{thebibliography}

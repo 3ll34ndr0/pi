@@ -1,4 +1,61 @@
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1} \textsc { Dise\IeC {\~n}o Digital } }{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Introducci\IeC {\'o}n}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Selecci\IeC {\'o}n de la arquitectura del sumador}{1}{section.1.2}
+\select@language {spanish}
+\contentsline {chapter}{\'Indice general}{I}{chapter*.1}
+\contentsline {chapter}{\'{I}ndice de figuras}{III}{chapter*.2}
+\contentsline {chapter}{\'{I}ndice de cuadros}{V}{chapter*.3}
+\contentsline {chapter}{\numberline {1} \textsc { Introducci\IeC {\'o}n } }{VII}{chapter.1}
+\contentsline {section}{\numberline {1.1}Estructura del Proyecto Integrador}{VII}{section.1.1}
+\contentsline {section}{\numberline {1.2}Planteamiento del problema y motivaci\IeC {\'o}n}{VII}{section.1.2}
+\contentsline {section}{\numberline {1.3}Objetivo}{VII}{section.1.3}
+\contentsline {section}{\numberline {1.4}Plan de Trabajo}{VII}{section.1.4}
+\contentsline {part}{I\hspace {1em}Breve rese\IeC {\~n}a sobre el Software Libre}{1}{part.1}
+\contentsline {part}{II\hspace {1em}Dise\IeC {\~n}o Digital}{3}{part.2}
+\contentsline {chapter}{\numberline {2} \textsc { Dise\IeC {\~n}o Digital } }{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introducci\IeC {\'o}n}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Semisumador y sumador completo}{5}{subsection.2.1.1}
+\contentsline {subsubsection}{Semisumador}{5}{subsection.2.1.1}
+\contentsline {subsubsection}{Sumador Completo}{5}{equation.2.1.2}
+\contentsline {section}{\numberline {2.2}Selecci\IeC {\'o}n de la arquitectura del sumador}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Costo, Retardo y \IeC {\'A}rea de los circuitos combinacionales}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Clasificaci\IeC {\'o}n de los sumadores}{6}{subsection.2.2.2}
+\contentsline {subsubsection}{Ripple Carry Adder}{7}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Carry Lookahead Adders}{7}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Desenrollando la recurrencia del acarreo}{8}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Sumadores de Prefijo Paralelos (\emph {Parallel Prefix Adders})}{9}{subsection.2.2.5}
+\contentsline {subsubsection}{Problema de Prefijos Paralelos (\emph {Parallel Prefix Problem})}{10}{subsection.2.2.5}
+\contentsline {subsubsection}{C\IeC {\'o}mputo del acarreo como un problema de prefijo paralelo}{10}{equation.2.2.8}
+\contentsline {subsection}{\numberline {2.2.6}Selecci\IeC {\'o}n de la arquitectura}{11}{subsection.2.2.6}
+\contentsline {subsubsection}{Sumador R\IeC {\'a}pido de Brent-Kung}{11}{table.caption.9}
+\contentsline {subsubsection}{Operador de Brent-Kung}{12}{table.caption.9}
+\contentsline {subsubsection}{Circuito de Generaci\IeC {\'o}n y Propagaci\IeC {\'o}n de acarreo}{13}{figure.caption.10}
+\contentsline {subsubsection}{Circuito completo}{13}{figure.caption.11}
+\contentsline {subsubsection}{Red de Prefijos Paralelos}{13}{figure.caption.12}
+\contentsline {section}{\numberline {2.3}Implementaci\IeC {\'o}n en Lenguaje de Descripci\IeC {\'o}n de Hardware}{13}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Implementaci\IeC {\'o}n del RCA en lava}{14}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Patrones de conexi\IeC {\'o}n}{15}{subsection.2.3.2}
+\contentsline {paragraph}{Patrones de conexi\IeC {\'o}n estandars.}{15}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Sumador de Brent-Kung}{16}{subsection.2.3.3}
+\contentsline {subsubsection}{Operador de Brent-Kung}{16}{subsection.2.3.3}
+\contentsline {subsubsection}{Generaci\IeC {\'o}n y Propagaci\IeC {\'o}n del Acarreo}{16}{lstnumber.-5.4}
+\contentsline {subsubsection}{Red de Prefijos Paralelos}{17}{lstnumber.-6.5}
+\contentsline {subsubsection}{Circuito top level}{18}{lstnumber.-8.3}
+\contentsline {subsection}{\numberline {2.3.4}Simulaci\IeC {\'o}n}{18}{subsection.2.3.4}
+\contentsline {subsubsection}{Simulaciones con n\IeC {\'u}meros decimales}{19}{subsection.2.3.4}
+\contentsline {subsubsection}{M\IeC {\'e}todo de validaci\IeC {\'o}n del hardware}{19}{lstnumber.-11.6}
+\contentsline {subsection}{\numberline {2.3.5}S\IeC {\'\i }ntesis del Netlist VHDL}{19}{subsection.2.3.5}
+\contentsline {chapter}{\numberline {3} \textsc { Verificaci\IeC {\'o}n Formal } }{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}Modelo de referencia}{21}{section.3.1}
+\contentsline {section}{\numberline {3.2}Verificaci\IeC {\'o}n de las Propiedades}{22}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Propiedades de la suma}{22}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Descripci\IeC {\'o}n de las propiedades en el RCA}{22}{subsection.3.2.2}
+\contentsline {subsubsection}{Propiedad Conmutativa}{22}{lstnumber.-14.5}
+\contentsline {subsubsection}{Propiedad Asociativa}{23}{lstnumber.-15.1}
+\contentsline {subsubsection}{Existencia del Elemento Neutro}{23}{lstnumber.-15.1}
+\contentsline {subsubsection}{Equivalencia l\IeC {\'o}gica entre el RCA y el sumador de Brent-Kung}{23}{lstnumber.-16.7}
+\contentsline {part}{III\hspace {1em}Dise\IeC {\~n}o F\IeC {\'\i }sico}{25}{part.3}
+\contentsline {chapter}{\numberline {4}Flujo de Dise\IeC {\~n}o F\IeC {\'\i }sico}{27}{chapter.4}
+\contentsline {chapter}{\numberline {5}Sign Out y Tape Out}{29}{chapter.5}
+\contentsline {part}{IV\hspace {1em}Conclusiones}{31}{part.4}
+\contentsline {chapter}{\numberline {6}Conclusiones}{33}{chapter.6}
+\contentsline {chapter}{\numberline {A}\textsc { Netlist VHDL }}{35}{appendix.Alph1}
+\contentsline {chapter}{Bibliograf\'{\i }a}{39}{appendix*.17}

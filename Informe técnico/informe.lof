@@ -1,5 +1,21 @@
 \select@language {spanish}
 \select@language {spanish}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Bit adders\relax }}{2}{figure.caption.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Riple Carry Adder\relax }}{3}{figure.caption.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Bit adders\relax }}{6}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Ripple Carry Adder\relax }}{7}{figure.caption.5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces CLA 4-bits\relax }}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Retardo respecto al tama\IeC {\~n}o de los operandos\relax }}{11}{figure.caption.7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces \IeC {\'A}rea respecto al tama\IeC {\~n}o de los operandos\relax }}{12}{figure.caption.8}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Operator Punto de Brent-Kung\relax }}{13}{figure.caption.10}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Generaci\IeC {\'o}n y Propagaci\IeC {\'o}n del Acarreo\relax }}{13}{figure.caption.11}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Sumador de Brent-Kung\relax }}{14}{figure.caption.12}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Red de prefijos paralelos (ejemplo de 16 bits)\relax }}{14}{figure.caption.13}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Diferentes Patrones de Conexi\IeC {\'o}n de Circuitos\relax }}{15}{figure.caption.14}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Construcci\IeC {\'o}n de la red de prefijos paralelos\relax }}{17}{figure.caption.15}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces circuito addZero\relax }}{23}{figure.caption.16}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -64,4 +64,11 @@ Martes
 Jueves
 Viernes
 
+Abril 2014:
+* Desarrollo teorico de sumadores de Brent Kung, arquitectura.
+* Descripción del circuito en un HDL
+1)La figura de todo el circuito, la última parte necesita compuertas XOR en vez de los circulitos sumadores.
+2)configurar latex para tener el estilo de citado de ieee
 
+
+* Verificación formal de la arquitectura
