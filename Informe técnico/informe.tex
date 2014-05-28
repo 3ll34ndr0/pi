@@ -16,7 +16,7 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{makeidx}
-\usepackage{tocbibind}
+\usepackage{tocbibind} 
 \usepackage[intlimits]{amsmath}
 \usepackage{cancel}
 \usepackage{listings}
@@ -25,11 +25,12 @@
 \usepackage{enumerate}
 \usepackage{wasysym}
 \usepackage{caption}
+\usepackage{graphicx}
 \usepackage{subcaption}
 \include{macros/macrofile1}
-
+%\usepackage{cite}
 \ifpdf
-    \pdfinfo { /Title  (Diseño de un Sumador Rápido en tecnología CMOS utilizando Herramientas de Software Libre)
+    \pdfinfo { /Title  (Diseño de un Sumador Rápido en tecnología CMOS 180nm utilizando Herramientas de Software Libre)
                /Creator (TeX)
                /Producer (pdfTeX)
                /Author (Leandro Marsó)
@@ -40,25 +41,35 @@
     
 \fi
 
-
 %\makeindex \label{indice}
+\hyphenation{ es-cla-re-ci-mien-to ma-te-ria-li-zar-se} 
 
 \begin{document}
 \sloppy
 
 \input{tapa/tapa}			%%% INCLUYE DE CARATULA 
 \maketitle
-
 %\frontmatter
 %\include{Presentacion/presentacion}
 \pagenumbering{Roman}
 
-%\tableofcontents			%%% INCLUYE INDICE AL PRINCIPIO
-
+\tableofcontents			%%% INCLUYE INDICE AL PRINCIPIO
+\listoffigures 
+\listoftables 
+\include{Introduccion/introduccion}
 \mainmatter
-\hyphenation{ es-cla-re-ci-mien- ma-te-ria-li-zar-se} 
+\part{Breve reseña sobre el Software Libre}
+\part{Diseño Digital}
 \include{Digital/digital}
 \include{Verificacion/verificacion}
+\part{Diseño Físico}
+\include{FlujoFisico/flujofisico}
+\include{SignOutTapeOut/signouttapeout}
+\part{Conclusiones}
+\include{Conclusiones/conclusiones}
+\appendix
+\include{Apendice/vhdl}
+%\include{Apendice/cmos180nm}
 \backmatter
 
 
@@ -73,12 +84,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bibliographystyle{classes/CUEDbiblio} % Title is link if provided 
-%\bibliographystyle{IEEEtran.bst}
-\bibliography{pruebabib}
+\bibliographystyle{IEEEtran.bst}
+\bibliography{biblio}
 
 
 %\nocite{jitter2,jitter3}
-\listoffigures 
-\listoftables 
+
 
 \end{document}
+
