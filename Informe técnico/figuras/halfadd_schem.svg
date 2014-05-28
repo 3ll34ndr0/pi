@@ -97,7 +97,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="33.546903"
+     inkscape:cx="-125.15582"
      inkscape:cy="49.5223"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -120,7 +120,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -178,7 +178,7 @@
          sodipodi:role="line"
          id="tspan5633"
          x="233.87384"
-         y="427.58353">carry</tspan></text>
+         y="427.58353">c</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:9px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
@@ -188,7 +188,7 @@
          sodipodi:role="line"
          id="tspan5637"
          x="233.54263"
-         y="388.44189">sum</tspan></text>
+         y="388.44189">s</tspan></text>
     <g
        id="g2478"
        inkscape:label="Layer 1"
@@ -266,7 +266,7 @@
        sodipodi:cy="27.5"
        sodipodi:rx="2.5"
        sodipodi:ry="2.5"
-       d="m 15,27.5 a 2.5,2.5 0 1 1 -5,0 2.5,2.5 0 1 1 5,0 z"
+       d="M 15,27.5 C 15,28.880712 13.880712,30 12.5,30 11.119288,30 10,28.880712 10,27.5 10,26.119288 11.119288,25 12.5,25 c 1.380712,0 2.5,1.119288 2.5,2.5 z"
        transform="matrix(0.70397951,0,0,0.70397951,159.9704,366.86541)" />
     <path
        sodipodi:type="arc"
@@ -276,7 +276,7 @@
        sodipodi:cy="27.5"
        sodipodi:rx="2.5"
        sodipodi:ry="2.5"
-       d="m 15,27.5 a 2.5,2.5 0 1 1 -5,0 2.5,2.5 0 1 1 5,0 z"
+       d="M 15,27.5 C 15,28.880712 13.880712,30 12.5,30 11.119288,30 10,28.880712 10,27.5 10,26.119288 11.119288,25 12.5,25 c 1.380712,0 2.5,1.119288 2.5,2.5 z"
        transform="matrix(0.70397951,0,0,0.70397951,145.80282,380.945)" />
     <path
        sodipodi:type="arc"
@@ -286,7 +286,7 @@
        sodipodi:cy="17.5"
        sodipodi:rx="2.5"
        sodipodi:ry="2.5"
-       d="m 25,17.5 a 2.5,2.5 0 1 1 -5,0 2.5,2.5 0 1 1 5,0 z"
+       d="M 25,17.5 C 25,18.880712 23.880712,20 22.5,20 21.119288,20 20,18.880712 20,17.5 20,16.119288 21.119288,15 22.5,15 c 1.380712,0 2.5,1.119288 2.5,2.5 z"
        transform="matrix(0.70397951,0,0,0.70397951,126.53139,373.9052)" />
     <path
        sodipodi:type="arc"
@@ -296,7 +296,7 @@
        sodipodi:cy="17.5"
        sodipodi:rx="2.5"
        sodipodi:ry="2.5"
-       d="m 25,17.5 a 2.5,2.5 0 1 1 -5,0 2.5,2.5 0 1 1 5,0 z"
+       d="M 25,17.5 C 25,18.880712 23.880712,20 22.5,20 21.119288,20 20,18.880712 20,17.5 20,16.119288 21.119288,15 22.5,15 c 1.380712,0 2.5,1.119288 2.5,2.5 z"
        transform="matrix(0.70397951,0,0,0.70397951,126.53139,387.98479)" />
     <path
        sodipodi:type="arc"
@@ -306,7 +306,7 @@
        sodipodi:cy="17.5"
        sodipodi:rx="2.5"
        sodipodi:ry="2.5"
-       d="m 25,17.5 a 2.5,2.5 0 1 1 -5,0 2.5,2.5 0 1 1 5,0 z"
+       d="M 25,17.5 C 25,18.880712 23.880712,20 22.5,20 21.119288,20 20,18.880712 20,17.5 20,16.119288 21.119288,15 22.5,15 c 1.380712,0 2.5,1.119288 2.5,2.5 z"
        transform="matrix(0.70397951,0,0,0.70397951,221.56861,380.945)" />
     <path
        sodipodi:type="arc"
@@ -316,7 +316,7 @@
        sodipodi:cy="17.5"
        sodipodi:rx="2.5"
        sodipodi:ry="2.5"
-       d="m 25,17.5 a 2.5,2.5 0 1 1 -5,0 2.5,2.5 0 1 1 5,0 z"
+       d="M 25,17.5 C 25,18.880712 23.880712,20 22.5,20 21.119288,20 20,18.880712 20,17.5 20,16.119288 21.119288,15 22.5,15 c 1.380712,0 2.5,1.119288 2.5,2.5 z"
        transform="matrix(0.70397951,0,0,0.70397951,221.56861,419.66387)" />
   </g>
 </svg>
