@@ -1,1 +1,9 @@
-si no tiene naa, para que ponés un archivo que dice ridmi?
+IDEA: Muy bueno para dar ejemplos de qué se ha hecho con la tecnología 180nm... http://en.wikipedia.org/wiki/180_nanometer
+
+Lunes 19/05: Diseño digital finalizado. 
+Lunes 26/05: Primera parte del diseño físico: Compilar el VHDL a celdas estandards, place and route.
+Lunes 2/06: Interface con el encapsulado. Simulaciones analogicas.
+Lunes 9/06: Segunda parte del diseño físico:  Sign out (que no tenga problemas de IR drop, electromigración, que cierre timing, etc) y tape out.
+
+PORHACER: Explicar la tabla
+
