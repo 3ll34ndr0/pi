@@ -1,4 +1,8 @@
 IDEA: Muy bueno para dar ejemplos de qué se ha hecho con la tecnología 180nm... http://en.wikipedia.org/wiki/180_nanometer
+Del 2011: http://www.fujitsu.com/downloads/MICRO/fme/documentation/c55.pdf interesante por los IP Macro que ofrecen:
+arm9, codecs, dsp, periféricos, etc.
+Servicios de foundry en 180nm: http://www.fujitsu.com/global/products/devices/semiconductor/foundry/tech/index.html
+
 
 Lunes 19/05: Diseño digital finalizado. 
 Lunes 26/05: Primera parte del diseño físico: Compilar el VHDL a celdas estandards, place and route.
@@ -6,4 +10,7 @@ Lunes 2/06: Interface con el encapsulado. Simulaciones analogicas.
 Lunes 9/06: Segunda parte del diseño físico:  Sign out (que no tenga problemas de IR drop, electromigración, que cierre timing, etc) y tape out.
 
 PORHACER: Explicar la tabla
+
+Tiquet: No. de gestion.2ci1209
+
 
