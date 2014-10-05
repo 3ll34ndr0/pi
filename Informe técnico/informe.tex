@@ -58,7 +58,7 @@
 \listoftables 
 \include{Introduccion/introduccion}
 \mainmatter
-\part{Breve reseña sobre el Software Libre}
+
 \part{Selección de la arquitectura}\label{seleccion_arquitectura}
 \include{Digital/digital}
 \include{Verificacion/verificacion}
@@ -66,7 +66,7 @@
 \include{FlujoFisico/flujofisico}
 \include{SignOutTapeOut/signouttapeout}
 \part{Comparación de resultados}\label{comparacion_resultados}
-
+\include{ComparacionResultados/comparacion}
 \part{Conclusiones}
 \include{Conclusiones/conclusiones}
 \appendix
@@ -89,6 +89,13 @@
 \bibliographystyle{classes/CUEDbiblio} % Title is link if provided 
 \bibliographystyle{IEEEtran.bst}
 \bibliography{biblio}
+
+% Para compilar la primera vez que se agrega una referencia (/cite):
+% Seguir estos cuatro pasos:
+% latex Nombre-del-archivo.tex
+% bibtex Nombre-del-archivo (sin el .tex)
+% latex Nombre-del-archivo.tex
+% latex Nombre-del-archivo.tex
 
 
 %\nocite{jitter2,jitter3}

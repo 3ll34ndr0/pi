@@ -1,0 +1,11 @@
+#options language=spice
+options dtmin=1e-15
+get RO5.spi
+probe tran v(out) 
+trans 0 13n 1p uic > tb_RO5.out
+
+
+measure t2 = cross(probe="v(out)" cross=0 rise last)
+measure t1 = cross(probe="v(out)" cross=0 rise last before=t2)
+measure area = integrate(probe="v(out)" begin=t1 end=t2)
+measure rms = rms(probe="v(out)" begin=t1 end=t2)

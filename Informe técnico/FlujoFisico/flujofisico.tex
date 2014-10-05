@@ -48,12 +48,12 @@ Luego de una inspección de esos criterios, las herramientas candidatas que cump
 
 
 
-\section{Selección de las Celdas estándar, CMOS Pads}\label{celdasEstandars}
-El resultado de la síntesis que realizamos en el capítulo \ref{diseñoDigital} es un netlist vhdl que contiene sólo compuertas lógicas. Estas son compuertas lógicas abstractas, es decir que nuestro circuito fué mapeado a un conjunto finito de funciones logicas como las \verb.and., \verb.or., \verb.xor., \verb.xnor., etc.
+\section{Selección de las Celdas estándar}\label{celdasEstandars}
+El resultado de la síntesis que realizamos en el capítulo \ref{diseñoDigital} es un netlist VHDL que contiene sólo compuertas lógicas. Estas son compuertas lógicas abstractas, es decir que nuestro circuito fué mapeado a un conjunto finito de funciones logicas como las \verb.and., \verb.or., \verb.xor., \verb.xnor., etc.
 
 Ahora es necesario mapear estas funciones lógicas a compuertas lógicas reales, que serán tambien un conjunto finito de compuertas, pero con dimensiones físicas definidas, y con una caracterización de su funcionamiento real. Estas compuertas lógicas se denominan celdas estándards, que se diseñan específicamente para la tecnología de fabricación que hayamos definido usar. Por cada función lógica existen distintas versiones para poder manejar distintas capacidades. 
 
-Caraterización de las celdas: Se realizan simulaciones analógicas de un netlist de estas celdas, donde variando paramétricamente la carga de salida y el rising/falling time, se obtiene el retardo de propagación, tiempo del flanco de subida y de bajada y disipación de potencia.
+Caraterización de las celdas: Se realizan simulaciones analógicas de un netlist de estas celdas, donde variando paramétricamente la carga (capacitiva) de salida y el tiempo de crecida y caída ($t_r$ y $t_f$) de la entrada, se obtiene el retardo de propagación, tiempo de crecida y de bajada de la salida y la disipación de potencia.
 
 
 % Dibujo de una XOR en netlist mapeado a una XOR en layout.
@@ -68,7 +68,7 @@ Caraterización de las celdas: Se realizan simulaciones analógicas de un netlis
 Es común elegir las celdas estándars según el tipo de aplicación a desarrollar. Existen celdas estandars que fueron diseñadas para bajo consumo, o alta velocidad, o de mínima área. También existe la posibilidad de diseñar celdas que busquen la mejor relación velocidad-consumo-area que puedan ser utilizadas en muchas aplicaciones. En circuitos integrados para sistemas alimentados a batería se intentará utilizar las celdas de menor consumo y evitar siempre que sea posible las de mayor velocidad, en función del presupuesto de potencia disponible para el mismo.
 
 En nuestro caso, seleccionamos una librería de celdas estándars diseñadas para tamaño mínimo de canal n, y p. %Una referencia al Rabaey es necesaria? 
-Otra caracteristica de la librería es la distancia entre el riel de VSS hasta el riel VDD. Esta distancia es de 117 lambdas (En nuestra tecnología de 180~nm Lambda es 100nm), lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories.
+Otra característica de la librería es la distancia entre el riel de VSS hasta el riel de VDD. Esta distancia es de 117 $\lambda$ (En nuestra tecnología de 180~$\mathrm{nm}$, el valor de lambda es: $\lambda = 100~\mathrm{nm}$), lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories.
 
  
 
@@ -96,35 +96,36 @@ Estas tareas las realizamos modificando el código del programa de lava que crea
 Para cuantificar la calidad de un circuito, podemos analizar un circuito desde diferentes perspectivas: Costo, funcionalidad, robustez, performance y consumo de energía. Tomaremos estas dos últimas métricas, mas la del área (propiedad que define el costo) del circuito, para realizar la comparación entre las distintas arquitecturas analizadas.
 
 \subsubsection{Performance}
-El término performance puede representar distintas métricas, según desde qué perpectiva se esté realizando el análisis. Pero si nos enfocamos puramente en el diseño, la performance se define usualmente\ref{Rabaey} como la duración del período del clock (\emph{clock cycle time}) o su frecuencia (\emph{frecuencia del clock}). El valor mínimo de período de clock que pueda ser usado para una tecnología y un diseño dado, está definido por múltiples factores, como el tiempo que le toma a las señales propagarse a travez de la lógica, el tiempo que lleva entrar y salir los datos de los registros, la incerteza de llegada del reloj (\emph{clock uncertainty}). Pero el núcleo de todo el análisis de performance reside en la performance de una sola compuerta.
+El término performance puede representar distintas métricas, según desde qué perpectiva se esté realizando el análisis. Pero si nos enfocamos puramente en el diseño, la performance se define usualmente\cite{rabaey2003} como la duración del período del clock (\emph{clock cycle time}) o su frecuencia (\emph{frecuencia del clock}). El valor mínimo de período de clock que pueda ser usado para una tecnología y un diseño dado, está definido por múltiples factores, como el tiempo que le toma a las señales propagarse a travez de la lógica, el tiempo que lleva entrar y salir los datos de los registros, la incerteza de llegada del reloj (\emph{clock uncertainty}). Pero el núcleo de todo el análisis de performance reside en la performance de una sola compuerta.
 
 El retardo de propagación $t_p$ de una compuerta define cuan rápido responde un circuito a un cambio en su(s) entrada(s). Expresa el retardo experimentado por una señal cuando pasa a travez de una compuerta. Medido entre el 50\% del punto de transisción de entrada la señal de entrada y salida, como mostramos en la figura \ref{propagationDelay}, correspondiente al tiempo de propagación de una compuerta inversora. Ya que el tiempo de propagación es distinto según el flanco de entrada, se definen 2 tiempos de propagación. El $t_{pLH}$ es el tiempo de respuesta de una compuerta  para una transición de la salida desde bajo a alto, mientras que $t_{pHL}$ se refiere a el tiempo para una transición de la salida desde alto a bajo. El retardo de propagación $t_p$ se define como el promedio de estos dos.
 $$ t_p = \frac{t_{pLH} + t_{pHL}}{2} $$
 
 El retardo de propagación depende también de otros factores, como la pendiente de las señal de entrada, que depende de la señal de entrada que llega al circuito. Para cuantificar esta entrada, se usa el tiempo de crecida y de bajada $t_r$ y $t_f$. Este tiempo se especifica entre el \%10 y \%90 (o \%20 y \%80, o \%30 y \%70), como se muestra en la figura \ref{propagationDelay}. Estos tiempos simplemente nos dicen cuan rápido cambia de estado la señal de entrada.
 
-Para poder comparar la performance de distintas tecnologías, se busca un circuito que incluya parámetros como fan-in o fan-out, capacidad de salida, etc. Por ello, el circuito que es un estandard de facto para medir el tiempo de propagación, es el oscilador anillo (\emph{ring oscillator}). Es un número impar de inversores conectados en serie, y la salida se vuelve a conectar a la entrada. Este circuito oscilla espontaneamente, a una frecuencia de $T = 2  t_p  N$, con $N$ el número de inversores en la cadena.
+Para poder comparar la performance de distintas tecnologías, se busca un circuito que no incluya parámetros como el fan-in o fan-out, capacidad de salida, etc. Por ello, el circuito que es un estandard de facto para medir el tiempo de propagación, es el oscilador anillo (\emph{ring oscillator}), que es un número impar de inversores conectados en serie, y la salida se vuelve a conectar a la entrada. Este circuito oscilla espontaneamente, a una frecuencia de $T = 2 \times t_p \times N$, con $N$ el número de inversores en la cadena.
 
-Cuando medimos el tiempo de propagación usando este circuito, deberemos considerar que este es sólo una forma de cuantificar las tecnologías de fabricación y las topologías
+\begin{figure}[h!]
+\vspace{-5pt}
+  \centering
+\includegraphics[scale=.3]{figuras/RO5.png}
+  \caption{Layout del Oscilador anillo (N=5)}
+\label{fig:RO5_lay}
+\vspace{-10pt}
+\end{figure}
 
-Agregar la advertencia sobre ese número
+Realizamos un oscilador anillo de 5 etapas, utilizando el inversor mas chico de nuestra librería de celdas estándard elegida. En la figura \ref{fig:RO5_lay} podemos ver el \emph{layout} que realizamos para esta prueba. Hacemos la extracción de parásitos y simulamos el circuito para obtener la forma de onda de la figura \ref{fig:RO5_wf}.
 
-We must be extremely careful with results obtained from ring oscillator
-measurements. A tp of 20 psec by no means implies that a circuit built with those gates
-will operate at 50 GHz. The oscillator results are primarily useful for quantifying the dif-
-ferences between various manufacturing technologies and gate topologies. The oscillator
-is an idealized circuit where each gate has a fan-in and fan-out of exactly one and parasitic
-loads are minimal. In more realistic digital circuits, fan-ins and fan-outs are higher, and
-interconnect delays are non-negligible. The gate functionality is also substantially more
-complex than a simple invert operation. As a result, the achievable clock frequency on
-average is 50 to a 100 times slower than the frequency predicted from ring oscillator mea-
-surements. This is an average observation; carefully optimized designs might approach the
-ideal frequency more closely.
+Como podemos deducir de la figura \ref{fig:RO5_wf}, el tiempo de propagación es de 32~pS, lo cual no significa que nuestros circuitos puedan correr a 31,25~GHz. Cuando medimos el tiempo de propagación usando este circuito, deberemos considerar que este es sólo una forma de comparar las tecnologías de fabricación y las topologías de las compuertas, pero de ninguna forma será la frecuencia máxima a la que pueda funcionar nuestro circuito, ya que la complejidad y cantidad de compuertas es enormemente mayor que la de un inversor. Según Rabaey\cite{rabaey2003} se puede esperar velocidades entre 50 a 100 veces mas bajas, aunque optimizando el diseño se puede lograr acercarnos un poco mas a esta frecuencia ideal. 
 
-
-
-
-...
+\begin{figure}[h!]
+\vspace{-5pt}
+  \centering
+\includegraphics[scale=.6]{figuras/RO5.eps}
+  \caption{Simulación con parásitos extraidos del layout de la figura \ref{fig:RO5_lay}}
+\label{fig:RO5_wf}
+\vspace{-10pt}
+\end{figure}
 
 
 \subsection{Tiempo mínimo de propagación}

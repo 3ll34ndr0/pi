@@ -1,0 +1,69 @@
+* Test bench con fuentes de tensión que oscilan en conjunto como si fueran un contador.
+* Sirve para recorrer todos los estados, pero es impracticable debido al tiempo de simulación que requeriría.
+* Útil sólo como ejemplo de exitación.
+
+param periodo = 5n
+va0 a0 vss dc 0 pulse 0 1.8 0     	0.1n 0.1n {periodo/2}        periodo
+va1 a1 vss dc 0 pulse 0 1.8 retardo2   0.1n 0.1n periodo    per2
+va2 a2 vss dc 0 pulse 0 1.8 retardo3   0.1n 0.1n per2   per4
+va3 a3 vss dc 0 pulse 0 1.8 retardo4   0.1n 0.1n per4   per8
+va4 a4 vss dc 0 pulse 0 1.8 retardo5   0.1n 0.1n per8   per16	
+va5 a5 vss dc 0 pulse 0 1.8 retardo6  0.1n 0.1n per16  per32
+va6 a6 vss dc 0 pulse 0 1.8 retardo7  0.1n 0.1n per32  per64
+va7 a7 vss dc 0 pulse 0 1.8 retardo8  0.1n 0.1n per64  per128
+
+vb0 b0 vss dc 0 pulse 0 1.8 retardo9  0.1n 0.1n per128   per256
+vb1 b1 vss dc 0 pulse 0 1.8 retardo10 0.1n 0.1n per256   per512
+vb2 b2 vss dc 0 pulse 0 1.8 retardo11 0.1n 0.1n per512   per1024
+vb3 b3 vss dc 0 pulse 0 1.8 retardo12 0.1n 0.1n per1024  per2048
+vb4 b4 vss dc 0 pulse 0 1.8 retardo13 0.1n 0.1n per2048  per4096
+vb5 b5 vss dc 0 pulse 0 1.8 retardo14 0.1n 0.1n per4096  per8192
+vb6 b6 vss dc 0 pulse 0 1.8 retardo15 0.1n 0.1n per8192  per16384
+vb7 b7 vss dc 0 pulse 0 1.8 retardo16 0.1n 0.1n per16384 per32768
+
+
+
+
+
+********************
+* Ejemplo de los parámetros utilizados para las fuentes de tensión pulse:
+*pulse iv pv  delay rise fall width period
+*pulse 0  1.8 0     5n   5n   40n   100n
+
+* Ejemplo de los parámetros definidos en funciones:
+
+
+param periodo=5n
+param per2={2*periodo}
+param per4={4*periodo}
+param per8={8*periodo}
+param per16={16*periodo}
+param per32={32*periodo}
+param per64={64*periodo}
+param per128={128*periodo}
+
+param per256={256*periodo}
+param per512={512*periodo}
+param per1024={1024*periodo}
+param per2048={2048*periodo}
+param per4096={4096*periodo}
+param per8192={8192*periodo}
+param per16384={16384*periodo}
+param per32768={32768*periodo}
+
+
+param retardo2={periodo/2}
+param retardo3={retardo2+periodo}
+param retardo4={retardo3+per2}
+param retardo5={retardo4+per4}
+param retardo6={retardo5+per8}
+param retardo7={retardo6+per16}
+param retardo8={retardo7+per32}
+param retardo9={retardo8+per64}
+param retardo10={retardo9+per128}
+param retardo11={retardo10+per256}
+param retardo12={retardo11+per512}
+param retardo13={retardo12+per1024}
+param retardo14={retardo13+per2048}
+param retardo15={retardo14+per4096}
+param retardo16={retardo15+per8192}

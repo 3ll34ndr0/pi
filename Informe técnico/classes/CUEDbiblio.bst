@@ -64,7 +64,7 @@ FUNCTION {output.nonnull}
       mid.sentence 'output.state :=
     }
   if$
-  s
+s  
 }
 
 FUNCTION {output}

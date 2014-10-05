@@ -1,0 +1,30 @@
+*** SPICE deck for cell RO9{lay} from library ProyectoIntegrador
+*** Created on mié sep 24, 2014 20:11:03
+*** Last revised on sáb sep 27, 2014 16:57:47
+*** Written on sáb sep 27, 2014 16:58:01 by Electric VLSI Design System, 
+*** version 9.05
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 0.01, MIN_CAPAC 0.01FF
+* Model cards are described in this file:
+.include /home/lean/tfinal/trabajo/models/tsmc180nm.model
+
+*** SUBCIRCUIT ProyectoIntegrador__inv FROM CELL inv{lay}
+.SUBCKT ProyectoIntegrador__inv vss a vdd y
+Mnmos_0 y a 0 0 N L=0.2U W=0.4U AS=0.68P AD=0.2P PS=6.6U PD=1.8U
+Mpmos_0 y a vdd vdd P L=0.2U W=0.4U AS=0.68P AD=0.2P PS=6.6U PD=1.8U
+.ENDS ProyectoIntegrador__inv
+
+*** TOP LEVEL CELL: RO9{lay}
+
+* Spice Declaration nodes in cell cell 'RO9{lay}'
+VVDC_vss vss 0 DC '0V' AC '0V' 0
+VVDC_vdd vdd vss DC '1.8V' AC '0V' 0 tran 1.8
+Xinv_100 0 out vdd net_111 ProyectoIntegrador__inv
+Xinv_101 0 net_111 vdd net_105 ProyectoIntegrador__inv
+Xinv_102 0 net_105 vdd net_107 ProyectoIntegrador__inv
+Xinv_108 0 net_107 vdd net_109 ProyectoIntegrador__inv
+Xinv_109 0 net_77 vdd net_100 ProyectoIntegrador__inv
+Xinv_110 0 net_100 vdd net_102 ProyectoIntegrador__inv
+Xinv_117 0 net_102 vdd net_98 ProyectoIntegrador__inv
+Xinv_118 0 net_98 vdd out ProyectoIntegrador__inv
+Xinv_119 0 net_109 vdd net_77 ProyectoIntegrador__inv

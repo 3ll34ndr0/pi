@@ -1,0 +1,8 @@
+language=spice
+.options dtmin=1e-13
+.get RO21.spi
+#op
+probe tran v(out) 
+trans 0 163840n 0.1n > tb_RO21.out
+
+

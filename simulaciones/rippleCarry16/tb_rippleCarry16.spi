@@ -1,0 +1,36 @@
+* Test bench para el sumador de acarreo (Ripple Carry Adder)
+* La versión: rippleCarry16;1{lay}
+* Area: 1348 x 1197 lambdas	
+
+
+
+* Pensado para 8, 16 y 32 bits. 
+* TODO: Hacerlo para 16 y 32 TAMBIEN.
+* Estas son las fuentes de exitación del circuito.
+
+*pulse iv pv  delay rise fall width period
+*pulse 0  1.8 0     5n   5n   40n   100n
+
+* Cargo el circuito:
+get ext_rippleCarry8.spi
+
+* Cargo la exitación de entrada
+.include inputs_rippleCarry8.spi
+* Seteo el parámetro para fijar la frecuencia en el circuito de exitación:
+param periodo = 12n
+
+* Comienzo la simulación llevando el circuito a el punto de operación por defecto (Temperatura 27 grados)
+op
+
+* Elijo en qué puntos voy a medir qué cosa:
+probe tran v(a0) v(sum0) v(sum1) v(sum2) v(sum3)  v(sum4) v(sum5) v(sum6) v(sum7) v(cout) 
+
+* Comienzo la simulación en el tiempo:
+trans 0 63n 0.2n > rippleCarry8_12ns.out
+
+
+* Otra simulacion para una nueva frecuencia:
+param periodo = 14n
+operación
+probe tran v(a0) v(sum0) v(sum1) v(sum2) v(sum3)  v(sum4) v(sum5) v(sum6) v(sum7) v(cout) 
+trans 0 64n 0.2n > rippleCarry8_14ns.out

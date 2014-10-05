@@ -1,0 +1,27 @@
+
+va0 a0 vss dc 0 pulse 0 1.8 0 0.1n 0.1n {periodo/2} periodo
+* Fuentes de alimentación
+VVDC_vss vss 0 DC '0V' AC '0V' 0
+VVDC_vdd vdd vss DC '1.8V' AC '0V' 0 tran 1.8
+
+* Conecto todas las entradas (exepto a0) del sumando a a un cero:
+R_pulldown_0 vss a1 10k
+R_pulldown_1 vss a2 10k
+R_pulldown_2 vss a3 10k
+R_pulldown_3 vss a4 10k
+R_pulldown_4 vss a5 10k
+R_pulldown_5 vss a6 10k
+R_pulldown_6 vss a7 10k
+
+* Pongo un uno en todas las del sumando b:
+R_pullup_7 vdd b0 10k
+R_pullup_8 vdd b1 10k
+R_pullup_9 vdd b2 10k
+R_pullup_11 vdd b3 10k
+R_pullup_12 vdd b4 10k
+R_pullup_13 vdd b5 10k
+R_pullup_14 vdd b6 10k
+R_pullup_15 vdd b7 10k
+
+* Conecto a vss el carry in.
+R_pulldown vss cin 10k
