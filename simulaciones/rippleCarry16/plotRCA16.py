@@ -5,11 +5,11 @@
 from numpy import * 
 #import pylab
 import matplotlib.pyplot as plt # Primero cargo el resultado de la simulación en un arreglo:
-data = genfromtxt('rippleCarry8_14ns.out', unpack=True)
+data = genfromtxt('rippleCarry32_40ns.out', skip_header=0,unpack=True)
 
 # http://matplotlib.sourceforge.net/api/figure_api.html#module-matplotlib.figure 
 
-nob = 8
+nob = 32
 totalPlots = nob+2
 ###########################
 # nob subplots sharing both x/y axes
@@ -17,13 +17,13 @@ f, eje = plt.subplots(totalPlots, sharex=True, sharey=False)
 
 eje[0].plot(data[0], data[1])
 eje[0].set_ylabel('a0')
-eje[0].set_title('Ripple Carry Adder 8 bits')
+eje[0].set_title("Ripple Carry Adder" + str(nob) + " bits")
 
 for i in range(1,totalPlots):
    eje[i].plot(data[0], data[i+1])
    eje[i].set_ylabel("s"+str(i-1))
 
-#ax10.plot(data[0], data[10])
+# Sobre escribo la ulima etiqueta para cambiarle el nombre:
 eje[totalPlots-1].set_ylabel('cout')
 
 
@@ -36,11 +36,5 @@ plt.setp([a.get_xticklabels() for a in f.axes[:-1]], visible=False)
 # Escondo los ticks de todos los ejes Y:
 plt.setp([a.get_yticklabels() for a in f.axes[:]], visible=False)
 
-plt.show()
-
-
-
 # Con este comando aparece la ventana con los gráficos
 plt.show()
-#plt.plot(data[0],fase)
-#plt.show()
