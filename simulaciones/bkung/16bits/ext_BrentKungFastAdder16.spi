@@ -1,8 +1,8 @@
-*** SPICE deck for cell BrentKungFastAdder16{lay} from library 
+*** SPICE deck for cell BrentKungFastAdder16;6{lay} from library 
 *** ProyectoIntegrador
 *** Created on jue oct 16, 2014 23:40:04
-*** Last revised on jue oct 16, 2014 23:40:04
-*** Written on jue oct 16, 2014 23:43:05 by Electric VLSI Design System, 
+*** Last revised on sáb oct 18, 2014 12:56:00
+*** Written on sáb oct 18, 2014 13:31:27 by Electric VLSI Design System, 
 *** version 9.05
 *** Layout tech: mocmos, foundry MOSIS
 *** UC SPICE *** , MIN_RESIST 0.5, MIN_CAPAC 0.5FF
@@ -234,7 +234,7 @@ R22 net_56#6 net_56#13 0.64
 R23 net_56#13 net_56 1.293
 .ENDS ProyectoIntegrador__or2
 
-*** TOP LEVEL CELL: BrentKungFastAdder16{lay}
+*** TOP LEVEL CELL: BrentKungFastAdder16;6{lay}
 Xc_cout 0 net_313#2 vdd cout#0 ProyectoIntegrador__id
 Xc_sum0 0 net_8#2 vdd sum0#0 ProyectoIntegrador__id
 Xc_sum1 0 net_85 vdd sum1#0 ProyectoIntegrador__id

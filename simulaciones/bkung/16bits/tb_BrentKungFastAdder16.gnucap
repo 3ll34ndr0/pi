@@ -9,7 +9,7 @@ get ext_BrentKungFastAdder16.spi
 * Cargo la exitación de entrada
 .include inputs_bk16.spi
 * Seteo el parámetro para fijar la frecuencia en el circuito de exitación:
-param periodo = 10n
+param periodo = 5n
 
 * Comienzo la simulación llevando el circuito al punto de operación por defecto (Temperatura 27 grados)
 op
@@ -23,7 +23,7 @@ probe tran + v(sum8)  v(sum9)  v(sum10) v(sum11) v(sum12) v(sum13) v(sum14) v(su
 *probe tran + v(sum24) v(sum25) v(sum26) v(sum27) v(sum28) v(sum29) v(sum30) v(sum31)  
 
 * Comienzo la simulación en el tiempo:
-trans 0 20n 0.25n >> BrentKungFastAdder16.out
+trans 0 10n 0.1n >> BrentKungFastAdder16.out
 
 
 **Otro período:
@@ -40,7 +40,7 @@ probe tran   v(a0)    v(cout)
 probe tran + v(sum0)  v(sum1)  v(sum2)  v(sum3)  v(sum4)  v(sum5)  v(sum6)  v(sum7)
 probe tran + v(sum8)  v(sum9)  v(sum10) v(sum11) v(sum12) v(sum13) v(sum14) v(sum15) 
 * Comienzo la simulación en el tiempo:
-trans 20n 35n 0.25n >> BrentKungFastAdder8.out
+trans 10n 25n 0.15n >> BrentKungFastAdder16.out
 
 **Otro período:
 
@@ -53,10 +53,11 @@ op
 * Elijo en qué puntos voy a medir qué cosa:
 * Primero los 2 puntos (entrada y salida) del path crítico:
 probe tran   v(a0)    v(cout)
-probe tran + v(sum0)  v(sum1)  v(sum2)  v(sum3)  v(sum4)  v(sum5)  v(sum6) v(sum7)
+probe tran + v(sum0)  v(sum1)  v(sum2)  v(sum3)  v(sum4)  v(sum5)  v(sum6)  v(sum7)
+probe tran + v(sum8)  v(sum9)  v(sum10) v(sum11) v(sum12) v(sum13) v(sum14) v(sum15) 
 
 * Comienzo la simulación en el tiempo:
-trans 30n 50n 0.25n >> BrentKungFastAdder8.out
+trans 25n 45n 0.20n >> BrentKungFastAdder16.out
 
 **Otro período:
 
@@ -69,23 +70,10 @@ op
 * Elijo en qué puntos voy a medir qué cosa:
 * Primero los 2 puntos (entrada y salida) del path crítico:
 probe tran   v(a0)    v(cout)
-probe tran + v(sum0)  v(sum1)  v(sum2)  v(sum3)  v(sum4)  v(sum5)  v(sum6) v(sum7)
+probe tran + v(sum0)  v(sum1)  v(sum2)  v(sum3)  v(sum4)  v(sum5)  v(sum6)  v(sum7)
+probe tran + v(sum8)  v(sum9)  v(sum10) v(sum11) v(sum12) v(sum13) v(sum14) v(sum15) 
 
 * Comienzo la simulación en el tiempo:
-trans 50n 75n 0.5n >> BrentKungFastAdder8.out
+trans 45n 70n 0.20n >> BrentKungFastAdder16.out
 
-**Otro período:
 
-* Seteo el parámetro para fijar la frecuencia en el circuito de exitación:
-param periodo = 15n
-
-* Comienzo la simulación llevando el circuito al punto de operación por defecto (Temperatura 27 grados)
-op
-
-* Elijo en qué puntos voy a medir qué cosa:
-* Primero los 2 puntos (entrada y salida) del path crítico:
-probe tran   v(a0)    v(cout)
-probe tran + v(sum0)  v(sum1)  v(sum2)  v(sum3)  v(sum4)  v(sum5)  v(sum6) v(sum7)
-
-* Comienzo la simulación en el tiempo:
-trans 75n 105n 0.5n >> BrentKungFastAdder8.out
