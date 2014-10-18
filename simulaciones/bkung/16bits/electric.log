@@ -1,0 +1,858 @@
+Electric Version 9.05
+--------------- 0 --------------
+  Sat Oct 18 12:05:41 ART 2014
+Menu Activated: /home/lean/tfinal/pi/electric/ProyectoIntegrador.jelib
+--------------- 1 --------------
+  Sat Oct 18 12:11:31 ART 2014
+Menu Activated: Edit | Modes | Edit | Toggle Measure Distance
+--------------- 2 --------------
+  Sat Oct 18 12:11:31 ART 2014
+ProcessKeyBinding 400 when=1413645091378 modifiers=0 code=0 char=6d(m) false false
+--------------- 3 --------------
+  Sat Oct 18 12:11:51 ART 2014
+Menu Activated: Edit | Modes | Edit | Toggle Measure Distance
+--------------- 4 --------------
+  Sat Oct 18 12:11:51 ART 2014
+ProcessKeyBinding 400 when=1413645111615 modifiers=0 code=0 char=6d(m) false false
+--------------- 5 --------------
+  Sat Oct 18 12:11:52 ART 2014
+ProcessKeyBinding 401 when=1413645112842 modifiers=80 code=11 char=ffff false false
+--------------- 6 --------------
+  Sat Oct 18 12:11:53 ART 2014
+Menu Activated: Window | Toggle Grid
+--------------- 7 --------------
+  Sat Oct 18 12:11:53 ART 2014
+ProcessKeyBinding 400 when=1413645113227 modifiers=80 code=0 char=7 false false
+--------------- 8 --------------
+  Sat Oct 18 12:11:53 ART 2014
+ProcessKeyBinding 402 when=1413645113968 modifiers=0 code=11 char=ffff false false
+--------------- 9 --------------
+  Sat Oct 18 12:11:54 ART 2014
+ProcessKeyBinding 401 when=1413645114442 modifiers=80 code=11 char=ffff false false
+--------------- 10 --------------
+  Sat Oct 18 12:11:58 ART 2014
+ProcessKeyBinding 402 when=1413645118148 modifiers=0 code=11 char=ffff false false
+--------------- 11 --------------
+  Sat Oct 18 12:11:58 ART 2014
+ProcessKeyBinding 401 when=1413645118680 modifiers=80 code=11 char=ffff false false
+--------------- 12 --------------
+  Sat Oct 18 12:11:58 ART 2014
+Menu Activated: Window | Toggle Grid
+--------------- 13 --------------
+  Sat Oct 18 12:11:58 ART 2014
+ProcessKeyBinding 400 when=1413645118956 modifiers=80 code=0 char=7 false false
+--------------- 14 --------------
+  Sat Oct 18 12:11:59 ART 2014
+ProcessKeyBinding 402 when=1413645119216 modifiers=0 code=11 char=ffff false false
+--------------- 15 --------------
+  Sat Oct 18 12:11:59 ART 2014
+ProcessKeyBinding 401 when=1413645119412 modifiers=80 code=11 char=ffff false false
+--------------- 16 --------------
+  Sat Oct 18 12:12:01 ART 2014
+Menu Activated: Window | Toggle Grid
+--------------- 17 --------------
+  Sat Oct 18 12:12:01 ART 2014
+ProcessKeyBinding 400 when=1413645121815 modifiers=80 code=0 char=7 false false
+--------------- 18 --------------
+  Sat Oct 18 12:12:08 ART 2014
+ProcessKeyBinding 402 when=1413645128813 modifiers=0 code=11 char=ffff false false
+--------------- 19 --------------
+  Sat Oct 18 12:12:46 ART 2014
+ProcessKeyBinding 401 when=1413645166755 modifiers=200 code=12 char=ffff false false
+--------------- 20 --------------
+  Sat Oct 18 12:12:46 ART 2014
+ProcessKeyBinding 401 when=1413645166853 modifiers=200 code=9 char=9 false false
+--------------- 21 --------------
+  Sat Oct 18 12:12:47 ART 2014
+ProcessKeyBinding 402 when=1413645167048 modifiers=200 code=9 char=9 false false
+--------------- 22 --------------
+  Sat Oct 18 12:12:47 ART 2014
+ProcessKeyBinding 401 when=1413645167823 modifiers=200 code=9 char=9 false false
+--------------- 23 --------------
+  Sat Oct 18 12:12:48 ART 2014
+ProcessKeyBinding 402 when=1413645168021 modifiers=200 code=9 char=9 false false
+--------------- 24 --------------
+  Sat Oct 18 12:12:48 ART 2014
+ProcessKeyBinding 402 when=1413645168360 modifiers=0 code=12 char=ffff false false
+--------------- 25 --------------
+  Sat Oct 18 12:12:49 ART 2014
+ProcessKeyBinding 400 when=1413645169400 modifiers=0 code=0 char=1b false false
+--------------- 26 --------------
+  Sat Oct 18 12:12:49 ART 2014
+ProcessKeyBinding 402 when=1413645169482 modifiers=0 code=1b char=1b false false
+--------------- 27 --------------
+  Sat Oct 18 12:12:49 ART 2014
+ProcessKeyBinding 401 when=1413645169567 modifiers=0 code=1b char=1b false false
+--------------- 28 --------------
+  Sat Oct 18 12:12:49 ART 2014
+ProcessKeyBinding 400 when=1413645169567 modifiers=0 code=0 char=1b false false
+--------------- 29 --------------
+  Sat Oct 18 12:12:49 ART 2014
+ProcessKeyBinding 402 when=1413645169696 modifiers=0 code=1b char=1b false false
+--------------- 30 --------------
+  Sat Oct 18 12:12:50 ART 2014
+ProcessKeyBinding 401 when=1413645170075 modifiers=200 code=12 char=ffff false false
+--------------- 31 --------------
+  Sat Oct 18 12:13:00 ART 2014
+ProcessKeyBinding 401 when=1413645180115 modifiers=200 code=12 char=ffff false false
+--------------- 32 --------------
+  Sat Oct 18 12:13:00 ART 2014
+ProcessKeyBinding 402 when=1413645180671 modifiers=0 code=12 char=ffff false false
+--------------- 33 --------------
+  Sat Oct 18 12:15:15 ART 2014
+Menu Activated: Edit | Modes | Edit | Toggle Measure Distance
+--------------- 34 --------------
+  Sat Oct 18 12:15:15 ART 2014
+ProcessKeyBinding 400 when=1413645315431 modifiers=0 code=0 char=6d(m) false false
+--------------- 35 --------------
+  Sat Oct 18 12:15:27 ART 2014
+ProcessKeyBinding 401 when=1413645327665 modifiers=80 code=11 char=ffff false false
+--------------- 36 --------------
+  Sat Oct 18 12:15:29 ART 2014
+ProcessKeyBinding 402 when=1413645329061 modifiers=0 code=11 char=ffff false false
+--------------- 37 --------------
+  Sat Oct 18 12:16:46 ART 2014
+Menu Activated: Edit | Modes | Edit | Toggle Measure Distance
+--------------- 38 --------------
+  Sat Oct 18 12:16:46 ART 2014
+ProcessKeyBinding 400 when=1413645406775 modifiers=0 code=0 char=6d(m) false false
+--------------- 39 --------------
+  Sat Oct 18 12:17:44 ART 2014
+Menu Activated: File | Preferences...
+--------------- 40 --------------
+  Sat Oct 18 12:18:32 ART 2014
+Menu Activated: Tools | Silicon Compiler | Convert Current Cell to Layout
+--------------- 41 --------------
+  Sat Oct 18 12:18:47 ART 2014
+Menu Activated: Edit | Modes | Edit | Toggle Measure Distance
+--------------- 42 --------------
+  Sat Oct 18 12:18:47 ART 2014
+ProcessKeyBinding 400 when=1413645527849 modifiers=0 code=0 char=6d(m) false false
+--------------- 43 --------------
+  Sat Oct 18 12:18:51 ART 2014
+ProcessKeyBinding 401 when=1413645531893 modifiers=80 code=11 char=ffff false false
+--------------- 44 --------------
+  Sat Oct 18 12:18:52 ART 2014
+ProcessKeyBinding 402 when=1413645532234 modifiers=0 code=11 char=ffff false false
+--------------- 45 --------------
+  Sat Oct 18 12:18:53 ART 2014
+ProcessKeyBinding 401 when=1413645533154 modifiers=80 code=11 char=ffff false false
+--------------- 46 --------------
+  Sat Oct 18 12:18:55 ART 2014
+ProcessKeyBinding 402 when=1413645535805 modifiers=0 code=11 char=ffff false false
+--------------- 47 --------------
+  Sat Oct 18 12:18:59 ART 2014
+ProcessKeyBinding 401 when=1413645539138 modifiers=80 code=11 char=ffff false false
+--------------- 48 --------------
+  Sat Oct 18 12:19:01 ART 2014
+ProcessKeyBinding 402 when=1413645541263 modifiers=0 code=11 char=ffff false false
+--------------- 49 --------------
+  Sat Oct 18 12:21:43 ART 2014
+Menu Activated: Edit | Modes | Edit | Toggle Measure Distance
+--------------- 50 --------------
+  Sat Oct 18 12:21:43 ART 2014
+ProcessKeyBinding 400 when=1413645703411 modifiers=0 code=0 char=6d(m) false false
+--------------- 51 --------------
+  Sat Oct 18 12:23:46 ART 2014
+ProcessKeyBinding 401 when=1413645826939 modifiers=80 code=11 char=ffff false false
+--------------- 52 --------------
+  Sat Oct 18 12:23:48 ART 2014
+ProcessKeyBinding 402 when=1413645828452 modifiers=0 code=11 char=ffff false false
+--------------- 53 --------------
+  Sat Oct 18 12:23:49 ART 2014
+ProcessKeyBinding 401 when=1413645829089 modifiers=80 code=11 char=ffff false false
+--------------- 54 --------------
+  Sat Oct 18 12:23:49 ART 2014
+ProcessKeyBinding 402 when=1413645829958 modifiers=0 code=11 char=ffff false false
+--------------- 55 --------------
+  Sat Oct 18 12:23:50 ART 2014
+ProcessKeyBinding 401 when=1413645830665 modifiers=40 code=10 char=ffff false false
+--------------- 56 --------------
+  Sat Oct 18 12:23:52 ART 2014
+ProcessKeyBinding 402 when=1413645832556 modifiers=0 code=10 char=ffff false false
+--------------- 57 --------------
+  Sat Oct 18 12:23:52 ART 2014
+ProcessKeyBinding 401 when=1413645832854 modifiers=80 code=11 char=ffff false false
+--------------- 58 --------------
+  Sat Oct 18 12:23:54 ART 2014
+ProcessKeyBinding 402 when=1413645834019 modifiers=0 code=11 char=ffff false false
+--------------- 59 --------------
+  Sat Oct 18 12:23:54 ART 2014
+ProcessKeyBinding 401 when=1413645834795 modifiers=80 code=11 char=ffff false false
+--------------- 60 --------------
+  Sat Oct 18 12:23:58 ART 2014
+ProcessKeyBinding 402 when=1413645838202 modifiers=0 code=11 char=ffff false false
+--------------- 61 --------------
+  Sat Oct 18 12:23:58 ART 2014
+ProcessKeyBinding 401 when=1413645838507 modifiers=40 code=10 char=ffff false false
+--------------- 62 --------------
+  Sat Oct 18 12:24:00 ART 2014
+ProcessKeyBinding 402 when=1413645840398 modifiers=0 code=10 char=ffff false false
+--------------- 63 --------------
+  Sat Oct 18 12:24:08 ART 2014
+ProcessKeyBinding 401 when=1413645848393 modifiers=80 code=11 char=ffff false false
+--------------- 64 --------------
+  Sat Oct 18 12:24:08 ART 2014
+ProcessKeyBinding 402 when=1413645848816 modifiers=0 code=11 char=ffff false false
+--------------- 65 --------------
+  Sat Oct 18 12:24:08 ART 2014
+ProcessKeyBinding 401 when=1413645848856 modifiers=80 code=11 char=ffff false false
+--------------- 66 --------------
+  Sat Oct 18 12:24:13 ART 2014
+ProcessKeyBinding 402 when=1413645853062 modifiers=0 code=11 char=ffff false false
+--------------- 67 --------------
+  Sat Oct 18 12:24:15 ART 2014
+ProcessKeyBinding 401 when=1413645855277 modifiers=80 code=11 char=ffff false false
+--------------- 68 --------------
+  Sat Oct 18 12:24:15 ART 2014
+ProcessKeyBinding 402 when=1413645855899 modifiers=0 code=11 char=ffff false false
+--------------- 69 --------------
+  Sat Oct 18 12:24:16 ART 2014
+Menu Activated: Cell | Expand Cell Instances | One Level Down
+Currently highlighted: 
+    com.sun.electric.tool.user.HighlightEOBJ in cell 'BrentKungFastAdder16{lay}': 'xor2{lay}[c_w58].y'
+--------------- 70 --------------
+  Sat Oct 18 12:24:17 ART 2014
+Menu Activated: Cell | Expand Cell Instances | One Level Down
+Currently highlighted: 
+    com.sun.electric.tool.user.HighlightEOBJ in cell 'BrentKungFastAdder16{lay}': 'xor2{lay}[c_w58].y'
+--------------- 71 --------------
+  Sat Oct 18 12:24:17 ART 2014
+Menu Activated: Cell | Expand Cell Instances | One Level Down
+Currently highlighted: 
+    com.sun.electric.tool.user.HighlightEOBJ in cell 'BrentKungFastAdder16{lay}': 'xor2{lay}[c_w58].y'
+--------------- 72 --------------
+  Sat Oct 18 12:24:18 ART 2014
+Menu Activated: Cell | Expand Cell Instances | One Level Down
+Currently highlighted: 
+    com.sun.electric.tool.user.HighlightEOBJ in cell 'BrentKungFastAdder16{lay}': 'xor2{lay}[c_w58].y'
+--------------- 73 --------------
+  Sat Oct 18 12:24:18 ART 2014
+Menu Activated: Cell | Expand Cell Instances | One Level Down
+Currently highlighted: 
+    com.sun.electric.tool.user.HighlightEOBJ in cell 'BrentKungFastAdder16{lay}': 'xor2{lay}[c_w58].y'
+--------------- 74 --------------
+  Sat Oct 18 12:24:45 ART 2014
+ProcessKeyBinding 401 when=1413645885422 modifiers=200 code=12 char=ffff false false
+--------------- 75 --------------
+  Sat Oct 18 12:47:00 ART 2014
+ProcessKeyBinding 401 when=1413647220523 modifiers=200 code=12 char=ffff false false
+--------------- 76 --------------
+  Sat Oct 18 12:47:02 ART 2014
+ProcessKeyBinding 401 when=1413647222215 modifiers=200 code=12 char=ffff false false
+--------------- 77 --------------
+  Sat Oct 18 12:47:36 ART 2014
+ProcessKeyBinding 401 when=1413647256362 modifiers=200 code=12 char=ffff false false
+--------------- 78 --------------
+  Sat Oct 18 12:51:03 ART 2014
+ProcessKeyBinding 401 when=1413647463816 modifiers=80 code=11 char=ffff false false
+--------------- 79 --------------
+  Sat Oct 18 12:51:04 ART 2014
+Menu Activated: Window | Fill Window
+--------------- 80 --------------
+  Sat Oct 18 12:51:04 ART 2014
+ProcessKeyBinding 400 when=1413647464140 modifiers=80 code=0 char=39(9) false false
+--------------- 81 --------------
+  Sat Oct 18 12:51:04 ART 2014
+ProcessKeyBinding 402 when=1413647464319 modifiers=0 code=11 char=ffff false false
+--------------- 82 --------------
+  Sat Oct 18 12:51:31 ART 2014
+Menu Activated: Edit | Modes | Edit | Toggle Zoom
+Currently highlighted: 
+    Annotation text
+--------------- 83 --------------
+  Sat Oct 18 12:51:31 ART 2014
+ProcessKeyBinding 400 when=1413647491276 modifiers=0 code=0 char=7a(z) false false
+--------------- 84 --------------
+  Sat Oct 18 12:51:33 ART 2014
+Menu Activated: Edit | Modes | Edit | Toggle Zoom
+Currently highlighted: 
+    Annotation text
+--------------- 85 --------------
+  Sat Oct 18 12:51:33 ART 2014
+ProcessKeyBinding 400 when=1413647493193 modifiers=0 code=0 char=7a(z) false false
+--------------- 86 --------------
+  Sat Oct 18 12:51:34 ART 2014
+ProcessKeyBinding 401 when=1413647494896 modifiers=80 code=11 char=ffff false false
+--------------- 87 --------------
+  Sat Oct 18 12:51:35 ART 2014
+Menu Activated: Edit | Properties | Object Properties...
+Currently highlighted: 
+    Annotation text
+--------------- 88 --------------
+  Sat Oct 18 12:51:35 ART 2014
+ProcessKeyBinding 400 when=1413647495171 modifiers=80 code=0 char=9 false false
+--------------- 89 --------------
+  Sat Oct 18 12:51:35 ART 2014
+ProcessKeyBinding 402 when=1413647495350 modifiers=0 code=11 char=ffff false false
+--------------- 90 --------------
+  Sat Oct 18 12:51:43 ART 2014
+ProcessKeyBinding 401 when=1413647503084 modifiers=80 code=11 char=ffff false false
+--------------- 91 --------------
+  Sat Oct 18 12:51:43 ART 2014
+Menu Activated: Window | Fill Window
+Currently highlighted: 
+    Annotation text
+--------------- 92 --------------
+  Sat Oct 18 12:51:43 ART 2014
+ProcessKeyBinding 400 when=1413647503409 modifiers=80 code=0 char=39(9) false false
+--------------- 93 --------------
+  Sat Oct 18 12:51:43 ART 2014
+ProcessKeyBinding 402 when=1413647503620 modifiers=0 code=11 char=ffff false false
+--------------- 94 --------------
+  Sat Oct 18 12:51:49 ART 2014
+ProcessKeyBinding 402 when=1413647509315 modifiers=0 code=27 char=ffff false true
+--------------- 95 --------------
+  Sat Oct 18 12:51:49 ART 2014
+ProcessKeyBinding 402 when=1413647509966 modifiers=0 code=8 char=8 false true
+--------------- 96 --------------
+  Sat Oct 18 12:51:50 ART 2014
+ProcessKeyBinding 402 when=1413647510130 modifiers=0 code=8 char=8 false true
+--------------- 97 --------------
+  Sat Oct 18 12:51:50 ART 2014
+ProcessKeyBinding 402 when=1413647510296 modifiers=0 code=8 char=8 false true
+--------------- 98 --------------
+  Sat Oct 18 12:51:50 ART 2014
+ProcessKeyBinding 402 when=1413647510636 modifiers=0 code=8 char=8 false true
+--------------- 99 --------------
+  Sat Oct 18 12:51:51 ART 2014
+ProcessKeyBinding 401 when=1413647511326 modifiers=0 code=41 char=61(a) false true
+--------------- 100 --------------
+  Sat Oct 18 12:51:51 ART 2014
+ProcessKeyBinding 402 when=1413647511471 modifiers=0 code=41 char=61(a) false true
+--------------- 101 --------------
+  Sat Oct 18 12:51:51 ART 2014
+ProcessKeyBinding 401 when=1413647511560 modifiers=0 code=52 char=72(r) false true
+--------------- 102 --------------
+  Sat Oct 18 12:51:51 ART 2014
+ProcessKeyBinding 401 when=1413647511641 modifiers=0 code=45 char=65(e) false true
+--------------- 103 --------------
+  Sat Oct 18 12:51:51 ART 2014
+ProcessKeyBinding 402 when=1413647511707 modifiers=0 code=52 char=72(r) false true
+--------------- 104 --------------
+  Sat Oct 18 12:51:51 ART 2014
+ProcessKeyBinding 402 when=1413647511772 modifiers=0 code=45 char=65(e) false true
+--------------- 105 --------------
+  Sat Oct 18 12:51:51 ART 2014
+ProcessKeyBinding 401 when=1413647511863 modifiers=0 code=41 char=61(a) false true
+--------------- 106 --------------
+  Sat Oct 18 12:51:51 ART 2014
+ProcessKeyBinding 402 when=1413647511976 modifiers=0 code=41 char=61(a) false true
+--------------- 107 --------------
+  Sat Oct 18 12:51:52 ART 2014
+ProcessKeyBinding 401 when=1413647512398 modifiers=40 code=10 char=ffff false true
+--------------- 108 --------------
+  Sat Oct 18 12:51:52 ART 2014
+ProcessKeyBinding 401 when=1413647512495 modifiers=40 code=2e char=3a(:) false true
+--------------- 109 --------------
+  Sat Oct 18 12:51:52 ART 2014
+ProcessKeyBinding 402 when=1413647512625 modifiers=0 code=10 char=ffff false true
+--------------- 110 --------------
+  Sat Oct 18 12:51:52 ART 2014
+ProcessKeyBinding 402 when=1413647512642 modifiers=0 code=2e char=2e(.) false true
+--------------- 111 --------------
+  Sat Oct 18 12:51:52 ART 2014
+ProcessKeyBinding 401 when=1413647512669 modifiers=0 code=20 char=20 false true
+--------------- 112 --------------
+  Sat Oct 18 12:51:52 ART 2014
+ProcessKeyBinding 402 when=1413647512814 modifiers=0 code=20 char=20 false true
+--------------- 113 --------------
+  Sat Oct 18 12:51:53 ART 2014
+ProcessKeyBinding 401 when=1413647513594 modifiers=0 code=31 char=31(1) false true
+--------------- 114 --------------
+  Sat Oct 18 12:51:53 ART 2014
+ProcessKeyBinding 402 when=1413647513740 modifiers=0 code=31 char=31(1) false true
+--------------- 115 --------------
+  Sat Oct 18 12:51:53 ART 2014
+ProcessKeyBinding 401 when=1413647513962 modifiers=0 code=37 char=37(7) false true
+--------------- 116 --------------
+  Sat Oct 18 12:51:54 ART 2014
+ProcessKeyBinding 402 when=1413647514147 modifiers=0 code=37 char=37(7) false true
+--------------- 117 --------------
+  Sat Oct 18 12:51:56 ART 2014
+ProcessKeyBinding 401 when=1413647516081 modifiers=0 code=35 char=35(5) false true
+--------------- 118 --------------
+  Sat Oct 18 12:51:56 ART 2014
+ProcessKeyBinding 402 when=1413647516195 modifiers=0 code=35 char=35(5) false true
+--------------- 119 --------------
+  Sat Oct 18 12:51:56 ART 2014
+ProcessKeyBinding 401 when=1413647516668 modifiers=0 code=37 char=37(7) false true
+--------------- 120 --------------
+  Sat Oct 18 12:51:56 ART 2014
+ProcessKeyBinding 402 when=1413647516846 modifiers=0 code=37 char=37(7) false true
+--------------- 121 --------------
+  Sat Oct 18 12:51:57 ART 2014
+ProcessKeyBinding 401 when=1413647517300 modifiers=0 code=20 char=20 false true
+--------------- 122 --------------
+  Sat Oct 18 12:51:57 ART 2014
+ProcessKeyBinding 402 when=1413647517446 modifiers=0 code=20 char=20 false true
+--------------- 123 --------------
+  Sat Oct 18 12:51:57 ART 2014
+ProcessKeyBinding 401 when=1413647517546 modifiers=0 code=58 char=78(x) false true
+--------------- 124 --------------
+  Sat Oct 18 12:51:57 ART 2014
+ProcessKeyBinding 402 when=1413647517678 modifiers=0 code=58 char=78(x) false true
+--------------- 125 --------------
+  Sat Oct 18 12:51:57 ART 2014
+ProcessKeyBinding 401 when=1413647517714 modifiers=0 code=20 char=20 false true
+--------------- 126 --------------
+  Sat Oct 18 12:51:57 ART 2014
+ProcessKeyBinding 402 when=1413647517731 modifiers=0 code=20 char=20 false true
+--------------- 127 --------------
+  Sat Oct 18 12:51:57 ART 2014
+ProcessKeyBinding 401 when=1413647517849 modifiers=0 code=20 char=20 false true
+--------------- 128 --------------
+  Sat Oct 18 12:51:57 ART 2014
+ProcessKeyBinding 402 when=1413647517866 modifiers=0 code=20 char=20 false true
+--------------- 129 --------------
+  Sat Oct 18 12:52:05 ART 2014
+ProcessKeyBinding 401 when=1413647525144 modifiers=0 code=31 char=31(1) false true
+--------------- 130 --------------
+  Sat Oct 18 12:52:05 ART 2014
+ProcessKeyBinding 402 when=1413647525354 modifiers=0 code=31 char=31(1) false true
+--------------- 131 --------------
+  Sat Oct 18 12:52:05 ART 2014
+ProcessKeyBinding 401 when=1413647525492 modifiers=0 code=34 char=34(4) false true
+--------------- 132 --------------
+  Sat Oct 18 12:52:05 ART 2014
+ProcessKeyBinding 402 when=1413647525622 modifiers=0 code=34 char=34(4) false true
+--------------- 133 --------------
+  Sat Oct 18 12:52:06 ART 2014
+ProcessKeyBinding 401 when=1413647526270 modifiers=0 code=33 char=33(3) false true
+--------------- 134 --------------
+  Sat Oct 18 12:52:06 ART 2014
+ProcessKeyBinding 402 when=1413647526497 modifiers=0 code=33 char=33(3) false true
+--------------- 135 --------------
+  Sat Oct 18 12:52:06 ART 2014
+ProcessKeyBinding 401 when=1413647526666 modifiers=0 code=36 char=36(6) false true
+--------------- 136 --------------
+  Sat Oct 18 12:52:06 ART 2014
+ProcessKeyBinding 402 when=1413647526827 modifiers=0 code=36 char=36(6) false true
+--------------- 137 --------------
+  Sat Oct 18 12:52:15 ART 2014
+ProcessKeyBinding 402 when=1413647535761 modifiers=0 code=25 char=ffff false true
+--------------- 138 --------------
+  Sat Oct 18 12:52:15 ART 2014
+ProcessKeyBinding 402 when=1413647535909 modifiers=0 code=25 char=ffff false true
+--------------- 139 --------------
+  Sat Oct 18 12:52:16 ART 2014
+ProcessKeyBinding 402 when=1413647536028 modifiers=0 code=25 char=ffff false true
+--------------- 140 --------------
+  Sat Oct 18 12:52:16 ART 2014
+ProcessKeyBinding 402 when=1413647536276 modifiers=0 code=25 char=ffff false true
+--------------- 141 --------------
+  Sat Oct 18 12:52:16 ART 2014
+ProcessKeyBinding 401 when=1413647536556 modifiers=40 code=10 char=ffff false true
+--------------- 142 --------------
+  Sat Oct 18 12:52:16 ART 2014
+ProcessKeyBinding 402 when=1413647536786 modifiers=40 code=27 char=ffff false true
+--------------- 143 --------------
+  Sat Oct 18 12:52:16 ART 2014
+ProcessKeyBinding 402 when=1413647536901 modifiers=0 code=10 char=ffff false true
+--------------- 144 --------------
+  Sat Oct 18 12:52:17 ART 2014
+ProcessKeyBinding 401 when=1413647537490 modifiers=40 code=10 char=ffff false true
+--------------- 145 --------------
+  Sat Oct 18 12:52:17 ART 2014
+ProcessKeyBinding 401 when=1413647537684 modifiers=40 code=41 char=41(A) false true
+--------------- 146 --------------
+  Sat Oct 18 12:52:17 ART 2014
+ProcessKeyBinding 402 when=1413647537830 modifiers=40 code=41 char=41(A) false true
+--------------- 147 --------------
+  Sat Oct 18 12:52:17 ART 2014
+ProcessKeyBinding 402 when=1413647537946 modifiers=0 code=10 char=ffff false true
+--------------- 148 --------------
+  Sat Oct 18 12:52:18 ART 2014
+ProcessKeyBinding 402 when=1413647538276 modifiers=0 code=a char=a false true
+--------------- 149 --------------
+  Sat Oct 18 12:52:19 ART 2014
+ProcessKeyBinding 402 when=1413647539190 modifiers=0 code=8 char=8 false true
+--------------- 150 --------------
+  Sat Oct 18 12:52:22 ART 2014
+ProcessKeyBinding 401 when=1413647542365 modifiers=80 code=11 char=ffff false false
+--------------- 151 --------------
+  Sat Oct 18 12:52:22 ART 2014
+Menu Activated: Edit | Copy
+Currently highlighted: 
+    Annotation text
+--------------- 152 --------------
+  Sat Oct 18 12:52:22 ART 2014
+ProcessKeyBinding 400 when=1413647542575 modifiers=80 code=0 char=3 false false
+--------------- 153 --------------
+  Sat Oct 18 12:52:22 ART 2014
+ProcessKeyBinding 402 when=1413647542691 modifiers=0 code=11 char=ffff false false
+--------------- 154 --------------
+  Sat Oct 18 12:52:35 ART 2014
+ProcessKeyBinding 401 when=1413647555137 modifiers=80 code=11 char=ffff false false
+--------------- 155 --------------
+  Sat Oct 18 12:52:35 ART 2014
+Menu Activated: Edit | Paste
+--------------- 156 --------------
+  Sat Oct 18 12:52:35 ART 2014
+ProcessKeyBinding 400 when=1413647555462 modifiers=80 code=0 char=16 false false
+--------------- 157 --------------
+  Sat Oct 18 12:52:35 ART 2014
+ProcessKeyBinding 402 when=1413647555608 modifiers=0 code=11 char=ffff false false
+--------------- 158 --------------
+  Sat Oct 18 12:52:42 ART 2014
+Menu Activated: Edit | Modes | Edit | Toggle Measure Distance
+Currently highlighted: 
+    Annotation text
+--------------- 159 --------------
+  Sat Oct 18 12:52:42 ART 2014
+ProcessKeyBinding 400 when=1413647562612 modifiers=0 code=0 char=6d(m) false false
+--------------- 160 --------------
+  Sat Oct 18 12:52:45 ART 2014
+ProcessKeyBinding 401 when=1413647565369 modifiers=80 code=11 char=ffff false false
+--------------- 161 --------------
+  Sat Oct 18 12:52:47 ART 2014
+ProcessKeyBinding 402 when=1413647567219 modifiers=0 code=11 char=ffff false false
+--------------- 162 --------------
+  Sat Oct 18 12:52:52 ART 2014
+ProcessKeyBinding 401 when=1413647572558 modifiers=80 code=11 char=ffff false false
+--------------- 163 --------------
+  Sat Oct 18 12:52:52 ART 2014
+ProcessKeyBinding 402 when=1413647572639 modifiers=0 code=11 char=ffff false false
+--------------- 164 --------------
+  Sat Oct 18 12:52:52 ART 2014
+ProcessKeyBinding 401 when=1413647572662 modifiers=80 code=11 char=ffff false false
+--------------- 165 --------------
+  Sat Oct 18 12:52:54 ART 2014
+ProcessKeyBinding 402 when=1413647574783 modifiers=0 code=11 char=ffff false false
+--------------- 166 --------------
+  Sat Oct 18 12:52:57 ART 2014
+Menu Activated: Edit | Modes | Edit | Toggle Measure Distance
+Currently highlighted: 
+    Annotation text
+--------------- 167 --------------
+  Sat Oct 18 12:52:57 ART 2014
+ProcessKeyBinding 400 when=1413647577007 modifiers=0 code=0 char=6d(m) false false
+--------------- 168 --------------
+  Sat Oct 18 12:53:04 ART 2014
+ProcessKeyBinding 402 when=1413647584181 modifiers=0 code=7f char=7f false true
+--------------- 169 --------------
+  Sat Oct 18 12:53:04 ART 2014
+ProcessKeyBinding 402 when=1413647584478 modifiers=0 code=7f char=7f false true
+--------------- 170 --------------
+  Sat Oct 18 12:53:04 ART 2014
+ProcessKeyBinding 402 when=1413647584654 modifiers=0 code=7f char=7f false true
+--------------- 171 --------------
+  Sat Oct 18 12:53:05 ART 2014
+ProcessKeyBinding 401 when=1413647585838 modifiers=0 code=35 char=35(5) false true
+--------------- 172 --------------
+  Sat Oct 18 12:53:05 ART 2014
+ProcessKeyBinding 402 when=1413647585952 modifiers=0 code=35 char=35(5) false true
+--------------- 173 --------------
+  Sat Oct 18 12:53:07 ART 2014
+ProcessKeyBinding 401 when=1413647587116 modifiers=0 code=34 char=34(4) false true
+--------------- 174 --------------
+  Sat Oct 18 12:53:07 ART 2014
+ProcessKeyBinding 402 when=1413647587246 modifiers=0 code=34 char=34(4) false true
+--------------- 175 --------------
+  Sat Oct 18 12:53:07 ART 2014
+ProcessKeyBinding 401 when=1413647587446 modifiers=0 code=35 char=35(5) false true
+--------------- 176 --------------
+  Sat Oct 18 12:53:07 ART 2014
+ProcessKeyBinding 402 when=1413647587592 modifiers=0 code=35 char=35(5) false true
+--------------- 177 --------------
+  Sat Oct 18 12:53:08 ART 2014
+ProcessKeyBinding 402 when=1413647588931 modifiers=0 code=27 char=ffff false true
+--------------- 178 --------------
+  Sat Oct 18 12:53:08 ART 2014
+ProcessKeyBinding 402 when=1413647588962 modifiers=0 code=27 char=ffff false true
+--------------- 179 --------------
+  Sat Oct 18 12:53:08 ART 2014
+ProcessKeyBinding 402 when=1413647588993 modifiers=0 code=27 char=ffff false true
+--------------- 180 --------------
+  Sat Oct 18 12:53:09 ART 2014
+ProcessKeyBinding 402 when=1413647589024 modifiers=0 code=27 char=ffff false true
+--------------- 181 --------------
+  Sat Oct 18 12:53:09 ART 2014
+ProcessKeyBinding 402 when=1413647589053 modifiers=0 code=27 char=ffff false true
+--------------- 182 --------------
+  Sat Oct 18 12:53:09 ART 2014
+ProcessKeyBinding 402 when=1413647589328 modifiers=0 code=27 char=ffff false true
+--------------- 183 --------------
+  Sat Oct 18 12:53:09 ART 2014
+ProcessKeyBinding 402 when=1413647589478 modifiers=0 code=27 char=ffff false true
+--------------- 184 --------------
+  Sat Oct 18 12:53:09 ART 2014
+ProcessKeyBinding 402 when=1413647589629 modifiers=0 code=27 char=ffff false true
+--------------- 185 --------------
+  Sat Oct 18 12:53:10 ART 2014
+ProcessKeyBinding 402 when=1413647590453 modifiers=0 code=8 char=8 false true
+--------------- 186 --------------
+  Sat Oct 18 12:53:10 ART 2014
+ProcessKeyBinding 402 when=1413647590687 modifiers=0 code=8 char=8 false true
+--------------- 187 --------------
+  Sat Oct 18 12:53:10 ART 2014
+ProcessKeyBinding 402 when=1413647590927 modifiers=0 code=8 char=8 false true
+--------------- 188 --------------
+  Sat Oct 18 12:53:11 ART 2014
+ProcessKeyBinding 402 when=1413647591439 modifiers=0 code=8 char=8 false true
+--------------- 189 --------------
+  Sat Oct 18 12:53:13 ART 2014
+ProcessKeyBinding 401 when=1413647593679 modifiers=0 code=31 char=31(1) false true
+--------------- 190 --------------
+  Sat Oct 18 12:53:13 ART 2014
+ProcessKeyBinding 402 when=1413647593874 modifiers=0 code=31 char=31(1) false true
+--------------- 191 --------------
+  Sat Oct 18 12:53:14 ART 2014
+ProcessKeyBinding 401 when=1413647594214 modifiers=0 code=35 char=35(5) false true
+--------------- 192 --------------
+  Sat Oct 18 12:53:14 ART 2014
+ProcessKeyBinding 402 when=1413647594392 modifiers=0 code=35 char=35(5) false true
+--------------- 193 --------------
+  Sat Oct 18 12:53:16 ART 2014
+ProcessKeyBinding 401 when=1413647596695 modifiers=0 code=34 char=34(4) false true
+--------------- 194 --------------
+  Sat Oct 18 12:53:16 ART 2014
+ProcessKeyBinding 402 when=1413647596840 modifiers=0 code=34 char=34(4) false true
+--------------- 195 --------------
+  Sat Oct 18 12:53:17 ART 2014
+ProcessKeyBinding 401 when=1413647597263 modifiers=0 code=30 char=30(0) false true
+--------------- 196 --------------
+  Sat Oct 18 12:53:17 ART 2014
+ProcessKeyBinding 402 when=1413647597425 modifiers=0 code=30 char=30(0) false true
+--------------- 197 --------------
+  Sat Oct 18 12:53:27 ART 2014
+ProcessKeyBinding 401 when=1413647607431 modifiers=80 code=11 char=ffff false false
+--------------- 198 --------------
+  Sat Oct 18 12:53:27 ART 2014
+Menu Activated: Window | Fill Window
+Currently highlighted: 
+    Annotation text
+--------------- 199 --------------
+  Sat Oct 18 12:53:27 ART 2014
+ProcessKeyBinding 400 when=1413647607546 modifiers=80 code=0 char=39(9) false false
+--------------- 200 --------------
+  Sat Oct 18 12:53:27 ART 2014
+ProcessKeyBinding 402 when=1413647607855 modifiers=0 code=11 char=ffff false false
+--------------- 201 --------------
+  Sat Oct 18 12:54:02 ART 2014
+ProcessKeyBinding 401 when=1413647642937 modifiers=80 code=11 char=ffff false false
+--------------- 202 --------------
+  Sat Oct 18 12:54:03 ART 2014
+Menu Activated: Window | Fill Window
+Currently highlighted: 
+    Annotation text
+--------------- 203 --------------
+  Sat Oct 18 12:54:03 ART 2014
+ProcessKeyBinding 400 when=1413647643148 modifiers=80 code=0 char=39(9) false false
+--------------- 204 --------------
+  Sat Oct 18 12:54:03 ART 2014
+ProcessKeyBinding 402 when=1413647643440 modifiers=0 code=11 char=ffff false false
+--------------- 205 --------------
+  Sat Oct 18 12:54:18 ART 2014
+ProcessKeyBinding 401 when=1413647658571 modifiers=200 code=12 char=ffff false false
+--------------- 206 --------------
+  Sat Oct 18 12:54:43 ART 2014
+ProcessKeyBinding 402 when=1413647683666 modifiers=0 code=27 char=ffff false true
+--------------- 207 --------------
+  Sat Oct 18 12:54:44 ART 2014
+ProcessKeyBinding 402 when=1413647684035 modifiers=0 code=a char=a false true
+--------------- 208 --------------
+  Sat Oct 18 12:54:44 ART 2014
+ProcessKeyBinding 401 when=1413647684785 modifiers=80 code=11 char=ffff false true
+--------------- 209 --------------
+  Sat Oct 18 12:54:45 ART 2014
+ProcessKeyBinding 402 when=1413647685206 modifiers=0 code=11 char=ffff false true
+--------------- 210 --------------
+  Sat Oct 18 12:54:46 ART 2014
+ProcessKeyBinding 402 when=1413647686670 modifiers=0 code=26 char=ffff false true
+--------------- 211 --------------
+  Sat Oct 18 12:54:47 ART 2014
+ProcessKeyBinding 402 when=1413647687014 modifiers=0 code=25 char=ffff false true
+--------------- 212 --------------
+  Sat Oct 18 12:54:47 ART 2014
+ProcessKeyBinding 402 when=1413647687181 modifiers=0 code=25 char=ffff false true
+--------------- 213 --------------
+  Sat Oct 18 12:54:47 ART 2014
+ProcessKeyBinding 402 when=1413647687733 modifiers=0 code=25 char=ffff false true
+--------------- 214 --------------
+  Sat Oct 18 12:54:48 ART 2014
+ProcessKeyBinding 402 when=1413647688080 modifiers=0 code=28 char=ffff false true
+--------------- 215 --------------
+  Sat Oct 18 12:54:48 ART 2014
+ProcessKeyBinding 402 when=1413647688243 modifiers=0 code=25 char=ffff false true
+--------------- 216 --------------
+  Sat Oct 18 12:54:48 ART 2014
+ProcessKeyBinding 402 when=1413647688387 modifiers=0 code=25 char=ffff false true
+--------------- 217 --------------
+  Sat Oct 18 12:54:48 ART 2014
+ProcessKeyBinding 402 when=1413647688535 modifiers=0 code=25 char=ffff false true
+--------------- 218 --------------
+  Sat Oct 18 12:54:48 ART 2014
+ProcessKeyBinding 402 when=1413647688674 modifiers=0 code=25 char=ffff false true
+--------------- 219 --------------
+  Sat Oct 18 12:54:49 ART 2014
+ProcessKeyBinding 401 when=1413647689337 modifiers=0 code=99 char=3c(<) false true
+--------------- 220 --------------
+  Sat Oct 18 12:54:49 ART 2014
+ProcessKeyBinding 402 when=1413647689450 modifiers=0 code=99 char=3c(<) false true
+--------------- 221 --------------
+  Sat Oct 18 12:54:49 ART 2014
+ProcessKeyBinding 401 when=1413647689487 modifiers=0 code=99 char=3c(<) false true
+--------------- 222 --------------
+  Sat Oct 18 12:54:49 ART 2014
+ProcessKeyBinding 402 when=1413647689714 modifiers=0 code=99 char=3c(<) false true
+--------------- 223 --------------
+  Sat Oct 18 12:54:50 ART 2014
+ProcessKeyBinding 402 when=1413647690079 modifiers=0 code=8 char=8 false true
+--------------- 224 --------------
+  Sat Oct 18 12:54:50 ART 2014
+ProcessKeyBinding 402 when=1413647690241 modifiers=0 code=8 char=8 false true
+--------------- 225 --------------
+  Sat Oct 18 12:54:50 ART 2014
+ProcessKeyBinding 401 when=1413647690609 modifiers=0 code=99 char=3c(<) false true
+--------------- 226 --------------
+  Sat Oct 18 12:54:50 ART 2014
+ProcessKeyBinding 402 when=1413647690705 modifiers=0 code=99 char=3c(<) false true
+--------------- 227 --------------
+  Sat Oct 18 12:54:50 ART 2014
+ProcessKeyBinding 401 when=1413647690737 modifiers=0 code=99 char=3c(<) false true
+--------------- 228 --------------
+  Sat Oct 18 12:54:50 ART 2014
+ProcessKeyBinding 402 when=1413647690850 modifiers=0 code=99 char=3c(<) false true
+--------------- 229 --------------
+  Sat Oct 18 12:54:51 ART 2014
+ProcessKeyBinding 402 when=1413647691248 modifiers=0 code=8 char=8 false true
+--------------- 230 --------------
+  Sat Oct 18 12:54:51 ART 2014
+ProcessKeyBinding 402 when=1413647691389 modifiers=0 code=8 char=8 false true
+--------------- 231 --------------
+  Sat Oct 18 12:54:51 ART 2014
+ProcessKeyBinding 401 when=1413647691611 modifiers=40 code=10 char=ffff false true
+--------------- 232 --------------
+  Sat Oct 18 12:54:51 ART 2014
+ProcessKeyBinding 401 when=1413647691822 modifiers=40 code=41 char=41(A) false true
+--------------- 233 --------------
+  Sat Oct 18 12:54:51 ART 2014
+ProcessKeyBinding 402 when=1413647691953 modifiers=0 code=10 char=ffff false true
+--------------- 234 --------------
+  Sat Oct 18 12:54:51 ART 2014
+ProcessKeyBinding 402 when=1413647691970 modifiers=0 code=41 char=61(a) false true
+--------------- 235 --------------
+  Sat Oct 18 12:54:52 ART 2014
+ProcessKeyBinding 401 when=1413647692164 modifiers=0 code=52 char=72(r) false true
+--------------- 236 --------------
+  Sat Oct 18 12:54:52 ART 2014
+ProcessKeyBinding 401 when=1413647692277 modifiers=0 code=45 char=65(e) false true
+--------------- 237 --------------
+  Sat Oct 18 12:54:52 ART 2014
+ProcessKeyBinding 402 when=1413647692294 modifiers=0 code=52 char=72(r) false true
+--------------- 238 --------------
+  Sat Oct 18 12:54:52 ART 2014
+ProcessKeyBinding 402 when=1413647692376 modifiers=0 code=45 char=65(e) false true
+--------------- 239 --------------
+  Sat Oct 18 12:54:52 ART 2014
+ProcessKeyBinding 401 when=1413647692415 modifiers=0 code=41 char=61(a) false true
+--------------- 240 --------------
+  Sat Oct 18 12:54:52 ART 2014
+ProcessKeyBinding 402 when=1413647692544 modifiers=0 code=41 char=61(a) false true
+--------------- 241 --------------
+  Sat Oct 18 12:54:52 ART 2014
+ProcessKeyBinding 401 when=1413647692686 modifiers=40 code=10 char=ffff false true
+--------------- 242 --------------
+  Sat Oct 18 12:54:52 ART 2014
+ProcessKeyBinding 401 when=1413647692784 modifiers=40 code=2e char=3a(:) false true
+--------------- 243 --------------
+  Sat Oct 18 12:54:52 ART 2014
+ProcessKeyBinding 402 when=1413647692946 modifiers=40 code=2e char=3a(:) false true
+--------------- 244 --------------
+  Sat Oct 18 12:54:52 ART 2014
+ProcessKeyBinding 402 when=1413647692964 modifiers=0 code=10 char=ffff false true
+--------------- 245 --------------
+  Sat Oct 18 12:54:52 ART 2014
+ProcessKeyBinding 401 when=1413647692964 modifiers=0 code=20 char=20 false true
+--------------- 246 --------------
+  Sat Oct 18 12:54:53 ART 2014
+ProcessKeyBinding 402 when=1413647693110 modifiers=0 code=20 char=20 false true
+--------------- 247 --------------
+  Sat Oct 18 12:54:53 ART 2014
+ProcessKeyBinding 402 when=1413647693721 modifiers=0 code=26 char=ffff false true
+--------------- 248 --------------
+  Sat Oct 18 12:54:53 ART 2014
+ProcessKeyBinding 402 when=1413647693886 modifiers=0 code=25 char=ffff false true
+--------------- 249 --------------
+  Sat Oct 18 12:54:54 ART 2014
+ProcessKeyBinding 402 when=1413647694156 modifiers=0 code=25 char=ffff false true
+--------------- 250 --------------
+  Sat Oct 18 12:54:54 ART 2014
+ProcessKeyBinding 402 when=1413647694589 modifiers=0 code=8 char=8 false true
+--------------- 251 --------------
+  Sat Oct 18 12:54:54 ART 2014
+ProcessKeyBinding 402 when=1413647694735 modifiers=0 code=8 char=8 false true
+--------------- 252 --------------
+  Sat Oct 18 12:54:54 ART 2014
+ProcessKeyBinding 402 when=1413647694877 modifiers=0 code=8 char=8 false true
+--------------- 253 --------------
+  Sat Oct 18 12:54:55 ART 2014
+ProcessKeyBinding 402 when=1413647695029 modifiers=0 code=8 char=8 false true
+--------------- 254 --------------
+  Sat Oct 18 12:54:55 ART 2014
+ProcessKeyBinding 401 when=1413647695535 modifiers=40 code=10 char=ffff false true
+--------------- 255 --------------
+  Sat Oct 18 12:54:55 ART 2014
+ProcessKeyBinding 401 when=1413647695680 modifiers=40 code=53 char=53(S) false true
+--------------- 256 --------------
+  Sat Oct 18 12:54:55 ART 2014
+ProcessKeyBinding 402 when=1413647695762 modifiers=0 code=10 char=ffff false true
+--------------- 257 --------------
+  Sat Oct 18 12:54:55 ART 2014
+ProcessKeyBinding 402 when=1413647695781 modifiers=0 code=53 char=73(s) false true
+--------------- 258 --------------
+  Sat Oct 18 12:54:55 ART 2014
+ProcessKeyBinding 401 when=1413647695884 modifiers=0 code=49 char=69(i) false true
+--------------- 259 --------------
+  Sat Oct 18 12:54:56 ART 2014
+ProcessKeyBinding 402 when=1413647696014 modifiers=0 code=49 char=69(i) false true
+--------------- 260 --------------
+  Sat Oct 18 12:54:56 ART 2014
+ProcessKeyBinding 401 when=1413647696054 modifiers=0 code=44 char=64(d) false true
+--------------- 261 --------------
+  Sat Oct 18 12:54:56 ART 2014
+ProcessKeyBinding 402 when=1413647696135 modifiers=0 code=44 char=64(d) false true
+--------------- 262 --------------
+  Sat Oct 18 12:54:56 ART 2014
+ProcessKeyBinding 401 when=1413647696232 modifiers=0 code=45 char=65(e) false true
+--------------- 263 --------------
+  Sat Oct 18 12:54:56 ART 2014
+ProcessKeyBinding 402 when=1413647696298 modifiers=0 code=45 char=65(e) false true
+--------------- 264 --------------
+  Sat Oct 18 12:54:56 ART 2014
+ProcessKeyBinding 401 when=1413647696381 modifiers=0 code=53 char=73(s) false true
+--------------- 265 --------------
+  Sat Oct 18 12:54:56 ART 2014
+ProcessKeyBinding 402 when=1413647696448 modifiers=0 code=53 char=73(s) false true
+--------------- 266 --------------
+  Sat Oct 18 12:55:07 ART 2014
+ProcessKeyBinding 401 when=1413647707444 modifiers=200 code=12 char=ffff false false
+--------------- 267 --------------
+  Sat Oct 18 12:55:11 ART 2014
+ProcessKeyBinding 401 when=1413647711388 modifiers=80 code=11 char=ffff false false
+--------------- 268 --------------
+  Sat Oct 18 12:55:11 ART 2014
+Menu Activated: Window | Fill Window
+Currently highlighted: 
+    Annotation text
+--------------- 269 --------------
+  Sat Oct 18 12:55:11 ART 2014
+ProcessKeyBinding 400 when=1413647711679 modifiers=80 code=0 char=39(9) false false
+--------------- 270 --------------
+  Sat Oct 18 12:55:11 ART 2014
+ProcessKeyBinding 402 when=1413647711956 modifiers=0 code=11 char=ffff false false
+--------------- 271 --------------
+  Sat Oct 18 12:55:16 ART 2014
+ProcessKeyBinding 401 when=1413647716245 modifiers=200 code=12 char=ffff false false
+--------------- 272 --------------
+  Sat Oct 18 12:55:44 ART 2014
+ProcessKeyBinding 402 when=1413647744067 modifiers=0 code=25 char=ffff false true
+--------------- 273 --------------
+  Sat Oct 18 12:55:44 ART 2014
+ProcessKeyBinding 402 when=1413647744227 modifiers=0 code=25 char=ffff false true
+--------------- 274 --------------
+  Sat Oct 18 12:55:44 ART 2014
+ProcessKeyBinding 402 when=1413647744369 modifiers=0 code=25 char=ffff false true
+--------------- 275 --------------
+  Sat Oct 18 12:55

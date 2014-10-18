@@ -1,0 +1,112 @@
+Electric Version 9.05
+--------------- 0 --------------
+  Thu Oct 09 20:36:35 ART 2014
+ProcessKeyBinding 401 when=1412897795480 modifiers=200 code=12 char=ffff false false
+--------------- 1 --------------
+  Thu Oct 09 20:42:33 ART 2014
+ProcessKeyBinding 401 when=1412898153250 modifiers=200 code=12 char=ffff false false
+--------------- 2 --------------
+  Thu Oct 09 20:42:34 ART 2014
+ProcessKeyBinding 401 when=1412898154572 modifiers=200 code=12 char=ffff false false
+--------------- 3 --------------
+  Thu Oct 09 20:42:35 ART 2014
+ProcessKeyBinding 402 when=1412898155094 modifiers=200 code=46 char=66(f) false false
+--------------- 4 --------------
+  Thu Oct 09 20:42:35 ART 2014
+ProcessKeyBinding 402 when=1412898155305 modifiers=0 code=12 char=ffff false false
+--------------- 5 --------------
+  Thu Oct 09 20:42:35 ART 2014
+ProcessKeyBinding 402 when=1412898155632 modifiers=0 code=28 char=ffff false false
+--------------- 6 --------------
+  Thu Oct 09 20:42:35 ART 2014
+ProcessKeyBinding 402 when=1412898155846 modifiers=0 code=28 char=ffff false false
+--------------- 7 --------------
+  Thu Oct 09 20:42:36 ART 2014
+ProcessKeyBinding 402 when=1412898156167 modifiers=0 code=27 char=ffff false false
+--------------- 8 --------------
+  Thu Oct 09 20:42:36 ART 2014
+Menu Activated: /home/lean/tfinal/pi/electric/ProyectoIntegrador.jelib
+--------------- 9 --------------
+  Thu Oct 09 20:42:37 ART 2014
+ProcessKeyBinding 400 when=1412898156942 modifiers=0 code=0 char=a false false
+--------------- 10 --------------
+  Thu Oct 09 20:42:37 ART 2014
+ProcessKeyBinding 402 when=1412898157121 modifiers=0 code=a char=a false false
+--------------- 11 --------------
+  Thu Oct 09 20:43:23 ART 2014
+Menu Activated: File | Preferences...
+--------------- 12 --------------
+  Thu Oct 09 20:43:58 ART 2014
+Menu Activated: Tools | Simulation (Spice) | Write Spice Deck...
+--------------- 13 --------------
+  Thu Oct 09 20:45:21 ART 2014
+ProcessKeyBinding 401 when=1412898321964 modifiers=200 code=12 char=ffff false false
+--------------- 14 --------------
+  Thu Oct 09 20:45:31 ART 2014
+ProcessKeyBinding 401 when=1412898331364 modifiers=200 code=12 char=ffff false false
+--------------- 15 --------------
+  Thu Oct 09 20:46:07 ART 2014
+ProcessKeyBinding 401 when=1412898366990 modifiers=200 code=12 char=ffff false false
+--------------- 16 --------------
+  Thu Oct 09 20:46:08 ART 2014
+ProcessKeyBinding 401 when=1412898368599 modifiers=200 code=12 char=ffff false false
+--------------- 17 --------------
+  Thu Oct 09 20:46:33 ART 2014
+Menu Activated: Edit | Modes | Edit | Toggle Measure Distance
+--------------- 18 --------------
+  Thu Oct 09 20:46:33 ART 2014
+ProcessKeyBinding 400 when=1412898393050 modifiers=0 code=0 char=6d(m) false false
+--------------- 19 --------------
+  Thu Oct 09 20:46:36 ART 2014
+ProcessKeyBinding 401 when=1412898396446 modifiers=80 code=11 char=ffff false false
+--------------- 20 --------------
+  Thu Oct 09 20:46:40 ART 2014
+ProcessKeyBinding 402 when=1412898400070 modifiers=0 code=11 char=ffff false false
+--------------- 21 --------------
+  Thu Oct 09 20:46:41 ART 2014
+ProcessKeyBinding 401 when=1412898401457 modifiers=200 code=12 char=ffff false false
+--------------- 22 --------------
+  Thu Oct 09 20:46:52 ART 2014
+ProcessKeyBinding 401 when=1412898412489 modifiers=200 code=12 char=ffff false false
+--------------- 23 --------------
+  Thu Oct 09 20:46:57 ART 2014
+ProcessKeyBinding 401 when=1412898417857 modifiers=200 code=12 char=ffff false false
+--------------- 24 --------------
+  Thu Oct 09 20:54:24 ART 2014
+ProcessKeyBinding 401 when=1412898864781 modifiers=200 code=12 char=ffff false false
+--------------- 25 --------------
+  Thu Oct 09 20:58:17 ART 2014
+ProcessKeyBinding 401 when=1412899097864 modifiers=200 code=12 char=ffff false false
+--------------- 26 --------------
+  Thu Oct 09 20:58:18 ART 2014
+ProcessKeyBinding 402 when=1412899098157 modifiers=0 code=12 char=ffff false false
+--------------- 27 --------------
+  Thu Oct 09 20:58:18 ART 2014
+ProcessKeyBinding 401 when=1412899098427 modifiers=200 code=12 char=ffff false false
+--------------- 28 --------------
+  Thu Oct 09 21:00:10 ART 2014
+ProcessKeyBinding 401 when=1412899210463 modifiers=200 code=12 char=ffff false false
+--------------- 29 --------------
+  Thu Oct 09 21:00:13 ART 2014
+ProcessKeyBinding 401 when=1412899213272 modifiers=200 code=12 char=ffff false false
+--------------- 30 --------------
+  Thu Oct 09 21:00:19 ART 2014
+ProcessKeyBinding 401 when=1412899219164 modifiers=200 code=12 char=ffff false false
+--------------- 31 --------------
+  Thu Oct 09 21:08:16 ART 2014
+ProcessKeyBinding 401 when=1412899696039 modifiers=200 code=12 char=ffff false false
+--------------- 32 --------------
+  Thu Oct 09 21:09:55 ART 2014
+ProcessKeyBinding 401 when=1412899795562 modifiers=200 code=12 char=ffff false false
+--------------- 33 --------------
+  Thu Oct 09 21:22:11 ART 2014
+ProcessKeyBinding 401 when=1412900531508 modifiers=200 code=12 char=ffff false false
+--------------- 34 --------------
+  Thu Oct 09 21:24:09 ART 2014
+ProcessKeyBinding 401 when=1412900649410 modifiers=200 code=12 char=ffff false false
+--------------- 35 --------------
+  Fri Oct 10 08:24:49 ART 2014
+ProcessKeyBinding 401 when=1412940289108 modifiers=200 code=12 char=ffff false false
+--------------- 36 --------------
+  Fri Oct 10 08:24:53 ART 2014
+ProcessKeyBinding 401 when=1412940293185 modifiers=200 code=12 char=ffff false false
