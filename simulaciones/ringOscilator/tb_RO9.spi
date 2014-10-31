@@ -1,7 +1,7 @@
 #options language=spice
 options dtmin=1e-15
-get RO9.spi
+get ext_RO32.spi
 probe tran v(out) 
-trans 0 1630n 0.01p uic > tb_RO9.out
+trans 0 1630n 0.01p uic > RO9.out
 
 

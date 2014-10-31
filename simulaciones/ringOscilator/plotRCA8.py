@@ -5,18 +5,10 @@
 from numpy import * 
 #import pylab
 import matplotlib.pyplot as plt # Primero cargo el resultado de la simulación en un arreglo:
-data = genfromtxt('rippleCarry8_10ns.out', unpack=True)
+data = genfromtxt('RO31_.out', unpack=True)
 t=data[0]
 a0=data[1]
 s0=data[2]
-s1=data[3]
-s2=data[4]
-s3=data[5]
-s4=data[6]
-s5=data[7]
-s6=data[8]
-s7=data[9]
-cout=data[10]
 # Defino un 
 # http://matplotlib.sourceforge.net/api/figure_api.html#module-matplotlib.figure 
 
@@ -63,31 +55,6 @@ ax1.set_title('Ripple Carry Adder 8 bits')
 
 ax2.plot(data[0], data[2])
 ax2.set_ylabel('s0')
-
-ax3.plot(data[0], data[3])
-ax3.set_ylabel('s1')
-
-ax4.plot(data[0], data[4])
-ax4.set_ylabel('s2')
-
-ax5.plot(data[0], data[5])
-ax5.set_ylabel('s3')
-
-ax6.plot(data[0], data[6])
-ax6.set_ylabel('s4')
-
-ax7.plot(data[0], data[7])
-ax7.set_ylabel('s5')
-
-ax8.plot(data[0], data[8])
-ax8.set_ylabel('s6')
-
-ax9.plot(data[0], data[9])
-ax9.set_ylabel('s7')
-
-ax10.plot(data[0], data[10])
-ax10.set_ylabel('cout')
-
 
 
 # Fine-tune figure; make subplots close to each other and hide x ticks for

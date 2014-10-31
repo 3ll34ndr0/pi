@@ -21,3 +21,37 @@ probe tran + v(sum8)  v(sum9)  v(sum10) v(sum11) v(sum12) v(sum13) v(sum14) v(su
 
 * Comienzo la simulación en el tiempo:
 trans 0 10n 0.1n >> BrentKungFastAdder16.out
+
+
+**Otro período:
+
+* Seteo el parámetro para fijar la frecuencia en el circuito de exitación:
+param periodo = 7.5n
+
+* Comienzo la simulación llevando el circuito al punto de operación por defecto (Temperatura 27 grados)
+op
+
+* Elijo en qué puntos voy a medir qué cosa:
+* Primero los 2 puntos (entrada y salida) del path crítico:
+probe tran   v(a0)    v(cout)
+probe tran + v(sum0)  v(sum1)  v(sum2)  v(sum3)  v(sum4)  v(sum5)  v(sum6)  v(sum7)
+probe tran + v(sum8)  v(sum9)  v(sum10) v(sum11) v(sum12) v(sum13) v(sum14) v(sum15)
+* Comienzo la simulación en el tiempo:
+trans 10n 25n 0.15n >> BrentKungFastAdder16.out
+
+**Otro período:
+
+* Seteo el parámetro para fijar la frecuencia en el circuito de exitación:
+param periodo = 10n
+
+* Comienzo la simulación llevando el circuito al punto de operación por defecto (Temperatura 27 grados)
+op
+
+* Elijo en qué puntos voy a medir qué cosa:
+* Primero los 2 puntos (entrada y salida) del path crítico:
+probe tran   v(a0)    v(cout)
+probe tran + v(sum0)  v(sum1)  v(sum2)  v(sum3)  v(sum4)  v(sum5)  v(sum6)  v(sum7)
+probe tran + v(sum8)  v(sum9)  v(sum10) v(sum11) v(sum12) v(sum13) v(sum14) v(sum15)
+
+* Comienzo la simulación en el tiempo:
+trans 25n 45n 0.20n >> BrentKungFastAdder16.out
