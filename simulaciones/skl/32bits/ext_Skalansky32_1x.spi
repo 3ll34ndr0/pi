@@ -1,0 +1,4776 @@
+*** SPICE deck for cell Skalansky32{lay} from library ProyectoIntegrador
+*** Created on sáb oct 25, 2014 17:52:49
+*** Last revised on sáb oct 25, 2014 20:45:47
+*** Written on sáb oct 25, 2014 20:47:42 by Electric VLSI Design System, 
+*** version 9.05
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 0.5, MIN_CAPAC 0.5FF
+***    P-Active:	areacap=1.167FF/um^2,	edgecap=0.203FF/um,	res=7.5ohms/sq
+***    N-Active:	areacap=0.982FF/um^2,	edgecap=0.244FF/um,	res=6.7ohms/sq
+***    
+*** Polysilicon-1:	areacap=0.1467FF/um^2,	edgecap=0.0608FF/um,	res=7.8ohms/sq
+***    Transistor-Poly:	areacap=0.09FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Poly-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=10.5ohms/sq
+***    Active-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=12.2ohms/sq
+***    Metal-1:	areacap=0.1209FF/um^2,	edgecap=0.1104FF/um,	res=0.08ohms/sq
+***    Via1:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=5.69ohms/sq
+***    Metal-2:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via2:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=11.39ohms/sq
+***    Metal-3:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via3:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=16.73ohms/sq
+***    Metal-4:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via4:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=21.44ohms/sq
+***    Metal-5:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.07ohms/sq
+***    Via5:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=24.08ohms/sq
+***    Metal-6:	areacap=0.0423FF/um^2,	edgecap=0.1273FF/um,	res=0.03ohms/sq
+***    Hi-Res:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+* Model cards are described in this file:
+.include /home/lean/tfinal/trabajo/models/tsmc180nm.model
+
+*** SUBCIRCUIT ProyectoIntegrador__id FROM CELL id{lay}
+.SUBCKT ProyectoIntegrador__id vss a vdd y
+Mnmos_0 net_10 a#1 0 0 N L=0.2U W=0.4U AS=0.6P AD=0.3P PS=5.8U PD=2.2U
+Mnmos_1 y#0 net_10#6 0 0 N L=0.2U W=0.4U AS=0.6P AD=0.3P PS=5.8U PD=2.2U
+Mpmos_0 net_10#2 a#5 vdd vdd P L=0.2U W=0.8U AS=0.8P AD=0.3P PS=6.6U PD=2.2U
+Mpmos_1 y#2 net_10#10 vdd vdd P L=0.2U W=0.8U AS=0.8P AD=0.3P PS=6.6U PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 net_10 0 0.649fF
+C1 net_10#2 0 0.623fF
+C2 y#0 0 0.546fF
+C3 y#2 0 0.726fF
+C4 net_10#4 0 1.495fF
+C5 y 0 1.272fF
+C6 a#3 0 0.66fF
+C7 net_10#8 0 0.66fF
+** Extracted Parasitic Resistors ***
+R0 a#1 a#2 15.6
+R1 a#3 a#2 181.35
+R2 a#4 a#3 157.95
+R3 a a#3 1.95
+R4 a#5 a#4 15.6
+R5 net_10#6 net_10#7 15.6
+R6 net_10#8 net_10#7 181.35
+R7 net_10#9 net_10#8 157.95
+R8 net_10#4 net_10#8 1.95
+R9 net_10#10 net_10#9 15.6
+R10 y#2 y 1.507
+R11 net_10#2 net_10#4 1.293
+R12 net_10#4 net_10 1.347
+R13 y#0 y 1.133
+.ENDS ProyectoIntegrador__id
+
+*** SUBCIRCUIT ProyectoIntegrador__xor2_1x FROM CELL xor2_1x{lay}
+.SUBCKT ProyectoIntegrador__xor2_1x vss a b vdd y
+Mnmos_0 net_79 a#9 0 0 N L=0.2U W=0.4U AS=0.44P AD=0.088P PS=4.2U PD=0.85U
+Mnmos_1 net_76 net_160#11 y#0 0 N L=0.2U W=0.4U AS=0.18P AD=0.088P PS=1.2U 
++PD=0.85U
+Mnmos_2 0 net_270#10 net_76 0 N L=0.2U W=0.4U AS=0.088P AD=0.44P PS=0.85U 
++PD=4.2U
+Mnmos_3 y#0 b#5 net_79 0 N L=0.2U W=0.4U AS=0.088P AD=0.18P PS=0.85U PD=1.2U
+Mnmos_4 net_160#12 b#0 0 0 N L=0.2U W=0.4U AS=0.44P AD=0.28P PS=4.2U PD=2.2U
+Mnmos_5 0 a#5 net_270#2 0 N L=0.2U W=0.4U AS=0.28P AD=0.44P PS=2.2U PD=4.2U
+Mpmos_0 net_68 net_270#12 vdd vdd P L=0.2U W=0.8U AS=0.56P AD=0.168P PS=4.6U 
++PD=1.25U
+Mpmos_1 y b#11 net_68 vdd P L=0.2U W=0.8U AS=0.168P AD=0.18P PS=1.25U PD=1.2U
+Mpmos_2 net_70 net_160#5 y vdd P L=0.2U W=0.8U AS=0.18P AD=0.168P PS=1.2U 
++PD=1.25U
+Mpmos_4 vdd a#12 net_70 vdd P L=0.2U W=0.8U AS=0.168P AD=0.56P PS=1.25U 
++PD=4.6U
+Mpmos_5 vdd a#1 net_270 vdd P L=0.2U W=0.8U AS=0.28P AD=0.56P PS=2.2U PD=4.6U
+Mpmos_6 net_160 b#13 vdd vdd P L=0.2U W=0.8U AS=0.56P AD=0.28P PS=4.6U 
++PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 y#0 0 1.163fF
+C1 y 0 1.06fF
+C2 a#0 0 0.628fF
+C3 net_160#12 0 0.594fF
+C4 net_160 0 0.697fF
+C5 a 0 1.269fF
+C6 b 0 0.563fF
+C7 net_270 0 1.519fF
+C8 net_270#1 0 1.247fF
+C9 net_160#2 0 1.362fF
+C10 net_270#4 0 0.653fF
+C11 b#2 0 0.66fF
+C12 b#8 0 0.509fF
+** Extracted Parasitic Resistors ***
+R0 y y#0 2.413
+R1 a#0 a 0.76
+R2 a#1 a#2 15.6
+R3 a#2 a#2##0 111.15
+R4 a#2##0 a 111.15
+R5 a#4 a#5 15.6
+R6 a a#4 117
+R7 b#0 b#1 31.2
+R8 b#1 b#2 183.3
+R9 b#2 b#4 156
+R10 b b#2 1.95
+R11 net_270 net_270#1 1.107
+R12 net_270#1 net_270#2 0.653
+R13 net_160#2 net_160 1.44
+R14 net_160#2 net_160#4 0.6
+R15 net_270#3 net_270#4 68.25
+R16 net_270#7 net_270 1.95
+R17 net_270#1 net_270#4 1.08
+R18 a#0 a#0##0 101.4
+R19 a#0##0 a#8 101.4
+R20 b#5 b#6 39
+R21 b#6 b#7 7.8
+R22 b#7 b#8 142.35
+R23 b#9 b#10 7.8
+R24 b#10 b#11 39
+R25 net_160#5 net_160#6 58.5
+R26 net_160#6 net_160#7 7.8
+R27 net_160#7 net_160#8 130.65
+R28 net_160#9 net_160#10 7.8
+R29 net_160#10 net_160#11 58.5
+R30 b b#12 0.547
+R31 b#8 b#9 118.95
+R32 b#12 b#8 1.95
+R33 net_160#8 net_160#9 91.65
+R34 net_160#4 net_160#8 1.95
+R35 net_160#12 net_160#2 1.16
+R36 net_270#10 net_270#11 19.5
+R37 net_270#11 net_270#3 31.2
+R38 a#9 a#10 19.5
+R39 a#10 a#11 15.6
+R40 a#11 a 101.4
+R41 net_270#12 net_270#13 19.5
+R42 net_270#13 net_270#14 15.6
+R43 net_270#14 net_270 76.05
+R44 a#12 a#13 19.5
+R45 a#13 a#8 15.6
+R46 b#13 b#4 31.2
+.ENDS ProyectoIntegrador__xor2_1x
+
+*** SUBCIRCUIT ProyectoIntegrador__and2_1x FROM CELL and2_1x{lay}
+.SUBCKT ProyectoIntegrador__and2_1x vss a b vdd y
+Mnmos_0 net_121 b#7 net_149 0 N L=0.2U W=0.4U AS=0.088P AD=0.227P PS=0.85U 
++PD=1.533U
+Mnmos_1 net_149 a#5 0 0 N L=0.2U W=0.4U AS=0.68P AD=0.088P PS=6.6U PD=0.85U
+Mnmos_2 y#0 net_121#13 0 0 N L=0.2U W=0.4U AS=0.68P AD=0.3P PS=6.6U PD=2.2U
+Mpmos_0 vdd b#1 net_121#2 vdd P L=0.2U W=0.8U AS=0.227P AD=0.693P PS=1.533U 
++PD=5.8U
+Mpmos_1 net_121#2 a#1 vdd vdd P L=0.2U W=0.8U AS=0.693P AD=0.227P PS=5.8U 
++PD=1.533U
+Mpmos_2 y#2 net_121#7 vdd vdd P L=0.2U W=0.8U AS=0.693P AD=0.3P PS=5.8U 
++PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 net_121 0 0.797fF
+C1 net_121#2 0 0.501fF
+C2 y#0 0 0.546fF
+C3 y#2 0 0.726fF
+C4 y 0 1.272fF
+C5 net_121#3 0 2.178fF
+C6 b#4 0 0.585fF
+** Extracted Parasitic Resistors ***
+R0 a#1 a#2 15.6
+R1 a#2 a#2##0 125.775
+R2 a#2##0 a#3 125.775
+R3 b#1 b#2 19.5
+R4 b#2 b#3 15.6
+R5 b#3 b#4 140.4
+R6 b#5 b#6 7.8
+R7 b#6 b#7 19.5
+R8 b#4 b#5 159.9
+R9 b b#4 1.95
+R10 a#3 a#4 87.75
+R11 a#3 a 1.95
+R12 a#4 a#5 15.6
+R13 net_121#2 net_121#3 1.04
+R14 y#2 y 1.507
+R15 y y#0 1.133
+R16 net_121#7 net_121#8 15.6
+R17 net_121#3 net_121 1.547
+R18 net_121#11 net_121#11##0 106.275
+R19 net_121#11##0 net_121#3 106.275
+R20 net_121#3 net_121#8 126.75
+R21 net_121#11 net_121#13 15.6
+.ENDS ProyectoIntegrador__and2_1x
+
+*** SUBCIRCUIT ProyectoIntegrador__or2_1x FROM CELL or2_1x{lay}
+.SUBCKT ProyectoIntegrador__or2_1x vss a b vdd y
+Mnmos_0 net_56#2 a#1 0 0 N L=0.2U W=0.4U AS=0.52P AD=0.2P PS=5U PD=1.533U
+Mnmos_1 0 b#3 net_56#2 0 N L=0.2U W=0.4U AS=0.2P AD=0.52P PS=1.533U PD=5U
+Mnmos_2 y#0 net_56#9 0 0 N L=0.2U W=0.4U AS=0.52P AD=0.28P PS=5U PD=2.2U
+Mpmos_0 net_55 a#3 vdd vdd P L=0.2U W=0.8U AS=0.84P AD=0.168P PS=7.4U 
++PD=1.25U
+Mpmos_1 net_56 b#1 net_55 vdd P L=0.2U W=0.8U AS=0.168P AD=0.2P PS=1.25U 
++PD=1.533U
+Mpmos_2 y#2 net_56#14 vdd vdd P L=0.2U W=0.8U AS=0.84P AD=0.28P PS=7.4U 
++PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 net_56 0 0.662fF
+C1 y#0 0 0.546fF
+C2 y#2 0 0.707fF
+C3 net_56#13 0 1.09fF
+C4 y 0 1.253fF
+C5 net_56#6 0 0.848fF
+C6 net_56#11 0 0.66fF
+** Extracted Parasitic Resistors ***
+R0 a#1 a#2 15.6
+R1 a#3 a#4 15.6
+R2 a#4 a#5 64.35
+R3 b#1 b#2 23.4
+R4 b#3 b#4 19.5
+R5 b#2 b#5 7.8
+R6 b#5 b#6 70.2
+R7 b#7 b#4 15.6
+R8 a#5 a#5##0 137.475
+R9 a#5##0 a#2 137.475
+R10 a#5 a 1.95
+R11 b#6 b#6##0 113.1
+R12 b#6##0 b#7 113.1
+R13 b#6 b 1.95
+R14 net_56#2 net_56#6 0.693
+R15 net_56#9 net_56#10 15.6
+R16 net_56#11 net_56#10 181.35
+R17 net_56#12 net_56#11 157.95
+R18 net_56#13 net_56#11 1.95
+R19 y#2 y 1.467
+R20 y y#0 1.133
+R21 net_56#14 net_56#12 15.6
+R22 net_56#6 net_56#13 0.64
+R23 net_56#13 net_56 1.24
+.ENDS ProyectoIntegrador__or2_1x
+
+*** TOP LEVEL CELL: Skalansky32{lay}
+Xc_cout 0 net_810 vdd cout#0 ProyectoIntegrador__id
+Xc_sum0 0 net_75#2 vdd sum0#0 ProyectoIntegrador__id
+Xc_sum1 0 net_72#2 vdd sum1#0 ProyectoIntegrador__id
+Xc_sum2 0 net_18 vdd sum2#0 ProyectoIntegrador__id
+Xc_sum3 0 net_62#2 vdd sum3#0 ProyectoIntegrador__id
+Xc_sum4 0 net_4 vdd sum4#0 ProyectoIntegrador__id
+Xc_sum5 0 net_205 vdd sum5#0 ProyectoIntegrador__id
+Xc_sum6 0 net_121 vdd sum6#0 ProyectoIntegrador__id
+Xc_sum7 0 net_10#2 vdd sum7#0 ProyectoIntegrador__id
+Xc_sum8 0 net_153#2 vdd sum8#0 ProyectoIntegrador__id
+Xc_sum9 0 net_323#2 vdd sum9#0 ProyectoIntegrador__id
+Xc_sum10 0 net_267#2 vdd sum10#0 ProyectoIntegrador__id
+Xc_sum11 0 net_260#2 vdd sum11#0 ProyectoIntegrador__id
+Xc_sum12 0 net_315#2 vdd sum12#0 ProyectoIntegrador__id
+Xc_sum13 0 net_351 vdd sum13#0 ProyectoIntegrador__id
+Xc_sum14 0 net_296 vdd sum14#0 ProyectoIntegrador__id
+Xc_sum15 0 net_311 vdd sum15#0 ProyectoIntegrador__id
+Xc_sum16 0 net_705#2 vdd sum16#0 ProyectoIntegrador__id
+Xc_sum17 0 net_954#2 vdd sum17#0 ProyectoIntegrador__id
+Xc_sum18 0 net_961#2 vdd sum18#0 ProyectoIntegrador__id
+Xc_sum19 0 net_823 vdd sum19#0 ProyectoIntegrador__id
+Xc_sum20 0 net_914#2 vdd sum20#0 ProyectoIntegrador__id
+Xc_sum21 0 net_1000#2 vdd sum21#0 ProyectoIntegrador__id
+Xc_sum22 0 net_840#2 vdd sum22#0 ProyectoIntegrador__id
+Xc_sum23 0 net_694 vdd sum23#0 ProyectoIntegrador__id
+Xc_sum24 0 net_486#2 vdd sum24#0 ProyectoIntegrador__id
+Xc_sum25 0 net_546#2 vdd sum25#0 ProyectoIntegrador__id
+Xc_sum26 0 net_787 vdd sum26#0 ProyectoIntegrador__id
+Xc_sum27 0 net_609#2 vdd sum27#0 ProyectoIntegrador__id
+Xc_sum28 0 net_522#2 vdd sum28#0 ProyectoIntegrador__id
+Xc_sum29 0 net_727 vdd sum29#0 ProyectoIntegrador__id
+Xc_sum30 0 net_652#2 vdd sum30#0 ProyectoIntegrador__id
+Xc_sum31 0 net_554#2 vdd sum31#0 ProyectoIntegrador__id
+Xc_w1 0 net_77#4 net_106#4 vdd net_75 ProyectoIntegrador__xor2_1x
+Xc_w2 0 a0#0 vdd net_77 ProyectoIntegrador__id
+Xc_w3 0 b0#0 vdd net_106 ProyectoIntegrador__id
+Xc_w4 0 net_44#2 net_103 vdd net_72 ProyectoIntegrador__xor2_1x
+Xc_w5 0 net_77#2 net_106#2 vdd net_44 ProyectoIntegrador__and2_1x
+Xc_w6 0 net_68 net_100 vdd net_103#4 ProyectoIntegrador__xor2_1x
+Xc_w7 0 a1#0 vdd net_68#4 ProyectoIntegrador__id
+Xc_w8 0 b1#0 vdd net_100#4 ProyectoIntegrador__id
+Xc_w9 0 net_128 net_95 vdd net_18#2 ProyectoIntegrador__xor2_1x
+Xc_w10 0 net_119#2 net_42#2 vdd net_128#4 ProyectoIntegrador__or2_1x
+Xc_w11 0 net_68#2 net_100#2 vdd net_119 ProyectoIntegrador__and2_1x
+Xc_w12 0 net_103#2 net_44#4 vdd net_42 ProyectoIntegrador__and2_1x
+Xc_w13 0 net_114 net_125 vdd net_95#6 ProyectoIntegrador__xor2_1x
+Xc_w14 0 a2#0 vdd net_114#4 ProyectoIntegrador__id
+Xc_w15 0 b2#0 vdd net_125#4 ProyectoIntegrador__id
+Xc_w16 0 net_64#2 net_38#4 vdd net_62 ProyectoIntegrador__xor2_1x
+Xc_w17 0 net_92#2 net_66#2 vdd net_64 ProyectoIntegrador__or2_1x
+Xc_w18 0 net_114#2 net_125#2 vdd net_92 ProyectoIntegrador__and2_1x
+Xc_w19 0 net_95#2 net_128#2 vdd net_66 ProyectoIntegrador__and2_1x
+Xc_w20 0 net_58 net_35 vdd net_38#6 ProyectoIntegrador__xor2_1x
+Xc_w21 0 a3#0 vdd net_58#4 ProyectoIntegrador__id
+Xc_w22 0 b3#0 vdd net_35#4 ProyectoIntegrador__id
+Xc_w23 0 net_26#2 net_263 vdd net_4#2 ProyectoIntegrador__xor2_1x
+Xc_w24 0 net_32#2 net_16#2 vdd net_26 ProyectoIntegrador__or2_1x
+Xc_w25 0 net_112#2 net_90#2 vdd net_32 ProyectoIntegrador__or2_1x
+Xc_w26 0 net_58#2 net_35#2 vdd net_112 ProyectoIntegrador__and2_1x
+Xc_w27 0 net_38#2 net_92#4 vdd net_90 ProyectoIntegrador__and2_1x
+Xc_w28 0 net_117 net_128#6 vdd net_16 ProyectoIntegrador__and2_1x
+Xc_w29 0 net_38 net_95#4 vdd net_117#2 ProyectoIntegrador__and2_1x
+Xc_w30 0 net_207#4 net_213#4 vdd net_263#6 ProyectoIntegrador__xor2_1x
+Xc_w31 0 a4#0 vdd net_207 ProyectoIntegrador__id
+Xc_w32 0 b4#0 vdd net_213 ProyectoIntegrador__id
+Xc_w33 0 net_203 net_252#2 vdd net_205#2 ProyectoIntegrador__xor2_1x
+Xc_w34 0 net_140#2 net_161#2 vdd net_203#2 ProyectoIntegrador__or2_1x
+Xc_w35 0 net_207#2 net_213#2 vdd net_140 ProyectoIntegrador__and2_1x
+Xc_w36 0 net_263#2 net_26#4 vdd net_161 ProyectoIntegrador__and2_1x
+Xc_w37 0 net_156 net_137#2 vdd net_252#6 ProyectoIntegrador__xor2_1x
+Xc_w38 0 a5#0 vdd net_156#4 ProyectoIntegrador__id
+Xc_w39 0 b5#0 vdd net_137 ProyectoIntegrador__id
+Xc_w40 0 net_84 net_227#6 vdd net_121#2 ProyectoIntegrador__xor2_1x
+Xc_w41 0 net_21 net_133#2 vdd net_84#2 ProyectoIntegrador__or2_1x
+Xc_w42 0 net_225 net_159#2 vdd net_21#6 ProyectoIntegrador__or2_1x
+Xc_w43 0 net_156#2 net_137#4 vdd net_225#2 ProyectoIntegrador__and2_1x
+Xc_w44 0 net_252#4 net_140#4 vdd net_159 ProyectoIntegrador__and2_1x
+Xc_w45 0 net_54#4 net_26#10 vdd net_133 ProyectoIntegrador__and2_1x
+Xc_w46 0 net_252 net_263#4 vdd net_54#2 ProyectoIntegrador__and2_1x
+Xc_w47 0 net_143#4 net_190#4 vdd net_227#4 ProyectoIntegrador__xor2_1x
+Xc_w48 0 a6#0 vdd net_143 ProyectoIntegrador__id
+Xc_w49 0 b6#0 vdd net_190 ProyectoIntegrador__id
+Xc_w50 0 net_12#2 net_50#2 vdd net_10 ProyectoIntegrador__xor2_1x
+Xc_w51 0 net_2 net_14#2 vdd net_12 ProyectoIntegrador__or2_1x
+Xc_w52 0 net_239#2 net_82#2 vdd net_2#2 ProyectoIntegrador__or2_1x
+Xc_w53 0 net_143#2 net_190#2 vdd net_239 ProyectoIntegrador__and2_1x
+Xc_w54 0 net_227#8 net_21#2 vdd net_82 ProyectoIntegrador__and2_1x
+Xc_w55 0 net_88 net_26#6 vdd net_14 ProyectoIntegrador__and2_1x
+Xc_w56 0 net_227 net_54 vdd net_88#2 ProyectoIntegrador__and2_1x
+Xc_w57 0 net_236 net_249 vdd net_50#6 ProyectoIntegrador__xor2_1x
+Xc_w58 0 a7#0 vdd net_236#2 ProyectoIntegrador__id
+Xc_w59 0 b7#0 vdd net_249#2 ProyectoIntegrador__id
+Xc_w60 0 net_301#4 net_284#2 vdd net_153#5 ProyectoIntegrador__xor2_1x
+Xc_w61 0 net_187#5 net_210#5 vdd net_301#16 ProyectoIntegrador__or2_1x
+Xc_w62 0 net_7 net_80#2 vdd net_187#2 ProyectoIntegrador__or2_1x
+Xc_w63 0 net_223 net_0#2 vdd net_7#2 ProyectoIntegrador__or2_1x
+Xc_w64 0 net_236#4 net_249#4 vdd net_223#2 ProyectoIntegrador__and2_1x
+Xc_w65 0 net_50#4 net_239#4 vdd net_0 ProyectoIntegrador__and2_1x
+Xc_w66 0 net_109#4 net_21#4 vdd net_80 ProyectoIntegrador__and2_1x
+Xc_w67 0 net_50 net_227#2 vdd net_109#2 ProyectoIntegrador__and2_1x
+Xc_w68 0 net_86 net_26#8 vdd net_210#2 ProyectoIntegrador__and2_1x
+Xc_w69 0 net_109 net_54#6 vdd net_86#2 ProyectoIntegrador__and2_1x
+Xc_w70 0 net_503 net_540 vdd net_284#6 ProyectoIntegrador__xor2_1x
+Xc_w71 0 a8#0 vdd net_503#4 ProyectoIntegrador__id
+Xc_w72 0 b8#0 vdd net_540#4 ProyectoIntegrador__id
+Xc_w73 0 net_325#2 net_292#6 vdd net_323 ProyectoIntegrador__xor2_1x
+Xc_w74 0 net_382#2 net_331#2 vdd net_325 ProyectoIntegrador__or2_1x
+Xc_w75 0 net_503#2 net_540#2 vdd net_382#4 ProyectoIntegrador__and2_1x
+Xc_w76 0 net_284#4 net_301#6 vdd net_331 ProyectoIntegrador__and2_1x
+Xc_w77 0 net_402#4 net_385#2 vdd net_292#2 ProyectoIntegrador__xor2_1x
+Xc_w78 0 a9#0 vdd net_402 ProyectoIntegrador__id
+Xc_w79 0 b9#0 vdd net_385#4 ProyectoIntegrador__id
+Xc_w80 0 net_256#2 net_421#6 vdd net_267 ProyectoIntegrador__xor2_1x
+Xc_w81 0 net_426#2 net_355 vdd net_256 ProyectoIntegrador__or2_1x
+Xc_w82 0 net_336 net_327 vdd net_426#6 ProyectoIntegrador__or2_1x
+Xc_w83 0 net_402#2 net_385 vdd net_336#2 ProyectoIntegrador__and2_1x
+Xc_w84 0 net_292#4 net_382 vdd net_327#2 ProyectoIntegrador__and2_1x
+Xc_w85 0 net_467#6 net_301#10 vdd net_355#2 ProyectoIntegrador__and2_1x
+Xc_w86 0 net_292 net_284 vdd net_467#4 ProyectoIntegrador__and2_1x
+Xc_w87 0 net_219#2 net_242#2 vdd net_421#8 ProyectoIntegrador__xor2_1x
+Xc_w88 0 a10#0 vdd net_219#4 ProyectoIntegrador__id
+Xc_w89 0 b10#0 vdd net_242#4 ProyectoIntegrador__id
+Xc_w90 0 net_440 net_346#4 vdd net_260 ProyectoIntegrador__xor2_1x
+Xc_w91 0 net_333 net_430 vdd net_440#2 ProyectoIntegrador__or2_1x
+Xc_w92 0 net_245#2 net_258 vdd net_333#2 ProyectoIntegrador__or2_1x
+Xc_w93 0 net_219 net_242 vdd net_245#4 ProyectoIntegrador__and2_1x
+Xc_w94 0 net_421#4 net_426 vdd net_258#2 ProyectoIntegrador__and2_1x
+Xc_w95 0 net_419#2 net_301#2 vdd net_430#2 ProyectoIntegrador__and2_1x
+Xc_w96 0 net_421#2 net_467#2 vdd net_419 ProyectoIntegrador__and2_1x
+Xc_w97 0 net_269#2 net_274#4 vdd net_346#2 ProyectoIntegrador__xor2_1x
+Xc_w98 0 a11#0 vdd net_269#4 ProyectoIntegrador__id
+Xc_w99 0 b11#0 vdd net_274 ProyectoIntegrador__id
+Xc_w100 0 net_391#2 net_453#6 vdd net_315 ProyectoIntegrador__xor2_1x
+Xc_w101 0 net_338#8 net_393#2 vdd net_391 ProyectoIntegrador__or2_1x
+Xc_w102 0 net_319#2 net_317 vdd net_338#10 ProyectoIntegrador__or2_1x
+Xc_w103 0 net_436#2 net_438#2 vdd net_319 ProyectoIntegrador__or2_1x
+Xc_w104 0 net_269 net_274#2 vdd net_436 ProyectoIntegrador__and2_1x
+Xc_w105 0 net_346#6 net_245 vdd net_438 ProyectoIntegrador__and2_1x
+Xc_w106 0 net_464#4 net_426#4 vdd net_317#2 ProyectoIntegrador__and2_1x
+Xc_w107 0 net_346 net_421 vdd net_464 ProyectoIntegrador__and2_1x
+Xc_w108 0 net_458#6 net_301#12 vdd net_393 ProyectoIntegrador__and2_1x
+Xc_w109 0 net_464#2 net_467 vdd net_458#4 ProyectoIntegrador__and2_1x
+Xc_w110 0 net_374 net_388 vdd net_453#8 ProyectoIntegrador__xor2_1x
+Xc_w111 0 a12#0 vdd net_374#4 ProyectoIntegrador__id
+Xc_w112 0 b12#0 vdd net_388#4 ProyectoIntegrador__id
+Xc_w113 0 net_377#2 net_449#6 vdd net_351#2 ProyectoIntegrador__xor2_1x
+Xc_w114 0 net_299 net_363#2 vdd net_377 ProyectoIntegrador__or2_1x
+Xc_w115 0 net_360 net_353#2 vdd net_299#2 ProyectoIntegrador__or2_1x
+Xc_w116 0 net_374#2 net_388#2 vdd net_360#4 ProyectoIntegrador__and2_1x
+Xc_w117 0 net_453#2 net_338#4 vdd net_353 ProyectoIntegrador__and2_1x
+Xc_w118 0 net_365#2 net_301#18 vdd net_363 ProyectoIntegrador__and2_1x
+Xc_w119 0 net_453#4 net_458#10 vdd net_365 ProyectoIntegrador__and2_1x
+Xc_w120 0 net_146#2 net_179#2 vdd net_449#2 ProyectoIntegrador__xor2_1x
+Xc_w121 0 a13#0 vdd net_146#4 ProyectoIntegrador__id
+Xc_w122 0 b13#0 vdd net_179#4 ProyectoIntegrador__id
+Xc_w123 0 net_151 net_442 vdd net_296#2 ProyectoIntegrador__xor2_1x
+Xc_w124 0 net_234 net_184#2 vdd net_151#2 ProyectoIntegrador__or2_1x
+Xc_w125 0 net_277#4 net_413 vdd net_234#2 ProyectoIntegrador__or2_1x
+Xc_w126 0 net_149 net_415 vdd net_277#2 ProyectoIntegrador__or2_1x
+Xc_w127 0 net_146 net_179 vdd net_149#2 ProyectoIntegrador__and2_1x
+Xc_w128 0 net_449#4 net_360#2 vdd net_415#2 ProyectoIntegrador__and2_1x
+Xc_w129 0 net_408#8 net_338#2 vdd net_413#2 ProyectoIntegrador__and2_1x
+Xc_w130 0 net_449 net_453 vdd net_408#4 ProyectoIntegrador__and2_1x
+Xc_w131 0 net_288 net_301 vdd net_184 ProyectoIntegrador__and2_1x
+Xc_w132 0 net_408#6 net_458 vdd net_288#2 ProyectoIntegrador__and2_1x
+Xc_w133 0 net_198 net_216 vdd net_442#8 ProyectoIntegrador__xor2_1x
+Xc_w134 0 a14#0 vdd net_198#4 ProyectoIntegrador__id
+Xc_w135 0 b14#0 vdd net_216#4 ProyectoIntegrador__id
+Xc_w136 0 net_371 net_432 vdd net_311#2 ProyectoIntegrador__xor2_1x
+Xc_w137 0 net_344 net_395#2 vdd net_371#2 ProyectoIntegrador__or2_1x
+Xc_w138 0 net_417 net_369 vdd net_344#2 ProyectoIntegrador__or2_1x
+Xc_w139 0 net_193#2 net_232#2 vdd net_417#2 ProyectoIntegrador__or2_1x
+Xc_w140 0 net_198#2 net_216#2 vdd net_193 ProyectoIntegrador__and2_1x
+Xc_w141 0 net_442#6 net_277#6 vdd net_232 ProyectoIntegrador__and2_1x
+Xc_w142 0 net_405#4 net_338 vdd net_369#2 ProyectoIntegrador__and2_1x
+Xc_w143 0 net_442#4 net_408#2 vdd net_405 ProyectoIntegrador__and2_1x
+Xc_w144 0 net_397#2 net_301#8 vdd net_395 ProyectoIntegrador__and2_1x
+Xc_w145 0 net_405#2 net_458#2 vdd net_397 ProyectoIntegrador__and2_1x
+Xc_w146 0 net_163#2 net_172#2 vdd net_432#6 ProyectoIntegrador__xor2_1x
+Xc_w147 0 a15#0 vdd net_163#4 ProyectoIntegrador__id
+Xc_w148 0 b15#0 vdd net_172#4 ProyectoIntegrador__id
+Xc_w149 0 net_729#21 net_1123#4 vdd net_705#5 ProyectoIntegrador__xor2_1x
+Xc_w150 0 net_801 net_480#8 vdd net_729#18 ProyectoIntegrador__or2_1x
+Xc_w151 0 net_329#11 net_538#8 vdd net_801#2 ProyectoIntegrador__or2_1x
+Xc_w152 0 net_175 net_182#2 vdd net_329#2 ProyectoIntegrador__or2_1x
+Xc_w153 0 net_166 net_168#2 vdd net_175#2 ProyectoIntegrador__or2_1x
+Xc_w154 0 net_163 net_172 vdd net_166#2 ProyectoIntegrador__and2_1x
+Xc_w155 0 net_432#4 net_193#4 vdd net_168 ProyectoIntegrador__and2_1x
+Xc_w156 0 net_399#4 net_277 vdd net_182 ProyectoIntegrador__and2_1x
+Xc_w157 0 net_432#2 net_442#2 vdd net_399 ProyectoIntegrador__and2_1x
+Xc_w158 0 net_379#2 net_338#6 vdd net_538#2 ProyectoIntegrador__and2_1x
+Xc_w159 0 net_399#2 net_408 vdd net_379 ProyectoIntegrador__and2_1x
+Xc_w160 0 net_367 net_301#14 vdd net_480#2 ProyectoIntegrador__and2_1x
+Xc_w161 0 net_379#4 net_458#8 vdd net_367#2 ProyectoIntegrador__and2_1x
+Xc_w162 0 net_1024 net_1042 vdd net_1123#2 ProyectoIntegrador__xor2_1x
+Xc_w163 0 a16#0 vdd net_1024#4 ProyectoIntegrador__id
+Xc_w164 0 b16#0 vdd net_1042#4 ProyectoIntegrador__id
+Xc_w165 0 net_956#2 net_1059#6 vdd net_954 ProyectoIntegrador__xor2_1x
+Xc_w166 0 net_974#4 net_1095#2 vdd net_956 ProyectoIntegrador__or2_1x
+Xc_w167 0 net_1024#2 net_1042#2 vdd net_974 ProyectoIntegrador__and2_1x
+Xc_w168 0 net_1123#6 net_729#23 vdd net_1095 ProyectoIntegrador__and2_1x
+Xc_w169 0 net_1021#4 net_958#2 vdd net_1059#2 ProyectoIntegrador__xor2_1x
+Xc_w170 0 a17#0 vdd net_1021 ProyectoIntegrador__id
+Xc_w171 0 b17#0 vdd net_958#4 ProyectoIntegrador__id
+Xc_w172 0 net_963#2 net_1088#8 vdd net_961 ProyectoIntegrador__xor2_1x
+Xc_w173 0 net_1075#6 net_995#2 vdd net_963 ProyectoIntegrador__or2_1x
+Xc_w174 0 net_1040 net_1009 vdd net_1075#2 ProyectoIntegrador__or2_1x
+Xc_w175 0 net_1021#2 net_958 vdd net_1040#2 ProyectoIntegrador__and2_1x
+Xc_w176 0 net_1059#4 net_974#2 vdd net_1009#2 ProyectoIntegrador__and2_1x
+Xc_w177 0 net_897 net_729#10 vdd net_995 ProyectoIntegrador__and2_1x
+Xc_w178 0 net_1059 net_1123 vdd net_897#4 ProyectoIntegrador__and2_1x
+Xc_w179 0 net_829#2 net_814#4 vdd net_1088#4 ProyectoIntegrador__xor2_1x
+Xc_w180 0 a18#0 vdd net_829#4 ProyectoIntegrador__id
+Xc_w181 0 b18#0 vdd net_814 ProyectoIntegrador__id
+Xc_w182 0 net_821 net_1045#4 vdd net_823#2 ProyectoIntegrador__xor2_1x
+Xc_w183 0 net_890#2 net_819 vdd net_821#2 ProyectoIntegrador__or2_1x
+Xc_w184 0 net_832#2 net_965 vdd net_890 ProyectoIntegrador__or2_1x
+Xc_w185 0 net_829 net_814#2 vdd net_832#4 ProyectoIntegrador__and2_1x
+Xc_w186 0 net_1088#6 net_1075#4 vdd net_965#2 ProyectoIntegrador__and2_1x
+Xc_w187 0 net_952#2 net_729#12 vdd net_819#2 ProyectoIntegrador__and2_1x
+Xc_w188 0 net_1088 net_897#2 vdd net_952 ProyectoIntegrador__and2_1x
+Xc_w189 0 net_977#2 net_1027#2 vdd net_1045#6 ProyectoIntegrador__xor2_1x
+Xc_w190 0 a19#0 vdd net_977#4 ProyectoIntegrador__id
+Xc_w191 0 b19#0 vdd net_1027#4 ProyectoIntegrador__id
+Xc_w192 0 net_904#2 net_851#4 vdd net_914 ProyectoIntegrador__xor2_1x
+Xc_w193 0 net_1117#2 net_861 vdd net_904 ProyectoIntegrador__or2_1x
+Xc_w194 0 net_878 net_1129 vdd net_1117#6 ProyectoIntegrador__or2_1x
+Xc_w195 0 net_1131 net_950 vdd net_878#2 ProyectoIntegrador__or2_1x
+Xc_w196 0 net_977 net_1027 vdd net_1131#2 ProyectoIntegrador__and2_1x
+Xc_w197 0 net_1045#2 net_832 vdd net_950#2 ProyectoIntegrador__and2_1x
+Xc_w198 0 net_1114#4 net_1075 vdd net_1129#2 ProyectoIntegrador__and2_1x
+Xc_w199 0 net_1045 net_1088#2 vdd net_1114#2 ProyectoIntegrador__and2_1x
+Xc_w200 0 net_908#4 net_729#6 vdd net_861#2 ProyectoIntegrador__and2_1x
+Xc_w201 0 net_1114 net_897#6 vdd net_908#10 ProyectoIntegrador__and2_1x
+Xc_w202 0 net_1006#4 net_1018#4 vdd net_851 ProyectoIntegrador__xor2_1x
+Xc_w203 0 a20#0 vdd net_1006#2 ProyectoIntegrador__id
+Xc_w204 0 b20#0 vdd net_1018#2 ProyectoIntegrador__id
+Xc_w205 0 net_1002#2 net_1053 vdd net_1000 ProyectoIntegrador__xor2_1x
+Xc_w206 0 net_989 net_1004#2 vdd net_1002 ProyectoIntegrador__or2_1x
+Xc_w207 0 net_971#2 net_1127#2 vdd net_989#2 ProyectoIntegrador__or2_1x
+Xc_w208 0 net_1006 net_1018 vdd net_971 ProyectoIntegrador__and2_1x
+Xc_w209 0 net_851#2 net_1117 vdd net_1127 ProyectoIntegrador__and2_1x
+Xc_w210 0 net_1071 net_729#33 vdd net_1004 ProyectoIntegrador__and2_1x
+Xc_w211 0 net_851#6 net_908 vdd net_1071#2 ProyectoIntegrador__and2_1x
+Xc_w212 0 net_1015 net_1068 vdd net_1053#4 ProyectoIntegrador__xor2_1x
+Xc_w213 0 a21#0 vdd net_1015#4 ProyectoIntegrador__id
+Xc_w214 0 b21#0 vdd net_1068#4 ProyectoIntegrador__id
+Xc_w215 0 net_827#2 net_1079#8 vdd net_840 ProyectoIntegrador__xor2_1x
+Xc_w216 0 net_1011#2 net_842#2 vdd net_827 ProyectoIntegrador__or2_1x
+Xc_w217 0 net_983#4 net_1013#2 vdd net_1011 ProyectoIntegrador__or2_1x
+Xc_w218 0 net_987#2 net_969#2 vdd net_983 ProyectoIntegrador__or2_1x
+Xc_w219 0 net_1015#2 net_1068#2 vdd net_987 ProyectoIntegrador__and2_1x
+Xc_w220 0 net_1053#2 net_971#4 vdd net_969 ProyectoIntegrador__and2_1x
+Xc_w221 0 net_1063#2 net_1117#10 vdd net_1013 ProyectoIntegrador__and2_1x
+Xc_w222 0 net_1053#6 net_851#8 vdd net_1063#6 ProyectoIntegrador__and2_1x
+Xc_w223 0 net_948#2 net_729#16 vdd net_842 ProyectoIntegrador__and2_1x
+Xc_w224 0 net_1063#8 net_908#8 vdd net_948 ProyectoIntegrador__and2_1x
+Xc_w225 0 net_1030 net_1107 vdd net_1079#6 ProyectoIntegrador__xor2_1x
+Xc_w226 0 a22#0 vdd net_1030#4 ProyectoIntegrador__id
+Xc_w227 0 b22#0 vdd net_1107#4 ProyectoIntegrador__id
+Xc_w228 0 net_685 net_798#2 vdd net_694#2 ProyectoIntegrador__xor2_1x
+Xc_w229 0 net_944#2 net_692 vdd net_685#2 ProyectoIntegrador__or2_1x
+Xc_w230 0 net_1093 net_880 vdd net_944 ProyectoIntegrador__or2_1x
+Xc_w231 0 net_980 net_1051#2 vdd net_1093#2 ProyectoIntegrador__or2_1x
+Xc_w232 0 net_1030#2 net_1107#2 vdd net_980#4 ProyectoIntegrador__and2_1x
+Xc_w233 0 net_1079#4 net_983#6 vdd net_1051 ProyectoIntegrador__and2_1x
+Xc_w234 0 net_901 net_1117#4 vdd net_880#2 ProyectoIntegrador__and2_1x
+Xc_w235 0 net_1079 net_1063 vdd net_901#2 ProyectoIntegrador__and2_1x
+Xc_w236 0 net_942#2 net_729#25 vdd net_692#2 ProyectoIntegrador__and2_1x
+Xc_w237 0 net_901#4 net_908#6 vdd net_942 ProyectoIntegrador__and2_1x
+Xc_w238 0 net_1097 net_1033 vdd net_798#9 ProyectoIntegrador__xor2_1x
+Xc_w239 0 a23#0 vdd net_1097#4 ProyectoIntegrador__id
+Xc_w240 0 b23#0 vdd net_1033#4 ProyectoIntegrador__id
+Xc_w241 0 net_680#2 net_707#8 vdd net_486 ProyectoIntegrador__xor2_1x
+Xc_w242 0 net_738#4 net_946#2 vdd net_680 ProyectoIntegrador__or2_1x
+Xc_w243 0 net_892#2 net_835#2 vdd net_738#8 ProyectoIntegrador__or2_1x
+Xc_w244 0 net_1049 net_967#2 vdd net_892#5 ProyectoIntegrador__or2_1x
+Xc_w245 0 net_1110 net_1100#2 vdd net_1049#2 ProyectoIntegrador__or2_1x
+Xc_w246 0 net_1097#2 net_1033#2 vdd net_1110#2 ProyectoIntegrador__and2_1x
+Xc_w247 0 net_798#7 net_980#2 vdd net_1100 ProyectoIntegrador__and2_1x
+Xc_w248 0 net_1102#4 net_983#2 vdd net_967 ProyectoIntegrador__and2_1x
+Xc_w249 0 net_798#5 net_1079#2 vdd net_1102#2 ProyectoIntegrador__and2_1x
+Xc_w250 0 net_997#2 net_1117#8 vdd net_835#5 ProyectoIntegrador__and2_1x
+Xc_w251 0 net_1102 net_1063#4 vdd net_997#4 ProyectoIntegrador__and2_1x
+Xc_w252 0 net_918#2 net_729#36 vdd net_946 ProyectoIntegrador__and2_1x
+Xc_w253 0 net_997 net_908#2 vdd net_918 ProyectoIntegrador__and2_1x
+Xc_w254 0 net_488#2 net_509#4 vdd net_707#6 ProyectoIntegrador__xor2_1x
+Xc_w255 0 a24#0 vdd net_488#4 ProyectoIntegrador__id
+Xc_w256 0 b24#0 vdd net_509 ProyectoIntegrador__id
+Xc_w257 0 net_515#2 net_719#4 vdd net_546 ProyectoIntegrador__xor2_1x
+Xc_w258 0 net_494 net_496#2 vdd net_515 ProyectoIntegrador__or2_1x
+Xc_w259 0 net_491 net_763#2 vdd net_494#2 ProyectoIntegrador__or2_1x
+Xc_w260 0 net_488 net_509#2 vdd net_491#4 ProyectoIntegrador__and2_1x
+Xc_w261 0 net_707#2 net_738#10 vdd net_763 ProyectoIntegrador__and2_1x
+Xc_w262 0 net_696#2 net_729#2 vdd net_496 ProyectoIntegrador__and2_1x
+Xc_w263 0 net_707#4 net_918#12 vdd net_696 ProyectoIntegrador__and2_1x
+Xc_w264 0 net_512#2 net_543#2 vdd net_719#6 ProyectoIntegrador__xor2_1x
+Xc_w265 0 a25#0 vdd net_512#4 ProyectoIntegrador__id
+Xc_w266 0 b25#0 vdd net_543#4 ProyectoIntegrador__id
+Xc_w267 0 net_785 net_885#4 vdd net_787#2 ProyectoIntegrador__xor2_1x
+Xc_w268 0 net_783 net_796 vdd net_785#2 ProyectoIntegrador__or2_1x
+Xc_w269 0 net_792 net_932#2 vdd net_783#2 ProyectoIntegrador__or2_1x
+Xc_w270 0 net_771#5 net_660#5 vdd net_792#6 ProyectoIntegrador__or2_1x
+Xc_w271 0 net_512 net_543 vdd net_771#2 ProyectoIntegrador__and2_1x
+Xc_w272 0 net_719#2 net_491#2 vdd net_660#2 ProyectoIntegrador__and2_1x
+Xc_w273 0 net_625#4 net_738#12 vdd net_932 ProyectoIntegrador__and2_1x
+Xc_w274 0 net_719 net_707 vdd net_625 ProyectoIntegrador__and2_1x
+Xc_w275 0 net_906#2 net_729#27 vdd net_796#2 ProyectoIntegrador__and2_1x
+Xc_w276 0 net_625#2 net_918#8 vdd net_906 ProyectoIntegrador__and2_1x
+Xc_w277 0 net_846 net_837#2 vdd net_885#8 ProyectoIntegrador__xor2_1x
+Xc_w278 0 a26#0 vdd net_846#4 ProyectoIntegrador__id
+Xc_w279 0 b26#0 vdd net_837 ProyectoIntegrador__id
+Xc_w280 0 net_678#2 net_634#4 vdd net_609 ProyectoIntegrador__xor2_1x
+Xc_w281 0 net_621 net_598#2 vdd net_678 ProyectoIntegrador__or2_1x
+Xc_w282 0 net_596 net_611#2 vdd net_621#2 ProyectoIntegrador__or2_1x
+Xc_w283 0 net_856#4 net_781#2 vdd net_596#2 ProyectoIntegrador__or2_1x
+Xc_w284 0 net_846#2 net_837#4 vdd net_856 ProyectoIntegrador__and2_1x
+Xc_w285 0 net_885#6 net_792#2 vdd net_781 ProyectoIntegrador__and2_1x
+Xc_w286 0 net_613#4 net_738#18 vdd net_611 ProyectoIntegrador__and2_1x
+Xc_w287 0 net_885#2 net_625#8 vdd net_613 ProyectoIntegrador__and2_1x
+Xc_w288 0 net_623#2 net_729#29 vdd net_598 ProyectoIntegrador__and2_1x
+Xc_w289 0 net_613#2 net_918#10 vdd net_623 ProyectoIntegrador__and2_1x
+Xc_w290 0 net_483#2 net_506#2 vdd net_634#2 ProyectoIntegrador__xor2_1x
+Xc_w291 0 a27#0 vdd net_483#4 ProyectoIntegrador__id
+Xc_w292 0 b27#0 vdd net_506#4 ProyectoIntegrador__id
+Xc_w293 0 net_475#2 net_616#6 vdd net_522 ProyectoIntegrador__xor2_1x
+Xc_w294 0 net_769#2 net_524#2 vdd net_475 ProyectoIntegrador__or2_1x
+Xc_w295 0 net_750#6 net_732 vdd net_769 ProyectoIntegrador__or2_1x
+Xc_w296 0 net_776#2 net_916 vdd net_750#8 ProyectoIntegrador__or2_1x
+Xc_w297 0 net_600 net_778 vdd net_776 ProyectoIntegrador__or2_1x
+Xc_w298 0 net_483 net_506 vdd net_600#2 ProyectoIntegrador__and2_1x
+Xc_w299 0 net_634#6 net_856#2 vdd net_778#2 ProyectoIntegrador__and2_1x
+Xc_w300 0 net_894#4 net_792#4 vdd net_916#2 ProyectoIntegrador__and2_1x
+Xc_w301 0 net_634 net_885 vdd net_894#2 ProyectoIntegrador__and2_1x
+Xc_w302 0 net_698#10 net_738#2 vdd net_732#2 ProyectoIntegrador__and2_1x
+Xc_w303 0 net_894 net_625#6 vdd net_698#12 ProyectoIntegrador__and2_1x
+Xc_w304 0 net_638#2 net_729 vdd net_524 ProyectoIntegrador__and2_1x
+Xc_w305 0 net_698#8 net_918#4 vdd net_638 ProyectoIntegrador__and2_1x
+Xc_w306 0 net_498#2 net_472#2 vdd net_616#8 ProyectoIntegrador__xor2_1x
+Xc_w307 0 a28#0 vdd net_498#4 ProyectoIntegrador__id
+Xc_w308 0 b28#0 vdd net_472#4 ProyectoIntegrador__id
+Xc_w309 0 net_863#2 net_672 vdd net_727#2 ProyectoIntegrador__xor2_1x
+Xc_w310 0 net_883#5 net_991 vdd net_863#5 ProyectoIntegrador__or2_1x
+Xc_w311 0 net_761#2 net_667#2 vdd net_883#2 ProyectoIntegrador__or2_1x
+Xc_w312 0 net_517 net_734 vdd net_761 ProyectoIntegrador__or2_1x
+Xc_w313 0 net_498 net_472 vdd net_517#4 ProyectoIntegrador__and2_1x
+Xc_w314 0 net_616#4 net_750#4 vdd net_734#2 ProyectoIntegrador__and2_1x
+Xc_w315 0 net_714#4 net_738#14 vdd net_667 ProyectoIntegrador__and2_1x
+Xc_w316 0 net_616#2 net_698#4 vdd net_714 ProyectoIntegrador__and2_1x
+Xc_w317 0 net_844#5 net_729#31 vdd net_991#2 ProyectoIntegrador__and2_1x
+Xc_w318 0 net_714#2 net_918#16 vdd net_844#2 ProyectoIntegrador__and2_1x
+Xc_w319 0 net_582#2 net_591#2 vdd net_672#6 ProyectoIntegrador__xor2_1x
+Xc_w320 0 a29#0 vdd net_582#4 ProyectoIntegrador__id
+Xc_w321 0 b29#0 vdd net_591#4 ProyectoIntegrador__id
+Xc_w322 0 net_654#2 net_687#8 vdd net_652 ProyectoIntegrador__xor2_1x
+Xc_w323 0 net_663#2 net_656#2 vdd net_654 ProyectoIntegrador__or2_1x
+Xc_w324 0 net_736#2 net_665#2 vdd net_663 ProyectoIntegrador__or2_1x
+Xc_w325 0 net_585#4 net_767 vdd net_736 ProyectoIntegrador__or2_1x
+Xc_w326 0 net_594 net_566#2 vdd net_585#2 ProyectoIntegrador__or2_1x
+Xc_w327 0 net_582 net_591 vdd net_594#2 ProyectoIntegrador__and2_1x
+Xc_w328 0 net_672#2 net_517#2 vdd net_566 ProyectoIntegrador__and2_1x
+Xc_w329 0 net_756#8 net_750 vdd net_767#2 ProyectoIntegrador__and2_1x
+Xc_w330 0 net_672#4 net_616 vdd net_756#4 ProyectoIntegrador__and2_1x
+Xc_w331 0 net_773#4 net_738#16 vdd net_665 ProyectoIntegrador__and2_1x
+Xc_w332 0 net_756#6 net_698#2 vdd net_773 ProyectoIntegrador__and2_1x
+Xc_w333 0 net_658#2 net_729#4 vdd net_656 ProyectoIntegrador__and2_1x
+Xc_w334 0 net_773#2 net_918#18 vdd net_658 ProyectoIntegrador__and2_1x
+Xc_w335 0 net_579 net_574 vdd net_687#6 ProyectoIntegrador__xor2_1x
+Xc_w336 0 a30#0 vdd net_579#4 ProyectoIntegrador__id
+Xc_w337 0 b30#0 vdd net_574#4 ProyectoIntegrador__id
+Xc_w338 0 net_712#2 net_723#4 vdd net_554 ProyectoIntegrador__xor2_1x
+Xc_w339 0 net_859#2 net_817#2 vdd net_712#5 ProyectoIntegrador__or2_1x
+Xc_w340 0 net_642#2 net_640 vdd net_859 ProyectoIntegrador__or2_1x
+Xc_w341 0 net_748 net_644#2 vdd net_642 ProyectoIntegrador__or2_1x
+Xc_w342 0 net_569#2 net_564#2 vdd net_748#2 ProyectoIntegrador__or2_1x
+Xc_w343 0 net_579#2 net_574#2 vdd net_569 ProyectoIntegrador__and2_1x
+Xc_w344 0 net_687#4 net_585#6 vdd net_564 ProyectoIntegrador__and2_1x
+Xc_w345 0 net_646#4 net_750#10 vdd net_644 ProyectoIntegrador__and2_1x
+Xc_w346 0 net_687#2 net_756#2 vdd net_646 ProyectoIntegrador__and2_1x
+Xc_w347 0 net_682#2 net_738 vdd net_640#2 ProyectoIntegrador__and2_1x
+Xc_w348 0 net_646#2 net_698 vdd net_682 ProyectoIntegrador__and2_1x
+Xc_w349 0 net_806#2 net_729#14 vdd net_817 ProyectoIntegrador__and2_1x
+Xc_w350 0 net_682#4 net_918#6 vdd net_806 ProyectoIntegrador__and2_1x
+Xc_w351 0 net_477#2 net_526#2 vdd net_723#6 ProyectoIntegrador__xor2_1x
+Xc_w352 0 a31#0 vdd net_477#4 ProyectoIntegrador__id
+Xc_w353 0 b31#0 vdd net_526#4 ProyectoIntegrador__id
+Xc_w354 0 net_632#5 net_808 vdd net_810#2 ProyectoIntegrador__or2_1x
+Xc_w355 0 net_560 net_630 vdd net_632#2 ProyectoIntegrador__or2_1x
+Xc_w356 0 net_558 net_765#2 vdd net_560#2 ProyectoIntegrador__or2_1x
+Xc_w357 0 net_531 net_533#2 vdd net_558#2 ProyectoIntegrador__or2_1x
+Xc_w358 0 net_529 net_556 vdd net_531#2 ProyectoIntegrador__or2_1x
+Xc_w359 0 net_477 net_526 vdd net_529#2 ProyectoIntegrador__and2_1x
+Xc_w360 0 net_723#2 net_569#4 vdd net_556#2 ProyectoIntegrador__and2_1x
+Xc_w361 0 net_605 net_585 vdd net_533 ProyectoIntegrador__and2_1x
+Xc_w362 0 net_723 net_687 vdd net_605#2 ProyectoIntegrador__and2_1x
+Xc_w363 0 net_602#4 net_750#2 vdd net_765 ProyectoIntegrador__and2_1x
+Xc_w364 0 net_605#4 net_756 vdd net_602 ProyectoIntegrador__and2_1x
+Xc_w365 0 net_669#2 net_738#6 vdd net_630#2 ProyectoIntegrador__and2_1x
+Xc_w366 0 net_602#2 net_698#6 vdd net_669 ProyectoIntegrador__and2_1x
+Xc_w367 0 net_849 net_729#8 vdd net_808#2 ProyectoIntegrador__and2_1x
+Xc_w368 0 net_669#4 net_918#14 vdd net_849#2 ProyectoIntegrador__and2_1x
+** Extracted Parasitic Capacitors ***
+C0 net_810 0 1.304fF
+C1 cout#0 0 1.216fF
+C2 net_75#2 0 1.304fF
+C3 sum0#0 0 1.216fF
+C4 net_72#2 0 1.304fF
+C5 sum1#0 0 1.216fF
+C6 net_18 0 1.018fF
+C7 sum2#0 0 1.073fF
+C8 net_62#2 0 1.304fF
+C9 sum3#0 0 1.216fF
+C10 net_4 0 0.875fF
+C11 sum4#0 0 0.93fF
+C12 net_205 0 1.876fF
+C13 sum5#0 0 1.931fF
+C14 net_121 0 1.733fF
+C15 sum6#0 0 1.073fF
+C16 net_10#2 0 1.018fF
+C17 sum7#0 0 0.93fF
+C18 net_153#2 0 3.142fF
+C19 sum8#0 0 0.787fF
+C20 net_323#2 0 1.447fF
+C21 sum9#0 0 0.93fF
+C22 net_267#2 0 2.592fF
+C23 sum10#0 0 1.931fF
+C24 net_260#2 0 2.449fF
+C25 sum11#0 0 2.217fF
+C26 net_315#2 0 1.304fF
+C27 sum12#0 0 1.216fF
+C28 net_351 0 1.876fF
+C29 sum13#0 0 1.073fF
+C30 net_296 0 1.018fF
+C31 sum14#0 0 1.073fF
+C32 net_311 0 1.161fF
+C33 sum15#0 0 0.787fF
+C34 net_705#2 0 2.713fF
+C35 sum16#0 0 1.931fF
+C36 net_954#2 0 0.875fF
+C37 sum17#0 0 0.941fF
+C38 net_961#2 0 0.875fF
+C39 sum18#0 0 0.941fF
+C40 net_823 0 1.447fF
+C41 sum19#0 0 1.359fF
+C42 net_914#2 0 2.735fF
+C43 sum20#0 0 2.074fF
+C44 net_1000#2 0 1.161fF
+C45 sum21#0 0 0.941fF
+C46 net_840#2 0 1.733fF
+C47 sum22#0 0 1.502fF
+C48 net_694 0 2.019fF
+C49 sum23#0 0 1.502fF
+C50 net_486#2 0 1.018fF
+C51 sum24#0 0 1.788fF
+C52 net_546#2 0 1.59fF
+C53 sum25#0 0 1.359fF
+C54 net_787 0 0.875fF
+C55 sum26#0 0 1.073fF
+C56 net_609#2 0 1.018fF
+C57 sum27#0 0 0.93fF
+C58 net_522#2 0 1.304fF
+C59 sum28#0 0 0.93fF
+C60 net_727 0 2.283fF
+C61 sum29#0 0 1.073fF
+C62 net_652#2 0 1.447fF
+C63 sum30#0 0 1.359fF
+C64 net_554#2 0 2.019fF
+C65 sum31#0 0 1.645fF
+C66 net_77#4 0 1.128fF
+C67 net_106#4 0 1.447fF
+C68 net_75 0 1.788fF
+C69 a0#0 0 1.161fF
+C70 net_77 0 1.216fF
+C71 b0#0 0 1.161fF
+C72 net_106 0 1.359fF
+C73 net_44#2 0 0.985fF
+C74 net_103 0 1.447fF
+C75 net_72 0 1.788fF
+C76 net_77#2 0 1.04fF
+C77 net_106#2 0 1.447fF
+C78 net_44 0 1.073fF
+C79 net_68 0 1.128fF
+C80 net_100 0 1.447fF
+C81 net_103#4 0 1.931fF
+C82 a1#0 0 1.447fF
+C83 net_68#4 0 1.216fF
+C84 b1#0 0 1.733fF
+C85 net_100#4 0 1.359fF
+C86 net_128 0 1.557fF
+C87 net_95 0 1.447fF
+C88 net_18#2 0 1.502fF
+C89 net_119#2 0 1.854fF
+C90 net_42#2 0 1.337fF
+C91 net_128#4 0 1.645fF
+C92 net_68#2 0 1.04fF
+C93 net_100#2 0 1.447fF
+C94 net_119 0 1.502fF
+C95 net_103#2 0 1.183fF
+C96 net_44#4 0 1.161fF
+C97 net_42 0 1.073fF
+C98 net_114 0 1.414fF
+C99 net_125 0 1.733fF
+C100 net_95#6 0 1.931fF
+C101 a2#0 0 1.733fF
+C102 net_114#4 0 1.502fF
+C103 b2#0 0 1.876fF
+C104 net_125#4 0 1.645fF
+C105 net_64#2 0 1.128fF
+C106 net_38#4 0 1.161fF
+C107 net_62 0 1.788fF
+C108 net_92#2 0 1.711fF
+C109 net_66#2 0 1.48fF
+C110 net_64 0 1.216fF
+C111 net_114#2 0 1.326fF
+C112 net_125#2 0 1.733fF
+C113 net_92 0 1.359fF
+C114 net_95#2 0 1.183fF
+C115 net_128#2 0 1.733fF
+C116 net_66 0 1.216fF
+C117 net_58 0 1.128fF
+C118 net_35 0 1.161fF
+C119 net_38#6 0 1.645fF
+C120 a3#0 0 1.161fF
+C121 net_58#4 0 1.216fF
+C122 b3#0 0 1.733fF
+C123 net_35#4 0 1.073fF
+C124 net_26#2 0 0.985fF
+C125 net_263 0 1.425fF
+C126 net_4#2 0 1.359fF
+C127 net_32#2 0 1.425fF
+C128 net_16#2 0 1.194fF
+C129 net_26 0 1.073fF
+C130 net_112#2 0 1.854fF
+C131 net_90#2 0 1.623fF
+C132 net_32 0 1.073fF
+C133 net_58#2 0 1.04fF
+C134 net_35#2 0 1.161fF
+C135 net_112 0 1.502fF
+C136 net_38#2 0 0.897fF
+C137 net_92#4 0 1.447fF
+C138 net_90 0 1.359fF
+C139 net_117 0 1.326fF
+C140 net_128#6 0 1.733fF
+C141 net_16 0 0.93fF
+C142 net_38 0 0.897fF
+C143 net_95#4 0 1.447fF
+C144 net_117#2 0 1.502fF
+C145 net_207#4 0 1.7fF
+C146 net_213#4 0 2.019fF
+C147 net_263#6 0 3.076fF
+C148 a4#0 0 3.164fF
+C149 net_207 0 1.788fF
+C150 b4#0 0 1.59fF
+C151 net_213 0 1.931fF
+C152 net_203 0 1.7fF
+C153 net_252#2 0 2.449fF
+C154 net_205#2 0 2.36fF
+C155 net_140#2 0 1.139fF
+C156 net_161#2 0 1.194fF
+C157 net_203#2 0 1.788fF
+C158 net_207#2 0 1.612fF
+C159 net_213#2 0 2.019fF
+C160 net_140 0 0.787fF
+C161 net_263#2 0 1.689fF
+C162 net_26#4 0 1.161fF
+C163 net_161 0 3.087fF
+C164 net_156 0 0.842fF
+C165 net_137#2 0 0.875fF
+C166 net_252#6 0 2.933fF
+C167 a5#0 0 1.018fF
+C168 net_156#4 0 0.93fF
+C169 b5#0 0 1.876fF
+C170 net_137 0 0.787fF
+C171 net_84 0 1.271fF
+C172 net_227#6 0 1.854fF
+C173 net_121#2 0 2.217fF
+C174 net_21 0 1.425fF
+C175 net_133#2 0 2.052fF
+C176 net_84#2 0 1.359fF
+C177 net_225 0 1.59fF
+C178 net_159#2 0 2.823fF
+C179 net_21#6 0 1.073fF
+C180 net_156#2 0 0.754fF
+C181 net_137#4 0 0.875fF
+C182 net_225#2 0 2.074fF
+C183 net_252#4 0 2.184fF
+C184 net_140#4 0 0.875fF
+C185 net_159 0 0.93fF
+C186 net_54#4 0 1.04fF
+C187 net_26#10 0 1.161fF
+C188 net_133 0 1.788fF
+C189 net_252 0 1.832fF
+C190 net_263#4 0 1.425fF
+C191 net_54#2 0 1.216fF
+C192 net_143#4 0 0.699fF
+C193 net_190#4 0 1.59fF
+C194 net_227#4 0 2.647fF
+C195 a6#0 0 1.733fF
+C196 net_143 0 0.787fF
+C197 b6#0 0 3.021fF
+C198 net_190 0 1.502fF
+C199 net_12#2 0 0.842fF
+C200 net_50#2 0 1.304fF
+C201 net_10 0 1.502fF
+C202 net_2 0 1.139fF
+C203 net_14#2 0 1.194fF
+C204 net_12 0 0.93fF
+C205 net_239#2 0 1.447fF
+C206 net_82#2 0 1.623fF
+C207 net_2#2 0 0.787fF
+C208 net_143#2 0 0.611fF
+C209 net_190#2 0 1.59fF
+C210 net_239 0 2.217fF
+C211 net_227#8 0 2.118fF
+C212 net_21#2 0 1.161fF
+C213 net_82 0 1.359fF
+C214 net_88 0 1.183fF
+C215 net_26#6 0 1.161fF
+C216 net_14 0 0.93fF
+C217 net_227 0 2.118fF
+C218 net_54 0 1.304fF
+C219 net_88#2 0 1.359fF
+C220 net_236 0 1.887fF
+C221 net_249 0 1.568fF
+C222 net_50#6 0 1.788fF
+C223 a7#0 0 1.447fF
+C224 net_236#2 0 2.217fF
+C225 b7#0 0 0.875fF
+C226 net_249#2 0 2.36fF
+C227 net_301#4 0 0.985fF
+C228 net_284#2 0 0.875fF
+C229 net_153#5 0 2.36fF
+C230 net_187#5 0 4.286fF
+C231 net_210#5 0 1.48fF
+C232 net_301#16 0 1.073fF
+C233 net_7 0 1.282fF
+C234 net_80#2 0 1.623fF
+C235 net_187#2 0 2.658fF
+C236 net_223 0 1.59fF
+C237 net_0#2 0 1.051fF
+C238 net_7#2 0 0.93fF
+C239 net_236#4 0 2.041fF
+C240 net_249#4 0 2.449fF
+C241 net_223#2 0 2.074fF
+C242 net_50#4 0 1.04fF
+C243 net_239#4 0 1.711fF
+C244 net_0 0 0.787fF
+C245 net_109#4 0 1.326fF
+C246 net_21#4 0 1.161fF
+C247 net_80 0 1.359fF
+C248 net_50 0 1.04fF
+C249 net_227#2 0 1.854fF
+C250 net_109#2 0 1.502fF
+C251 net_86 0 1.183fF
+C252 net_26#8 0 1.161fF
+C253 net_210#2 0 2.228fF
+C254 net_109 0 1.326fF
+C255 net_54#6 0 1.304fF
+C256 net_86#2 0 1.359fF
+C257 net_503 0 2.746fF
+C258 net_540 0 2.14fF
+C259 net_284#6 0 1.359fF
+C260 a8#0 0 2.735fF
+C261 net_503#4 0 1.073fF
+C262 b8#0 0 1.161fF
+C263 net_540#4 0 1.502fF
+C264 net_325#2 0 1.271fF
+C265 net_292#6 0 1.018fF
+C266 net_323 0 1.931fF
+C267 net_382#2 0 2.57fF
+C268 net_331#2 0 1.766fF
+C269 net_325 0 1.359fF
+C270 net_503#2 0 2.834fF
+C271 net_540#2 0 2.14fF
+C272 net_382#4 0 2.217fF
+C273 net_284#4 0 0.611fF
+C274 net_301#6 0 1.161fF
+C275 net_331 0 1.502fF
+C276 net_402#4 0 2.272fF
+C277 net_385#2 0 2.305fF
+C278 net_292#2 0 1.502fF
+C279 a9#0 0 2.162fF
+C280 net_402 0 2.36fF
+C281 b9#0 0 1.733fF
+C282 net_385#4 0 2.217fF
+C283 net_256#2 0 2.272fF
+C284 net_421#6 0 2.426fF
+C285 net_267 0 3.076fF
+C286 net_426#2 0 2.019fF
+C287 net_355 0 3.538fF
+C288 net_256 0 2.36fF
+C289 net_336 0 1.997fF
+C290 net_327 0 1.623fF
+C291 net_426#6 0 3.219fF
+C292 net_402#2 0 2.184fF
+C293 net_385 0 2.305fF
+C294 net_336#2 0 1.645fF
+C295 net_292#4 0 0.754fF
+C296 net_382 0 2.305fF
+C297 net_327#2 0 1.359fF
+C298 net_467#6 0 4.473fF
+C299 net_301#10 0 1.161fF
+C300 net_355#2 0 1.788fF
+C301 net_292 0 0.754fF
+C302 net_284 0 0.875fF
+C303 net_467#4 0 4.649fF
+C304 net_219#2 0 1.843fF
+C305 net_242#2 0 2.305fF
+C306 net_421#8 0 1.942fF
+C307 a10#0 0 1.733fF
+C308 net_219#4 0 1.931fF
+C309 b10#0 0 1.59fF
+C310 net_242#4 0 2.217fF
+C311 net_440 0 2.03fF
+C312 net_346#4 0 3.857fF
+C313 net_260 0 2.933fF
+C314 net_333 0 1.854fF
+C315 net_430 0 3.483fF
+C316 net_440#2 0 3.648fF
+C317 net_245#2 0 2.57fF
+C318 net_258 0 2.625fF
+C319 net_333#2 0 4.088fF
+C320 net_219 0 1.755fF
+C321 net_242 0 2.305fF
+C322 net_245#4 0 2.217fF
+C323 net_421#4 0 2.691fF
+C324 net_426 0 2.283fF
+C325 net_258#2 0 2.36fF
+C326 net_419#2 0 2.757fF
+C327 net_301#2 0 1.161fF
+C328 net_430#2 0 3.219fF
+C329 net_421#2 0 2.9fF
+C330 net_467#2 0 4.737fF
+C331 net_419 0 2.933fF
+C332 net_269#2 0 2.415fF
+C333 net_274#4 0 2.735fF
+C334 net_346#2 0 3.373fF
+C335 a11#0 0 2.449fF
+C336 net_269#4 0 2.504fF
+C337 b11#0 0 2.592fF
+C338 net_274 0 2.647fF
+C339 net_391#2 0 2.129fF
+C340 net_453#6 0 4.308fF
+C341 net_315 0 1.788fF
+C342 net_338#8 0 1.997fF
+C343 net_393#2 0 2.482fF
+C344 net_391 0 2.217fF
+C345 net_319#2 0 1.568fF
+C346 net_317 0 1.48fF
+C347 net_338#10 0 1.645fF
+C348 net_436#2 0 3.857fF
+C349 net_438#2 0 3.912fF
+C350 net_319 0 1.216fF
+C351 net_269 0 2.327fF
+C352 net_274#2 0 2.735fF
+C353 net_436 0 2.085fF
+C354 net_346#6 0 4.121fF
+C355 net_245 0 2.305fF
+C356 net_438 0 1.942fF
+C357 net_464#4 0 4.33fF
+C358 net_426#4 0 3.307fF
+C359 net_317#2 0 1.216fF
+C360 net_346 0 1.469fF
+C361 net_421 0 3.164fF
+C362 net_464 0 4.506fF
+C363 net_458#6 0 4.187fF
+C364 net_301#12 0 1.161fF
+C365 net_393 0 2.217fF
+C366 net_464#2 0 4.33fF
+C367 net_467 0 4.737fF
+C368 net_458#4 0 4.363fF
+C369 net_374 0 1.986fF
+C370 net_388 0 2.305fF
+C371 net_453#8 0 4.792fF
+C372 a12#0 0 2.019fF
+C373 net_374#4 0 2.074fF
+C374 b12#0 0 1.876fF
+C375 net_388#4 0 2.217fF
+C376 net_377#2 0 1.986fF
+C377 net_449#6 0 4.165fF
+C378 net_351#2 0 2.36fF
+C379 net_299 0 1.425fF
+C380 net_363#2 0 2.195fF
+C381 net_377 0 2.074fF
+C382 net_360 0 2.283fF
+C383 net_353#2 0 2.052fF
+C384 net_299#2 0 1.073fF
+C385 net_374#2 0 1.898fF
+C386 net_388#2 0 2.305fF
+C387 net_360#4 0 1.931fF
+C388 net_453#2 0 4.044fF
+C389 net_338#4 0 1.733fF
+C390 net_353 0 1.788fF
+C391 net_365#2 0 1.755fF
+C392 net_301#18 0 1.161fF
+C393 net_363 0 1.931fF
+C394 net_453#4 0 4.044fF
+C395 net_458#10 0 4.451fF
+C396 net_365 0 1.931fF
+C397 net_146#2 0 0.699fF
+C398 net_179#2 0 1.304fF
+C399 net_449#2 0 0.941fF
+C400 a13#0 0 2.878fF
+C401 net_146#4 0 0.787fF
+C402 b13#0 0 1.304fF
+C403 net_179#4 0 1.216fF
+C404 net_151 0 0.699fF
+C405 net_442 0 1.711fF
+C406 net_296#2 0 4.088fF
+C407 net_234 0 2.426fF
+C408 net_184#2 0 1.48fF
+C409 net_151#2 0 0.787fF
+C410 net_277#4 0 2.999fF
+C411 net_413 0 2.68fF
+C412 net_234#2 0 2.074fF
+C413 net_149 0 1.139fF
+C414 net_415 0 2.537fF
+C415 net_277#2 0 2.647fF
+C416 net_146 0 0.611fF
+C417 net_179 0 1.304fF
+C418 net_149#2 0 0.787fF
+C419 net_449#4 0 3.901fF
+C420 net_360#2 0 2.019fF
+C421 net_415#2 0 2.79fF
+C422 net_408#8 0 2.327fF
+C423 net_338#2 0 1.733fF
+C424 net_413#2 0 2.647fF
+C425 net_449 0 3.901fF
+C426 net_453 0 4.308fF
+C427 net_408#4 0 2.504fF
+C428 net_288 0 4.98fF
+C429 net_301 0 4.429fF
+C430 net_184 0 1.216fF
+C431 net_408#6 0 2.327fF
+C432 net_458 0 4.451fF
+C433 net_288#2 0 0.787fF
+C434 net_198 0 1.557fF
+C435 net_216 0 2.019fF
+C436 net_442#8 0 1.227fF
+C437 a14#0 0 1.161fF
+C438 net_198#4 0 1.645fF
+C439 b14#0 0 1.018fF
+C440 net_216#4 0 1.931fF
+C441 net_371 0 1.843fF
+C442 net_432 0 3.45fF
+C443 net_311#2 0 1.645fF
+C444 net_344 0 1.997fF
+C445 net_395#2 0 2.482fF
+C446 net_371#2 0 1.931fF
+C447 net_417 0 3.285fF
+C448 net_369 0 2.195fF
+C449 net_344#2 0 1.645fF
+C450 net_193#2 0 1.854fF
+C451 net_232#2 0 2.338fF
+C452 net_417#2 0 2.658fF
+C453 net_198#2 0 1.469fF
+C454 net_216#2 0 2.019fF
+C455 net_193 0 1.502fF
+C456 net_442#6 0 1.975fF
+C457 net_277#6 0 2.735fF
+C458 net_232 0 2.074fF
+C459 net_405#4 0 2.184fF
+C460 net_338 0 1.733fF
+C461 net_369#2 0 1.931fF
+C462 net_442#4 0 3.615fF
+C463 net_408#2 0 2.592fF
+C464 net_405 0 2.36fF
+C465 net_397#2 0 2.041fF
+C466 net_301#8 0 1.161fF
+C467 net_395 0 2.217fF
+C468 net_405#2 0 2.184fF
+C469 net_458#2 0 4.451fF
+C470 net_397 0 2.217fF
+C471 net_163#2 0 0.842fF
+C472 net_172#2 0 1.161fF
+C473 net_432#6 0 1.656fF
+C474 a15#0 0 2.735fF
+C475 net_163#4 0 0.93fF
+C476 b15#0 0 1.161fF
+C477 net_172#4 0 1.073fF
+C478 net_729#21 0 1.986fF
+C479 net_1123#4 0 1.139fF
+C480 net_705#5 0 3.648fF
+C481 net_801 0 1.425fF
+C482 net_480#8 0 1.337fF
+C483 net_729#18 0 2.074fF
+C484 net_329#11 0 3.857fF
+C485 net_538#8 0 1.051fF
+C486 net_801#2 0 1.073fF
+C487 net_175 0 1.425fF
+C488 net_182#2 0 1.48fF
+C489 net_329#2 0 4.231fF
+C490 net_166 0 1.282fF
+C491 net_168#2 0 1.194fF
+C492 net_175#2 0 1.073fF
+C493 net_163 0 0.754fF
+C494 net_172 0 1.161fF
+C495 net_166#2 0 0.93fF
+C496 net_432#4 0 2.404fF
+C497 net_193#4 0 1.59fF
+C498 net_168 0 0.93fF
+C499 net_399#4 0 3.549fF
+C500 net_277 0 2.735fF
+C501 net_182 0 1.216fF
+C502 net_432#2 0 3.186fF
+C503 net_442#2 0 3.879fF
+C504 net_399 0 2.217fF
+C505 net_379#2 0 1.898fF
+C506 net_338#6 0 1.733fF
+C507 net_538#2 0 2.371fF
+C508 net_399#2 0 2.041fF
+C509 net_408 0 2.592fF
+C510 net_379 0 2.074fF
+C511 net_367 0 1.755fF
+C512 net_301#14 0 1.161fF
+C513 net_480#2 0 2.944fF
+C514 net_379#4 0 1.898fF
+C515 net_458#8 0 4.451fF
+C516 net_367#2 0 1.931fF
+C517 net_1024 0 1.271fF
+C518 net_1042 0 1.59fF
+C519 net_1123#2 0 3.076fF
+C520 a16#0 0 0.853fF
+C521 net_1024#4 0 1.359fF
+C522 b16#0 0 0.853fF
+C523 net_1042#4 0 1.502fF
+C524 net_956#2 0 0.699fF
+C525 net_1059#6 0 1.733fF
+C526 net_954 0 1.359fF
+C527 net_974#4 0 1.282fF
+C528 net_1095#2 0 2.338fF
+C529 net_956 0 0.787fF
+C530 net_1024#2 0 1.183fF
+C531 net_1042#2 0 1.59fF
+C532 net_974 0 0.93fF
+C533 net_1123#6 0 1.403fF
+C534 net_729#23 0 2.162fF
+C535 net_1095 0 1.656fF
+C536 net_1021#4 0 1.271fF
+C537 net_958#2 0 0.875fF
+C538 net_1059#2 0 2.217fF
+C539 a17#0 0 0.853fF
+C540 net_1021 0 1.359fF
+C541 b17#0 0 0.853fF
+C542 net_958#4 0 0.787fF
+C543 net_963#2 0 0.699fF
+C544 net_1088#8 0 2.019fF
+C545 net_961 0 1.359fF
+C546 net_1075#6 0 2.14fF
+C547 net_995#2 0 1.337fF
+C548 net_963 0 0.787fF
+C549 net_1040 0 1.854fF
+C550 net_1009 0 1.48fF
+C551 net_1075#2 0 1.788fF
+C552 net_1021#2 0 1.183fF
+C553 net_958 0 0.875fF
+C554 net_1040#2 0 1.502fF
+C555 net_1059#4 0 1.469fF
+C556 net_974#2 0 1.018fF
+C557 net_1009#2 0 1.216fF
+C558 net_897 0 2.327fF
+C559 net_729#10 0 2.162fF
+C560 net_995 0 2.658fF
+C561 net_1059 0 2.261fF
+C562 net_1123 0 1.139fF
+C563 net_897#4 0 2.504fF
+C564 net_829#2 0 1.414fF
+C565 net_814#4 0 1.447fF
+C566 net_1088#4 0 1.227fF
+C567 a18#0 0 1.447fF
+C568 net_829#4 0 1.502fF
+C569 b18#0 0 1.304fF
+C570 net_814 0 1.359fF
+C571 net_821 0 1.271fF
+C572 net_1045#4 0 2.14fF
+C573 net_823#2 0 1.931fF
+C574 net_890#2 0 2.713fF
+C575 net_819 0 1.623fF
+C576 net_821#2 0 1.359fF
+C577 net_832#2 0 1.854fF
+C578 net_965 0 2.68fF
+C579 net_890 0 2.36fF
+C580 net_829 0 1.326fF
+C581 net_814#2 0 1.447fF
+C582 net_832#4 0 1.502fF
+C583 net_1088#6 0 1.755fF
+C584 net_1075#4 0 1.876fF
+C585 net_965#2 0 0.787fF
+C586 net_952#2 0 4.473fF
+C587 net_729#12 0 2.162fF
+C588 net_819#2 0 1.359fF
+C589 net_1088 0 1.975fF
+C590 net_897#2 0 2.592fF
+C591 net_952 0 4.649fF
+C592 net_977#2 0 0.842fF
+C593 net_1027#2 0 1.447fF
+C594 net_1045#6 0 2.074fF
+C595 a19#0 0 0.853fF
+C596 net_977#4 0 0.93fF
+C597 b19#0 0 0.853fF
+C598 net_1027#4 0 1.359fF
+C599 net_904#2 0 2.415fF
+C600 net_851#4 0 1.876fF
+C601 net_914 0 3.219fF
+C602 net_1117#2 0 1.018fF
+C603 net_861 0 2.195fF
+C604 net_904 0 2.504fF
+C605 net_878 0 2.426fF
+C606 net_1129 0 0.82fF
+C607 net_1117#6 0 1.37fF
+C608 net_1131 0 0.589fF
+C609 net_950 0 4.77fF
+C610 net_878#2 0 2.074fF
+C611 net_977 0 0.754fF
+C612 net_1027 0 1.447fF
+C613 net_1131#2 0 2.79fF
+C614 net_1045#2 0 2.404fF
+C615 net_832 0 1.59fF
+C616 net_950#2 0 4.506fF
+C617 net_1114#4 0 2.184fF
+C618 net_1075 0 1.876fF
+C619 net_1129#2 0 2.647fF
+C620 net_1045 0 2.404fF
+C621 net_1088#2 0 1.711fF
+C622 net_1114#2 0 1.37fF
+C623 net_908#4 0 2.471fF
+C624 net_729#6 0 4.017fF
+C625 net_861#2 0 1.931fF
+C626 net_1114 0 1.546fF
+C627 net_897#6 0 2.592fF
+C628 net_908#10 0 2.647fF
+C629 net_1006#4 0 2.746fF
+C630 net_1018#4 0 2.426fF
+C631 net_851 0 2.36fF
+C632 a20#0 0 0.853fF
+C633 net_1006#2 0 1.073fF
+C634 b20#0 0 0.853fF
+C635 net_1018#2 0 1.216fF
+C636 net_1002#2 0 0.985fF
+C637 net_1053 0 1.59fF
+C638 net_1000 0 1.645fF
+C639 net_989 0 1.282fF
+C640 net_1004#2 0 1.337fF
+C641 net_1002 0 1.073fF
+C642 net_971#2 0 1.139fF
+C643 net_1127#2 0 2.768fF
+C644 net_989#2 0 0.93fF
+C645 net_1006 0 0.897fF
+C646 net_1018 0 1.304fF
+C647 net_971 0 0.787fF
+C648 net_851#2 0 1.612fF
+C649 net_1117 0 1.282fF
+C650 net_1127 0 1.227fF
+C651 net_1071 0 1.469fF
+C652 net_729#33 0 1.876fF
+C653 net_1004 0 1.073fF
+C654 net_851#6 0 1.612fF
+C655 net_908 0 2.735fF
+C656 net_1071#2 0 2.085fF
+C657 net_1015 0 1.128fF
+C658 net_1068 0 1.733fF
+C659 net_1053#4 0 2.074fF
+C660 a21#0 0 0.853fF
+C661 net_1015#4 0 1.216fF
+C662 b21#0 0 0.853fF
+C663 net_1068#4 0 1.645fF
+C664 net_827#2 0 1.414fF
+C665 net_1079#8 0 1.854fF
+C666 net_840 0 2.217fF
+C667 net_1011#2 0 2.162fF
+C668 net_842#2 0 1.909fF
+C669 net_827 0 1.502fF
+C670 net_983#4 0 1.282fF
+C671 net_1013#2 0 1.48fF
+C672 net_1011 0 1.216fF
+C673 net_987#2 0 1.282fF
+C674 net_969#2 0 1.051fF
+C675 net_983 0 0.93fF
+C676 net_1015#2 0 1.04fF
+C677 net_1068#2 0 1.733fF
+C678 net_987 0 0.93fF
+C679 net_1053#2 0 1.326fF
+C680 net_971#4 0 0.875fF
+C681 net_969 0 0.787fF
+C682 net_1063#2 0 1.469fF
+C683 net_1117#10 0 2.449fF
+C684 net_1013 0 1.216fF
+C685 net_1053#6 0 2.404fF
+C686 net_851#8 0 1.876fF
+C687 net_1063#6 0 2.085fF
+C688 net_948#2 0 4.187fF
+C689 net_729#16 0 2.162fF
+C690 net_842 0 1.645fF
+C691 net_1063#8 0 2.261fF
+C692 net_908#8 0 2.735fF
+C693 net_948 0 4.363fF
+C694 net_1030 0 1.271fF
+C695 net_1107 0 2.305fF
+C696 net_1079#6 0 2.36fF
+C697 a22#0 0 0.853fF
+C698 net_1030#4 0 1.359fF
+C699 b22#0 0 0.853fF
+C700 net_1107#4 0 2.217fF
+C701 net_685 0 1.7fF
+C702 net_798#2 0 4.572fF
+C703 net_694#2 0 2.504fF
+C704 net_944#2 0 1.161fF
+C705 net_692 0 2.195fF
+C706 net_685#2 0 1.788fF
+C707 net_1093 0 1.447fF
+C708 net_880 0 2.338fF
+C709 net_944 0 4.077fF
+C710 net_980 0 1.282fF
+C711 net_1051#2 0 1.766fF
+C712 net_1093#2 0 1.931fF
+C713 net_1030#2 0 1.183fF
+C714 net_1107#2 0 2.305fF
+C715 net_980#4 0 0.93fF
+C716 net_1079#4 0 1.612fF
+C717 net_983#6 0 1.018fF
+C718 net_1051 0 1.502fF
+C719 net_901 0 2.327fF
+C720 net_1117#4 0 1.282fF
+C721 net_880#2 0 2.074fF
+C722 net_1079 0 2.118fF
+C723 net_1063 0 1.997fF
+C724 net_901#2 0 2.504fF
+C725 net_942#2 0 1.832fF
+C726 net_729#25 0 3.428fF
+C727 net_692#2 0 1.931fF
+C728 net_901#4 0 2.327fF
+C729 net_908#6 0 2.735fF
+C730 net_942 0 3.934fF
+C731 net_1097 0 1.986fF
+C732 net_1033 0 1.447fF
+C733 net_798#9 0 1.931fF
+C734 a23#0 0 0.853fF
+C735 net_1097#4 0 2.074fF
+C736 b23#0 0 0.853fF
+C737 net_1033#4 0 1.359fF
+C738 net_680#2 0 3.318fF
+C739 net_707#8 0 2.57fF
+C740 net_486 0 1.502fF
+C741 net_738#4 0 3.285fF
+C742 net_946#2 0 1.106fF
+C743 net_680 0 1.645fF
+C744 net_892#2 0 2.878fF
+C745 net_835#2 0 3.824fF
+C746 net_738#8 0 2.933fF
+C747 net_1049 0 1.854fF
+C748 net_967#2 0 1.051fF
+C749 net_892#5 0 2.217fF
+C750 net_1110 0 2.57fF
+C751 net_1100#2 0 2.338fF
+C752 net_1049#2 0 1.502fF
+C753 net_1097#2 0 1.898fF
+C754 net_1033#2 0 1.447fF
+C755 net_1110#2 0 2.217fF
+C756 net_798#7 0 1.183fF
+C757 net_980#2 0 1.018fF
+C758 net_1100 0 2.074fF
+C759 net_1102#4 0 1.898fF
+C760 net_983#2 0 1.018fF
+C761 net_967 0 0.787fF
+C762 net_798#5 0 1.183fF
+C763 net_1079#2 0 1.876fF
+C764 net_1102#2 0 2.074fF
+C765 net_997#2 0 0.897fF
+C766 net_1117#8 0 2.449fF
+C767 net_835#5 0 2.074fF
+C768 net_1102 0 1.898fF
+C769 net_1063#4 0 1.733fF
+C770 net_997#4 0 1.073fF
+C771 net_918#2 0 2.757fF
+C772 net_729#36 0 1.854fF
+C773 net_946 0 4.22fF
+C774 net_997 0 2.834fF
+C775 net_908#2 0 2.735fF
+C776 net_918 0 2.933fF
+C777 net_488#2 0 0.842fF
+C778 net_509#4 0 1.161fF
+C779 net_707#6 0 2.085fF
+C780 a24#0 0 2.449fF
+C781 net_488#4 0 0.93fF
+C782 b24#0 0 2.162fF
+C783 net_509 0 1.073fF
+C784 net_515#2 0 0.985fF
+C785 net_719#4 0 2.283fF
+C786 net_546 0 2.074fF
+C787 net_494 0 1.282fF
+C788 net_496#2 0 1.194fF
+C789 net_515 0 1.073fF
+C790 net_491 0 1.282fF
+C791 net_763#2 0 1.392fF
+C792 net_494#2 0 0.93fF
+C793 net_488 0 0.754fF
+C794 net_509#2 0 1.161fF
+C795 net_491#4 0 0.93fF
+C796 net_707#2 0 2.041fF
+C797 net_738#10 0 3.021fF
+C798 net_763 0 3.219fF
+C799 net_696#2 0 3.12fF
+C800 net_729#2 0 2.14fF
+C801 net_496 0 0.93fF
+C802 net_707#4 0 2.041fF
+C803 net_918#12 0 2.57fF
+C804 net_696 0 1.931fF
+C805 net_512#2 0 0.985fF
+C806 net_543#2 0 1.59fF
+C807 net_719#6 0 1.799fF
+C808 a25#0 0 2.305fF
+C809 net_512#4 0 1.073fF
+C810 b25#0 0 1.733fF
+C811 net_543#4 0 1.502fF
+C812 net_785 0 0.699fF
+C813 net_885#4 0 2.449fF
+C814 net_787#2 0 1.359fF
+C815 net_783 0 1.139fF
+C816 net_796 0 1.194fF
+C817 net_785#2 0 0.787fF
+C818 net_792 0 1.282fF
+C819 net_932#2 0 3.626fF
+C820 net_783#2 0 0.787fF
+C821 net_771#5 0 4.143fF
+C822 net_660#5 0 3.483fF
+C823 net_792#6 0 0.93fF
+C824 net_512 0 0.897fF
+C825 net_543 0 1.59fF
+C826 net_771#2 0 1.37fF
+C827 net_719#2 0 2.548fF
+C828 net_491#2 0 1.018fF
+C829 net_660#2 0 3.516fF
+C830 net_625#4 0 0.897fF
+C831 net_738#12 0 3.021fF
+C832 net_932 0 2.228fF
+C833 net_719 0 2.327fF
+C834 net_707 0 2.305fF
+C835 net_625 0 1.073fF
+C836 net_906#2 0 2.471fF
+C837 net_729#27 0 2.162fF
+C838 net_796#2 0 0.93fF
+C839 net_625#2 0 0.897fF
+C840 net_918#8 0 2.57fF
+C841 net_906 0 2.944fF
+C842 net_846 0 1.7fF
+C843 net_837#2 0 1.733fF
+C844 net_885#8 0 2.933fF
+C845 a26#0 0 0.875fF
+C846 net_846#4 0 1.788fF
+C847 b26#0 0 1.018fF
+C848 net_837 0 1.645fF
+C849 net_678#2 0 1.557fF
+C850 net_634#4 0 1.304fF
+C851 net_609 0 1.502fF
+C852 net_621 0 1.425fF
+C853 net_598#2 0 1.051fF
+C854 net_678 0 1.645fF
+C855 net_596 0 1.139fF
+C856 net_611#2 0 1.194fF
+C857 net_621#2 0 1.073fF
+C858 net_856#4 0 3.307fF
+C859 net_781#2 0 4.539fF
+C860 net_596#2 0 0.787fF
+C861 net_846#2 0 1.612fF
+C862 net_837#4 0 1.733fF
+C863 net_856 0 1.931fF
+C864 net_885#6 0 2.184fF
+C865 net_792#2 0 1.018fF
+C866 net_781 0 0.787fF
+C867 net_613#4 0 0.754fF
+C868 net_738#18 0 3.021fF
+C869 net_611 0 0.93fF
+C870 net_885#2 0 3.406fF
+C871 net_625#8 0 1.161fF
+C872 net_613 0 0.93fF
+C873 net_623#2 0 0.897fF
+C874 net_729#29 0 3.428fF
+C875 net_598 0 0.787fF
+C876 net_613#2 0 0.754fF
+C877 net_918#10 0 2.57fF
+C878 net_623 0 1.073fF
+C879 net_483#2 0 0.842fF
+C880 net_506#2 0 1.161fF
+C881 net_634#2 0 3.087fF
+C882 a27#0 0 1.018fF
+C883 net_483#4 0 0.93fF
+C884 b27#0 0 2.592fF
+C885 net_506#4 0 1.073fF
+C886 net_475#2 0 0.699fF
+C887 net_616#6 0 3.857fF
+C888 net_522 0 1.788fF
+C889 net_769#2 0 1.161fF
+C890 net_524#2 0 1.48fF
+C891 net_475 0 0.787fF
+C892 net_750#6 0 3.285fF
+C893 net_732 0 2.911fF
+C894 net_769 0 3.362fF
+C895 net_776#2 0 4.143fF
+C896 net_916 0 2.537fF
+C897 net_750#8 0 2.933fF
+C898 net_600 0 1.139fF
+C899 net_778 0 4.198fF
+C900 net_776 0 3.791fF
+C901 net_483 0 0.754fF
+C902 net_506 0 1.161fF
+C903 net_600#2 0 4.088fF
+C904 net_634#6 0 1.04fF
+C905 net_856#2 0 3.571fF
+C906 net_778#2 0 3.934fF
+C907 net_894#4 0 2.327fF
+C908 net_792#4 0 1.018fF
+C909 net_916#2 0 2.79fF
+C910 net_634 0 1.04fF
+C911 net_885 0 3.142fF
+C912 net_894#2 0 3.087fF
+C913 net_698#10 0 1.755fF
+C914 net_738#2 0 3.021fF
+C915 net_732#2 0 2.647fF
+C916 net_894 0 3.263fF
+C917 net_625#6 0 1.161fF
+C918 net_698#12 0 1.931fF
+C919 net_638#2 0 3.835fF
+C920 net_729 0 2.14fF
+C921 net_524 0 1.216fF
+C922 net_698#8 0 1.755fF
+C923 net_918#4 0 2.57fF
+C924 net_638 0 1.216fF
+C925 net_498#2 0 0.842fF
+C926 net_472#2 0 0.875fF
+C927 net_616#8 0 3.373fF
+C928 a28#0 0 1.304fF
+C929 net_498#4 0 0.93fF
+C930 b28#0 0 0.875fF
+C931 net_472#4 0 0.787fF
+C932 net_863#2 0 3.747fF
+C933 net_672 0 1.59fF
+C934 net_727#2 0 3.076fF
+C935 net_883#5 0 1.282fF
+C936 net_991 0 1.194fF
+C937 net_863#5 0 1.645fF
+C938 net_761#2 0 3.428fF
+C939 net_667#2 0 1.766fF
+C940 net_883#2 0 3.373fF
+C941 net_517 0 1.425fF
+C942 net_734 0 1.964fF
+C943 net_761 0 1.799fF
+C944 net_498 0 0.754fF
+C945 net_472 0 0.875fF
+C946 net_517#4 0 1.073fF
+C947 net_616#4 0 0.754fF
+C948 net_750#4 0 3.021fF
+C949 net_734#2 0 2.647fF
+C950 net_714#4 0 2.184fF
+C951 net_738#14 0 3.021fF
+C952 net_667 0 1.502fF
+C953 net_616#2 0 0.754fF
+C954 net_698#4 0 2.019fF
+C955 net_714 0 2.36fF
+C956 net_844#5 0 1.326fF
+C957 net_729#31 0 1.876fF
+C958 net_991#2 0 0.93fF
+C959 net_714#2 0 2.184fF
+C960 net_918#16 0 2.57fF
+C961 net_844#2 0 3.945fF
+C962 net_582#2 0 2.415fF
+C963 net_591#2 0 2.878fF
+C964 net_672#6 0 2.801fF
+C965 a29#0 0 2.449fF
+C966 net_582#4 0 2.504fF
+C967 b29#0 0 2.305fF
+C968 net_591#4 0 2.79fF
+C969 net_654#2 0 1.271fF
+C970 net_687#8 0 1.876fF
+C971 net_652 0 1.931fF
+C972 net_663#2 0 1.854fF
+C973 net_656#2 0 1.623fF
+C974 net_654 0 1.359fF
+C975 net_736#2 0 3.142fF
+C976 net_665#2 0 1.766fF
+C977 net_663 0 1.502fF
+C978 net_585#4 0 2.856fF
+C979 net_767 0 1.392fF
+C980 net_736 0 2.085fF
+C981 net_594 0 3.142fF
+C982 net_566#2 0 2.338fF
+C983 net_585#2 0 2.504fF
+C984 net_582 0 2.327fF
+C985 net_591 0 2.878fF
+C986 net_594#2 0 2.79fF
+C987 net_672#2 0 3.549fF
+C988 net_517#2 0 1.161fF
+C989 net_566 0 2.074fF
+C990 net_756#8 0 2.757fF
+C991 net_750 0 3.021fF
+C992 net_767#2 0 3.219fF
+C993 net_672#4 0 1.326fF
+C994 net_616 0 1.018fF
+C995 net_756#4 0 2.933fF
+C996 net_773#4 0 3.472fF
+C997 net_738#16 0 3.021fF
+C998 net_665 0 1.502fF
+C999 net_756#6 0 2.757fF
+C1000 net_698#2 0 2.019fF
+C1001 net_773 0 3.648fF
+C1002 net_658#2 0 1.183fF
+C1003 net_729#4 0 6.163fF
+C1004 net_656 0 1.359fF
+C1005 net_773#2 0 3.472fF
+C1006 net_918#18 0 2.57fF
+C1007 net_658 0 1.359fF
+C1008 net_579 0 2.415fF
+C1009 net_574 0 2.449fF
+C1010 net_687#6 0 2.515fF
+C1011 a30#0 0 2.735fF
+C1012 net_579#4 0 2.504fF
+C1013 b30#0 0 2.019fF
+C1014 net_574#4 0 2.36fF
+C1015 net_712#2 0 2.746fF
+C1016 net_723#4 0 2.283fF
+C1017 net_554 0 2.504fF
+C1018 net_859#2 0 2.283fF
+C1019 net_817#2 0 1.623fF
+C1020 net_712#5 0 3.648fF
+C1021 net_642#2 0 1.568fF
+C1022 net_640 0 1.48fF
+C1023 net_859 0 3.659fF
+C1024 net_748 0 3.285fF
+C1025 net_644#2 0 1.48fF
+C1026 net_642 0 1.216fF
+C1027 net_569#2 0 2.57fF
+C1028 net_564#2 0 2.338fF
+C1029 net_748#2 0 1.942fF
+C1030 net_579#2 0 2.327fF
+C1031 net_574#2 0 2.449fF
+C1032 net_569 0 2.217fF
+C1033 net_687#4 0 3.263fF
+C1034 net_585#6 0 2.592fF
+C1035 net_564 0 2.074fF
+C1036 net_646#4 0 1.04fF
+C1037 net_750#10 0 3.021fF
+C1038 net_644 0 1.216fF
+C1039 net_687#2 0 1.612fF
+C1040 net_756#2 0 3.021fF
+C1041 net_646 0 1.216fF
+C1042 net_682#2 0 1.469fF
+C1043 net_738 0 3.021fF
+C1044 net_640#2 0 1.216fF
+C1045 net_646#2 0 1.04fF
+C1046 net_698 0 2.019fF
+C1047 net_682 0 1.645fF
+C1048 net_806#2 0 1.04fF
+C1049 net_729#14 0 2.162fF
+C1050 net_817 0 1.359fF
+C1051 net_682#4 0 1.469fF
+C1052 net_918#6 0 2.57fF
+C1053 net_806 0 4.374fF
+C1054 net_477#2 0 0.699fF
+C1055 net_526#2 0 1.304fF
+C1056 net_723#6 0 1.799fF
+C1057 a31#0 0 1.876fF
+C1058 net_477#4 0 0.787fF
+C1059 b31#0 0 1.59fF
+C1060 net_526#4 0 1.216fF
+C1061 net_632#5 0 3.714fF
+C1062 net_808 0 1.48fF
+C1063 net_810#2 0 1.216fF
+C1064 net_560 0 2.283fF
+C1065 net_630 0 3.538fF
+C1066 net_632#2 0 3.802fF
+C1067 net_558 0 2.283fF
+C1068 net_765#2 0 1.392fF
+C1069 net_560#2 0 1.931fF
+C1070 net_531 0 1.568fF
+C1071 net_533#2 0 1.48fF
+C1072 net_558#2 0 1.931fF
+C1073 net_529 0 1.568fF
+C1074 net_556 0 2.195fF
+C1075 net_531#2 0 1.216fF
+C1076 net_477 0 0.611fF
+C1077 net_526 0 1.304fF
+C1078 net_529#2 0 1.216fF
+C1079 net_723#2 0 2.548fF
+C1080 net_569#4 0 2.305fF
+C1081 net_556#2 0 1.931fF
+C1082 net_605 0 4.264fF
+C1083 net_585 0 2.592fF
+C1084 net_533 0 1.216fF
+C1085 net_723 0 2.327fF
+C1086 net_687 0 1.876fF
+C1087 net_605#2 0 0.787fF
+C1088 net_602#4 0 0.611fF
+C1089 net_750#2 0 3.021fF
+C1090 net_765 0 3.219fF
+C1091 net_605#4 0 0.611fF
+C1092 net_756 0 3.021fF
+C1093 net_602 0 0.787fF
+C1094 net_669#2 0 1.326fF
+C1095 net_738#6 0 3.021fF
+C1096 net_630#2 0 1.073fF
+C1097 net_602#2 0 0.611fF
+C1098 net_698#6 0 2.019fF
+C1099 net_669 0 1.502fF
+C1100 net_849 0 1.612fF
+C1101 net_729#8 0 2.162fF
+C1102 net_808#2 0 1.216fF
+C1103 net_669#4 0 1.326fF
+C1104 net_918#14 0 2.57fF
+C1105 net_849#2 0 3.802fF
+C1106 net_0#1 0 2.921fF
+C1107 net_0#3 0 3.185fF
+C1108 net_2#1 0 9.738fF
+C1109 net_2#3 0 9.386fF
+C1110 net_4#1 0 21.595fF
+C1111 net_4#3 0 22.079fF
+C1112 sum8 0 0.787fF
+C1113 net_7#1 0 2.285fF
+C1114 net_7#3 0 1.932fF
+C1115 sum7 0 0.93fF
+C1116 net_10#1 0 2.016fF
+C1117 net_10#3 0 1.532fF
+C1118 net_12#1 0 7.498fF
+C1119 net_12#3 0 7.41fF
+C1120 net_14#1 0 1.238fF
+C1121 net_14#3 0 1.502fF
+C1122 net_16#1 0 9.953fF
+C1123 net_16#3 0 10.217fF
+C1124 net_18#1 0 9.244fF
+C1125 net_18#3 0 9.728fF
+C1126 sum4 0 0.93fF
+C1127 net_21#1 0 2.132fF
+C1128 net_21#3 0 5.043fF
+C1129 net_21#5 0 5.248fF
+C1130 net_21#7 0 1.986fF
+C1131 sum6 0 1.073fF
+C1132 net_26#1 0 1.381fF
+C1133 net_26#3 0 2.116fF
+C1134 net_26#5 0 2.601fF
+C1135 net_26#7 0 4.233fF
+C1136 net_26#9 0 4.233fF
+C1137 net_26#11 0 1.778fF
+C1138 net_32#1 0 2.909fF
+C1139 a3 0 1.161fF
+C1140 net_35#1 0 1.624fF
+C1141 net_35#3 0 2.446fF
+C1142 net_35#5 0 1.896fF
+C1143 net_38#1 0 4.586fF
+C1144 net_38#3 0 5.666fF
+C1145 net_38#5 0 3.423fF
+C1146 net_38#7 0 2.828fF
+C1147 net_42#1 0 5.803fF
+C1148 net_42#3 0 6.067fF
+C1149 net_44#1 0 2.718fF
+C1150 net_44#3 0 3.453fF
+C1151 net_44#5 0 1.984fF
+C1152 b0 0 1.161fF
+C1153 a0 0 1.161fF
+C1154 sum2 0 1.073fF
+C1155 net_50#1 0 4.677fF
+C1156 net_50#3 0 6.42fF
+C1157 net_50#5 0 5.873fF
+C1158 net_50#7 0 5.143fF
+C1159 net_54#1 0 2.229fF
+C1160 net_54#3 0 2.964fF
+C1161 net_54#5 0 2.582fF
+C1162 net_54#7 0 2.024fF
+C1163 net_58#1 0 1.848fF
+C1164 net_58#3 0 3.199fF
+C1165 net_58#5 0 2.656fF
+C1166 sum3 0 1.216fF
+C1167 net_62#1 0 2.302fF
+C1168 net_62#3 0 1.818fF
+C1169 net_64#1 0 2.141fF
+C1170 net_64#3 0 2.053fF
+C1171 net_66#1 0 5.83fF
+C1172 net_66#3 0 6.095fF
+C1173 net_68#1 0 1.848fF
+C1174 net_68#3 0 3.199fF
+C1175 net_68#5 0 2.656fF
+C1176 sum1 0 1.216fF
+C1177 net_72#1 0 2.919fF
+C1178 net_72#3 0 2.435fF
+C1179 sum0 0 1.216fF
+C1180 net_75#1 0 2.302fF
+C1181 net_75#3 0 1.818fF
+C1182 net_77#1 0 1.936fF
+C1183 net_77#3 0 2.48fF
+C1184 net_77#5 0 1.848fF
+C1185 net_80#1 0 2.272fF
+C1186 net_80#3 0 2.536fF
+C1187 net_82#1 0 3.004fF
+C1188 net_82#3 0 3.268fF
+C1189 net_84#1 0 2.389fF
+C1190 net_84#3 0 2.477fF
+C1191 net_86#1 0 2.828fF
+C1192 net_86#3 0 3.004fF
+C1193 net_88#1 0 2.815fF
+C1194 net_88#3 0 2.991fF
+C1195 net_90#1 0 5.472fF
+C1196 net_90#3 0 5.736fF
+C1197 net_92#1 0 2.593fF
+C1198 net_92#3 0 3.652fF
+C1199 net_92#5 0 2.154fF
+C1200 net_95#1 0 1.807fF
+C1201 net_95#3 0 3.484fF
+C1202 net_95#5 0 4.211fF
+C1203 net_95#7 0 2.754fF
+C1204 a1 0 1.447fF
+C1205 net_100#1 0 1.91fF
+C1206 net_100#3 0 2.732fF
+C1207 net_100#5 0 2.182fF
+C1208 net_103#1 0 1.807fF
+C1209 net_103#3 0 2.982fF
+C1210 net_103#5 0 3.371fF
+C1211 net_106#1 0 1.668fF
+C1212 net_106#3 0 2.732fF
+C1213 net_106#5 0 2.424fF
+C1214 net_109#1 0 2.354fF
+C1215 net_109#3 0 7.852fF
+C1216 net_109#5 0 6.647fF
+C1217 net_112#1 0 2.736fF
+C1218 net_112#3 0 3.088fF
+C1219 net_114#1 0 2.134fF
+C1220 net_114#3 0 3.485fF
+C1221 net_114#5 0 2.942fF
+C1222 net_117#1 0 2.354fF
+C1223 net_117#3 0 2.53fF
+C1224 net_119#1 0 4.176fF
+C1225 net_119#3 0 4.528fF
+C1226 net_121#1 0 2.556fF
+C1227 net_121#3 0 3.04fF
+C1228 b3 0 1.733fF
+C1229 a2 0 1.733fF
+C1230 net_125#1 0 2.196fF
+C1231 net_125#3 0 3.019fF
+C1232 net_125#5 0 2.468fF
+C1233 net_128#1 0 2.38fF
+C1234 net_128#3 0 3.468fF
+C1235 net_128#5 0 2.866fF
+C1236 net_128#7 0 2.042fF
+C1237 b1 0 1.733fF
+C1238 net_133#1 0 4.667fF
+C1239 net_133#3 0 4.932fF
+C1240 b2 0 1.876fF
+C1241 b7#1 0 3.555fF
+C1242 b7 0 2.68fF
+C1243 net_137#1 0 1.455fF
+C1244 net_137#3 0 2.52fF
+C1245 net_137#5 0 1.852fF
+C1246 net_140#1 0 3.962fF
+C1247 net_140#3 0 4.828fF
+C1248 net_140#5 0 1.389fF
+C1249 net_143#1 0 2.226fF
+C1250 net_143#3 0 2.77fF
+C1251 net_143#5 0 1.419fF
+C1252 net_146#1 0 1.331fF
+C1253 net_146#3 0 2.241fF
+C1254 net_146#5 0 1.609fF
+C1255 net_149#1 0 19.982fF
+C1256 net_149#3 0 19.63fF
+C1257 net_151#1 0 1.624fF
+C1258 net_151#3 0 1.712fF
+C1259 net_153 0 7.885fF
+C1260 a5#1 0 3.081fF
+C1261 a5 0 2.063fF
+C1262 net_156#1 0 1.562fF
+C1263 net_156#3 0 2.815fF
+C1264 net_159#1 0 2.202fF
+C1265 net_159#3 0 4.095fF
+C1266 net_161#1 0 12.47fF
+C1267 net_161#3 0 10.577fF
+C1268 net_163#1 0 1.474fF
+C1269 net_163#3 0 2.384fF
+C1270 net_163#5 0 1.753fF
+C1271 net_166#1 0 2.623fF
+C1272 net_168#1 0 2.447fF
+C1273 net_168#3 0 2.711fF
+C1274 b14 0 18.13fF
+C1275 b14#1 0 19.148fF
+C1276 b15#1 0 18.224fF
+C1277 b15 0 17.063fF
+C1278 net_172#1 0 1.624fF
+C1279 net_172#3 0 2.292fF
+C1280 net_172#5 0 1.741fF
+C1281 net_175#1 0 2.909fF
+C1282 a14 0 18.027fF
+C1283 a14#1 0 19.188fF
+C1284 b13#1 0 15.694fF
+C1285 b13 0 14.389fF
+C1286 net_179#1 0 1.767fF
+C1287 net_179#3 0 2.435fF
+C1288 net_179#5 0 1.884fF
+C1289 net_182#1 0 17.694fF
+C1290 net_182#3 0 17.958fF
+C1291 net_184#1 0 2.129fF
+C1292 net_184#3 0 2.393fF
+C1293 a7#1 0 3.407fF
+C1294 a7 0 1.96fF
+C1295 net_187#1 0 34.334fF
+C1296 net_187#3 0 36.276fF
+C1297 b4#1 0 11.147fF
+C1298 b4 0 9.557fF
+C1299 net_190#1 0 2.325fF
+C1300 net_190#3 0 2.876fF
+C1301 net_190#5 0 2.053fF
+C1302 net_193#1 0 3.546fF
+C1303 net_193#3 0 4.412fF
+C1304 net_193#5 0 2.104fF
+C1305 b10 0 15.251fF
+C1306 b10#1 0 16.841fF
+C1307 a6#1 0 13.449fF
+C1308 a6 0 11.716fF
+C1309 net_198#1 0 2.277fF
+C1310 net_198#3 0 2.909fF
+C1311 net_198#5 0 2.365fF
+C1312 a10 0 15.148fF
+C1313 a10#1 0 16.881fF
+C1314 b5#1 0 7.127fF
+C1315 b5 0 5.251fF
+C1316 net_203#1 0 2.009fF
+C1317 net_203#3 0 2.097fF
+C1318 net_205#1 0 2.39fF
+C1319 net_205#3 0 2.875fF
+C1320 net_207#1 0 3.228fF
+C1321 net_207#3 0 3.772fF
+C1322 net_207#5 0 2.42fF
+C1323 net_210#1 0 26.177fF
+C1324 net_210#3 0 27.261fF
+C1325 sum5#1 0 11.077fF
+C1326 sum5 0 9.145fF
+C1327 net_213#1 0 2.754fF
+C1328 net_213#3 0 3.305fF
+C1329 net_213#5 0 2.482fF
+C1330 net_216#1 0 2.996fF
+C1331 net_216#3 0 3.305fF
+C1332 net_216#5 0 2.24fF
+C1333 net_219#1 0 2.475fF
+C1334 net_219#3 0 3.386fF
+C1335 net_219#5 0 2.754fF
+C1336 sum10 0 13.605fF
+C1337 sum10#1 0 15.537fF
+C1338 net_223#1 0 3.325fF
+C1339 net_223#3 0 3.81fF
+C1340 net_225#1 0 2.374fF
+C1341 net_225#3 0 2.858fF
+C1342 net_227#1 0 5.46fF
+C1343 net_227#3 0 9.444fF
+C1344 net_227#7 0 4.155fF
+C1345 net_227#9 0 3.082fF
+C1346 net_232#1 0 15.506fF
+C1347 net_232#3 0 15.77fF
+C1348 net_234#1 0 3.853fF
+C1349 net_234#3 0 3.501fF
+C1350 net_236#1 0 5.544fF
+C1351 net_236#5 0 3.481fF
+C1352 net_239#1 0 7.397fF
+C1353 net_239#3 0 7.334fF
+C1354 net_239#5 0 2.418fF
+C1355 net_242#1 0 2.768fF
+C1356 net_242#3 0 3.437fF
+C1357 net_242#5 0 2.886fF
+C1358 net_245#1 0 3.012fF
+C1359 net_245#3 0 6.04fF
+C1360 net_245#5 0 4.981fF
+C1361 sum11 0 10.032fF
+C1362 sum11#1 0 12.25fF
+C1363 net_249#1 0 5.015fF
+C1364 net_249#5 0 3.271fF
+C1365 net_252#1 0 8.208fF
+C1366 net_252#3 0 10.508fF
+C1367 net_252#5 0 4.896fF
+C1368 net_252#7 0 3.961fF
+C1369 net_256#1 0 3.479fF
+C1370 net_256#3 0 3.391fF
+C1371 net_258#1 0 2.933fF
+C1372 net_258#3 0 2.669fF
+C1373 net_260#1 0 3.755fF
+C1374 net_260#3 0 3.271fF
+C1375 a11 0 7.77fF
+C1376 a11#1 0 10.218fF
+C1377 net_263#1 0 1.785fF
+C1378 net_263#3 0 4.607fF
+C1379 net_263#5 0 9.073fF
+C1380 net_263#7 0 8.166fF
+C1381 net_267#1 0 3.898fF
+C1382 net_267#3 0 3.414fF
+C1383 net_269#1 0 3.047fF
+C1384 net_269#3 0 3.444fF
+C1385 net_269#5 0 2.812fF
+C1386 b11 0 6.433fF
+C1387 b11#1 0 9.025fF
+C1388 a15#1 0 18.05fF
+C1389 a15 0 15.315fF
+C1390 net_274#1 0 3.469fF
+C1391 net_274#3 0 4.02fF
+C1392 net_274#5 0 3.197fF
+C1393 net_277#1 0 3.043fF
+C1394 net_277#3 0 3.958fF
+C1395 net_277#5 0 4.515fF
+C1396 net_277#7 0 3.249fF
+C1397 a13#1 0 15.519fF
+C1398 a13 0 12.641fF
+C1399 b6#1 0 15.456fF
+C1400 b6 0 12.436fF
+C1401 a4#1 0 12.001fF
+C1402 a4 0 8.837fF
+C1403 net_284#1 0 3.073fF
+C1404 net_284#3 0 3.433fF
+C1405 net_284#5 0 25.521fF
+C1406 net_284#7 0 25.909fF
+C1407 net_288#1 0 7.962fF
+C1408 net_288#3 0 3.769fF
+C1409 sum15 0 1.33fF
+C1410 sum15#1 0 2.117fF
+C1411 sum9#1 0 3.507fF
+C1412 sum9 0 2.577fF
+C1413 net_292#1 0 24.07fF
+C1414 net_292#3 0 25.847fF
+C1415 net_292#5 0 3.466fF
+C1416 net_292#7 0 2.702fF
+C1417 net_296#1 0 1.841fF
+C1418 net_296#3 0 4.911fF
+C1419 sum13#1 0 12.378fF
+C1420 sum13 0 11.305fF
+C1421 net_299#1 0 2.428fF
+C1422 net_299#3 0 2.076fF
+C1423 net_301#1 0 11.512fF
+C1424 net_301#3 0 8.86fF
+C1425 net_301#5 0 2.424fF
+C1426 net_301#7 0 2.601fF
+C1427 net_301#9 0 4.22fF
+C1428 net_301#11 0 4.22fF
+C1429 net_301#13 0 2.395fF
+C1430 net_301#15 0 2.691fF
+C1431 net_301#17 0 9.749fF
+C1432 net_301#19 0 8.924fF
+C1433 net_311#1 0 1.984fF
+C1434 net_311#3 0 2.468fF
+C1435 sum14 0 0.611fF
+C1436 sum14#1 0 1.683fF
+C1437 sum12#1 0 15.271fF
+C1438 sum12 0 14.055fF
+C1439 net_315#1 0 2.302fF
+C1440 net_315#3 0 1.818fF
+C1441 net_317#1 0 2.393fF
+C1442 net_317#3 0 2.129fF
+C1443 net_319#1 0 3.195fF
+C1444 net_210#4 0 19.986fF
+C1445 net_210#6 0 16.448fF
+C1446 net_323#1 0 2.445fF
+C1447 net_323#3 0 1.961fF
+C1448 net_325#1 0 1.668fF
+C1449 net_325#3 0 1.58fF
+C1450 net_327#1 0 13.821fF
+C1451 net_327#3 0 13.557fF
+C1452 net_329#1 0 19.552fF
+C1453 net_329#3 0 23.068fF
+C1454 net_331#1 0 23.494fF
+C1455 net_331#3 0 23.759fF
+C1456 net_333#1 0 3.255fF
+C1457 net_333#3 0 5.489fF
+C1458 b9#1 0 6.765fF
+C1459 b9 0 5.032fF
+C1460 net_336#1 0 12.344fF
+C1461 net_336#3 0 11.992fF
+C1462 net_338#1 0 4.805fF
+C1463 net_338#3 0 5.422fF
+C1464 net_338#5 0 2.967fF
+C1465 net_338#7 0 2.864fF
+C1466 net_338#9 0 4.118fF
+C1467 net_338#11 0 3.252fF
+C1468 net_344#1 0 3fF
+C1469 net_344#3 0 2.648fF
+C1470 net_346#1 0 2.356fF
+C1471 net_346#3 0 5.442fF
+C1472 net_346#5 0 6.633fF
+C1473 net_346#7 0 5.715fF
+C1474 b12#1 0 10.096fF
+C1475 b12 0 8.22fF
+C1476 net_351#1 0 2.699fF
+C1477 net_351#3 0 3.183fF
+C1478 net_353#1 0 9.539fF
+C1479 net_353#3 0 9.803fF
+C1480 net_355#1 0 6.134fF
+C1481 net_355#3 0 4.385fF
+C1482 net_153#4 0 14.092fF
+C1483 net_153#6 0 12.007fF
+C1484 a12#1 0 9.314fF
+C1485 a12 0 7.294fF
+C1486 net_360#1 0 2.99fF
+C1487 net_360#3 0 5.811fF
+C1488 net_360#5 0 5.016fF
+C1489 net_363#1 0 2.24fF
+C1490 net_363#3 0 2.504fF
+C1491 net_365#1 0 3.474fF
+C1492 net_365#3 0 3.298fF
+C1493 net_367#1 0 8.272fF
+C1494 net_367#3 0 8.448fF
+C1495 net_369#1 0 3.108fF
+C1496 net_369#3 0 2.844fF
+C1497 net_371#1 0 12.409fF
+C1498 net_371#3 0 12.497fF
+C1499 a9#1 0 8.737fF
+C1500 a9 0 6.575fF
+C1501 net_374#1 0 2.706fF
+C1502 net_374#3 0 4.058fF
+C1503 net_374#5 0 3.514fF
+C1504 net_377#1 0 4.118fF
+C1505 net_377#3 0 4.03fF
+C1506 net_379#1 0 16.008fF
+C1507 net_379#3 0 19.482fF
+C1508 net_379#5 0 5.549fF
+C1509 net_382#1 0 2.82fF
+C1510 net_382#3 0 6.259fF
+C1511 net_382#5 0 5.392fF
+C1512 net_385#1 0 3.282fF
+C1513 net_385#3 0 3.951fF
+C1514 net_385#5 0 2.886fF
+C1515 net_388#1 0 2.768fF
+C1516 net_388#3 0 3.591fF
+C1517 net_388#5 0 3.04fF
+C1518 net_391#1 0 6.189fF
+C1519 net_391#3 0 6.101fF
+C1520 net_393#1 0 5.598fF
+C1521 net_393#3 0 5.862fF
+C1522 net_395#1 0 2.526fF
+C1523 net_395#3 0 2.79fF
+C1524 net_397#1 0 7.552fF
+C1525 net_397#3 0 7.376fF
+C1526 net_399#1 0 5.171fF
+C1527 net_399#5 0 4.05fF
+C1528 net_402#1 0 5.676fF
+C1529 net_402#5 0 2.992fF
+C1530 net_405#1 0 3.8fF
+C1531 net_405#3 0 11.195fF
+C1532 net_405#5 0 9.755fF
+C1533 net_408#1 0 3.209fF
+C1534 net_408#3 0 4.134fF
+C1535 net_408#5 0 17.427fF
+C1536 net_408#9 0 13.587fF
+C1537 net_413#1 0 14.595fF
+C1538 net_413#3 0 14.562fF
+C1539 net_415#1 0 24.336fF
+C1540 net_415#3 0 24.589fF
+C1541 net_417#1 0 8.902fF
+C1542 net_417#3 0 8.275fF
+C1543 net_419#1 0 4.359fF
+C1544 net_419#3 0 4.183fF
+C1545 net_421#1 0 4.295fF
+C1546 net_421#3 0 7.681fF
+C1547 net_421#5 0 7.305fF
+C1548 net_421#7 0 5.498fF
+C1549 net_421#9 0 4.05fF
+C1550 net_426#1 0 2.99fF
+C1551 net_426#3 0 11.03fF
+C1552 net_426#5 0 12.523fF
+C1553 net_426#7 0 4.131fF
+C1554 net_430#1 0 4.396fF
+C1555 net_430#3 0 4.131fF
+C1556 net_432#1 0 3.81fF
+C1557 net_432#3 0 20.23fF
+C1558 net_432#5 0 21.428fF
+C1559 net_432#7 0 3.996fF
+C1560 net_436#1 0 14.605fF
+C1561 net_436#3 0 16.376fF
+C1562 net_438#1 0 11.274fF
+C1563 net_438#3 0 13.244fF
+C1564 net_440#1 0 2.467fF
+C1565 net_440#3 0 4.085fF
+C1566 net_442#1 0 2.997fF
+C1567 net_442#3 0 6.296fF
+C1568 net_442#5 0 6.456fF
+C1569 net_442#7 0 14.25fF
+C1570 net_442#9 0 11.793fF
+C1571 net_187#4 0 16.959fF
+C1572 net_187#6 0 18.946fF
+C1573 net_449#1 0 23.541fF
+C1574 net_449#3 0 22.098fF
+C1575 net_449#5 0 7.012fF
+C1576 net_449#7 0 5.759fF
+C1577 net_453#1 0 16.699fF
+C1578 net_453#3 0 21.319fF
+C1579 net_453#5 0 10.008fF
+C1580 net_453#7 0 10.349fF
+C1581 net_453#9 0 9.754fF
+C1582 net_458#1 0 5.068fF
+C1583 net_458#3 0 6.611fF
+C1584 net_458#5 0 13.065fF
+C1585 net_458#7 0 18.172fF
+C1586 net_458#9 0 11.893fF
+C1587 net_458#11 0 5.068fF
+C1588 net_464#1 0 22.32fF
+C1589 net_464#5 0 17.402fF
+C1590 net_467#1 0 5.354fF
+C1591 net_467#3 0 6.28fF
+C1592 net_467#5 0 10.883fF
+C1593 net_467#7 0 9.782fF
+C1594 b28#1 0 17.514fF
+C1595 b28 0 16.639fF
+C1596 net_472#1 0 1.338fF
+C1597 net_472#3 0 2.006fF
+C1598 net_472#5 0 1.455fF
+C1599 net_475#1 0 1.905fF
+C1600 net_475#3 0 1.817fF
+C1601 net_477#1 0 1.331fF
+C1602 net_477#3 0 2.241fF
+C1603 net_477#5 0 1.609fF
+C1604 net_480 0 19.454fF
+C1605 net_480#3 0 17.809fF
+C1606 a27#1 0 3.389fF
+C1607 a27 0 2.371fF
+C1608 net_483#1 0 1.474fF
+C1609 net_483#3 0 2.384fF
+C1610 net_483#5 0 1.753fF
+C1611 net_486#1 0 2.325fF
+C1612 net_486#3 0 1.841fF
+C1613 net_488#1 0 1.474fF
+C1614 net_488#3 0 1.87fF
+C1615 net_488#5 0 1.238fF
+C1616 net_491#1 0 1.796fF
+C1617 net_491#3 0 6.159fF
+C1618 net_491#5 0 5.557fF
+C1619 net_494#1 0 2.623fF
+C1620 net_496#1 0 1.842fF
+C1621 net_496#3 0 2.107fF
+C1622 net_498#1 0 1.474fF
+C1623 net_498#3 0 2.384fF
+C1624 net_498#5 0 1.753fF
+C1625 sum28 0 20.649fF
+C1626 sum28#1 0 21.579fF
+C1627 b8#1 0 2.401fF
+C1628 b8 0 1.24fF
+C1629 net_503#1 0 3.465fF
+C1630 net_503#3 0 4.626fF
+C1631 net_506#1 0 1.624fF
+C1632 net_506#3 0 2.292fF
+C1633 net_506#5 0 1.741fF
+C1634 net_509#1 0 1.896fF
+C1635 net_509#3 0 2.446fF
+C1636 net_509#5 0 1.624fF
+C1637 net_512#1 0 1.617fF
+C1638 net_512#3 0 2.527fF
+C1639 net_512#5 0 1.896fF
+C1640 net_515#1 0 3.412fF
+C1641 net_515#3 0 3.324fF
+C1642 net_517#1 0 1.939fF
+C1643 net_517#3 0 19.362fF
+C1644 net_517#5 0 18.759fF
+C1645 sum29 0 2.256fF
+C1646 sum29#1 0 3.329fF
+C1647 a28#1 0 16.4fF
+C1648 a28 0 15.096fF
+C1649 net_522#1 0 2.611fF
+C1650 net_522#3 0 2.127fF
+C1651 net_524#1 0 2.129fF
+C1652 net_524#3 0 2.393fF
+C1653 net_526#1 0 1.767fF
+C1654 net_526#3 0 2.435fF
+C1655 net_526#5 0 1.884fF
+C1656 net_529#1 0 4.332fF
+C1657 net_529#3 0 3.979fF
+C1658 net_531#1 0 3.195fF
+C1659 net_533#1 0 10.098fF
+C1660 net_533#3 0 10.362fF
+C1661 net_329#4 0 3.57fF
+C1662 net_329#6 0 0.984fF
+C1663 sum25#1 0 14.63fF
+C1664 sum25 0 13.271fF
+C1665 net_538#1 0 17.83fF
+C1666 net_538#3 0 19.486fF
+C1667 net_540#1 0 2.603fF
+C1668 net_540#3 0 3.014fF
+C1669 net_540#5 0 1.913fF
+C1670 net_543#1 0 2.053fF
+C1671 net_543#3 0 2.721fF
+C1672 net_543#5 0 2.17fF
+C1673 net_546#1 0 2.897fF
+C1674 net_546#3 0 2.413fF
+C1675 b31 0 17.68fF
+C1676 b31#1 0 19.27fF
+C1677 b25#1 0 11.714fF
+C1678 b25 0 9.981fF
+C1679 sum31 0 16.035fF
+C1680 sum31#1 0 17.68fF
+C1681 sum24#1 0 8.581fF
+C1682 sum24 0 6.793fF
+C1683 a31 0 17.577fF
+C1684 a31#1 0 19.453fF
+C1685 sum16#1 0 5.537fF
+C1686 sum16 0 3.605fF
+C1687 net_554#1 0 3.326fF
+C1688 net_554#3 0 2.842fF
+C1689 net_556#1 0 3.108fF
+C1690 net_556#3 0 2.844fF
+C1691 net_558#1 0 4.626fF
+C1692 net_560#1 0 4.626fF
+C1693 b30 0 10.032fF
+C1694 b30#1 0 12.051fF
+C1695 b24#1 0 10.909fF
+C1696 b24 0 8.747fF
+C1697 net_564#1 0 10.339fF
+C1698 net_564#3 0 10.603fF
+C1699 net_566#1 0 3.604fF
+C1700 net_566#3 0 3.868fF
+C1701 a25#1 0 10.744fF
+C1702 a25 0 8.438fF
+C1703 net_569#1 0 6.678fF
+C1704 net_569#3 0 7.544fF
+C1705 net_569#5 0 2.82fF
+C1706 b29 0 7.359fF
+C1707 b29#1 0 9.664fF
+C1708 a24#1 0 8.213fF
+C1709 a24 0 5.765fF
+C1710 net_574#1 0 3.425fF
+C1711 net_574#3 0 3.734fF
+C1712 net_574#5 0 2.669fF
+C1713 a29 0 7.256fF
+C1714 a29#1 0 9.704fF
+C1715 b27#1 0 6.505fF
+C1716 b27 0 3.914fF
+C1717 net_579#1 0 3.135fF
+C1718 net_579#3 0 3.767fF
+C1719 net_579#5 0 3.223fF
+C1720 net_582#1 0 3.047fF
+C1721 net_582#3 0 3.958fF
+C1722 net_582#5 0 3.326fF
+C1723 net_585#1 0 2.9fF
+C1724 net_585#3 0 3.815fF
+C1725 net_585#5 0 4.372fF
+C1726 net_585#7 0 3.106fF
+C1727 a8#1 0 3.461fF
+C1728 a8 0 0.726fF
+C1729 a30 0 9.929fF
+C1730 a30#1 0 12.664fF
+C1731 net_591#1 0 3.34fF
+C1732 net_591#3 0 4.009fF
+C1733 net_591#5 0 3.458fF
+C1734 net_594#1 0 4.569fF
+C1735 net_594#3 0 4.216fF
+C1736 net_596#1 0 4.095fF
+C1737 net_596#3 0 3.743fF
+C1738 net_598#1 0 1.095fF
+C1739 net_598#3 0 1.359fF
+C1740 net_600#1 0 23.633fF
+C1741 net_600#3 0 26.582fF
+C1742 net_602#1 0 4.077fF
+C1743 net_602#3 0 5.135fF
+C1744 net_602#5 0 1.845fF
+C1745 net_605#1 0 6.095fF
+C1746 sum27#1 0 2.672fF
+C1747 sum27 0 1.742fF
+C1748 net_609#1 0 2.016fF
+C1749 net_609#3 0 1.532fF
+C1750 net_611#1 0 1.238fF
+C1751 net_611#3 0 1.502fF
+C1752 net_613#1 0 13.959fF
+C1753 net_613#5 0 12.618fF
+C1754 net_616#1 0 2.149fF
+C1755 net_616#3 0 4.353fF
+C1756 net_616#5 0 13.235fF
+C1757 net_616#7 0 15.978fF
+C1758 net_616#9 0 5.481fF
+C1759 net_621#1 0 3.045fF
+C1760 net_621#3 0 2.692fF
+C1761 net_623#1 0 11.304fF
+C1762 net_623#3 0 11.128fF
+C1763 net_625#1 0 3.615fF
+C1764 net_625#5 0 2.851fF
+C1765 net_625#7 0 3.115fF
+C1766 net_625#9 0 2.395fF
+C1767 net_630#1 0 9.785fF
+C1768 net_630#3 0 7.32fF
+C1769 net_632#1 0 10.153fF
+C1770 net_632#3 0 13.526fF
+C1771 net_634#1 0 14.048fF
+C1772 net_634#3 0 17.868fF
+C1773 net_634#5 0 3.952fF
+C1774 net_634#7 0 1.914fF
+C1775 net_638#1 0 4.982fF
+C1776 net_638#3 0 7.601fF
+C1777 net_640#1 0 2.393fF
+C1778 net_640#3 0 2.129fF
+C1779 net_642#1 0 3.195fF
+C1780 net_644#1 0 1.524fF
+C1781 net_644#3 0 1.789fF
+C1782 net_646#1 0 9.415fF
+C1783 net_646#5 0 7.788fF
+C1784 net_480#4 0 5.331fF
+C1785 net_480#6 0 1.601fF
+C1786 sum30#1 0 9.643fF
+C1787 sum30 0 8.284fF
+C1788 net_652#1 0 2.445fF
+C1789 net_652#3 0 1.961fF
+C1790 net_654#1 0 1.668fF
+C1791 net_654#3 0 1.58fF
+C1792 net_656#1 0 1.668fF
+C1793 net_656#3 0 1.932fF
+C1794 net_658#1 0 4.007fF
+C1795 net_658#3 0 3.831fF
+C1796 net_660#1 0 24.321fF
+C1797 net_660#3 0 27.121fF
+C1798 sum23#1 0 8.861fF
+C1799 sum23 0 7.359fF
+C1800 net_663#1 0 2.325fF
+C1801 net_663#3 0 2.677fF
+C1802 net_665#1 0 1.811fF
+C1803 net_665#3 0 2.075fF
+C1804 net_667#1 0 1.811fF
+C1805 net_667#3 0 2.075fF
+C1806 net_669#1 0 10.268fF
+C1807 net_669#3 0 16.866fF
+C1808 net_669#5 0 8.1fF
+C1809 net_672#1 0 8.068fF
+C1810 net_672#5 0 4.899fF
+C1811 net_672#7 0 3.688fF
+C1812 net_329#7 0 5.045fF
+C1813 net_329#9 0 1.887fF
+C1814 net_678#1 0 3.175fF
+C1815 net_678#3 0 3.087fF
+C1816 net_680#1 0 17.416fF
+C1817 net_680#3 0 19.089fF
+C1818 net_682#1 0 9.807fF
+C1819 net_682#3 0 10.865fF
+C1820 net_682#5 0 2.703fF
+C1821 net_685#1 0 2.818fF
+C1822 net_685#3 0 2.906fF
+C1823 net_687#1 0 3.007fF
+C1824 net_687#3 0 3.733fF
+C1825 net_687#5 0 7.235fF
+C1826 net_687#7 0 26.538fF
+C1827 net_687#9 0 22.917fF
+C1828 net_692#1 0 3.108fF
+C1829 net_692#3 0 2.844fF
+C1830 net_694#1 0 2.842fF
+C1831 net_694#3 0 3.326fF
+C1832 net_696#1 0 5.411fF
+C1833 net_698#1 0 3.253fF
+C1834 net_698#3 0 3.87fF
+C1835 net_698#5 0 3.253fF
+C1836 net_698#7 0 9.256fF
+C1837 net_698#9 0 9.609fF
+C1838 net_698#11 0 8.311fF
+C1839 net_698#13 0 7.253fF
+C1840 net_705#1 0 35.627fF
+C1841 net_705#3 0 36.909fF
+C1842 net_707#1 0 3.437fF
+C1843 net_707#3 0 6.874fF
+C1844 net_707#5 0 13.609fF
+C1845 net_707#7 0 11.134fF
+C1846 net_707#9 0 3.752fF
+C1847 net_712#1 0 15.243fF
+C1848 net_712#3 0 16.415fF
+C1849 net_714#1 0 19.134fF
+C1850 net_714#3 0 20.192fF
+C1851 net_714#5 0 3.418fF
+C1852 net_538#4 0 4.187fF
+C1853 net_538#6 0 2.745fF
+C1854 net_719#1 0 9.68fF
+C1855 net_719#3 0 10.26fF
+C1856 net_719#5 0 4.751fF
+C1857 net_719#7 0 3.907fF
+C1858 net_723#1 0 13.124fF
+C1859 net_723#3 0 13.704fF
+C1860 net_723#5 0 4.751fF
+C1861 net_723#7 0 3.907fF
+C1862 net_727#1 0 3.209fF
+C1863 net_727#3 0 4.001fF
+C1864 net_729#1 0 7.166fF
+C1865 net_729#3 0 11.691fF
+C1866 net_729#5 0 7.259fF
+C1867 net_732#1 0 8.708fF
+C1868 net_732#3 0 8.444fF
+C1869 net_734#1 0 9.484fF
+C1870 net_734#3 0 10.166fF
+C1871 net_736#1 0 24.836fF
+C1872 net_736#3 0 25.892fF
+C1873 net_738#1 0 4.872fF
+C1874 net_738#3 0 5.386fF
+C1875 net_738#5 0 4.506fF
+C1876 net_738#7 0 4.64fF
+C1877 net_738#9 0 5.388fF
+C1878 net_738#11 0 5.18fF
+C1879 net_738#13 0 9.19fF
+C1880 net_738#15 0 9.795fF
+C1881 net_738#17 0 11.8fF
+C1882 net_738#19 0 10.579fF
+C1883 net_748#1 0 3.85fF
+C1884 net_748#3 0 2.508fF
+C1885 net_750#1 0 3.638fF
+C1886 net_750#3 0 4.255fF
+C1887 net_750#5 0 4.152fF
+C1888 net_750#7 0 5.406fF
+C1889 net_750#9 0 4.848fF
+C1890 net_750#11 0 3.329fF
+C1891 net_756#1 0 3.638fF
+C1892 net_756#3 0 5.18fF
+C1893 net_756#5 0 9.494fF
+C1894 net_756#9 0 4.608fF
+C1895 net_761#1 0 25.771fF
+C1896 net_761#3 0 27.4fF
+C1897 net_763#1 0 8.206fF
+C1898 net_763#3 0 6.379fF
+C1899 net_765#1 0 5.52fF
+C1900 net_765#3 0 3.693fF
+C1901 net_767#1 0 5.235fF
+C1902 net_767#3 0 7.062fF
+C1903 net_769#1 0 11.999fF
+C1904 net_769#3 0 9.799fF
+C1905 net_771#1 0 28.215fF
+C1906 net_771#3 0 26.724fF
+C1907 net_773#1 0 21.656fF
+C1908 net_773#3 0 23.318fF
+C1909 net_773#5 0 5.31fF
+C1910 net_776#1 0 8.346fF
+C1911 net_778#1 0 30.574fF
+C1912 net_778#3 0 30.309fF
+C1913 a26#1 0 1.293fF
+C1914 net_781#1 0 4.694fF
+C1915 net_781#3 0 8.447fF
+C1916 net_783#1 0 1.962fF
+C1917 net_783#3 0 1.609fF
+C1918 net_785#1 0 1.007fF
+C1919 net_785#3 0 1.095fF
+C1920 net_787#1 0 1.389fF
+C1921 net_787#3 0 1.873fF
+C1922 net_538#7 0 31.932fF
+C1923 net_538#9 0 27.536fF
+C1924 b26#1 0 3.801fF
+C1925 b26 0 2.783fF
+C1926 net_792#1 0 1.796fF
+C1927 net_792#3 0 2.149fF
+C1928 net_792#5 0 1.943fF
+C1929 net_792#7 0 1.238fF
+C1930 net_796#1 0 1.502fF
+C1931 net_796#3 0 1.238fF
+C1932 net_798#1 0 29.714fF
+C1933 net_798#3 0 34fF
+C1934 sum26#1 0 9.576fF
+C1935 sum26 0 8.503fF
+C1936 net_801#1 0 2.909fF
+C1937 net_480#7 0 31.247fF
+C1938 net_480#9 0 27.423fF
+C1939 b18#1 0 16.555fF
+C1940 b18 0 15.251fF
+C1941 net_806#1 0 10.93fF
+C1942 net_806#3 0 7.595fF
+C1943 net_808#1 0 1.789fF
+C1944 net_808#3 0 1.524fF
+C1945 net_810#1 0 2.931fF
+C1946 cout 0 12.59fF
+C1947 cout#1 0 13.806fF
+C1948 a18#1 0 14.333fF
+C1949 a18 0 12.886fF
+C1950 net_814#1 0 2.182fF
+C1951 net_814#3 0 2.732fF
+C1952 net_814#5 0 1.91fF
+C1953 net_817#1 0 2.272fF
+C1954 net_817#3 0 2.536fF
+C1955 net_819#1 0 1.932fF
+C1956 net_819#3 0 1.668fF
+C1957 net_821#1 0 1.58fF
+C1958 net_821#3 0 1.668fF
+C1959 net_823#1 0 1.961fF
+C1960 net_823#3 0 2.445fF
+C1961 sum19 0 18.22fF
+C1962 sum19#1 0 19.579fF
+C1963 sum22#1 0 12.961fF
+C1964 sum22 0 11.459fF
+C1965 net_827#1 0 2.62fF
+C1966 net_827#3 0 2.532fF
+C1967 net_829#1 0 2.046fF
+C1968 net_829#3 0 2.442fF
+C1969 net_829#5 0 1.811fF
+C1970 net_832#1 0 2.297fF
+C1971 net_832#3 0 7.06fF
+C1972 net_832#5 0 6.001fF
+C1973 net_835#1 0 16.816fF
+C1974 net_835#3 0 19.782fF
+C1975 net_837#1 0 2.314fF
+C1976 net_837#3 0 3.378fF
+C1977 net_837#5 0 2.71fF
+C1978 net_840#1 0 3.04fF
+C1979 net_840#3 0 2.556fF
+C1980 net_842#1 0 2.558fF
+C1981 net_842#3 0 2.822fF
+C1982 net_844#1 0 24.453fF
+C1983 net_844#3 0 27.396fF
+C1984 net_846#1 0 2.42fF
+C1985 net_846#3 0 4.531fF
+C1986 net_849#1 0 11.149fF
+C1987 net_849#3 0 13.339fF
+C1988 net_851#1 0 3.286fF
+C1989 net_851#3 0 3.502fF
+C1990 net_851#5 0 6.863fF
+C1991 net_851#7 0 9.234fF
+C1992 net_851#9 0 5.475fF
+C1993 net_856#1 0 6.214fF
+C1994 net_856#5 0 3.821fF
+C1995 net_859#1 0 12.669fF
+C1996 net_859#3 0 11.294fF
+C1997 net_861#1 0 7.504fF
+C1998 net_861#3 0 7.24fF
+C1999 net_863#1 0 2.926fF
+C2000 net_863#3 0 5.386fF
+C2001 net_729#7 0 6.982fF
+C2002 net_729#9 0 7.599fF
+C2003 net_729#11 0 9.026fF
+C2004 net_729#13 0 9.026fF
+C2005 net_729#15 0 6.468fF
+C2006 net_729#17 0 8.101fF
+C2007 net_729#19 0 9.68fF
+C2008 net_729#22 0 4.12fF
+C2009 net_729#24 0 5.144fF
+C2010 net_729#26 0 8.765fF
+C2011 net_729#30 0 3.852fF
+C2012 net_878#1 0 4.912fF
+C2013 net_880#1 0 2.647fF
+C2014 net_880#3 0 2.383fF
+C2015 sum20 0 4.505fF
+C2016 sum20#1 0 6.579fF
+C2017 net_883#1 0 26.657fF
+C2018 net_883#3 0 28.456fF
+C2019 net_885#1 0 3.656fF
+C2020 net_885#3 0 13.277fF
+C2021 net_885#5 0 14.711fF
+C2022 net_885#7 0 7.339fF
+C2023 net_885#9 0 5.182fF
+C2024 net_890#1 0 4.7fF
+C2025 net_890#3 0 5.052fF
+C2026 net_892#1 0 17.366fF
+C2027 net_892#3 0 18.527fF
+C2028 net_894#1 0 4.291fF
+C2029 net_894#3 0 17.2fF
+C2030 net_894#5 0 15.412fF
+C2031 net_897#1 0 2.842fF
+C2032 net_897#3 0 3.414fF
+C2033 net_897#5 0 3.737fF
+C2034 net_897#7 0 3.517fF
+C2035 net_901#1 0 6.209fF
+C2036 net_901#3 0 7.414fF
+C2037 net_901#5 0 3.356fF
+C2038 net_904#1 0 3.622fF
+C2039 net_904#3 0 3.534fF
+C2040 net_906#1 0 16.658fF
+C2041 net_906#3 0 16.185fF
+C2042 net_908#1 0 3.352fF
+C2043 net_908#3 0 4.071fF
+C2044 net_908#5 0 4.938fF
+C2045 net_908#7 0 5.717fF
+C2046 net_908#9 0 7.863fF
+C2047 net_908#11 0 6.541fF
+C2048 net_914#1 0 4.041fF
+C2049 net_914#3 0 3.557fF
+C2050 net_916#1 0 25.326fF
+C2051 net_916#3 0 25.579fF
+C2052 net_918#1 0 4.578fF
+C2053 net_918#3 0 8.605fF
+C2054 net_918#5 0 7.39fF
+C2055 net_918#7 0 6.863fF
+C2056 net_918#9 0 9.947fF
+C2057 net_918#11 0 6.888fF
+C2058 net_918#13 0 3.803fF
+C2059 net_918#15 0 3.803fF
+C2060 net_918#17 0 3.803fF
+C2061 net_918#19 0 3.187fF
+C2062 net_705#4 0 30.671fF
+C2063 net_705#6 0 31.161fF
+C2064 net_660#4 0 36.762fF
+C2065 net_660#6 0 37.23fF
+C2066 net_932#1 0 15.21fF
+C2067 net_932#3 0 16.608fF
+C2068 net_632#4 0 15.758fF
+C2069 net_632#6 0 16.6fF
+C2070 net_329#10 0 29.111fF
+C2071 net_329#12 0 30.239fF
+C2072 net_712#4 0 23.569fF
+C2073 net_712#6 0 24.631fF
+C2074 net_771#4 0 36.087fF
+C2075 net_771#6 0 37.787fF
+C2076 net_942#1 0 25.232fF
+C2077 net_942#3 0 23.13fF
+C2078 net_944#1 0 30.285fF
+C2079 net_944#3 0 27.369fF
+C2080 net_946#1 0 10.686fF
+C2081 net_946#3 0 7.571fF
+C2082 net_948#1 0 17.68fF
+C2083 net_948#3 0 17.503fF
+C2084 net_950#1 0 14.835fF
+C2085 net_950#3 0 14.571fF
+C2086 net_952#1 0 10.691fF
+C2087 net_952#3 0 10.514fF
+C2088 net_954#1 0 1.873fF
+C2089 net_954#3 0 1.389fF
+C2090 net_956#1 0 1.095fF
+C2091 net_956#3 0 1.007fF
+C2092 net_958#1 0 1.852fF
+C2093 net_958#3 0 2.52fF
+C2094 net_958#5 0 1.455fF
+C2095 net_961#1 0 1.873fF
+C2096 net_961#3 0 1.389fF
+C2097 net_963#1 0 1.095fF
+C2098 net_963#3 0 1.007fF
+C2099 net_965#1 0 13.631fF
+C2100 net_965#3 0 11.738fF
+C2101 net_967#1 0 3.537fF
+C2102 net_967#3 0 3.802fF
+C2103 net_969#1 0 6.108fF
+C2104 net_969#3 0 6.372fF
+C2105 net_971#1 0 5.903fF
+C2106 net_971#3 0 6.962fF
+C2107 net_971#5 0 1.582fF
+C2108 net_974#1 0 8.513fF
+C2109 net_974#3 0 9.116fF
+C2110 net_974#5 0 1.796fF
+C2111 net_977#1 0 1.474fF
+C2112 net_977#3 0 3.104fF
+C2113 net_977#5 0 2.472fF
+C2114 net_980#1 0 1.989fF
+C2115 net_980#3 0 6.635fF
+C2116 net_980#5 0 5.84fF
+C2117 net_983#1 0 1.238fF
+C2118 net_983#3 0 1.841fF
+C2119 net_983#5 0 2.503fF
+C2120 net_983#7 0 1.725fF
+C2121 net_987#1 0 4.709fF
+C2122 net_987#3 0 5.061fF
+C2123 net_989#1 0 3.621fF
+C2124 net_989#3 0 3.269fF
+C2125 net_991#1 0 2.209fF
+C2126 net_991#3 0 1.945fF
+C2127 net_883#4 0 4.685fF
+C2128 net_883#6 0 2.522fF
+C2129 net_995#1 0 17.915fF
+C2130 net_995#3 0 16.594fF
+C2131 net_997#1 0 3.99fF
+C2132 net_997#3 0 3.776fF
+C2133 net_997#5 0 2.795fF
+C2134 net_1000#1 0 2.159fF
+C2135 net_1000#3 0 1.675fF
+C2136 net_1002#1 0 1.381fF
+C2137 net_1002#3 0 1.293fF
+C2138 net_1004#1 0 1.381fF
+C2139 net_1004#3 0 1.646fF
+C2140 net_1006#1 0 2.336fF
+C2141 net_1006#3 0 2.808fF
+C2142 net_1006#5 0 3.041fF
+C2143 net_1009#1 0 6.904fF
+C2144 net_1009#3 0 6.64fF
+C2145 net_1011#1 0 13.105fF
+C2146 net_1011#3 0 14.052fF
+C2147 net_1013#1 0 3.979fF
+C2148 net_1013#3 0 4.244fF
+C2149 net_1015#1 0 1.848fF
+C2150 net_1015#3 0 3.199fF
+C2151 net_1015#5 0 2.656fF
+C2152 net_1018#1 0 2.127fF
+C2153 net_1018#3 0 2.488fF
+C2154 net_1018#5 0 2.876fF
+C2155 net_1021#1 0 5.344fF
+C2156 net_1021#3 0 5.887fF
+C2157 net_1021#5 0 1.991fF
+C2158 net_1024#1 0 1.991fF
+C2159 net_1024#3 0 3.342fF
+C2160 net_1024#5 0 2.799fF
+C2161 net_1027#1 0 2.424fF
+C2162 net_1027#3 0 3.092fF
+C2163 net_1027#5 0 2.027fF
+C2164 net_1030#1 0 1.991fF
+C2165 net_1030#3 0 3.342fF
+C2166 net_1030#5 0 2.799fF
+C2167 net_1033#1 0 1.91fF
+C2168 net_1033#3 0 2.732fF
+C2169 net_1033#5 0 2.182fF
+C2170 net_798#4 0 13.137fF
+C2171 net_798#6 0 14.968fF
+C2172 net_798#8 0 6.98fF
+C2173 net_798#10 0 4.065fF
+C2174 net_1040#1 0 5.428fF
+C2175 net_1040#3 0 5.075fF
+C2176 net_1042#1 0 2.053fF
+C2177 net_1042#3 0 2.876fF
+C2178 net_1042#5 0 2.325fF
+C2179 net_1045#1 0 3.021fF
+C2180 net_1045#3 0 4.5fF
+C2181 net_1045#5 0 7.436fF
+C2182 net_1045#7 0 5.892fF
+C2183 net_1049#1 0 2.857fF
+C2184 net_1049#3 0 2.505fF
+C2185 net_1051#1 0 1.811fF
+C2186 net_1051#3 0 2.075fF
+C2187 net_1053#1 0 3.068fF
+C2188 net_1053#3 0 3.73fF
+C2189 net_1053#5 0 7.087fF
+C2190 net_1053#7 0 6.492fF
+C2191 net_844#4 0 5.025fF
+C2192 net_844#6 0 3.479fF
+C2193 net_1059#1 0 18.637fF
+C2194 net_1059#3 0 19.621fF
+C2195 net_1059#5 0 4.181fF
+C2196 net_1059#7 0 3.417fF
+C2197 net_1063#1 0 4.465fF
+C2198 net_1063#5 0 5.846fF
+C2199 net_1063#9 0 3.29fF
+C2200 net_1068#1 0 2.196fF
+C2201 net_1068#3 0 3.019fF
+C2202 net_1068#5 0 2.468fF
+C2203 net_1071#1 0 5.531fF
+C2204 net_1071#3 0 6.147fF
+C2205 net_863#4 0 4.779fF
+C2206 net_863#6 0 3.695fF
+C2207 net_1075#1 0 2.789fF
+C2208 net_1075#3 0 3.009fF
+C2209 net_1075#5 0 2.699fF
+C2210 net_1075#7 0 2.655fF
+C2211 net_1079#1 0 3.455fF
+C2212 net_1079#3 0 5.552fF
+C2213 net_1079#5 0 9.26fF
+C2214 net_1079#7 0 14.404fF
+C2215 net_1079#9 0 8.589fF
+C2216 net_729#32 0 2.493fF
+C2217 net_729#34 0 7.995fF
+C2218 net_729#35 0 7.973fF
+C2219 net_729#37 0 2.471fF
+C2220 net_1088#1 0 3.723fF
+C2221 net_1088#3 0 10.207fF
+C2222 net_1088#5 0 12.988fF
+C2223 net_1088#7 0 8.452fF
+C2224 net_1088#9 0 3.703fF
+C2225 net_1093#1 0 11.049fF
+C2226 net_1093#3 0 11.533fF
+C2227 net_1095#1 0 6.283fF
+C2228 net_1095#3 0 6.966fF
+C2229 net_1097#1 0 2.706fF
+C2230 net_1097#3 0 6.526fF
+C2231 net_1097#5 0 5.982fF
+C2232 net_1100#1 0 2.987fF
+C2233 net_1100#3 0 3.251fF
+C2234 net_1102#1 0 2.927fF
+C2235 net_1102#3 0 3.912fF
+C2236 net_1102#5 0 2.708fF
+C2237 net_835#4 0 11.317fF
+C2238 net_835#6 0 11.091fF
+C2239 net_1107#1 0 2.768fF
+C2240 net_1107#3 0 3.591fF
+C2241 net_1107#5 0 3.04fF
+C2242 net_1110#1 0 4.408fF
+C2243 net_1110#3 0 4.055fF
+C2244 net_892#4 0 17.163fF
+C2245 net_892#6 0 17.224fF
+C2246 net_1114#1 0 14.176fF
+C2247 net_1114#5 0 13.033fF
+C2248 net_1117#1 0 1.989fF
+C2249 net_1117#3 0 4.18fF
+C2250 net_1117#5 0 4.046fF
+C2251 net_1117#7 0 5.175fF
+C2252 net_1117#9 0 6.639fF
+C2253 net_1117#11 0 3.143fF
+C2254 net_1123#1 0 10.239fF
+C2255 net_1123#3 0 16.006fF
+C2256 net_1123#5 0 6.049fF
+C2257 net_1123#7 0 2.483fF
+C2258 net_1127#1 0 4.813fF
+C2259 net_1127#3 0 6.354fF
+C2260 net_1129#1 0 22.131fF
+C2261 net_1129#3 0 23.958fF
+C2262 net_1131#1 0 15.743fF
+C2263 net_1131#3 0 17.944fF
+C2264 sum17 0 0.941fF
+C2265 b17 0 0.853fF
+C2266 sum18 0 0.941fF
+C2267 a17 0 0.853fF
+C2268 a16 0 0.853fF
+C2269 b16 0 0.853fF
+C2270 a19 0 0.853fF
+C2271 b19 0 0.853fF
+C2272 a23 0 0.853fF
+C2273 a22 0 0.853fF
+C2274 b22 0 0.853fF
+C2275 b23 0 0.853fF
+C2276 a21 0 0.853fF
+C2277 b21 0 0.853fF
+C2278 sum21 0 0.941fF
+C2279 a20 0 0.853fF
+C2280 b20 0 0.853fF
+C2281 net_210 0 6.163fF
+C2282 net_187 0 3.015fF
+C2283 net_329 0 3.874fF
+C2284 net_538 0 3.874fF
+C2285 net_329#5 0 4.589fF
+C2286 net_632 0 3.301fF
+C2287 net_712 0 4.16fF
+C2288 net_660 0 3.731fF
+C2289 net_771 0 5.304fF
+C2290 net_705 0 4.589fF
+C2291 net_480#5 0 5.733fF
+C2292 net_538#5 0 7.164fF
+C2293 net_329#8 0 3.587fF
+C2294 net_863 0 4.017fF
+C2295 net_844 0 3.874fF
+C2296 net_883 0 5.018fF
+C2297 net_835 0 3.158fF
+C2298 net_892 0 3.874fF
+C2299 net_798 0 3.301fF
+** Extracted Parasitic Resistors ***
+R0 net_0 net_0#1 1.907
+R1 net_0#2 net_0#3 2.547
+R2 net_2 net_2#1 2.76
+R3 net_2#2 net_2#3 1.907
+R4 net_4 net_4#1 2.12
+R5 net_4#2 net_4#3 3.293
+R6 sum8#0 sum8 1.907
+R7 net_7 net_7#1 3.107
+R8 net_7#2 net_7#3 2.253
+R9 sum7#0 sum7 2.253
+R10 net_10 net_10#1 3.64
+R11 net_10#2 net_10#3 2.467
+R12 net_12 net_12#1 2.253
+R13 net_12#2 net_12#3 2.04
+R14 net_14 net_14#1 2.253
+R15 net_14#2 net_14#3 2.893
+R16 net_16 net_16#1 2.253
+R17 net_16#2 net_16#3 2.893
+R18 net_18 net_18#1 2.467
+R19 net_18#2 net_18#3 3.64
+R20 sum4#0 sum4 2.253
+R21 net_21 net_21#1 3.453
+R22 net_21#2 net_21#3 2.813
+R23 net_21#4 net_21#5 2.813
+R24 net_21#6 net_21#7 2.6
+R25 sum6#0 sum6 2.6
+R26 net_26 net_26#1 2.6
+R27 net_26#2 net_26#3 2.387
+R28 net_26#4 net_26#5 2.813
+R29 net_26#6 net_26#7 2.813
+R30 net_26#8 net_26#9 2.813
+R31 net_26#10 net_26#11 2.813
+R32 net_32 net_32#1 2.6
+R33 net_32#2 net_32#1 3.453
+R34 a3#0 a3 2.813
+R35 net_35 net_35#1 2.813
+R36 net_35#2 net_35#3 2.813
+R37 net_35#4 net_35#5 2.6
+R38 net_38 net_38#1 2.173
+R39 net_38#2 net_38#3 2.173
+R40 net_38#4 net_38#5 2.813
+R41 net_38#6 net_38#7 3.987
+R42 net_42 net_42#1 2.6
+R43 net_42#2 net_42#3 3.24
+R44 net_44 net_44#1 2.6
+R45 net_44#2 net_44#3 2.387
+R46 net_44#4 net_44#5 2.813
+R47 b0#0 b0 2.813
+R48 a0#0 a0 2.813
+R49 sum2#0 sum2 2.6
+R50 net_50 net_50#1 2.52
+R51 net_50#2 net_50#3 3.16
+R52 net_50#4 net_50#5 2.52
+R53 net_50#6 net_50#7 4.333
+R54 net_54 net_54#1 3.16
+R55 net_54#2 net_54#3 2.947
+R56 net_54#4 net_54#5 2.52
+R57 net_54#6 net_54#7 3.16
+R58 net_58 net_58#1 2.733
+R59 net_58#2 net_58#3 2.52
+R60 net_58#4 net_58#5 2.947
+R61 sum3#0 sum3 2.947
+R62 net_62 net_62#1 4.333
+R63 net_62#2 net_62#3 3.16
+R64 net_64 net_64#1 2.947
+R65 net_64#2 net_64#3 2.733
+R66 net_66 net_66#1 2.947
+R67 net_66#2 net_66#3 3.587
+R68 net_68 net_68#1 2.733
+R69 net_68#2 net_68#3 2.52
+R70 net_68#4 net_68#5 2.947
+R71 sum1#0 sum1 2.947
+R72 net_72 net_72#1 4.333
+R73 net_72#2 net_72#3 3.16
+R74 sum0#0 sum0 2.947
+R75 net_75 net_75#1 4.333
+R76 net_75#2 net_75#3 3.16
+R77 net_77 net_77#1 2.947
+R78 net_77#2 net_77#3 2.52
+R79 net_77#4 net_77#5 2.733
+R80 net_80 net_80#1 3.293
+R81 net_80#2 net_80#3 3.933
+R82 net_82 net_82#1 3.293
+R83 net_82#2 net_82#3 3.933
+R84 net_84 net_84#1 3.08
+R85 net_84#2 net_84#3 3.293
+R86 net_86 net_86#1 2.867
+R87 net_86#2 net_86#3 3.293
+R88 net_88 net_88#1 2.867
+R89 net_88#2 net_88#3 3.293
+R90 net_90 net_90#1 3.293
+R91 net_90#2 net_90#3 3.933
+R92 net_92 net_92#1 3.293
+R93 net_92#2 net_92#3 4.147
+R94 net_92#4 net_92#5 3.507
+R95 net_95 net_95#1 3.507
+R96 net_95#2 net_95#3 2.867
+R97 net_95#4 net_95#5 3.507
+R98 net_95#6 net_95#7 4.68
+R99 a1#0 a1 3.507
+R100 net_100 net_100#1 3.507
+R101 net_100#2 net_100#3 3.507
+R102 net_100#4 net_100#5 3.293
+R103 net_103 net_103#1 3.507
+R104 net_103#2 net_103#3 2.867
+R105 net_103#4 net_103#5 4.68
+R106 net_106 net_106#1 3.293
+R107 net_106#2 net_106#3 3.507
+R108 net_106#4 net_106#5 3.507
+R109 net_109 net_109#1 3.213
+R110 net_109#2 net_109#3 3.64
+R111 net_109#4 net_109#5 3.213
+R112 net_112 net_112#1 3.64
+R113 net_112#2 net_112#3 4.493
+R114 net_114 net_114#1 3.427
+R115 net_114#2 net_114#3 3.213
+R116 net_114#4 net_114#5 3.64
+R117 net_117 net_117#1 3.213
+R118 net_117#2 net_117#3 3.64
+R119 net_119 net_119#1 3.64
+R120 net_119#2 net_119#3 4.493
+R121 net_121 net_121#1 4.2
+R122 net_121#2 net_121#3 5.373
+R123 b3#0 b3 4.2
+R124 a2#0 a2 4.2
+R125 net_125 net_125#1 4.2
+R126 net_125#2 net_125#3 4.2
+R127 net_125#4 net_125#5 3.987
+R128 net_128 net_128#1 3.773
+R129 net_128#2 net_128#3 4.2
+R130 net_128#4 net_128#5 3.987
+R131 net_128#6 net_128#7 4.2
+R132 b1#0 b1 4.2
+R133 net_133 net_133#1 4.333
+R134 net_133#2 net_133#3 4.973
+R135 b2#0 b2 4.547
+R136 b7#0 b7#1 2.12
+R137 net_137 net_137#1 1.907
+R138 net_137#2 net_137#3 2.12
+R139 net_137#4 net_137#5 2.12
+R140 net_140 net_140#1 1.907
+R141 net_140#2 net_140#3 2.76
+R142 net_140#4 net_140#5 2.12
+R143 net_143 net_143#1 1.907
+R144 net_143#2 net_143#3 1.48
+R145 net_143#4 net_143#5 1.693
+R146 net_146 net_146#1 1.48
+R147 net_146#2 net_146#3 1.693
+R148 net_146#4 net_146#5 1.907
+R149 net_149 net_149#1 2.76
+R150 net_149#2 net_149#3 1.907
+R151 net_151 net_151#1 1.693
+R152 net_151#2 net_151#3 1.907
+R153 net_153#2 net_153 7.613
+R154 a5#0 a5#1 2.467
+R155 net_156 net_156#1 2.04
+R156 net_156#2 net_156#3 1.827
+R157 net_156#4 net_156#3 2.253
+R158 net_159 net_159#1 2.253
+R159 net_159#2 net_159#3 6.84
+R160 net_161 net_161#1 7.48
+R161 net_161#2 net_161#3 2.893
+R162 net_163 net_163#1 1.827
+R163 net_163#2 net_163#3 2.04
+R164 net_163#4 net_163#5 2.253
+R165 net_166 net_166#1 3.107
+R166 net_166#2 net_166#1 2.253
+R167 net_168 net_168#1 2.253
+R168 net_168#2 net_168#3 2.893
+R169 b14#0 b14#1 2.467
+R170 b15#0 b15#1 2.813
+R171 net_172 net_172#1 2.813
+R172 net_172#2 net_172#3 2.813
+R173 net_172#4 net_172#5 2.6
+R174 net_175 net_175#1 3.453
+R175 net_175#2 net_175#1 2.6
+R176 a14#0 a14#1 2.813
+R177 b13#0 b13#1 3.16
+R178 net_179 net_179#1 3.16
+R179 net_179#2 net_179#3 3.16
+R180 net_179#4 net_179#5 2.947
+R181 net_182 net_182#1 2.947
+R182 net_182#2 net_182#3 3.587
+R183 net_184 net_184#1 2.947
+R184 net_184#2 net_184#3 3.587
+R185 a7#0 a7#1 3.507
+R186 net_187 net_187#1 1.733
+R187 net_187#2 net_187#3 6.44
+R188 b4#0 b4#1 3.853
+R189 net_190 net_190#1 3.64
+R190 net_190#2 net_190#3 3.853
+R191 net_190#4 net_190#5 3.853
+R192 net_193 net_193#1 3.64
+R193 net_193#2 net_193#3 4.493
+R194 net_193#4 net_193#5 3.853
+R195 b10#0 b10#1 3.853
+R196 a6#0 a6#1 4.2
+R197 net_198 net_198#1 3.773
+R198 net_198#2 net_198#3 3.56
+R199 net_198#4 net_198#5 3.987
+R200 a10#0 a10#1 4.2
+R201 b5#0 b5#1 4.547
+R202 net_203 net_203#1 4.12
+R203 net_203#2 net_203#3 4.333
+R204 net_205 net_205#1 4.547
+R205 net_205#2 net_205#3 5.72
+R206 net_207 net_207#1 4.333
+R207 net_207#2 net_207#3 3.907
+R208 net_207#4 net_207#5 4.12
+R209 net_210 net_210#1 2.773
+R210 net_210#2 net_210#3 5.4
+R211 sum5#0 sum5#1 4.68
+R212 net_213 net_213#1 4.68
+R213 net_213#2 net_213#3 4.893
+R214 net_213#4 net_213#5 4.893
+R215 net_216 net_216#1 4.893
+R216 net_216#2 net_216#3 4.893
+R217 net_216#4 net_216#5 4.68
+R218 net_219 net_219#1 4.253
+R219 net_219#2 net_219#3 4.467
+R220 net_219#4 net_219#5 4.68
+R221 sum10#0 sum10#1 4.68
+R222 net_223 net_223#1 3.853
+R223 net_223#2 net_223#3 5.027
+R224 net_225 net_225#1 3.853
+R225 net_225#2 net_225#3 5.027
+R226 net_227 net_227#1 5.133
+R227 net_227#2 net_227#3 4.493
+R228 net_227#4 net_227#3 6.413
+R229 net_227#6 net_227#7 4.493
+R230 net_227#8 net_227#9 5.133
+R231 net_232 net_232#1 5.027
+R232 net_232#2 net_232#3 5.667
+R233 net_234 net_234#1 5.88
+R234 net_234#2 net_234#3 5.027
+R235 net_236 net_236#1 4.573
+R236 net_236#2 net_236#1 5.373
+R237 net_236#4 net_236#5 4.947
+R238 net_239 net_239#1 5.373
+R239 net_239#2 net_239#3 3.507
+R240 net_239#4 net_239#5 4.147
+R241 net_242 net_242#1 5.587
+R242 net_242#2 net_242#3 5.587
+R243 net_242#4 net_242#5 5.373
+R244 net_245 net_245#1 5.587
+R245 net_245#2 net_245#3 6.227
+R246 net_245#4 net_245#5 5.373
+R247 sum11#0 sum11#1 5.373
+R248 net_249 net_249#1 3.8
+R249 net_249#2 net_249#1 5.72
+R250 net_249#4 net_249#5 5.933
+R251 net_252 net_252#1 4.44
+R252 net_252#2 net_252#3 5.933
+R253 net_252#4 net_252#5 5.293
+R254 net_252#6 net_252#7 7.107
+R255 net_256 net_256#1 5.72
+R256 net_256#2 net_256#3 5.507
+R257 net_258 net_258#1 6.36
+R258 net_258#2 net_258#3 5.72
+R259 net_260 net_260#1 7.107
+R260 net_260#2 net_260#3 5.933
+R261 a11#0 a11#1 5.933
+R262 net_263 net_263#1 3.453
+R263 net_263#2 net_263#3 4.093
+R264 net_263#4 net_263#5 3.453
+R265 net_263#6 net_263#7 7.453
+R266 net_267 net_267#1 7.453
+R267 net_267#2 net_267#3 6.28
+R268 net_269 net_269#1 5.64
+R269 net_269#2 net_269#3 5.853
+R270 net_269#4 net_269#5 6.067
+R271 b11#0 b11#1 6.28
+R272 a15#0 a15#1 6.627
+R273 net_274 net_274#1 6.413
+R274 net_274#2 net_274#3 6.627
+R275 net_274#4 net_274#5 6.627
+R276 net_277 net_277#1 6.627
+R277 net_277#2 net_277#3 6.413
+R278 net_277#4 net_277#5 7.267
+R279 net_277#6 net_277#7 6.627
+R280 a13#0 a13#1 6.973
+R281 b6#0 b6#1 7.32
+R282 a4#0 a4#1 7.667
+R283 net_284 net_284#1 2.12
+R284 net_284#2 net_284#3 2.12
+R285 net_284#4 net_284#5 1.48
+R286 net_284#6 net_284#7 3.293
+R287 net_288 net_288#1 12.067
+R288 net_288#2 net_288#3 1.907
+R289 sum15#0 sum15#1 1.907
+R290 sum9#0 sum9#1 2.253
+R291 net_292 net_292#1 1.827
+R292 net_292#2 net_292#3 3.64
+R293 net_292#4 net_292#5 1.827
+R294 net_292#6 net_292#7 2.467
+R295 net_296 net_296#1 2.467
+R296 net_296#2 net_296#3 9.907
+R297 sum13#0 sum13#1 2.6
+R298 net_299 net_299#1 3.453
+R299 net_299#2 net_299#3 2.6
+R300 net_301 net_301#1 10.733
+R301 net_301#2 net_301#3 2.813
+R302 net_301#4 net_301#5 2.387
+R303 net_301#6 net_301#7 2.813
+R304 net_301#8 net_301#9 2.813
+R305 net_301#10 net_301#11 2.813
+R306 net_301#12 net_301#13 2.813
+R307 net_301#14 net_301#15 2.813
+R308 net_301#16 net_301#17 2.6
+R309 net_301#18 net_301#19 2.813
+R310 net_311 net_311#1 2.813
+R311 net_311#2 net_311#3 3.987
+R312 sum14#0 sum14#1 2.6
+R313 sum12#0 sum12#1 2.947
+R314 net_315 net_315#1 4.333
+R315 net_315#2 net_315#3 3.16
+R316 net_317 net_317#1 3.587
+R317 net_317#2 net_317#3 2.947
+R318 net_319 net_319#1 2.947
+R319 net_319#2 net_319#1 3.8
+R320 net_210 net_210#4 12.16
+R321 net_210#5 net_210#6 3.587
+R322 net_323 net_323#1 4.68
+R323 net_323#2 net_323#3 3.507
+R324 net_325 net_325#1 3.293
+R325 net_325#2 net_325#3 3.08
+R326 net_327 net_327#1 3.933
+R327 net_327#2 net_327#3 3.293
+R328 net_329 net_329#1 1.733
+R329 net_329#2 net_329#3 10.253
+R330 net_331 net_331#1 3.64
+R331 net_331#2 net_331#3 4.28
+R332 net_333 net_333#1 4.493
+R333 net_333#2 net_333#3 9.907
+R334 b9#0 b9#1 4.2
+R335 net_336 net_336#1 4.84
+R336 net_336#2 net_336#3 3.987
+R337 net_338 net_338#1 4.2
+R338 net_338#2 net_338#3 4.2
+R339 net_338#4 net_338#5 4.2
+R340 net_338#6 net_338#7 4.2
+R341 net_338#8 net_338#9 4.84
+R342 net_338#10 net_338#11 3.987
+R343 net_344 net_344#1 4.84
+R344 net_344#2 net_344#3 3.987
+R345 net_346 net_346#1 3.56
+R346 net_346#2 net_346#3 8.173
+R347 net_346#4 net_346#5 9.347
+R348 net_346#6 net_346#7 9.987
+R349 b12#0 b12#1 4.547
+R350 net_351 net_351#1 4.547
+R351 net_351#2 net_351#3 5.72
+R352 net_353 net_353#1 4.333
+R353 net_353#2 net_353#3 4.973
+R354 net_355 net_355#1 8.573
+R355 net_355#2 net_355#3 4.333
+R356 net_153 net_153#4 10.773
+R357 net_153#5 net_153#6 5.72
+R358 a12#0 a12#1 4.893
+R359 net_360 net_360#1 5.533
+R360 net_360#2 net_360#3 4.893
+R361 net_360#4 net_360#5 4.68
+R362 net_363 net_363#1 4.68
+R363 net_363#2 net_363#3 5.32
+R364 net_365 net_365#1 4.68
+R365 net_365#2 net_365#3 4.253
+R366 net_367 net_367#1 4.253
+R367 net_367#2 net_367#3 4.68
+R368 net_369 net_369#1 5.32
+R369 net_369#2 net_369#3 4.68
+R370 net_371 net_371#1 4.467
+R371 net_371#2 net_371#3 4.68
+R372 a9#0 a9#1 5.24
+R373 net_374 net_374#1 4.813
+R374 net_374#2 net_374#3 4.6
+R375 net_374#4 net_374#5 5.027
+R376 net_377 net_377#1 5.027
+R377 net_377#2 net_377#3 4.813
+R378 net_379 net_379#1 5.027
+R379 net_379#2 net_379#3 4.6
+R380 net_379#4 net_379#5 4.6
+R381 net_382 net_382#1 5.587
+R382 net_382#2 net_382#3 6.227
+R383 net_382#4 net_382#5 5.373
+R384 net_385 net_385#1 5.587
+R385 net_385#2 net_385#3 5.587
+R386 net_385#4 net_385#5 5.373
+R387 net_388 net_388#1 5.587
+R388 net_388#2 net_388#3 5.587
+R389 net_388#4 net_388#5 5.373
+R390 net_391 net_391#1 5.373
+R391 net_391#2 net_391#3 5.16
+R392 net_393 net_393#1 5.373
+R393 net_393#2 net_393#3 6.013
+R394 net_395 net_395#1 5.373
+R395 net_395#2 net_395#3 6.013
+R396 net_397 net_397#1 5.373
+R397 net_397#2 net_397#3 4.947
+R398 net_399 net_399#1 5.373
+R399 net_399#2 net_399#1 4.947
+R400 net_399#4 net_399#5 8.6
+R401 net_402 net_402#1 5.72
+R402 net_402#2 net_402#1 5.293
+R403 net_402#4 net_402#5 5.507
+R404 net_405 net_405#1 5.72
+R405 net_405#2 net_405#3 5.293
+R406 net_405#4 net_405#5 5.293
+R407 net_408 net_408#1 6.28
+R408 net_408#2 net_408#3 6.28
+R409 net_408#4 net_408#5 6.067
+R410 net_408#6 net_408#5 5.64
+R411 net_408#8 net_408#9 5.64
+R412 net_413 net_413#1 6.493
+R413 net_413#2 net_413#3 6.413
+R414 net_415 net_415#1 6.147
+R415 net_415#2 net_415#3 6.76
+R416 net_417 net_417#1 7.96
+R417 net_417#2 net_417#3 6.44
+R418 net_419 net_419#1 7.107
+R419 net_419#2 net_419#3 6.68
+R420 net_421 net_421#1 7.667
+R421 net_421#2 net_421#3 7.027
+R422 net_421#4 net_421#5 6.52
+R423 net_421#6 net_421#7 5.88
+R424 net_421#8 net_421#9 4.707
+R425 net_426 net_426#1 5.533
+R426 net_426#2 net_426#3 4.893
+R427 net_426#4 net_426#5 8.013
+R428 net_426#6 net_426#7 7.8
+R429 net_430 net_430#1 8.44
+R430 net_430#2 net_430#3 7.8
+R431 net_432 net_432#1 8.36
+R432 net_432#2 net_432#3 7.72
+R433 net_432#4 net_432#5 5.827
+R434 net_432#6 net_432#7 4.013
+R435 net_436 net_436#1 5.053
+R436 net_436#2 net_436#3 9.347
+R437 net_438 net_438#1 4.707
+R438 net_438#2 net_438#3 9.48
+R439 net_440 net_440#1 4.92
+R440 net_440#2 net_440#3 8.84
+R441 net_442 net_442#1 4.147
+R442 net_442#2 net_442#3 9.4
+R443 net_442#4 net_442#5 8.76
+R444 net_442#6 net_442#7 4.787
+R445 net_442#8 net_442#9 2.973
+R446 net_187 net_187#4 5.573
+R447 net_187#5 net_187#6 10.387
+R448 net_449 net_449#1 9.453
+R449 net_449#2 net_449#3 2.28
+R450 net_449#4 net_449#5 9.453
+R451 net_449#6 net_449#7 10.093
+R452 net_453 net_453#1 10.44
+R453 net_453#2 net_453#3 9.8
+R454 net_453#4 net_453#5 9.8
+R455 net_453#6 net_453#7 10.44
+R456 net_453#8 net_453#9 11.613
+R457 net_458 net_458#1 10.787
+R458 net_458#2 net_458#3 10.787
+R459 net_458#4 net_458#5 10.573
+R460 net_458#6 net_458#7 10.147
+R461 net_458#8 net_458#9 10.787
+R462 net_458#10 net_458#11 10.787
+R463 net_464 net_464#1 10.92
+R464 net_464#2 net_464#1 10.493
+R465 net_464#4 net_464#5 10.493
+R466 net_467 net_467#1 11.48
+R467 net_467#2 net_467#3 11.48
+R468 net_467#4 net_467#5 11.267
+R469 net_467#6 net_467#7 10.84
+R470 b28#0 b28#1 2.12
+R471 net_472 net_472#1 2.12
+R472 net_472#2 net_472#3 2.12
+R473 net_472#4 net_472#5 1.907
+R474 net_475 net_475#1 1.907
+R475 net_475#2 net_475#3 1.693
+R476 net_477 net_477#1 1.48
+R477 net_477#2 net_477#3 1.693
+R478 net_477#4 net_477#5 1.907
+R479 net_480#2 net_480#3 7.133
+R480 a27#0 a27#1 2.467
+R481 net_483 net_483#1 1.827
+R482 net_483#2 net_483#3 2.04
+R483 net_483#4 net_483#5 2.253
+R484 net_486 net_486#1 3.64
+R485 net_486#2 net_486#3 2.467
+R486 net_488 net_488#1 1.827
+R487 net_488#2 net_488#3 2.04
+R488 net_488#4 net_488#5 2.253
+R489 net_491 net_491#1 3.107
+R490 net_491#2 net_491#3 2.467
+R491 net_491#4 net_491#5 2.253
+R492 net_494 net_494#1 3.107
+R493 net_494#2 net_494#1 2.253
+R494 net_496 net_496#1 2.253
+R495 net_496#2 net_496#3 2.893
+R496 net_498 net_498#1 1.827
+R497 net_498#2 net_498#3 2.04
+R498 net_498#4 net_498#5 2.253
+R499 sum28#0 sum28#1 2.253
+R500 b8#0 b8#1 2.813
+R501 net_503 net_503#1 6.653
+R502 net_503#2 net_503#3 6.867
+R503 net_503#4 net_503#3 2.6
+R504 net_506 net_506#1 2.813
+R505 net_506#2 net_506#3 2.813
+R506 net_506#4 net_506#5 2.6
+R507 net_509 net_509#1 2.6
+R508 net_509#2 net_509#3 2.813
+R509 net_509#4 net_509#5 2.813
+R510 net_512 net_512#1 2.173
+R511 net_512#2 net_512#3 2.387
+R512 net_512#4 net_512#5 2.6
+R513 net_515 net_515#1 2.6
+R514 net_515#2 net_515#3 2.387
+R515 net_517 net_517#1 3.453
+R516 net_517#2 net_517#3 2.813
+R517 net_517#4 net_517#5 2.6
+R518 sum29#0 sum29#1 2.6
+R519 a28#0 a28#1 3.16
+R520 net_522 net_522#1 4.333
+R521 net_522#2 net_522#3 3.16
+R522 net_524 net_524#1 2.947
+R523 net_524#2 net_524#3 3.587
+R524 net_526 net_526#1 3.16
+R525 net_526#2 net_526#3 3.16
+R526 net_526#4 net_526#5 2.947
+R527 net_529 net_529#1 3.8
+R528 net_529#2 net_529#3 2.947
+R529 net_531 net_531#1 3.8
+R530 net_531#2 net_531#1 2.947
+R531 net_533 net_533#1 2.947
+R532 net_533#2 net_533#3 3.587
+R533 net_329 net_329#4 7.653
+R534 net_329#5 net_329#6 1.387
+R535 sum25#0 sum25#1 3.293
+R536 net_538 net_538#1 1.733
+R537 net_538#2 net_538#3 5.747
+R538 net_540 net_540#1 5.187
+R539 net_540#2 net_540#3 5.187
+R540 net_540#4 net_540#5 3.64
+R541 net_543 net_543#1 3.853
+R542 net_543#2 net_543#3 3.853
+R543 net_543#4 net_543#5 3.64
+R544 net_546 net_546#1 5.027
+R545 net_546#2 net_546#3 3.853
+R546 b31#0 b31#1 3.853
+R547 b25#0 b25#1 4.2
+R548 sum31#0 sum31#1 3.987
+R549 sum24#0 sum24#1 4.333
+R550 a31#0 a31#1 4.547
+R551 sum16#0 sum16#1 4.68
+R552 net_554 net_554#1 6.067
+R553 net_554#2 net_554#3 4.893
+R554 net_556 net_556#1 5.32
+R555 net_556#2 net_556#3 4.68
+R556 net_558 net_558#1 5.533
+R557 net_558#2 net_558#1 4.68
+R558 net_560 net_560#1 5.533
+R559 net_560#2 net_560#1 4.68
+R560 b30#0 b30#1 4.893
+R561 b24#0 b24#1 5.24
+R562 net_564 net_564#1 5.027
+R563 net_564#2 net_564#3 5.667
+R564 net_566 net_566#1 5.027
+R565 net_566#2 net_566#3 5.667
+R566 a25#0 a25#1 5.587
+R567 net_569 net_569#1 5.373
+R568 net_569#2 net_569#3 6.227
+R569 net_569#4 net_569#5 5.587
+R570 b29#0 b29#1 5.587
+R571 a24#0 a24#1 5.933
+R572 net_574 net_574#1 5.933
+R573 net_574#2 net_574#3 5.933
+R574 net_574#4 net_574#5 5.72
+R575 a29#0 a29#1 5.933
+R576 b27#0 b27#1 6.28
+R577 net_579 net_579#1 5.853
+R578 net_579#2 net_579#3 5.64
+R579 net_579#4 net_579#5 6.067
+R580 net_582 net_582#1 5.64
+R581 net_582#2 net_582#3 5.853
+R582 net_582#4 net_582#5 6.067
+R583 net_585 net_585#1 6.28
+R584 net_585#2 net_585#3 6.067
+R585 net_585#4 net_585#5 6.92
+R586 net_585#6 net_585#7 6.28
+R587 a8#0 a8#1 6.627
+R588 a30#0 a30#1 6.627
+R589 net_591 net_591#1 6.973
+R590 net_591#2 net_591#3 6.973
+R591 net_591#4 net_591#5 6.76
+R592 net_594 net_594#1 7.613
+R593 net_594#2 net_594#3 6.76
+R594 net_596 net_596#1 2.76
+R595 net_596#2 net_596#3 1.907
+R596 net_598 net_598#1 1.907
+R597 net_598#2 net_598#3 2.547
+R598 net_600 net_600#1 2.76
+R599 net_600#2 net_600#3 9.907
+R600 net_602 net_602#1 1.907
+R601 net_602#2 net_602#3 1.48
+R602 net_602#4 net_602#5 1.48
+R603 net_605 net_605#1 10.333
+R604 net_605#2 net_605#1 1.907
+R605 net_605#4 net_605#1 1.48
+R606 sum27#0 sum27#1 2.253
+R607 net_609 net_609#1 3.64
+R608 net_609#2 net_609#3 2.467
+R609 net_611 net_611#1 2.253
+R610 net_611#2 net_611#3 2.893
+R611 net_613 net_613#1 2.253
+R612 net_613#2 net_613#1 1.827
+R613 net_613#4 net_613#5 1.827
+R614 net_616 net_616#1 2.467
+R615 net_616#2 net_616#3 1.827
+R616 net_616#4 net_616#5 1.827
+R617 net_616#6 net_616#7 9.347
+R618 net_616#8 net_616#9 8.173
+R619 net_621 net_621#1 3.453
+R620 net_621#2 net_621#3 2.6
+R621 net_623 net_623#1 2.6
+R622 net_623#2 net_623#3 2.173
+R623 net_625 net_625#1 2.6
+R624 net_625#2 net_625#1 2.173
+R625 net_625#4 net_625#5 2.173
+R626 net_625#6 net_625#7 2.813
+R627 net_625#8 net_625#9 2.813
+R628 net_630 net_630#1 8.573
+R629 net_630#2 net_630#3 2.6
+R630 net_632 net_632#1 1.04
+R631 net_632#2 net_632#3 9.213
+R632 net_634 net_634#1 2.52
+R633 net_634#2 net_634#3 7.48
+R634 net_634#4 net_634#5 3.16
+R635 net_634#6 net_634#7 2.52
+R636 net_638 net_638#1 2.947
+R637 net_638#2 net_638#3 9.293
+R638 net_640 net_640#1 3.587
+R639 net_640#2 net_640#3 2.947
+R640 net_642 net_642#1 2.947
+R641 net_642#2 net_642#1 3.8
+R642 net_644 net_644#1 2.947
+R643 net_644#2 net_644#3 3.587
+R644 net_646 net_646#1 2.947
+R645 net_646#2 net_646#1 2.52
+R646 net_646#4 net_646#5 2.52
+R647 net_480 net_480#4 10.427
+R648 net_480#5 net_480#6 1.387
+R649 sum30#0 sum30#1 3.293
+R650 net_652 net_652#1 4.68
+R651 net_652#2 net_652#3 3.507
+R652 net_654 net_654#1 3.293
+R653 net_654#2 net_654#3 3.08
+R654 net_656 net_656#1 3.293
+R655 net_656#2 net_656#3 3.933
+R656 net_658 net_658#1 3.293
+R657 net_658#2 net_658#3 2.867
+R658 net_660 net_660#1 1.733
+R659 net_660#2 net_660#3 8.52
+R660 sum23#0 sum23#1 3.64
+R661 net_663 net_663#1 3.64
+R662 net_663#2 net_663#3 4.493
+R663 net_665 net_665#1 3.64
+R664 net_665#2 net_665#3 4.28
+R665 net_667 net_667#1 3.64
+R666 net_667#2 net_667#3 4.28
+R667 net_669 net_669#1 3.64
+R668 net_669#2 net_669#3 3.213
+R669 net_669#4 net_669#5 3.213
+R670 net_672 net_672#1 3.853
+R671 net_672#2 net_672#1 8.6
+R672 net_672#4 net_672#5 3.213
+R673 net_672#6 net_672#7 6.787
+R674 net_329#5 net_329#7 9.733
+R675 net_329#8 net_329#9 2.08
+R676 net_678 net_678#1 3.987
+R677 net_678#2 net_678#3 3.773
+R678 net_680 net_680#1 3.987
+R679 net_680#2 net_680#3 8.04
+R680 net_682 net_682#1 3.987
+R681 net_682#2 net_682#3 3.56
+R682 net_682#4 net_682#5 3.56
+R683 net_685 net_685#1 4.12
+R684 net_685#2 net_685#3 4.333
+R685 net_687 net_687#1 4.547
+R686 net_687#2 net_687#3 3.907
+R687 net_687#4 net_687#5 7.907
+R688 net_687#6 net_687#7 6.093
+R689 net_687#8 net_687#9 4.547
+R690 net_692 net_692#1 5.32
+R691 net_692#2 net_692#3 4.68
+R692 net_694 net_694#1 4.893
+R693 net_694#2 net_694#3 6.067
+R694 net_696 net_696#1 4.68
+R695 net_696#2 net_696#1 7.56
+R696 net_698 net_698#1 4.893
+R697 net_698#2 net_698#3 4.893
+R698 net_698#4 net_698#5 4.893
+R699 net_698#6 net_698#7 4.893
+R700 net_698#8 net_698#9 4.253
+R701 net_698#10 net_698#11 4.253
+R702 net_698#12 net_698#13 4.68
+R703 net_705 net_705#1 3.467
+R704 net_705#2 net_705#3 6.573
+R705 net_707 net_707#1 5.587
+R706 net_707#2 net_707#3 4.947
+R707 net_707#4 net_707#5 4.947
+R708 net_707#6 net_707#7 5.053
+R709 net_707#8 net_707#9 6.227
+R710 net_712 net_712#1 3.813
+R711 net_712#2 net_712#3 6.653
+R712 net_714 net_714#1 5.72
+R713 net_714#2 net_714#3 5.293
+R714 net_714#4 net_714#5 5.293
+R715 net_538 net_538#4 7.653
+R716 net_538#5 net_538#6 4.16
+R717 net_719 net_719#1 5.64
+R718 net_719#2 net_719#3 6.173
+R719 net_719#4 net_719#5 5.533
+R720 net_719#6 net_719#7 4.36
+R721 net_723 net_723#1 5.64
+R722 net_723#2 net_723#3 6.173
+R723 net_723#4 net_723#5 5.533
+R724 net_723#6 net_723#7 4.36
+R725 net_727 net_727#1 5.533
+R726 net_727#2 net_727#3 7.453
+R727 net_729 net_729#1 5.187
+R728 net_729#2 net_729#3 5.187
+R729 net_729#4 net_729#5 6.627
+R730 net_732 net_732#1 7.053
+R731 net_732#2 net_732#3 6.413
+R732 net_734 net_734#1 4.76
+R733 net_734#2 net_734#3 6.413
+R734 net_736 net_736#1 5.053
+R735 net_736#2 net_736#3 7.613
+R736 net_738 net_738#1 7.32
+R737 net_738#2 net_738#3 7.32
+R738 net_738#4 net_738#5 7.96
+R739 net_738#6 net_738#7 7.32
+R740 net_738#8 net_738#9 7.107
+R741 net_738#10 net_738#11 7.32
+R742 net_738#12 net_738#13 7.32
+R743 net_738#14 net_738#15 7.32
+R744 net_738#16 net_738#17 7.32
+R745 net_738#18 net_738#19 7.32
+R746 net_748 net_748#1 7.96
+R747 net_748#2 net_748#3 4.707
+R748 net_750 net_750#1 7.32
+R749 net_750#2 net_750#3 7.32
+R750 net_750#4 net_750#5 7.32
+R751 net_750#6 net_750#7 7.96
+R752 net_750#8 net_750#9 7.107
+R753 net_750#10 net_750#11 7.32
+R754 net_756 net_756#1 7.32
+R755 net_756#2 net_756#3 7.32
+R756 net_756#4 net_756#5 7.107
+R757 net_756#6 net_756#5 6.68
+R758 net_756#8 net_756#9 6.68
+R759 net_761 net_761#1 4.36
+R760 net_761#2 net_761#3 8.307
+R761 net_763 net_763#1 7.8
+R762 net_763#2 net_763#3 3.373
+R763 net_765 net_765#1 7.8
+R764 net_765#2 net_765#3 3.373
+R765 net_767 net_767#1 3.373
+R766 net_767#2 net_767#3 7.8
+R767 net_769 net_769#1 8.147
+R768 net_769#2 net_769#3 2.813
+R769 net_771 net_771#1 6.933
+R770 net_771#2 net_771#3 3.32
+R771 net_773 net_773#1 8.84
+R772 net_773#2 net_773#3 8.413
+R773 net_773#4 net_773#5 8.413
+R774 net_776 net_776#1 9.187
+R775 net_776#2 net_776#1 10.04
+R776 net_778 net_778#1 10.173
+R777 net_778#2 net_778#3 9.533
+R778 a26#0 a26#1 2.12
+R779 net_781 net_781#1 1.907
+R780 net_781#2 net_781#3 11
+R781 net_783 net_783#1 2.76
+R782 net_783#2 net_783#3 1.907
+R783 net_785 net_785#1 1.693
+R784 net_785#2 net_785#3 1.907
+R785 net_787 net_787#1 2.12
+R786 net_787#2 net_787#3 3.293
+R787 net_538#5 net_538#7 13.2
+R788 net_538#8 net_538#9 2.547
+R789 b26#0 b26#1 2.467
+R790 net_792 net_792#1 3.107
+R791 net_792#2 net_792#3 2.467
+R792 net_792#4 net_792#5 2.467
+R793 net_792#6 net_792#7 2.253
+R794 net_796 net_796#1 2.893
+R795 net_796#2 net_796#3 2.253
+R796 net_798 net_798#1 0.693
+R797 net_798#2 net_798#3 11.08
+R798 sum26#0 sum26#1 2.6
+R799 net_801 net_801#1 3.453
+R800 net_801#2 net_801#1 2.6
+R801 net_480#5 net_480#7 12.507
+R802 net_480#8 net_480#9 3.24
+R803 b18#0 b18#1 3.16
+R804 net_806 net_806#1 10.6
+R805 net_806#2 net_806#3 2.52
+R806 net_808 net_808#1 3.587
+R807 net_808#2 net_808#3 2.947
+R808 net_810 net_810#1 3.16
+R809 net_810#2 net_810#1 2.947
+R810 cout#0 cout#1 2.947
+R811 a18#0 a18#1 3.507
+R812 net_814 net_814#1 3.293
+R813 net_814#2 net_814#3 3.507
+R814 net_814#4 net_814#5 3.507
+R815 net_817 net_817#1 3.293
+R816 net_817#2 net_817#3 3.933
+R817 net_819 net_819#1 3.933
+R818 net_819#2 net_819#3 3.293
+R819 net_821 net_821#1 3.08
+R820 net_821#2 net_821#3 3.293
+R821 net_823 net_823#1 3.507
+R822 net_823#2 net_823#3 4.68
+R823 sum19#0 sum19#1 3.293
+R824 sum22#0 sum22#1 3.64
+R825 net_827 net_827#1 3.64
+R826 net_827#2 net_827#3 3.427
+R827 net_829 net_829#1 3.213
+R828 net_829#2 net_829#3 3.427
+R829 net_829#4 net_829#5 3.64
+R830 net_832 net_832#1 3.853
+R831 net_832#2 net_832#3 4.493
+R832 net_832#4 net_832#5 3.64
+R833 net_835 net_835#1 2.08
+R834 net_835#2 net_835#3 9.267
+R835 net_837 net_837#1 3.987
+R836 net_837#2 net_837#3 4.2
+R837 net_837#4 net_837#5 4.2
+R838 net_840 net_840#1 5.373
+R839 net_840#2 net_840#3 4.2
+R840 net_842 net_842#1 3.987
+R841 net_842#2 net_842#3 4.627
+R842 net_844 net_844#1 2.427
+R843 net_844#2 net_844#3 9.56
+R844 net_846 net_846#1 4.12
+R845 net_846#2 net_846#3 3.907
+R846 net_846#4 net_846#3 4.333
+R847 net_849 net_849#1 3.907
+R848 net_849#2 net_849#3 9.213
+R849 net_851 net_851#1 5.72
+R850 net_851#2 net_851#3 3.907
+R851 net_851#4 net_851#5 4.547
+R852 net_851#6 net_851#7 3.907
+R853 net_851#8 net_851#9 4.547
+R854 net_856 net_856#1 4.68
+R855 net_856#2 net_856#1 8.653
+R856 net_856#4 net_856#5 8.013
+R857 net_859 net_859#1 8.867
+R858 net_859#2 net_859#3 5.533
+R859 net_861 net_861#1 5.32
+R860 net_861#2 net_861#3 4.68
+R861 net_863 net_863#1 3.12
+R862 net_863#2 net_863#3 9.08
+R863 net_729#6 net_729#7 5.24
+R864 net_729#8 net_729#9 5.24
+R865 net_729#10 net_729#11 5.24
+R866 net_729#12 net_729#13 5.24
+R867 net_729#14 net_729#15 5.24
+R868 net_729#16 net_729#17 5.24
+R869 net_729#18 net_729#19 5.027
+R870 net_729#4 net_729#19 8.307
+R871 net_729#21 net_729#22 4.813
+R872 net_729#23 net_729#24 5.24
+R873 net_729#25 net_729#26 8.307
+R874 net_729#27 net_729#26 5.24
+R875 net_729#29 net_729#30 8.307
+R876 net_878 net_878#1 5.88
+R877 net_878#2 net_878#1 5.027
+R878 net_880 net_880#1 5.667
+R879 net_880#2 net_880#3 5.027
+R880 sum20#0 sum20#1 5.027
+R881 net_883 net_883#1 3.813
+R882 net_883#2 net_883#3 8.173
+R883 net_885 net_885#1 7.613
+R884 net_885#2 net_885#3 8.253
+R885 net_885#4 net_885#5 5.933
+R886 net_885#6 net_885#7 5.293
+R887 net_885#8 net_885#9 7.107
+R888 net_890 net_890#1 5.72
+R889 net_890#2 net_890#3 6.573
+R890 net_892 net_892#1 4.16
+R891 net_892#2 net_892#3 6.973
+R892 net_894 net_894#1 7.907
+R893 net_894#2 net_894#3 7.48
+R894 net_894#4 net_894#5 5.64
+R895 net_897 net_897#1 5.64
+R896 net_897#2 net_897#3 6.28
+R897 net_897#4 net_897#5 6.067
+R898 net_897#6 net_897#7 6.28
+R899 net_901 net_901#1 5.64
+R900 net_901#2 net_901#3 6.067
+R901 net_901#4 net_901#5 5.64
+R902 net_904 net_904#1 6.067
+R903 net_904#2 net_904#3 5.853
+R904 net_906 net_906#1 7.133
+R905 net_906#2 net_906#3 5.987
+R906 net_908 net_908#1 6.627
+R907 net_908#2 net_908#3 6.627
+R908 net_908#4 net_908#5 5.987
+R909 net_908#6 net_908#7 6.627
+R910 net_908#8 net_908#9 6.627
+R911 net_908#10 net_908#11 6.413
+R912 net_914 net_914#1 7.8
+R913 net_914#2 net_914#3 6.627
+R914 net_916 net_916#1 6.147
+R915 net_916#2 net_916#3 6.76
+R916 net_918 net_918#1 7.107
+R917 net_918#2 net_918#3 6.68
+R918 net_918#4 net_918#5 6.227
+R919 net_918#6 net_918#7 6.227
+R920 net_918#8 net_918#9 6.227
+R921 net_918#10 net_918#11 6.227
+R922 net_918#12 net_918#13 6.227
+R923 net_918#14 net_918#15 6.227
+R924 net_918#16 net_918#17 6.227
+R925 net_918#18 net_918#19 6.227
+R926 net_705 net_705#4 7.653
+R927 net_705#5 net_705#6 8.84
+R928 net_660 net_660#4 7.307
+R929 net_660#5 net_660#6 8.44
+R930 net_932 net_932#1 5.4
+R931 net_932#2 net_932#3 8.787
+R932 net_632 net_632#4 6.96
+R933 net_632#5 net_632#6 9
+R934 net_329#8 net_329#10 6.613
+R935 net_329#11 net_329#12 9.347
+R936 net_712 net_712#4 6.267
+R937 net_712#5 net_712#6 8.84
+R938 net_771 net_771#4 5.92
+R939 net_771#5 net_771#6 10.04
+R940 net_942 net_942#1 9.533
+R941 net_942#2 net_942#3 4.44
+R942 net_944 net_944#1 9.88
+R943 net_944#2 net_944#3 2.813
+R944 net_946 net_946#1 10.227
+R945 net_946#2 net_946#3 2.68
+R946 net_948 net_948#1 10.573
+R947 net_948#2 net_948#3 10.147
+R948 net_950 net_950#1 11.56
+R949 net_950#2 net_950#3 10.92
+R950 net_952 net_952#1 11.267
+R951 net_952#2 net_952#3 10.84
+R952 net_954 net_954#1 3.293
+R953 net_954#2 net_954#3 2.12
+R954 net_956 net_956#1 1.907
+R955 net_956#2 net_956#3 1.693
+R956 net_958 net_958#1 2.12
+R957 net_958#2 net_958#3 2.12
+R958 net_958#4 net_958#5 1.907
+R959 net_961 net_961#1 3.293
+R960 net_961#2 net_961#3 2.12
+R961 net_963 net_963#1 1.907
+R962 net_963#2 net_963#3 1.693
+R963 net_965 net_965#1 6.493
+R964 net_965#2 net_965#3 1.907
+R965 net_967 net_967#1 1.907
+R966 net_967#2 net_967#3 2.547
+R967 net_969 net_969#1 1.907
+R968 net_969#2 net_969#3 2.547
+R969 net_971 net_971#1 1.907
+R970 net_971#2 net_971#3 2.76
+R971 net_971#4 net_971#5 2.12
+R972 net_974 net_974#1 2.253
+R973 net_974#2 net_974#3 2.467
+R974 net_974#4 net_974#5 3.107
+R975 net_977 net_977#1 1.827
+R976 net_977#2 net_977#3 2.04
+R977 net_977#4 net_977#5 2.253
+R978 net_980 net_980#1 3.107
+R979 net_980#2 net_980#3 2.467
+R980 net_980#4 net_980#5 2.253
+R981 net_983 net_983#1 2.253
+R982 net_983#2 net_983#3 2.467
+R983 net_983#4 net_983#5 3.107
+R984 net_983#6 net_983#7 2.467
+R985 net_987 net_987#1 2.253
+R986 net_987#2 net_987#3 3.107
+R987 net_989 net_989#1 3.107
+R988 net_989#2 net_989#3 2.253
+R989 net_991 net_991#1 2.893
+R990 net_991#2 net_991#3 2.253
+R991 net_883 net_883#4 8.347
+R992 net_883#5 net_883#6 3.107
+R993 net_995 net_995#1 6.44
+R994 net_995#2 net_995#3 3.24
+R995 net_997 net_997#1 6.867
+R996 net_997#2 net_997#3 2.173
+R997 net_997#4 net_997#5 2.6
+R998 net_1000 net_1000#1 3.987
+R999 net_1000#2 net_1000#3 2.813
+R1000 net_1002 net_1002#1 2.6
+R1001 net_1002#2 net_1002#3 2.387
+R1002 net_1004 net_1004#1 2.6
+R1003 net_1004#2 net_1004#3 3.24
+R1004 net_1006 net_1006#1 2.173
+R1005 net_1006#2 net_1006#3 2.6
+R1006 net_1006#4 net_1006#5 6.653
+R1007 net_1009 net_1009#1 3.587
+R1008 net_1009#2 net_1009#3 2.947
+R1009 net_1011 net_1011#1 2.947
+R1010 net_1011#2 net_1011#3 5.24
+R1011 net_1013 net_1013#1 2.947
+R1012 net_1013#2 net_1013#3 3.587
+R1013 net_1015 net_1015#1 2.733
+R1014 net_1015#2 net_1015#3 2.52
+R1015 net_1015#4 net_1015#5 2.947
+R1016 net_1018 net_1018#1 3.16
+R1017 net_1018#2 net_1018#3 2.947
+R1018 net_1018#4 net_1018#5 5.88
+R1019 net_1021 net_1021#1 3.293
+R1020 net_1021#2 net_1021#3 2.867
+R1021 net_1021#4 net_1021#5 3.08
+R1022 net_1024 net_1024#1 3.08
+R1023 net_1024#2 net_1024#3 2.867
+R1024 net_1024#4 net_1024#5 3.293
+R1025 net_1027 net_1027#1 3.507
+R1026 net_1027#2 net_1027#3 3.507
+R1027 net_1027#4 net_1027#5 3.293
+R1028 net_1030 net_1030#1 3.08
+R1029 net_1030#2 net_1030#3 2.867
+R1030 net_1030#4 net_1030#5 3.293
+R1031 net_1033 net_1033#1 3.507
+R1032 net_1033#2 net_1033#3 3.507
+R1033 net_1033#4 net_1033#5 3.293
+R1034 net_798 net_798#4 7.307
+R1035 net_798#5 net_798#6 2.867
+R1036 net_798#7 net_798#8 2.867
+R1037 net_798#9 net_798#10 4.68
+R1038 net_1040 net_1040#1 4.493
+R1039 net_1040#2 net_1040#3 3.64
+R1040 net_1042 net_1042#1 3.853
+R1041 net_1042#2 net_1042#3 3.853
+R1042 net_1042#4 net_1042#5 3.64
+R1043 net_1045 net_1045#1 5.827
+R1044 net_1045#2 net_1045#3 5.827
+R1045 net_1045#4 net_1045#5 5.187
+R1046 net_1045#6 net_1045#7 5.027
+R1047 net_1049 net_1049#1 4.493
+R1048 net_1049#2 net_1049#3 3.64
+R1049 net_1051 net_1051#1 3.64
+R1050 net_1051#2 net_1051#3 4.28
+R1051 net_1053 net_1053#1 3.853
+R1052 net_1053#2 net_1053#3 3.213
+R1053 net_1053#4 net_1053#5 5.027
+R1054 net_1053#6 net_1053#7 5.827
+R1055 net_844 net_844#4 6.96
+R1056 net_844#5 net_844#6 3.213
+R1057 net_1059 net_1059#1 5.48
+R1058 net_1059#2 net_1059#3 5.373
+R1059 net_1059#4 net_1059#5 3.56
+R1060 net_1059#6 net_1059#7 4.2
+R1061 net_1063 net_1063#1 4.84
+R1062 net_1063#2 net_1063#1 3.56
+R1063 net_1063#4 net_1063#5 4.2
+R1064 net_1063#6 net_1063#5 5.053
+R1065 net_1063#8 net_1063#9 5.48
+R1066 net_1068 net_1068#1 4.2
+R1067 net_1068#2 net_1068#3 4.2
+R1068 net_1068#4 net_1068#5 3.987
+R1069 net_1071 net_1071#1 3.56
+R1070 net_1071#2 net_1071#3 5.053
+R1071 net_863 net_863#4 6.613
+R1072 net_863#5 net_863#6 3.987
+R1073 net_1075 net_1075#1 4.547
+R1074 net_1075#2 net_1075#3 4.333
+R1075 net_1075#4 net_1075#5 4.547
+R1076 net_1075#6 net_1075#7 5.187
+R1077 net_1079 net_1079#1 5.133
+R1078 net_1079#2 net_1079#3 4.547
+R1079 net_1079#4 net_1079#5 3.907
+R1080 net_1079#6 net_1079#7 5.72
+R1081 net_1079#8 net_1079#9 4.493
+R1082 net_729#31 net_729#32 4.547
+R1083 net_729#33 net_729#34 4.547
+R1084 net_729#6 net_729#35 4.493
+R1085 net_729#36 net_729#37 4.493
+R1086 net_1088 net_1088#1 4.787
+R1087 net_1088#2 net_1088#3 4.147
+R1088 net_1088#4 net_1088#5 2.973
+R1089 net_1088#6 net_1088#7 4.253
+R1090 net_1088#8 net_1088#9 4.893
+R1091 net_1093 net_1093#1 3.507
+R1092 net_1093#2 net_1093#3 4.68
+R1093 net_1095 net_1095#1 4.013
+R1094 net_1095#2 net_1095#3 5.667
+R1095 net_1097 net_1097#1 4.813
+R1096 net_1097#2 net_1097#3 4.6
+R1097 net_1097#4 net_1097#5 5.027
+R1098 net_1100 net_1100#1 5.027
+R1099 net_1100#2 net_1100#3 5.667
+R1100 net_1102 net_1102#1 4.6
+R1101 net_1102#2 net_1102#3 5.027
+R1102 net_1102#4 net_1102#5 4.6
+R1103 net_835 net_835#4 5.573
+R1104 net_835#5 net_835#6 5.027
+R1105 net_1107 net_1107#1 5.587
+R1106 net_1107#2 net_1107#3 5.587
+R1107 net_1107#4 net_1107#5 5.373
+R1108 net_1110 net_1110#1 6.227
+R1109 net_1110#2 net_1110#3 5.373
+R1110 net_892 net_892#4 5.227
+R1111 net_892#5 net_892#6 5.373
+R1112 net_1114 net_1114#1 3.747
+R1113 net_1114#2 net_1114#1 3.32
+R1114 net_1114#4 net_1114#5 5.293
+R1115 net_1117 net_1117#1 3.107
+R1116 net_1117#2 net_1117#3 2.467
+R1117 net_1117#4 net_1117#5 3.107
+R1118 net_1117#6 net_1117#7 3.32
+R1119 net_1117#8 net_1117#9 5.933
+R1120 net_1117#10 net_1117#11 5.933
+R1121 net_1123 net_1123#1 2.76
+R1122 net_1123#2 net_1123#3 7.453
+R1123 net_1123#4 net_1123#5 2.76
+R1124 net_1123#6 net_1123#7 3.4
+R1125 net_1127 net_1127#1 2.973
+R1126 net_1127#2 net_1127#3 6.707
+R1127 net_1129 net_1129#1 1.987
+R1128 net_1129#2 net_1129#3 6.413
+R1129 net_1131 net_1131#1 1.427
+R1130 net_1131#2 net_1131#3 6.76
+R1131 sum17#0 sum17 2.28
+R1132 b17#0 b17 2.067
+R1133 sum18#0 sum18 2.28
+R1134 a17#0 a17 2.067
+R1135 a16#0 a16 2.067
+R1136 b16#0 b16 2.067
+R1137 a19#0 a19 2.067
+R1138 b19#0 b19 2.067
+R1139 a23#0 a23 2.067
+R1140 a22#0 a22 2.067
+R1141 b22#0 b22 2.067
+R1142 b23#0 b23 2.067
+R1143 a21#0 a21 2.067
+R1144 b21#0 b21 2.067
+R1145 sum21#0 sum21 2.28
+R1146 a20#0 a20 2.067
+R1147 b20#0 b20 2.067
+R1148 net_0#1 net_0#3 4.427
+R1149 net_2#1 net_2#3 17.84
+R1150 net_4#1 net_4#3 42.987
+R1151 net_7#1 net_7#3 2.08
+R1152 net_10#1 net_10#3 1.067
+R1153 net_12#1 net_12#3 13.627
+R1154 net_14#1 net_14#3 0.64
+R1155 net_16#1 net_16#3 18.72
+R1156 net_18#1 net_18#3 17.067
+R1157 net_21#1 net_21#3 1.467
+R1158 net_21#3 net_21#5 6.587
+R1159 net_21#5 net_21#7 1.893
+R1160 net_26#1 net_26#3 0.64
+R1161 net_26#3 net_26#5 1.707
+R1162 net_26#5 net_26#7 1.28
+R1163 net_26#7 net_26#9 5.093
+R1164 net_26#9 net_26#11 1.28
+R1165 net_35#1 net_35#3 0.96
+R1166 net_35#3 net_35#5 1.707
+R1167 net_38#1 net_38#3 7.653
+R1168 net_38#3 net_38#5 2.24
+R1169 net_38#5 net_38#7 2.453
+R1170 net_42#1 net_42#3 9.813
+R1171 net_44#1 net_44#3 3.413
+R1172 net_44#3 net_44#5 1.707
+R1173 net_50#1 net_50#3 7.547
+R1174 net_50#3 net_50#5 3.067
+R1175 net_50#5 net_50#7 6.96
+R1176 net_54#1 net_54#3 1.92
+R1177 net_54#3 net_54#5 1.707
+R1178 net_54#5 net_54#7 1.493
+R1179 net_58#1 net_58#3 1.493
+R1180 net_58#3 net_58#5 2.987
+R1181 net_62#1 net_62#3 1.067
+R1182 net_64#1 net_64#3 1.92
+R1183 net_66#1 net_66#3 9.573
+R1184 net_68#1 net_68#3 1.493
+R1185 net_68#3 net_68#5 2.987
+R1186 net_72#1 net_72#3 2.347
+R1187 net_75#1 net_75#3 1.067
+R1188 net_77#1 net_77#3 1.493
+R1189 net_77#3 net_77#5 1.493
+R1190 net_80#1 net_80#3 1.893
+R1191 net_82#1 net_82#3 3.413
+R1192 net_84#1 net_84#3 2.32
+R1193 net_86#1 net_86#3 3.413
+R1194 net_88#1 net_88#3 3.387
+R1195 net_90#1 net_90#3 8.533
+R1196 net_92#1 net_92#3 2.56
+R1197 net_92#3 net_92#5 1.467
+R1198 net_95#1 net_95#3 0.747
+R1199 net_95#3 net_95#5 4.027
+R1200 net_95#5 net_95#7 1.707
+R1201 net_100#1 net_100#3 0.96
+R1202 net_100#3 net_100#5 1.707
+R1203 net_103#1 net_103#3 0.747
+R1204 net_103#3 net_103#5 2.987
+R1205 net_106#1 net_106#3 0.64
+R1206 net_106#3 net_106#5 2.027
+R1207 net_109#1 net_109#3 2.133
+R1208 net_109#3 net_109#5 11.04
+R1209 net_112#1 net_112#3 2.56
+R1210 net_114#1 net_114#3 1.493
+R1211 net_114#3 net_114#5 2.987
+R1212 net_117#1 net_117#3 2.133
+R1213 net_119#1 net_119#3 5.547
+R1214 net_121#1 net_121#3 1.707
+R1215 net_125#1 net_125#3 0.96
+R1216 net_125#3 net_125#5 1.707
+R1217 net_128#1 net_128#3 1.707
+R1218 net_128#3 net_128#5 1.893
+R1219 net_128#5 net_128#7 0.64
+R1220 net_133#1 net_133#3 5.973
+R1221 b7#1 b7 5.56
+R1222 net_137#1 net_137#3 1.387
+R1223 net_137#3 net_137#5 2.027
+R1224 net_140#1 net_140#3 6.587
+R1225 net_140#3 net_140#5 1.067
+R1226 net_143#1 net_143#3 2.987
+R1227 net_143#3 net_143#5 1.493
+R1228 net_146#1 net_146#3 1.493
+R1229 net_146#3 net_146#5 1.707
+R1230 net_149#1 net_149#3 39.093
+R1231 net_151#1 net_151#3 1.92
+R1232 a5#1 a5 4.28
+R1233 net_156#1 net_156#3 1.493
+R1234 net_159#1 net_159#3 2.64
+R1235 net_161#1 net_161#3 19.467
+R1236 net_163#1 net_163#3 1.493
+R1237 net_163#3 net_163#5 1.707
+R1238 net_168#1 net_168#3 3.147
+R1239 b14 b14#1 37.613
+R1240 b15#1 b15 35.4
+R1241 net_172#1 net_172#3 0.96
+R1242 net_172#3 net_172#5 1.387
+R1243 a14 a14#1 37.4
+R1244 b13#1 b13 29.853
+R1245 net_179#1 net_179#3 0.96
+R1246 net_179#3 net_179#5 1.387
+R1247 net_182#1 net_182#3 34.187
+R1248 net_184#1 net_184#3 1.893
+R1249 a7#1 a7 4.067
+R1250 net_187#1 net_187#3 69.747
+R1251 b4#1 b4 19.827
+R1252 net_190#1 net_190#3 1.707
+R1253 net_190#3 net_190#5 0.96
+R1254 net_193#1 net_193#3 4.24
+R1255 net_193#3 net_193#5 1.067
+R1256 b10 b10#1 31.64
+R1257 a6#1 a6 24.307
+R1258 net_198#1 net_198#3 1.493
+R1259 net_198#3 net_198#5 1.493
+R1260 a10 a10#1 31.427
+R1261 b5#1 b5 10.893
+R1262 net_203#1 net_203#3 0.64
+R1263 net_205#1 net_205#3 1.067
+R1264 net_207#1 net_207#3 2.987
+R1265 net_207#3 net_207#5 1.493
+R1266 net_210#1 net_210#3 51.933
+R1267 sum5#1 sum5 18.973
+R1268 net_213#1 net_213#3 1.707
+R1269 net_213#3 net_213#5 0.96
+R1270 net_216#1 net_216#3 2.027
+R1271 net_216#3 net_216#5 0.64
+R1272 net_219#1 net_219#3 1.493
+R1273 net_219#3 net_219#5 1.707
+R1274 sum10 sum10#1 28.227
+R1275 net_223#1 net_223#3 3.6
+R1276 net_225#1 net_225#3 1.627
+R1277 net_227#1 net_227#3 6.933
+R1278 net_227#3 net_227#7 2.773
+R1279 net_227#7 net_227#9 2
+R1280 net_232#1 net_232#3 27.867
+R1281 net_234#1 net_234#3 2.96
+R1282 net_236#1 net_236#5 2.987
+R1283 net_239#1 net_239#3 10.747
+R1284 net_239#3 net_239#5 1.467
+R1285 net_242#1 net_242#3 0.96
+R1286 net_242#3 net_242#5 1.387
+R1287 net_245#1 net_245#3 1.467
+R1288 net_245#3 net_245#5 5.733
+R1289 sum11 sum11#1 20.813
+R1290 net_249#1 net_249#5 1.707
+R1291 net_252#1 net_252#3 13.227
+R1292 net_252#3 net_252#5 3.493
+R1293 net_252#5 net_252#7 2.133
+R1294 net_256#1 net_256#3 2.32
+R1295 net_258#1 net_258#3 0.64
+R1296 net_260#1 net_260#3 1.707
+R1297 a11 a11#1 16.12
+R1298 net_263#1 net_263#3 0.747
+R1299 net_263#3 net_263#5 5.307
+R1300 net_263#5 net_263#7 10.56
+R1301 net_267#1 net_267#3 1.707
+R1302 net_269#1 net_269#3 1.493
+R1303 net_269#3 net_269#5 0.64
+R1304 b11 b11#1 13.347
+R1305 a15#1 a15 31.773
+R1306 net_274#1 net_274#3 1.707
+R1307 net_274#3 net_274#5 0.96
+R1308 net_277#1 net_277#3 0.64
+R1309 net_277#3 net_277#5 2.08
+R1310 net_277#5 net_277#7 1.067
+R1311 a13#1 a13 26.227
+R1312 b6#1 b6 25.8
+R1313 a4#1 a4 18.333
+R1314 net_284#1 net_284#3 4.56
+R1315 net_284#3 net_284#5 0.747
+R1316 net_284#5 net_284#7 50.933
+R1317 net_288#1 net_288#3 6.187
+R1318 sum15 sum15#1 2.76
+R1319 sum9#1 sum9 5.347
+R1320 net_292#1 net_292#3 48.373
+R1321 net_292#3 net_292#5 2.133
+R1322 net_292#5 net_292#7 3.493
+R1323 net_296#1 net_296#3 1.707
+R1324 sum13#1 sum13 23.453
+R1325 net_299#1 net_299#3 2.08
+R1326 net_301#1 net_301#3 14.693
+R1327 net_301#3 net_301#5 1.28
+R1328 net_301#5 net_301#7 1.707
+R1329 net_301#7 net_301#9 1.28
+R1330 net_301#9 net_301#11 5.067
+R1331 net_301#11 net_301#13 1.28
+R1332 net_301#13 net_301#15 1.28
+R1333 net_301#15 net_301#17 1.893
+R1334 net_301#17 net_301#19 16.107
+R1335 net_311#1 net_311#3 1.707
+R1336 sum14 sum14#1 1.267
+R1337 sum12#1 sum12 29.16
+R1338 net_315#1 net_315#3 1.067
+R1339 net_317#1 net_317#3 1.893
+R1340 net_210#4 net_210#6 31.053
+R1341 net_323#1 net_323#3 1.067
+R1342 net_325#1 net_325#3 0.64
+R1343 net_327#1 net_327#3 25.307
+R1344 net_329#1 net_329#3 39.08
+R1345 net_331#1 net_331#3 45.627
+R1346 net_333#1 net_333#3 2.907
+R1347 b9#1 b9 10.44
+R1348 net_336#1 net_336#3 21.467
+R1349 net_338#1 net_338#3 6.373
+R1350 net_338#3 net_338#5 1.28
+R1351 net_338#5 net_338#7 1.28
+R1352 net_338#7 net_338#9 1.067
+R1353 net_338#9 net_338#11 3.333
+R1354 net_344#1 net_344#3 2.08
+R1355 net_346#1 net_346#3 1.84
+R1356 net_346#3 net_346#5 2.453
+R1357 net_346#5 net_346#7 3.307
+R1358 b12#1 b12 17.053
+R1359 net_351#1 net_351#3 1.707
+R1360 net_353#1 net_353#3 16.08
+R1361 net_355#1 net_355#3 5.387
+R1362 net_153#4 net_153#6 20.013
+R1363 a12#1 a12 15.133
+R1364 net_360#1 net_360#3 1.467
+R1365 net_360#3 net_360#5 6.4
+R1366 net_363#1 net_363#3 0.64
+R1367 net_365#1 net_365#3 3.2
+R1368 net_367#1 net_367#3 13.52
+R1369 net_369#1 net_369#3 1.893
+R1370 net_371#1 net_371#3 21.92
+R1371 a9#1 a9 13.64
+R1372 net_374#1 net_374#3 1.493
+R1373 net_374#3 net_374#5 2.987
+R1374 net_377#1 net_377#3 4.24
+R1375 net_379#1 net_379#3 28.907
+R1376 net_379#3 net_379#5 7.573
+R1377 net_382#1 net_382#3 1.067
+R1378 net_382#3 net_382#5 6.587
+R1379 net_385#1 net_385#3 2.027
+R1380 net_385#3 net_385#5 1.387
+R1381 net_388#1 net_388#3 0.96
+R1382 net_388#3 net_388#5 1.707
+R1383 net_391#1 net_391#3 8.24
+R1384 net_393#1 net_393#3 7.013
+R1385 net_395#1 net_395#3 0.64
+R1386 net_397#1 net_397#3 11.067
+R1387 net_399#1 net_399#5 1.04
+R1388 net_402#1 net_402#5 1.493
+R1389 net_405#1 net_405#3 2.987
+R1390 net_405#3 net_405#5 15.707
+R1391 net_408#1 net_408#3 1.28
+R1392 net_408#3 net_408#5 1.92
+R1393 net_408#5 net_408#9 23.36
+R1394 net_413#1 net_413#3 24.72
+R1395 net_415#1 net_415#3 45.227
+R1396 net_417#1 net_417#3 11.653
+R1397 net_419#1 net_419#3 2.96
+R1398 net_421#1 net_421#3 2.347
+R1399 net_421#3 net_421#5 7.573
+R1400 net_421#5 net_421#7 2
+R1401 net_421#7 net_421#9 4.373
+R1402 net_426#1 net_426#3 1.467
+R1403 net_426#3 net_426#5 17.227
+R1404 net_426#5 net_426#7 1.893
+R1405 net_430#1 net_430#3 1.893
+R1406 net_432#1 net_432#3 0.747
+R1407 net_432#3 net_432#5 34.613
+R1408 net_432#5 net_432#7 4.853
+R1409 net_436#1 net_436#3 25.973
+R1410 net_438#1 net_438#3 19.36
+R1411 net_440#1 net_440#3 0.907
+R1412 net_442#1 net_442#3 2.667
+R1413 net_442#3 net_442#5 2.347
+R1414 net_442#5 net_442#7 3.547
+R1415 net_442#7 net_442#9 21.92
+R1416 net_187#4 net_187#6 30.413
+R1417 net_449#1 net_449#3 40.747
+R1418 net_449#3 net_449#5 3.147
+R1419 net_449#5 net_449#7 3.307
+R1420 net_453#1 net_453#3 25.707
+R1421 net_453#3 net_453#5 10.133
+R1422 net_453#5 net_453#7 2.24
+R1423 net_453#7 net_453#9 10.293
+R1424 net_458#1 net_458#3 1.28
+R1425 net_458#3 net_458#5 3.2
+R1426 net_458#5 net_458#7 14.853
+R1427 net_458#7 net_458#9 14.16
+R1428 net_458#9 net_458#11 1.28
+R1429 net_464#1 net_464#5 27.12
+R1430 net_467#1 net_467#3 1.28
+R1431 net_467#3 net_467#5 1.92
+R1432 net_467#5 net_467#7 11.013
+R1433 b28#1 b28 34.52
+R1434 net_472#1 net_472#3 0.96
+R1435 net_472#3 net_472#5 1.387
+R1436 net_475#1 net_475#3 2.32
+R1437 net_477#1 net_477#3 1.493
+R1438 net_477#3 net_477#5 1.707
+R1439 net_480 net_480#3 30.84
+R1440 a27#1 a27 4.92
+R1441 net_483#1 net_483#3 1.493
+R1442 net_483#3 net_483#5 1.707
+R1443 net_486#1 net_486#3 1.707
+R1444 net_488#1 net_488#3 1.493
+R1445 net_488#3 net_488#5 0.64
+R1446 net_491#1 net_491#3 1.067
+R1447 net_491#3 net_491#5 9.6
+R1448 net_496#1 net_496#3 1.893
+R1449 net_498#1 net_498#3 1.493
+R1450 net_498#3 net_498#5 1.707
+R1451 sum28 sum28#1 42.84
+R1452 b8#1 b8 2.573
+R1453 net_503#1 net_503#3 1.493
+R1454 net_506#1 net_506#3 0.96
+R1455 net_506#3 net_506#5 1.387
+R1456 net_509#1 net_509#3 1.707
+R1457 net_509#3 net_509#5 0.96
+R1458 net_512#1 net_512#3 1.493
+R1459 net_512#3 net_512#5 1.707
+R1460 net_515#1 net_515#3 4.853
+R1461 net_517#1 net_517#3 1.067
+R1462 net_517#3 net_517#5 36.693
+R1463 sum29 sum29#1 4.68
+R1464 a28#1 a28 31.32
+R1465 net_522#1 net_522#3 1.707
+R1466 net_524#1 net_524#3 1.893
+R1467 net_526#1 net_526#3 0.96
+R1468 net_526#3 net_526#5 1.387
+R1469 net_529#1 net_529#3 5.733
+R1470 net_533#1 net_533#3 18.427
+R1471 net_329#4 net_329#6 0.853
+R1472 sum25#1 sum25 27.533
+R1473 net_538#1 net_538#3 35.507
+R1474 net_540#1 net_540#3 0.96
+R1475 net_540#3 net_540#5 0.853
+R1476 net_543#1 net_543#3 0.96
+R1477 net_543#3 net_543#5 1.387
+R1478 net_546#1 net_546#3 1.707
+R1479 b31 b31#1 36.68
+R1480 b25#1 b25 20.707
+R1481 sum31 sum31#1 33.267
+R1482 sum24#1 sum24 14.093
+R1483 a31 a31#1 36.467
+R1484 sum16#1 sum16 7.48
+R1485 net_554#1 net_554#3 1.707
+R1486 net_556#1 net_556#3 1.893
+R1487 b30 b30#1 20.813
+R1488 b24#1 b24 18.147
+R1489 net_564#1 net_564#3 17.147
+R1490 net_566#1 net_566#3 3.173
+R1491 a25#1 a25 17.507
+R1492 net_569#1 net_569#3 9.253
+R1493 net_569#3 net_569#5 1.067
+R1494 b29 b29#1 15.267
+R1495 a24#1 a24 11.96
+R1496 net_574#1 net_574#3 2.027
+R1497 net_574#3 net_574#5 0.64
+R1498 a29 a29#1 15.053
+R1499 b27#1 b27 8.12
+R1500 net_579#1 net_579#3 1.493
+R1501 net_579#3 net_579#5 1.493
+R1502 net_582#1 net_582#3 1.493
+R1503 net_582#3 net_582#5 1.707
+R1504 net_585#1 net_585#3 0.64
+R1505 net_585#3 net_585#5 2.08
+R1506 net_585#5 net_585#7 1.067
+R1507 a8#1 a8 1.507
+R1508 a30 a30#1 20.6
+R1509 net_591#1 net_591#3 0.96
+R1510 net_591#3 net_591#5 1.387
+R1511 net_594#1 net_594#3 2.96
+R1512 net_596#1 net_596#3 6.133
+R1513 net_598#1 net_598#3 0.64
+R1514 net_600#1 net_600#3 46.667
+R1515 net_602#1 net_602#3 6.827
+R1516 net_602#3 net_602#5 2.56
+R1517 sum27#1 sum27 3.613
+R1518 net_609#1 net_609#3 1.067
+R1519 net_611#1 net_611#3 0.64
+R1520 net_613#1 net_613#5 24.613
+R1521 net_616#1 net_616#3 2.347
+R1522 net_616#3 net_616#5 5.12
+R1523 net_616#5 net_616#7 20.773
+R1524 net_616#7 net_616#9 4.373
+R1525 net_621#1 net_621#3 3.36
+R1526 net_623#1 net_623#3 21.227
+R1527 net_625#1 net_625#5 2.56
+R1528 net_625#5 net_625#7 1.493
+R1529 net_625#7 net_625#9 2.56
+R1530 net_630#1 net_630#3 12.96
+R1531 net_632#1 net_632#3 20.173
+R1532 net_634#1 net_634#3 26.987
+R1533 net_634#3 net_634#5 3.68
+R1534 net_634#5 net_634#7 1.813
+R1535 net_638#1 net_638#3 7.813
+R1536 net_640#1 net_640#3 1.893
+R1537 net_644#1 net_644#3 0.64
+R1538 net_646#1 net_646#5 14
+R1539 net_480#4 net_480#6 2.133
+R1540 sum30#1 sum30 17.187
+R1541 net_652#1 net_652#3 1.067
+R1542 net_654#1 net_654#3 0.64
+R1543 net_656#1 net_656#3 0.64
+R1544 net_658#1 net_658#3 5.493
+R1545 net_660#1 net_660#3 48.973
+R1546 sum23#1 sum23 15.267
+R1547 net_663#1 net_663#3 1.707
+R1548 net_665#1 net_665#3 0.64
+R1549 net_667#1 net_667#3 0.64
+R1550 net_669#1 net_669#3 18.187
+R1551 net_669#3 net_669#5 14.053
+R1552 net_672#1 net_672#5 5.573
+R1553 net_672#5 net_672#7 1.84
+R1554 net_329#7 net_329#9 2.133
+R1555 net_678#1 net_678#3 3.173
+R1556 net_680#1 net_680#3 32.72
+R1557 net_682#1 net_682#3 16.933
+R1558 net_682#3 net_682#5 2.56
+R1559 net_685#1 net_685#3 2.32
+R1560 net_687#1 net_687#3 2.347
+R1561 net_687#3 net_687#5 2.053
+R1562 net_687#5 net_687#7 6.187
+R1563 net_687#7 net_687#9 43.653
+R1564 net_692#1 net_692#3 1.893
+R1565 net_694#1 net_694#3 1.707
+R1566 net_698#1 net_698#3 2.56
+R1567 net_698#3 net_698#5 1.28
+R1568 net_698#5 net_698#7 1.28
+R1569 net_698#7 net_698#9 13.733
+R1570 net_698#9 net_698#11 2.56
+R1571 net_698#11 net_698#13 11.04
+R1572 net_705#1 net_705#3 70.947
+R1573 net_707#1 net_707#3 2.347
+R1574 net_707#3 net_707#5 7.68
+R1575 net_707#5 net_707#7 16.32
+R1576 net_707#7 net_707#9 2.453
+R1577 net_712#1 net_712#3 28.36
+R1578 net_714#1 net_714#3 34.8
+R1579 net_714#3 net_714#5 2.56
+R1580 net_538#4 net_538#6 2.133
+R1581 net_719#1 net_719#3 15.253
+R1582 net_719#3 net_719#5 0.747
+R1583 net_719#5 net_719#7 4.373
+R1584 net_723#1 net_723#3 22.4
+R1585 net_723#3 net_723#5 0.747
+R1586 net_723#5 net_723#7 4.373
+R1587 net_727#1 net_727#3 1.92
+R1588 net_729#1 net_729#3 10.427
+R1589 net_729#3 net_729#5 9.387
+R1590 net_732#1 net_732#3 12.027
+R1591 net_734#1 net_734#3 15.6
+R1592 net_736#1 net_736#3 47.2
+R1593 net_738#1 net_738#3 3.84
+R1594 net_738#3 net_738#5 1.067
+R1595 net_738#5 net_738#7 1.467
+R1596 net_738#7 net_738#9 1.893
+R1597 net_738#9 net_738#11 3.2
+R1598 net_738#11 net_738#13 1.28
+R1599 net_738#13 net_738#15 11.52
+R1600 net_738#15 net_738#17 2.533
+R1601 net_738#17 net_738#19 15.68
+R1602 net_748#1 net_748#3 1.173
+R1603 net_750#1 net_750#3 1.28
+R1604 net_750#3 net_750#5 1.28
+R1605 net_750#5 net_750#7 1.067
+R1606 net_750#7 net_750#9 3.333
+R1607 net_750#9 net_750#11 0.64
+R1608 net_756#1 net_756#3 1.28
+R1609 net_756#3 net_756#5 3.2
+R1610 net_756#5 net_756#9 3.84
+R1611 net_761#1 net_761#3 49.733
+R1612 net_763#1 net_763#3 10.347
+R1613 net_765#1 net_765#3 4.773
+R1614 net_767#1 net_767#3 7.973
+R1615 net_769#1 net_769#3 17.92
+R1616 net_771#1 net_771#3 52.6
+R1617 net_773#1 net_773#3 37.36
+R1618 net_773#3 net_773#5 3.813
+R1619 net_778#1 net_778#3 54.72
+R1620 a26#1 a26 0.867
+R1621 net_781#1 net_781#3 8.107
+R1622 net_783#1 net_783#3 1.707
+R1623 net_785#1 net_785#3 0.64
+R1624 net_787#1 net_787#3 1.067
+R1625 net_538#7 net_538#9 54.947
+R1626 b26#1 b26 5.773
+R1627 net_792#1 net_792#3 1.067
+R1628 net_792#3 net_792#5 1.28
+R1629 net_792#5 net_792#7 0.64
+R1630 net_796#1 net_796#3 0.64
+R1631 net_798#1 net_798#3 61.053
+R1632 sum26#1 sum26 17.64
+R1633 net_480#7 net_480#9 54.12
+R1634 b18#1 b18 31.64
+R1635 net_806#1 net_806#3 13.6
+R1636 net_808#1 net_808#3 0.64
+R1637 cout cout#1 26.12
+R1638 a18#1 a18 26.733
+R1639 net_814#1 net_814#3 1.707
+R1640 net_814#3 net_814#5 0.96
+R1641 net_817#1 net_817#3 1.893
+R1642 net_819#1 net_819#3 0.64
+R1643 net_821#1 net_821#3 0.64
+R1644 net_823#1 net_823#3 1.067
+R1645 sum19 sum19#1 37.8
+R1646 sum22#1 sum22 23.773
+R1647 net_827#1 net_827#3 2.32
+R1648 net_829#1 net_829#3 1.493
+R1649 net_829#3 net_829#5 0.64
+R1650 net_832#1 net_832#3 1.467
+R1651 net_832#3 net_832#5 9.333
+R1652 net_835#1 net_835#3 33.107
+R1653 net_837#1 net_837#3 1.387
+R1654 net_837#3 net_837#5 2.027
+R1655 net_840#1 net_840#3 1.707
+R1656 net_842#1 net_842#3 1.893
+R1657 net_844#1 net_844#3 48.653
+R1658 net_846#1 net_846#3 1.493
+R1659 net_849#1 net_849#3 19.787
+R1660 net_851#1 net_851#3 1.92
+R1661 net_851#3 net_851#5 2
+R1662 net_851#5 net_851#7 8.347
+R1663 net_851#7 net_851#9 7.467
+R1664 net_856#1 net_856#5 1.067
+R1665 net_859#1 net_859#3 18.693
+R1666 net_861#1 net_861#3 11.013
+R1667 net_863#1 net_863#3 3.4
+R1668 net_729#7 net_729#9 10
+R1669 net_729#9 net_729#11 1.28
+R1670 net_729#11 net_729#13 12.96
+R1671 net_729#13 net_729#15 1.28
+R1672 net_729#15 net_729#17 7.653
+R1673 net_729#17 net_729#19 4.667
+R1674 net_729#19 net_729#22 3.147
+R1675 net_729#22 net_729#24 1.28
+R1676 net_729#24 net_729#26 4.907
+R1677 net_729#26 net_729#30 0.88
+R1678 net_880#1 net_880#3 0.64
+R1679 sum20 sum20#1 9.347
+R1680 net_883#1 net_883#3 52.04
+R1681 net_885#1 net_885#3 1.067
+R1682 net_885#3 net_885#5 19.413
+R1683 net_885#5 net_885#7 6.027
+R1684 net_885#7 net_885#9 4.667
+R1685 net_890#1 net_890#3 4.853
+R1686 net_892#1 net_892#3 32.467
+R1687 net_894#1 net_894#3 2.133
+R1688 net_894#3 net_894#5 27.147
+R1689 net_897#1 net_897#3 1.067
+R1690 net_897#3 net_897#5 0.64
+R1691 net_897#5 net_897#7 1.92
+R1692 net_901#1 net_901#3 8.053
+R1693 net_901#3 net_901#5 2.133
+R1694 net_904#1 net_904#3 2.32
+R1695 net_906#1 net_906#3 28.453
+R1696 net_908#1 net_908#3 1.28
+R1697 net_908#3 net_908#5 1.493
+R1698 net_908#5 net_908#7 3.627
+R1699 net_908#7 net_908#9 2.56
+R1700 net_908#9 net_908#11 8.08
+R1701 net_914#1 net_914#3 1.707
+R1702 net_916#1 net_916#3 47.28
+R1703 net_918#1 net_918#3 3.413
+R1704 net_918#3 net_918#5 8.72
+R1705 net_918#5 net_918#7 1.28
+R1706 net_918#7 net_918#9 7.627
+R1707 net_918#9 net_918#11 7.68
+R1708 net_918#11 net_918#13 1.28
+R1709 net_918#13 net_918#15 1.28
+R1710 net_918#15 net_918#17 1.28
+R1711 net_918#17 net_918#19 1.28
+R1712 net_705#4 net_705#6 57.08
+R1713 net_660#4 net_660#6 70.013
+R1714 net_932#1 net_932#3 26.933
+R1715 net_632#4 net_632#6 26.733
+R1716 net_329#10 net_329#12 54.733
+R1717 net_712#4 net_712#6 43.533
+R1718 net_771#4 net_771#6 69.8
+R1719 net_942#1 net_942#3 44.187
+R1720 net_944#1 net_944#3 54.373
+R1721 net_946#1 net_946#3 13.413
+R1722 net_948#1 net_948#3 27.627
+R1723 net_950#1 net_950#3 20.88
+R1724 net_952#1 net_952#3 12.533
+R1725 net_954#1 net_954#3 1.067
+R1726 net_956#1 net_956#3 0.64
+R1727 net_958#1 net_958#3 2.027
+R1728 net_958#3 net_958#5 1.387
+R1729 net_961#1 net_961#3 1.067
+R1730 net_963#1 net_963#3 0.64
+R1731 net_965#1 net_965#3 22.72
+R1732 net_967#1 net_967#3 5.707
+R1733 net_969#1 net_969#3 11.04
+R1734 net_971#1 net_971#3 10.613
+R1735 net_971#3 net_971#5 1.467
+R1736 net_974#1 net_974#3 15.733
+R1737 net_974#3 net_974#5 1.067
+R1738 net_977#1 net_977#3 1.493
+R1739 net_977#3 net_977#5 3.2
+R1740 net_980#1 net_980#3 1.467
+R1741 net_980#3 net_980#5 10.187
+R1742 net_983#1 net_983#3 0.64
+R1743 net_983#3 net_983#5 1.067
+R1744 net_983#5 net_983#7 1.467
+R1745 net_987#1 net_987#3 7.84
+R1746 net_989#1 net_989#3 4.853
+R1747 net_991#1 net_991#3 2.107
+R1748 net_883#4 net_883#6 2.573
+R1749 net_995#1 net_995#3 31.653
+R1750 net_997#1 net_997#3 2.4
+R1751 net_997#3 net_997#5 3.573
+R1752 net_1000#1 net_1000#3 1.067
+R1753 net_1002#1 net_1002#3 0.64
+R1754 net_1004#1 net_1004#3 0.64
+R1755 net_1006#1 net_1006#3 2.987
+R1756 net_1006#3 net_1006#5 0.613
+R1757 net_1009#1 net_1009#3 11.253
+R1758 net_1011#1 net_1011#3 24.667
+R1759 net_1013#1 net_1013#3 5.733
+R1760 net_1015#1 net_1015#3 1.493
+R1761 net_1015#3 net_1015#5 2.987
+R1762 net_1018#1 net_1018#3 1.707
+R1763 net_1018#3 net_1018#5 0.933
+R1764 net_1021#1 net_1021#3 8.267
+R1765 net_1021#3 net_1021#5 1.493
+R1766 net_1024#1 net_1024#3 1.493
+R1767 net_1024#3 net_1024#5 2.987
+R1768 net_1027#1 net_1027#3 2.027
+R1769 net_1027#3 net_1027#5 1.387
+R1770 net_1030#1 net_1030#3 1.493
+R1771 net_1030#3 net_1030#5 2.987
+R1772 net_1033#1 net_1033#3 0.96
+R1773 net_1033#3 net_1033#5 1.707
+R1774 net_798#4 net_798#6 21
+R1775 net_798#6 net_798#8 7.6
+R1776 net_798#8 net_798#10 4.427
+R1777 net_1040#1 net_1040#3 7.413
+R1778 net_1042#1 net_1042#3 0.96
+R1779 net_1042#3 net_1042#5 1.707
+R1780 net_1045#1 net_1045#3 1.28
+R1781 net_1045#3 net_1045#5 3.067
+R1782 net_1045#5 net_1045#7 7.92
+R1783 net_1049#1 net_1049#3 2.08
+R1784 net_1051#1 net_1051#3 0.64
+R1785 net_1053#1 net_1053#3 3.067
+R1786 net_1053#3 net_1053#5 1.92
+R1787 net_1053#5 net_1053#7 8.48
+R1788 net_844#4 net_844#6 4.467
+R1789 net_1059#1 net_1059#3 33.973
+R1790 net_1059#3 net_1059#5 2.133
+R1791 net_1059#5 net_1059#7 3.493
+R1792 net_1063#1 net_1063#5 1.707
+R1793 net_1063#5 net_1063#9 2.133
+R1794 net_1068#1 net_1068#3 0.96
+R1795 net_1068#3 net_1068#5 1.707
+R1796 net_1071#1 net_1071#3 8.427
+R1797 net_863#4 net_863#6 4.253
+R1798 net_1075#1 net_1075#3 1.893
+R1799 net_1075#3 net_1075#5 0.64
+R1800 net_1075#5 net_1075#7 1.067
+R1801 net_1079#1 net_1079#3 2.773
+R1802 net_1079#3 net_1079#5 4.853
+R1803 net_1079#5 net_1079#7 11.013
+R1804 net_1079#7 net_1079#9 13.973
+R1805 net_729#32 net_729#34 1.28
+R1806 net_729#34 net_729#35 11.413
+R1807 net_729#35 net_729#37 1.28
+R1808 net_1088#1 net_1088#3 3.627
+R1809 net_1088#3 net_1088#5 14
+R1810 net_1088#5 net_1088#7 10.4
+R1811 net_1088#7 net_1088#9 3.493
+R1812 net_1093#1 net_1093#3 19.92
+R1813 net_1095#1 net_1095#3 9.6
+R1814 net_1097#1 net_1097#3 1.493
+R1815 net_1097#3 net_1097#5 8.107
+R1816 net_1100#1 net_1100#3 1.893
+R1817 net_1102#1 net_1102#3 2.133
+R1818 net_1102#3 net_1102#5 1.68
+R1819 net_835#4 net_835#6 18.707
+R1820 net_1107#1 net_1107#3 0.96
+R1821 net_1107#3 net_1107#5 1.707
+R1822 net_1110#1 net_1110#3 3.813
+R1823 net_892#4 net_892#6 31.133
+R1824 net_1114#1 net_1114#5 22.507
+R1825 net_1117#1 net_1117#3 1.467
+R1826 net_1117#3 net_1117#5 5.093
+R1827 net_1117#5 net_1117#7 0.64
+R1828 net_1117#7 net_1117#9 7.253
+R1829 net_1117#9 net_1117#11 1.44
+R1830 net_1123#1 net_1123#3 18.88
+R1831 net_1123#3 net_1123#5 7.947
+R1832 net_1123#5 net_1123#7 2.24
+R1833 net_1127#1 net_1127#3 7.44
+R1834 net_1129#1 net_1129#3 44.213
+R1835 net_1131#1 net_1131#3 31.44
