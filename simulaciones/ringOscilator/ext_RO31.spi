@@ -1,0 +1,117 @@
+*** SPICE deck for cell RO31{lay} from library ProyectoIntegrador
+*** Created on mié sep 24, 2014 20:11:03
+*** Last revised on lun oct 27, 2014 20:11:03
+*** Written on lun oct 27, 2014 20:15:48 by Electric VLSI Design System, 
+*** version 9.05
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 0.5, MIN_CAPAC 0.5FF
+***    P-Active:	areacap=1.167FF/um^2,	edgecap=0.203FF/um,	res=7.5ohms/sq
+***    N-Active:	areacap=0.982FF/um^2,	edgecap=0.244FF/um,	res=6.7ohms/sq
+***    
+*** Polysilicon-1:	areacap=0.1467FF/um^2,	edgecap=0.0608FF/um,	res=7.8ohms/sq
+***    Transistor-Poly:	areacap=0.09FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Poly-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=10.5ohms/sq
+***    Active-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=12.2ohms/sq
+***    Metal-1:	areacap=0.1209FF/um^2,	edgecap=0.1104FF/um,	res=0.08ohms/sq
+***    Via1:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=5.69ohms/sq
+***    Metal-2:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via2:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=11.39ohms/sq
+***    Metal-3:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via3:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=16.73ohms/sq
+***    Metal-4:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via4:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=21.44ohms/sq
+***    Metal-5:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.07ohms/sq
+***    Via5:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=24.08ohms/sq
+***    Metal-6:	areacap=0.0423FF/um^2,	edgecap=0.1273FF/um,	res=0.03ohms/sq
+***    Hi-Res:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+* Model cards are described in this file:
+.include /home/lean/tfinal/trabajo/models/tsmc180nm.model
+
+*** SUBCIRCUIT ProyectoIntegrador__inv_1x FROM CELL inv_1x{lay}
+.SUBCKT ProyectoIntegrador__inv_1x vss a vdd y
+Mnmos_0 y#0 a#1 0 0 N L=0.2U W=0.4U AS=0.68P AD=0.3P PS=6.6U PD=2.2U
+Mpmos_0 y#2 a#5 vdd vdd P L=0.2U W=0.8U AS=0.88P AD=0.3P PS=7.4U PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 y#0 0 0.546fF
+C1 y#2 0 0.726fF
+C2 y 0 1.272fF
+C3 a#3 0 0.66fF
+** Extracted Parasitic Resistors ***
+R0 a#1 a#2 15.6
+R1 a#3 a#2 181.35
+R2 a#4 a#3 157.95
+R3 a a#3 1.95
+R4 y#2 y 1.507
+R5 y y#0 1.133
+R6 a#5 a#4 15.6
+.ENDS ProyectoIntegrador__inv_1x
+
+*** TOP LEVEL CELL: RO31{lay}
+Xinv_1x_1 0 net_2 vdd net_12#1 ProyectoIntegrador__inv_1x
+Xinv_1x_2 0 out#0 vdd net_0#1 ProyectoIntegrador__inv_1x
+Xinv_1x_3 0 net_0 vdd net_54#1 ProyectoIntegrador__inv_1x
+Xinv_1x_4 0 net_54 vdd net_4#1 ProyectoIntegrador__inv_1x
+Xinv_1x_5 0 net_4 vdd net_6#1 ProyectoIntegrador__inv_1x
+Xinv_1x_6 0 net_6 vdd net_8#1 ProyectoIntegrador__inv_1x
+Xinv_1x_7 0 net_8 vdd net_10#1 ProyectoIntegrador__inv_1x
+Xinv_1x_8 0 net_10 vdd net_2#1 ProyectoIntegrador__inv_1x
+Xinv_1x_9 0 net_12 vdd net_14#1 ProyectoIntegrador__inv_1x
+Xinv_1x_10 0 net_14 vdd net_16#1 ProyectoIntegrador__inv_1x
+Xinv_1x_11 0 net_16 vdd net_18#1 ProyectoIntegrador__inv_1x
+Xinv_1x_12 0 net_18 vdd net_20#1 ProyectoIntegrador__inv_1x
+Xinv_1x_13 0 net_20 vdd net_22#1 ProyectoIntegrador__inv_1x
+Xinv_1x_14 0 net_22 vdd net_24#1 ProyectoIntegrador__inv_1x
+Xinv_1x_15 0 net_24 vdd net_56#1 ProyectoIntegrador__inv_1x
+Xinv_1x_16 0 net_116 vdd net_26#1 ProyectoIntegrador__inv_1x
+Xinv_1x_17 0 net_26 vdd net_28#1 ProyectoIntegrador__inv_1x
+Xinv_1x_18 0 net_28 vdd net_30#1 ProyectoIntegrador__inv_1x
+Xinv_1x_19 0 net_30 vdd net_32#1 ProyectoIntegrador__inv_1x
+Xinv_1x_20 0 net_32 vdd net_34#1 ProyectoIntegrador__inv_1x
+Xinv_1x_21 0 net_34 vdd net_36#1 ProyectoIntegrador__inv_1x
+Xinv_1x_22 0 net_36 vdd net_38#1 ProyectoIntegrador__inv_1x
+Xinv_1x_23 0 net_38 vdd net_40#1 ProyectoIntegrador__inv_1x
+Xinv_1x_24 0 net_40 vdd net_42#1 ProyectoIntegrador__inv_1x
+Xinv_1x_25 0 net_42 vdd net_44#1 ProyectoIntegrador__inv_1x
+Xinv_1x_26 0 net_44 vdd net_46#1 ProyectoIntegrador__inv_1x
+Xinv_1x_27 0 net_46 vdd net_48#1 ProyectoIntegrador__inv_1x
+Xinv_1x_28 0 net_48 vdd net_50#1 ProyectoIntegrador__inv_1x
+Xinv_1x_29 0 net_50 vdd net_52#1 ProyectoIntegrador__inv_1x
+Xinv_1x_30 0 net_52 vdd out ProyectoIntegrador__inv_1x
+Xinv_1x_31 0 net_56 vdd net_116#1 ProyectoIntegrador__inv_1x
+** Extracted Parasitic Capacitors ***
+C0 out#0 0 1.343fF
+C1 net_116 0 1.816fF
+C2 out 0 1.629fF
+C3 net_116#1 0 1.486fF
+** Extracted Parasitic Resistors ***
+R0 net_0 net_0#1 0.507
+R1 net_2 net_2#1 0.507
+R2 net_4 net_4#1 0.507
+R3 net_6 net_6#1 0.507
+R4 net_8 net_8#1 0.507
+R5 net_10 net_10#1 0.507
+R6 net_12 net_12#1 0.507
+R7 net_14 net_14#1 0.507
+R8 net_16 net_16#1 0.507
+R9 net_18 net_18#1 0.507
+R10 net_20 net_20#1 0.507
+R11 net_22 net_22#1 0.507
+R12 net_24 net_24#1 0.507
+R13 net_26 net_26#1 0.507
+R14 net_28 net_28#1 0.507
+R15 net_30 net_30#1 0.507
+R16 net_32 net_32#1 0.507
+R17 net_34 net_34#1 0.507
+R18 net_36 net_36#1 0.507
+R19 net_38 net_38#1 0.507
+R20 net_40 net_40#1 0.507
+R21 net_42 net_42#1 0.507
+R22 net_44 net_44#1 0.507
+R23 net_46 net_46#1 0.507
+R24 net_48 net_48#1 0.507
+R25 net_50 net_50#1 0.507
+R26 net_52 net_52#1 0.507
+R27 net_54 net_54#1 0.507
+R28 net_56 net_56#1 0.507
+R29 net_116 net_116#1 3.6
+R30 out#0 out 3.2

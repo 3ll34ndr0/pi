@@ -1,0 +1,3096 @@
+*** SPICE deck for cell rippleCarry16;1{lay} from library ProyectoIntegrador
+*** Created on mar sep 02, 2014 20:07:41
+*** Last revised on jue oct 02, 2014 20:52:15
+*** Written on dom oct 05, 2014 21:33:39 by Electric VLSI Design System, 
+*** version 9.05
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 0.01, MIN_CAPAC 0.01FF
+***    P-Active:	areacap=1.167FF/um^2,	edgecap=0.203FF/um,	res=7.5ohms/sq
+***    N-Active:	areacap=0.982FF/um^2,	edgecap=0.244FF/um,	res=6.7ohms/sq
+***    
+*** Polysilicon-1:	areacap=0.1467FF/um^2,	edgecap=0.0608FF/um,	res=7.8ohms/sq
+***    Transistor-Poly:	areacap=0.09FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Poly-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=10.5ohms/sq
+***    Active-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=12.2ohms/sq
+***    Metal-1:	areacap=0.1209FF/um^2,	edgecap=0.1104FF/um,	res=0.08ohms/sq
+***    Via1:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=5.69ohms/sq
+***    Metal-2:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via2:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=11.39ohms/sq
+***    Metal-3:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via3:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=16.73ohms/sq
+***    Metal-4:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via4:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=21.44ohms/sq
+***    Metal-5:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.07ohms/sq
+***    Via5:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=24.08ohms/sq
+***    Metal-6:	areacap=0.0423FF/um^2,	edgecap=0.1273FF/um,	res=0.03ohms/sq
+***    Hi-Res:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+* Model cards are described in this file:
+.include /home/lean/tfinal/trabajo/models/tsmc180nm.model
+
+*** SUBCIRCUIT ProyectoIntegrador__id FROM CELL id{lay}
+.SUBCKT ProyectoIntegrador__id vss a vdd y
+Mnmos_0 net_10 a#1nmos@0_poly-right 0 0 N L=0.2U W=0.4U AS=0.6P AD=0.3P 
++PS=5.8U PD=2.2U
+Mnmos_1 y#0contact@11_metal-1-n-act net_10#6nmos@1_poly-right 0 0 N L=0.2U 
++W=0.4U AS=0.6P AD=0.3P PS=5.8U PD=2.2U
+Mpmos_0 net_10#2contact@4_metal-1-p-act a#5pmos@0_poly-left vdd vdd P L=0.2U 
++W=0.8U AS=0.8P AD=0.3P PS=6.6U PD=2.2U
+Mpmos_1 y#2contact@12_metal-1-p-act net_10#10pmos@1_poly-left vdd vdd P 
++L=0.2U W=0.8U AS=0.8P AD=0.3P PS=6.6U PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 net_10 0 0.649fF
+C1 net_10#2contact@4_metal-1-p-act 0 0.623fF
+C2 a#0contact@5_metal-1-polysilicon-1 0 0.01fF
+C3 y#0contact@11_metal-1-n-act 0 0.546fF
+C4 y#2contact@12_metal-1-p-act 0 0.726fF
+C5 net_10#5contact@13_metal-1-polysilicon-1 0 0.01fF
+C6 y 0 1.272fF
+C7 net_10#4contact@15_metal-1-metal-2 0 0.109fF
+C8 a#1nmos@0_poly-right 0 0.02fF
+C9 net_10#6nmos@1_poly-right 0 0.02fF
+C10 a#2pin@29_polysilicon-1 0 0.055fF
+C11 a#4pin@31_polysilicon-1 0 0.056fF
+C12 a#3pin@32_polysilicon-1 0 0.075fF
+C13 net_10#7pin@36_polysilicon-1 0 0.055fF
+C14 net_10#9pin@37_polysilicon-1 0 0.056fF
+C15 net_10#8pin@38_polysilicon-1 0 0.075fF
+C16 net_10#11pin@39_metal-1 0 1.375fF
+C17 a#5pmos@0_poly-left 0 0.02fF
+C18 net_10#10pmos@1_poly-left 0 0.02fF
+** Extracted Parasitic Resistors ***
+R0 a a#0contact@5_metal-1-polysilicon-1 0.013
+R1 a#1nmos@0_poly-right a#1nmos@0_poly-right##0 7.8
+C19 a#1nmos@0_poly-right##0 0 0.02fF
+R2 a#1nmos@0_poly-right##0 a#2pin@29_polysilicon-1 7.8
+R3 a#3pin@32_polysilicon-1 a#3pin@32_polysilicon-1##0 9.545
+C20 a#3pin@32_polysilicon-1##0 0 0.035fF
+R4 a#3pin@32_polysilicon-1##0 a#3pin@32_polysilicon-1##1 9.545
+C21 a#3pin@32_polysilicon-1##1 0 0.035fF
+R5 a#3pin@32_polysilicon-1##1 a#3pin@32_polysilicon-1##2 9.545
+C22 a#3pin@32_polysilicon-1##2 0 0.035fF
+R6 a#3pin@32_polysilicon-1##2 a#3pin@32_polysilicon-1##3 9.545
+C23 a#3pin@32_polysilicon-1##3 0 0.035fF
+R7 a#3pin@32_polysilicon-1##3 a#3pin@32_polysilicon-1##4 9.545
+C24 a#3pin@32_polysilicon-1##4 0 0.035fF
+R8 a#3pin@32_polysilicon-1##4 a#3pin@32_polysilicon-1##5 9.545
+C25 a#3pin@32_polysilicon-1##5 0 0.035fF
+R9 a#3pin@32_polysilicon-1##5 a#3pin@32_polysilicon-1##6 9.545
+C26 a#3pin@32_polysilicon-1##6 0 0.035fF
+R10 a#3pin@32_polysilicon-1##6 a#3pin@32_polysilicon-1##7 9.545
+C27 a#3pin@32_polysilicon-1##7 0 0.035fF
+R11 a#3pin@32_polysilicon-1##7 a#3pin@32_polysilicon-1##8 9.545
+C28 a#3pin@32_polysilicon-1##8 0 0.035fF
+R12 a#3pin@32_polysilicon-1##8 a#3pin@32_polysilicon-1##9 9.545
+C29 a#3pin@32_polysilicon-1##9 0 0.035fF
+R13 a#3pin@32_polysilicon-1##9 a#3pin@32_polysilicon-1##10 9.545
+C30 a#3pin@32_polysilicon-1##10 0 0.035fF
+R14 a#3pin@32_polysilicon-1##10 a#3pin@32_polysilicon-1##11 9.545
+C31 a#3pin@32_polysilicon-1##11 0 0.035fF
+R15 a#3pin@32_polysilicon-1##11 a#3pin@32_polysilicon-1##12 9.545
+C32 a#3pin@32_polysilicon-1##12 0 0.035fF
+R16 a#3pin@32_polysilicon-1##12 a#3pin@32_polysilicon-1##13 9.545
+C33 a#3pin@32_polysilicon-1##13 0 0.035fF
+R17 a#3pin@32_polysilicon-1##13 a#3pin@32_polysilicon-1##14 9.545
+C34 a#3pin@32_polysilicon-1##14 0 0.035fF
+R18 a#3pin@32_polysilicon-1##14 a#3pin@32_polysilicon-1##15 9.545
+C35 a#3pin@32_polysilicon-1##15 0 0.035fF
+R19 a#3pin@32_polysilicon-1##15 a#3pin@32_polysilicon-1##16 9.545
+C36 a#3pin@32_polysilicon-1##16 0 0.035fF
+R20 a#3pin@32_polysilicon-1##16 a#3pin@32_polysilicon-1##17 9.545
+C37 a#3pin@32_polysilicon-1##17 0 0.035fF
+R21 a#3pin@32_polysilicon-1##17 a#2pin@29_polysilicon-1 9.545
+R22 a#4pin@31_polysilicon-1 a#4pin@31_polysilicon-1##0 9.872
+C38 a#4pin@31_polysilicon-1##0 0 0.036fF
+R23 a#4pin@31_polysilicon-1##0 a#4pin@31_polysilicon-1##1 9.872
+C39 a#4pin@31_polysilicon-1##1 0 0.036fF
+R24 a#4pin@31_polysilicon-1##1 a#4pin@31_polysilicon-1##2 9.872
+C40 a#4pin@31_polysilicon-1##2 0 0.036fF
+R25 a#4pin@31_polysilicon-1##2 a#4pin@31_polysilicon-1##3 9.872
+C41 a#4pin@31_polysilicon-1##3 0 0.036fF
+R26 a#4pin@31_polysilicon-1##3 a#4pin@31_polysilicon-1##4 9.872
+C42 a#4pin@31_polysilicon-1##4 0 0.036fF
+R27 a#4pin@31_polysilicon-1##4 a#4pin@31_polysilicon-1##5 9.872
+C43 a#4pin@31_polysilicon-1##5 0 0.036fF
+R28 a#4pin@31_polysilicon-1##5 a#4pin@31_polysilicon-1##6 9.872
+C44 a#4pin@31_polysilicon-1##6 0 0.036fF
+R29 a#4pin@31_polysilicon-1##6 a#4pin@31_polysilicon-1##7 9.872
+C45 a#4pin@31_polysilicon-1##7 0 0.036fF
+R30 a#4pin@31_polysilicon-1##7 a#4pin@31_polysilicon-1##8 9.872
+C46 a#4pin@31_polysilicon-1##8 0 0.036fF
+R31 a#4pin@31_polysilicon-1##8 a#4pin@31_polysilicon-1##9 9.872
+C47 a#4pin@31_polysilicon-1##9 0 0.036fF
+R32 a#4pin@31_polysilicon-1##9 a#4pin@31_polysilicon-1##10 9.872
+C48 a#4pin@31_polysilicon-1##10 0 0.036fF
+R33 a#4pin@31_polysilicon-1##10 a#4pin@31_polysilicon-1##11 9.872
+C49 a#4pin@31_polysilicon-1##11 0 0.036fF
+R34 a#4pin@31_polysilicon-1##11 a#4pin@31_polysilicon-1##12 9.872
+C50 a#4pin@31_polysilicon-1##12 0 0.036fF
+R35 a#4pin@31_polysilicon-1##12 a#4pin@31_polysilicon-1##13 9.872
+C51 a#4pin@31_polysilicon-1##13 0 0.036fF
+R36 a#4pin@31_polysilicon-1##13 a#4pin@31_polysilicon-1##14 9.872
+C52 a#4pin@31_polysilicon-1##14 0 0.036fF
+R37 a#4pin@31_polysilicon-1##14 a#3pin@32_polysilicon-1 9.872
+R38 a#0contact@5_metal-1-polysilicon-1 a#3pin@32_polysilicon-1 1.95
+R39 a#5pmos@0_poly-left a#5pmos@0_poly-left##0 7.8
+C53 a#5pmos@0_poly-left##0 0 0.02fF
+R40 a#5pmos@0_poly-left##0 a#4pin@31_polysilicon-1 7.8
+R41 net_10#4contact@15_metal-1-metal-2 
++net_10#5contact@13_metal-1-polysilicon-1 0.013
+R42 net_10#6nmos@1_poly-right net_10#6nmos@1_poly-right##0 7.8
+C54 net_10#6nmos@1_poly-right##0 0 0.02fF
+R43 net_10#6nmos@1_poly-right##0 net_10#7pin@36_polysilicon-1 7.8
+R44 net_10#8pin@38_polysilicon-1 net_10#8pin@38_polysilicon-1##0 9.545
+C55 net_10#8pin@38_polysilicon-1##0 0 0.035fF
+R45 net_10#8pin@38_polysilicon-1##0 net_10#8pin@38_polysilicon-1##1 9.545
+C56 net_10#8pin@38_polysilicon-1##1 0 0.035fF
+R46 net_10#8pin@38_polysilicon-1##1 net_10#8pin@38_polysilicon-1##2 9.545
+C57 net_10#8pin@38_polysilicon-1##2 0 0.035fF
+R47 net_10#8pin@38_polysilicon-1##2 net_10#8pin@38_polysilicon-1##3 9.545
+C58 net_10#8pin@38_polysilicon-1##3 0 0.035fF
+R48 net_10#8pin@38_polysilicon-1##3 net_10#8pin@38_polysilicon-1##4 9.545
+C59 net_10#8pin@38_polysilicon-1##4 0 0.035fF
+R49 net_10#8pin@38_polysilicon-1##4 net_10#8pin@38_polysilicon-1##5 9.545
+C60 net_10#8pin@38_polysilicon-1##5 0 0.035fF
+R50 net_10#8pin@38_polysilicon-1##5 net_10#8pin@38_polysilicon-1##6 9.545
+C61 net_10#8pin@38_polysilicon-1##6 0 0.035fF
+R51 net_10#8pin@38_polysilicon-1##6 net_10#8pin@38_polysilicon-1##7 9.545
+C62 net_10#8pin@38_polysilicon-1##7 0 0.035fF
+R52 net_10#8pin@38_polysilicon-1##7 net_10#8pin@38_polysilicon-1##8 9.545
+C63 net_10#8pin@38_polysilicon-1##8 0 0.035fF
+R53 net_10#8pin@38_polysilicon-1##8 net_10#8pin@38_polysilicon-1##9 9.545
+C64 net_10#8pin@38_polysilicon-1##9 0 0.035fF
+R54 net_10#8pin@38_polysilicon-1##9 net_10#8pin@38_polysilicon-1##10 9.545
+C65 net_10#8pin@38_polysilicon-1##10 0 0.035fF
+R55 net_10#8pin@38_polysilicon-1##10 net_10#8pin@38_polysilicon-1##11 9.545
+C66 net_10#8pin@38_polysilicon-1##11 0 0.035fF
+R56 net_10#8pin@38_polysilicon-1##11 net_10#8pin@38_polysilicon-1##12 9.545
+C67 net_10#8pin@38_polysilicon-1##12 0 0.035fF
+R57 net_10#8pin@38_polysilicon-1##12 net_10#8pin@38_polysilicon-1##13 9.545
+C68 net_10#8pin@38_polysilicon-1##13 0 0.035fF
+R58 net_10#8pin@38_polysilicon-1##13 net_10#8pin@38_polysilicon-1##14 9.545
+C69 net_10#8pin@38_polysilicon-1##14 0 0.035fF
+R59 net_10#8pin@38_polysilicon-1##14 net_10#8pin@38_polysilicon-1##15 9.545
+C70 net_10#8pin@38_polysilicon-1##15 0 0.035fF
+R60 net_10#8pin@38_polysilicon-1##15 net_10#8pin@38_polysilicon-1##16 9.545
+C71 net_10#8pin@38_polysilicon-1##16 0 0.035fF
+R61 net_10#8pin@38_polysilicon-1##16 net_10#8pin@38_polysilicon-1##17 9.545
+C72 net_10#8pin@38_polysilicon-1##17 0 0.035fF
+R62 net_10#8pin@38_polysilicon-1##17 net_10#7pin@36_polysilicon-1 9.545
+R63 net_10#9pin@37_polysilicon-1 net_10#9pin@37_polysilicon-1##0 9.872
+C73 net_10#9pin@37_polysilicon-1##0 0 0.036fF
+R64 net_10#9pin@37_polysilicon-1##0 net_10#9pin@37_polysilicon-1##1 9.872
+C74 net_10#9pin@37_polysilicon-1##1 0 0.036fF
+R65 net_10#9pin@37_polysilicon-1##1 net_10#9pin@37_polysilicon-1##2 9.872
+C75 net_10#9pin@37_polysilicon-1##2 0 0.036fF
+R66 net_10#9pin@37_polysilicon-1##2 net_10#9pin@37_polysilicon-1##3 9.872
+C76 net_10#9pin@37_polysilicon-1##3 0 0.036fF
+R67 net_10#9pin@37_polysilicon-1##3 net_10#9pin@37_polysilicon-1##4 9.872
+C77 net_10#9pin@37_polysilicon-1##4 0 0.036fF
+R68 net_10#9pin@37_polysilicon-1##4 net_10#9pin@37_polysilicon-1##5 9.872
+C78 net_10#9pin@37_polysilicon-1##5 0 0.036fF
+R69 net_10#9pin@37_polysilicon-1##5 net_10#9pin@37_polysilicon-1##6 9.872
+C79 net_10#9pin@37_polysilicon-1##6 0 0.036fF
+R70 net_10#9pin@37_polysilicon-1##6 net_10#9pin@37_polysilicon-1##7 9.872
+C80 net_10#9pin@37_polysilicon-1##7 0 0.036fF
+R71 net_10#9pin@37_polysilicon-1##7 net_10#9pin@37_polysilicon-1##8 9.872
+C81 net_10#9pin@37_polysilicon-1##8 0 0.036fF
+R72 net_10#9pin@37_polysilicon-1##8 net_10#9pin@37_polysilicon-1##9 9.872
+C82 net_10#9pin@37_polysilicon-1##9 0 0.036fF
+R73 net_10#9pin@37_polysilicon-1##9 net_10#9pin@37_polysilicon-1##10 9.872
+C83 net_10#9pin@37_polysilicon-1##10 0 0.036fF
+R74 net_10#9pin@37_polysilicon-1##10 net_10#9pin@37_polysilicon-1##11 9.872
+C84 net_10#9pin@37_polysilicon-1##11 0 0.036fF
+R75 net_10#9pin@37_polysilicon-1##11 net_10#9pin@37_polysilicon-1##12 9.872
+C85 net_10#9pin@37_polysilicon-1##12 0 0.036fF
+R76 net_10#9pin@37_polysilicon-1##12 net_10#9pin@37_polysilicon-1##13 9.872
+C86 net_10#9pin@37_polysilicon-1##13 0 0.036fF
+R77 net_10#9pin@37_polysilicon-1##13 net_10#9pin@37_polysilicon-1##14 9.872
+C87 net_10#9pin@37_polysilicon-1##14 0 0.036fF
+R78 net_10#9pin@37_polysilicon-1##14 net_10#8pin@38_polysilicon-1 9.872
+R79 net_10#5contact@13_metal-1-polysilicon-1 net_10#8pin@38_polysilicon-1 
++1.95
+R80 net_10#10pmos@1_poly-left net_10#10pmos@1_poly-left##0 7.8
+C88 net_10#10pmos@1_poly-left##0 0 0.02fF
+R81 net_10#10pmos@1_poly-left##0 net_10#9pin@37_polysilicon-1 7.8
+R82 y#2contact@12_metal-1-p-act y 1.507
+R83 net_10#2contact@4_metal-1-p-act net_10#11pin@39_metal-1 1.293
+R84 net_10#11pin@39_metal-1 net_10 1.347
+R85 net_10#11pin@39_metal-1 net_10#4contact@15_metal-1-metal-2 0.213
+R86 y#0contact@11_metal-1-n-act y 1.133
+.ENDS ProyectoIntegrador__id
+
+*** SUBCIRCUIT ProyectoIntegrador__xor2 FROM CELL xor2{lay}
+.SUBCKT ProyectoIntegrador__xor2 vss a b vdd y
+Mnmos_0 net_79 a#9nmos@0_poly-right 0 0 N L=0.2U W=0.4U AS=0.44P AD=0.088P 
++PS=4.2U PD=0.85U
+Mnmos_1 net_76 net_160#11nmos@1_poly-right y#0contact@4_metal-1-n-act 0 N 
++L=0.2U W=0.4U AS=0.12P AD=0.088P PS=1U PD=0.85U
+Mnmos_2 0 net_270#10nmos@2_poly-right net_76 0 N L=0.2U W=0.4U AS=0.088P 
++AD=0.44P PS=0.85U PD=4.2U
+Mnmos_3 y#0contact@4_metal-1-n-act b#5nmos@3_poly-right net_79 0 N L=0.2U 
++W=0.4U AS=0.088P AD=0.12P PS=0.85U PD=1U
+Mnmos_4 net_160#12contact@20_metal-1-n-act b#0nmos@4_poly-right 0 0 N L=0.2U 
++W=0.4U AS=0.44P AD=0.2P PS=4.2U PD=1.8U
+Mnmos_5 0 a#5nmos@5_poly-right net_270#8contact@24_metal-1-n-act 0 N L=0.2U 
++W=0.4U AS=0.2P AD=0.44P PS=1.8U PD=4.2U
+Mpmos_0 net_68 net_270#12pmos@0_poly-left vdd vdd P L=0.2U W=0.4U AS=0.44P 
++AD=0.088P PS=4.2U PD=0.85U
+Mpmos_1 y#4contact@53_metal-1-p-act b#11pmos@1_poly-left net_68 vdd P L=0.2U 
++W=0.4U AS=0.088P AD=0.12P PS=0.85U PD=1U
+Mpmos_2 net_70 net_160#5pmos@2_poly-left y#4contact@53_metal-1-p-act vdd P 
++L=0.2U W=0.4U AS=0.12P AD=0.088P PS=1U PD=0.85U
+Mpmos_4 vdd a#12pmos@4_poly-left net_70 vdd P L=0.2U W=0.4U AS=0.088P 
++AD=0.44P PS=0.85U PD=4.2U
+Mpmos_5 vdd a#1pmos@5_poly-left net_270#15contact@54_metal-1-p-act vdd P 
++L=0.2U W=0.4U AS=0.2P AD=0.44P PS=1.8U PD=4.2U
+Mpmos_6 net_160 b#13pmos@6_poly-left vdd vdd P L=0.2U W=0.4U AS=0.44P AD=0.2P 
++PS=4.2U PD=1.8U
+** Extracted Parasitic Capacitors ***
+C0 y#0contact@4_metal-1-n-act 0 0.058fF
+C1 y#2contact@7_metal-1-metal-2 0 1.022fF
+C2 y 0 1.054fF
+C3 a#0contact@12_metal-1-polysilicon-1 0 0.402fF
+C4 net_160#12contact@20_metal-1-n-act 0 0.051fF
+C5 net_270#8contact@24_metal-1-n-act 0 0.019fF
+C6 net_160 0 0.051fF
+C7 a#3pin@76_polysilicon-1 0 0.168fF
+C8 net_160#3contact@30_metal-1-metal-2 0 0.657fF
+C9 net_160#14contact@31_metal-1-metal-2 0 0.485fF
+C10 b#3contact@34_metal-1-polysilicon-1 0 0.152fF
+C11 b 0 0.411fF
+C12 net_270#5contact@37_metal-1-metal-2 0 0.352fF
+C13 net_270#2contact@38_metal-1-metal-2 0 0.289fF
+C14 net_270#1contact@39_metal-1-metal-2 0 1.247fF
+C15 a 0 0.495fF
+C16 net_160#4contact@44_metal-1-polysilicon-1 0 0.293fF
+C17 net_160#2contact@45_metal-1-metal-2 0 1.373fF
+C18 b#12contact@48_metal-1-polysilicon-1 0 0.267fF
+C19 net_270#4contact@49_metal-1-polysilicon-1 0 0.554fF
+C20 net_270 0 0.669fF
+C21 net_270#6contact@51_metal-1-polysilicon-1 0 0.133fF
+C22 y#4contact@53_metal-1-p-act 0 0.026fF
+C23 net_270#15contact@54_metal-1-p-act 0 0.25fF
+C24 a#9nmos@0_poly-right 0 0.025fF
+C25 net_160#11nmos@1_poly-right 0 0.032fF
+C26 net_270#10nmos@2_poly-right 0 0.025fF
+C27 b#5nmos@3_poly-right 0 0.03fF
+C28 b#0nmos@4_poly-right 0 0.024fF
+C29 a#5nmos@5_poly-right 0 0.02fF
+C30 a#2pin@74_polysilicon-1 0 0.057fF
+C31 a#4pin@75_polysilicon-1 0 0.055fF
+C32 b#1pin@77_polysilicon-1 0 0.06fF
+C33 b#2pin@88_polysilicon-1 0 0.074fF
+C34 b#6pin@104_polysilicon-1 0 0.045fF
+C35 b#7pin@105_polysilicon-1 0 0.05fF
+C36 b#9pin@106_polysilicon-1 0 0.051fF
+C37 b#10pin@107_polysilicon-1 0 0.045fF
+C38 net_160#6pin@108_polysilicon-1 0 0.047fF
+C39 net_160#7pin@109_polysilicon-1 0 0.049fF
+C40 net_160#9pin@110_polysilicon-1 0 0.047fF
+C41 net_160#10pin@111_polysilicon-1 0 0.047fF
+C42 b#8pin@112_polysilicon-1 0 0.074fF
+C43 net_160#8pin@113_polysilicon-1 0 0.07fF
+C44 net_270#11pin@116_polysilicon-1 0 0.049fF
+C45 net_270#3pin@117_polysilicon-1 0 0.057fF
+C46 a#10pin@121_polysilicon-1 0 0.045fF
+C47 a#11pin@122_polysilicon-1 0 0.053fF
+C48 net_270#13pin@123_polysilicon-1 0 0.047fF
+C49 net_270#14pin@124_polysilicon-1 0 0.053fF
+C50 b#4pin@126_polysilicon-1 0 0.059fF
+C51 a#13pin@127_polysilicon-1 0 0.047fF
+C52 a#8pin@128_polysilicon-1 0 0.056fF
+C53 y#8pin@135_metal-1 0 0.084fF
+C54 y#9pin@136_metal-1 0 0.084fF
+C55 net_160#15pin@137_metal-1 0 0.058fF
+C56 net_270#12pmos@0_poly-left 0 0.027fF
+C57 b#11pmos@1_poly-left 0 0.03fF
+C58 net_160#5pmos@2_poly-left 0 0.032fF
+C59 a#12pmos@4_poly-left 0 0.027fF
+C60 a#1pmos@5_poly-left 0 0.02fF
+C61 b#13pmos@6_poly-left 0 0.024fF
+** Extracted Parasitic Resistors ***
+R0 y y#2contact@7_metal-1-metal-2 2.413
+R1 a#0contact@12_metal-1-polysilicon-1 a 0.76
+R2 a#1pmos@5_poly-left a#1pmos@5_poly-left##0 7.8
+C62 a#1pmos@5_poly-left##0 0 0.02fF
+R3 a#1pmos@5_poly-left##0 a#2pin@74_polysilicon-1 7.8
+R4 a#2pin@74_polysilicon-1 a#2pin@74_polysilicon-1##0 9.912
+C63 a#2pin@74_polysilicon-1##0 0 0.037fF
+R5 a#2pin@74_polysilicon-1##0 a#2pin@74_polysilicon-1##1 9.912
+C64 a#2pin@74_polysilicon-1##1 0 0.037fF
+R6 a#2pin@74_polysilicon-1##1 a#2pin@74_polysilicon-1##2 9.912
+C65 a#2pin@74_polysilicon-1##2 0 0.037fF
+R7 a#2pin@74_polysilicon-1##2 a#2pin@74_polysilicon-1##3 9.912
+C66 a#2pin@74_polysilicon-1##3 0 0.037fF
+R8 a#2pin@74_polysilicon-1##3 a#2pin@74_polysilicon-1##4 9.912
+C67 a#2pin@74_polysilicon-1##4 0 0.037fF
+R9 a#2pin@74_polysilicon-1##4 a#2pin@74_polysilicon-1##5 9.912
+C68 a#2pin@74_polysilicon-1##5 0 0.037fF
+R10 a#2pin@74_polysilicon-1##5 a#2pin@74_polysilicon-1##6 9.912
+C69 a#2pin@74_polysilicon-1##6 0 0.037fF
+R11 a#2pin@74_polysilicon-1##6 a#2pin@74_polysilicon-1##7 9.912
+C70 a#2pin@74_polysilicon-1##7 0 0.037fF
+R12 a#2pin@74_polysilicon-1##7 a#2pin@74_polysilicon-1##8 9.912
+C71 a#2pin@74_polysilicon-1##8 0 0.037fF
+R13 a#2pin@74_polysilicon-1##8 a#2pin@74_polysilicon-1##9 9.912
+C72 a#2pin@74_polysilicon-1##9 0 0.037fF
+R14 a#2pin@74_polysilicon-1##9 a#2pin@74_polysilicon-1##10 9.912
+C73 a#2pin@74_polysilicon-1##10 0 0.037fF
+R15 a#2pin@74_polysilicon-1##10 a#2pin@74_polysilicon-1##11 9.912
+C74 a#2pin@74_polysilicon-1##11 0 0.037fF
+R16 a#2pin@74_polysilicon-1##11 a#2pin@74_polysilicon-1##12 9.912
+C75 a#2pin@74_polysilicon-1##12 0 0.037fF
+R17 a#2pin@74_polysilicon-1##12 a#2pin@74_polysilicon-1##13 9.912
+C76 a#2pin@74_polysilicon-1##13 0 0.037fF
+R18 a#2pin@74_polysilicon-1##13 a#2pin@74_polysilicon-1##14 9.912
+C77 a#2pin@74_polysilicon-1##14 0 0.037fF
+R19 a#2pin@74_polysilicon-1##14 a#2pin@74_polysilicon-1##15 9.912
+C78 a#2pin@74_polysilicon-1##15 0 0.037fF
+R20 a#2pin@74_polysilicon-1##15 a#2pin@74_polysilicon-1##16 9.912
+C79 a#2pin@74_polysilicon-1##16 0 0.037fF
+R21 a#2pin@74_polysilicon-1##16 a#2pin@74_polysilicon-1##17 9.912
+C80 a#2pin@74_polysilicon-1##17 0 0.037fF
+R22 a#2pin@74_polysilicon-1##17 a#2pin@74_polysilicon-1##18 9.912
+C81 a#2pin@74_polysilicon-1##18 0 0.037fF
+R23 a#2pin@74_polysilicon-1##18 a#2pin@74_polysilicon-1##19 9.912
+C82 a#2pin@74_polysilicon-1##19 0 0.037fF
+R24 a#2pin@74_polysilicon-1##19 a#2pin@74_polysilicon-1##20 9.912
+C83 a#2pin@74_polysilicon-1##20 0 0.037fF
+R25 a#2pin@74_polysilicon-1##20 a#2pin@74_polysilicon-1##21 9.912
+C84 a#2pin@74_polysilicon-1##21 0 0.037fF
+R26 a#2pin@74_polysilicon-1##21 a#2pin@74_polysilicon-1##22 9.912
+C85 a#2pin@74_polysilicon-1##22 0 0.037fF
+R27 a#2pin@74_polysilicon-1##22 a#3pin@76_polysilicon-1 9.912
+R28 a#4pin@75_polysilicon-1 a#4pin@75_polysilicon-1##0 7.8
+C86 a#4pin@75_polysilicon-1##0 0 0.02fF
+R29 a#4pin@75_polysilicon-1##0 a#5nmos@5_poly-right 7.8
+R30 a#3pin@76_polysilicon-1 a#3pin@76_polysilicon-1##0 9.75
+C87 a#3pin@76_polysilicon-1##0 0 0.035fF
+R31 a#3pin@76_polysilicon-1##0 a#3pin@76_polysilicon-1##1 9.75
+C88 a#3pin@76_polysilicon-1##1 0 0.035fF
+R32 a#3pin@76_polysilicon-1##1 a#3pin@76_polysilicon-1##2 9.75
+C89 a#3pin@76_polysilicon-1##2 0 0.035fF
+R33 a#3pin@76_polysilicon-1##2 a#3pin@76_polysilicon-1##3 9.75
+C90 a#3pin@76_polysilicon-1##3 0 0.035fF
+R34 a#3pin@76_polysilicon-1##3 a#3pin@76_polysilicon-1##4 9.75
+C91 a#3pin@76_polysilicon-1##4 0 0.035fF
+R35 a#3pin@76_polysilicon-1##4 a#3pin@76_polysilicon-1##5 9.75
+C92 a#3pin@76_polysilicon-1##5 0 0.035fF
+R36 a#3pin@76_polysilicon-1##5 a#3pin@76_polysilicon-1##6 9.75
+C93 a#3pin@76_polysilicon-1##6 0 0.035fF
+R37 a#3pin@76_polysilicon-1##6 a#3pin@76_polysilicon-1##7 9.75
+C94 a#3pin@76_polysilicon-1##7 0 0.035fF
+R38 a#3pin@76_polysilicon-1##7 a#3pin@76_polysilicon-1##8 9.75
+C95 a#3pin@76_polysilicon-1##8 0 0.035fF
+R39 a#3pin@76_polysilicon-1##8 a#3pin@76_polysilicon-1##9 9.75
+C96 a#3pin@76_polysilicon-1##9 0 0.035fF
+R40 a#3pin@76_polysilicon-1##9 a#3pin@76_polysilicon-1##10 9.75
+C97 a#3pin@76_polysilicon-1##10 0 0.035fF
+R41 a#3pin@76_polysilicon-1##10 a#4pin@75_polysilicon-1 9.75
+R42 b#0nmos@4_poly-right b#0nmos@4_poly-right##0 7.8
+C98 b#0nmos@4_poly-right##0 0 0.024fF
+R43 b#0nmos@4_poly-right##0 b#0nmos@4_poly-right##1 7.8
+C99 b#0nmos@4_poly-right##1 0 0.024fF
+R44 b#0nmos@4_poly-right##1 b#0nmos@4_poly-right##2 7.8
+C100 b#0nmos@4_poly-right##2 0 0.024fF
+R45 b#0nmos@4_poly-right##2 b#1pin@77_polysilicon-1 7.8
+R46 b#1pin@77_polysilicon-1 b#1pin@77_polysilicon-1##0 9.647
+C101 b#1pin@77_polysilicon-1##0 0 0.035fF
+R47 b#1pin@77_polysilicon-1##0 b#1pin@77_polysilicon-1##1 9.647
+C102 b#1pin@77_polysilicon-1##1 0 0.035fF
+R48 b#1pin@77_polysilicon-1##1 b#1pin@77_polysilicon-1##2 9.647
+C103 b#1pin@77_polysilicon-1##2 0 0.035fF
+R49 b#1pin@77_polysilicon-1##2 b#1pin@77_polysilicon-1##3 9.647
+C104 b#1pin@77_polysilicon-1##3 0 0.035fF
+R50 b#1pin@77_polysilicon-1##3 b#1pin@77_polysilicon-1##4 9.647
+C105 b#1pin@77_polysilicon-1##4 0 0.035fF
+R51 b#1pin@77_polysilicon-1##4 b#1pin@77_polysilicon-1##5 9.647
+C106 b#1pin@77_polysilicon-1##5 0 0.035fF
+R52 b#1pin@77_polysilicon-1##5 b#1pin@77_polysilicon-1##6 9.647
+C107 b#1pin@77_polysilicon-1##6 0 0.035fF
+R53 b#1pin@77_polysilicon-1##6 b#1pin@77_polysilicon-1##7 9.647
+C108 b#1pin@77_polysilicon-1##7 0 0.035fF
+R54 b#1pin@77_polysilicon-1##7 b#1pin@77_polysilicon-1##8 9.647
+C109 b#1pin@77_polysilicon-1##8 0 0.035fF
+R55 b#1pin@77_polysilicon-1##8 b#1pin@77_polysilicon-1##9 9.647
+C110 b#1pin@77_polysilicon-1##9 0 0.035fF
+R56 b#1pin@77_polysilicon-1##9 b#1pin@77_polysilicon-1##10 9.647
+C111 b#1pin@77_polysilicon-1##10 0 0.035fF
+R57 b#1pin@77_polysilicon-1##10 b#1pin@77_polysilicon-1##11 9.647
+C112 b#1pin@77_polysilicon-1##11 0 0.035fF
+R58 b#1pin@77_polysilicon-1##11 b#1pin@77_polysilicon-1##12 9.647
+C113 b#1pin@77_polysilicon-1##12 0 0.035fF
+R59 b#1pin@77_polysilicon-1##12 b#1pin@77_polysilicon-1##13 9.647
+C114 b#1pin@77_polysilicon-1##13 0 0.035fF
+R60 b#1pin@77_polysilicon-1##13 b#1pin@77_polysilicon-1##14 9.647
+C115 b#1pin@77_polysilicon-1##14 0 0.035fF
+R61 b#1pin@77_polysilicon-1##14 b#1pin@77_polysilicon-1##15 9.647
+C116 b#1pin@77_polysilicon-1##15 0 0.035fF
+R62 b#1pin@77_polysilicon-1##15 b#1pin@77_polysilicon-1##16 9.647
+C117 b#1pin@77_polysilicon-1##16 0 0.035fF
+R63 b#1pin@77_polysilicon-1##16 b#1pin@77_polysilicon-1##17 9.647
+C118 b#1pin@77_polysilicon-1##17 0 0.035fF
+R64 b#1pin@77_polysilicon-1##17 b#2pin@88_polysilicon-1 9.647
+R65 b b#3contact@34_metal-1-polysilicon-1 0.307
+R66 b#2pin@88_polysilicon-1 b#2pin@88_polysilicon-1##0 9.533
+C119 b#2pin@88_polysilicon-1##0 0 0.035fF
+R67 b#2pin@88_polysilicon-1##0 b#2pin@88_polysilicon-1##1 9.533
+C120 b#2pin@88_polysilicon-1##1 0 0.035fF
+R68 b#2pin@88_polysilicon-1##1 b#2pin@88_polysilicon-1##2 9.533
+C121 b#2pin@88_polysilicon-1##2 0 0.035fF
+R69 b#2pin@88_polysilicon-1##2 b#2pin@88_polysilicon-1##3 9.533
+C122 b#2pin@88_polysilicon-1##3 0 0.035fF
+R70 b#2pin@88_polysilicon-1##3 b#2pin@88_polysilicon-1##4 9.533
+C123 b#2pin@88_polysilicon-1##4 0 0.035fF
+R71 b#2pin@88_polysilicon-1##4 b#2pin@88_polysilicon-1##5 9.533
+C124 b#2pin@88_polysilicon-1##5 0 0.035fF
+R72 b#2pin@88_polysilicon-1##5 b#2pin@88_polysilicon-1##6 9.533
+C125 b#2pin@88_polysilicon-1##6 0 0.035fF
+R73 b#2pin@88_polysilicon-1##6 b#2pin@88_polysilicon-1##7 9.533
+C126 b#2pin@88_polysilicon-1##7 0 0.035fF
+R74 b#2pin@88_polysilicon-1##7 b#2pin@88_polysilicon-1##8 9.533
+C127 b#2pin@88_polysilicon-1##8 0 0.035fF
+R75 b#2pin@88_polysilicon-1##8 b#2pin@88_polysilicon-1##9 9.533
+C128 b#2pin@88_polysilicon-1##9 0 0.035fF
+R76 b#2pin@88_polysilicon-1##9 b#2pin@88_polysilicon-1##10 9.533
+C129 b#2pin@88_polysilicon-1##10 0 0.035fF
+R77 b#2pin@88_polysilicon-1##10 b#2pin@88_polysilicon-1##11 9.533
+C130 b#2pin@88_polysilicon-1##11 0 0.035fF
+R78 b#2pin@88_polysilicon-1##11 b#2pin@88_polysilicon-1##12 9.533
+C131 b#2pin@88_polysilicon-1##12 0 0.035fF
+R79 b#2pin@88_polysilicon-1##12 b#2pin@88_polysilicon-1##13 9.533
+C132 b#2pin@88_polysilicon-1##13 0 0.035fF
+R80 b#2pin@88_polysilicon-1##13 b#2pin@88_polysilicon-1##14 9.533
+C133 b#2pin@88_polysilicon-1##14 0 0.035fF
+R81 b#2pin@88_polysilicon-1##14 b#2pin@88_polysilicon-1##15 9.533
+C134 b#2pin@88_polysilicon-1##15 0 0.035fF
+R82 b#2pin@88_polysilicon-1##15 b#2pin@88_polysilicon-1##16 9.533
+C135 b#2pin@88_polysilicon-1##16 0 0.035fF
+R83 b#2pin@88_polysilicon-1##16 b#4pin@126_polysilicon-1 9.533
+R84 b#3contact@34_metal-1-polysilicon-1 b#2pin@88_polysilicon-1 1.95
+R85 net_270 net_270#1contact@39_metal-1-metal-2 1.107
+R86 net_270#1contact@39_metal-1-metal-2 net_270#2contact@38_metal-1-metal-2 
++0.653
+R87 a a#3pin@76_polysilicon-1 0.2
+R88 net_160#2contact@45_metal-1-metal-2 net_160#3contact@30_metal-1-metal-2 
++1.467
+R89 net_160#2contact@45_metal-1-metal-2 
++net_160#4contact@44_metal-1-polysilicon-1 0.6
+R90 net_270#3pin@117_polysilicon-1 net_270#3pin@117_polysilicon-1##0 9.75
+C136 net_270#3pin@117_polysilicon-1##0 0 0.033fF
+R91 net_270#3pin@117_polysilicon-1##0 net_270#3pin@117_polysilicon-1##1 9.75
+C137 net_270#3pin@117_polysilicon-1##1 0 0.033fF
+R92 net_270#3pin@117_polysilicon-1##1 net_270#3pin@117_polysilicon-1##2 9.75
+C138 net_270#3pin@117_polysilicon-1##2 0 0.033fF
+R93 net_270#3pin@117_polysilicon-1##2 net_270#3pin@117_polysilicon-1##3 9.75
+C139 net_270#3pin@117_polysilicon-1##3 0 0.033fF
+R94 net_270#3pin@117_polysilicon-1##3 net_270#3pin@117_polysilicon-1##4 9.75
+C140 net_270#3pin@117_polysilicon-1##4 0 0.033fF
+R95 net_270#3pin@117_polysilicon-1##4 net_270#3pin@117_polysilicon-1##5 9.75
+C141 net_270#3pin@117_polysilicon-1##5 0 0.033fF
+R96 net_270#3pin@117_polysilicon-1##5 
++net_270#4contact@49_metal-1-polysilicon-1 9.75
+R97 net_270#5contact@37_metal-1-metal-2 net_270 0.28
+R98 net_270 net_270#6contact@51_metal-1-polysilicon-1 0.2
+R99 net_270#7pin@101_polysilicon-1 net_270#6contact@51_metal-1-polysilicon-1 
++1.95
+R100 net_270#1contact@39_metal-1-metal-2 
++net_270#4contact@49_metal-1-polysilicon-1 1.08
+R101 a#0contact@12_metal-1-polysilicon-1 
++a#0contact@12_metal-1-polysilicon-1##0 9.657
+C142 a#0contact@12_metal-1-polysilicon-1##0 0 0.036fF
+R102 a#0contact@12_metal-1-polysilicon-1##0 
++a#0contact@12_metal-1-polysilicon-1##1 9.657
+C143 a#0contact@12_metal-1-polysilicon-1##1 0 0.036fF
+R103 a#0contact@12_metal-1-polysilicon-1##1 
++a#0contact@12_metal-1-polysilicon-1##2 9.657
+C144 a#0contact@12_metal-1-polysilicon-1##2 0 0.036fF
+R104 a#0contact@12_metal-1-polysilicon-1##2 
++a#0contact@12_metal-1-polysilicon-1##3 9.657
+C145 a#0contact@12_metal-1-polysilicon-1##3 0 0.036fF
+R105 a#0contact@12_metal-1-polysilicon-1##3 
++a#0contact@12_metal-1-polysilicon-1##4 9.657
+C146 a#0contact@12_metal-1-polysilicon-1##4 0 0.036fF
+R106 a#0contact@12_metal-1-polysilicon-1##4 
++a#0contact@12_metal-1-polysilicon-1##5 9.657
+C147 a#0contact@12_metal-1-polysilicon-1##5 0 0.036fF
+R107 a#0contact@12_metal-1-polysilicon-1##5 
++a#0contact@12_metal-1-polysilicon-1##6 9.657
+C148 a#0contact@12_metal-1-polysilicon-1##6 0 0.036fF
+R108 a#0contact@12_metal-1-polysilicon-1##6 
++a#0contact@12_metal-1-polysilicon-1##7 9.657
+C149 a#0contact@12_metal-1-polysilicon-1##7 0 0.036fF
+R109 a#0contact@12_metal-1-polysilicon-1##7 
++a#0contact@12_metal-1-polysilicon-1##8 9.657
+C150 a#0contact@12_metal-1-polysilicon-1##8 0 0.036fF
+R110 a#0contact@12_metal-1-polysilicon-1##8 
++a#0contact@12_metal-1-polysilicon-1##9 9.657
+C151 a#0contact@12_metal-1-polysilicon-1##9 0 0.036fF
+R111 a#0contact@12_metal-1-polysilicon-1##9 
++a#0contact@12_metal-1-polysilicon-1##10 9.657
+C152 a#0contact@12_metal-1-polysilicon-1##10 0 0.036fF
+R112 a#0contact@12_metal-1-polysilicon-1##10 
++a#0contact@12_metal-1-polysilicon-1##11 9.657
+C153 a#0contact@12_metal-1-polysilicon-1##11 0 0.036fF
+R113 a#0contact@12_metal-1-polysilicon-1##11 
++a#0contact@12_metal-1-polysilicon-1##12 9.657
+C154 a#0contact@12_metal-1-polysilicon-1##12 0 0.036fF
+R114 a#0contact@12_metal-1-polysilicon-1##12 
++a#0contact@12_metal-1-polysilicon-1##13 9.657
+C155 a#0contact@12_metal-1-polysilicon-1##13 0 0.036fF
+R115 a#0contact@12_metal-1-polysilicon-1##13 
++a#0contact@12_metal-1-polysilicon-1##14 9.657
+C156 a#0contact@12_metal-1-polysilicon-1##14 0 0.036fF
+R116 a#0contact@12_metal-1-polysilicon-1##14 
++a#0contact@12_metal-1-polysilicon-1##15 9.657
+C157 a#0contact@12_metal-1-polysilicon-1##15 0 0.036fF
+R117 a#0contact@12_metal-1-polysilicon-1##15 
++a#0contact@12_metal-1-polysilicon-1##16 9.657
+C158 a#0contact@12_metal-1-polysilicon-1##16 0 0.036fF
+R118 a#0contact@12_metal-1-polysilicon-1##16 
++a#0contact@12_metal-1-polysilicon-1##17 9.657
+C159 a#0contact@12_metal-1-polysilicon-1##17 0 0.036fF
+R119 a#0contact@12_metal-1-polysilicon-1##17 
++a#0contact@12_metal-1-polysilicon-1##18 9.657
+C160 a#0contact@12_metal-1-polysilicon-1##18 0 0.036fF
+R120 a#0contact@12_metal-1-polysilicon-1##18 
++a#0contact@12_metal-1-polysilicon-1##19 9.657
+C161 a#0contact@12_metal-1-polysilicon-1##19 0 0.036fF
+R121 a#0contact@12_metal-1-polysilicon-1##19 a#8pin@128_polysilicon-1 9.657
+R122 b#5nmos@3_poly-right b#5nmos@3_poly-right##0 9.75
+C162 b#5nmos@3_poly-right##0 0 0.03fF
+R123 b#5nmos@3_poly-right##0 b#5nmos@3_poly-right##1 9.75
+C163 b#5nmos@3_poly-right##1 0 0.03fF
+R124 b#5nmos@3_poly-right##1 b#5nmos@3_poly-right##2 9.75
+C164 b#5nmos@3_poly-right##2 0 0.03fF
+R125 b#5nmos@3_poly-right##2 b#6pin@104_polysilicon-1 9.75
+R126 b#6pin@104_polysilicon-1 b#7pin@105_polysilicon-1 7.8
+R127 b#7pin@105_polysilicon-1 b#7pin@105_polysilicon-1##0 9.49
+C165 b#7pin@105_polysilicon-1##0 0 0.034fF
+R128 b#7pin@105_polysilicon-1##0 b#7pin@105_polysilicon-1##1 9.49
+C166 b#7pin@105_polysilicon-1##1 0 0.034fF
+R129 b#7pin@105_polysilicon-1##1 b#7pin@105_polysilicon-1##2 9.49
+C167 b#7pin@105_polysilicon-1##2 0 0.034fF
+R130 b#7pin@105_polysilicon-1##2 b#7pin@105_polysilicon-1##3 9.49
+C168 b#7pin@105_polysilicon-1##3 0 0.034fF
+R131 b#7pin@105_polysilicon-1##3 b#7pin@105_polysilicon-1##4 9.49
+C169 b#7pin@105_polysilicon-1##4 0 0.034fF
+R132 b#7pin@105_polysilicon-1##4 b#7pin@105_polysilicon-1##5 9.49
+C170 b#7pin@105_polysilicon-1##5 0 0.034fF
+R133 b#7pin@105_polysilicon-1##5 b#7pin@105_polysilicon-1##6 9.49
+C171 b#7pin@105_polysilicon-1##6 0 0.034fF
+R134 b#7pin@105_polysilicon-1##6 b#7pin@105_polysilicon-1##7 9.49
+C172 b#7pin@105_polysilicon-1##7 0 0.034fF
+R135 b#7pin@105_polysilicon-1##7 b#7pin@105_polysilicon-1##8 9.49
+C173 b#7pin@105_polysilicon-1##8 0 0.034fF
+R136 b#7pin@105_polysilicon-1##8 b#7pin@105_polysilicon-1##9 9.49
+C174 b#7pin@105_polysilicon-1##9 0 0.034fF
+R137 b#7pin@105_polysilicon-1##9 b#7pin@105_polysilicon-1##10 9.49
+C175 b#7pin@105_polysilicon-1##10 0 0.034fF
+R138 b#7pin@105_polysilicon-1##10 b#7pin@105_polysilicon-1##11 9.49
+C176 b#7pin@105_polysilicon-1##11 0 0.034fF
+R139 b#7pin@105_polysilicon-1##11 b#7pin@105_polysilicon-1##12 9.49
+C177 b#7pin@105_polysilicon-1##12 0 0.034fF
+R140 b#7pin@105_polysilicon-1##12 b#7pin@105_polysilicon-1##13 9.49
+C178 b#7pin@105_polysilicon-1##13 0 0.034fF
+R141 b#7pin@105_polysilicon-1##13 b#8pin@112_polysilicon-1 9.49
+R142 b#9pin@106_polysilicon-1 b#10pin@107_polysilicon-1 7.8
+R143 b#10pin@107_polysilicon-1 b#10pin@107_polysilicon-1##0 9.1
+C179 b#10pin@107_polysilicon-1##0 0 0.03fF
+R144 b#10pin@107_polysilicon-1##0 b#10pin@107_polysilicon-1##1 9.1
+C180 b#10pin@107_polysilicon-1##1 0 0.03fF
+R145 b#10pin@107_polysilicon-1##1 b#10pin@107_polysilicon-1##2 9.1
+C181 b#10pin@107_polysilicon-1##2 0 0.03fF
+R146 b#10pin@107_polysilicon-1##2 b#10pin@107_polysilicon-1##3 9.1
+C182 b#10pin@107_polysilicon-1##3 0 0.03fF
+R147 b#10pin@107_polysilicon-1##3 b#10pin@107_polysilicon-1##4 9.1
+C183 b#10pin@107_polysilicon-1##4 0 0.03fF
+R148 b#10pin@107_polysilicon-1##4 b#11pmos@1_poly-left 9.1
+R149 net_160#5pmos@2_poly-left net_160#5pmos@2_poly-left##0 9.262
+C184 net_160#5pmos@2_poly-left##0 0 0.032fF
+R150 net_160#5pmos@2_poly-left##0 net_160#5pmos@2_poly-left##1 9.262
+C185 net_160#5pmos@2_poly-left##1 0 0.032fF
+R151 net_160#5pmos@2_poly-left##1 net_160#5pmos@2_poly-left##2 9.262
+C186 net_160#5pmos@2_poly-left##2 0 0.032fF
+R152 net_160#5pmos@2_poly-left##2 net_160#5pmos@2_poly-left##3 9.262
+C187 net_160#5pmos@2_poly-left##3 0 0.032fF
+R153 net_160#5pmos@2_poly-left##3 net_160#5pmos@2_poly-left##4 9.262
+C188 net_160#5pmos@2_poly-left##4 0 0.032fF
+R154 net_160#5pmos@2_poly-left##4 net_160#5pmos@2_poly-left##5 9.262
+C189 net_160#5pmos@2_poly-left##5 0 0.032fF
+R155 net_160#5pmos@2_poly-left##5 net_160#5pmos@2_poly-left##6 9.262
+C190 net_160#5pmos@2_poly-left##6 0 0.032fF
+R156 net_160#5pmos@2_poly-left##6 net_160#6pin@108_polysilicon-1 9.262
+R157 net_160#6pin@108_polysilicon-1 net_160#7pin@109_polysilicon-1 7.8
+R158 net_160#7pin@109_polysilicon-1 net_160#7pin@109_polysilicon-1##0 9.332
+C191 net_160#7pin@109_polysilicon-1##0 0 0.034fF
+R159 net_160#7pin@109_polysilicon-1##0 net_160#7pin@109_polysilicon-1##1 
++9.332
+C192 net_160#7pin@109_polysilicon-1##1 0 0.034fF
+R160 net_160#7pin@109_polysilicon-1##1 net_160#7pin@109_polysilicon-1##2 
++9.332
+C193 net_160#7pin@109_polysilicon-1##2 0 0.034fF
+R161 net_160#7pin@109_polysilicon-1##2 net_160#7pin@109_polysilicon-1##3 
++9.332
+C194 net_160#7pin@109_polysilicon-1##3 0 0.034fF
+R162 net_160#7pin@109_polysilicon-1##3 net_160#7pin@109_polysilicon-1##4 
++9.332
+C195 net_160#7pin@109_polysilicon-1##4 0 0.034fF
+R163 net_160#7pin@109_polysilicon-1##4 net_160#7pin@109_polysilicon-1##5 
++9.332
+C196 net_160#7pin@109_polysilicon-1##5 0 0.034fF
+R164 net_160#7pin@109_polysilicon-1##5 net_160#7pin@109_polysilicon-1##6 
++9.332
+C197 net_160#7pin@109_polysilicon-1##6 0 0.034fF
+R165 net_160#7pin@109_polysilicon-1##6 net_160#7pin@109_polysilicon-1##7 
++9.332
+C198 net_160#7pin@109_polysilicon-1##7 0 0.034fF
+R166 net_160#7pin@109_polysilicon-1##7 net_160#7pin@109_polysilicon-1##8 
++9.332
+C199 net_160#7pin@109_polysilicon-1##8 0 0.034fF
+R167 net_160#7pin@109_polysilicon-1##8 net_160#7pin@109_polysilicon-1##9 
++9.332
+C200 net_160#7pin@109_polysilicon-1##9 0 0.034fF
+R168 net_160#7pin@109_polysilicon-1##9 net_160#7pin@109_polysilicon-1##10 
++9.332
+C201 net_160#7pin@109_polysilicon-1##10 0 0.034fF
+R169 net_160#7pin@109_polysilicon-1##10 net_160#7pin@109_polysilicon-1##11 
++9.332
+C202 net_160#7pin@109_polysilicon-1##11 0 0.034fF
+R170 net_160#7pin@109_polysilicon-1##11 net_160#7pin@109_polysilicon-1##12 
++9.332
+C203 net_160#7pin@109_polysilicon-1##12 0 0.034fF
+R171 net_160#7pin@109_polysilicon-1##12 net_160#8pin@113_polysilicon-1 9.332
+R172 net_160#9pin@110_polysilicon-1 net_160#10pin@111_polysilicon-1 7.8
+R173 net_160#10pin@111_polysilicon-1 net_160#10pin@111_polysilicon-1##0 9.75
+C204 net_160#10pin@111_polysilicon-1##0 0 0.032fF
+R174 net_160#10pin@111_polysilicon-1##0 net_160#10pin@111_polysilicon-1##1 
++9.75
+C205 net_160#10pin@111_polysilicon-1##1 0 0.032fF
+R175 net_160#10pin@111_polysilicon-1##1 net_160#10pin@111_polysilicon-1##2 
++9.75
+C206 net_160#10pin@111_polysilicon-1##2 0 0.032fF
+R176 net_160#10pin@111_polysilicon-1##2 net_160#10pin@111_polysilicon-1##3 
++9.75
+C207 net_160#10pin@111_polysilicon-1##3 0 0.032fF
+R177 net_160#10pin@111_polysilicon-1##3 net_160#10pin@111_polysilicon-1##4 
++9.75
+C208 net_160#10pin@111_polysilicon-1##4 0 0.032fF
+R178 net_160#10pin@111_polysilicon-1##4 net_160#11nmos@1_poly-right 9.75
+R179 b b#12contact@48_metal-1-polysilicon-1 0.547
+R180 b#8pin@112_polysilicon-1 b#8pin@112_polysilicon-1##0 9.912
+C209 b#8pin@112_polysilicon-1##0 0 0.035fF
+R181 b#8pin@112_polysilicon-1##0 b#8pin@112_polysilicon-1##1 9.912
+C210 b#8pin@112_polysilicon-1##1 0 0.035fF
+R182 b#8pin@112_polysilicon-1##1 b#8pin@112_polysilicon-1##2 9.912
+C211 b#8pin@112_polysilicon-1##2 0 0.035fF
+R183 b#8pin@112_polysilicon-1##2 b#8pin@112_polysilicon-1##3 9.912
+C212 b#8pin@112_polysilicon-1##3 0 0.035fF
+R184 b#8pin@112_polysilicon-1##3 b#8pin@112_polysilicon-1##4 9.912
+C213 b#8pin@112_polysilicon-1##4 0 0.035fF
+R185 b#8pin@112_polysilicon-1##4 b#8pin@112_polysilicon-1##5 9.912
+C214 b#8pin@112_polysilicon-1##5 0 0.035fF
+R186 b#8pin@112_polysilicon-1##5 b#8pin@112_polysilicon-1##6 9.912
+C215 b#8pin@112_polysilicon-1##6 0 0.035fF
+R187 b#8pin@112_polysilicon-1##6 b#8pin@112_polysilicon-1##7 9.912
+C216 b#8pin@112_polysilicon-1##7 0 0.035fF
+R188 b#8pin@112_polysilicon-1##7 b#8pin@112_polysilicon-1##8 9.912
+C217 b#8pin@112_polysilicon-1##8 0 0.035fF
+R189 b#8pin@112_polysilicon-1##8 b#8pin@112_polysilicon-1##9 9.912
+C218 b#8pin@112_polysilicon-1##9 0 0.035fF
+R190 b#8pin@112_polysilicon-1##9 b#8pin@112_polysilicon-1##10 9.912
+C219 b#8pin@112_polysilicon-1##10 0 0.035fF
+R191 b#8pin@112_polysilicon-1##10 b#9pin@106_polysilicon-1 9.912
+R192 b#12contact@48_metal-1-polysilicon-1 b#8pin@112_polysilicon-1 1.95
+R193 net_160#8pin@113_polysilicon-1 net_160#8pin@113_polysilicon-1##0 9.165
+C220 net_160#8pin@113_polysilicon-1##0 0 0.032fF
+R194 net_160#8pin@113_polysilicon-1##0 net_160#8pin@113_polysilicon-1##1 
++9.165
+C221 net_160#8pin@113_polysilicon-1##1 0 0.032fF
+R195 net_160#8pin@113_polysilicon-1##1 net_160#8pin@113_polysilicon-1##2 
++9.165
+C222 net_160#8pin@113_polysilicon-1##2 0 0.032fF
+R196 net_160#8pin@113_polysilicon-1##2 net_160#8pin@113_polysilicon-1##3 
++9.165
+C223 net_160#8pin@113_polysilicon-1##3 0 0.032fF
+R197 net_160#8pin@113_polysilicon-1##3 net_160#8pin@113_polysilicon-1##4 
++9.165
+C224 net_160#8pin@113_polysilicon-1##4 0 0.032fF
+R198 net_160#8pin@113_polysilicon-1##4 net_160#8pin@113_polysilicon-1##5 
++9.165
+C225 net_160#8pin@113_polysilicon-1##5 0 0.032fF
+R199 net_160#8pin@113_polysilicon-1##5 net_160#8pin@113_polysilicon-1##6 
++9.165
+C226 net_160#8pin@113_polysilicon-1##6 0 0.032fF
+R200 net_160#8pin@113_polysilicon-1##6 net_160#8pin@113_polysilicon-1##7 
++9.165
+C227 net_160#8pin@113_polysilicon-1##7 0 0.032fF
+R201 net_160#8pin@113_polysilicon-1##7 net_160#8pin@113_polysilicon-1##8 
++9.165
+C228 net_160#8pin@113_polysilicon-1##8 0 0.032fF
+R202 net_160#8pin@113_polysilicon-1##8 net_160#9pin@110_polysilicon-1 9.165
+R203 net_160#4contact@44_metal-1-polysilicon-1 net_160#8pin@113_polysilicon-1 
++1.95
+R204 net_270#8contact@24_metal-1-n-act net_270#2contact@38_metal-1-metal-2 
++0.04
+R205 net_160#14contact@31_metal-1-metal-2 net_160#2contact@45_metal-1-metal-2 
++1.16
+R206 net_270#10nmos@2_poly-right net_270#10nmos@2_poly-right##0 9.75
+C229 net_270#10nmos@2_poly-right##0 0 0.025fF
+R207 net_270#10nmos@2_poly-right##0 net_270#11pin@116_polysilicon-1 9.75
+R208 net_270#11pin@116_polysilicon-1 net_270#11pin@116_polysilicon-1##0 7.8
+C230 net_270#11pin@116_polysilicon-1##0 0 0.024fF
+R209 net_270#11pin@116_polysilicon-1##0 net_270#11pin@116_polysilicon-1##1 
++7.8
+C231 net_270#11pin@116_polysilicon-1##1 0 0.024fF
+R210 net_270#11pin@116_polysilicon-1##1 net_270#11pin@116_polysilicon-1##2 
++7.8
+C232 net_270#11pin@116_polysilicon-1##2 0 0.024fF
+R211 net_270#11pin@116_polysilicon-1##2 net_270#3pin@117_polysilicon-1 7.8
+R212 a#9nmos@0_poly-right a#9nmos@0_poly-right##0 9.75
+C233 a#9nmos@0_poly-right##0 0 0.025fF
+R213 a#9nmos@0_poly-right##0 a#10pin@121_polysilicon-1 9.75
+R214 a#10pin@121_polysilicon-1 a#10pin@121_polysilicon-1##0 7.8
+C234 a#10pin@121_polysilicon-1##0 0 0.02fF
+R215 a#10pin@121_polysilicon-1##0 a#11pin@122_polysilicon-1 7.8
+R216 a#11pin@122_polysilicon-1 a#11pin@122_polysilicon-1##0 9.218
+C235 a#11pin@122_polysilicon-1##0 0 0.033fF
+R217 a#11pin@122_polysilicon-1##0 a#11pin@122_polysilicon-1##1 9.218
+C236 a#11pin@122_polysilicon-1##1 0 0.033fF
+R218 a#11pin@122_polysilicon-1##1 a#11pin@122_polysilicon-1##2 9.218
+C237 a#11pin@122_polysilicon-1##2 0 0.033fF
+R219 a#11pin@122_polysilicon-1##2 a#11pin@122_polysilicon-1##3 9.218
+C238 a#11pin@122_polysilicon-1##3 0 0.033fF
+R220 a#11pin@122_polysilicon-1##3 a#11pin@122_polysilicon-1##4 9.218
+C239 a#11pin@122_polysilicon-1##4 0 0.033fF
+R221 a#11pin@122_polysilicon-1##4 a#11pin@122_polysilicon-1##5 9.218
+C240 a#11pin@122_polysilicon-1##5 0 0.033fF
+R222 a#11pin@122_polysilicon-1##5 a#11pin@122_polysilicon-1##6 9.218
+C241 a#11pin@122_polysilicon-1##6 0 0.033fF
+R223 a#11pin@122_polysilicon-1##6 a#11pin@122_polysilicon-1##7 9.218
+C242 a#11pin@122_polysilicon-1##7 0 0.033fF
+R224 a#11pin@122_polysilicon-1##7 a#11pin@122_polysilicon-1##8 9.218
+C243 a#11pin@122_polysilicon-1##8 0 0.033fF
+R225 a#11pin@122_polysilicon-1##8 a#11pin@122_polysilicon-1##9 9.218
+C244 a#11pin@122_polysilicon-1##9 0 0.033fF
+R226 a#11pin@122_polysilicon-1##9 a 9.218
+R227 net_270#12pmos@0_poly-left net_270#12pmos@0_poly-left##0 8.775
+C245 net_270#12pmos@0_poly-left##0 0 0.027fF
+R228 net_270#12pmos@0_poly-left##0 net_270#12pmos@0_poly-left##1 8.775
+C246 net_270#12pmos@0_poly-left##1 0 0.027fF
+R229 net_270#12pmos@0_poly-left##1 net_270#12pmos@0_poly-left##2 8.775
+C247 net_270#12pmos@0_poly-left##2 0 0.027fF
+R230 net_270#12pmos@0_poly-left##2 net_270#13pin@123_polysilicon-1 8.775
+R231 net_270#13pin@123_polysilicon-1 net_270#13pin@123_polysilicon-1##0 7.8
+C248 net_270#13pin@123_polysilicon-1##0 0 0.02fF
+R232 net_270#13pin@123_polysilicon-1##0 net_270#14pin@124_polysilicon-1 7.8
+R233 net_270#14pin@124_polysilicon-1 net_270#14pin@124_polysilicon-1##0 9.506
+C249 net_270#14pin@124_polysilicon-1##0 0 0.033fF
+R234 net_270#14pin@124_polysilicon-1##0 net_270#14pin@124_polysilicon-1##1 
++9.506
+C250 net_270#14pin@124_polysilicon-1##1 0 0.033fF
+R235 net_270#14pin@124_polysilicon-1##1 net_270#14pin@124_polysilicon-1##2 
++9.506
+C251 net_270#14pin@124_polysilicon-1##2 0 0.033fF
+R236 net_270#14pin@124_polysilicon-1##2 net_270#14pin@124_polysilicon-1##3 
++9.506
+C252 net_270#14pin@124_polysilicon-1##3 0 0.033fF
+R237 net_270#14pin@124_polysilicon-1##3 net_270#14pin@124_polysilicon-1##4 
++9.506
+C253 net_270#14pin@124_polysilicon-1##4 0 0.033fF
+R238 net_270#14pin@124_polysilicon-1##4 net_270#14pin@124_polysilicon-1##5 
++9.506
+C254 net_270#14pin@124_polysilicon-1##5 0 0.033fF
+R239 net_270#14pin@124_polysilicon-1##5 net_270#14pin@124_polysilicon-1##6 
++9.506
+C255 net_270#14pin@124_polysilicon-1##6 0 0.033fF
+R240 net_270#14pin@124_polysilicon-1##6 
++net_270#6contact@51_metal-1-polysilicon-1 9.506
+R241 a#12pmos@4_poly-left a#12pmos@4_poly-left##0 8.775
+C256 a#12pmos@4_poly-left##0 0 0.027fF
+R242 a#12pmos@4_poly-left##0 a#12pmos@4_poly-left##1 8.775
+C257 a#12pmos@4_poly-left##1 0 0.027fF
+R243 a#12pmos@4_poly-left##1 a#12pmos@4_poly-left##2 8.775
+C258 a#12pmos@4_poly-left##2 0 0.027fF
+R244 a#12pmos@4_poly-left##2 a#13pin@127_polysilicon-1 8.775
+R245 a#13pin@127_polysilicon-1 a#13pin@127_polysilicon-1##0 7.8
+C259 a#13pin@127_polysilicon-1##0 0 0.02fF
+R246 a#13pin@127_polysilicon-1##0 a#8pin@128_polysilicon-1 7.8
+R247 b#13pmos@6_poly-left b#13pmos@6_poly-left##0 7.8
+C260 b#13pmos@6_poly-left##0 0 0.024fF
+R248 b#13pmos@6_poly-left##0 b#13pmos@6_poly-left##1 7.8
+C261 b#13pmos@6_poly-left##1 0 0.024fF
+R249 b#13pmos@6_poly-left##1 b#13pmos@6_poly-left##2 7.8
+C262 b#13pmos@6_poly-left##2 0 0.024fF
+R250 b#13pmos@6_poly-left##2 b#4pin@126_polysilicon-1 7.8
+R251 y#2contact@7_metal-1-metal-2 y#8pin@135_metal-1 0.053
+R252 y#8pin@135_metal-1 y#0contact@4_metal-1-n-act 0.12
+R253 y y#9pin@136_metal-1 0.12
+R254 y#9pin@136_metal-1 y#4contact@53_metal-1-p-act 0.053
+R255 net_160#14contact@31_metal-1-metal-2 net_160#15pin@137_metal-1 0.013
+R256 net_160#15pin@137_metal-1 net_160#12contact@20_metal-1-n-act 0.107
+R257 net_160#3contact@30_metal-1-metal-2 net_160 0.107
+R258 net_270#5contact@37_metal-1-metal-2 net_270#15contact@54_metal-1-p-act 
++0.32
+.ENDS ProyectoIntegrador__xor2
+
+*** SUBCIRCUIT ProyectoIntegrador__or2 FROM CELL or2{lay}
+.SUBCKT ProyectoIntegrador__or2 vss a b vdd y
+Mnmos_0 net_56#2contact@3_metal-1-n-act a#1nmos@0_poly-right 0 0 N L=0.2U 
++W=0.4U AS=0.52P AD=0.147P PS=5U PD=1.267U
+Mnmos_1 0 b#3nmos@1_poly-right net_56#2contact@3_metal-1-n-act 0 N L=0.2U 
++W=0.4U AS=0.147P AD=0.52P PS=1.267U PD=5U
+Mnmos_2 y#0contact@12_metal-1-n-act net_56#9nmos@2_poly-right 0 0 N L=0.2U 
++W=0.4U AS=0.52P AD=0.3P PS=5U PD=2.2U
+Mpmos_0 net_55 a#3pmos@0_poly-left vdd vdd P L=0.2U W=0.4U AS=0.78P AD=0.088P 
++PS=7U PD=0.85U
+Mpmos_1 net_56 b#1pmos@1_poly-left net_55 vdd P L=0.2U W=0.4U AS=0.088P 
++AD=0.147P PS=0.85U PD=1.267U
+Mpmos_2 y#2contact@13_metal-1-p-act net_56#14pmos@2_poly-left vdd vdd P 
++L=0.2U W=0.8U AS=0.78P AD=0.3P PS=7U PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 net_56 0 0.032fF
+C1 net_56#2contact@3_metal-1-n-act 0 0.334fF
+C2 a 0 0.013fF
+C3 a#0contact@7_metal-1-polysilicon-1 0 0.017fF
+C4 y#0contact@12_metal-1-n-act 0 0.546fF
+C5 y#2contact@13_metal-1-p-act 0 0.726fF
+C6 net_56#13contact@14_metal-1-polysilicon-1 0 0.094fF
+C7 y 0 1.272fF
+C8 a#1nmos@0_poly-right 0 0.02fF
+C9 b#3nmos@1_poly-right 0 0.025fF
+C10 net_56#9nmos@2_poly-right 0 0.02fF
+C11 a#2pin@13_polysilicon-1 0 0.057fF
+C12 a#4pin@14_polysilicon-1 0 0.055fF
+C13 b#2pin@15_polysilicon-1 0 0.04fF
+C14 b#4pin@16_polysilicon-1 0 0.045fF
+C15 b#5pin@17_polysilicon-1 0 0.05fF
+C16 b#7pin@18_polysilicon-1 0 0.057fF
+C17 a#5pin@19_polysilicon-1 0 0.075fF
+C18 b#6pin@20_polysilicon-1 0 0.075fF
+C19 net_56#5pin@21_metal-1 0 0.656fF
+C20 net_56#6pin@24_metal-1 0 0.437fF
+C21 net_56#7pin@25_metal-1 0 0.411fF
+C22 net_56#10pin@30_polysilicon-1 0 0.055fF
+C23 net_56#12pin@31_polysilicon-1 0 0.056fF
+C24 net_56#11pin@32_polysilicon-1 0 0.075fF
+C25 net_56#15pin@33_metal-1 0 1.022fF
+C26 a#3pmos@0_poly-left 0 0.02fF
+C27 b#1pmos@1_poly-left 0 0.025fF
+C28 net_56#14pmos@2_poly-left 0 0.02fF
+** Extracted Parasitic Resistors ***
+R0 a#0contact@7_metal-1-polysilicon-1 a 0.02
+R1 a#1nmos@0_poly-right a#1nmos@0_poly-right##0 7.8
+C29 a#1nmos@0_poly-right##0 0 0.02fF
+R2 a#1nmos@0_poly-right##0 a#2pin@13_polysilicon-1 7.8
+R3 a#3pmos@0_poly-left a#3pmos@0_poly-left##0 7.8
+C30 a#3pmos@0_poly-left##0 0 0.02fF
+R4 a#3pmos@0_poly-left##0 a#4pin@14_polysilicon-1 7.8
+R5 a#4pin@14_polysilicon-1 a#4pin@14_polysilicon-1##0 9.994
+C31 a#4pin@14_polysilicon-1##0 0 0.034fF
+R6 a#4pin@14_polysilicon-1##0 a#4pin@14_polysilicon-1##1 9.994
+C32 a#4pin@14_polysilicon-1##1 0 0.034fF
+R7 a#4pin@14_polysilicon-1##1 a#4pin@14_polysilicon-1##2 9.994
+C33 a#4pin@14_polysilicon-1##2 0 0.034fF
+R8 a#4pin@14_polysilicon-1##2 a#4pin@14_polysilicon-1##3 9.994
+C34 a#4pin@14_polysilicon-1##3 0 0.034fF
+R9 a#4pin@14_polysilicon-1##3 a#4pin@14_polysilicon-1##4 9.994
+C35 a#4pin@14_polysilicon-1##4 0 0.034fF
+R10 a#4pin@14_polysilicon-1##4 a#4pin@14_polysilicon-1##5 9.994
+C36 a#4pin@14_polysilicon-1##5 0 0.034fF
+R11 a#4pin@14_polysilicon-1##5 a#4pin@14_polysilicon-1##6 9.994
+C37 a#4pin@14_polysilicon-1##6 0 0.034fF
+R12 a#4pin@14_polysilicon-1##6 a#5pin@19_polysilicon-1 9.994
+R13 b#1pmos@1_poly-left b#1pmos@1_poly-left##0 9.75
+C38 b#1pmos@1_poly-left##0 0 0.025fF
+R14 b#1pmos@1_poly-left##0 b#2pin@15_polysilicon-1 9.75
+R15 b#3nmos@1_poly-right b#3nmos@1_poly-right##0 9.75
+C39 b#3nmos@1_poly-right##0 0 0.025fF
+R16 b#3nmos@1_poly-right##0 b#4pin@16_polysilicon-1 9.75
+R17 b#2pin@15_polysilicon-1 b#5pin@17_polysilicon-1 7.8
+R18 b#5pin@17_polysilicon-1 b#5pin@17_polysilicon-1##0 9.967
+C40 b#5pin@17_polysilicon-1##0 0 0.035fF
+R19 b#5pin@17_polysilicon-1##0 b#5pin@17_polysilicon-1##1 9.967
+C41 b#5pin@17_polysilicon-1##1 0 0.035fF
+R20 b#5pin@17_polysilicon-1##1 b#5pin@17_polysilicon-1##2 9.967
+C42 b#5pin@17_polysilicon-1##2 0 0.035fF
+R21 b#5pin@17_polysilicon-1##2 b#5pin@17_polysilicon-1##3 9.967
+C43 b#5pin@17_polysilicon-1##3 0 0.035fF
+R22 b#5pin@17_polysilicon-1##3 b#5pin@17_polysilicon-1##4 9.967
+C44 b#5pin@17_polysilicon-1##4 0 0.035fF
+R23 b#5pin@17_polysilicon-1##4 b#5pin@17_polysilicon-1##5 9.967
+C45 b#5pin@17_polysilicon-1##5 0 0.035fF
+R24 b#5pin@17_polysilicon-1##5 b#5pin@17_polysilicon-1##6 9.967
+C46 b#5pin@17_polysilicon-1##6 0 0.035fF
+R25 b#5pin@17_polysilicon-1##6 b#5pin@17_polysilicon-1##7 9.967
+C47 b#5pin@17_polysilicon-1##7 0 0.035fF
+R26 b#5pin@17_polysilicon-1##7 b#6pin@20_polysilicon-1 9.967
+R27 b#7pin@18_polysilicon-1 b#7pin@18_polysilicon-1##0 7.8
+C48 b#7pin@18_polysilicon-1##0 0 0.02fF
+R28 b#7pin@18_polysilicon-1##0 b#4pin@16_polysilicon-1 7.8
+R29 a#5pin@19_polysilicon-1 a#5pin@19_polysilicon-1##0 9.82
+C49 a#5pin@19_polysilicon-1##0 0 0.037fF
+R30 a#5pin@19_polysilicon-1##0 a#5pin@19_polysilicon-1##1 9.82
+C50 a#5pin@19_polysilicon-1##1 0 0.037fF
+R31 a#5pin@19_polysilicon-1##1 a#5pin@19_polysilicon-1##2 9.82
+C51 a#5pin@19_polysilicon-1##2 0 0.037fF
+R32 a#5pin@19_polysilicon-1##2 a#5pin@19_polysilicon-1##3 9.82
+C52 a#5pin@19_polysilicon-1##3 0 0.037fF
+R33 a#5pin@19_polysilicon-1##3 a#5pin@19_polysilicon-1##4 9.82
+C53 a#5pin@19_polysilicon-1##4 0 0.037fF
+R34 a#5pin@19_polysilicon-1##4 a#5pin@19_polysilicon-1##5 9.82
+C54 a#5pin@19_polysilicon-1##5 0 0.037fF
+R35 a#5pin@19_polysilicon-1##5 a#5pin@19_polysilicon-1##6 9.82
+C55 a#5pin@19_polysilicon-1##6 0 0.037fF
+R36 a#5pin@19_polysilicon-1##6 a#5pin@19_polysilicon-1##7 9.82
+C56 a#5pin@19_polysilicon-1##7 0 0.037fF
+R37 a#5pin@19_polysilicon-1##7 a#5pin@19_polysilicon-1##8 9.82
+C57 a#5pin@19_polysilicon-1##8 0 0.037fF
+R38 a#5pin@19_polysilicon-1##8 a#5pin@19_polysilicon-1##9 9.82
+C58 a#5pin@19_polysilicon-1##9 0 0.037fF
+R39 a#5pin@19_polysilicon-1##9 a#5pin@19_polysilicon-1##10 9.82
+C59 a#5pin@19_polysilicon-1##10 0 0.037fF
+R40 a#5pin@19_polysilicon-1##10 a#5pin@19_polysilicon-1##11 9.82
+C60 a#5pin@19_polysilicon-1##11 0 0.037fF
+R41 a#5pin@19_polysilicon-1##11 a#5pin@19_polysilicon-1##12 9.82
+C61 a#5pin@19_polysilicon-1##12 0 0.037fF
+R42 a#5pin@19_polysilicon-1##12 a#5pin@19_polysilicon-1##13 9.82
+C62 a#5pin@19_polysilicon-1##13 0 0.037fF
+R43 a#5pin@19_polysilicon-1##13 a#5pin@19_polysilicon-1##14 9.82
+C63 a#5pin@19_polysilicon-1##14 0 0.037fF
+R44 a#5pin@19_polysilicon-1##14 a#5pin@19_polysilicon-1##15 9.82
+C64 a#5pin@19_polysilicon-1##15 0 0.037fF
+R45 a#5pin@19_polysilicon-1##15 a#5pin@19_polysilicon-1##16 9.82
+C65 a#5pin@19_polysilicon-1##16 0 0.037fF
+R46 a#5pin@19_polysilicon-1##16 a#5pin@19_polysilicon-1##17 9.82
+C66 a#5pin@19_polysilicon-1##17 0 0.037fF
+R47 a#5pin@19_polysilicon-1##17 a#5pin@19_polysilicon-1##18 9.82
+C67 a#5pin@19_polysilicon-1##18 0 0.037fF
+R48 a#5pin@19_polysilicon-1##18 a#5pin@19_polysilicon-1##19 9.82
+C68 a#5pin@19_polysilicon-1##19 0 0.037fF
+R49 a#5pin@19_polysilicon-1##19 a#5pin@19_polysilicon-1##20 9.82
+C69 a#5pin@19_polysilicon-1##20 0 0.037fF
+R50 a#5pin@19_polysilicon-1##20 a#5pin@19_polysilicon-1##21 9.82
+C70 a#5pin@19_polysilicon-1##21 0 0.037fF
+R51 a#5pin@19_polysilicon-1##21 a#5pin@19_polysilicon-1##22 9.82
+C71 a#5pin@19_polysilicon-1##22 0 0.037fF
+R52 a#5pin@19_polysilicon-1##22 a#5pin@19_polysilicon-1##23 9.82
+C72 a#5pin@19_polysilicon-1##23 0 0.037fF
+R53 a#5pin@19_polysilicon-1##23 a#5pin@19_polysilicon-1##24 9.82
+C73 a#5pin@19_polysilicon-1##24 0 0.037fF
+R54 a#5pin@19_polysilicon-1##24 a#5pin@19_polysilicon-1##25 9.82
+C74 a#5pin@19_polysilicon-1##25 0 0.037fF
+R55 a#5pin@19_polysilicon-1##25 a#5pin@19_polysilicon-1##26 9.82
+C75 a#5pin@19_polysilicon-1##26 0 0.037fF
+R56 a#5pin@19_polysilicon-1##26 a#2pin@13_polysilicon-1 9.82
+R57 a#5pin@19_polysilicon-1 a#0contact@7_metal-1-polysilicon-1 1.95
+R58 b#6pin@20_polysilicon-1 b#6pin@20_polysilicon-1##0 9.835
+C76 b#6pin@20_polysilicon-1##0 0 0.036fF
+R59 b#6pin@20_polysilicon-1##0 b#6pin@20_polysilicon-1##1 9.835
+C77 b#6pin@20_polysilicon-1##1 0 0.036fF
+R60 b#6pin@20_polysilicon-1##1 b#6pin@20_polysilicon-1##2 9.835
+C78 b#6pin@20_polysilicon-1##2 0 0.036fF
+R61 b#6pin@20_polysilicon-1##2 b#6pin@20_polysilicon-1##3 9.835
+C79 b#6pin@20_polysilicon-1##3 0 0.036fF
+R62 b#6pin@20_polysilicon-1##3 b#6pin@20_polysilicon-1##4 9.835
+C80 b#6pin@20_polysilicon-1##4 0 0.036fF
+R63 b#6pin@20_polysilicon-1##4 b#6pin@20_polysilicon-1##5 9.835
+C81 b#6pin@20_polysilicon-1##5 0 0.036fF
+R64 b#6pin@20_polysilicon-1##5 b#6pin@20_polysilicon-1##6 9.835
+C82 b#6pin@20_polysilicon-1##6 0 0.036fF
+R65 b#6pin@20_polysilicon-1##6 b#6pin@20_polysilicon-1##7 9.835
+C83 b#6pin@20_polysilicon-1##7 0 0.036fF
+R66 b#6pin@20_polysilicon-1##7 b#6pin@20_polysilicon-1##8 9.835
+C84 b#6pin@20_polysilicon-1##8 0 0.036fF
+R67 b#6pin@20_polysilicon-1##8 b#6pin@20_polysilicon-1##9 9.835
+C85 b#6pin@20_polysilicon-1##9 0 0.036fF
+R68 b#6pin@20_polysilicon-1##9 b#6pin@20_polysilicon-1##10 9.835
+C86 b#6pin@20_polysilicon-1##10 0 0.036fF
+R69 b#6pin@20_polysilicon-1##10 b#6pin@20_polysilicon-1##11 9.835
+C87 b#6pin@20_polysilicon-1##11 0 0.036fF
+R70 b#6pin@20_polysilicon-1##11 b#6pin@20_polysilicon-1##12 9.835
+C88 b#6pin@20_polysilicon-1##12 0 0.036fF
+R71 b#6pin@20_polysilicon-1##12 b#6pin@20_polysilicon-1##13 9.835
+C89 b#6pin@20_polysilicon-1##13 0 0.036fF
+R72 b#6pin@20_polysilicon-1##13 b#6pin@20_polysilicon-1##14 9.835
+C90 b#6pin@20_polysilicon-1##14 0 0.036fF
+R73 b#6pin@20_polysilicon-1##14 b#6pin@20_polysilicon-1##15 9.835
+C91 b#6pin@20_polysilicon-1##15 0 0.036fF
+R74 b#6pin@20_polysilicon-1##15 b#6pin@20_polysilicon-1##16 9.835
+C92 b#6pin@20_polysilicon-1##16 0 0.036fF
+R75 b#6pin@20_polysilicon-1##16 b#6pin@20_polysilicon-1##17 9.835
+C93 b#6pin@20_polysilicon-1##17 0 0.036fF
+R76 b#6pin@20_polysilicon-1##17 b#6pin@20_polysilicon-1##18 9.835
+C94 b#6pin@20_polysilicon-1##18 0 0.036fF
+R77 b#6pin@20_polysilicon-1##18 b#6pin@20_polysilicon-1##19 9.835
+C95 b#6pin@20_polysilicon-1##19 0 0.036fF
+R78 b#6pin@20_polysilicon-1##19 b#6pin@20_polysilicon-1##20 9.835
+C96 b#6pin@20_polysilicon-1##20 0 0.036fF
+R79 b#6pin@20_polysilicon-1##20 b#6pin@20_polysilicon-1##21 9.835
+C97 b#6pin@20_polysilicon-1##21 0 0.036fF
+R80 b#6pin@20_polysilicon-1##21 b#7pin@18_polysilicon-1 9.835
+R81 b#6pin@20_polysilicon-1 b 1.95
+R82 net_56 net_56#5pin@21_metal-1 0.067
+R83 net_56#2contact@3_metal-1-n-act net_56#6pin@24_metal-1 0.693
+R84 net_56#6pin@24_metal-1 net_56#7pin@25_metal-1 0.213
+R85 net_56#9nmos@2_poly-right net_56#9nmos@2_poly-right##0 7.8
+C98 net_56#9nmos@2_poly-right##0 0 0.02fF
+R86 net_56#9nmos@2_poly-right##0 net_56#10pin@30_polysilicon-1 7.8
+R87 net_56#11pin@32_polysilicon-1 net_56#11pin@32_polysilicon-1##0 9.545
+C99 net_56#11pin@32_polysilicon-1##0 0 0.035fF
+R88 net_56#11pin@32_polysilicon-1##0 net_56#11pin@32_polysilicon-1##1 9.545
+C100 net_56#11pin@32_polysilicon-1##1 0 0.035fF
+R89 net_56#11pin@32_polysilicon-1##1 net_56#11pin@32_polysilicon-1##2 9.545
+C101 net_56#11pin@32_polysilicon-1##2 0 0.035fF
+R90 net_56#11pin@32_polysilicon-1##2 net_56#11pin@32_polysilicon-1##3 9.545
+C102 net_56#11pin@32_polysilicon-1##3 0 0.035fF
+R91 net_56#11pin@32_polysilicon-1##3 net_56#11pin@32_polysilicon-1##4 9.545
+C103 net_56#11pin@32_polysilicon-1##4 0 0.035fF
+R92 net_56#11pin@32_polysilicon-1##4 net_56#11pin@32_polysilicon-1##5 9.545
+C104 net_56#11pin@32_polysilicon-1##5 0 0.035fF
+R93 net_56#11pin@32_polysilicon-1##5 net_56#11pin@32_polysilicon-1##6 9.545
+C105 net_56#11pin@32_polysilicon-1##6 0 0.035fF
+R94 net_56#11pin@32_polysilicon-1##6 net_56#11pin@32_polysilicon-1##7 9.545
+C106 net_56#11pin@32_polysilicon-1##7 0 0.035fF
+R95 net_56#11pin@32_polysilicon-1##7 net_56#11pin@32_polysilicon-1##8 9.545
+C107 net_56#11pin@32_polysilicon-1##8 0 0.035fF
+R96 net_56#11pin@32_polysilicon-1##8 net_56#11pin@32_polysilicon-1##9 9.545
+C108 net_56#11pin@32_polysilicon-1##9 0 0.035fF
+R97 net_56#11pin@32_polysilicon-1##9 net_56#11pin@32_polysilicon-1##10 9.545
+C109 net_56#11pin@32_polysilicon-1##10 0 0.035fF
+R98 net_56#11pin@32_polysilicon-1##10 net_56#11pin@32_polysilicon-1##11 9.545
+C110 net_56#11pin@32_polysilicon-1##11 0 0.035fF
+R99 net_56#11pin@32_polysilicon-1##11 net_56#11pin@32_polysilicon-1##12 9.545
+C111 net_56#11pin@32_polysilicon-1##12 0 0.035fF
+R100 net_56#11pin@32_polysilicon-1##12 net_56#11pin@32_polysilicon-1##13 
++9.545
+C112 net_56#11pin@32_polysilicon-1##13 0 0.035fF
+R101 net_56#11pin@32_polysilicon-1##13 net_56#11pin@32_polysilicon-1##14 
++9.545
+C113 net_56#11pin@32_polysilicon-1##14 0 0.035fF
+R102 net_56#11pin@32_polysilicon-1##14 net_56#11pin@32_polysilicon-1##15 
++9.545
+C114 net_56#11pin@32_polysilicon-1##15 0 0.035fF
+R103 net_56#11pin@32_polysilicon-1##15 net_56#11pin@32_polysilicon-1##16 
++9.545
+C115 net_56#11pin@32_polysilicon-1##16 0 0.035fF
+R104 net_56#11pin@32_polysilicon-1##16 net_56#11pin@32_polysilicon-1##17 
++9.545
+C116 net_56#11pin@32_polysilicon-1##17 0 0.035fF
+R105 net_56#11pin@32_polysilicon-1##17 net_56#10pin@30_polysilicon-1 9.545
+R106 net_56#12pin@31_polysilicon-1 net_56#12pin@31_polysilicon-1##0 9.872
+C117 net_56#12pin@31_polysilicon-1##0 0 0.036fF
+R107 net_56#12pin@31_polysilicon-1##0 net_56#12pin@31_polysilicon-1##1 9.872
+C118 net_56#12pin@31_polysilicon-1##1 0 0.036fF
+R108 net_56#12pin@31_polysilicon-1##1 net_56#12pin@31_polysilicon-1##2 9.872
+C119 net_56#12pin@31_polysilicon-1##2 0 0.036fF
+R109 net_56#12pin@31_polysilicon-1##2 net_56#12pin@31_polysilicon-1##3 9.872
+C120 net_56#12pin@31_polysilicon-1##3 0 0.036fF
+R110 net_56#12pin@31_polysilicon-1##3 net_56#12pin@31_polysilicon-1##4 9.872
+C121 net_56#12pin@31_polysilicon-1##4 0 0.036fF
+R111 net_56#12pin@31_polysilicon-1##4 net_56#12pin@31_polysilicon-1##5 9.872
+C122 net_56#12pin@31_polysilicon-1##5 0 0.036fF
+R112 net_56#12pin@31_polysilicon-1##5 net_56#12pin@31_polysilicon-1##6 9.872
+C123 net_56#12pin@31_polysilicon-1##6 0 0.036fF
+R113 net_56#12pin@31_polysilicon-1##6 net_56#12pin@31_polysilicon-1##7 9.872
+C124 net_56#12pin@31_polysilicon-1##7 0 0.036fF
+R114 net_56#12pin@31_polysilicon-1##7 net_56#12pin@31_polysilicon-1##8 9.872
+C125 net_56#12pin@31_polysilicon-1##8 0 0.036fF
+R115 net_56#12pin@31_polysilicon-1##8 net_56#12pin@31_polysilicon-1##9 9.872
+C126 net_56#12pin@31_polysilicon-1##9 0 0.036fF
+R116 net_56#12pin@31_polysilicon-1##9 net_56#12pin@31_polysilicon-1##10 9.872
+C127 net_56#12pin@31_polysilicon-1##10 0 0.036fF
+R117 net_56#12pin@31_polysilicon-1##10 net_56#12pin@31_polysilicon-1##11 
++9.872
+C128 net_56#12pin@31_polysilicon-1##11 0 0.036fF
+R118 net_56#12pin@31_polysilicon-1##11 net_56#12pin@31_polysilicon-1##12 
++9.872
+C129 net_56#12pin@31_polysilicon-1##12 0 0.036fF
+R119 net_56#12pin@31_polysilicon-1##12 net_56#12pin@31_polysilicon-1##13 
++9.872
+C130 net_56#12pin@31_polysilicon-1##13 0 0.036fF
+R120 net_56#12pin@31_polysilicon-1##13 net_56#12pin@31_polysilicon-1##14 
++9.872
+C131 net_56#12pin@31_polysilicon-1##14 0 0.036fF
+R121 net_56#12pin@31_polysilicon-1##14 net_56#11pin@32_polysilicon-1 9.872
+R122 net_56#13contact@14_metal-1-polysilicon-1 net_56#11pin@32_polysilicon-1 
++1.95
+R123 y#2contact@13_metal-1-p-act y 1.507
+R124 y y#0contact@12_metal-1-n-act 1.133
+R125 net_56#14pmos@2_poly-left net_56#14pmos@2_poly-left##0 7.8
+C132 net_56#14pmos@2_poly-left##0 0 0.02fF
+R126 net_56#14pmos@2_poly-left##0 net_56#12pin@31_polysilicon-1 7.8
+R127 net_56#7pin@25_metal-1 net_56#15pin@33_metal-1 0.64
+R128 net_56#15pin@33_metal-1 net_56#5pin@21_metal-1 1.293
+R129 net_56#15pin@33_metal-1 net_56#13contact@14_metal-1-polysilicon-1 0.187
+.ENDS ProyectoIntegrador__or2
+
+*** SUBCIRCUIT ProyectoIntegrador__and2 FROM CELL and2{lay}
+.SUBCKT ProyectoIntegrador__and2 vss a b vdd y
+Mnmos_0 net_121 b#7nmos@0_poly-right net_149 0 N L=0.2U W=0.4U AS=0.088P 
++AD=0.147P PS=0.85U PD=1.267U
+Mnmos_1 net_149 a#5nmos@1_poly-right 0 0 N L=0.2U W=0.4U AS=0.68P AD=0.088P 
++PS=6.6U PD=0.85U
+Mnmos_2 y#0contact@13_metal-1-n-act net_121#13nmos@2_poly-right 0 0 N L=0.2U 
++W=0.4U AS=0.68P AD=0.3P PS=6.6U PD=2.2U
+Mpmos_0 vdd b#1pmos@0_poly-left net_121#2contact@2_metal-1-p-act vdd P L=0.2U 
++W=0.4U AS=0.147P AD=0.587P PS=1.267U PD=5.267U
+Mpmos_1 net_121#2contact@2_metal-1-p-act a#1pmos@1_poly-left vdd vdd P L=0.2U 
++W=0.4U AS=0.587P AD=0.147P PS=5.267U PD=1.267U
+Mpmos_2 y#2contact@14_metal-1-p-act net_121#7pmos@2_poly-left vdd vdd P 
++L=0.2U W=0.8U AS=0.587P AD=0.3P PS=5.267U PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 net_121 0 0.026fF
+C1 net_121#2contact@2_metal-1-p-act 0 0.514fF
+C2 a#0contact@7_metal-1-polysilicon-1 0 0.017fF
+C3 a 0 0.013fF
+C4 b#0contact@9_metal-1-polysilicon-1 0 0.017fF
+C5 b 0 0.013fF
+C6 y#0contact@13_metal-1-n-act 0 0.546fF
+C7 y#2contact@14_metal-1-p-act 0 0.726fF
+C8 y 0 1.272fF
+C9 net_121#12contact@17_metal-1-polysilicon-1 0 0.161fF
+C10 b#7nmos@0_poly-right 0 0.025fF
+C11 a#5nmos@1_poly-right 0 0.02fF
+C12 net_121#13nmos@2_poly-right 0 0.02fF
+C13 a#2pin@22_polysilicon-1 0 0.057fF
+C14 a#4pin@23_polysilicon-1 0 0.054fF
+C15 b#2pin@25_polysilicon-1 0 0.045fF
+C16 b#3pin@26_polysilicon-1 0 0.056fF
+C17 b#5pin@27_polysilicon-1 0 0.051fF
+C18 b#6pin@28_polysilicon-1 0 0.04fF
+C19 b#4pin@29_polysilicon-1 0 0.076fF
+C20 net_121#1pin@30_metal-1 0 0.771fF
+C21 a#3pin@33_polysilicon-1 0 0.075fF
+C22 net_121#3pin@35_metal-1 0 0.617fF
+C23 net_121#11pin@39_polysilicon-1 0 0.056fF
+C24 net_121#8pin@40_polysilicon-1 0 0.055fF
+C25 net_121#9pin@44_metal-1 0 0.861fF
+C26 net_121#10pin@45_metal-1 0 0.103fF
+C27 b#1pmos@0_poly-left 0 0.025fF
+C28 a#1pmos@1_poly-left 0 0.02fF
+C29 net_121#7pmos@2_poly-left 0 0.02fF
+** Extracted Parasitic Resistors ***
+R0 a a#0contact@7_metal-1-polysilicon-1 0.02
+R1 b b#0contact@9_metal-1-polysilicon-1 0.02
+R2 a#1pmos@1_poly-left a#1pmos@1_poly-left##0 7.8
+C30 a#1pmos@1_poly-left##0 0 0.02fF
+R3 a#1pmos@1_poly-left##0 a#2pin@22_polysilicon-1 7.8
+R4 a#2pin@22_polysilicon-1 a#2pin@22_polysilicon-1##0 9.894
+C31 a#2pin@22_polysilicon-1##0 0 0.037fF
+R5 a#2pin@22_polysilicon-1##0 a#2pin@22_polysilicon-1##1 9.894
+C32 a#2pin@22_polysilicon-1##1 0 0.037fF
+R6 a#2pin@22_polysilicon-1##1 a#2pin@22_polysilicon-1##2 9.894
+C33 a#2pin@22_polysilicon-1##2 0 0.037fF
+R7 a#2pin@22_polysilicon-1##2 a#2pin@22_polysilicon-1##3 9.894
+C34 a#2pin@22_polysilicon-1##3 0 0.037fF
+R8 a#2pin@22_polysilicon-1##3 a#2pin@22_polysilicon-1##4 9.894
+C35 a#2pin@22_polysilicon-1##4 0 0.037fF
+R9 a#2pin@22_polysilicon-1##4 a#2pin@22_polysilicon-1##5 9.894
+C36 a#2pin@22_polysilicon-1##5 0 0.037fF
+R10 a#2pin@22_polysilicon-1##5 a#2pin@22_polysilicon-1##6 9.894
+C37 a#2pin@22_polysilicon-1##6 0 0.037fF
+R11 a#2pin@22_polysilicon-1##6 a#2pin@22_polysilicon-1##7 9.894
+C38 a#2pin@22_polysilicon-1##7 0 0.037fF
+R12 a#2pin@22_polysilicon-1##7 a#2pin@22_polysilicon-1##8 9.894
+C39 a#2pin@22_polysilicon-1##8 0 0.037fF
+R13 a#2pin@22_polysilicon-1##8 a#2pin@22_polysilicon-1##9 9.894
+C40 a#2pin@22_polysilicon-1##9 0 0.037fF
+R14 a#2pin@22_polysilicon-1##9 a#2pin@22_polysilicon-1##10 9.894
+C41 a#2pin@22_polysilicon-1##10 0 0.037fF
+R15 a#2pin@22_polysilicon-1##10 a#2pin@22_polysilicon-1##11 9.894
+C42 a#2pin@22_polysilicon-1##11 0 0.037fF
+R16 a#2pin@22_polysilicon-1##11 a#2pin@22_polysilicon-1##12 9.894
+C43 a#2pin@22_polysilicon-1##12 0 0.037fF
+R17 a#2pin@22_polysilicon-1##12 a#2pin@22_polysilicon-1##13 9.894
+C44 a#2pin@22_polysilicon-1##13 0 0.037fF
+R18 a#2pin@22_polysilicon-1##13 a#2pin@22_polysilicon-1##14 9.894
+C45 a#2pin@22_polysilicon-1##14 0 0.037fF
+R19 a#2pin@22_polysilicon-1##14 a#2pin@22_polysilicon-1##15 9.894
+C46 a#2pin@22_polysilicon-1##15 0 0.037fF
+R20 a#2pin@22_polysilicon-1##15 a#2pin@22_polysilicon-1##16 9.894
+C47 a#2pin@22_polysilicon-1##16 0 0.037fF
+R21 a#2pin@22_polysilicon-1##16 a#2pin@22_polysilicon-1##17 9.894
+C48 a#2pin@22_polysilicon-1##17 0 0.037fF
+R22 a#2pin@22_polysilicon-1##17 a#2pin@22_polysilicon-1##18 9.894
+C49 a#2pin@22_polysilicon-1##18 0 0.037fF
+R23 a#2pin@22_polysilicon-1##18 a#2pin@22_polysilicon-1##19 9.894
+C50 a#2pin@22_polysilicon-1##19 0 0.037fF
+R24 a#2pin@22_polysilicon-1##19 a#2pin@22_polysilicon-1##20 9.894
+C51 a#2pin@22_polysilicon-1##20 0 0.037fF
+R25 a#2pin@22_polysilicon-1##20 a#2pin@22_polysilicon-1##21 9.894
+C52 a#2pin@22_polysilicon-1##21 0 0.037fF
+R26 a#2pin@22_polysilicon-1##21 a#2pin@22_polysilicon-1##22 9.894
+C53 a#2pin@22_polysilicon-1##22 0 0.037fF
+R27 a#2pin@22_polysilicon-1##22 a#2pin@22_polysilicon-1##23 9.894
+C54 a#2pin@22_polysilicon-1##23 0 0.037fF
+R28 a#2pin@22_polysilicon-1##23 a#2pin@22_polysilicon-1##24 9.894
+C55 a#2pin@22_polysilicon-1##24 0 0.037fF
+R29 a#2pin@22_polysilicon-1##24 a#2pin@22_polysilicon-1##25 9.894
+C56 a#2pin@22_polysilicon-1##25 0 0.037fF
+R30 a#2pin@22_polysilicon-1##25 a#3pin@33_polysilicon-1 9.894
+R31 b#1pmos@0_poly-left b#1pmos@0_poly-left##0 9.75
+C57 b#1pmos@0_poly-left##0 0 0.025fF
+R32 b#1pmos@0_poly-left##0 b#2pin@25_polysilicon-1 9.75
+R33 b#2pin@25_polysilicon-1 b#2pin@25_polysilicon-1##0 7.8
+C58 b#2pin@25_polysilicon-1##0 0 0.02fF
+R34 b#2pin@25_polysilicon-1##0 b#3pin@26_polysilicon-1 7.8
+R35 b#3pin@26_polysilicon-1 b#3pin@26_polysilicon-1##0 9.75
+C59 b#3pin@26_polysilicon-1##0 0 0.036fF
+R36 b#3pin@26_polysilicon-1##0 b#3pin@26_polysilicon-1##1 9.75
+C60 b#3pin@26_polysilicon-1##1 0 0.036fF
+R37 b#3pin@26_polysilicon-1##1 b#3pin@26_polysilicon-1##2 9.75
+C61 b#3pin@26_polysilicon-1##2 0 0.036fF
+R38 b#3pin@26_polysilicon-1##2 b#3pin@26_polysilicon-1##3 9.75
+C62 b#3pin@26_polysilicon-1##3 0 0.036fF
+R39 b#3pin@26_polysilicon-1##3 b#3pin@26_polysilicon-1##4 9.75
+C63 b#3pin@26_polysilicon-1##4 0 0.036fF
+R40 b#3pin@26_polysilicon-1##4 b#3pin@26_polysilicon-1##5 9.75
+C64 b#3pin@26_polysilicon-1##5 0 0.036fF
+R41 b#3pin@26_polysilicon-1##5 b#3pin@26_polysilicon-1##6 9.75
+C65 b#3pin@26_polysilicon-1##6 0 0.036fF
+R42 b#3pin@26_polysilicon-1##6 b#3pin@26_polysilicon-1##7 9.75
+C66 b#3pin@26_polysilicon-1##7 0 0.036fF
+R43 b#3pin@26_polysilicon-1##7 b#3pin@26_polysilicon-1##8 9.75
+C67 b#3pin@26_polysilicon-1##8 0 0.036fF
+R44 b#3pin@26_polysilicon-1##8 b#3pin@26_polysilicon-1##9 9.75
+C68 b#3pin@26_polysilicon-1##9 0 0.036fF
+R45 b#3pin@26_polysilicon-1##9 b#3pin@26_polysilicon-1##10 9.75
+C69 b#3pin@26_polysilicon-1##10 0 0.036fF
+R46 b#3pin@26_polysilicon-1##10 b#3pin@26_polysilicon-1##11 9.75
+C70 b#3pin@26_polysilicon-1##11 0 0.036fF
+R47 b#3pin@26_polysilicon-1##11 b#3pin@26_polysilicon-1##12 9.75
+C71 b#3pin@26_polysilicon-1##12 0 0.036fF
+R48 b#3pin@26_polysilicon-1##12 b#3pin@26_polysilicon-1##13 9.75
+C72 b#3pin@26_polysilicon-1##13 0 0.036fF
+R49 b#3pin@26_polysilicon-1##13 b#3pin@26_polysilicon-1##14 9.75
+C73 b#3pin@26_polysilicon-1##14 0 0.036fF
+R50 b#3pin@26_polysilicon-1##14 b#4pin@29_polysilicon-1 9.75
+R51 b#5pin@27_polysilicon-1 b#6pin@28_polysilicon-1 7.8
+R52 b#6pin@28_polysilicon-1 b#6pin@28_polysilicon-1##0 9.75
+C74 b#6pin@28_polysilicon-1##0 0 0.025fF
+R53 b#6pin@28_polysilicon-1##0 b#7nmos@0_poly-right 9.75
+R54 b#4pin@29_polysilicon-1 b#4pin@29_polysilicon-1##0 9.994
+C75 b#4pin@29_polysilicon-1##0 0 0.036fF
+R55 b#4pin@29_polysilicon-1##0 b#4pin@29_polysilicon-1##1 9.994
+C76 b#4pin@29_polysilicon-1##1 0 0.036fF
+R56 b#4pin@29_polysilicon-1##1 b#4pin@29_polysilicon-1##2 9.994
+C77 b#4pin@29_polysilicon-1##2 0 0.036fF
+R57 b#4pin@29_polysilicon-1##2 b#4pin@29_polysilicon-1##3 9.994
+C78 b#4pin@29_polysilicon-1##3 0 0.036fF
+R58 b#4pin@29_polysilicon-1##3 b#4pin@29_polysilicon-1##4 9.994
+C79 b#4pin@29_polysilicon-1##4 0 0.036fF
+R59 b#4pin@29_polysilicon-1##4 b#4pin@29_polysilicon-1##5 9.994
+C80 b#4pin@29_polysilicon-1##5 0 0.036fF
+R60 b#4pin@29_polysilicon-1##5 b#4pin@29_polysilicon-1##6 9.994
+C81 b#4pin@29_polysilicon-1##6 0 0.036fF
+R61 b#4pin@29_polysilicon-1##6 b#4pin@29_polysilicon-1##7 9.994
+C82 b#4pin@29_polysilicon-1##7 0 0.036fF
+R62 b#4pin@29_polysilicon-1##7 b#4pin@29_polysilicon-1##8 9.994
+C83 b#4pin@29_polysilicon-1##8 0 0.036fF
+R63 b#4pin@29_polysilicon-1##8 b#4pin@29_polysilicon-1##9 9.994
+C84 b#4pin@29_polysilicon-1##9 0 0.036fF
+R64 b#4pin@29_polysilicon-1##9 b#4pin@29_polysilicon-1##10 9.994
+C85 b#4pin@29_polysilicon-1##10 0 0.036fF
+R65 b#4pin@29_polysilicon-1##10 b#4pin@29_polysilicon-1##11 9.994
+C86 b#4pin@29_polysilicon-1##11 0 0.036fF
+R66 b#4pin@29_polysilicon-1##11 b#4pin@29_polysilicon-1##12 9.994
+C87 b#4pin@29_polysilicon-1##12 0 0.036fF
+R67 b#4pin@29_polysilicon-1##12 b#4pin@29_polysilicon-1##13 9.994
+C88 b#4pin@29_polysilicon-1##13 0 0.036fF
+R68 b#4pin@29_polysilicon-1##13 b#4pin@29_polysilicon-1##14 9.994
+C89 b#4pin@29_polysilicon-1##14 0 0.036fF
+R69 b#4pin@29_polysilicon-1##14 b#5pin@27_polysilicon-1 9.994
+R70 b#0contact@9_metal-1-polysilicon-1 b#4pin@29_polysilicon-1 1.95
+R71 net_121 net_121#1pin@30_metal-1 0.053
+R72 a#3pin@33_polysilicon-1 a#3pin@33_polysilicon-1##0 9.75
+C90 a#3pin@33_polysilicon-1##0 0 0.034fF
+R73 a#3pin@33_polysilicon-1##0 a#3pin@33_polysilicon-1##1 9.75
+C91 a#3pin@33_polysilicon-1##1 0 0.034fF
+R74 a#3pin@33_polysilicon-1##1 a#3pin@33_polysilicon-1##2 9.75
+C92 a#3pin@33_polysilicon-1##2 0 0.034fF
+R75 a#3pin@33_polysilicon-1##2 a#3pin@33_polysilicon-1##3 9.75
+C93 a#3pin@33_polysilicon-1##3 0 0.034fF
+R76 a#3pin@33_polysilicon-1##3 a#3pin@33_polysilicon-1##4 9.75
+C94 a#3pin@33_polysilicon-1##4 0 0.034fF
+R77 a#3pin@33_polysilicon-1##4 a#3pin@33_polysilicon-1##5 9.75
+C95 a#3pin@33_polysilicon-1##5 0 0.034fF
+R78 a#3pin@33_polysilicon-1##5 a#3pin@33_polysilicon-1##6 9.75
+C96 a#3pin@33_polysilicon-1##6 0 0.034fF
+R79 a#3pin@33_polysilicon-1##6 a#3pin@33_polysilicon-1##7 9.75
+C97 a#3pin@33_polysilicon-1##7 0 0.034fF
+R80 a#3pin@33_polysilicon-1##7 a#4pin@23_polysilicon-1 9.75
+R81 a#3pin@33_polysilicon-1 a#0contact@7_metal-1-polysilicon-1 1.95
+R82 a#4pin@23_polysilicon-1 a#4pin@23_polysilicon-1##0 7.8
+C98 a#4pin@23_polysilicon-1##0 0 0.02fF
+R83 a#4pin@23_polysilicon-1##0 a#5nmos@1_poly-right 7.8
+R84 net_121#2contact@2_metal-1-p-act net_121#3pin@35_metal-1 1.067
+R85 y#2contact@14_metal-1-p-act y 1.507
+R86 y y#0contact@13_metal-1-n-act 1.133
+R87 net_121#7pmos@2_poly-left net_121#7pmos@2_poly-left##0 7.8
+C99 net_121#7pmos@2_poly-left##0 0 0.02fF
+R88 net_121#7pmos@2_poly-left##0 net_121#8pin@40_polysilicon-1 7.8
+R89 net_121#3pin@35_metal-1 net_121#9pin@44_metal-1 0.213
+R90 net_121#9pin@44_metal-1 net_121#1pin@30_metal-1 1.547
+R91 net_121#9pin@44_metal-1 net_121#10pin@45_metal-1 0.027
+R92 net_121#11pin@39_polysilicon-1 net_121#11pin@39_polysilicon-1##0 9.661
+C100 net_121#11pin@39_polysilicon-1##0 0 0.036fF
+R93 net_121#11pin@39_polysilicon-1##0 net_121#11pin@39_polysilicon-1##1 9.661
+C101 net_121#11pin@39_polysilicon-1##1 0 0.036fF
+R94 net_121#11pin@39_polysilicon-1##1 net_121#11pin@39_polysilicon-1##2 9.661
+C102 net_121#11pin@39_polysilicon-1##2 0 0.036fF
+R95 net_121#11pin@39_polysilicon-1##2 net_121#11pin@39_polysilicon-1##3 9.661
+C103 net_121#11pin@39_polysilicon-1##3 0 0.036fF
+R96 net_121#11pin@39_polysilicon-1##3 net_121#11pin@39_polysilicon-1##4 9.661
+C104 net_121#11pin@39_polysilicon-1##4 0 0.036fF
+R97 net_121#11pin@39_polysilicon-1##4 net_121#11pin@39_polysilicon-1##5 9.661
+C105 net_121#11pin@39_polysilicon-1##5 0 0.036fF
+R98 net_121#11pin@39_polysilicon-1##5 net_121#11pin@39_polysilicon-1##6 9.661
+C106 net_121#11pin@39_polysilicon-1##6 0 0.036fF
+R99 net_121#11pin@39_polysilicon-1##6 net_121#11pin@39_polysilicon-1##7 9.661
+C107 net_121#11pin@39_polysilicon-1##7 0 0.036fF
+R100 net_121#11pin@39_polysilicon-1##7 net_121#11pin@39_polysilicon-1##8 
++9.661
+C108 net_121#11pin@39_polysilicon-1##8 0 0.036fF
+R101 net_121#11pin@39_polysilicon-1##8 net_121#11pin@39_polysilicon-1##9 
++9.661
+C109 net_121#11pin@39_polysilicon-1##9 0 0.036fF
+R102 net_121#11pin@39_polysilicon-1##9 net_121#11pin@39_polysilicon-1##10 
++9.661
+C110 net_121#11pin@39_polysilicon-1##10 0 0.036fF
+R103 net_121#11pin@39_polysilicon-1##10 net_121#11pin@39_polysilicon-1##11 
++9.661
+C111 net_121#11pin@39_polysilicon-1##11 0 0.036fF
+R104 net_121#11pin@39_polysilicon-1##11 net_121#11pin@39_polysilicon-1##12 
++9.661
+C112 net_121#11pin@39_polysilicon-1##12 0 0.036fF
+R105 net_121#11pin@39_polysilicon-1##12 net_121#11pin@39_polysilicon-1##13 
++9.661
+C113 net_121#11pin@39_polysilicon-1##13 0 0.036fF
+R106 net_121#11pin@39_polysilicon-1##13 net_121#11pin@39_polysilicon-1##14 
++9.661
+C114 net_121#11pin@39_polysilicon-1##14 0 0.036fF
+R107 net_121#11pin@39_polysilicon-1##14 net_121#11pin@39_polysilicon-1##15 
++9.661
+C115 net_121#11pin@39_polysilicon-1##15 0 0.036fF
+R108 net_121#11pin@39_polysilicon-1##15 net_121#11pin@39_polysilicon-1##16 
++9.661
+C116 net_121#11pin@39_polysilicon-1##16 0 0.036fF
+R109 net_121#11pin@39_polysilicon-1##16 net_121#11pin@39_polysilicon-1##17 
++9.661
+C117 net_121#11pin@39_polysilicon-1##17 0 0.036fF
+R110 net_121#11pin@39_polysilicon-1##17 net_121#11pin@39_polysilicon-1##18 
++9.661
+C118 net_121#11pin@39_polysilicon-1##18 0 0.036fF
+R111 net_121#11pin@39_polysilicon-1##18 net_121#11pin@39_polysilicon-1##19 
++9.661
+C119 net_121#11pin@39_polysilicon-1##19 0 0.036fF
+R112 net_121#11pin@39_polysilicon-1##19 net_121#11pin@39_polysilicon-1##20 
++9.661
+C120 net_121#11pin@39_polysilicon-1##20 0 0.036fF
+R113 net_121#11pin@39_polysilicon-1##20 
++net_121#12contact@17_metal-1-polysilicon-1 9.661
+R114 net_121#12contact@17_metal-1-polysilicon-1 
++net_121#12contact@17_metal-1-polysilicon-1##0 9.75
+C121 net_121#12contact@17_metal-1-polysilicon-1##0 0 0.035fF
+R115 net_121#12contact@17_metal-1-polysilicon-1##0 
++net_121#12contact@17_metal-1-polysilicon-1##1 9.75
+C122 net_121#12contact@17_metal-1-polysilicon-1##1 0 0.035fF
+R116 net_121#12contact@17_metal-1-polysilicon-1##1 
++net_121#12contact@17_metal-1-polysilicon-1##2 9.75
+C123 net_121#12contact@17_metal-1-polysilicon-1##2 0 0.035fF
+R117 net_121#12contact@17_metal-1-polysilicon-1##2 
++net_121#12contact@17_metal-1-polysilicon-1##3 9.75
+C124 net_121#12contact@17_metal-1-polysilicon-1##3 0 0.035fF
+R118 net_121#12contact@17_metal-1-polysilicon-1##3 
++net_121#12contact@17_metal-1-polysilicon-1##4 9.75
+C125 net_121#12contact@17_metal-1-polysilicon-1##4 0 0.035fF
+R119 net_121#12contact@17_metal-1-polysilicon-1##4 
++net_121#12contact@17_metal-1-polysilicon-1##5 9.75
+C126 net_121#12contact@17_metal-1-polysilicon-1##5 0 0.035fF
+R120 net_121#12contact@17_metal-1-polysilicon-1##5 
++net_121#12contact@17_metal-1-polysilicon-1##6 9.75
+C127 net_121#12contact@17_metal-1-polysilicon-1##6 0 0.035fF
+R121 net_121#12contact@17_metal-1-polysilicon-1##6 
++net_121#12contact@17_metal-1-polysilicon-1##7 9.75
+C128 net_121#12contact@17_metal-1-polysilicon-1##7 0 0.035fF
+R122 net_121#12contact@17_metal-1-polysilicon-1##7 
++net_121#12contact@17_metal-1-polysilicon-1##8 9.75
+C129 net_121#12contact@17_metal-1-polysilicon-1##8 0 0.035fF
+R123 net_121#12contact@17_metal-1-polysilicon-1##8 
++net_121#12contact@17_metal-1-polysilicon-1##9 9.75
+C130 net_121#12contact@17_metal-1-polysilicon-1##9 0 0.035fF
+R124 net_121#12contact@17_metal-1-polysilicon-1##9 
++net_121#12contact@17_metal-1-polysilicon-1##10 9.75
+C131 net_121#12contact@17_metal-1-polysilicon-1##10 0 0.035fF
+R125 net_121#12contact@17_metal-1-polysilicon-1##10 
++net_121#12contact@17_metal-1-polysilicon-1##11 9.75
+C132 net_121#12contact@17_metal-1-polysilicon-1##11 0 0.035fF
+R126 net_121#12contact@17_metal-1-polysilicon-1##11 
++net_121#8pin@40_polysilicon-1 9.75
+R127 net_121#10pin@45_metal-1 net_121#12contact@17_metal-1-polysilicon-1 
++0.187
+R128 net_121#11pin@39_polysilicon-1 net_121#11pin@39_polysilicon-1##0 7.8
+C133 net_121#11pin@39_polysilicon-1##0 0 0.02fF
+R129 net_121#11pin@39_polysilicon-1##0 net_121#13nmos@2_poly-right 7.8
+.ENDS ProyectoIntegrador__and2
+
+*** TOP LEVEL CELL: rippleCarry16;1{lay}
+Xc_cout 0 net_327 vdd cout#0c_cout_y ProyectoIntegrador__id
+Xc_sum0 0 net_27 vdd sum0#0c_sum0_y ProyectoIntegrador__id
+Xc_sum1 0 net_5 vdd sum1#0c_sum1_y ProyectoIntegrador__id
+Xc_sum2 0 net_42 vdd sum2#0c_sum2_y ProyectoIntegrador__id
+Xc_sum3 0 net_75#2c_sum3_a vdd sum3#0c_sum3_y ProyectoIntegrador__id
+Xc_sum4 0 net_54#2c_sum4_a vdd sum4#0c_sum4_y ProyectoIntegrador__id
+Xc_sum5 0 net_110#2c_sum5_a vdd sum5#0c_sum5_y ProyectoIntegrador__id
+Xc_sum6 0 net_127 vdd sum6#0c_sum6_y ProyectoIntegrador__id
+Xc_sum7 0 net_158 vdd sum7#0c_sum7_y ProyectoIntegrador__id
+Xc_sum8 0 net_171#2c_sum8_a vdd sum8#0c_sum8_y ProyectoIntegrador__id
+Xc_sum9 0 net_187#2c_sum9_a vdd sum9#0c_sum9_y ProyectoIntegrador__id
+Xc_sum10 0 net_211#2c_sum10_a vdd sum10#0c_sum10_y ProyectoIntegrador__id
+Xc_sum11 0 net_233 vdd sum11#0c_sum11_y ProyectoIntegrador__id
+Xc_sum12 0 net_241 vdd sum12#0c_sum12_y ProyectoIntegrador__id
+Xc_sum13 0 net_284 vdd sum13#0c_sum13_y ProyectoIntegrador__id
+Xc_sum14 0 net_315#2c_sum14_a vdd sum14#0c_sum14_y ProyectoIntegrador__id
+Xc_sum15 0 net_85#2c_sum15_a vdd sum15#0c_sum15_y ProyectoIntegrador__id
+Xc_w1 0 net_11 net_39 vdd net_27#2c_w1_y ProyectoIntegrador__xor2
+Xc_w2 0 cin#0c_w2_a vdd net_11#4c_w2_y ProyectoIntegrador__id
+Xc_w3 0 net_7 net_36 vdd net_39#4c_w3_y ProyectoIntegrador__xor2
+Xc_w4 0 a0#0c_w4_a vdd net_7#4c_w4_y ProyectoIntegrador__id
+Xc_w5 0 b0#0c_w5_a vdd net_36#4c_w5_y ProyectoIntegrador__id
+Xc_w6 0 net_22#2c_w6_a net_31 vdd net_5#2c_w6_y ProyectoIntegrador__xor2
+Xc_w7 0 net_25#2c_w7_a net_48#2c_w7_b vdd net_22 ProyectoIntegrador__or2
+Xc_w8 0 net_11#2c_w8_a net_39#2c_w8_b vdd net_25 ProyectoIntegrador__and2
+Xc_w9 0 net_7#2c_w9_a net_36#2c_w9_b vdd net_48 ProyectoIntegrador__and2
+Xc_w10 0 net_19 net_45 vdd net_31#4c_w10_y ProyectoIntegrador__xor2
+Xc_w11 0 a1#0c_w11_a vdd net_19#4c_w11_y ProyectoIntegrador__id
+Xc_w12 0 b1#0c_w12_a vdd net_45#4c_w12_y ProyectoIntegrador__id
+Xc_w13 0 net_15#2c_w13_a net_0 vdd net_42#2c_w13_y ProyectoIntegrador__xor2
+Xc_w14 0 net_3#2c_w14_a net_29#2c_w14_b vdd net_15 ProyectoIntegrador__or2
+Xc_w15 0 net_22#4c_w15_a net_31#2c_w15_b vdd net_3 ProyectoIntegrador__and2
+Xc_w16 0 net_19#2c_w16_a net_45#2c_w16_b vdd net_29 ProyectoIntegrador__and2
+Xc_w17 0 net_72#2c_w17_a net_96#2c_w17_b vdd net_0#4c_w17_y 
++ProyectoIntegrador__xor2
+Xc_w18 0 a2#0c_w18_a vdd net_72 ProyectoIntegrador__id
+Xc_w19 0 b2#0c_w19_a vdd net_96 ProyectoIntegrador__id
+Xc_w20 0 net_65#2c_w20_a net_90#4c_w20_b vdd net_75 ProyectoIntegrador__xor2
+Xc_w21 0 net_88 net_63 vdd net_65#4c_w21_y ProyectoIntegrador__or2
+Xc_w22 0 net_15#4c_w22_a net_0#2c_w22_b vdd net_88#2c_w22_y 
++ProyectoIntegrador__and2
+Xc_w23 0 net_72#4c_w23_a net_96#4c_w23_b vdd net_63#2c_w23_y 
++ProyectoIntegrador__and2
+Xc_w24 0 net_68#4c_w24_a net_99#4c_w24_b vdd net_90 ProyectoIntegrador__xor2
+Xc_w25 0 a3#0c_w25_a vdd net_68 ProyectoIntegrador__id
+Xc_w26 0 b3#0c_w26_a vdd net_99 ProyectoIntegrador__id
+Xc_w27 0 net_79#2c_w27_a net_56#4c_w27_b vdd net_54 ProyectoIntegrador__xor2
+Xc_w28 0 net_77 net_93 vdd net_79#4c_w28_y ProyectoIntegrador__or2
+Xc_w29 0 net_65 net_90#2c_w29_b vdd net_77#2c_w29_y ProyectoIntegrador__and2
+Xc_w30 0 net_68#2c_w30_a net_99#2c_w30_b vdd net_93#2c_w30_y 
++ProyectoIntegrador__and2
+Xc_w31 0 net_102#4c_w31_a net_59#4c_w31_b vdd net_56 ProyectoIntegrador__xor2
+Xc_w32 0 a4#0c_w32_a vdd net_102 ProyectoIntegrador__id
+Xc_w33 0 b4#0c_w33_a vdd net_59 ProyectoIntegrador__id
+Xc_w34 0 net_132#2c_w34_a net_118#2c_w34_b vdd net_110 
++ProyectoIntegrador__xor2
+Xc_w35 0 net_82 net_107 vdd net_132#4c_w35_y ProyectoIntegrador__or2
+Xc_w36 0 net_79 net_56#2c_w36_b vdd net_82#2c_w36_y ProyectoIntegrador__and2
+Xc_w37 0 net_102#2c_w37_a net_59#2c_w37_b vdd net_107#2c_w37_y 
++ProyectoIntegrador__and2
+Xc_w38 0 net_168 net_129 vdd net_118#4c_w38_y ProyectoIntegrador__xor2
+Xc_w39 0 a5#0c_w39_a vdd net_168#4c_w39_y ProyectoIntegrador__id
+Xc_w40 0 b5#0c_w40_a vdd net_129#4c_w40_y ProyectoIntegrador__id
+Xc_w41 0 net_144#2c_w41_a net_113 vdd net_127#2c_w41_y 
++ProyectoIntegrador__xor2
+Xc_w42 0 net_152#2c_w42_a net_116#2c_w42_b vdd net_144 
++ProyectoIntegrador__or2
+Xc_w43 0 net_132 net_118 vdd net_152 ProyectoIntegrador__and2
+Xc_w44 0 net_168#2c_w44_a net_129#2c_w44_b vdd net_116 
++ProyectoIntegrador__and2
+Xc_w45 0 net_149 net_124 vdd net_113#4c_w45_y ProyectoIntegrador__xor2
+Xc_w46 0 a6#0c_w46_a vdd net_149#4c_w46_y ProyectoIntegrador__id
+Xc_w47 0 b6#0c_w47_a vdd net_124#4c_w47_y ProyectoIntegrador__id
+Xc_w48 0 net_139#2c_w48_a net_155 vdd net_158#2c_w48_y 
++ProyectoIntegrador__xor2
+Xc_w49 0 net_142#2c_w49_a net_165#2c_w49_b vdd net_139 
++ProyectoIntegrador__or2
+Xc_w50 0 net_144#4c_w50_a net_113#2c_w50_b vdd net_142 
++ProyectoIntegrador__and2
+Xc_w51 0 net_149#2c_w51_a net_124#2c_w51_b vdd net_165 
++ProyectoIntegrador__and2
+Xc_w52 0 net_136 net_162 vdd net_155#4c_w52_y ProyectoIntegrador__xor2
+Xc_w53 0 a7#0c_w53_a vdd net_136#4c_w53_y ProyectoIntegrador__id
+Xc_w54 0 b7#0c_w54_a vdd net_162#4c_w54_y ProyectoIntegrador__id
+Xc_w55 0 net_219#2c_w55_a net_173#4c_w55_b vdd net_171 
++ProyectoIntegrador__xor2
+Xc_w56 0 net_193#2c_w56_a net_182#2c_w56_b vdd net_219#4c_w56_y 
++ProyectoIntegrador__or2
+Xc_w57 0 net_139#4c_w57_a net_155#2c_w57_b vdd net_193 
++ProyectoIntegrador__and2
+Xc_w58 0 net_136#2c_w58_a net_162#2c_w58_b vdd net_182 
++ProyectoIntegrador__and2
+Xc_w59 0 net_224#4c_w59_a net_184#4c_w59_b vdd net_173 
++ProyectoIntegrador__xor2
+Xc_w60 0 a8#0c_w60_a vdd net_224 ProyectoIntegrador__id
+Xc_w61 0 b8#0c_w61_a vdd net_184 ProyectoIntegrador__id
+Xc_w62 0 net_195#2c_w62_a net_178#4c_w62_b vdd net_187 
++ProyectoIntegrador__xor2
+Xc_w63 0 net_222 net_176 vdd net_195#4c_w63_y ProyectoIntegrador__or2
+Xc_w64 0 net_219 net_173#2c_w64_b vdd net_222#2c_w64_y 
++ProyectoIntegrador__and2
+Xc_w65 0 net_224#2c_w65_a net_184#2c_w65_b vdd net_176#2c_w65_y 
++ProyectoIntegrador__and2
+Xc_w66 0 net_198#4c_w66_a net_189#4c_w66_b vdd net_178 
++ProyectoIntegrador__xor2
+Xc_w67 0 a9#0c_w67_a vdd net_198 ProyectoIntegrador__id
+Xc_w68 0 b9#0c_w68_a vdd net_189 ProyectoIntegrador__id
+Xc_w69 0 net_216#2c_w69_a net_205#4c_w69_b vdd net_211 
++ProyectoIntegrador__xor2
+Xc_w70 0 net_203 net_214 vdd net_216#4c_w70_y ProyectoIntegrador__or2
+Xc_w71 0 net_195 net_178#2c_w71_b vdd net_203#2c_w71_y 
++ProyectoIntegrador__and2
+Xc_w72 0 net_198#2c_w72_a net_189#2c_w72_b vdd net_214#2c_w72_y 
++ProyectoIntegrador__and2
+Xc_w73 0 net_251#4c_w73_a net_267#4c_w73_b vdd net_205 
++ProyectoIntegrador__xor2
+Xc_w74 0 a10#0c_w74_a vdd net_251#2c_w74_y ProyectoIntegrador__id
+Xc_w75 0 b10#0c_w75_a vdd net_267 ProyectoIntegrador__id
+Xc_w76 0 net_246#2c_w76_a net_264 vdd net_233#2c_w76_y 
++ProyectoIntegrador__xor2
+Xc_w77 0 net_249#2c_w77_a net_279#2c_w77_b vdd net_246 
++ProyectoIntegrador__or2
+Xc_w78 0 net_216 net_205#2c_w78_b vdd net_249 ProyectoIntegrador__and2
+Xc_w79 0 net_251 net_267#2c_w79_b vdd net_279 ProyectoIntegrador__and2
+Xc_w80 0 net_243 net_276 vdd net_264#4c_w80_y ProyectoIntegrador__xor2
+Xc_w81 0 a11#0c_w81_a vdd net_243#4c_w81_y ProyectoIntegrador__id
+Xc_w82 0 b11#0c_w82_a vdd net_276#4c_w82_y ProyectoIntegrador__id
+Xc_w83 0 net_259#2c_w83_a net_228 vdd net_241#2c_w83_y 
++ProyectoIntegrador__xor2
+Xc_w84 0 net_231#2c_w84_a net_262#2c_w84_b vdd net_259 
++ProyectoIntegrador__or2
+Xc_w85 0 net_246#4c_w85_a net_264#2c_w85_b vdd net_231 
++ProyectoIntegrador__and2
+Xc_w86 0 net_243#2c_w86_a net_276#2c_w86_b vdd net_262 
++ProyectoIntegrador__and2
+Xc_w87 0 net_273 net_256 vdd net_228#4c_w87_y ProyectoIntegrador__xor2
+Xc_w88 0 a12#0c_w88_a vdd net_273#4c_w88_y ProyectoIntegrador__id
+Xc_w89 0 b12#0c_w89_a vdd net_256#4c_w89_y ProyectoIntegrador__id
+Xc_w90 0 net_236#2c_w90_a net_298#2c_w90_b vdd net_284#2c_w90_y 
++ProyectoIntegrador__xor2
+Xc_w91 0 net_239#2c_w91_a net_281#2c_w91_b vdd net_236 
++ProyectoIntegrador__or2
+Xc_w92 0 net_259#4c_w92_a net_228#2c_w92_b vdd net_239 
++ProyectoIntegrador__and2
+Xc_w93 0 net_273#2c_w93_a net_256#2c_w93_b vdd net_281 
++ProyectoIntegrador__and2
+Xc_w94 0 net_312#4c_w94_a net_332#4c_w94_b vdd net_298 
++ProyectoIntegrador__xor2
+Xc_w95 0 a13#0c_w95_a vdd net_312 ProyectoIntegrador__id
+Xc_w96 0 b13#0c_w96_a vdd net_332 ProyectoIntegrador__id
+Xc_w97 0 net_291#2c_w97_a net_317#4c_w97_b vdd net_315 
++ProyectoIntegrador__xor2
+Xc_w98 0 net_289 net_301 vdd net_291#4c_w98_y ProyectoIntegrador__or2
+Xc_w99 0 net_236#4c_w99_a net_298#4c_w99_b vdd net_289#2c_w99_y 
++ProyectoIntegrador__and2
+Xc_w100 0 net_312#2c_w100_a net_332#2c_w100_b vdd net_301#2c_w100_y 
++ProyectoIntegrador__and2
+Xc_w101 0 net_303#4c_w101_a net_335#4c_w101_b vdd net_317 
++ProyectoIntegrador__xor2
+Xc_w102 0 a14#0c_w102_a vdd net_303 ProyectoIntegrador__id
+Xc_w103 0 b14#0c_w103_a vdd net_335 ProyectoIntegrador__id
+Xc_w104 0 net_322#2c_w104_a net_306#4c_w104_b vdd net_85#14c_w104_y 
++ProyectoIntegrador__xor2
+Xc_w105 0 net_294 net_320 vdd net_322#4c_w105_y ProyectoIntegrador__or2
+Xc_w106 0 net_291 net_317#2c_w106_b vdd net_294#2c_w106_y 
++ProyectoIntegrador__and2
+Xc_w107 0 net_303#2c_w107_a net_335#2c_w107_b vdd net_320#2c_w107_y 
++ProyectoIntegrador__and2
+Xc_w108 0 net_329#4c_w108_a net_309#4c_w108_b vdd net_306 
++ProyectoIntegrador__xor2
+Xc_w109 0 a15#0c_w109_a vdd net_329 ProyectoIntegrador__id
+Xc_w110 0 b15#0c_w110_a vdd net_309 ProyectoIntegrador__id
+Xc_w111 0 net_325 net_338#2c_w111_b vdd net_327#2c_w111_y 
++ProyectoIntegrador__or2
+Xc_w112 0 net_322 net_306#2c_w112_b vdd net_325#2c_w112_y 
++ProyectoIntegrador__and2
+Xc_w113 0 net_329#2c_w113_a net_309#2c_w113_b vdd net_338 
++ProyectoIntegrador__and2
+** Extracted Parasitic Capacitors ***
+C0 net_327 0 1.029fF
+C1 cout#0c_cout_y 0 0.897fF
+C2 net_27 0 0.93fF
+C3 sum0#0c_sum0_y 0 0.743fF
+C4 net_5 0 0.831fF
+C5 sum1#0c_sum1_y 0 0.941fF
+C6 net_42 0 1.128fF
+C7 sum2#0c_sum2_y 0 0.842fF
+C8 net_75#2c_sum3_a 0 1.029fF
+C9 sum3#0c_sum3_y 0 1.337fF
+C10 net_54#2c_sum4_a 0 0.831fF
+C11 sum4#0c_sum4_y 0 0.842fF
+C12 net_110#2c_sum5_a 0 1.524fF
+C13 sum5#0c_sum5_y 0 1.238fF
+C14 net_127 0 0.93fF
+C15 sum6#0c_sum6_y 0 0.941fF
+C16 net_158 0 1.227fF
+C17 sum7#0c_sum7_y 0 1.04fF
+C18 net_171#2c_sum8_a 0 1.502fF
+C19 sum8#0c_sum8_y 0 0.941fF
+C20 net_187#2c_sum9_a 0 0.93fF
+C21 sum9#0c_sum9_y 0 1.04fF
+C22 net_211#2c_sum10_a 0 1.227fF
+C23 sum10#0c_sum10_y 0 0.941fF
+C24 net_233 0 0.831fF
+C25 sum11#0c_sum11_y 0 1.238fF
+C26 net_241 0 0.93fF
+C27 sum12#0c_sum12_y 0 1.139fF
+C28 net_284 0 1.326fF
+C29 sum13#0c_sum13_y 0 1.04fF
+C30 net_315#2c_sum14_a 0 1.029fF
+C31 sum14#0c_sum14_y 0 0.897fF
+C32 net_85#2c_sum15_a 0 1.205fF
+C33 sum15#0c_sum15_y 0 0.743fF
+C34 net_11 0 0.655fF
+C35 net_39 0 1.029fF
+C36 net_27#2c_w1_y 0 1.414fF
+C37 cin#0c_w2_a 0 1.128fF
+C38 net_11#4c_w2_y 0 0.743fF
+C39 net_7 0 0.655fF
+C40 net_36 0 1.029fF
+C41 net_39#4c_w3_y 0 1.513fF
+C42 a0#0c_w4_a 0 1.029fF
+C43 net_7#4c_w4_y 0 0.743fF
+C44 b0#0c_w5_a 0 1.227fF
+C45 net_36#4c_w5_y 0 0.941fF
+C46 net_22#2c_w6_a 0 0.754fF
+C47 net_31 0 1.029fF
+C48 net_5#2c_w6_y 0 1.315fF
+C49 net_25#2c_w7_a 0 1.194fF
+C50 net_48#2c_w7_b 0 1.304fF
+C51 net_22 0 0.842fF
+C52 net_11#2c_w8_a 0 0.567fF
+C53 net_39#2c_w8_b 0 1.029fF
+C54 net_25 0 0.842fF
+C55 net_7#2c_w9_a 0 0.567fF
+C56 net_36#2c_w9_b 0 1.029fF
+C57 net_48 0 1.04fF
+C58 net_19 0 0.754fF
+C59 net_45 0 1.128fF
+C60 net_31#4c_w10_y 0 1.513fF
+C61 a1#0c_w11_a 0 1.128fF
+C62 net_19#4c_w11_y 0 0.842fF
+C63 b1#0c_w12_a 0 1.227fF
+C64 net_45#4c_w12_y 0 1.04fF
+C65 net_15#2c_w13_a 0 0.754fF
+C66 net_0 0 0.831fF
+C67 net_42#2c_w13_y 0 1.612fF
+C68 net_3#2c_w14_a 0 1.095fF
+C69 net_29#2c_w14_b 0 1.205fF
+C70 net_15 0 0.842fF
+C71 net_22#4c_w15_a 0 0.666fF
+C72 net_31#2c_w15_b 0 1.029fF
+C73 net_3 0 0.743fF
+C74 net_19#2c_w16_a 0 0.666fF
+C75 net_45#2c_w16_b 0 1.128fF
+C76 net_29 0 0.941fF
+C77 net_72#2c_w17_a 0 1.48fF
+C78 net_96#2c_w17_b 0 1.007fF
+C79 net_0#4c_w17_y 0 1.315fF
+C80 a2#0c_w18_a 0 1.524fF
+C81 net_72 0 0.941fF
+C82 b2#0c_w19_a 0 1.227fF
+C83 net_96 0 1.238fF
+C84 net_65#2c_w20_a 0 0.754fF
+C85 net_90#4c_w20_b 0 1.227fF
+C86 net_75 0 1.513fF
+C87 net_88 0 1.491fF
+C88 net_63 0 1.106fF
+C89 net_65#4c_w21_y 0 0.842fF
+C90 net_15#4c_w22_a 0 0.666fF
+C91 net_0#2c_w22_b 0 0.831fF
+C92 net_88#2c_w22_y 0 1.194fF
+C93 net_72#4c_w23_a 0 0.765fF
+C94 net_96#4c_w23_b 0 1.326fF
+C95 net_63#2c_w23_y 0 0.842fF
+C96 net_68#4c_w24_a 0 0.754fF
+C97 net_99#4c_w24_b 0 1.326fF
+C98 net_90 0 1.711fF
+C99 a3#0c_w25_a 0 0.831fF
+C100 net_68 0 0.842fF
+C101 b3#0c_w26_a 0 1.128fF
+C102 net_99 0 1.238fF
+C103 net_79#2c_w27_a 0 0.853fF
+C104 net_56#4c_w27_b 0 0.831fF
+C105 net_54 0 1.315fF
+C106 net_77 0 1.293fF
+C107 net_93 0 1.403fF
+C108 net_79#4c_w28_y 0 0.941fF
+C109 net_65 0 0.666fF
+C110 net_90#2c_w29_b 0 1.227fF
+C111 net_77#2c_w29_y 0 0.941fF
+C112 net_68#2c_w30_a 0 0.666fF
+C113 net_99#2c_w30_b 0 1.326fF
+C114 net_93#2c_w30_y 0 1.139fF
+C115 net_102#4c_w31_a 0 1.15fF
+C116 net_59#4c_w31_b 0 0.831fF
+C117 net_56 0 1.315fF
+C118 a4#0c_w32_a 0 0.831fF
+C119 net_102 0 1.238fF
+C120 b4#0c_w33_a 0 1.227fF
+C121 net_59 0 0.743fF
+C122 net_132#2c_w34_a 0 1.48fF
+C123 net_118#2c_w34_b 0 1.403fF
+C124 net_110 0 2.008fF
+C125 net_82 0 1.293fF
+C126 net_107 0 1.601fF
+C127 net_132#4c_w35_y 0 1.392fF
+C128 net_79 0 0.765fF
+C129 net_56#2c_w36_b 0 0.831fF
+C130 net_82#2c_w36_y 0 0.941fF
+C131 net_102#2c_w37_a 0 1.062fF
+C132 net_59#2c_w37_b 0 0.831fF
+C133 net_107#2c_w37_y 0 1.337fF
+C134 net_168 0 1.249fF
+C135 net_129 0 0.93fF
+C136 net_118#4c_w38_y 0 1.315fF
+C137 a5#0c_w39_a 0 1.227fF
+C138 net_168#4c_w39_y 0 1.337fF
+C139 b5#0c_w40_a 0 1.326fF
+C140 net_129#4c_w40_y 0 0.842fF
+C141 net_144#2c_w41_a 0 0.853fF
+C142 net_113 0 0.831fF
+C143 net_127#2c_w41_y 0 1.414fF
+C144 net_152#2c_w42_a 0 1.392fF
+C145 net_116#2c_w42_b 0 1.007fF
+C146 net_144 0 0.941fF
+C147 net_132 0 0.666fF
+C148 net_118 0 0.831fF
+C149 net_152 0 1.04fF
+C150 net_168#2c_w44_a 0 1.161fF
+C151 net_129#2c_w44_b 0 0.93fF
+C152 net_116 0 0.743fF
+C153 net_149 0 0.952fF
+C154 net_124 0 0.93fF
+C155 net_113#4c_w45_y 0 1.315fF
+C156 a6#0c_w46_a 0 0.93fF
+C157 net_149#4c_w46_y 0 1.04fF
+C158 b6#0c_w47_a 0 0.831fF
+C159 net_124#4c_w47_y 0 0.842fF
+C160 net_139#2c_w48_a 0 0.853fF
+C161 net_155 0 1.227fF
+C162 net_158#2c_w48_y 0 1.711fF
+C163 net_142#2c_w49_a 0 1.293fF
+C164 net_165#2c_w49_b 0 1.502fF
+C165 net_139 0 0.941fF
+C166 net_144#4c_w50_a 0 0.765fF
+C167 net_113#2c_w50_b 0 0.831fF
+C168 net_142 0 0.941fF
+C169 net_149#2c_w51_a 0 0.864fF
+C170 net_124#2c_w51_b 0 0.93fF
+C171 net_165 0 1.238fF
+C172 net_136 0 0.853fF
+C173 net_162 0 1.326fF
+C174 net_155#4c_w52_y 0 1.711fF
+C175 a7#0c_w53_a 0 1.326fF
+C176 net_136#4c_w53_y 0 0.941fF
+C177 b7#0c_w54_a 0 1.227fF
+C178 net_162#4c_w54_y 0 1.238fF
+C179 net_219#2c_w55_a 0 1.249fF
+C180 net_173#4c_w55_b 0 0.831fF
+C181 net_171 0 1.315fF
+C182 net_193#2c_w56_a 0 1.293fF
+C183 net_182#2c_w56_b 0 1.106fF
+C184 net_219#4c_w56_y 0 1.337fF
+C185 net_139#4c_w57_a 0 0.765fF
+C186 net_155#2c_w57_b 0 1.227fF
+C187 net_193 0 1.392fF
+C188 net_136#2c_w58_a 0 0.765fF
+C189 net_162#2c_w58_b 0 1.326fF
+C190 net_182 0 1.491fF
+C191 net_224#4c_w59_a 0 1.348fF
+C192 net_184#4c_w59_b 0 0.93fF
+C193 net_173 0 1.315fF
+C194 a8#0c_w60_a 0 1.227fF
+C195 net_224 0 1.436fF
+C196 b8#0c_w61_a 0 1.326fF
+C197 net_184 0 0.842fF
+C198 net_195#2c_w62_a 0 0.853fF
+C199 net_178#4c_w62_b 0 0.831fF
+C200 net_187 0 1.414fF
+C201 net_222 0 1.689fF
+C202 net_176 0 1.007fF
+C203 net_195#4c_w63_y 0 0.941fF
+C204 net_219 0 1.161fF
+C205 net_173#2c_w64_b 0 0.831fF
+C206 net_222#2c_w64_y 0 1.337fF
+C207 net_224#2c_w65_a 0 1.26fF
+C208 net_184#2c_w65_b 0 0.93fF
+C209 net_176#2c_w65_y 0 0.743fF
+C210 net_198#4c_w66_a 0 0.853fF
+C211 net_189#4c_w66_b 0 0.93fF
+C212 net_178 0 1.315fF
+C213 a9#0c_w67_a 0 0.93fF
+C214 net_198 0 0.941fF
+C215 b9#0c_w68_a 0 0.831fF
+C216 net_189 0 0.842fF
+C217 net_216#2c_w69_a 0 1.15fF
+C218 net_205#4c_w69_b 0 1.128fF
+C219 net_211 0 1.711fF
+C220 net_203 0 1.392fF
+C221 net_214 0 1.502fF
+C222 net_216#4c_w70_y 0 1.238fF
+C223 net_195 0 0.765fF
+C224 net_178#2c_w71_b 0 0.831fF
+C225 net_203#2c_w71_y 0 1.04fF
+C226 net_198#2c_w72_a 0 0.765fF
+C227 net_189#2c_w72_b 0 0.93fF
+C228 net_214#2c_w72_y 0 1.238fF
+C229 net_251#4c_w73_a 0 1.579fF
+C230 net_267#4c_w73_b 0 1.304fF
+C231 net_205 0 1.612fF
+C232 a10#0c_w74_a 0 0.831fF
+C233 net_251#2c_w74_y 0 0.842fF
+C234 b10#0c_w75_a 0 0.93fF
+C235 net_267 0 0.941fF
+C236 net_246#2c_w76_a 0 0.754fF
+C237 net_264 0 1.029fF
+C238 net_233#2c_w76_y 0 1.315fF
+C239 net_249#2c_w77_a 0 1.194fF
+C240 net_279#2c_w77_b 0 1.304fF
+C241 net_246 0 0.842fF
+C242 net_216 0 1.062fF
+C243 net_205#2c_w78_b 0 1.128fF
+C244 net_249 0 1.491fF
+C245 net_251 0 1.667fF
+C246 net_267#2c_w79_b 0 1.304fF
+C247 net_279 0 1.293fF
+C248 net_243 0 0.754fF
+C249 net_276 0 1.128fF
+C250 net_264#4c_w80_y 0 1.513fF
+C251 a11#0c_w81_a 0 1.524fF
+C252 net_243#4c_w81_y 0 0.842fF
+C253 b11#0c_w82_a 0 1.425fF
+C254 net_276#4c_w82_y 0 1.04fF
+C255 net_259#2c_w83_a 0 0.853fF
+C256 net_228 0 0.831fF
+C257 net_241#2c_w83_y 0 1.414fF
+C258 net_231#2c_w84_a 0 1.095fF
+C259 net_262#2c_w84_b 0 1.205fF
+C260 net_259 0 0.941fF
+C261 net_246#4c_w85_a 0 0.666fF
+C262 net_264#2c_w85_b 0 1.029fF
+C263 net_231 0 0.743fF
+C264 net_243#2c_w86_a 0 0.666fF
+C265 net_276#2c_w86_b 0 1.128fF
+C266 net_262 0 0.941fF
+C267 net_273 0 0.952fF
+C268 net_256 0 1.029fF
+C269 net_228#4c_w87_y 0 1.315fF
+C270 a12#0c_w88_a 0 1.029fF
+C271 net_273#4c_w88_y 0 1.04fF
+C272 b12#0c_w89_a 0 0.831fF
+C273 net_256#4c_w89_y 0 0.941fF
+C274 net_236#2c_w90_a 0 0.754fF
+C275 net_298#2c_w90_b 0 1.007fF
+C276 net_284#2c_w90_y 0 1.81fF
+C277 net_239#2c_w91_a 0 1.194fF
+C278 net_281#2c_w91_b 0 1.403fF
+C279 net_236 0 0.842fF
+C280 net_259#4c_w92_a 0 0.765fF
+C281 net_228#2c_w92_b 0 0.831fF
+C282 net_239 0 0.842fF
+C283 net_273#2c_w93_a 0 0.864fF
+C284 net_256#2c_w93_b 0 1.029fF
+C285 net_281 0 1.139fF
+C286 net_312#4c_w94_a 0 0.853fF
+C287 net_332#4c_w94_b 0 1.128fF
+C288 net_298 0 1.414fF
+C289 a13#0c_w95_a 0 0.809fF
+C290 net_312 0 0.941fF
+C291 b13#0c_w96_a 0 0.809fF
+C292 net_332 0 1.04fF
+C293 net_291#2c_w97_a 0 0.655fF
+C294 net_317#4c_w97_b 0 1.029fF
+C295 net_315 0 1.513fF
+C296 net_289 0 1.095fF
+C297 net_301 0 1.106fF
+C298 net_291#4c_w98_y 0 0.743fF
+C299 net_236#4c_w99_a 0 0.666fF
+C300 net_298#4c_w99_b 0 1.007fF
+C301 net_289#2c_w99_y 0 1.194fF
+C302 net_312#2c_w100_a 0 0.765fF
+C303 net_332#2c_w100_b 0 1.128fF
+C304 net_301#2c_w100_y 0 0.842fF
+C305 net_303#4c_w101_a 0 0.754fF
+C306 net_335#4c_w101_b 0 1.128fF
+C307 net_317 0 1.513fF
+C308 a14#0c_w102_a 0 0.809fF
+C309 net_303 0 0.842fF
+C310 b14#0c_w103_a 0 0.809fF
+C311 net_335 0 1.04fF
+C312 net_322#2c_w104_a 0 0.853fF
+C313 net_306#4c_w104_b 0 0.93fF
+C314 net_85#14c_w104_y 0 1.315fF
+C315 net_294 0 1.095fF
+C316 net_320 0 1.205fF
+C317 net_322#4c_w105_y 0 0.941fF
+C318 net_291 0 0.567fF
+C319 net_317#2c_w106_b 0 1.029fF
+C320 net_294#2c_w106_y 0 0.743fF
+C321 net_303#2c_w107_a 0 0.666fF
+C322 net_335#2c_w107_b 0 1.128fF
+C323 net_320#2c_w107_y 0 0.941fF
+C324 net_329#4c_w108_a 0 0.853fF
+C325 net_309#4c_w108_b 0 0.93fF
+C326 net_306 0 1.414fF
+C327 a15#0c_w109_a 0 0.809fF
+C328 net_329 0 0.941fF
+C329 b15#0c_w110_a 0 0.809fF
+C330 net_309 0 0.842fF
+C331 net_325 0 1.293fF
+C332 net_338#2c_w111_b 0 1.304fF
+C333 net_327#2c_w111_y 0 0.941fF
+C334 net_322 0 0.765fF
+C335 net_306#2c_w112_b 0 0.93fF
+C336 net_325#2c_w112_y 0 0.941fF
+C337 net_329#2c_w113_a 0 0.765fF
+C338 net_309#2c_w113_b 0 0.93fF
+C339 net_338 0 1.04fF
+C340 net_0#1contact@0_metal-1-metal-2 0 1.358fF
+C341 net_0#3contact@1_metal-1-metal-2 0 2.245fF
+C342 net_0#5contact@2_metal-1-metal-2 0 2.202fF
+C343 net_3#1contact@3_metal-1-metal-2 0 4.316fF
+C344 net_3#3contact@4_metal-1-metal-2 0 4.668fF
+C345 net_5#1contact@5_metal-1-metal-2 0 2.386fF
+C346 net_5#3contact@6_metal-1-metal-2 0 2.87fF
+C347 net_7#1contact@7_metal-1-metal-2 0 1.439fF
+C348 net_7#3contact@8_metal-1-metal-2 0 2.919fF
+C349 net_7#5contact@9_metal-1-metal-2 0 2.311fF
+C350 sum15 0 0.743fF
+C351 net_11#1contact@11_metal-1-metal-2 0 1.439fF
+C352 net_11#3contact@12_metal-1-metal-2 0 2.341fF
+C353 net_11#5contact@13_metal-1-metal-2 0 1.733fF
+C354 sum0 0 0.743fF
+C355 net_15#1contact@15_metal-1-metal-2 0 1.215fF
+C356 net_15#3contact@16_metal-1-metal-2 0 1.911fF
+C357 net_15#5contact@17_metal-1-metal-2 0 1.45fF
+C358 sum2 0 0.842fF
+C359 net_19#1contact@19_metal-1-metal-2 0 1.538fF
+C360 net_19#3contact@20_metal-1-metal-2 0 3.018fF
+C361 net_19#5contact@21_metal-1-metal-2 0 2.41fF
+C362 net_22#1contact@22_metal-1-metal-2 0 1.215fF
+C363 net_22#3contact@23_metal-1-metal-2 0 1.911fF
+C364 net_22#5contact@24_metal-1-metal-2 0 1.45fF
+C365 net_25#1contact@25_metal-1-metal-2 0 5.572fF
+C366 net_25#3contact@26_metal-1-metal-2 0 5.924fF
+C367 net_27#1contact@27_metal-1-metal-2 0 1.817fF
+C368 net_27#3contact@28_metal-1-metal-2 0 2.301fF
+C369 net_29#1contact@29_metal-1-metal-2 0 3.049fF
+C370 net_29#3contact@30_metal-1-metal-2 0 3.313fF
+C371 net_31#1contact@31_metal-1-metal-2 0 1.556fF
+C372 net_31#3contact@32_metal-1-metal-2 0 2.443fF
+C373 net_31#5contact@33_metal-1-metal-2 0 2.4fF
+C374 sum1 0 0.941fF
+C375 a0 0 1.029fF
+C376 net_36#1contact@36_metal-1-metal-2 0 1.556fF
+C377 net_36#3contact@37_metal-1-metal-2 0 2.443fF
+C378 net_36#5contact@38_metal-1-metal-2 0 1.828fF
+C379 net_39#1contact@39_metal-1-metal-2 0 1.556fF
+C380 net_39#3contact@40_metal-1-metal-2 0 3.6fF
+C381 net_39#5contact@41_metal-1-metal-2 0 3.557fF
+C382 net_42#1contact@42_metal-1-metal-2 0 2.683fF
+C383 net_42#3contact@43_metal-1-metal-2 0 3.167fF
+C384 a1 0 1.128fF
+C385 net_45#1contact@45_metal-1-metal-2 0 1.655fF
+C386 net_45#3contact@46_metal-1-metal-2 0 2.542fF
+C387 net_45#5contact@47_metal-1-metal-2 0 1.927fF
+C388 net_48#1contact@48_metal-1-metal-2 0 3.148fF
+C389 net_48#3contact@49_metal-1-metal-2 0 3.412fF
+C390 cin 0 1.128fF
+C391 b1 0 1.227fF
+C392 b0 0 1.227fF
+C393 a3#1contact@53_metal-1-metal-2 0 5.591fF
+C394 a3 0 4.76fF
+C395 net_54#1contact@55_metal-1-metal-2 0 2.87fF
+C396 net_54#3contact@56_metal-1-metal-2 0 2.386fF
+C397 net_56#1contact@57_metal-1-metal-2 0 2.202fF
+C398 net_56#3contact@58_metal-1-metal-2 0 2.245fF
+C399 net_56#5contact@59_metal-1-metal-2 0 1.358fF
+C400 net_59#1contact@60_metal-1-metal-2 0 1.63fF
+C401 net_59#3contact@61_metal-1-metal-2 0 2.245fF
+C402 net_59#5contact@62_metal-1-metal-2 0 1.358fF
+C403 a4 0 2.834fF
+C404 a4#1contact@64_metal-1-metal-2 0 3.665fF
+C405 net_63#1contact@65_metal-1-metal-2 0 3.214fF
+C406 net_63#3contact@66_metal-1-metal-2 0 2.95fF
+C407 net_65#1contact@67_metal-1-metal-2 0 1.45fF
+C408 net_65#3contact@68_metal-1-metal-2 0 1.911fF
+C409 net_65#5contact@69_metal-1-metal-2 0 1.215fF
+C410 net_68#1contact@70_metal-1-metal-2 0 2.41fF
+C411 net_68#3contact@71_metal-1-metal-2 0 3.018fF
+C412 net_68#5contact@72_metal-1-metal-2 0 1.538fF
+C413 sum4 0 5.197fF
+C414 sum4#1contact@74_metal-1-metal-2 0 6.039fF
+C415 net_72#1contact@75_metal-1-metal-2 0 2.008fF
+C416 net_72#3contact@76_metal-1-metal-2 0 3.048fF
+C417 net_72#5contact@77_metal-1-metal-2 0 1.266fF
+C418 net_75#1contact@78_metal-1-metal-2 0 3.068fF
+C419 net_75#3contact@79_metal-1-metal-2 0 2.584fF
+C420 net_77#1contact@80_metal-1-metal-2 0 4.866fF
+C421 net_77#3contact@81_metal-1-metal-2 0 4.514fF
+C422 net_79#1contact@82_metal-1-metal-2 0 1.549fF
+C423 net_79#3contact@83_metal-1-metal-2 0 2.01fF
+C424 net_79#5contact@84_metal-1-metal-2 0 1.314fF
+C425 net_82#1contact@85_metal-1-metal-2 0 4.866fF
+C426 net_82#3contact@86_metal-1-metal-2 0 4.514fF
+C427 b3#1contact@87_metal-1-metal-2 0 5.708fF
+C428 b3 0 4.58fF
+C429 net_85#1contact@89_metal-1-metal-2 0 3.153fF
+C430 net_85#3contact@90_metal-1-metal-2 0 3.962fF
+C431 b2#1contact@91_metal-1-metal-2 0 2.403fF
+C432 b2 0 1.176fF
+C433 net_88#1contact@93_metal-1-metal-2 0 3.034fF
+C434 net_88#3contact@94_metal-1-metal-2 0 2.736fF
+C435 net_90#1contact@95_metal-1-metal-2 0 2.598fF
+C436 net_90#3contact@96_metal-1-metal-2 0 2.641fF
+C437 net_90#5contact@97_metal-1-metal-2 0 1.754fF
+C438 net_93#1contact@98_metal-1-metal-2 0 3.511fF
+C439 net_93#3contact@99_metal-1-metal-2 0 3.247fF
+C440 b4 0 3.567fF
+C441 b4#1contact@101_metal-1-metal-2 0 4.794fF
+C442 net_96#1contact@102_metal-1-metal-2 0 2.125fF
+C443 net_96#5contact@103_metal-1-metal-2 0 2.246fF
+C444 net_99#1contact@104_metal-1-metal-2 0 2.125fF
+C445 net_99#3contact@105_metal-1-metal-2 0 2.74fF
+C446 net_99#5contact@106_metal-1-metal-2 0 1.853fF
+C447 net_102#1contact@107_metal-1-metal-2 0 2.806fF
+C448 net_102#3contact@108_metal-1-metal-2 0 3.414fF
+C449 net_102#5contact@109_metal-1-metal-2 0 1.934fF
+C450 sum5 0 2.41fF
+C451 sum5#1contact@111_metal-1-metal-2 0 3.648fF
+C452 sum3#1contact@112_metal-1-metal-2 0 4.287fF
+C453 sum3 0 2.95fF
+C454 net_107#1contact@114_metal-1-metal-2 0 3.709fF
+C455 net_107#3contact@115_metal-1-metal-2 0 3.445fF
+C456 a2#1contact@116_metal-1-metal-2 0 2.97fF
+C457 a2 0 1.446fF
+C458 net_110#1contact@118_metal-1-metal-2 0 3.564fF
+C459 net_110#3contact@119_metal-1-metal-2 0 3.079fF
+C460 b6#1contact@120_metal-1-metal-2 0 5.899fF
+C461 b6 0 5.069fF
+C462 net_113#1contact@122_metal-1-metal-2 0 1.358fF
+C463 net_113#3contact@123_metal-1-metal-2 0 2.245fF
+C464 net_113#5contact@124_metal-1-metal-2 0 2.202fF
+C465 net_116#1contact@125_metal-1-metal-2 0 2.851fF
+C466 net_116#3contact@126_metal-1-metal-2 0 3.115fF
+C467 net_118#1contact@127_metal-1-metal-2 0 0.985fF
+C468 net_118#3contact@128_metal-1-metal-2 0 2.29fF
+C469 net_118#5contact@129_metal-1-metal-2 0 2.048fF
+C470 net_85#4pin@5_metal-2 0 2.234fF
+C471 a6#1contact@131_metal-1-metal-2 0 5.407fF
+C472 a6 0 4.477fF
+C473 net_124#1contact@133_metal-1-metal-2 0 1.457fF
+C474 net_124#3contact@134_metal-1-metal-2 0 2.344fF
+C475 net_124#5contact@135_metal-1-metal-2 0 1.729fF
+C476 net_127#1contact@136_metal-1-metal-2 0 2.485fF
+C477 net_127#3contact@137_metal-1-metal-2 0 2.969fF
+C478 net_129#1contact@138_metal-1-metal-2 0 1.457fF
+C479 net_129#3contact@139_metal-1-metal-2 0 2.344fF
+C480 net_129#5contact@140_metal-1-metal-2 0 1.729fF
+C481 net_132#1contact@141_metal-1-metal-2 0 1.283fF
+C482 net_132#3contact@142_metal-1-metal-2 0 2.47fF
+C483 net_132#5contact@143_metal-1-metal-2 0 1.765fF
+C484 sum8#1contact@144_metal-1-metal-2 0 2.001fF
+C485 sum8 0 1.06fF
+C486 net_136#1contact@146_metal-1-metal-2 0 1.637fF
+C487 net_136#3contact@147_metal-1-metal-2 0 3.117fF
+C488 net_136#5contact@148_metal-1-metal-2 0 2.509fF
+C489 net_139#1contact@149_metal-1-metal-2 0 1.314fF
+C490 net_139#3contact@150_metal-1-metal-2 0 2.01fF
+C491 net_139#5contact@151_metal-1-metal-2 0 1.549fF
+C492 net_142#1contact@152_metal-1-metal-2 0 4.514fF
+C493 net_142#3contact@153_metal-1-metal-2 0 4.866fF
+C494 net_144#1contact@154_metal-1-metal-2 0 1.314fF
+C495 net_144#3contact@155_metal-1-metal-2 0 2.01fF
+C496 net_144#5contact@156_metal-1-metal-2 0 1.549fF
+C497 sum6 0 4.312fF
+C498 sum6#1contact@158_metal-1-metal-2 0 5.253fF
+C499 sum7#1contact@159_metal-1-metal-2 0 5.337fF
+C500 sum7 0 4.297fF
+C501 net_149#1contact@161_metal-1-metal-2 0 1.736fF
+C502 net_149#3contact@162_metal-1-metal-2 0 3.216fF
+C503 net_149#5contact@163_metal-1-metal-2 0 2.608fF
+C504 net_152#1contact@164_metal-1-metal-2 0 4.613fF
+C505 net_152#3contact@165_metal-1-metal-2 0 4.965fF
+C506 b7#1contact@166_metal-1-metal-2 0 3.444fF
+C507 b7 0 2.217fF
+C508 net_155#1contact@168_metal-1-metal-2 0 1.754fF
+C509 net_155#3contact@169_metal-1-metal-2 0 2.641fF
+C510 net_155#5contact@170_metal-1-metal-2 0 2.598fF
+C511 net_158#1contact@171_metal-1-metal-2 0 2.782fF
+C512 net_158#3contact@172_metal-1-metal-2 0 3.266fF
+C513 a5 0 3.117fF
+C514 a5#1contact@174_metal-1-metal-2 0 4.344fF
+C515 a7#1contact@175_metal-1-metal-2 0 2.656fF
+C516 a7 0 1.33fF
+C517 net_162#1contact@177_metal-1-metal-2 0 1.853fF
+C518 net_162#3contact@178_metal-1-metal-2 0 2.74fF
+C519 net_162#5contact@179_metal-1-metal-2 0 2.125fF
+C520 net_165#1contact@180_metal-1-metal-2 0 3.346fF
+C521 net_165#3contact@181_metal-1-metal-2 0 3.61fF
+C522 b5 0 2.693fF
+C523 b5#1contact@183_metal-1-metal-2 0 4.019fF
+C524 net_168#1contact@184_metal-1-metal-2 0 2.033fF
+C525 net_168#3contact@185_metal-1-metal-2 0 3.513fF
+C526 net_168#5contact@186_metal-1-metal-2 0 2.905fF
+C527 net_171#1contact@187_metal-1-metal-2 0 2.061fF
+C528 net_171#3contact@188_metal-1-metal-2 0 2.248fF
+C529 net_173#1contact@189_metal-1-metal-2 0 2.202fF
+C530 net_173#3contact@190_metal-1-metal-2 0 2.245fF
+C531 net_173#5contact@191_metal-1-metal-2 0 1.358fF
+C532 net_176#1contact@192_metal-1-metal-2 0 3.115fF
+C533 net_176#3contact@193_metal-1-metal-2 0 2.851fF
+C534 net_178#1contact@194_metal-1-metal-2 0 2.202fF
+C535 net_178#3contact@195_metal-1-metal-2 0 2.245fF
+C536 net_178#5contact@196_metal-1-metal-2 0 1.358fF
+C537 b9 0 3.877fF
+C538 b9#1contact@198_metal-1-metal-2 0 4.708fF
+C539 net_182#1contact@199_metal-1-metal-2 0 3.046fF
+C540 net_182#3contact@200_metal-1-metal-2 0 2.661fF
+C541 net_184#1contact@201_metal-1-metal-2 0 1.729fF
+C542 net_184#3contact@202_metal-1-metal-2 0 2.344fF
+C543 net_184#5contact@203_metal-1-metal-2 0 1.457fF
+C544 net_187#1contact@204_metal-1-metal-2 0 2.969fF
+C545 net_187#3contact@205_metal-1-metal-2 0 2.485fF
+C546 net_189#1contact@206_metal-1-metal-2 0 1.729fF
+C547 net_189#3contact@207_metal-1-metal-2 0 2.344fF
+C548 net_189#5contact@208_metal-1-metal-2 0 1.457fF
+C549 a9 0 3.389fF
+C550 a9#1contact@210_metal-1-metal-2 0 4.319fF
+C551 net_193#1contact@211_metal-1-metal-2 0 4.618fF
+C552 net_193#3contact@212_metal-1-metal-2 0 4.519fF
+C553 net_195#1contact@213_metal-1-metal-2 0 1.549fF
+C554 net_195#3contact@214_metal-1-metal-2 0 2.01fF
+C555 net_195#5contact@215_metal-1-metal-2 0 1.314fF
+C556 net_198#1contact@216_metal-1-metal-2 0 2.509fF
+C557 net_198#3contact@217_metal-1-metal-2 0 3.117fF
+C558 net_198#5contact@218_metal-1-metal-2 0 1.637fF
+C559 sum10 0 4.505fF
+C560 sum10#1contact@220_metal-1-metal-2 0 5.446fF
+C561 sum9#1contact@221_metal-1-metal-2 0 4.883fF
+C562 sum9 0 3.843fF
+C563 net_203#1contact@223_metal-1-metal-2 0 4.965fF
+C564 net_203#3contact@224_metal-1-metal-2 0 4.613fF
+C565 net_205#1contact@225_metal-1-metal-2 0 2.499fF
+C566 net_205#3contact@226_metal-1-metal-2 0 2.542fF
+C567 net_205#5contact@227_metal-1-metal-2 0 1.655fF
+C568 net_85#7pin@6_metal-2 0 2.333fF
+C569 a8#1contact@229_metal-1-metal-2 0 5.796fF
+C570 a8 0 4.569fF
+C571 net_211#1contact@231_metal-1-metal-2 0 3.266fF
+C572 net_211#3contact@232_metal-1-metal-2 0 2.782fF
+C573 b8#1contact@233_metal-1-metal-2 0 5.471fF
+C574 b8 0 4.145fF
+C575 net_214#1contact@235_metal-1-metal-2 0 3.61fF
+C576 net_214#3contact@236_metal-1-metal-2 0 3.346fF
+C577 net_216#1contact@237_metal-1-metal-2 0 1.846fF
+C578 net_216#3contact@238_metal-1-metal-2 0 2.307fF
+C579 net_216#5contact@239_metal-1-metal-2 0 1.611fF
+C580 net_219#1contact@240_metal-1-metal-2 0 1.945fF
+C581 net_219#3contact@241_metal-1-metal-2 0 2.406fF
+C582 net_219#5contact@242_metal-1-metal-2 0 1.71fF
+C583 net_222#1contact@243_metal-1-metal-2 0 5.262fF
+C584 net_222#3contact@244_metal-1-metal-2 0 4.91fF
+C585 net_224#1contact@245_metal-1-metal-2 0 3.004fF
+C586 net_224#3contact@246_metal-1-metal-2 0 3.612fF
+C587 net_224#5contact@247_metal-1-metal-2 0 2.132fF
+C588 b12#1contact@248_metal-1-metal-2 0 4.976fF
+C589 b12 0 4.145fF
+C590 net_228#1contact@250_metal-1-metal-2 0 1.358fF
+C591 net_228#3contact@251_metal-1-metal-2 0 2.245fF
+C592 net_228#5contact@252_metal-1-metal-2 0 2.202fF
+C593 net_231#1contact@253_metal-1-metal-2 0 4.316fF
+C594 net_231#3contact@254_metal-1-metal-2 0 4.668fF
+C595 net_233#1contact@255_metal-1-metal-2 0 2.386fF
+C596 net_233#3contact@256_metal-1-metal-2 0 2.87fF
+C597 a10 0 0.868fF
+C598 a10#1contact@258_metal-1-metal-2 0 1.698fF
+C599 net_236#1contact@259_metal-1-metal-2 0 1.215fF
+C600 net_236#3contact@260_metal-1-metal-2 0 1.911fF
+C601 net_236#5contact@261_metal-1-metal-2 0 1.45fF
+C602 net_239#1contact@262_metal-1-metal-2 0 4.415fF
+C603 net_239#3contact@263_metal-1-metal-2 0 4.767fF
+C604 net_241#1contact@264_metal-1-metal-2 0 2.485fF
+C605 net_241#3contact@265_metal-1-metal-2 0 2.969fF
+C606 net_243#1contact@266_metal-1-metal-2 0 1.538fF
+C607 net_243#3contact@267_metal-1-metal-2 0 3.018fF
+C608 net_243#5contact@268_metal-1-metal-2 0 2.41fF
+C609 net_246#1contact@269_metal-1-metal-2 0 1.215fF
+C610 net_246#3contact@270_metal-1-metal-2 0 1.911fF
+C611 net_246#5contact@271_metal-1-metal-2 0 1.45fF
+C612 net_249#3contact@272_metal-1-metal-2 0 1.238fF
+C613 net_251#1contact@273_metal-1-metal-2 0 2.04fF
+C614 net_251#3contact@274_metal-1-metal-2 0 1.626fF
+C615 net_251#5contact@275_metal-1-metal-2 0 1.99fF
+C616 b10 0 0.598fF
+C617 b10#1contact@277_metal-1-metal-2 0 1.528fF
+C618 a12#1contact@278_metal-1-metal-2 0 4.442fF
+C619 a12 0 3.413fF
+C620 net_256#1contact@280_metal-1-metal-2 0 1.556fF
+C621 net_256#3contact@281_metal-1-metal-2 0 2.443fF
+C622 net_256#5contact@282_metal-1-metal-2 0 1.828fF
+C623 net_259#1contact@283_metal-1-metal-2 0 1.314fF
+C624 net_259#3contact@284_metal-1-metal-2 0 2.01fF
+C625 net_259#5contact@285_metal-1-metal-2 0 1.549fF
+C626 net_262#1contact@286_metal-1-metal-2 0 3.049fF
+C627 net_262#3contact@287_metal-1-metal-2 0 3.313fF
+C628 net_264#1contact@288_metal-1-metal-2 0 1.556fF
+C629 net_264#3contact@289_metal-1-metal-2 0 2.443fF
+C630 net_264#5contact@290_metal-1-metal-2 0 2.4fF
+C631 net_267#3contact@291_metal-1-metal-2 0 1.919fF
+C632 net_267#5contact@292_metal-1-metal-2 0 1.831fF
+C633 net_85#10pin@9_metal-2 0 2.333fF
+C634 sum13#1contact@294_metal-1-metal-2 0 3.874fF
+C635 sum13 0 2.834fF
+C636 net_273#1contact@296_metal-1-metal-2 0 1.736fF
+C637 net_273#3contact@297_metal-1-metal-2 0 3.216fF
+C638 net_273#5contact@298_metal-1-metal-2 0 2.608fF
+C639 net_276#1contact@299_metal-1-metal-2 0 1.655fF
+C640 net_276#3contact@300_metal-1-metal-2 0 2.542fF
+C641 net_276#5contact@301_metal-1-metal-2 0 1.927fF
+C642 net_279#1contact@302_metal-1-metal-2 0 3.028fF
+C643 net_279#3contact@303_metal-1-metal-2 0 3.039fF
+C644 net_281#1contact@304_metal-1-metal-2 0 3.247fF
+C645 net_281#3contact@305_metal-1-metal-2 0 3.511fF
+C646 sum12 0 5.377fF
+C647 sum12#1contact@307_metal-1-metal-2 0 6.516fF
+C648 net_284#1contact@308_metal-1-metal-2 0 2.881fF
+C649 net_284#3contact@309_metal-1-metal-2 0 3.366fF
+C650 sum11 0 2.371fF
+C651 sum11#1contact@311_metal-1-metal-2 0 3.609fF
+C652 b11 0 4.195fF
+C653 b11#1contact@313_metal-1-metal-2 0 5.62fF
+C654 a11 0 4.374fF
+C655 a11#1contact@315_metal-1-metal-2 0 5.899fF
+C656 net_289#1contact@316_metal-1-metal-2 0 4.977fF
+C657 net_289#3contact@317_metal-1-metal-2 0 5.076fF
+C658 net_291#1contact@318_metal-1-metal-2 0 1.351fF
+C659 net_291#3contact@319_metal-1-metal-2 0 1.812fF
+C660 net_291#5contact@320_metal-1-metal-2 0 1.116fF
+C661 net_294#1contact@321_metal-1-metal-2 0 4.09fF
+C662 net_294#3contact@322_metal-1-metal-2 0 3.738fF
+C663 net_85#13contact@323_metal-1-metal-2 0 5.235fF
+C664 net_85#15contact@324_metal-1-metal-2 0 4.713fF
+C665 net_298#3contact@325_metal-1-metal-2 0 1.578fF
+C666 net_298#5contact@326_metal-1-metal-2 0 1.534fF
+C667 net_301#1contact@327_metal-1-metal-2 0 3.214fF
+C668 net_301#3contact@328_metal-1-metal-2 0 2.95fF
+C669 net_303#1contact@329_metal-1-metal-2 0 2.41fF
+C670 net_303#3contact@330_metal-1-metal-2 0 3.018fF
+C671 net_303#5contact@331_metal-1-metal-2 0 1.538fF
+C672 net_306#1contact@332_metal-1-metal-2 0 3.548fF
+C673 net_306#3contact@333_metal-1-metal-2 0 3.591fF
+C674 net_306#5contact@334_metal-1-metal-2 0 1.457fF
+C675 net_309#1contact@335_metal-1-metal-2 0 1.729fF
+C676 net_309#3contact@336_metal-1-metal-2 0 2.344fF
+C677 net_309#5contact@337_metal-1-metal-2 0 1.457fF
+C678 net_312#1contact@338_metal-1-metal-2 0 2.509fF
+C679 net_312#3contact@339_metal-1-metal-2 0 3.117fF
+C680 net_312#5contact@340_metal-1-metal-2 0 1.637fF
+C681 net_315#1contact@341_metal-1-metal-2 0 3.068fF
+C682 net_315#3contact@342_metal-1-metal-2 0 2.584fF
+C683 net_317#1contact@343_metal-1-metal-2 0 2.4fF
+C684 net_317#3contact@344_metal-1-metal-2 0 2.443fF
+C685 net_317#5contact@345_metal-1-metal-2 0 1.556fF
+C686 net_320#1contact@346_metal-1-metal-2 0 2.735fF
+C687 net_320#3contact@347_metal-1-metal-2 0 2.47fF
+C688 net_322#1contact@348_metal-1-metal-2 0 1.549fF
+C689 net_322#3contact@349_metal-1-metal-2 0 2.01fF
+C690 net_322#5contact@350_metal-1-metal-2 0 1.314fF
+C691 net_325#1contact@351_metal-1-metal-2 0 1.563fF
+C692 net_325#3contact@352_metal-1-metal-2 0 1.211fF
+C693 net_327#1contact@353_metal-1-metal-2 0 1.299fF
+C694 net_327#3contact@354_metal-1-metal-2 0 1.211fF
+C695 net_329#1contact@355_metal-1-metal-2 0 2.509fF
+C696 net_329#3contact@356_metal-1-metal-2 0 3.117fF
+C697 net_329#5contact@357_metal-1-metal-2 0 1.637fF
+C698 net_332#1contact@358_metal-1-metal-2 0 1.927fF
+C699 net_332#3contact@359_metal-1-metal-2 0 2.542fF
+C700 net_332#5contact@360_metal-1-metal-2 0 1.655fF
+C701 net_335#1contact@361_metal-1-metal-2 0 1.927fF
+C702 net_335#3contact@362_metal-1-metal-2 0 2.542fF
+C703 net_335#5contact@363_metal-1-metal-2 0 1.655fF
+C704 net_338#1contact@364_metal-1-metal-2 0 3.482fF
+C705 net_338#3contact@365_metal-1-metal-2 0 3.746fF
+C706 b13 0 0.809fF
+C707 a13 0 0.809fF
+C708 sum14 0 0.897fF
+C709 b14 0 0.809fF
+C710 a14 0 0.809fF
+C711 cout 0 0.897fF
+C712 b15 0 0.809fF
+C713 a15 0 0.809fF
+C714 net_85 0 2.531fF
+C715 net_85#5pin@1_metal-2 0 2.036fF
+C716 net_85#8pin@2_metal-2 0 2.432fF
+C717 net_85#11pin@3_metal-2 0 2.135fF
+C718 net_96#3pin@4_metal-2 0 1.04fF
+C719 net_249#1pin@7_metal-2 0 1.535fF
+C720 net_267#1pin@8_metal-2 0 1.029fF
+C721 net_298#1pin@10_metal-2 0 1.458fF
+** Extracted Parasitic Resistors ***
+R0 net_0 net_0#1contact@0_metal-1-metal-2 2.013
+R1 net_0#2c_w22_b net_0#3contact@1_metal-1-metal-2 2.013
+R2 net_0#4c_w17_y net_0#5contact@2_metal-1-metal-2 3.187
+R3 net_3 net_3#1contact@3_metal-1-metal-2 1.8
+R4 net_3#2c_w14_a net_3#3contact@4_metal-1-metal-2 2.653
+R5 net_5 net_5#1contact@5_metal-1-metal-2 2.013
+R6 net_5#2c_w6_y net_5#3contact@6_metal-1-metal-2 3.187
+R7 net_7 net_7#1contact@7_metal-1-metal-2 1.587
+R8 net_7#2c_w9_a net_7#3contact@8_metal-1-metal-2 1.373
+R9 net_7#4c_w4_y net_7#5contact@9_metal-1-metal-2 1.8
+R10 sum15#0c_sum15_y sum15 1.8
+R11 net_11 net_11#1contact@11_metal-1-metal-2 1.587
+R12 net_11#2c_w8_a net_11#3contact@12_metal-1-metal-2 1.373
+R13 net_11#4c_w2_y net_11#5contact@13_metal-1-metal-2 1.8
+R14 sum0#0c_sum0_y sum0 1.8
+R15 net_15 net_15#1contact@15_metal-1-metal-2 2.04
+R16 net_15#2c_w13_a net_15#3contact@16_metal-1-metal-2 1.827
+R17 net_15#4c_w22_a net_15#5contact@17_metal-1-metal-2 1.613
+R18 sum2#0c_sum2_y sum2 2.04
+R19 net_19 net_19#1contact@19_metal-1-metal-2 1.827
+R20 net_19#2c_w16_a net_19#3contact@20_metal-1-metal-2 1.613
+R21 net_19#4c_w11_y net_19#5contact@21_metal-1-metal-2 2.04
+R22 net_22 net_22#1contact@22_metal-1-metal-2 2.04
+R23 net_22#2c_w6_a net_22#3contact@23_metal-1-metal-2 1.827
+R24 net_22#4c_w15_a net_22#5contact@24_metal-1-metal-2 1.613
+R25 net_25 net_25#1contact@25_metal-1-metal-2 2.04
+R26 net_25#2c_w7_a net_25#3contact@26_metal-1-metal-2 2.893
+R27 net_27 net_27#1contact@27_metal-1-metal-2 2.253
+R28 net_27#2c_w1_y net_27#3contact@28_metal-1-metal-2 3.427
+R29 net_29 net_29#1contact@29_metal-1-metal-2 2.28
+R30 net_29#2c_w14_b net_29#3contact@30_metal-1-metal-2 2.92
+R31 net_31 net_31#1contact@31_metal-1-metal-2 2.493
+R32 net_31#2c_w15_b net_31#3contact@32_metal-1-metal-2 2.493
+R33 net_31#4c_w10_y net_31#5contact@33_metal-1-metal-2 3.667
+R34 sum1#0c_sum1_y sum1 2.28
+R35 a0#0c_w4_a a0 2.493
+R36 net_36 net_36#1contact@36_metal-1-metal-2 2.493
+R37 net_36#2c_w9_b net_36#3contact@37_metal-1-metal-2 2.493
+R38 net_36#4c_w5_y net_36#5contact@38_metal-1-metal-2 2.28
+R39 net_39 net_39#1contact@39_metal-1-metal-2 2.493
+R40 net_39#2c_w8_b net_39#3contact@40_metal-1-metal-2 2.493
+R41 net_39#4c_w3_y net_39#5contact@41_metal-1-metal-2 3.667
+R42 net_42 net_42#1contact@42_metal-1-metal-2 2.733
+R43 net_42#2c_w13_y net_42#3contact@43_metal-1-metal-2 3.907
+R44 a1#0c_w11_a a1 2.733
+R45 net_45 net_45#1contact@45_metal-1-metal-2 2.733
+R46 net_45#2c_w16_b net_45#3contact@46_metal-1-metal-2 2.733
+R47 net_45#4c_w12_y net_45#5contact@47_metal-1-metal-2 2.52
+R48 net_48 net_48#1contact@48_metal-1-metal-2 2.52
+R49 net_48#2c_w7_b net_48#3contact@49_metal-1-metal-2 3.16
+R50 cin#0c_w2_a cin 2.733
+R51 b1#0c_w12_a b1 2.973
+R52 b0#0c_w5_a b0 2.973
+R53 a3#0c_w25_a a3#1contact@53_metal-1-metal-2 2.013
+R54 net_54 net_54#1contact@55_metal-1-metal-2 3.187
+R55 net_54#2c_sum4_a net_54#3contact@56_metal-1-metal-2 2.013
+R56 net_56 net_56#1contact@57_metal-1-metal-2 3.187
+R57 net_56#2c_w36_b net_56#3contact@58_metal-1-metal-2 2.013
+R58 net_56#4c_w27_b net_56#5contact@59_metal-1-metal-2 2.013
+R59 net_59 net_59#1contact@60_metal-1-metal-2 1.8
+R60 net_59#2c_w37_b net_59#3contact@61_metal-1-metal-2 2.013
+R61 net_59#4c_w31_b net_59#5contact@62_metal-1-metal-2 2.013
+R62 a4#0c_w32_a a4#1contact@64_metal-1-metal-2 2.013
+R63 net_63 net_63#1contact@65_metal-1-metal-2 2.68
+R64 net_63#2c_w23_y net_63#3contact@66_metal-1-metal-2 2.04
+R65 net_65 net_65#1contact@67_metal-1-metal-2 1.613
+R66 net_65#2c_w20_a net_65#3contact@68_metal-1-metal-2 1.827
+R67 net_65#4c_w21_y net_65#5contact@69_metal-1-metal-2 2.04
+R68 net_68 net_68#1contact@70_metal-1-metal-2 2.04
+R69 net_68#2c_w30_a net_68#3contact@71_metal-1-metal-2 1.613
+R70 net_68#4c_w24_a net_68#5contact@72_metal-1-metal-2 1.827
+R71 sum4#0c_sum4_y sum4#1contact@74_metal-1-metal-2 2.04
+R72 net_72 net_72#1contact@75_metal-1-metal-2 2.28
+R73 net_72#2c_w17_a net_72#3contact@76_metal-1-metal-2 3.587
+R74 net_72#4c_w23_a net_72#5contact@77_metal-1-metal-2 1.853
+R75 net_75 net_75#1contact@78_metal-1-metal-2 3.667
+R76 net_75#2c_sum3_a net_75#3contact@79_metal-1-metal-2 2.493
+R77 net_77 net_77#1contact@80_metal-1-metal-2 3.133
+R78 net_77#2c_w29_y net_77#3contact@81_metal-1-metal-2 2.28
+R79 net_79 net_79#1contact@82_metal-1-metal-2 1.853
+R80 net_79#2c_w27_a net_79#3contact@83_metal-1-metal-2 2.067
+R81 net_79#4c_w28_y net_79#5contact@84_metal-1-metal-2 2.28
+R82 net_82 net_82#1contact@85_metal-1-metal-2 3.133
+R83 net_82#2c_w36_y net_82#3contact@86_metal-1-metal-2 2.28
+R84 b3#0c_w26_a b3#1contact@87_metal-1-metal-2 2.733
+R85 net_85 net_85#1contact@89_metal-1-metal-2 0.96
+R86 net_85#2c_sum15_a net_85#3contact@90_metal-1-metal-2 2.92
+R87 b2#0c_w19_a b2#1contact@91_metal-1-metal-2 2.973
+R88 net_88 net_88#1contact@93_metal-1-metal-2 3.613
+R89 net_88#2c_w22_y net_88#3contact@94_metal-1-metal-2 2.893
+R90 net_90 net_90#1contact@95_metal-1-metal-2 4.147
+R91 net_90#2c_w29_b net_90#3contact@96_metal-1-metal-2 2.973
+R92 net_90#4c_w20_b net_90#5contact@97_metal-1-metal-2 2.973
+R93 net_93 net_93#1contact@98_metal-1-metal-2 3.4
+R94 net_93#2c_w30_y net_93#3contact@99_metal-1-metal-2 2.76
+R95 b4#0c_w33_a b4#1contact@101_metal-1-metal-2 2.973
+R96 net_96 net_96#1contact@102_metal-1-metal-2 3
+R97 net_96#2c_w17_b net_96#3pin@4_metal-2 2.44
+R98 net_96#4c_w23_b net_96#5contact@103_metal-1-metal-2 3.213
+R99 net_99 net_99#1contact@104_metal-1-metal-2 3
+R100 net_99#2c_w30_b net_99#3contact@105_metal-1-metal-2 3.213
+R101 net_99#4c_w24_b net_99#5contact@106_metal-1-metal-2 3.213
+R102 net_102 net_102#1contact@107_metal-1-metal-2 3
+R103 net_102#2c_w37_a net_102#3contact@108_metal-1-metal-2 2.573
+R104 net_102#4c_w31_a net_102#5contact@109_metal-1-metal-2 2.787
+R105 sum5#0c_sum5_y sum5#1contact@111_metal-1-metal-2 3
+R106 sum3#0c_sum3_y sum3#1contact@112_metal-1-metal-2 3.24
+R107 net_107 net_107#1contact@114_metal-1-metal-2 3.88
+R108 net_107#2c_w37_y net_107#3contact@115_metal-1-metal-2 3.24
+R109 a2#0c_w18_a a2#1contact@116_metal-1-metal-2 3.693
+R110 net_110 net_110#1contact@118_metal-1-metal-2 4.867
+R111 net_110#2c_sum5_a net_110#3contact@119_metal-1-metal-2 3.693
+R112 b6#0c_w47_a b6#1contact@120_metal-1-metal-2 2.013
+R113 net_113 net_113#1contact@122_metal-1-metal-2 2.013
+R114 net_113#2c_w50_b net_113#3contact@123_metal-1-metal-2 2.013
+R115 net_113#4c_w45_y net_113#5contact@124_metal-1-metal-2 3.187
+R116 net_116 net_116#1contact@125_metal-1-metal-2 1.8
+R117 net_116#2c_w42_b net_116#3contact@126_metal-1-metal-2 2.44
+R118 net_118 net_118#1contact@127_metal-1-metal-2 2.013
+R119 net_118#2c_w34_b net_118#3contact@128_metal-1-metal-2 3.4
+R120 net_118#4c_w38_y net_118#5contact@129_metal-1-metal-2 3.187
+R121 net_85 net_85#4pin@5_metal-2 5.173
+R122 net_85#5pin@1_metal-2 net_85#4pin@5_metal-2 0.24
+R123 a6#0c_w46_a a6#1contact@131_metal-1-metal-2 2.253
+R124 net_124 net_124#1contact@133_metal-1-metal-2 2.253
+R125 net_124#2c_w51_b net_124#3contact@134_metal-1-metal-2 2.253
+R126 net_124#4c_w47_y net_124#5contact@135_metal-1-metal-2 2.04
+R127 net_127 net_127#1contact@136_metal-1-metal-2 2.253
+R128 net_127#2c_w41_y net_127#3contact@137_metal-1-metal-2 3.427
+R129 net_129 net_129#1contact@138_metal-1-metal-2 2.253
+R130 net_129#2c_w44_b net_129#3contact@139_metal-1-metal-2 2.253
+R131 net_129#4c_w40_y net_129#5contact@140_metal-1-metal-2 2.04
+R132 net_132 net_132#1contact@141_metal-1-metal-2 1.613
+R133 net_132#2c_w34_a net_132#3contact@142_metal-1-metal-2 3.587
+R134 net_132#4c_w35_y net_132#5contact@143_metal-1-metal-2 3.373
+R135 sum8#0c_sum8_y sum8#1contact@144_metal-1-metal-2 2.28
+R136 net_136 net_136#1contact@146_metal-1-metal-2 2.067
+R137 net_136#2c_w58_a net_136#3contact@147_metal-1-metal-2 1.853
+R138 net_136#4c_w53_y net_136#5contact@148_metal-1-metal-2 2.28
+R139 net_139 net_139#1contact@149_metal-1-metal-2 2.28
+R140 net_139#2c_w48_a net_139#3contact@150_metal-1-metal-2 2.067
+R141 net_139#4c_w57_a net_139#5contact@151_metal-1-metal-2 1.853
+R142 net_142 net_142#1contact@152_metal-1-metal-2 2.28
+R143 net_142#2c_w49_a net_142#3contact@153_metal-1-metal-2 3.133
+R144 net_144 net_144#1contact@154_metal-1-metal-2 2.28
+R145 net_144#2c_w41_a net_144#3contact@155_metal-1-metal-2 2.067
+R146 net_144#4c_w50_a net_144#5contact@156_metal-1-metal-2 1.853
+R147 sum6#0c_sum6_y sum6#1contact@158_metal-1-metal-2 2.28
+R148 sum7#0c_sum7_y sum7#1contact@159_metal-1-metal-2 2.52
+R149 net_149 net_149#1contact@161_metal-1-metal-2 2.307
+R150 net_149#2c_w51_a net_149#3contact@162_metal-1-metal-2 2.093
+R151 net_149#4c_w46_y net_149#5contact@163_metal-1-metal-2 2.52
+R152 net_152 net_152#1contact@164_metal-1-metal-2 2.52
+R153 net_152#2c_w42_a net_152#3contact@165_metal-1-metal-2 3.373
+R154 b7#0c_w54_a b7#1contact@166_metal-1-metal-2 2.973
+R155 net_155 net_155#1contact@168_metal-1-metal-2 2.973
+R156 net_155#2c_w57_b net_155#3contact@169_metal-1-metal-2 2.973
+R157 net_155#4c_w52_y net_155#5contact@170_metal-1-metal-2 4.147
+R158 net_158 net_158#1contact@171_metal-1-metal-2 2.973
+R159 net_158#2c_w48_y net_158#3contact@172_metal-1-metal-2 4.147
+R160 a5#0c_w39_a a5#1contact@174_metal-1-metal-2 2.973
+R161 a7#0c_w53_a a7#1contact@175_metal-1-metal-2 3.213
+R162 net_162 net_162#1contact@177_metal-1-metal-2 3.213
+R163 net_162#2c_w58_b net_162#3contact@178_metal-1-metal-2 3.213
+R164 net_162#4c_w54_y net_162#5contact@179_metal-1-metal-2 3
+R165 net_165 net_165#1contact@180_metal-1-metal-2 3
+R166 net_165#2c_w49_b net_165#3contact@181_metal-1-metal-2 3.64
+R167 b5#0c_w40_a b5#1contact@183_metal-1-metal-2 3.213
+R168 net_168 net_168#1contact@184_metal-1-metal-2 3.027
+R169 net_168#2c_w44_a net_168#3contact@185_metal-1-metal-2 2.813
+R170 net_168#4c_w39_y net_168#5contact@186_metal-1-metal-2 3.24
+R171 net_171 net_171#1contact@187_metal-1-metal-2 3.187
+R172 net_171#2c_sum8_a net_171#3contact@188_metal-1-metal-2 3.64
+R173 net_173 net_173#1contact@189_metal-1-metal-2 3.187
+R174 net_173#2c_w64_b net_173#3contact@190_metal-1-metal-2 2.013
+R175 net_173#4c_w55_b net_173#5contact@191_metal-1-metal-2 2.013
+R176 net_176 net_176#1contact@192_metal-1-metal-2 2.44
+R177 net_176#2c_w65_y net_176#3contact@193_metal-1-metal-2 1.8
+R178 net_178 net_178#1contact@194_metal-1-metal-2 3.187
+R179 net_178#2c_w71_b net_178#3contact@195_metal-1-metal-2 2.013
+R180 net_178#4c_w62_b net_178#5contact@196_metal-1-metal-2 2.013
+R181 b9#0c_w68_a b9#1contact@198_metal-1-metal-2 2.013
+R182 net_182 net_182#1contact@199_metal-1-metal-2 3.613
+R183 net_182#2c_w56_b net_182#3contact@200_metal-1-metal-2 2.68
+R184 net_184 net_184#1contact@201_metal-1-metal-2 2.04
+R185 net_184#2c_w65_b net_184#3contact@202_metal-1-metal-2 2.253
+R186 net_184#4c_w59_b net_184#5contact@203_metal-1-metal-2 2.253
+R187 net_187 net_187#1contact@204_metal-1-metal-2 3.427
+R188 net_187#2c_sum9_a net_187#3contact@205_metal-1-metal-2 2.253
+R189 net_189 net_189#1contact@206_metal-1-metal-2 2.04
+R190 net_189#2c_w72_b net_189#3contact@207_metal-1-metal-2 2.253
+R191 net_189#4c_w66_b net_189#5contact@208_metal-1-metal-2 2.253
+R192 a9#0c_w67_a a9#1contact@210_metal-1-metal-2 2.253
+R193 net_193 net_193#1contact@211_metal-1-metal-2 3.373
+R194 net_193#2c_w56_a net_193#3contact@212_metal-1-metal-2 3.133
+R195 net_195 net_195#1contact@213_metal-1-metal-2 1.853
+R196 net_195#2c_w62_a net_195#3contact@214_metal-1-metal-2 2.067
+R197 net_195#4c_w63_y net_195#5contact@215_metal-1-metal-2 2.28
+R198 net_198 net_198#1contact@216_metal-1-metal-2 2.28
+R199 net_198#2c_w72_a net_198#3contact@217_metal-1-metal-2 1.853
+R200 net_198#4c_w66_a net_198#5contact@218_metal-1-metal-2 2.067
+R201 sum10#0c_sum10_y sum10#1contact@220_metal-1-metal-2 2.28
+R202 sum9#0c_sum9_y sum9#1contact@221_metal-1-metal-2 2.52
+R203 net_203 net_203#1contact@223_metal-1-metal-2 3.373
+R204 net_203#2c_w71_y net_203#3contact@224_metal-1-metal-2 2.52
+R205 net_205 net_205#1contact@225_metal-1-metal-2 3.907
+R206 net_205#2c_w78_b net_205#3contact@226_metal-1-metal-2 2.733
+R207 net_205#4c_w69_b net_205#5contact@227_metal-1-metal-2 2.733
+R208 net_85#5pin@1_metal-2 net_85#7pin@6_metal-2 4.693
+R209 net_85#8pin@2_metal-2 net_85#7pin@6_metal-2 0.96
+R210 a8#0c_w60_a a8#1contact@229_metal-1-metal-2 2.973
+R211 net_211 net_211#1contact@231_metal-1-metal-2 4.147
+R212 net_211#2c_sum10_a net_211#3contact@232_metal-1-metal-2 2.973
+R213 b8#0c_w61_a b8#1contact@233_metal-1-metal-2 3.213
+R214 net_214 net_214#1contact@235_metal-1-metal-2 3.64
+R215 net_214#2c_w72_y net_214#3contact@236_metal-1-metal-2 3
+R216 net_216 net_216#1contact@237_metal-1-metal-2 2.573
+R217 net_216#2c_w69_a net_216#3contact@238_metal-1-metal-2 2.787
+R218 net_216#4c_w70_y net_216#5contact@239_metal-1-metal-2 3
+R219 net_219 net_219#1contact@240_metal-1-metal-2 2.813
+R220 net_219#2c_w55_a net_219#3contact@241_metal-1-metal-2 3.027
+R221 net_219#4c_w56_y net_219#5contact@242_metal-1-metal-2 3.24
+R222 net_222 net_222#1contact@243_metal-1-metal-2 4.093
+R223 net_222#2c_w64_y net_222#3contact@244_metal-1-metal-2 3.24
+R224 net_224 net_224#1contact@245_metal-1-metal-2 3.48
+R225 net_224#2c_w65_a net_224#3contact@246_metal-1-metal-2 3.053
+R226 net_224#4c_w59_a net_224#5contact@247_metal-1-metal-2 3.267
+R227 b12#0c_w89_a b12#1contact@248_metal-1-metal-2 2.013
+R228 net_228 net_228#1contact@250_metal-1-metal-2 2.013
+R229 net_228#2c_w92_b net_228#3contact@251_metal-1-metal-2 2.013
+R230 net_228#4c_w87_y net_228#5contact@252_metal-1-metal-2 3.187
+R231 net_231 net_231#1contact@253_metal-1-metal-2 1.8
+R232 net_231#2c_w84_a net_231#3contact@254_metal-1-metal-2 2.653
+R233 net_233 net_233#1contact@255_metal-1-metal-2 2.013
+R234 net_233#2c_w76_y net_233#3contact@256_metal-1-metal-2 3.187
+R235 a10#0c_w74_a a10#1contact@258_metal-1-metal-2 2.013
+R236 net_236 net_236#1contact@259_metal-1-metal-2 2.04
+R237 net_236#2c_w90_a net_236#3contact@260_metal-1-metal-2 1.827
+R238 net_236#4c_w99_a net_236#5contact@261_metal-1-metal-2 1.613
+R239 net_239 net_239#1contact@262_metal-1-metal-2 2.04
+R240 net_239#2c_w91_a net_239#3contact@263_metal-1-metal-2 2.893
+R241 net_241 net_241#1contact@264_metal-1-metal-2 2.253
+R242 net_241#2c_w83_y net_241#3contact@265_metal-1-metal-2 3.427
+R243 net_243 net_243#1contact@266_metal-1-metal-2 1.827
+R244 net_243#2c_w86_a net_243#3contact@267_metal-1-metal-2 1.613
+R245 net_243#4c_w81_y net_243#5contact@268_metal-1-metal-2 2.04
+R246 net_246 net_246#1contact@269_metal-1-metal-2 2.04
+R247 net_246#2c_w76_a net_246#3contact@270_metal-1-metal-2 1.827
+R248 net_246#4c_w85_a net_246#5contact@271_metal-1-metal-2 1.613
+R249 net_249 net_249#1pin@7_metal-2 3.613
+R250 net_249#2c_w77_a net_249#3contact@272_metal-1-metal-2 2.893
+R251 net_251 net_251#1contact@273_metal-1-metal-2 4.04
+R252 net_251#2c_w74_y net_251#3contact@274_metal-1-metal-2 2.04
+R253 net_251#4c_w73_a net_251#5contact@275_metal-1-metal-2 3.827
+R254 b10#0c_w75_a b10#1contact@277_metal-1-metal-2 2.253
+R255 a12#0c_w88_a a12#1contact@278_metal-1-metal-2 2.493
+R256 net_256 net_256#1contact@280_metal-1-metal-2 2.493
+R257 net_256#2c_w93_b net_256#3contact@281_metal-1-metal-2 2.493
+R258 net_256#4c_w89_y net_256#5contact@282_metal-1-metal-2 2.28
+R259 net_259 net_259#1contact@283_metal-1-metal-2 2.28
+R260 net_259#2c_w83_a net_259#3contact@284_metal-1-metal-2 2.067
+R261 net_259#4c_w92_a net_259#5contact@285_metal-1-metal-2 1.853
+R262 net_262 net_262#1contact@286_metal-1-metal-2 2.28
+R263 net_262#2c_w84_b net_262#3contact@287_metal-1-metal-2 2.92
+R264 net_264 net_264#1contact@288_metal-1-metal-2 2.493
+R265 net_264#2c_w85_b net_264#3contact@289_metal-1-metal-2 2.493
+R266 net_264#4c_w80_y net_264#5contact@290_metal-1-metal-2 3.667
+R267 net_267 net_267#1pin@8_metal-2 2.28
+R268 net_267#2c_w79_b net_267#3contact@291_metal-1-metal-2 3.16
+R269 net_267#4c_w73_b net_267#5contact@292_metal-1-metal-2 3.16
+R270 net_85#8pin@2_metal-2 net_85#10pin@9_metal-2 4.933
+R271 net_85#11pin@3_metal-2 net_85#10pin@9_metal-2 0.72
+R272 sum13#0c_sum13_y sum13#1contact@294_metal-1-metal-2 2.52
+R273 net_273 net_273#1contact@296_metal-1-metal-2 2.307
+R274 net_273#2c_w93_a net_273#3contact@297_metal-1-metal-2 2.093
+R275 net_273#4c_w88_y net_273#5contact@298_metal-1-metal-2 2.52
+R276 net_276 net_276#1contact@299_metal-1-metal-2 2.733
+R277 net_276#2c_w86_b net_276#3contact@300_metal-1-metal-2 2.733
+R278 net_276#4c_w82_y net_276#5contact@301_metal-1-metal-2 2.52
+R279 net_279 net_279#1contact@302_metal-1-metal-2 3.133
+R280 net_279#2c_w77_b net_279#3contact@303_metal-1-metal-2 3.16
+R281 net_281 net_281#1contact@304_metal-1-metal-2 2.76
+R282 net_281#2c_w91_b net_281#3contact@305_metal-1-metal-2 3.4
+R283 sum12#0c_sum12_y sum12#1contact@307_metal-1-metal-2 2.76
+R284 net_284 net_284#1contact@308_metal-1-metal-2 3.213
+R285 net_284#2c_w90_y net_284#3contact@309_metal-1-metal-2 4.387
+R286 sum11#0c_sum11_y sum11#1contact@311_metal-1-metal-2 3
+R287 b11#0c_w82_a b11#1contact@313_metal-1-metal-2 3.453
+R288 a11#0c_w81_a a11#1contact@315_metal-1-metal-2 3.693
+R289 net_289 net_289#1contact@316_metal-1-metal-2 2.653
+R290 net_289#2c_w99_y net_289#3contact@317_metal-1-metal-2 2.893
+R291 net_291 net_291#1contact@318_metal-1-metal-2 1.373
+R292 net_291#2c_w97_a net_291#3contact@319_metal-1-metal-2 1.587
+R293 net_291#4c_w98_y net_291#5contact@320_metal-1-metal-2 1.8
+R294 net_294 net_294#1contact@321_metal-1-metal-2 2.653
+R295 net_294#2c_w106_y net_294#3contact@322_metal-1-metal-2 1.8
+R296 net_85#11pin@3_metal-2 net_85#13contact@323_metal-1-metal-2 4.453
+R297 net_85#14c_w104_y net_85#15contact@324_metal-1-metal-2 3.187
+R298 net_298 net_298#1pin@10_metal-2 3.427
+R299 net_298#2c_w90_b net_298#3contact@325_metal-1-metal-2 2.44
+R300 net_298#4c_w99_b net_298#5contact@326_metal-1-metal-2 2.44
+R301 net_301 net_301#1contact@327_metal-1-metal-2 2.68
+R302 net_301#2c_w100_y net_301#3contact@328_metal-1-metal-2 2.04
+R303 net_303 net_303#1contact@329_metal-1-metal-2 2.04
+R304 net_303#2c_w107_a net_303#3contact@330_metal-1-metal-2 1.613
+R305 net_303#4c_w101_a net_303#5contact@331_metal-1-metal-2 1.827
+R306 net_306 net_306#1contact@332_metal-1-metal-2 3.427
+R307 net_306#2c_w112_b net_306#3contact@333_metal-1-metal-2 2.253
+R308 net_306#4c_w104_b net_306#5contact@334_metal-1-metal-2 2.253
+R309 net_309 net_309#1contact@335_metal-1-metal-2 2.04
+R310 net_309#2c_w113_b net_309#3contact@336_metal-1-metal-2 2.253
+R311 net_309#4c_w108_b net_309#5contact@337_metal-1-metal-2 2.253
+R312 net_312 net_312#1contact@338_metal-1-metal-2 2.28
+R313 net_312#2c_w100_a net_312#3contact@339_metal-1-metal-2 1.853
+R314 net_312#4c_w94_a net_312#5contact@340_metal-1-metal-2 2.067
+R315 net_315 net_315#1contact@341_metal-1-metal-2 3.667
+R316 net_315#2c_sum14_a net_315#3contact@342_metal-1-metal-2 2.493
+R317 net_317 net_317#1contact@343_metal-1-metal-2 3.667
+R318 net_317#2c_w106_b net_317#3contact@344_metal-1-metal-2 2.493
+R319 net_317#4c_w97_b net_317#5contact@345_metal-1-metal-2 2.493
+R320 net_320 net_320#1contact@346_metal-1-metal-2 2.92
+R321 net_320#2c_w107_y net_320#3contact@347_metal-1-metal-2 2.28
+R322 net_322 net_322#1contact@348_metal-1-metal-2 1.853
+R323 net_322#2c_w104_a net_322#3contact@349_metal-1-metal-2 2.067
+R324 net_322#4c_w105_y net_322#5contact@350_metal-1-metal-2 2.28
+R325 net_325 net_325#1contact@351_metal-1-metal-2 3.133
+R326 net_325#2c_w112_y net_325#3contact@352_metal-1-metal-2 2.28
+R327 net_327 net_327#1contact@353_metal-1-metal-2 2.493
+R328 net_327#2c_w111_y net_327#3contact@354_metal-1-metal-2 2.28
+R329 net_329 net_329#1contact@355_metal-1-metal-2 2.28
+R330 net_329#2c_w113_a net_329#3contact@356_metal-1-metal-2 1.853
+R331 net_329#4c_w108_a net_329#5contact@357_metal-1-metal-2 2.067
+R332 net_332 net_332#1contact@358_metal-1-metal-2 2.52
+R333 net_332#2c_w100_b net_332#3contact@359_metal-1-metal-2 2.733
+R334 net_332#4c_w94_b net_332#5contact@360_metal-1-metal-2 2.733
+R335 net_335 net_335#1contact@361_metal-1-metal-2 2.52
+R336 net_335#2c_w107_b net_335#3contact@362_metal-1-metal-2 2.733
+R337 net_335#4c_w101_b net_335#5contact@363_metal-1-metal-2 2.733
+R338 net_338 net_338#1contact@364_metal-1-metal-2 2.52
+R339 net_338#2c_w111_b net_338#3contact@365_metal-1-metal-2 3.16
+R340 b13#0c_w96_a b13 1.96
+R341 a13#0c_w95_a a13 1.96
+R342 sum14#0c_sum14_y sum14 2.173
+R343 b14#0c_w103_a b14 1.96
+R344 a14#0c_w102_a a14 1.96
+R345 cout#0c_cout_y cout 2.173
+R346 b15#0c_w110_a b15 1.96
+R347 a15#0c_w109_a a15 1.96
+R348 net_0#1contact@0_metal-1-metal-2 net_0#3contact@1_metal-1-metal-2 1.093
+R349 net_0#3contact@1_metal-1-metal-2 net_0#5contact@2_metal-1-metal-2 1.84
+R350 net_3#1contact@3_metal-1-metal-2 net_3#3contact@4_metal-1-metal-2 7.413
+R351 net_5#1contact@5_metal-1-metal-2 net_5#3contact@6_metal-1-metal-2 3.227
+R352 net_7#1contact@7_metal-1-metal-2 net_7#3contact@8_metal-1-metal-2 1.627
+R353 net_7#3contact@8_metal-1-metal-2 net_7#5contact@9_metal-1-metal-2 3.253
+R354 net_11#1contact@11_metal-1-metal-2 net_11#3contact@12_metal-1-metal-2 
++1.627
+R355 net_11#3contact@12_metal-1-metal-2 net_11#5contact@13_metal-1-metal-2 
++2.053
+R356 net_15#1contact@15_metal-1-metal-2 net_15#3contact@16_metal-1-metal-2 
++0.773
+R357 net_15#3contact@16_metal-1-metal-2 net_15#5contact@17_metal-1-metal-2 
++1.627
+R358 net_19#1contact@19_metal-1-metal-2 net_19#3contact@20_metal-1-metal-2 
++1.627
+R359 net_19#3contact@20_metal-1-metal-2 net_19#5contact@21_metal-1-metal-2 
++3.253
+R360 net_22#1contact@22_metal-1-metal-2 net_22#3contact@23_metal-1-metal-2 
++0.773
+R361 net_22#3contact@23_metal-1-metal-2 net_22#5contact@24_metal-1-metal-2 
++1.627
+R362 net_25#1contact@25_metal-1-metal-2 net_25#3contact@26_metal-1-metal-2 
++9.813
+R363 net_27#1contact@27_metal-1-metal-2 net_27#3contact@28_metal-1-metal-2 
++1.84
+R364 net_29#1contact@29_metal-1-metal-2 net_29#3contact@30_metal-1-metal-2 
++4.373
+R365 net_31#1contact@31_metal-1-metal-2 net_31#3contact@32_metal-1-metal-2 
++1.093
+R366 net_31#3contact@32_metal-1-metal-2 net_31#5contact@33_metal-1-metal-2 
++1.84
+R367 net_36#1contact@36_metal-1-metal-2 net_36#3contact@37_metal-1-metal-2 
++1.093
+R368 net_36#3contact@37_metal-1-metal-2 net_36#5contact@38_metal-1-metal-2 
++1.84
+R369 net_39#1contact@39_metal-1-metal-2 net_39#3contact@40_metal-1-metal-2 
++1.093
+R370 net_39#3contact@40_metal-1-metal-2 net_39#5contact@41_metal-1-metal-2 
++4.24
+R371 net_42#1contact@42_metal-1-metal-2 net_42#3contact@43_metal-1-metal-2 
++3.227
+R372 net_45#1contact@45_metal-1-metal-2 net_45#3contact@46_metal-1-metal-2 
++1.093
+R373 net_45#3contact@46_metal-1-metal-2 net_45#5contact@47_metal-1-metal-2 
++1.84
+R374 net_48#1contact@48_metal-1-metal-2 net_48#3contact@49_metal-1-metal-2 
++4.373
+R375 a3#1contact@53_metal-1-metal-2 a3#1contact@53_metal-1-metal-2##0 7.407
+C722 a3#1contact@53_metal-1-metal-2##0 0 4.76fF
+R376 a3#1contact@53_metal-1-metal-2##0 a3 7.407
+R377 net_54#1contact@55_metal-1-metal-2 net_54#3contact@56_metal-1-metal-2 
++3.227
+R378 net_56#1contact@57_metal-1-metal-2 net_56#3contact@58_metal-1-metal-2 
++1.84
+R379 net_56#3contact@58_metal-1-metal-2 net_56#5contact@59_metal-1-metal-2 
++1.093
+R380 net_59#1contact@60_metal-1-metal-2 net_59#3contact@61_metal-1-metal-2 
++1.84
+R381 net_59#3contact@61_metal-1-metal-2 net_59#5contact@62_metal-1-metal-2 
++1.093
+R382 a4 a4#1contact@64_metal-1-metal-2 5.88
+R383 net_63#1contact@65_metal-1-metal-2 net_63#3contact@66_metal-1-metal-2 
++4.373
+R384 net_65#1contact@67_metal-1-metal-2 net_65#3contact@68_metal-1-metal-2 
++1.627
+R385 net_65#3contact@68_metal-1-metal-2 net_65#5contact@69_metal-1-metal-2 
++0.773
+R386 net_68#1contact@70_metal-1-metal-2 net_68#3contact@71_metal-1-metal-2 
++3.253
+R387 net_68#3contact@71_metal-1-metal-2 net_68#5contact@72_metal-1-metal-2 
++1.627
+R388 sum4 sum4##0 8.087
+C723 sum4##0 0 5.197fF
+R389 sum4##0 sum4#1contact@74_metal-1-metal-2 8.087
+R390 net_72#1contact@75_metal-1-metal-2 net_72#3contact@76_metal-1-metal-2 
++2.213
+R391 net_72#3contact@76_metal-1-metal-2 net_72#5contact@77_metal-1-metal-2 
++1.04
+R392 net_75#1contact@78_metal-1-metal-2 net_75#3contact@79_metal-1-metal-2 
++3.227
+R393 net_77#1contact@80_metal-1-metal-2 net_77#3contact@81_metal-1-metal-2 
++7.413
+R394 net_79#1contact@82_metal-1-metal-2 net_79#3contact@83_metal-1-metal-2 
++1.627
+R395 net_79#3contact@83_metal-1-metal-2 net_79#5contact@84_metal-1-metal-2 
++0.773
+R396 net_82#1contact@85_metal-1-metal-2 net_82#3contact@86_metal-1-metal-2 
++7.413
+R397 b3#1contact@87_metal-1-metal-2 b3#1contact@87_metal-1-metal-2##0 7.127
+C724 b3#1contact@87_metal-1-metal-2##0 0 4.58fF
+R398 b3#1contact@87_metal-1-metal-2##0 b3 7.127
+R399 net_85#1contact@89_metal-1-metal-2 net_85#3contact@90_metal-1-metal-2 
++5.72
+R400 b2#1contact@91_metal-1-metal-2 b2 2.44
+R401 net_88#1contact@93_metal-1-metal-2 net_88#3contact@94_metal-1-metal-2 
++3.2
+R402 net_90#1contact@95_metal-1-metal-2 net_90#3contact@96_metal-1-metal-2 
++1.84
+R403 net_90#3contact@96_metal-1-metal-2 net_90#5contact@97_metal-1-metal-2 
++1.093
+R404 net_93#1contact@98_metal-1-metal-2 net_93#3contact@99_metal-1-metal-2 
++4.373
+R405 b4 b4#1contact@101_metal-1-metal-2 7.4
+R406 net_96#1contact@102_metal-1-metal-2 net_96#5contact@103_metal-1-metal-2 
++1.84
+R407 net_96#3pin@4_metal-2 net_96#5contact@103_metal-1-metal-2 0.08
+R408 net_99#1contact@104_metal-1-metal-2 net_99#3contact@105_metal-1-metal-2 
++1.84
+R409 net_99#3contact@105_metal-1-metal-2 net_99#5contact@106_metal-1-metal-2 
++1.093
+R410 net_102#1contact@107_metal-1-metal-2 
++net_102#3contact@108_metal-1-metal-2 3.253
+R411 net_102#3contact@108_metal-1-metal-2 
++net_102#5contact@109_metal-1-metal-2 1.627
+R412 sum5 sum5#1contact@111_metal-1-metal-2 5
+R413 sum3#1contact@112_metal-1-metal-2 sum3 6.12
+R414 net_107#1contact@114_metal-1-metal-2 
++net_107#3contact@115_metal-1-metal-2 4.373
+R415 a2#1contact@116_metal-1-metal-2 a2 3
+R416 net_110#1contact@118_metal-1-metal-2 
++net_110#3contact@119_metal-1-metal-2 3.227
+R417 b6#1contact@120_metal-1-metal-2 b6#1contact@120_metal-1-metal-2##0 7.887
+C725 b6#1contact@120_metal-1-metal-2##0 0 5.069fF
+R418 b6#1contact@120_metal-1-metal-2##0 b6 7.887
+R419 net_113#1contact@122_metal-1-metal-2 
++net_113#3contact@123_metal-1-metal-2 1.093
+R420 net_113#3contact@123_metal-1-metal-2 
++net_113#5contact@124_metal-1-metal-2 1.84
+R421 net_116#1contact@125_metal-1-metal-2 
++net_116#3contact@126_metal-1-metal-2 4.373
+R422 net_118#1contact@127_metal-1-metal-2 
++net_118#3contact@128_metal-1-metal-2 0.32
+R423 net_118#3contact@128_metal-1-metal-2 
++net_118#5contact@129_metal-1-metal-2 1.52
+R424 a6#1contact@131_metal-1-metal-2 a6#1contact@131_metal-1-metal-2##0 6.967
+C726 a6#1contact@131_metal-1-metal-2##0 0 4.477fF
+R425 a6#1contact@131_metal-1-metal-2##0 a6 6.967
+R426 net_124#1contact@133_metal-1-metal-2 
++net_124#3contact@134_metal-1-metal-2 1.093
+R427 net_124#3contact@134_metal-1-metal-2 
++net_124#5contact@135_metal-1-metal-2 1.84
+R428 net_127#1contact@136_metal-1-metal-2 
++net_127#3contact@137_metal-1-metal-2 3.227
+R429 net_129#1contact@138_metal-1-metal-2 
++net_129#3contact@139_metal-1-metal-2 1.093
+R430 net_129#3contact@139_metal-1-metal-2 
++net_129#5contact@140_metal-1-metal-2 1.84
+R431 net_132#1contact@141_metal-1-metal-2 
++net_132#3contact@142_metal-1-metal-2 1.28
+R432 net_132#3contact@142_metal-1-metal-2 
++net_132#5contact@143_metal-1-metal-2 0.773
+R433 sum8#1contact@144_metal-1-metal-2 sum8 2.2
+R434 net_136#1contact@146_metal-1-metal-2 
++net_136#3contact@147_metal-1-metal-2 1.627
+R435 net_136#3contact@147_metal-1-metal-2 
++net_136#5contact@148_metal-1-metal-2 3.253
+R436 net_139#1contact@149_metal-1-metal-2 
++net_139#3contact@150_metal-1-metal-2 0.773
+R437 net_139#3contact@150_metal-1-metal-2 
++net_139#5contact@151_metal-1-metal-2 1.627
+R438 net_142#1contact@152_metal-1-metal-2 
++net_142#3contact@153_metal-1-metal-2 7.413
+R439 net_144#1contact@154_metal-1-metal-2 
++net_144#3contact@155_metal-1-metal-2 0.773
+R440 net_144#3contact@155_metal-1-metal-2 
++net_144#5contact@156_metal-1-metal-2 1.627
+R441 sum6 sum6#1contact@158_metal-1-metal-2 8.947
+R442 sum7#1contact@159_metal-1-metal-2 sum7#1contact@159_metal-1-metal-2##0 
++6.687
+C727 sum7#1contact@159_metal-1-metal-2##0 0 4.297fF
+R443 sum7#1contact@159_metal-1-metal-2##0 sum7 6.687
+R444 net_149#1contact@161_metal-1-metal-2 
++net_149#3contact@162_metal-1-metal-2 1.627
+R445 net_149#3contact@162_metal-1-metal-2 
++net_149#5contact@163_metal-1-metal-2 3.253
+R446 net_152#1contact@164_metal-1-metal-2 
++net_152#3contact@165_metal-1-metal-2 7.413
+R447 b7#1contact@166_metal-1-metal-2 b7 4.6
+R448 net_155#1contact@168_metal-1-metal-2 
++net_155#3contact@169_metal-1-metal-2 1.093
+R449 net_155#3contact@169_metal-1-metal-2 
++net_155#5contact@170_metal-1-metal-2 1.84
+R450 net_158#1contact@171_metal-1-metal-2 
++net_158#3contact@172_metal-1-metal-2 3.227
+R451 a5 a5#1contact@174_metal-1-metal-2 6.467
+R452 a7#1contact@175_metal-1-metal-2 a7 2.76
+R453 net_162#1contact@177_metal-1-metal-2 
++net_162#3contact@178_metal-1-metal-2 1.093
+R454 net_162#3contact@178_metal-1-metal-2 
++net_162#5contact@179_metal-1-metal-2 1.84
+R455 net_165#1contact@180_metal-1-metal-2 
++net_165#3contact@181_metal-1-metal-2 4.373
+R456 b5 b5#1contact@183_metal-1-metal-2 5.587
+R457 net_168#1contact@184_metal-1-metal-2 
++net_168#3contact@185_metal-1-metal-2 1.627
+R458 net_168#3contact@185_metal-1-metal-2 
++net_168#5contact@186_metal-1-metal-2 3.253
+R459 net_171#1contact@187_metal-1-metal-2 
++net_171#3contact@188_metal-1-metal-2 1.547
+R460 net_173#1contact@189_metal-1-metal-2 
++net_173#3contact@190_metal-1-metal-2 1.84
+R461 net_173#3contact@190_metal-1-metal-2 
++net_173#5contact@191_metal-1-metal-2 1.093
+R462 net_176#1contact@192_metal-1-metal-2 
++net_176#3contact@193_metal-1-metal-2 4.373
+R463 net_178#1contact@194_metal-1-metal-2 
++net_178#3contact@195_metal-1-metal-2 1.84
+R464 net_178#3contact@195_metal-1-metal-2 
++net_178#5contact@196_metal-1-metal-2 1.093
+R465 b9 b9##0 6.033
+C728 b9##0 0 3.877fF
+R466 b9##0 b9#1contact@198_metal-1-metal-2 6.033
+R467 net_182#1contact@199_metal-1-metal-2 
++net_182#3contact@200_metal-1-metal-2 3.227
+R468 net_184#1contact@201_metal-1-metal-2 
++net_184#3contact@202_metal-1-metal-2 1.84
+R469 net_184#3contact@202_metal-1-metal-2 
++net_184#5contact@203_metal-1-metal-2 1.093
+R470 net_187#1contact@204_metal-1-metal-2 
++net_187#3contact@205_metal-1-metal-2 3.227
+R471 net_189#1contact@206_metal-1-metal-2 
++net_189#3contact@207_metal-1-metal-2 1.84
+R472 net_189#3contact@207_metal-1-metal-2 
++net_189#5contact@208_metal-1-metal-2 1.093
+R473 a9 a9##0 5.273
+C729 a9##0 0 3.389fF
+R474 a9##0 a9#1contact@210_metal-1-metal-2 5.273
+R475 net_193#1contact@211_metal-1-metal-2 
++net_193#3contact@212_metal-1-metal-2 6.693
+R476 net_195#1contact@213_metal-1-metal-2 
++net_195#3contact@214_metal-1-metal-2 1.627
+R477 net_195#3contact@214_metal-1-metal-2 
++net_195#5contact@215_metal-1-metal-2 0.773
+R478 net_198#1contact@216_metal-1-metal-2 
++net_198#3contact@217_metal-1-metal-2 3.253
+R479 net_198#3contact@217_metal-1-metal-2 
++net_198#5contact@218_metal-1-metal-2 1.627
+R480 sum10 sum10#1contact@220_metal-1-metal-2 9.347
+R481 sum9#1contact@221_metal-1-metal-2 sum9#1contact@221_metal-1-metal-2##0 
++5.98
+C730 sum9#1contact@221_metal-1-metal-2##0 0 3.843fF
+R482 sum9#1contact@221_metal-1-metal-2##0 sum9 5.98
+R483 net_203#1contact@223_metal-1-metal-2 
++net_203#3contact@224_metal-1-metal-2 7.413
+R484 net_205#1contact@225_metal-1-metal-2 
++net_205#3contact@226_metal-1-metal-2 1.84
+R485 net_205#3contact@226_metal-1-metal-2 
++net_205#5contact@227_metal-1-metal-2 1.093
+R486 a8#1contact@229_metal-1-metal-2 a8 9.48
+R487 net_211#1contact@231_metal-1-metal-2 
++net_211#3contact@232_metal-1-metal-2 3.227
+R488 b8#1contact@233_metal-1-metal-2 b8 8.6
+R489 net_214#1contact@235_metal-1-metal-2 
++net_214#3contact@236_metal-1-metal-2 4.373
+R490 net_216#1contact@237_metal-1-metal-2 
++net_216#3contact@238_metal-1-metal-2 1.627
+R491 net_216#3contact@238_metal-1-metal-2 
++net_216#5contact@239_metal-1-metal-2 0.773
+R492 net_219#1contact@240_metal-1-metal-2 
++net_219#3contact@241_metal-1-metal-2 1.627
+R493 net_219#3contact@241_metal-1-metal-2 
++net_219#5contact@242_metal-1-metal-2 0.773
+R494 net_222#1contact@243_metal-1-metal-2 
++net_222#3contact@244_metal-1-metal-2 7.413
+R495 net_224#1contact@245_metal-1-metal-2 
++net_224#3contact@246_metal-1-metal-2 3.253
+R496 net_224#3contact@246_metal-1-metal-2 
++net_224#5contact@247_metal-1-metal-2 1.627
+R497 b12#1contact@248_metal-1-metal-2 b12 8.6
+R498 net_228#1contact@250_metal-1-metal-2 
++net_228#3contact@251_metal-1-metal-2 1.093
+R499 net_228#3contact@251_metal-1-metal-2 
++net_228#5contact@252_metal-1-metal-2 1.84
+R500 net_231#1contact@253_metal-1-metal-2 
++net_231#3contact@254_metal-1-metal-2 7.413
+R501 net_233#1contact@255_metal-1-metal-2 
++net_233#3contact@256_metal-1-metal-2 3.227
+R502 a10 a10#1contact@258_metal-1-metal-2 1.8
+R503 net_236#1contact@259_metal-1-metal-2 
++net_236#3contact@260_metal-1-metal-2 0.773
+R504 net_236#3contact@260_metal-1-metal-2 
++net_236#5contact@261_metal-1-metal-2 1.627
+R505 net_239#1contact@262_metal-1-metal-2 
++net_239#3contact@263_metal-1-metal-2 7.413
+R506 net_241#1contact@264_metal-1-metal-2 
++net_241#3contact@265_metal-1-metal-2 3.227
+R507 net_243#1contact@266_metal-1-metal-2 
++net_243#3contact@267_metal-1-metal-2 1.627
+R508 net_243#3contact@267_metal-1-metal-2 
++net_243#5contact@268_metal-1-metal-2 3.253
+R509 net_246#1contact@269_metal-1-metal-2 
++net_246#3contact@270_metal-1-metal-2 0.773
+R510 net_246#3contact@270_metal-1-metal-2 
++net_246#5contact@271_metal-1-metal-2 1.627
+R511 net_249#1pin@7_metal-2 net_249#3contact@272_metal-1-metal-2 0.107
+R512 net_251#1contact@273_metal-1-metal-2 
++net_251#3contact@274_metal-1-metal-2 0.773
+R513 net_251#3contact@274_metal-1-metal-2 
++net_251#5contact@275_metal-1-metal-2 0.853
+R514 b10 b10#1contact@277_metal-1-metal-2 1.24
+R515 a12#1contact@278_metal-1-metal-2 a12 7.08
+R516 net_256#1contact@280_metal-1-metal-2 
++net_256#3contact@281_metal-1-metal-2 1.093
+R517 net_256#3contact@281_metal-1-metal-2 
++net_256#5contact@282_metal-1-metal-2 1.84
+R518 net_259#1contact@283_metal-1-metal-2 
++net_259#3contact@284_metal-1-metal-2 0.773
+R519 net_259#3contact@284_metal-1-metal-2 
++net_259#5contact@285_metal-1-metal-2 1.627
+R520 net_262#1contact@286_metal-1-metal-2 
++net_262#3contact@287_metal-1-metal-2 4.373
+R521 net_264#1contact@288_metal-1-metal-2 
++net_264#3contact@289_metal-1-metal-2 1.093
+R522 net_264#3contact@289_metal-1-metal-2 
++net_264#5contact@290_metal-1-metal-2 1.84
+R523 net_267#1pin@8_metal-2 net_267#3contact@291_metal-1-metal-2 0.213
+R524 net_267#3contact@291_metal-1-metal-2 
++net_267#5contact@292_metal-1-metal-2 1.093
+R525 sum13#1contact@294_metal-1-metal-2 sum13 5.88
+R526 net_273#1contact@296_metal-1-metal-2 
++net_273#3contact@297_metal-1-metal-2 1.627
+R527 net_273#3contact@297_metal-1-metal-2 
++net_273#5contact@298_metal-1-metal-2 3.253
+R528 net_276#1contact@299_metal-1-metal-2 
++net_276#3contact@300_metal-1-metal-2 1.093
+R529 net_276#3contact@300_metal-1-metal-2 
++net_276#5contact@301_metal-1-metal-2 1.84
+R530 net_279#1contact@302_metal-1-metal-2 
++net_279#3contact@303_metal-1-metal-2 3.6
+R531 net_281#1contact@304_metal-1-metal-2 
++net_281#3contact@305_metal-1-metal-2 4.373
+R532 sum12 sum12##0 8.367
+C731 sum12##0 0 5.377fF
+R533 sum12##0 sum12#1contact@307_metal-1-metal-2 8.367
+R534 net_284#1contact@308_metal-1-metal-2 
++net_284#3contact@309_metal-1-metal-2 3.227
+R535 sum11 sum11#1contact@311_metal-1-metal-2 4.92
+R536 b11 b11##0 6.527
+C732 b11##0 0 4.195fF
+R537 b11##0 b11#1contact@313_metal-1-metal-2 6.527
+R538 a11 a11##0 6.807
+C733 a11##0 0 4.374fF
+R539 a11##0 a11#1contact@315_metal-1-metal-2 6.807
+R540 net_289#1contact@316_metal-1-metal-2 
++net_289#3contact@317_metal-1-metal-2 8.053
+R541 net_291#1contact@318_metal-1-metal-2 
++net_291#3contact@319_metal-1-metal-2 1.627
+R542 net_291#3contact@319_metal-1-metal-2 
++net_291#5contact@320_metal-1-metal-2 0.773
+R543 net_294#1contact@321_metal-1-metal-2 
++net_294#3contact@322_metal-1-metal-2 6.213
+R544 net_85#13contact@323_metal-1-metal-2 
++net_85#13contact@323_metal-1-metal-2##0 5.287
+C734 net_85#13contact@323_metal-1-metal-2##0 0 3.398fF
+R545 net_85#13contact@323_metal-1-metal-2##0 
++net_85#15contact@324_metal-1-metal-2 5.287
+R546 net_298#1pin@10_metal-2 net_298#3contact@325_metal-1-metal-2 0.107
+R547 net_298#3contact@325_metal-1-metal-2 
++net_298#5contact@326_metal-1-metal-2 1.093
+R548 net_301#1contact@327_metal-1-metal-2 
++net_301#3contact@328_metal-1-metal-2 4.373
+R549 net_303#1contact@329_metal-1-metal-2 
++net_303#3contact@330_metal-1-metal-2 3.253
+R550 net_303#3contact@330_metal-1-metal-2 
++net_303#5contact@331_metal-1-metal-2 1.627
+R551 net_306#1contact@332_metal-1-metal-2 
++net_306#3contact@333_metal-1-metal-2 4.427
+R552 net_306#3contact@333_metal-1-metal-2 
++net_306#5contact@334_metal-1-metal-2 1.093
+R553 net_309#1contact@335_metal-1-metal-2 
++net_309#3contact@336_metal-1-metal-2 1.84
+R554 net_309#3contact@336_metal-1-metal-2 
++net_309#5contact@337_metal-1-metal-2 1.093
+R555 net_312#1contact@338_metal-1-metal-2 
++net_312#3contact@339_metal-1-metal-2 3.253
+R556 net_312#3contact@339_metal-1-metal-2 
++net_312#5contact@340_metal-1-metal-2 1.627
+R557 net_315#1contact@341_metal-1-metal-2 
++net_315#3contact@342_metal-1-metal-2 3.227
+R558 net_317#1contact@343_metal-1-metal-2 
++net_317#3contact@344_metal-1-metal-2 1.84
+R559 net_317#3contact@344_metal-1-metal-2 
++net_317#5contact@345_metal-1-metal-2 1.093
+R560 net_320#1contact@346_metal-1-metal-2 
++net_320#3contact@347_metal-1-metal-2 3.173
+R561 net_322#1contact@348_metal-1-metal-2 
++net_322#3contact@349_metal-1-metal-2 1.627
+R562 net_322#3contact@349_metal-1-metal-2 
++net_322#5contact@350_metal-1-metal-2 0.773
+R563 net_325#1contact@351_metal-1-metal-2 
++net_325#3contact@352_metal-1-metal-2 0.56
+R564 net_327#1contact@353_metal-1-metal-2 
++net_327#3contact@354_metal-1-metal-2 0.56
+R565 net_329#1contact@355_metal-1-metal-2 
++net_329#3contact@356_metal-1-metal-2 3.253
+R566 net_329#3contact@356_metal-1-metal-2 
++net_329#5contact@357_metal-1-metal-2 1.627
+R567 net_332#1contact@358_metal-1-metal-2 
++net_332#3contact@359_metal-1-metal-2 1.84
+R568 net_332#3contact@359_metal-1-metal-2 
++net_332#5contact@360_metal-1-metal-2 1.093
+R569 net_335#1contact@361_metal-1-metal-2 
++net_335#3contact@362_metal-1-metal-2 1.84
+R570 net_335#3contact@362_metal-1-metal-2 
++net_335#5contact@363_metal-1-metal-2 1.093
+R571 net_338#1contact@364_metal-1-metal-2 
++net_338#3contact@365_metal-1-metal-2 5.067

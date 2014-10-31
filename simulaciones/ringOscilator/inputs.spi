@@ -1,0 +1,3 @@
+* Fuentes de alimentación
+VVDC_vss vss 0 DC '0V' AC '0V' 0 trans 0
+VVDC_vdd vdd vss DC '1.8V' AC '0V' 0 tran 1.8

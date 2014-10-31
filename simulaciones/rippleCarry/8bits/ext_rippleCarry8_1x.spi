@@ -1,0 +1,941 @@
+*** SPICE deck for cell rippleCarry8_1x{lay} from library ProyectoIntegrador
+*** Created on dom ago 31, 2014 19:07:02
+*** Last revised on sáb oct 18, 2014 21:28:01
+*** Written on dom oct 19, 2014 22:26:41 by Electric VLSI Design System, 
+*** version 9.05
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 0.5, MIN_CAPAC 0.5FF
+***    P-Active:	areacap=1.167FF/um^2,	edgecap=0.203FF/um,	res=7.5ohms/sq
+***    N-Active:	areacap=0.982FF/um^2,	edgecap=0.244FF/um,	res=6.7ohms/sq
+***    
+*** Polysilicon-1:	areacap=0.1467FF/um^2,	edgecap=0.0608FF/um,	res=7.8ohms/sq
+***    Transistor-Poly:	areacap=0.09FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Poly-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=10.5ohms/sq
+***    Active-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=12.2ohms/sq
+***    Metal-1:	areacap=0.1209FF/um^2,	edgecap=0.1104FF/um,	res=0.08ohms/sq
+***    Via1:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=5.69ohms/sq
+***    Metal-2:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via2:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=11.39ohms/sq
+***    Metal-3:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via3:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=16.73ohms/sq
+***    Metal-4:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.08ohms/sq
+***    Via4:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=21.44ohms/sq
+***    Metal-5:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.07ohms/sq
+***    Via5:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=24.08ohms/sq
+***    Metal-6:	areacap=0.0423FF/um^2,	edgecap=0.1273FF/um,	res=0.03ohms/sq
+***    Hi-Res:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+* Model cards are described in this file:
+.include /home/lean/tfinal/trabajo/models/tsmc180nm.model
+
+*** SUBCIRCUIT ProyectoIntegrador__id FROM CELL id{lay}
+.SUBCKT ProyectoIntegrador__id vss a vdd y
+Mnmos_0 net_10 a#1 0 0 N L=0.2U W=0.4U AS=0.6P AD=0.3P PS=5.8U PD=2.2U
+Mnmos_1 y#0 net_10#6 0 0 N L=0.2U W=0.4U AS=0.6P AD=0.3P PS=5.8U PD=2.2U
+Mpmos_0 net_10#2 a#5 vdd vdd P L=0.2U W=0.8U AS=0.8P AD=0.3P PS=6.6U PD=2.2U
+Mpmos_1 y#2 net_10#10 vdd vdd P L=0.2U W=0.8U AS=0.8P AD=0.3P PS=6.6U PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 net_10 0 0.649fF
+C1 net_10#2 0 0.623fF
+C2 y#0 0 0.546fF
+C3 y#2 0 0.726fF
+C4 net_10#4 0 1.495fF
+C5 y 0 1.272fF
+C6 a#3 0 0.66fF
+C7 net_10#8 0 0.66fF
+** Extracted Parasitic Resistors ***
+R0 a#1 a#2 15.6
+R1 a#3 a#2 181.35
+R2 a#4 a#3 157.95
+R3 a a#3 1.95
+R4 a#5 a#4 15.6
+R5 net_10#6 net_10#7 15.6
+R6 net_10#8 net_10#7 181.35
+R7 net_10#9 net_10#8 157.95
+R8 net_10#4 net_10#8 1.95
+R9 net_10#10 net_10#9 15.6
+R10 y#2 y 1.507
+R11 net_10#2 net_10#4 1.293
+R12 net_10#4 net_10 1.347
+R13 y#0 y 1.133
+.ENDS ProyectoIntegrador__id
+
+*** SUBCIRCUIT ProyectoIntegrador__xor2_1x FROM CELL xor2_1x{lay}
+.SUBCKT ProyectoIntegrador__xor2_1x vss a b vdd y
+Mnmos_0 net_79 a#9 0 0 N L=0.2U W=0.4U AS=0.44P AD=0.088P PS=4.2U PD=0.85U
+Mnmos_1 net_76 net_160#11 y#0 0 N L=0.2U W=0.4U AS=0.18P AD=0.088P PS=1.2U 
++PD=0.85U
+Mnmos_2 0 net_270#10 net_76 0 N L=0.2U W=0.4U AS=0.088P AD=0.44P PS=0.85U 
++PD=4.2U
+Mnmos_3 y#0 b#5 net_79 0 N L=0.2U W=0.4U AS=0.088P AD=0.18P PS=0.85U PD=1.2U
+Mnmos_4 net_160#12 b#0 0 0 N L=0.2U W=0.4U AS=0.44P AD=0.28P PS=4.2U PD=2.2U
+Mnmos_5 0 a#5 net_270#2 0 N L=0.2U W=0.4U AS=0.28P AD=0.44P PS=2.2U PD=4.2U
+Mpmos_0 net_68 net_270#12 vdd vdd P L=0.2U W=0.8U AS=0.56P AD=0.168P PS=4.6U 
++PD=1.25U
+Mpmos_1 y b#11 net_68 vdd P L=0.2U W=0.8U AS=0.168P AD=0.18P PS=1.25U PD=1.2U
+Mpmos_2 net_70 net_160#5 y vdd P L=0.2U W=0.8U AS=0.18P AD=0.168P PS=1.2U 
++PD=1.25U
+Mpmos_4 vdd a#12 net_70 vdd P L=0.2U W=0.8U AS=0.168P AD=0.56P PS=1.25U 
++PD=4.6U
+Mpmos_5 vdd a#1 net_270 vdd P L=0.2U W=0.8U AS=0.28P AD=0.56P PS=2.2U PD=4.6U
+Mpmos_6 net_160 b#13 vdd vdd P L=0.2U W=0.8U AS=0.56P AD=0.28P PS=4.6U 
++PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 y#0 0 1.163fF
+C1 y 0 1.06fF
+C2 a#0 0 0.628fF
+C3 net_160#12 0 0.594fF
+C4 net_160 0 0.697fF
+C5 a 0 1.269fF
+C6 b 0 0.563fF
+C7 net_270 0 1.519fF
+C8 net_270#1 0 1.247fF
+C9 net_160#2 0 1.362fF
+C10 net_270#4 0 0.653fF
+C11 b#2 0 0.66fF
+C12 b#8 0 0.509fF
+** Extracted Parasitic Resistors ***
+R0 y y#0 2.413
+R1 a#0 a 0.76
+R2 a#1 a#2 15.6
+R3 a#2 a#2##0 111.15
+R4 a#2##0 a 111.15
+R5 a#4 a#5 15.6
+R6 a a#4 117
+R7 b#0 b#1 31.2
+R8 b#1 b#2 183.3
+R9 b#2 b#4 156
+R10 b b#2 1.95
+R11 net_270 net_270#1 1.107
+R12 net_270#1 net_270#2 0.653
+R13 net_160#2 net_160 1.44
+R14 net_160#2 net_160#4 0.6
+R15 net_270#3 net_270#4 68.25
+R16 net_270#7 net_270 1.95
+R17 net_270#1 net_270#4 1.08
+R18 a#0 a#0##0 101.4
+R19 a#0##0 a#8 101.4
+R20 b#5 b#6 39
+R21 b#6 b#7 7.8
+R22 b#7 b#8 142.35
+R23 b#9 b#10 7.8
+R24 b#10 b#11 39
+R25 net_160#5 net_160#6 58.5
+R26 net_160#6 net_160#7 7.8
+R27 net_160#7 net_160#8 130.65
+R28 net_160#9 net_160#10 7.8
+R29 net_160#10 net_160#11 58.5
+R30 b b#12 0.547
+R31 b#8 b#9 118.95
+R32 b#12 b#8 1.95
+R33 net_160#8 net_160#9 91.65
+R34 net_160#4 net_160#8 1.95
+R35 net_160#12 net_160#2 1.16
+R36 net_270#10 net_270#11 19.5
+R37 net_270#11 net_270#3 31.2
+R38 a#9 a#10 19.5
+R39 a#10 a#11 15.6
+R40 a#11 a 101.4
+R41 net_270#12 net_270#13 19.5
+R42 net_270#13 net_270#14 15.6
+R43 net_270#14 net_270 76.05
+R44 a#12 a#13 19.5
+R45 a#13 a#8 15.6
+R46 b#13 b#4 31.2
+.ENDS ProyectoIntegrador__xor2_1x
+
+*** SUBCIRCUIT ProyectoIntegrador__or2_1x FROM CELL or2_1x{lay}
+.SUBCKT ProyectoIntegrador__or2_1x vss a b vdd y
+Mnmos_0 net_56#2 a#1 0 0 N L=0.2U W=0.4U AS=0.52P AD=0.2P PS=5U PD=1.533U
+Mnmos_1 0 b#3 net_56#2 0 N L=0.2U W=0.4U AS=0.2P AD=0.52P PS=1.533U PD=5U
+Mnmos_2 y#0 net_56#9 0 0 N L=0.2U W=0.4U AS=0.52P AD=0.28P PS=5U PD=2.2U
+Mpmos_0 net_55 a#3 vdd vdd P L=0.2U W=0.8U AS=0.84P AD=0.168P PS=7.4U 
++PD=1.25U
+Mpmos_1 net_56 b#1 net_55 vdd P L=0.2U W=0.8U AS=0.168P AD=0.2P PS=1.25U 
++PD=1.533U
+Mpmos_2 y#2 net_56#14 vdd vdd P L=0.2U W=0.8U AS=0.84P AD=0.28P PS=7.4U 
++PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 net_56 0 0.662fF
+C1 y#0 0 0.546fF
+C2 y#2 0 0.707fF
+C3 net_56#13 0 1.09fF
+C4 y 0 1.253fF
+C5 net_56#6 0 0.848fF
+C6 net_56#11 0 0.66fF
+** Extracted Parasitic Resistors ***
+R0 a#1 a#2 15.6
+R1 a#3 a#4 15.6
+R2 a#4 a#5 64.35
+R3 b#1 b#2 23.4
+R4 b#3 b#4 19.5
+R5 b#2 b#5 7.8
+R6 b#5 b#6 70.2
+R7 b#7 b#4 15.6
+R8 a#5 a#5##0 137.475
+R9 a#5##0 a#2 137.475
+R10 a#5 a 1.95
+R11 b#6 b#6##0 113.1
+R12 b#6##0 b#7 113.1
+R13 b#6 b 1.95
+R14 net_56#2 net_56#6 0.693
+R15 net_56#9 net_56#10 15.6
+R16 net_56#11 net_56#10 181.35
+R17 net_56#12 net_56#11 157.95
+R18 net_56#13 net_56#11 1.95
+R19 y#2 y 1.467
+R20 y y#0 1.133
+R21 net_56#14 net_56#12 15.6
+R22 net_56#6 net_56#13 0.64
+R23 net_56#13 net_56 1.24
+.ENDS ProyectoIntegrador__or2_1x
+
+*** SUBCIRCUIT ProyectoIntegrador__and2_1x FROM CELL and2_1x{lay}
+.SUBCKT ProyectoIntegrador__and2_1x vss a b vdd y
+Mnmos_0 net_121 b#7 net_149 0 N L=0.2U W=0.4U AS=0.088P AD=0.227P PS=0.85U 
++PD=1.533U
+Mnmos_1 net_149 a#5 0 0 N L=0.2U W=0.4U AS=0.68P AD=0.088P PS=6.6U PD=0.85U
+Mnmos_2 y#0 net_121#13 0 0 N L=0.2U W=0.4U AS=0.68P AD=0.3P PS=6.6U PD=2.2U
+Mpmos_0 vdd b#1 net_121#2 vdd P L=0.2U W=0.8U AS=0.227P AD=0.693P PS=1.533U 
++PD=5.8U
+Mpmos_1 net_121#2 a#1 vdd vdd P L=0.2U W=0.8U AS=0.693P AD=0.227P PS=5.8U 
++PD=1.533U
+Mpmos_2 y#2 net_121#7 vdd vdd P L=0.2U W=0.8U AS=0.693P AD=0.3P PS=5.8U 
++PD=2.2U
+** Extracted Parasitic Capacitors ***
+C0 net_121 0 0.797fF
+C1 net_121#2 0 0.501fF
+C2 y#0 0 0.546fF
+C3 y#2 0 0.726fF
+C4 y 0 1.272fF
+C5 net_121#3 0 2.178fF
+C6 b#4 0 0.585fF
+** Extracted Parasitic Resistors ***
+R0 a#1 a#2 15.6
+R1 a#2 a#2##0 125.775
+R2 a#2##0 a#3 125.775
+R3 b#1 b#2 19.5
+R4 b#2 b#3 15.6
+R5 b#3 b#4 140.4
+R6 b#5 b#6 7.8
+R7 b#6 b#7 19.5
+R8 b#4 b#5 159.9
+R9 b b#4 1.95
+R10 a#3 a#4 87.75
+R11 a#3 a 1.95
+R12 a#4 a#5 15.6
+R13 net_121#2 net_121#3 1.04
+R14 y#2 y 1.507
+R15 y y#0 1.133
+R16 net_121#7 net_121#8 15.6
+R17 net_121#3 net_121 1.547
+R18 net_121#11 net_121#11##0 106.275
+R19 net_121#11##0 net_121#3 106.275
+R20 net_121#3 net_121#8 126.75
+R21 net_121#11 net_121#13 15.6
+.ENDS ProyectoIntegrador__and2_1x
+
+*** TOP LEVEL CELL: rippleCarry8_1x{lay}
+Xc_cout 0 net_159#2 vdd cout#0 ProyectoIntegrador__id
+Xc_sum0 0 net_21 vdd sum0#0 ProyectoIntegrador__id
+Xc_sum1 0 net_0 vdd sum1#0 ProyectoIntegrador__id
+Xc_sum2 0 net_40#2 vdd sum2#0 ProyectoIntegrador__id
+Xc_sum3 0 net_78 vdd sum3#0 ProyectoIntegrador__id
+Xc_sum4 0 net_87 vdd sum4#0 ProyectoIntegrador__id
+Xc_sum5 0 net_108#2 vdd sum5#0 ProyectoIntegrador__id
+Xc_sum6 0 net_135#2 vdd sum6#0 ProyectoIntegrador__id
+Xc_sum7 0 net_42#2 vdd sum7#0 ProyectoIntegrador__id
+Xc_w1 0 net_6 net_18 vdd net_21#2 ProyectoIntegrador__xor2_1x
+Xc_w2 0 cin#0 vdd net_6#4 ProyectoIntegrador__id
+Xc_w3 0 net_2 net_15 vdd net_18#4 ProyectoIntegrador__xor2_1x
+Xc_w4 0 a0#0 vdd net_2#4 ProyectoIntegrador__id
+Xc_w5 0 b0#0 vdd net_15#4 ProyectoIntegrador__id
+Xc_w6 0 net_10#2 net_44 vdd net_0#2 ProyectoIntegrador__xor2_1x
+Xc_w7 0 net_26#2 net_23#2 vdd net_10 ProyectoIntegrador__or2_1x
+Xc_w8 0 net_6#2 net_18#2 vdd net_26 ProyectoIntegrador__and2_1x
+Xc_w9 0 net_2#2 net_15#2 vdd net_23 ProyectoIntegrador__and2_1x
+Xc_w10 0 net_60#4 net_37#4 vdd net_44#4 ProyectoIntegrador__xor2_1x
+Xc_w11 0 a1#0 vdd net_60 ProyectoIntegrador__id
+Xc_w12 0 b1#0 vdd net_37 ProyectoIntegrador__id
+Xc_w13 0 net_49#2 net_30#4 vdd net_40 ProyectoIntegrador__xor2_1x
+Xc_w14 0 net_56 net_47 vdd net_49#4 ProyectoIntegrador__or2_1x
+Xc_w15 0 net_10#4 net_44#2 vdd net_56#2 ProyectoIntegrador__and2_1x
+Xc_w16 0 net_60#2 net_37#2 vdd net_47#2 ProyectoIntegrador__and2_1x
+Xc_w17 0 net_52#4 net_33#4 vdd net_30 ProyectoIntegrador__xor2_1x
+Xc_w18 0 a2#0 vdd net_52 ProyectoIntegrador__id
+Xc_w19 0 b2#0 vdd net_33 ProyectoIntegrador__id
+Xc_w20 0 net_68#2 net_94 vdd net_78#2 ProyectoIntegrador__xor2_1x
+Xc_w21 0 net_89 net_85 vdd net_68 ProyectoIntegrador__or2_1x
+Xc_w22 0 net_49 net_30#2 vdd net_89#2 ProyectoIntegrador__and2_1x
+Xc_w23 0 net_52#2 net_33#2 vdd net_85#2 ProyectoIntegrador__and2_1x
+Xc_w24 0 net_65 net_91 vdd net_94#4 ProyectoIntegrador__xor2_1x
+Xc_w25 0 a3#0 vdd net_65#4 ProyectoIntegrador__id
+Xc_w26 0 b3#0 vdd net_91#4 ProyectoIntegrador__id
+Xc_w27 0 net_80#2 net_73 vdd net_87#2 ProyectoIntegrador__xor2_1x
+Xc_w28 0 net_76#2 net_83#2 vdd net_80 ProyectoIntegrador__or2_1x
+Xc_w29 0 net_68#4 net_94#2 vdd net_76 ProyectoIntegrador__and2_1x
+Xc_w30 0 net_65#2 net_91#2 vdd net_83 ProyectoIntegrador__and2_1x
+Xc_w31 0 net_127#2 net_132 vdd net_73#4 ProyectoIntegrador__xor2_1x
+Xc_w32 0 a4#0 vdd net_127 ProyectoIntegrador__id
+Xc_w33 0 b4#0 vdd net_132#2 ProyectoIntegrador__id
+Xc_w34 0 net_100#2 net_110#4 vdd net_108 ProyectoIntegrador__xor2_1x
+Xc_w35 0 net_115 net_121 vdd net_100#4 ProyectoIntegrador__or2_1x
+Xc_w36 0 net_80#4 net_73#2 vdd net_115#2 ProyectoIntegrador__and2_1x
+Xc_w37 0 net_127#4 net_132#4 vdd net_121#2 ProyectoIntegrador__and2_1x
+Xc_w38 0 net_123#4 net_117#4 vdd net_110 ProyectoIntegrador__xor2_1x
+Xc_w39 0 a5#0 vdd net_123 ProyectoIntegrador__id
+Xc_w40 0 b5#0 vdd net_117 ProyectoIntegrador__id
+Xc_w41 0 net_163#2 net_168#2 vdd net_135 ProyectoIntegrador__xor2_1x
+Xc_w42 0 net_103 net_130 vdd net_163#4 ProyectoIntegrador__or2_1x
+Xc_w43 0 net_100 net_110#2 vdd net_103#2 ProyectoIntegrador__and2_1x
+Xc_w44 0 net_123#2 net_117#2 vdd net_130#2 ProyectoIntegrador__and2_1x
+Xc_w45 0 net_153 net_143 vdd net_168#4 ProyectoIntegrador__xor2_1x
+Xc_w46 0 a6#0 vdd net_153#4 ProyectoIntegrador__id
+Xc_w47 0 b6#0 vdd net_143#4 ProyectoIntegrador__id
+Xc_w48 0 net_150#2 net_140 vdd net_42#11 ProyectoIntegrador__xor2_1x
+Xc_w49 0 net_166#2 net_161#2 vdd net_150 ProyectoIntegrador__or2_1x
+Xc_w50 0 net_163 net_168 vdd net_166 ProyectoIntegrador__and2_1x
+Xc_w51 0 net_153#2 net_143#2 vdd net_161 ProyectoIntegrador__and2_1x
+Xc_w52 0 net_156 net_137 vdd net_140#4 ProyectoIntegrador__xor2_1x
+Xc_w53 0 a7#0 vdd net_156#4 ProyectoIntegrador__id
+Xc_w54 0 b7#0 vdd net_137#4 ProyectoIntegrador__id
+Xc_w55 0 net_148#2 net_146 vdd net_159 ProyectoIntegrador__or2_1x
+Xc_w56 0 net_150#4 net_140#2 vdd net_148 ProyectoIntegrador__and2_1x
+Xc_w57 0 net_156#2 net_137#2 vdd net_146#2 ProyectoIntegrador__and2_1x
+** Extracted Parasitic Capacitors ***
+C0 net_159#2 0 1.029fF
+C1 cout#0 0 0.897fF
+C2 net_21 0 0.93fF
+C3 sum0#0 0 0.743fF
+C4 net_0 0 0.831fF
+C5 sum1#0 0 0.842fF
+C6 net_40#2 0 0.93fF
+C7 sum2#0 0 0.743fF
+C8 net_78 0 1.304fF
+C9 sum3#0 0 0.941fF
+C10 net_87 0 1.128fF
+C11 sum4#0 0 0.743fF
+C12 net_108#2 0 0.93fF
+C13 sum5#0 0 0.743fF
+C14 net_135#2 0 1.326fF
+C15 sum6#0 0 1.04fF
+C16 net_42#2 0 1.304fF
+C17 sum7#0 0 0.743fF
+C18 net_6 0 0.655fF
+C19 net_18 0 0.93fF
+C20 net_21#2 0 1.414fF
+C21 cin#0 0 1.029fF
+C22 net_6#4 0 0.743fF
+C23 net_2 0 0.655fF
+C24 net_15 0 0.93fF
+C25 net_18#4 0 1.414fF
+C26 a0#0 0 0.93fF
+C27 net_2#4 0 0.743fF
+C28 b0#0 0 1.227fF
+C29 net_15#4 0 0.842fF
+C30 net_10#2 0 0.754fF
+C31 net_44 0 1.205fF
+C32 net_0#2 0 1.315fF
+C33 net_26#2 0 1.392fF
+C34 net_23#2 0 1.205fF
+C35 net_10 0 0.842fF
+C36 net_6#2 0 0.567fF
+C37 net_18#2 0 0.93fF
+C38 net_26 0 1.04fF
+C39 net_2#2 0 0.567fF
+C40 net_15#2 0 0.93fF
+C41 net_23 0 0.941fF
+C42 net_60#4 0 1.15fF
+C43 net_37#4 0 0.93fF
+C44 net_44#4 0 1.513fF
+C45 a1#0 0 1.425fF
+C46 net_60 0 1.238fF
+C47 b1#0 0 1.227fF
+C48 net_37 0 0.842fF
+C49 net_49#2 0 0.853fF
+C50 net_30#4 0 0.831fF
+C51 net_40 0 1.414fF
+C52 net_56 0 1.392fF
+C53 net_47 0 1.205fF
+C54 net_49#4 0 0.941fF
+C55 net_10#4 0 0.666fF
+C56 net_44#2 0 1.205fF
+C57 net_56#2 0 1.194fF
+C58 net_60#2 0 1.062fF
+C59 net_37#2 0 0.93fF
+C60 net_47#2 0 0.941fF
+C61 net_52#4 0 0.853fF
+C62 net_33#4 0 0.831fF
+C63 net_30 0 1.315fF
+C64 a2#0 0 0.831fF
+C65 net_52 0 0.941fF
+C66 b2#0 0 1.128fF
+C67 net_33 0 0.743fF
+C68 net_68#2 0 0.655fF
+C69 net_94 0 1.227fF
+C70 net_78#2 0 1.414fF
+C71 net_89 0 1.392fF
+C72 net_85 0 1.205fF
+C73 net_68 0 0.743fF
+C74 net_49 0 0.765fF
+C75 net_30#2 0 0.831fF
+C76 net_89#2 0 1.194fF
+C77 net_52#2 0 0.765fF
+C78 net_33#2 0 0.831fF
+C79 net_85#2 0 1.293fF
+C80 net_65 0 0.655fF
+C81 net_91 0 1.227fF
+C82 net_94#4 0 1.711fF
+C83 a3#0 0 1.425fF
+C84 net_65#4 0 0.743fF
+C85 b3#0 0 1.326fF
+C86 net_91#4 0 1.139fF
+C87 net_80#2 0 0.853fF
+C88 net_73 0 0.93fF
+C89 net_87#2 0 1.612fF
+C90 net_76#2 0 1.194fF
+C91 net_83#2 0 1.205fF
+C92 net_80 0 0.941fF
+C93 net_68#4 0 0.567fF
+C94 net_94#2 0 1.227fF
+C95 net_76 0 0.842fF
+C96 net_65#2 0 0.567fF
+C97 net_91#2 0 1.227fF
+C98 net_83 0 0.941fF
+C99 net_127#2 0 1.084fF
+C100 net_132 0 0.809fF
+C101 net_73#4 0 1.414fF
+C102 a4#0 0 0.93fF
+C103 net_127 0 1.139fF
+C104 b4#0 0 1.029fF
+C105 net_132#2 0 1.238fF
+C106 net_100#2 0 0.655fF
+C107 net_110#4 0 0.93fF
+C108 net_108 0 1.414fF
+C109 net_115 0 1.293fF
+C110 net_121 0 1.304fF
+C111 net_100#4 0 0.743fF
+C112 net_80#4 0 0.765fF
+C113 net_73#2 0 0.93fF
+C114 net_115#2 0 1.194fF
+C115 net_127#4 0 1.172fF
+C116 net_132#4 0 0.809fF
+C117 net_121#2 0 1.095fF
+C118 net_123#4 0 0.952fF
+C119 net_117#4 0 1.029fF
+C120 net_110 0 1.414fF
+C121 a5#0 0 1.029fF
+C122 net_123 0 1.04fF
+C123 b5#0 0 0.93fF
+C124 net_117 0 0.941fF
+C125 net_163#2 0 1.282fF
+C126 net_168#2 0 0.908fF
+C127 net_135 0 1.81fF
+C128 net_103 0 1.095fF
+C129 net_130 0 1.403fF
+C130 net_163#4 0 1.194fF
+C131 net_100 0 0.567fF
+C132 net_110#2 0 0.93fF
+C133 net_103#2 0 0.743fF
+C134 net_123#2 0 0.864fF
+C135 net_117#2 0 1.029fF
+C136 net_130#2 0 1.139fF
+C137 net_153 0 0.754fF
+C138 net_143 0 0.831fF
+C139 net_168#4 0 1.711fF
+C140 a6#0 0 0.809fF
+C141 net_153#4 0 0.842fF
+C142 b6#0 0 0.809fF
+C143 net_143#4 0 0.743fF
+C144 net_150#2 0 0.754fF
+C145 net_140 0 0.831fF
+C146 net_42#11 0 1.81fF
+C147 net_166#2 0 1.392fF
+C148 net_161#2 0 1.205fF
+C149 net_150 0 0.842fF
+C150 net_163 0 0.765fF
+C151 net_168 0 1.227fF
+C152 net_166 0 1.04fF
+C153 net_153#2 0 0.666fF
+C154 net_143#2 0 0.831fF
+C155 net_161 0 0.941fF
+C156 net_156 0 0.853fF
+C157 net_137 0 0.831fF
+C158 net_140#4 0 1.315fF
+C159 a7#0 0 0.809fF
+C160 net_156#4 0 0.941fF
+C161 b7#0 0 0.809fF
+C162 net_137#4 0 0.743fF
+C163 net_148#2 0 1.194fF
+C164 net_146 0 1.106fF
+C165 net_159 0 0.941fF
+C166 net_150#4 0 0.666fF
+C167 net_140#2 0 0.831fF
+C168 net_148 0 0.842fF
+C169 net_156#2 0 0.765fF
+C170 net_137#2 0 0.831fF
+C171 net_146#2 0 0.842fF
+C172 net_0#1 0 2.386fF
+C173 net_0#3 0 2.87fF
+C174 net_2#1 0 1.439fF
+C175 net_2#3 0 2.919fF
+C176 net_2#5 0 2.311fF
+C177 sum7 0 0.743fF
+C178 net_6#1 0 1.439fF
+C179 net_6#3 0 2.341fF
+C180 net_6#5 0 1.733fF
+C181 sum0 0 0.743fF
+C182 net_10#1 0 1.215fF
+C183 net_10#3 0 1.911fF
+C184 net_10#5 0 1.45fF
+C185 sum1 0 0.842fF
+C186 a0 0 0.93fF
+C187 net_15#1 0 1.457fF
+C188 net_15#3 0 2.344fF
+C189 net_15#5 0 1.729fF
+C190 net_18#1 0 1.457fF
+C191 net_18#3 0 3.501fF
+C192 net_18#5 0 3.458fF
+C193 net_21#1 0 1.817fF
+C194 net_21#3 0 2.301fF
+C195 net_23#1 0 3.049fF
+C196 net_23#3 0 3.313fF
+C197 cin 0 1.029fF
+C198 net_26#1 0 5.77fF
+C199 net_26#3 0 6.122fF
+C200 b0 0 1.227fF
+C201 sum2#1 0 4.271fF
+C202 sum2 0 3.528fF
+C203 net_30#1 0 2.202fF
+C204 net_30#3 0 2.245fF
+C205 net_30#5 0 1.358fF
+C206 net_33#1 0 1.63fF
+C207 net_33#3 0 2.245fF
+C208 net_33#5 0 1.358fF
+C209 a2 0 1.279fF
+C210 a2#1 0 2.11fF
+C211 net_37#1 0 1.729fF
+C212 net_37#3 0 2.344fF
+C213 net_37#5 0 1.457fF
+C214 net_40#1 0 2.969fF
+C215 net_40#3 0 2.485fF
+C216 net_42 0 5.288fF
+C217 net_42#3 0 4.061fF
+C218 net_44#1 0 1.732fF
+C219 net_44#3 0 3.656fF
+C220 net_47#1 0 3.313fF
+C221 net_47#3 0 3.049fF
+C222 net_49#1 0 1.549fF
+C223 net_49#3 0 2.01fF
+C224 net_49#5 0 1.314fF
+C225 net_52#1 0 2.509fF
+C226 net_52#3 0 3.117fF
+C227 net_52#5 0 1.637fF
+C228 sum3 0 0.701fF
+C229 sum3#1 0 1.641fF
+C230 net_56#1 0 4.49fF
+C231 net_56#3 0 4.292fF
+C232 b2 0 2.012fF
+C233 b2#1 0 3.14fF
+C234 b1#1 0 3.136fF
+C235 b1 0 1.909fF
+C236 net_60#1 0 2.806fF
+C237 net_60#3 0 3.414fF
+C238 net_60#5 0 1.934fF
+C239 a1#1 0 3.758fF
+C240 a1 0 2.333fF
+C241 sum4#1 0 4.837fF
+C242 sum4 0 4.094fF
+C243 net_65#1 0 1.439fF
+C244 net_65#3 0 2.919fF
+C245 net_65#5 0 2.311fF
+C246 net_68#1 0 1.116fF
+C247 net_68#3 0 1.812fF
+C248 net_68#5 0 1.351fF
+C249 net_42#4 0 4.369fF
+C250 net_73#1 0 1.457fF
+C251 net_73#3 0 2.344fF
+C252 net_73#5 0 2.301fF
+C253 net_76#1 0 4.415fF
+C254 net_76#3 0 4.767fF
+C255 net_78#1 0 1.87fF
+C256 net_78#3 0 1.98fF
+C257 net_80#1 0 1.314fF
+C258 net_80#3 0 2.01fF
+C259 net_80#5 0 1.549fF
+C260 net_83#1 0 3.049fF
+C261 net_83#3 0 3.313fF
+C262 net_85#1 0 2.94fF
+C263 net_85#3 0 3.028fF
+C264 net_87#1 0 2.683fF
+C265 net_87#3 0 3.167fF
+C266 net_89#1 0 4.798fF
+C267 net_89#3 0 4.6fF
+C268 net_91#1 0 1.754fF
+C269 net_91#3 0 2.641fF
+C270 net_91#5 0 2.026fF
+C271 net_94#1 0 1.754fF
+C272 net_94#3 0 2.641fF
+C273 net_94#5 0 2.598fF
+C274 b3 0 4.248fF
+C275 b3#1 0 5.574fF
+C276 a3 0 4.672fF
+C277 a3#1 0 6.097fF
+C278 sum5#1 0 2.703fF
+C279 sum5 0 1.96fF
+C280 net_100#1 0 1.351fF
+C281 net_100#3 0 1.812fF
+C282 net_100#5 0 1.116fF
+C283 net_103#1 0 4.668fF
+C284 net_103#3 0 4.316fF
+C285 net_42#7 0 3.775fF
+C286 a4#1 0 1.695fF
+C287 a4 0 0.765fF
+C288 net_108#1 0 2.969fF
+C289 net_108#3 0 2.485fF
+C290 net_110#1 0 2.301fF
+C291 net_110#3 0 2.344fF
+C292 net_110#5 0 1.457fF
+C293 b5 0 3.567fF
+C294 b5#1 0 4.497fF
+C295 b4#1 0 1.37fF
+C296 net_115#1 0 1.871fF
+C297 net_115#3 0 1.772fF
+C298 net_117#1 0 1.828fF
+C299 net_117#3 0 2.443fF
+C300 net_117#5 0 1.556fF
+C301 a5 0 2.834fF
+C302 a5#1 0 3.863fF
+C303 net_121#1 0 3.553fF
+C304 net_121#3 0 3.344fF
+C305 net_123#1 0 2.608fF
+C306 net_123#3 0 3.216fF
+C307 net_123#5 0 1.736fF
+C308 sum6 0 2.256fF
+C309 sum6#1 0 3.296fF
+C310 net_127#1 0 3.183fF
+C311 net_127#5 0 1.956fF
+C312 net_130#1 0 3.511fF
+C313 net_130#3 0 3.247fF
+C314 net_132#1 0 2.69fF
+C315 net_132#5 0 1.22fF
+C316 net_135#1 0 3.366fF
+C317 net_135#3 0 2.881fF
+C318 net_137#1 0 1.358fF
+C319 net_137#3 0 2.245fF
+C320 net_137#5 0 1.63fF
+C321 net_140#1 0 1.358fF
+C322 net_140#3 0 3.492fF
+C323 net_140#5 0 3.449fF
+C324 net_143#1 0 1.358fF
+C325 net_143#3 0 2.245fF
+C326 net_143#5 0 1.63fF
+C327 net_146#1 0 3.548fF
+C328 net_146#3 0 3.284fF
+C329 net_148#1 0 1.112fF
+C330 net_148#3 0 1.464fF
+C331 net_150#1 0 1.215fF
+C332 net_150#3 0 1.911fF
+C333 net_150#5 0 1.45fF
+C334 net_153#1 0 1.538fF
+C335 net_153#3 0 3.018fF
+C336 net_153#5 0 2.41fF
+C337 net_156#1 0 1.637fF
+C338 net_156#3 0 3.117fF
+C339 net_156#5 0 2.509fF
+C340 net_159#1 0 1.211fF
+C341 net_159#3 0 1.299fF
+C342 net_161#1 0 2.47fF
+C343 net_161#3 0 2.735fF
+C344 net_163#1 0 1.485fF
+C345 net_163#3 0 2.375fF
+C346 net_163#5 0 1.567fF
+C347 net_166#1 0 4.035fF
+C348 net_166#3 0 4.387fF
+C349 net_168#1 0 1.484fF
+C350 net_168#3 0 1.795fF
+C351 net_168#5 0 2.341fF
+C352 net_42#10 0 5.956fF
+C353 net_42#12 0 6.225fF
+C354 a7 0 0.809fF
+C355 b7 0 0.809fF
+C356 cout 0 0.897fF
+C357 a6 0 0.809fF
+C358 b6 0 0.809fF
+** Extracted Parasitic Resistors ***
+R0 net_0 net_0#1 2.013
+R1 net_0#2 net_0#3 3.187
+R2 net_2 net_2#1 1.587
+R3 net_2#2 net_2#3 1.373
+R4 net_2#4 net_2#5 1.8
+R5 sum7#0 sum7 1.8
+R6 net_6 net_6#1 1.587
+R7 net_6#2 net_6#3 1.373
+R8 net_6#4 net_6#5 1.8
+R9 sum0#0 sum0 1.8
+R10 net_10 net_10#1 2.04
+R11 net_10#2 net_10#3 1.827
+R12 net_10#4 net_10#5 1.613
+R13 sum1#0 sum1 2.04
+R14 a0#0 a0 2.253
+R15 net_15 net_15#1 2.253
+R16 net_15#2 net_15#3 2.253
+R17 net_15#4 net_15#5 2.04
+R18 net_18 net_18#1 2.253
+R19 net_18#2 net_18#3 2.253
+R20 net_18#4 net_18#5 3.427
+R21 net_21 net_21#1 2.253
+R22 net_21#2 net_21#3 3.427
+R23 net_23 net_23#1 2.28
+R24 net_23#2 net_23#3 2.92
+R25 cin#0 cin 2.493
+R26 net_26 net_26#1 2.52
+R27 net_26#2 net_26#3 3.373
+R28 b0#0 b0 2.973
+R29 sum2#0 sum2#1 1.8
+R30 net_30 net_30#1 3.187
+R31 net_30#2 net_30#3 2.013
+R32 net_30#4 net_30#5 2.013
+R33 net_33 net_33#1 1.8
+R34 net_33#2 net_33#3 2.013
+R35 net_33#4 net_33#5 2.013
+R36 a2#0 a2#1 2.013
+R37 net_37 net_37#1 2.04
+R38 net_37#2 net_37#3 2.253
+R39 net_37#4 net_37#5 2.253
+R40 net_40 net_40#1 3.427
+R41 net_40#2 net_40#3 2.253
+R42 net_42#2 net_42#3 3.16
+R43 net_44 net_44#1 2.92
+R44 net_44#2 net_44#3 2.92
+R45 net_44#4 net_44#3 3.667
+R46 net_47 net_47#1 2.92
+R47 net_47#2 net_47#3 2.28
+R48 net_49 net_49#1 1.853
+R49 net_49#2 net_49#3 2.067
+R50 net_49#4 net_49#5 2.28
+R51 net_52 net_52#1 2.28
+R52 net_52#2 net_52#3 1.853
+R53 net_52#4 net_52#5 2.067
+R54 sum3#0 sum3#1 2.28
+R55 net_56 net_56#1 3.373
+R56 net_56#2 net_56#3 2.893
+R57 b2#0 b2#1 2.733
+R58 b1#0 b1#1 2.973
+R59 net_60 net_60#1 3
+R60 net_60#2 net_60#3 2.573
+R61 net_60#4 net_60#5 2.787
+R62 a1#0 a1#1 3.453
+R63 sum4#0 sum4#1 1.8
+R64 net_65 net_65#1 1.587
+R65 net_65#2 net_65#3 1.373
+R66 net_65#4 net_65#5 1.8
+R67 net_68 net_68#1 1.8
+R68 net_68#2 net_68#3 1.587
+R69 net_68#4 net_68#5 1.373
+R70 net_42 net_42#4 5.173
+R71 net_73 net_73#1 2.253
+R72 net_73#2 net_73#3 2.253
+R73 net_73#4 net_73#5 3.427
+R74 net_76 net_76#1 2.04
+R75 net_76#2 net_76#3 2.893
+R76 net_78 net_78#1 3.16
+R77 net_78#2 net_78#3 3.427
+R78 net_80 net_80#1 2.28
+R79 net_80#2 net_80#3 2.067
+R80 net_80#4 net_80#5 1.853
+R81 net_83 net_83#1 2.28
+R82 net_83#2 net_83#3 2.92
+R83 net_85 net_85#1 2.92
+R84 net_85#2 net_85#3 3.133
+R85 net_87 net_87#1 2.733
+R86 net_87#2 net_87#3 3.907
+R87 net_89 net_89#1 3.373
+R88 net_89#2 net_89#3 2.893
+R89 net_91 net_91#1 2.973
+R90 net_91#2 net_91#3 2.973
+R91 net_91#4 net_91#5 2.76
+R92 net_94 net_94#1 2.973
+R93 net_94#2 net_94#3 2.973
+R94 net_94#4 net_94#5 4.147
+R95 b3#0 b3#1 3.213
+R96 a3#0 a3#1 3.453
+R97 sum5#0 sum5#1 1.8
+R98 net_100 net_100#1 1.373
+R99 net_100#2 net_100#3 1.587
+R100 net_100#4 net_100#5 1.8
+R101 net_103 net_103#1 2.653
+R102 net_103#2 net_103#3 1.8
+R103 net_42#4 net_42#7 4.933
+R104 a4#0 a4#1 2.253
+R105 net_108 net_108#1 3.427
+R106 net_108#2 net_108#3 2.253
+R107 net_110 net_110#1 3.427
+R108 net_110#2 net_110#3 2.253
+R109 net_110#4 net_110#5 2.253
+R110 b5#0 b5#1 2.253
+R111 b4#0 b4#1 2.493
+R112 net_115 net_115#1 3.133
+R113 net_115#2 net_115#3 2.893
+R114 net_117 net_117#1 2.28
+R115 net_117#2 net_117#3 2.493
+R116 net_117#4 net_117#5 2.493
+R117 a5#0 a5#1 2.493
+R118 net_121 net_121#1 3.16
+R119 net_121#2 net_121#3 2.653
+R120 net_123 net_123#1 2.52
+R121 net_123#2 net_123#3 2.093
+R122 net_123#4 net_123#5 2.307
+R123 sum6#0 sum6#1 2.52
+R124 net_127 net_127#1 2.76
+R125 net_127#2 net_127#1 2.627
+R126 net_127#4 net_127#5 2.84
+R127 net_130 net_130#1 3.4
+R128 net_130#2 net_130#3 2.76
+R129 net_132 net_132#1 1.96
+R130 net_132#2 net_132#1 3
+R131 net_132#4 net_132#5 1.96
+R132 net_135 net_135#1 4.387
+R133 net_135#2 net_135#3 3.213
+R134 net_137 net_137#1 2.013
+R135 net_137#2 net_137#3 2.013
+R136 net_137#4 net_137#5 1.8
+R137 net_140 net_140#1 2.013
+R138 net_140#2 net_140#3 2.013
+R139 net_140#4 net_140#5 3.187
+R140 net_143 net_143#1 2.013
+R141 net_143#2 net_143#3 2.013
+R142 net_143#4 net_143#5 1.8
+R143 net_146 net_146#1 2.68
+R144 net_146#2 net_146#3 2.04
+R145 net_148 net_148#1 2.04
+R146 net_148#2 net_148#3 2.893
+R147 net_150 net_150#1 2.04
+R148 net_150#2 net_150#3 1.827
+R149 net_150#4 net_150#5 1.613
+R150 net_153 net_153#1 1.827
+R151 net_153#2 net_153#3 1.613
+R152 net_153#4 net_153#5 2.04
+R153 net_156 net_156#1 2.067
+R154 net_156#2 net_156#3 1.853
+R155 net_156#4 net_156#5 2.28
+R156 net_159 net_159#1 2.28
+R157 net_159#2 net_159#3 2.493
+R158 net_161 net_161#1 2.28
+R159 net_161#2 net_161#3 2.92
+R160 net_163 net_163#1 1.853
+R161 net_163#2 net_163#3 3.107
+R162 net_163#4 net_163#5 2.893
+R163 net_166 net_166#1 2.52
+R164 net_166#2 net_166#3 3.373
+R165 net_168 net_168#1 2.973
+R166 net_168#2 net_168#3 2.2
+R167 net_168#4 net_168#5 4.147
+R168 net_42#7 net_42#10 3.733
+R169 net_42#11 net_42#12 4.387
+R170 a7#0 a7 1.96
+R171 b7#0 b7 1.96
+R172 cout#0 cout 2.173
+R173 a6#0 a6 1.96
+R174 b6#0 b6 1.96
+R175 net_0#1 net_0#3 3.227
+R176 net_2#1 net_2#3 1.627
+R177 net_2#3 net_2#5 3.253
+R178 net_6#1 net_6#3 1.627
+R179 net_6#3 net_6#5 2.053
+R180 net_10#1 net_10#3 0.773
+R181 net_10#3 net_10#5 1.627
+R182 net_15#1 net_15#3 1.093
+R183 net_15#3 net_15#5 1.84
+R184 net_18#1 net_18#3 1.093
+R185 net_18#3 net_18#5 4.24
+R186 net_21#1 net_21#3 1.84
+R187 net_23#1 net_23#3 4.373
+R188 net_26#1 net_26#3 9.813
+R189 sum2#1 sum2 7.32
+R190 net_30#1 net_30#3 1.84
+R191 net_30#3 net_30#5 1.093
+R192 net_33#1 net_33#3 1.84
+R193 net_33#3 net_33#5 1.093
+R194 a2 a2#1 2.653
+R195 net_37#1 net_37#3 1.84
+R196 net_37#3 net_37#5 1.093
+R197 net_40#1 net_40#3 3.227
+R198 net_42 net_42#3 5.72
+R199 net_44#1 net_44#3 1.093
+R200 net_47#1 net_47#3 4.373
+R201 net_49#1 net_49#3 1.627
+R202 net_49#3 net_49#5 0.773
+R203 net_52#1 net_52#3 3.253
+R204 net_52#3 net_52#5 1.627
+R205 sum3 sum3#1 1.453
+R206 net_56#1 net_56#3 6.427
+R207 b2 b2#1 4.173
+R208 b1#1 b1 3.96
+R209 net_60#1 net_60#3 3.253
+R210 net_60#3 net_60#5 1.627
+R211 a1#1 a1 4.84
+R212 sum4#1 sum4 8.493
+R213 net_65#1 net_65#3 1.627
+R214 net_65#3 net_65#5 3.253
+R215 net_68#1 net_68#3 0.773
+R216 net_68#3 net_68#5 1.627
+R217 net_73#1 net_73#3 1.093
+R218 net_73#3 net_73#5 1.84
+R219 net_76#1 net_76#3 7.413
+R220 net_78#1 net_78#3 1.173
+R221 net_80#1 net_80#3 0.773
+R222 net_80#3 net_80#5 1.627
+R223 net_83#1 net_83#3 4.373
+R224 net_85#1 net_85#3 3.6
+R225 net_87#1 net_87#3 3.227
+R226 net_89#1 net_89#3 7.067
+R227 net_91#1 net_91#3 1.093
+R228 net_91#3 net_91#5 1.84
+R229 net_94#1 net_94#3 1.093
+R230 net_94#3 net_94#5 1.84
+R231 b3 b3#1 8.813
+R232 a3 a3#1 9.693
+R233 sum5#1 sum5 4.067
+R234 net_100#1 net_100#3 1.627
+R235 net_100#3 net_100#5 0.773
+R236 net_103#1 net_103#3 7.413
+R237 a4#1 a4 1.587
+R238 net_108#1 net_108#3 3.227
+R239 net_110#1 net_110#3 1.84
+R240 net_110#3 net_110#5 1.093
+R241 b5 b5#1 7.4
+R242 b4#1 b4 0.707
+R243 net_115#1 net_115#3 1.2
+R244 net_117#1 net_117#3 1.84
+R245 net_117#3 net_117#5 1.093
+R246 a5 a5#1 5.88
+R247 net_121#1 net_121#3 4.667
+R248 net_123#1 net_123#3 3.253
+R249 net_123#3 net_123#5 1.627
+R250 sum6 sum6#1 4.68
+R251 net_127#1 net_127#5 1.627
+R252 net_130#1 net_130#3 4.373
+R253 net_132#1 net_132#5 0.853
+R254 net_135#1 net_135#3 3.227
+R255 net_137#1 net_137#3 1.093
+R256 net_137#3 net_137#5 1.84
+R257 net_140#1 net_140#3 1.093
+R258 net_140#3 net_140#5 4.427
+R259 net_143#1 net_143#3 1.093
+R260 net_143#3 net_143#5 1.84
+R261 net_146#1 net_146#3 5.067
+R262 net_148#1 net_148#3 0.56
+R263 net_150#1 net_150#3 0.773
+R264 net_150#3 net_150#5 1.627
+R265 net_153#1 net_153#3 1.627
+R266 net_153#3 net_153#5 3.253
+R267 net_156#1 net_156#3 1.627
+R268 net_156#3 net_156#5 3.253
+R269 net_159#1 net_159#3 0.56
+R270 net_161#1 net_161#3 3.173
+R271 net_163#1 net_163#3 1.493
+R272 net_163#3 net_163#5 0.773
+R273 net_166#1 net_166#3 6.213
+R274 net_168#1 net_168#3 0.533
+R275 net_168#3 net_168#5 1.307
+R276 net_42#10 net_42#12 9.16
