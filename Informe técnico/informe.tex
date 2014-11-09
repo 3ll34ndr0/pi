@@ -27,10 +27,14 @@
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{booktabs}
+
+%Macros:
 \include{macros/macrofile1}
+
 %\usepackage{cite}
 \ifpdf
-    \pdfinfo { /Title  (Diseño de un Sumador Rápido en tecnología CMOS 180nm  utilizando Herramientas de Software Libre)
+    \pdfinfo { /Title  (Diseño de un Sumador Rápido en tecnología CMOS submicrónica utilizando Herramientas de Software Libre)
                /Creator (TeX)
                /Producer (pdfTeX)
                /Author (Leandro Marsó)
@@ -59,10 +63,11 @@
 \include{Introduccion/introduccion}
 \mainmatter
 
-\part{Selección de la arquitectura}\label{seleccion_arquitectura}
-\include{Digital/digital}
+\part{Diseño Digital}\label{diseño_digital}
+\include{Digital/especificaciones}
+%\include{Digital/digital}
 \include{Verificacion/verificacion}
-\part{Implementación Física}\label{implementacion_fisica}
+\part{Diseño Físico}\label{diseño_físico}
 \include{FlujoFisico/flujofisico}
 \include{SignOutTapeOut/signouttapeout}
 \part{Comparación de resultados}\label{comparacion_resultados}

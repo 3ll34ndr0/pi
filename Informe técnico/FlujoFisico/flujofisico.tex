@@ -95,15 +95,7 @@ Estas tareas las realizamos modificando el código del programa de lava que crea
 
 Para cuantificar la calidad de un circuito, podemos analizar un circuito desde diferentes perspectivas: Costo, funcionalidad, robustez, performance y consumo de energía. Tomaremos estas dos últimas métricas, mas la del área (propiedad que define el costo) del circuito, para realizar la comparación entre las distintas arquitecturas analizadas.
 
-\subsubsection{Performance}
-El término performance puede representar distintas métricas, según desde qué perpectiva se esté realizando el análisis. Pero si nos enfocamos puramente en el diseño, la performance se define usualmente\cite{rabaey2003} como la duración del período del clock (\emph{clock cycle time}) o su frecuencia (\emph{frecuencia del clock}). El valor mínimo de período de clock que pueda ser usado para una tecnología y un diseño dado, está definido por múltiples factores, como el tiempo que le toma a las señales propagarse a travez de la lógica, el tiempo que lleva entrar y salir los datos de los registros, la incerteza de llegada del reloj (\emph{clock uncertainty}). Pero el núcleo de todo el análisis de performance reside en la performance de una sola compuerta.
-
-El retardo de propagación $t_p$ de una compuerta define cuan rápido responde un circuito a un cambio en su(s) entrada(s). Expresa el retardo experimentado por una señal cuando pasa a travez de una compuerta. Medido entre el 50\% del punto de transisción de entrada la señal de entrada y salida, como mostramos en la figura \ref{propagationDelay}, correspondiente al tiempo de propagación de una compuerta inversora. Ya que el tiempo de propagación es distinto según el flanco de entrada, se definen 2 tiempos de propagación. El $t_{pLH}$ es el tiempo de respuesta de una compuerta  para una transición de la salida desde bajo a alto, mientras que $t_{pHL}$ se refiere a el tiempo para una transición de la salida desde alto a bajo. El retardo de propagación $t_p$ se define como el promedio de estos dos.
-$$ t_p = \frac{t_{pLH} + t_{pHL}}{2} $$
-
-El retardo de propagación depende también de otros factores, como la pendiente de las señal de entrada, que depende de la señal de entrada que llega al circuito. Para cuantificar esta entrada, se usa el tiempo de crecida y de bajada $t_r$ y $t_f$. Este tiempo se especifica entre el \%10 y \%90 (o \%20 y \%80, o \%30 y \%70), como se muestra en la figura \ref{propagationDelay}. Estos tiempos simplemente nos dicen cuan rápido cambia de estado la señal de entrada.
-
-Para poder comparar la performance de distintas tecnologías, se busca un circuito que no incluya parámetros como el fan-in o fan-out, capacidad de salida, etc. Por ello, el circuito que es un estandard de facto para medir el tiempo de propagación, es el oscilador anillo (\emph{ring oscillator}), que es un número impar de inversores conectados en serie, y la salida se vuelve a conectar a la entrada. Este circuito oscilla espontaneamente, a una frecuencia de $T = 2 \times t_p \times N$, con $N$ el número de inversores en la cadena.
+\subsection{Performance}
 
 \begin{figure}[h!]
 \vspace{-5pt}
