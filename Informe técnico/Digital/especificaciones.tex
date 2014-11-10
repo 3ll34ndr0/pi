@@ -21,7 +21,7 @@
 Los sumadores binarios son utilizados en la adición, la resta, la multiplicación y la división. La velocidad de un sistema de procesamiento de señales, o un sistema de comunicación depende fuertemente de \textbf{estas unidades funcionales\cite{rabaey2003}}. Para cada una de esas operaciones, son necesarios sumadores de distinta cantidad de bits en el mismo diseño. Por lo cual, no se trata solamente de encontrar la arquitectura que para una determinada cantidad de bits logre el mejor compromiso de área, potencia y velocidad. Sino que también esta relacion se mantenga óptima para diferentes tamaños del sumador. 
 
 Por estas razones, precisamos diseñar un sumador de N-dígitos que sea lo más rápido posible, manteniendo una relación de compromiso óptima entre la velocidad, consumo de energía y área del circuito.
-Estas características las resumimos en el cuadro \ref{tabla_especifaciones}.
+Estas características las resumimos en el cuadro \ref{cuadro:especifaciones}.
 \begin{savenotes}
 \begin{table}[h]
 \centering
@@ -36,7 +36,7 @@ Potencia total disipada & Tan bajo como sea posible                 \\
 Área del Circuito       & La menor posible                \\ \bottomrule
 \end{tabular}
 \caption{Especificaciones de diseño para el sumador binario}
-\label{tabla_especifaciones}
+\label{cuadro:especifaciones}
 \end{table}
 \end{savenotes}
 
@@ -104,6 +104,25 @@ El período de tiempo que tomaremos para la integral es el retardo de propagaci�
 
 \subsection{Área}
 La importancia de minimizar el área de los circuitos radica principalmente en que esta impacta fuertemente en el costo de cada \emph{die}, ya que el costo es una función que depende de la cuarta potencia del área del circuito\cite{rabaey2003}. Adeás, los circuitos de menor área tienden a consumir menor energía. 
+
+
+\subsection{Resumen}
+A continuación resumimos en la tabla \ref{cuadro:metricas} las métricas que utilizaremos para la comparación de las distintas arquitecturas de sumadores:
+\begin{table}[h] 
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Métrica}  & \textbf{Unidades} \\ \midrule
+Retardo de propagación & [ns] \\	
+Potencia promedio disipada & [mW] \\
+Área de circuito  & [$\mu\textrm{m}^2$] \\ \bottomrule
+\end{tabular}
+\caption{Métricas de comparación}
+\label{cuadro:metricas}
+\end{table}
+
+
+
 
 %Quality Metrics of a Digital Design
 %Área 
