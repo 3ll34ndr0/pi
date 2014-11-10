@@ -1,11 +1,23 @@
 % hacer una macro para \emph{place \& route}
 \chapter{Flujo de Diseño Físico}
 \section{Introducción}
+
+En este punto convertimos la representación de un circuito (con sus componentes e interconexiones) a una representación en formas geométricas, conocida como \emph{layout}. Dicho en otras palabras, explicaremos (y realizaremos) el proceso que logra transformar una descripción de funciones lógicas a una representación de formas geométricas del circuito integrado, que luego de ser fabricado con las capas correspondientes, nos aseguran que obtendremos los transistores ubicados e interconectados dentro de un chip de silicio, de forma tal que implemente nuestro sistema digital.
+
+\subsection{Etapas del diseño físico}
+Generalmente en un flujo de este tipo, partimos desde una descripción estructural del circuito. Esta descripción, comunmente llamada \emph{netlist}, contiene información sobre qué bloques están presentes, y cómo estos están interconectados.
+
+Según el tamaño del circuito, será necesario definir particiones del mismo, dividiendo el circuito en dos o mas particiones con fines de acotar la magnitud y/o dificultad inicial del circuito original, en partes más pequeñas de menor dificultad, si las particiones se realizan correcta e inteligentemente. 
+
+Luego es necesario definir un plano general del circuito (\emph{floorplan}), que impondrá condiciones físicas mínimas como el área utilizada y la disposición física de las entradas y salidas.   
+
+Como vemos en la figura \ref{fig:diseñoFísico}, 
+
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{figuras/DisenioFisico.pdf}
   \caption{Flujo de diseño Físico}
-  \label{fig:diseñoFisico}
+  \label{fig:diseñoFísico}
 \end{figure}
 
 
