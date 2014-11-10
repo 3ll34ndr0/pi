@@ -22,11 +22,11 @@ Según el tamaño del circuito, será necesario definir particiones del mismo, d
 Luego es necesario definir un plano general del circuito (\emph{floorplan}), que impondrá condiciones físicas mínimas como el área utilizada y la disposición física de las entradas y salidas.
 A continuación, se ubican en este plano todos los componentes del circuito, en una disposición tentativa que nos permita evaluar rápidamente la factibilidad del circuito con las condiciones impuestas por el floorplan. Con esta acción (llamado \emph{placement}) podemos estimar si el circuito será o no ruteable. Depediendo de las herramientas con las que se esté trabajando, también se puede tener una estimación sobre la velocidad de las señales. 
 
-Una vez que todos los elementos esten el plano, si el circuito es secuencial, será necesario realizar una distribución de la señal del reloj para que llegue a todos los registros, de la forma más pareja (en tiempo) posible dentro de un margen de tolerancia determinado. Para ello se agregan buffers donde sea necesario. Por último, se realiza el conexionado de todos los puertos de cada componente, utilizando los metales disponibles dentro de la tecnología que se esté utilizando.
+Una vez que todos los elementos esten el plano, si el circuito es secuencial, será necesario realizar una distribución de la señal del reloj para que llegue a todos los registros, de la forma más pareja (en tiempo) posible dentro de un margen de tolerancia determinado. Para ello se agregan \emph{buffers} donde sea necesario. Por último, se realiza el conexionado de todos los puertos de cada componente, utilizando los metales disponibles dentro de la tecnología que se esté utilizando.
 
-En este punto, se puede realizar la mejor estimación sobre las capacidades y resistencias parásitos que representan la interconexión de todo el circuito. Si en algún camino de la señal, esta debido a los elementos parásitos. 
+En este punto, se puede realizar la mejor estimación sobre las capacidades y resistores parásitos que representan la interconexión de todo el circuito. Se encuentran los camínos críticos y se realizan las modificaciones necesarias para que el circuito cumpla con la especificaciones de retardo de propagacion máximo.
 
-Como vemos en la figura \ref{fig:diseñoFísico}, 
+El proceso que acabamos de explicar, y que podemos ver en la figura \ref{fig:diseñoFísico}, se realiza iterativamente hasta lograr que el circuito cumpla las especificaciones con el menor costo en potencia disipada y área ocupada.
 
 
 \section{Relevamiento, comparación y selección de las herramientas disponibles}
