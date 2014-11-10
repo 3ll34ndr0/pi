@@ -7,18 +7,26 @@ En este punto convertimos la representación de un circuito (con sus componentes
 \subsection{Etapas del diseño físico}
 Generalmente en un flujo de este tipo, partimos desde una descripción estructural del circuito. Esta descripción, comunmente llamada \emph{netlist}, contiene información sobre qué bloques están presentes, y cómo estos están interconectados.
 
-Según el tamaño del circuito, será necesario definir particiones del mismo, dividiendo el circuito en dos o mas particiones con fines de acotar la magnitud y/o dificultad inicial del circuito original, en partes más pequeñas de menor dificultad, si las particiones se realizan correcta e inteligentemente. 
-
-Luego es necesario definir un plano general del circuito (\emph{floorplan}), que impondrá condiciones físicas mínimas como el área utilizada y la disposición física de las entradas y salidas.   
-
-Como vemos en la figura \ref{fig:diseñoFísico}, 
-
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.7]{figuras/DisenioFisico.pdf}
+\includegraphics[scale=0.65]{figuras/DisenioFisico.pdf}
   \caption{Flujo de diseño Físico}
   \label{fig:diseñoFísico}
 \end{figure}
+
+
+
+
+Según el tamaño del circuito, será necesario definir particiones del mismo, dividiendo el circuito en dos o mas particiones con fines de acotar la magnitud y/o dificultad inicial del circuito original, en partes más pequeñas de menor dificultad, si las particiones se realizan correcta e inteligentemente. 
+
+Luego es necesario definir un plano general del circuito (\emph{floorplan}), que impondrá condiciones físicas mínimas como el área utilizada y la disposición física de las entradas y salidas.
+A continuación, se ubican en este plano todos los componentes del circuito, en una disposición tentativa que nos permita evaluar rápidamente la factibilidad del circuito con las condiciones impuestas por el floorplan. Con esta acción (llamado \emph{placement}) podemos estimar si el circuito será o no ruteable. Depediendo de las herramientas con las que se esté trabajando, también se puede tener una estimación sobre la velocidad de las señales. 
+
+Una vez que todos los elementos esten el plano, si el circuito es secuencial, será necesario realizar una distribución de la señal del reloj para que llegue a todos los registros, de la forma más pareja (en tiempo) posible dentro de un margen de tolerancia determinado. Para ello se agregan buffers donde sea necesario. Por último, se realiza el conexionado de todos los puertos de cada componente, utilizando los metales disponibles dentro de la tecnología que se esté utilizando.
+
+En este punto, se puede realizar la mejor estimación sobre las capacidades y resistencias parásitos que representan la interconexión de todo el circuito. Si en algún camino de la señal, esta debido a los elementos parásitos. 
+
+Como vemos en la figura \ref{fig:diseñoFísico}, 
 
 
 \section{Relevamiento, comparación y selección de las herramientas disponibles}
