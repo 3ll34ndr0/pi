@@ -13,7 +13,7 @@ get ext_RO31.spi
 .include inputs.spi
 
 * Primero simulo hasta llegar a un estado estable:
-trans 0 4n 0.01n uic
+trans 0 2n 1p uic
 
 * Luego elijo que voy a grabar para graficar y medir:
 store tran i(VVDC_vdd)
@@ -23,11 +23,12 @@ store tran i(VVDC_vdd)
 probe tran v3(Xinv_1x_*) 
 * Corriente a travez de la fuente de alimentación:
 probe trans + i(VVDC_vdd)
-trans 4n 20n 1p uic > RO31_all_inv_nodes.out
+trans 2n 4n 1p uic > RO31_all_inv_nodes.out
 
-measure area = integrate(probe="i(VVDC_vdd)" begin=0 end=4n) > area.txt
+measure area = integrate(probe="i(VVDC_vdd)" begin=2n end=4n) 
 param total_energy = area*1.8
 eval total_energy
-
+param av_power = total_energy/2n
+eval av_power
 
 

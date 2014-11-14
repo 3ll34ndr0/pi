@@ -4,8 +4,10 @@
 
 En este punto convertimos la representación de un circuito (con sus componentes e interconexiones) a una representación en formas geométricas, conocida como \emph{layout}. Dicho en otras palabras, explicaremos (y realizaremos) el proceso que logra transformar una descripción de funciones lógicas a una representación de formas geométricas del circuito integrado, que luego de ser fabricado con las capas correspondientes, nos aseguran que obtendremos los transistores ubicados e interconectados dentro de un chip de silicio, de forma tal que implemente nuestro sistema digital.
 
-\subsection{Etapas del diseño físico}
-Generalmente en un flujo de este tipo, partimos desde una descripción estructural del circuito. Esta descripción, comunmente llamada \emph{netlist}, contiene información sobre qué bloques están presentes, y cómo estos están interconectados.
+El proceso que explicaremos en términos generales, y que podemos ver en contexto en la figura \ref{fig:diseñoFísico}, se realiza iterativamente hasta lograr que el circuito cumpla las especificaciones con el menor costo en potencia disipada y área ocupada.
+
+\subsection{Etapas del diseño físico}\label{etapasDiseñoFisico}
+Generalmente en un flujo de este tipo, partimos desde una descripción estructural del circuito. Esta descripción, comúnmente llamada \emph{netlist}, contiene información sobre qué bloques están presentes, y cómo estos están interconectados.
 
 \begin{figure}[h]
 \centering
@@ -13,8 +15,6 @@ Generalmente en un flujo de este tipo, partimos desde una descripción estructur
   \caption{Flujo de diseño Físico}
   \label{fig:diseñoFísico}
 \end{figure}
-
-
 
 
 Según el tamaño del circuito, será necesario definir particiones del mismo, dividiendo el circuito en dos o mas particiones con fines de acotar la magnitud y/o dificultad inicial del circuito original, en partes más pequeñas de menor dificultad, si las particiones se realizan correcta e inteligentemente. 
@@ -26,45 +26,83 @@ Una vez que todos los elementos esten el plano, si el circuito es secuencial, se
 
 En este punto, se puede realizar la mejor estimación sobre las capacidades y resistores parásitos que representan la interconexión de todo el circuito. Se encuentran los camínos críticos y se realizan las modificaciones necesarias para que el circuito cumpla con la especificaciones de retardo de propagacion máximo.
 
-El proceso que acabamos de explicar, y que podemos ver en la figura \ref{fig:diseñoFísico}, se realiza iterativamente hasta lograr que el circuito cumpla las especificaciones con el menor costo en potencia disipada y área ocupada.
-
-
 \section{Relevamiento, comparación y selección de las herramientas disponibles}
-\paragraph{Criterios para la selección}
+Para realizar las tareas que describimos en la sección \ref{etapasDiseñoFisico}, será necesario buscar una o varias herramientas de software que se ajusten a los requerimientos del diseño y la tecnología de fabricación\footnote{Se utilizará una tecnología definida por Mead y Conway\cite{mead-conway80}, que MOSIS denomina \textbf{SCMOS} (Scalable CMOS).
+Esto es un conjunto de capas lógicas junto a sus reglas de diseño, que proveen un proceso casi independiente de la tecnología y dimensión, que sirve de interfase para muchos procesos CMOS disponibles a través de MOSIS.} del circuito integrado.
+
+\paragraph{Características esperadas de las herramientas}
 \begin{itemize}
-\item Desarrollo activo y que exista una comunidad de usuarios que brinden soporte
+\item Que tenga un desarrollo activo y que exista una comunidad de usuarios/as y desarrolladores/as que brinden soporte
 \item Mayor cantidad de herramientas integradas
 \item Flexibilidad para importar y exportar datos. 
-\item Design kits disponibles para la tecnología seleccionada.
-\item Diseño físico a partir de la descripción estructural en VHDL\footnote{Condición necesaria ya que el resultado de nuestro diseño en el capítulo \ref{diseñoDigital} es una descripción estructural en VHDL.}.
+\item \gls{pdk} disponible para la tecnología seleccionada.
 \end{itemize}
 
-La tecnología que se usará para fabricar es TSMC~180~nm\footnote{http://www.mosis.com/vendors/view/tsmc/018}.
-Luego de una inspección de esos criterios, las herramientas candidatas que cumplen con esos criterios definidos son:
+Luego de una inspección de esos criterios, las herramientas candidatas que cumplen con estas características son:
 
 \begin{description}
-\item[Alliance VLSI CAD System\footnote{Descripción extraída del sitio}]Alliance es un conjunto de herramientas libres, y librerías portables para el diseño de VLSI. Incluye un compilador vhdl y un simulador, herramientas de síntesis de lógica, y herramientas de \emph{place \& route} automáticas. Brinda un conjunto completo de librerías CMOS portables.
+\item[Open Circuit Design] Proyecto de software libre que reúne en un único sitio varias herramientas independientes, mencionamos sólo algunas:  \textbf{Magic}: Layout, \gls{drc} y extracción de parásitos. \textbf{Xcircuit}: Entrada de circuitos esquemáticos, \textbf{netgen}: \gls{lvs}. \textbf{IRSIM}: simulador digital, \textbf{Qflow}: Entorno para realizar la síntesis digital con celdas estándar, utiliza Yosys\cite{Yosys}, \textbf{graywolf}: Placement \textbf{Qrouter}: Ruteador.
 
-\item[Electric VLSI Design System] Es un sistema de Automatización de Diseño Electrónico. En un entorno integrado muy flexible que permite la descripción del circuito de varias formas (esquemáticos, VHDL, Layout, generadores de ROM y MOSIS PLA)   
+\item[Electric VLSI Design System\cite{Electric}] Es un sistema de Automatización de Diseño Electrónico. En un entorno integrado muy flexible que permite la descripción del circuito de varias formas (esquemáticos, VHDL, Layout, generadores de ROM y MOSIS PLA). Cuenta también con herramientas para hacer \gls{drc}, \gls{lvs} y \gls{pnr}, simulación digital, visualización de formas de ondas, entre otras herramientas.
+
+\item[Alliance VLSI CAD System\cite{Alliance}] Alliance es un conjunto de herramientas libres, y librerías portables para el diseño de VLSI. Incluye un compilador vhdl y un simulador, herramientas de síntesis de lógica, y herramientas de \gls{pnr} automáticas. Brinda un conjunto completo de librerías CMOS portables.
 
 \end{description}
 
+Es importante mencionar que existen mas herramientas disponibles (y muy útiles), pero al momento de realización de este trabajo, no forman parte de un flujo de diseño que las integre y por ello no son mencionadas aquí. 
+
+La herramienta que seleccionamos es \textbf{Electric}, ya que nos brinda una serie de ventajas comparativas, teniendo en cuenta que nuestro circuito es puramente secuencial y no demananda gran esfuerzo de \gls{pnr} a la herramienta:
+\begin{itemize}
+\item Fácil instalación
+\item Curva de aprendizaje suave
+\item Cuenta con todas las herramientas necesarias integradas
+\end{itemize}
 %Open-Source VLSI CAD Tools: A Comparative Study
 
+\section{Selección del proceso de fabricación}\label{procesoFabricación}
+%En la industria del semiconductores bajo el modelo de diseño fuera de la planta de fabricación del chip.
 
+En este punto, es importante mencionar un aspecto de la industria de los semiconductores. En los orígenes, la industria de semicoductores estaba verticalmente integrada. Esto significaba que la misma empresa que diseñaba el producto, también diseñaba las herramientas de software y fabricaba el chip. Pero hace poco mas de 20 años, surge la separación del proceso de diseño y fabricación. Hoy en día existen empresas que se dedican sólamente a desarrollar el producto, otras que se dedican únicamente a desarrollar herramientas de software para el diseño, otras que sólamente se dedican a fabricar los diseños de otras empresas, y también persisten las empresas que realizan todo el proceso, abriendo las puertas a otras empresas de diseño sin fábrica, para evitar la capacidad ociosa instalada y disminuir sus costos.
+\subsection{Obleas multiproyectos}
+Dentro de este esquema, existe una empresa (MOSIS) que se dedica a recolectar proyectos de diseño que están en etapa de prototipo o de bajo volumen, creando obleas multiproyecto que se envían a fabricar, dividiendo los costos por la cantidad de proyectos que incluye. De esta forma, se logra acceder a la fabricación de semiconductores a muy bajo costo. Tiene sus limitaciones en cuanto a tecnologías de fabricación disponibles, cantidades, y tiempo de retorno largos, pero permite que proyectos educativos, de investigación y/o de baja escala sean económicamente factibles.
+Por ello, nuestro proceso deberá ser seleccionado dentro de la lista de lo que MOSIS habilita\footnote{Esta lista está en constante cambio y actualización, se brinda aquí de modo ilustrativo. Para una lista actualizada visitar https://www.mosis.com/products/fab-processes }:
 
-%Summary
-%Alliance is a complete set of free CAD tools and portable libraries for VLSI design. It includes a VHDL compiler and simulator, logic synthesis tools, and automatic place and route tools. A complete set of portable CMOS libraries is provided, including a RAM generator, a ROM generator and a data-path compiler. Alliance is the result of more than ten years effort spent at ASIM department of LIP6 laboratory of the Pierre et Marie Curie University (Paris VI, France). Alliance has been used for research projects such as the 875 000 transistors StaCS superscalar microprocessor and 400 000 transistors IEEE Gigabit HSL Router. You are kindly requested to mention " Designed with alliance (c) LIP6, Université Pierre et Marie Curie" so as to spread the word about "alliance CAD system" and its development team. Alliance provides CAD tools covering most of all the digital design flow:
-%VHDL Compilation and Simulation
-%Model checking and formal proof
-%RTL and Logic synthesis
-%Data-Path compilation
-%Macro-cells generation
-%Place and route
-%Layout edition
-%Netlist extraction and verification
-%Design rules checking alliance is listed among Fedora Electronic Lab (FEL) packages.
-%Supported Fedora branches
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lc@{}}
+\toprule
+Fábrica             & Proceso CMOS \\ \midrule
+TSMC                & 28~nm - 180~nm             \\
+Globalfoundries     & 14~nm - 180~nm             \\
+IBM                 & 32~nm -  250nm            \\
+ON Semi             & 0.35~um - 0.7~um           \\
+Austria Micro Systems & 180~nm - 0.35~um           \\ \bottomrule
+\end{tabular}
+\caption{Procesos disponibles por medio de MOSIS}
+\label{cuadro:procesosDisponibles}
+\end{table}
+
+De todas estas, elegimos TSMC 180~nm por dos razones: La primera es que cuanto mayor es la dimensión de la tecnología, mas simples son las herramientas de software necesarias y más bajo es el costo de fabricación. La segunda, es que con esta tecnología se pueden realizar sistemas de gran complejidad y alta performance\footnote{Claro que cuanto más nueva es la tecnología, los circuitos digitales son más rápidos y disipan menor potencia dinámica. Pero también es cierto que mayores son los tiempos para diseñar, principalmente porque con cada nuevo nodo aparecen nuevos efectos físicos que deben ser manejados, complejizando las tareas. Además, los circuitos analógicos deben ser diseñados nuevamente desde cero, ya que las arquitecturas de circuitos analógicos no son escalables (como si son los digitales).
+}
+
+Para dar cuenta de las capacidades de esta tecnología, vemos en la tabla \ref{cuadro:procesadores180nm} un conjunto de microprocesadores que la utilizaron cuando esta era la más avanzada en su tiempo (desde el año 1999 hasta 2001) e inclusive después. Pero el verdadero sustento de que esta tecnología es actual, es que al día de hoy se continuan desarrollando varias aplicaciones que intentan sacarle mayor rendimiento con nuevas técnicas para la disminución de consumo de energía, siendo una mejor opción que nodos mas nuevos, ya que no todas las aplicaciones requieren de la mayor velocidad disponible a la menor energía posible. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lc@{}}
+\toprule
+Procesador             & Año de lanzamiento \\ \midrule
+Intel Coppermine E                & 1999             \\
+AMD Athlon Thunderbird      & 2000             \\
+Intel Celeron (Willamette)               & 2002            \\
+Motorola PowerPC 7445 y 7455 (Apollo 6) & 2002           \\ \bottomrule
+\end{tabular}
+\caption{Procesecadores fabricados en CMOS 180nm }
+\label{cuadro:procesadores180nm}
+\end{table}
+
+Se eligió TSMC porque es para la única fábrica que MOSIS nos permite utilizar SCMOS para el diseño.
+
 
 
 

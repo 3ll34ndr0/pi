@@ -67,7 +67,7 @@ En un circuito digital con varias entradas y salidas, pueden existir mas de un c
 
 \subsubsection{Mínimo retardo de propagación}
 
-Para poder comparar la performance de distintas tecnologías, se busca un circuito que no incluya parámetros como el fan-in o fan-out, que influyen en los tiempos $t_f$, $t_r$ y $t_f$. Por ello, el circuito que es un estandard de facto para medir el tiempo de propagación, es el oscilador anillo (\emph{ring oscillator}), que es un número impar de inversores conectados en serie, con la salida conectada a la entrada. Este circuito oscilla espontaneamente, a una frecuencia de $T = 2 \times t_p \times N$, con $N$ el número de inversores en la cadena. 
+Para poder comparar la performance de distintas tecnologías, se busca un circuito que no incluya parámetros como el fan-in o fan-out, que influyen en los tiempos $t_f$, $t_r$ y $t_f$. Por ello, el circuito que es un estándar de facto para medir el tiempo de propagación, es el oscilador anillo (\emph{ring oscillator}), que es un número impar de inversores conectados en serie, con la salida conectada a la entrada. Este circuito oscilla espontaneamente, a una frecuencia de $T = 2 \times t_p \times N$, con $N$ el número de inversores en la cadena. 
 
 Contar con esta métrica nos permitirá tener una referencia del límite inferior impuesto por la tecnología que se esté utilizando. Por ejemplo, tomemos la tecnología TSMC de 180~nm: La frecuencia de un oscilador anillo de 31 etapas es de 377,13~MHz. Es decir que el tiempo de propagación de una celda inversora en esta tecnología es $t_p = 47,8~ps$
 
@@ -103,7 +103,7 @@ P_{av} = \frac{1}{\mathrm{T}}\int\limits_0^T p(t)dt = \mathrm{\frac{V_{DD}}{T}}\
 El período de tiempo que tomaremos para la integral es el retardo de propagación del camino crítico.
 
 \subsection{Área}
-La importancia de minimizar el área de los circuitos radica principalmente en que esta impacta fuertemente en el costo de cada \emph{die}, ya que el costo es una función que depende de la cuarta potencia del área del circuito\cite{rabaey2003}. Adeás, los circuitos de menor área tienden a consumir menor energía. 
+La importancia de minimizar el área de los circuitos radica principalmente en que esta impacta fuertemente en el costo de cada \emph{die}\cite{HennessyPatterson}, ya que el costo es una función que depende de la cuarta potencia del área del circuito\cite{rabaey2003}. Además, los circuitos de menor área tienden a consumir menor energía. 
 
 
 \subsection{Resumen}

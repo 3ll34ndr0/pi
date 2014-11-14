@@ -28,6 +28,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{booktabs}
+\usepackage{glossaries}
 
 %Macros:
 \include{macros/macrofile1}
@@ -48,6 +49,8 @@
 %\makeindex \label{indice}
 \hyphenation{ es-cla-re-ci-mien-to ma-te-ria-li-zar-se} 
 
+\loadglsentries{defns}
+
 \begin{document}
 \sloppy
 
@@ -59,13 +62,14 @@
 
 \tableofcontents			%%% INCLUYE INDICE AL PRINCIPIO
 \listoffigures 
-\listoftables 
+\listoftables
+\makeglossary 
 \include{Introduccion/introduccion}
 \mainmatter
 
 \part{Diseño Digital}\label{diseño_digital}
 \include{Digital/especificaciones}
-%\include{Digital/digital}
+\include{Digital/digital}
 \include{Verificacion/verificacion}
 \part{Diseño Físico}\label{diseño_físico}
 \include{FlujoFisico/flujofisico}
@@ -94,7 +98,6 @@
 \bibliographystyle{classes/CUEDbiblio} % Title is link if provided 
 \bibliographystyle{IEEEtran.bst}
 \bibliography{biblio}
-
 % Para compilar la primera vez que se agrega una referencia (/cite):
 % Seguir estos cuatro pasos:
 % latex Nombre-del-archivo.tex

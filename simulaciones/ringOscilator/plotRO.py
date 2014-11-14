@@ -11,17 +11,21 @@ data = genfromtxt(filename_str, skip_header=0,unpack=True)
 
 # http://matplotlib.sourceforge.net/api/figure_api.html#module-matplotlib.figure 
 print sys.argv[1],len(data)
-nob_str = raw_input('Ingresa cantidad señales a graficar: ')
-nob = int(nob_str)
+#nob_str = raw_input('Ingresa cantidad señales a graficar: ')
+#nob = int(nob_str)
+nob = len(data)
 ###########################
 # nob subplots sharing both x/y axes
 f, eje = plt.subplots(nob, sharex=True, sharey=False)
 print len(eje)
 
-if nob>1:
-	# Comienzo las etiquetas del resultado a partir del 2 elemento:
-	for i in range(1,len(eje)):
-   		eje[i].plot(data[0], data[i])
+if nob == 2:
+	#repito la única señal porque sino no queda vacio el primer eje:
+	eje[0].plot(data[0],data[1])
+
+# Comienzo a graficar a partir 2 elemento:
+for i in range(1,len(eje)):
+	eje[i].plot(data[0], data[i])
 
 #   		eje[i].set_ylabel("out"+str(i))
 #eje[0].set_title("Ring Oscilator 31 stages")
