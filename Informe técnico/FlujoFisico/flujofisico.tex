@@ -6,29 +6,47 @@ En este punto convertimos la representación de un circuito (con sus componentes
 
 El proceso que explicaremos en términos generales, y que podemos ver en contexto en la figura \ref{fig:diseñoFísico}, se realiza iterativamente hasta lograr que el circuito cumpla las especificaciones con el menor costo en potencia disipada y área ocupada.
 
-\subsection{Etapas del diseño físico}\label{etapasDiseñoFisico}
-Generalmente en un flujo de este tipo, partimos desde una descripción estructural del circuito. Esta descripción, comúnmente llamada \emph{netlist}, contiene información sobre qué bloques están presentes, y cómo estos están interconectados.
-
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.65]{figuras/DisenioFisico.pdf}
+\includegraphics[scale=0.60]{figuras/DisenioFisico.pdf}
   \caption{Flujo de diseño Físico}
   \label{fig:diseñoFísico}
 \end{figure}
 
+\subsection{Etapas del diseño físico}\label{etapasDiseñoFisico}
+Generalmente en un flujo de este tipo, partimos desde una descripción estructural del circuito. Esta descripción, comúnmente llamada \emph{netlist}, contiene información sobre qué bloques están presentes, y cómo estos están interconectados.
 
-Según el tamaño del circuito, será necesario definir particiones del mismo, dividiendo el circuito en dos o mas particiones con fines de acotar la magnitud y/o dificultad inicial del circuito original, en partes más pequeñas de menor dificultad, si las particiones se realizan correcta e inteligentemente. 
 
-Luego es necesario definir un plano general del circuito (\emph{floorplan}), que impondrá condiciones físicas mínimas como el área utilizada y la disposición física de las entradas y salidas.
-A continuación, se ubican en este plano todos los componentes del circuito, en una disposición tentativa que nos permita evaluar rápidamente la factibilidad del circuito con las condiciones impuestas por el floorplan. Con esta acción (llamado \emph{placement}) podemos estimar si el circuito será o no ruteable. Depediendo de las herramientas con las que se esté trabajando, también se puede tener una estimación sobre la velocidad de las señales. 
 
-Una vez que todos los elementos esten el plano, si el circuito es secuencial, será necesario realizar una distribución de la señal del reloj para que llegue a todos los registros, de la forma más pareja (en tiempo) posible dentro de un margen de tolerancia determinado. Para ello se agregan \emph{buffers} donde sea necesario. Por último, se realiza el conexionado de todos los puertos de cada componente, utilizando los metales disponibles dentro de la tecnología que se esté utilizando.
+\begin{description}
+\item[Particionado]
+Según el tamaño del circuito, será necesario definir particiones del mismo, dividiendo el circuito en dos o mas particiones con fines de acotar la magnitud o dificultad inicial del circuito original, en partes más pequeñas de menor dificultad, si las particiones se realizan correcta e inteligentemente. 
+\item[Plano general]
+Luego es necesario definir un plano general del circuito (mencionado como \emph{floorplan} en la bibliografía en inglés), que impondrá condiciones físicas mínimas como el área utilizada y la disposición física de las entradas y salidas.
+\item[Ubicación]
+A continuación, ubicamos en este plano todos los componentes del circuito (conocido como \emph{placement} en la bibliografía en inglés), en una disposición tentativa que nos permita evaluar rápidamente la factibilidad del circuito con las condiciones impuestas por el \emph{floorplan}, por ejemplo si todos los componentes y el conexionado caben dentro del \emph{floorplan}. Depediendo de las herramientas que utilicemos, también se puede tener una estimación sobre la velocidad de las señales. 
+\item[Síntesis del árbol de reloj]
+Una vez que todos los elementos esten en el plano, si el circuito es secuencial, será necesario realizar una distribución de la señal del reloj para que llegue a todos los registros, de la forma más pareja (en tiempo) posible dentro de un margen de tolerancia determinado. Para ello se agregan \emph{buffers} donde sea necesario. Este proceso se conoce como \gls{cts} en la bibliografía en inglés.
+\item[Conexionado]
+Por último, se realiza el conexionado de todos los puertos de cada componente, utilizando las capas de metal disponible en la tecnología que se esté utilizando, un ejemplo de este conexionado se puede ver en la figura \ref{fig:routing}. Este proceso se conoce como \emph{routing} en la bibliografía en inglés.
+\end{description}
 
-En este punto, se puede realizar la mejor estimación sobre las capacidades y resistores parásitos que representan la interconexión de todo el circuito. Se encuentran los camínos críticos y se realizan las modificaciones necesarias para que el circuito cumpla con la especificaciones de retardo de propagacion máximo.
+En este punto, se puede realizar la mejor estimación sobre las capacidades y resistores parásitos que representan la interconexión de todo el circuito. Se encuentran los camínos críticos y se realizan las modificaciones necesarias para que el circuito cumpla con la especificaciones de retardo de propagacion máximo. Siempre en cada etapa de este proceso se puede iterar para mejorar el resultado, pero si aún así no logramos la mejora necesaria, debemos volver a iterar sobre una etapa anterior y continuar este flujo, secuencialmente.
+
+El procesos de ubicación de los componentes e interconexionado que acabamos de describir, es muy común que se mencione como \gls{pnr}, por sus siglas en inglés.
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{figuras/Silicon_chip_3d.png}
+  \caption{Celda estándar con 3 capas de metales en color amarillo, y una capa de silício policristalino}
+  \label{fig:routing}
+\end{figure}
 
 \section{Relevamiento, comparación y selección de las herramientas disponibles}
 Para realizar las tareas que describimos en la sección \ref{etapasDiseñoFisico}, será necesario buscar una o varias herramientas de software que se ajusten a los requerimientos del diseño y la tecnología de fabricación\footnote{Se utilizará una tecnología definida por Mead y Conway\cite{mead-conway80}, que MOSIS denomina \textbf{SCMOS} (Scalable CMOS).
-Esto es un conjunto de capas lógicas junto a sus reglas de diseño, que proveen un proceso casi independiente de la tecnología y dimensión, que sirve de interfase para muchos procesos CMOS disponibles a través de MOSIS.} del circuito integrado.
+Esto es un conjunto de capas lógicas junto a sus reglas de diseño, que proveen un proceso casi independiente de la tecnología y dimensión, que sirve para muchos procesos CMOS disponibles a través de MOSIS.} del circuito integrado.
 
 \paragraph{Características esperadas de las herramientas}
 \begin{itemize}
@@ -38,12 +56,13 @@ Esto es un conjunto de capas lógicas junto a sus reglas de diseño, que proveen
 \item \gls{pdk} disponible para la tecnología seleccionada.
 \end{itemize}
 
+\subsection{Relevamiento}
 Luego de una inspección de esos criterios, las herramientas candidatas que cumplen con estas características son:
 
 \begin{description}
 \item[Open Circuit Design] Proyecto de software libre que reúne en un único sitio varias herramientas independientes, mencionamos sólo algunas:  \textbf{Magic}: Layout, \gls{drc} y extracción de parásitos. \textbf{Xcircuit}: Entrada de circuitos esquemáticos, \textbf{netgen}: \gls{lvs}. \textbf{IRSIM}: simulador digital, \textbf{Qflow}: Entorno para realizar la síntesis digital con celdas estándar, utiliza Yosys\cite{Yosys}, \textbf{graywolf}: Placement \textbf{Qrouter}: Ruteador.
 
-\item[Electric VLSI Design System\cite{Electric}] Es un sistema de Automatización de Diseño Electrónico. En un entorno integrado muy flexible que permite la descripción del circuito de varias formas (esquemáticos, VHDL, Layout, generadores de ROM y MOSIS PLA). Cuenta también con herramientas para hacer \gls{drc}, \gls{lvs} y \gls{pnr}, simulación digital, visualización de formas de ondas, entre otras herramientas.
+\item[Electric VLSI Design System\cite{Electric}] Es un sistema de automatización de diseño electrónico. Es un entorno integrado muy flexible que permite la descripción del circuito de varias formas (esquemáticos, VHDL, Layout, generadores de ROM y PLA). Cuenta también con herramientas para hacer \gls{drc}, \gls{lvs} y \gls{pnr}, simulación digital, visualización de formas de ondas, entre otras herramientas.
 
 \item[Alliance VLSI CAD System\cite{Alliance}] Alliance es un conjunto de herramientas libres, y librerías portables para el diseño de VLSI. Incluye un compilador vhdl y un simulador, herramientas de síntesis de lógica, y herramientas de \gls{pnr} automáticas. Brinda un conjunto completo de librerías CMOS portables.
 
@@ -51,7 +70,33 @@ Luego de una inspección de esos criterios, las herramientas candidatas que cump
 
 Es importante mencionar que existen mas herramientas disponibles (y muy útiles), pero al momento de realización de este trabajo, no forman parte de un flujo de diseño que las integre y por ello no son mencionadas aquí. 
 
-La herramienta que seleccionamos es \textbf{Electric}, ya que nos brinda una serie de ventajas comparativas, teniendo en cuenta que nuestro circuito es puramente secuencial y no demananda gran esfuerzo de \gls{pnr} a la herramienta:
+\subsection{Comparación}
+
+\begin{table}[h]
+\begin{tabular}{p{2cm}p{4cm}p{4cm}}
+\toprule
+\textbf{Herramienta} & \multicolumn{1}{c}{\textbf{Ventajas}}                                                                                                               & \textbf{Desventajas}                      \\ \midrule
+Electric & \multicolumn{1}{c}{Fácil instalación instalación instalación instalación instalación instalación } & No incluye celdas estándar caracterizadas \\ 
+ & \multicolumn{1}{c}{Corre en GNU/Linux, Windows, MacOS} &                                           \\
+ & \multicolumn{1}{c}{Todas las herramientas están integradas}  
+ &                                           \\
+ & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Muchos formatos para importar y exportar,\\ que nos permite utilizar otras herramientas\end{tabular}} &                                           \\
+ & \multicolumn{1}{c}{}                                                                                                                                &                                           \\
+Open Circuit Design  &                                                                                                                                                     &                                           \\
+                     &                                                                                                                                                     &                                           \\
+                     &                                                                                                                                                     &                                           \\
+                     &                                                                                                                                                     &                                           \\
+Alliance             &                                                                                                                                                     &                                           \\
+                     &                                                                                                                                                     &                                           \\
+                     &                                                                                                                                                     &                                          
+\end{tabular}
+\caption{Comparativa de las ventajas y desventajas}
+\label{tabla:comparación}
+\end{table}
+
+
+\subsection{Selección}
+La herramienta que seleccionamos es \textbf{Electric}, ya que nos brinda una serie de ventajas comparativas, teniendo en cuenta que nuestro circuito es puramente combinacional y no demanda gran esfuerzo de \gls{pnr} a la herramienta:
 \begin{itemize}
 \item Fácil instalación
 \item Curva de aprendizaje suave
