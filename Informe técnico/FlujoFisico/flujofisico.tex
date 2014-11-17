@@ -116,7 +116,7 @@ Austria Micro Systems & 180~nm - 0.35~um           \\ \bottomrule
 De todas estas, elegimos TSMC 180~nm por dos razones: la primera es que cuanto mayor es la dimensión de la tecnología, más simples son las herramientas de software necesarias y más bajo es el costo de fabricación. La segunda, es que con esta tecnología se pueden realizar sistemas de gran complejidad y alta performance\footnote{Claro que cuanto más nueva es la tecnología, los circuitos digitales son más rápidos y disipan menor potencia dinámica. Pero también es cierto que mayores son los tiempos para diseñar, principalmente porque con cada nuevo nodo aparecen nuevos efectos físicos que deben ser manejados, dificultando las tareas.
 }
 
-Para dar cuenta de las capacidades de esta tecnología, vemos en la tabla \ref{cuadro:procesadores180nm} un conjunto de microprocesadores que la utilizaron cuando esta era la más avanzada en su tiempo (desde el año 1999 hasta 2001) e inclusive después. Pero el verdadero sustento de que esta tecnología es actual, es que al día de hoy se continúan desarrollando varias aplicaciones, siendo una mejor opción que nodos mas nuevos, por razones económicas. Con el desarrollo de nuevas técnicas para la disminución de consumo de energía, la gran colección de \emph{IP}\footnote{Intelectual Property, nombre usual dado a los diseños listos para ser usados en un sistema, cuando se decide enfocar el diseño solamente en lo novedoso del producto, comprando el IP de todo lo que no diseñaremos.} analógico\footnote{Los circuitos analógicos que ya fueron diseñados y probados para una tecnología, si se pretende pasar a una tecnología distinta, deben ser diseñados nuevamente desde cero, ya que las arquitecturas de circuitos analógicos no son escalables (como si son los digitales)} y digital que cada fábrica ofrece, las ventajas de necesitar menor poder de cálculo que para los nodos actuales (22~nm), mucha experiencia acumulada por parte de los diseñadores, se consigue un menor TTM\footnote{Time To Market (TTM), sigla utilizada para designar el tiempo que necesita un producto para ser diseñado, fabricado, testeado y puesto en producción. Dependiendo de la aplicación, este tiempo va desde meses hasta años.} con menores costos.
+Para dar cuenta de las capacidades de esta tecnología, vemos en la tabla \ref{cuadro:procesadores180nm} un conjunto de microprocesadores que la utilizaron cuando esta era la más avanzada en su tiempo (desde el año 1999 hasta 2001) e inclusive después. Pero el verdadero sustento de que esta tecnología es actual, es que al día de hoy se continúan desarrollando varias aplicaciones, siendo una mejor opción que nodos mas nuevos, por razones económicas. Con el desarrollo de nuevas técnicas para la disminución de consumo de energía\footnote{A modo de ejemplo, ver el procesador \emph{Phoenix}, que en modo alerta consume 29.6~pW y 2.8~pJ/ciclo modo activo\cite{phoenixP}.}, la gran colección de \emph{IP}\footnote{Intelectual Property, nombre usual dado a los diseños listos para ser usados en un sistema, cuando se decide enfocar el diseño solamente en lo novedoso del producto, comprando el IP de todo lo que no diseñaremos.} analógico\footnote{Los circuitos analógicos que ya fueron diseñados y probados para una tecnología deben ser diseñados nuevamente desde cero cuando se pasa de una tecnología a otra, ya que las arquitecturas de circuitos analógicos no son escalables (como si son los digitales)} y digital que cada fábrica ofrece, las ventajas de necesitar menor poder de cálculo que para los nodos actuales (22~nm), mucha experiencia acumulada por parte de los diseñadores, se consigue un menor TTM\footnote{Time To Market (TTM), sigla utilizada para designar el tiempo que necesita un producto para ser diseñado, fabricado, testeado y puesto en producción. Dependiendo de la aplicación, este tiempo va desde meses hasta años.} con menores costos.
 
 
 \begin{table}[h]
@@ -138,9 +138,9 @@ Se eligió TSMC porque es la única fábrica que MOSIS nos permite utilizar SCMO
 \section{Selección de las Celdas estándar}\label{celdasEstandars}
 El resultado de la síntesis que realizamos en el capítulo \ref{diseñoDigital} es un netlist VHDL que contiene sólo compuertas lógicas. Estas son compuertas lógicas abstractas, es decir que nuestro circuito fué mapeado a un conjunto finito de funciones logicas como las \verb.and., \verb.or., \verb.xor., \verb.xnor., etc.
 
-Ahora es necesario mapear estas funciones lógicas a compuertas lógicas reales, que serán tambien un conjunto finito de compuertas, pero con dimensiones físicas definidas, y con una caracterización de su funcionamiento real. Estas compuertas lógicas se denominan celdas estándards, que se diseñan específicamente para la tecnología de fabricación que hayamos definido usar. Por cada función lógica existen distintas versiones para poder manejar distintas capacidades. 
+Ahora es necesario mapear estas funciones lógicas a compuertas lógicas reales, que serán tambien un conjunto finito de compuertas, pero con dimensiones físicas definidas, y con una caracterización de su funcionamiento real. Estas compuertas lógicas se denominan celdas estándar, que sirven específicamente para la tecnología de fabricación que hayamos definido usar. Por cada función lógica existen distintas versiones para poder manejar distintas capacidades, en la figura \ref{fig:map-xnor} vemos un ejemplo. 
 
-Caraterización de las celdas: Se realizan simulaciones analógicas de un netlist de estas celdas, donde variando paramétricamente la carga (capacitiva) de salida y el tiempo de crecida y caída ($t_r$ y $t_f$) de la entrada, se obtiene el retardo de propagación, tiempo de crecida y de bajada de la salida y la disipación de potencia.
+%Caraterización de las celdas: Se realizan simulaciones analógicas de un netlist de estas celdas, donde variando paramétricamente la carga (capacitiva) de salida y el tiempo de crecida y caída ($t_r$ y $t_f$) de la entrada, se obtiene el retardo de propagación, tiempo de crecida y de bajada de la salida y la disipación de potencia.
 
 
 % Dibujo de una XOR en netlist mapeado a una XOR en layout.
@@ -148,13 +148,13 @@ Caraterización de las celdas: Se realizan simulaciones analógicas de un netlis
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{figuras/map-xnor.png}
-  \caption{Mapeo de funciones lógicas a celdas estándars}
+  \caption{Mapeo de funciones lógicas a celdas estándar}
   \label{fig:map-xnor}
 \end{figure}
 
-Es común elegir las celdas estándars según el tipo de aplicación a desarrollar. Existen celdas estandars que fueron diseñadas para bajo consumo, o alta velocidad, o de mínima área. También existe la posibilidad de diseñar celdas que busquen la mejor relación velocidad-consumo-area que puedan ser utilizadas en muchas aplicaciones. En circuitos integrados para sistemas alimentados a batería se intentará utilizar las celdas de menor consumo y evitar siempre que sea posible las de mayor velocidad, en función del presupuesto de potencia disponible para el mismo.
+Es común elegir las celdas estándar según el tipo de aplicación a desarrollar. Existen celdas estandar que fueron diseñadas para bajo consumo, o alta velocidad, o de mínima área. También existe la posibilidad de diseñar celdas que busquen la mejor relación velocidad-consumo-area que puedan ser utilizadas en muchas aplicaciones. En circuitos integrados para sistemas alimentados a batería se intentará utilizar las celdas de menor consumo y evitar siempre que sea posible las de mayor velocidad, en función del presupuesto de potencia disponible para el mismo.
 
-En nuestro caso, seleccionamos una librería de celdas estándars diseñadas para tamaño mínimo de canal n, y p. %Una referencia al Rabaey es necesaria? 
+En nuestro caso, por la naturaleza del problema planteado, utilizamos una pequeña librería de celdas estándar diseñadas para tamaño mínimo de canal n, y p. %Una referencia al Rabaey es necesaria? 
 Otra característica de la librería es la distancia entre el riel de VSS hasta el riel de VDD. Esta distancia es de 117 $\lambda$ (En nuestra tecnología de 180~$\mathrm{nm}$, el valor de lambda es: $\lambda = 100~\mathrm{nm}$), lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories.
 
  
@@ -173,8 +173,8 @@ Partimos desde la descripción estructural\footnote{El resultado de la síntesis
 
 Arquero para que este archivo pueda ser usado con Electric fué necesario hacer algunas modificaciones:
 \begin{enumerate}
-\item Reemplazar los nombres de las instancias de las celdas estandards que  seleccionamos en la sección \ref{celdasEstandars} y \emph{Electric} utilizará.
-\item En la parte del vhdl que comienza la descripción estructural es necesario agregar las celdas estandards que serán utilizadas en el circuito.
+\item Reemplazar los nombres de las instancias de las celdas estándar que  seleccionamos en la sección \ref{celdasEstandars} y \emph{Electric} utilizará.
+\item En la parte del vhdl que comienza la descripción estructural es necesario agregar las celdas estandar que serán utilizadas en el circuito.
 \item Quitar todas las instancias de \verb|wire port map (...)| volviendo a conectar lo que queda desconectado al quitar estas instancias.
 \end{enumerate}  
 Estas tareas las realizamos modificando el código del programa de lava que crea el netlist vhdl llamado \verb|VhdlNew.hs|, y con un script\footnote{Adjuntamos el script en el apéndice \ref{scriptPerl}} en perl que es lanzado desde el mismo.
@@ -193,7 +193,7 @@ Para cuantificar la calidad de un circuito, podemos analizar un circuito desde d
 \vspace{-10pt}
 \end{figure}
 
-Realizamos un oscilador anillo de 5 etapas, utilizando el inversor mas chico de nuestra librería de celdas estándard elegida. En la figura \ref{fig:RO5_lay} podemos ver el \emph{layout} que realizamos para esta prueba. Hacemos la extracción de parásitos y simulamos el circuito para obtener la forma de onda de la figura \ref{fig:RO5_wf}.
+Realizamos un oscilador anillo de 5 etapas, utilizando el inversor mas chico de nuestra librería de celdas estándar elegida. En la figura \ref{fig:RO5_lay} podemos ver el \emph{layout} que realizamos para esta prueba. Hacemos la extracción de parásitos y simulamos el circuito para obtener la forma de onda de la figura \ref{fig:RO5_wf}.
 
 Como podemos deducir de la figura \ref{fig:RO5_wf}, el tiempo de propagación es de 32~pS, lo cual no significa que nuestros circuitos puedan correr a 31,25~GHz. Cuando medimos el tiempo de propagación usando este circuito, deberemos considerar que este es sólo una forma de comparar las tecnologías de fabricación y las topologías de las compuertas, pero de ninguna forma será la frecuencia máxima a la que pueda funcionar nuestro circuito, ya que la complejidad y cantidad de compuertas es enormemente mayor que la de un inversor. Según Rabaey\cite{rabaey2003} se puede esperar velocidades entre 50 a 100 veces mas bajas, aunque optimizando el diseño se puede lograr acercarnos un poco mas a esta frecuencia ideal. 
 
