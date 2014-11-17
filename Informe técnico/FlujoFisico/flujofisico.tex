@@ -40,61 +40,46 @@ El procesos de ubicación de los componentes e interconexionado que acabamos de 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{figuras/Silicon_chip_3d.png}
-  \caption{Celda estándar con 3 capas de metales en color amarillo, y una capa de silício policristalino}
+  \caption{Celda estándar con 3 capas de metales en color arena, y una capa de silício policristalino en color ladrillo. Azul y rojo son dopado $N^+$ y $P^+$ respectivamente}
   \label{fig:routing}
 \end{figure}
 
 \section{Relevamiento, comparación y selección de las herramientas disponibles}
-Para realizar las tareas que describimos en la sección \ref{etapasDiseñoFisico}, será necesario buscar una o varias herramientas de software que se ajusten a los requerimientos del diseño y la tecnología de fabricación\footnote{Se utilizará una tecnología definida por Mead y Conway\cite{mead-conway80}, que MOSIS denomina \textbf{SCMOS} (Scalable CMOS).
+Para realizar las tareas que describimos en la sección \ref{etapasDiseñoFisico}, será necesario buscar una o varias herramientas de software que se ajusten a los requerimientos del diseño y la tecnología de fabricación\footnote{Se utilizará una tecnología definida por Mead y Conway\cite{mead-conway80}, conocida como  \textbf{SCMOS} (Scalable CMOS).
 Esto es un conjunto de capas lógicas junto a sus reglas de diseño, que proveen un proceso casi independiente de la tecnología y dimensión, que sirve para muchos procesos CMOS disponibles a través de MOSIS.} del circuito integrado.
 
 \paragraph{Características esperadas de las herramientas}
 \begin{itemize}
-\item Que tenga un desarrollo activo y que exista una comunidad de usuarios/as y desarrolladores/as que brinden soporte
+\item Desarrollo activo y existencia de una comunidad de usuarios/as y desarrolladores/as que brinden soporte
 \item Mayor cantidad de herramientas integradas
 \item Flexibilidad para importar y exportar datos. 
-\item \gls{pdk} disponible para la tecnología seleccionada.
+\item Disponibilidad de un Kit de diseño para el proceso de la tecnología seleccionada, conocido como \gls{pdk}.
 \end{itemize}
 
 \subsection{Relevamiento}
-Luego de una inspección de esos criterios, las herramientas candidatas que cumplen con estas características son:
+Luego de una inspección de esas características, las herramientas candidatas que cumplen con estas características son:
 
 \begin{description}
-\item[Open Circuit Design] Proyecto de software libre que reúne en un único sitio varias herramientas independientes, mencionamos sólo algunas:  \textbf{Magic}: Layout, \gls{drc} y extracción de parásitos. \textbf{Xcircuit}: Entrada de circuitos esquemáticos, \textbf{netgen}: \gls{lvs}. \textbf{IRSIM}: simulador digital, \textbf{Qflow}: Entorno para realizar la síntesis digital con celdas estándar, utiliza Yosys\cite{Yosys}, \textbf{graywolf}: Placement \textbf{Qrouter}: Ruteador.
+\item[Open Circuit Design] Proyecto de software libre que reúne en un único sitio varias herramientas independientes, mencionamos sólo algunas:  \textbf{Magic}: Layout, \gls{drc} y extracción de parásitos; \textbf{Xcircuit}: Entrada de circuitos esquemáticos; \textbf{netgen}: \gls{lvs}; \textbf{IRSIM}: simulador digital a nivel de transistor como llaves ideales, con extracción de capacidad y resistores concentrados para hacer la simulación mas realista; \textbf{Qflow}: entorno para realizar la síntesis digital con celdas estándar, utiliza Yosys\cite{Yosys}; \textbf{graywolf}: programa que realiza el \emph{placement}; \textbf{Qrouter}: programa que realiza el conexionado.
 
-\item[Electric VLSI Design System\cite{Electric}] Es un sistema de automatización de diseño electrónico. Es un entorno integrado muy flexible que permite la descripción del circuito de varias formas (esquemáticos, VHDL, Layout, generadores de ROM y PLA). Cuenta también con herramientas para hacer \gls{drc}, \gls{lvs} y \gls{pnr}, simulación digital, visualización de formas de ondas, entre otras herramientas.
+\item[Electric VLSI Design System\cite{Electric}] Es un sistema de automatización de diseño electrónico. Es un entorno integrado muy flexible que permite la descripción del circuito de varias formas (circuitos esquemáticos, \emph{netlist} VHDL y \emph{layout})). Cuenta también con herramientas para hacer \gls{drc}, \gls{lvs} y \gls{pnr}, simulación digital, visualización de formas de ondas, y un generador de \emph{pad frame}\footnote{El \emph{pad frame} es un conjunto de celdas que se ubican en el marco del \emph{die}, para conectar las señales del circuito con el exterior del chip.},entre otras herramientas.
 
-\item[Alliance VLSI CAD System\cite{Alliance}] Alliance es un conjunto de herramientas libres, y librerías portables para el diseño de VLSI. Incluye un compilador vhdl y un simulador, herramientas de síntesis de lógica, y herramientas de \gls{pnr} automáticas. Brinda un conjunto completo de librerías CMOS portables.
+\item[Alliance VLSI CAD System\cite{Alliance}] Alliance es un conjunto de herramientas libres, y celdas estándar para el diseño de VLSI. Incluye un compilador vhdl y un simulador, herramientas de síntesis de lógica, y herramientas de \gls{pnr} automáticas. Brinda un conjunto completo de celdas estándar CMOS escalables.
 
 \end{description}
 
 Es importante mencionar que existen mas herramientas disponibles (y muy útiles), pero al momento de realización de este trabajo, no forman parte de un flujo de diseño que las integre y por ello no son mencionadas aquí. 
 
 \subsection{Comparación}
+\include{FlujoFisico/tablaComparativa}
 
-\begin{table}[h]
-\begin{tabular}{p{2cm}p{4cm}p{4cm}}
-\toprule
-\textbf{Herramienta} & \multicolumn{1}{c}{\textbf{Ventajas}}                                                                                                               & \textbf{Desventajas}                      \\ \midrule
-Electric & \multicolumn{1}{c}{Fácil instalación instalación instalación instalación instalación instalación } & No incluye celdas estándar caracterizadas \\ 
- & \multicolumn{1}{c}{Corre en GNU/Linux, Windows, MacOS} &                                           \\
- & \multicolumn{1}{c}{Todas las herramientas están integradas}  
- &                                           \\
- & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Muchos formatos para importar y exportar,\\ que nos permite utilizar otras herramientas\end{tabular}} &                                           \\
- & \multicolumn{1}{c}{}                                                                                                                                &                                           \\
-Open Circuit Design  &                                                                                                                                                     &                                           \\
-                     &                                                                                                                                                     &                                           \\
-                     &                                                                                                                                                     &                                           \\
-                     &                                                                                                                                                     &                                           \\
-Alliance             &                                                                                                                                                     &                                           \\
-                     &                                                                                                                                                     &                                           \\
-                     &                                                                                                                                                     &                                          
-\end{tabular}
-\caption{Comparativa de las ventajas y desventajas}
-\label{tabla:comparación}
-\end{table}
+%\begin{table}[h]
+%\begin{tabular}{p{2cm}p{4cm}p{4cm}}
+%\caption{Comparativa de las ventajas y desventajas}
+%\label{tabla:comparación}
+%\end{table}
 
-
+Resaltamos las ventajas y desventajas de cada herramienta, que nos permitirá hacer una selección en función de las necesidades del proyecto.
 \subsection{Selección}
 La herramienta que seleccionamos es \textbf{Electric}, ya que nos brinda una serie de ventajas comparativas, teniendo en cuenta que nuestro circuito es puramente combinacional y no demanda gran esfuerzo de \gls{pnr} a la herramienta:
 \begin{itemize}
@@ -102,15 +87,16 @@ La herramienta que seleccionamos es \textbf{Electric}, ya que nos brinda una ser
 \item Curva de aprendizaje suave
 \item Cuenta con todas las herramientas necesarias integradas
 \end{itemize}
+El hecho de que no cuente con un sintetizador lógico, como señalamos en la tabla \ref{tablaComparativa}, no tiene importancia para esta selección, ya que uno de los resultados del diseño digital del capítulo \ref{diseñoDigital} es un \emph{netlist} VHDL. Por la naturaleza de la solución propuesta, no deseamos que este resultado sea modificado por alguna optimización lógica, ya que rompería la interconexión original de nuestro circuito. Si quisieramos comparar nuestra implementación del circuito con la implementación automática de la operación suma, entonces tendríamos que pasar a una de las otras herramientas. Pero eso sería un trabajo de comparación de un diseño \emph{custom} con uno automático, que no era el objetivo de este proyecto. 
 %Open-Source VLSI CAD Tools: A Comparative Study
 
 \section{Selección del proceso de fabricación}\label{procesoFabricación}
 %En la industria del semiconductores bajo el modelo de diseño fuera de la planta de fabricación del chip.
 
-En este punto, es importante mencionar un aspecto de la industria de los semiconductores. En los orígenes, la industria de semicoductores estaba verticalmente integrada. Esto significaba que la misma empresa que diseñaba el producto, también diseñaba las herramientas de software y fabricaba el chip. Pero hace poco mas de 20 años, surge la separación del proceso de diseño y fabricación. Hoy en día existen empresas que se dedican sólamente a desarrollar el producto, otras que se dedican únicamente a desarrollar herramientas de software para el diseño, otras que sólamente se dedican a fabricar los diseños de otras empresas, y también persisten las empresas que realizan todo el proceso, abriendo las puertas a otras empresas de diseño sin fábrica, para evitar la capacidad ociosa instalada y disminuir sus costos.
+En este punto, es importante mencionar un aspecto de la industria de los semiconductores. En los orígenes, la industria de semicoductores estaba verticalmente integrada. Esto significaba que la misma empresa que diseñaba el producto, también diseñaba las herramientas de software y fabricaba el chip. Pero hace poco mas de 20 años, surge la separación del proceso de diseño y fabricación. Hoy en día existen empresas que se dedican sólamente a desarrollar el producto, otras que se dedican únicamente a desarrollar herramientas de software para el diseño, otras que sólamente se dedican a fabricar los diseños de otras empresas, y también persisten las empresas que realizan todo el proceso (conocidas como \gls{icms}), abriendo las puertas a otras empresas de diseño sin fábrica (conocidas como \emph{fabless}), para evitar la capacidad ociosa instalada y disminuir sus costos.
 \subsection{Obleas multiproyectos}
-Dentro de este esquema, existe una empresa (MOSIS) que se dedica a recolectar proyectos de diseño que están en etapa de prototipo o de bajo volumen, creando obleas multiproyecto que se envían a fabricar, dividiendo los costos por la cantidad de proyectos que incluye. De esta forma, se logra acceder a la fabricación de semiconductores a muy bajo costo. Tiene sus limitaciones en cuanto a tecnologías de fabricación disponibles, cantidades, y tiempo de retorno largos, pero permite que proyectos educativos, de investigación y/o de baja escala sean económicamente factibles.
-Por ello, nuestro proceso deberá ser seleccionado dentro de la lista de lo que MOSIS habilita\footnote{Esta lista está en constante cambio y actualización, se brinda aquí de modo ilustrativo. Para una lista actualizada visitar https://www.mosis.com/products/fab-processes }:
+Dentro de este esquema, existe una empresa (MOSIS) que se dedica a recolectar proyectos de diseño que están en etapa de prototipo o de bajo volumen, creando obleas multiproyecto que se envían a fabricar, dividiendo los costos por la cantidad de proyectos que incluye. De esta forma, se logra acceder a la fabricación de semiconductores a muy bajo costo. Tiene sus limitaciones en cuanto a tecnologías de fabricación disponibles, cantidades, y tiempo de entrega largos, pero permite que proyectos educativos, de investigación o de baja escala sean económicamente factibles.
+Por ello, nuestro proceso deberá ser seleccionado dentro de la lista de lo que MOSIS ofrece\footnote{Esta lista está en constante cambio y actualización, se brinda aquí de modo ilustrativo. Para una lista actualizada visitar https://www.mosis.com/products/fab-processes }:
 
 \begin{table}[h]
 \centering
@@ -127,10 +113,11 @@ Austria Micro Systems & 180~nm - 0.35~um           \\ \bottomrule
 \label{cuadro:procesosDisponibles}
 \end{table}
 
-De todas estas, elegimos TSMC 180~nm por dos razones: La primera es que cuanto mayor es la dimensión de la tecnología, mas simples son las herramientas de software necesarias y más bajo es el costo de fabricación. La segunda, es que con esta tecnología se pueden realizar sistemas de gran complejidad y alta performance\footnote{Claro que cuanto más nueva es la tecnología, los circuitos digitales son más rápidos y disipan menor potencia dinámica. Pero también es cierto que mayores son los tiempos para diseñar, principalmente porque con cada nuevo nodo aparecen nuevos efectos físicos que deben ser manejados, complejizando las tareas. Además, los circuitos analógicos deben ser diseñados nuevamente desde cero, ya que las arquitecturas de circuitos analógicos no son escalables (como si son los digitales).
+De todas estas, elegimos TSMC 180~nm por dos razones: la primera es que cuanto mayor es la dimensión de la tecnología, más simples son las herramientas de software necesarias y más bajo es el costo de fabricación. La segunda, es que con esta tecnología se pueden realizar sistemas de gran complejidad y alta performance\footnote{Claro que cuanto más nueva es la tecnología, los circuitos digitales son más rápidos y disipan menor potencia dinámica. Pero también es cierto que mayores son los tiempos para diseñar, principalmente porque con cada nuevo nodo aparecen nuevos efectos físicos que deben ser manejados, dificultando las tareas.
 }
 
-Para dar cuenta de las capacidades de esta tecnología, vemos en la tabla \ref{cuadro:procesadores180nm} un conjunto de microprocesadores que la utilizaron cuando esta era la más avanzada en su tiempo (desde el año 1999 hasta 2001) e inclusive después. Pero el verdadero sustento de que esta tecnología es actual, es que al día de hoy se continuan desarrollando varias aplicaciones que intentan sacarle mayor rendimiento con nuevas técnicas para la disminución de consumo de energía, siendo una mejor opción que nodos mas nuevos, ya que no todas las aplicaciones requieren de la mayor velocidad disponible a la menor energía posible. 
+Para dar cuenta de las capacidades de esta tecnología, vemos en la tabla \ref{cuadro:procesadores180nm} un conjunto de microprocesadores que la utilizaron cuando esta era la más avanzada en su tiempo (desde el año 1999 hasta 2001) e inclusive después. Pero el verdadero sustento de que esta tecnología es actual, es que al día de hoy se continúan desarrollando varias aplicaciones, siendo una mejor opción que nodos mas nuevos, por razones económicas. Con el desarrollo de nuevas técnicas para la disminución de consumo de energía, la gran colección de \emph{IP}\footnote{Intelectual Property, nombre usual dado a los diseños listos para ser usados en un sistema, cuando se decide enfocar el diseño solamente en lo novedoso del producto, comprando el IP de todo lo que no diseñaremos.} analógico\footnote{Los circuitos analógicos que ya fueron diseñados y probados para una tecnología, si se pretende pasar a una tecnología distinta, deben ser diseñados nuevamente desde cero, ya que las arquitecturas de circuitos analógicos no son escalables (como si son los digitales)} y digital que cada fábrica ofrece, las ventajas de necesitar menor poder de cálculo que para los nodos actuales (22~nm), mucha experiencia acumulada por parte de los diseñadores, se consigue un menor TTM\footnote{Time To Market (TTM), sigla utilizada para designar el tiempo que necesita un producto para ser diseñado, fabricado, testeado y puesto en producción. Dependiendo de la aplicación, este tiempo va desde meses hasta años.} con menores costos.
+
 
 \begin{table}[h]
 \centering
@@ -142,14 +129,11 @@ AMD Athlon Thunderbird      & 2000             \\
 Intel Celeron (Willamette)               & 2002            \\
 Motorola PowerPC 7445 y 7455 (Apollo 6) & 2002           \\ \bottomrule
 \end{tabular}
-\caption{Procesecadores fabricados en CMOS 180nm }
+\caption{Procesadores fabricados en CMOS 180nm }
 \label{cuadro:procesadores180nm}
 \end{table}
 
-Se eligió TSMC porque es para la única fábrica que MOSIS nos permite utilizar SCMOS para el diseño.
-
-
-
+Se eligió TSMC porque es la única fábrica que MOSIS nos permite utilizar SCMOS para el diseño, para 180~nm.
 
 \section{Selección de las Celdas estándar}\label{celdasEstandars}
 El resultado de la síntesis que realizamos en el capítulo \ref{diseñoDigital} es un netlist VHDL que contiene sólo compuertas lógicas. Estas son compuertas lógicas abstractas, es decir que nuestro circuito fué mapeado a un conjunto finito de funciones logicas como las \verb.and., \verb.or., \verb.xor., \verb.xnor., etc.
