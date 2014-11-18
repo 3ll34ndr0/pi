@@ -136,9 +136,9 @@ Motorola PowerPC 7445 y 7455 (Apollo 6) & 2002           \\ \bottomrule
 Se eligió TSMC porque es la única fábrica que MOSIS nos permite utilizar SCMOS para el diseño, para 180~nm.
 
 \section{Selección de las Celdas estándar}\label{celdasEstandars}
-El resultado de la síntesis que realizamos en el capítulo \ref{diseñoDigital} es un netlist VHDL que contiene sólo compuertas lógicas. Estas son compuertas lógicas abstractas, es decir que nuestro circuito fué mapeado a un conjunto finito de funciones logicas como las \verb.and., \verb.or., \verb.xor., \verb.xnor., etc.
+El resultado de la síntesis que realizamos en el capítulo \ref{diseñoDigital} es un \emph{netlist} VHDL que contiene sólo compuertas lógicas. Estas son compuertas lógicas abstractas, es decir que nuestro circuito fué mapeado a un conjunto finito de funciones logicas como las \verb.and., \verb.or., \verb.xor., \verb.xnor., etc.
 
-Ahora es necesario mapear estas funciones lógicas a compuertas lógicas reales, que serán tambien un conjunto finito de compuertas, pero con dimensiones físicas definidas, y con una caracterización de su funcionamiento real. Estas compuertas lógicas se denominan celdas estándar, que sirven específicamente para la tecnología de fabricación que hayamos definido usar. Por cada función lógica existen distintas versiones para poder manejar distintas capacidades, en la figura \ref{fig:map-xnor} vemos un ejemplo. 
+Ahora es necesario mapear estas funciones lógicas a compuertas lógicas reales, que serán tambien un conjunto finito de compuertas, pero con dimensiones físicas definidas, y con una caracterización de su funcionamiento real. Estas compuertas lógicas se denominan celdas estándar, que sirven específicamente para la tecnología de fabricación que hayamos definido usar. Por cada función lógica existen distintas versiones de la misma función, pero con distintas características eléctricas. Mostramos en la figura \ref{fig:map-xnor} un ejemplo de una celda estándar que implementa la función lógica \verb.xnor.
 
 %Caraterización de las celdas: Se realizan simulaciones analógicas de un netlist de estas celdas, donde variando paramétricamente la carga (capacitiva) de salida y el tiempo de crecida y caída ($t_r$ y $t_f$) de la entrada, se obtiene el retardo de propagación, tiempo de crecida y de bajada de la salida y la disipación de potencia.
 
@@ -154,30 +154,137 @@ Ahora es necesario mapear estas funciones lógicas a compuertas lógicas reales,
 
 Es común elegir las celdas estándar según el tipo de aplicación a desarrollar. Existen celdas estandar que fueron diseñadas para bajo consumo, o alta velocidad, o de mínima área. También existe la posibilidad de diseñar celdas que busquen la mejor relación velocidad-consumo-area que puedan ser utilizadas en muchas aplicaciones. En circuitos integrados para sistemas alimentados a batería se intentará utilizar las celdas de menor consumo y evitar siempre que sea posible las de mayor velocidad, en función del presupuesto de potencia disponible para el mismo.
 
-En nuestro caso, por la naturaleza del problema planteado, utilizamos una pequeña librería de celdas estándar diseñadas para tamaño mínimo de canal n, y p. %Una referencia al Rabaey es necesaria? 
-Otra característica de la librería es la distancia entre el riel de VSS hasta el riel de VDD. Esta distancia es de 117 $\lambda$ (En nuestra tecnología de 180~$\mathrm{nm}$, el valor de lambda es: $\lambda = 100~\mathrm{nm}$), lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories.
+En nuestro caso, aprovechando que la suma se realiza con apenas 3 compuertas: \verb.and., \verb.or., \verb.xor., podemos construir nuestro propio conjunto de celdas. Como punto de partida, utilizamos celdas que fueron realizadas para un estudio sobre circuitos digitales operando por debajo de la región de inversión debil\cite{subthresholdArith}.
+ %Una referencia al Rabaey es necesaria? 
+\subsection{Características}
+Aprovechamos estas celdas correctamente dimensionadas para lograr el apilamiento en filas y columnas. Para nuestros objetivos, modificamos las dimensiones de los transistores de canal P, para lograr un tiempo de crecida y bajada más simétricos, y así mejorar la velocidad.
 
- 
+Otra característica de estas celdas es la distancia entre el riel de VSS hasta el riel de VDD. Esta distancia es de 128 $\lambda$ (En nuestra tecnología de 180~$\mathrm{nm}$, el valor de lambda es: $\lambda = 100~\mathrm{nm}$), lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories.
+
+ \begin{figure}[h]
+\centering
+\includegraphics[scale=.7]{figuras/CeldEstandarAlto.eps}
+  \caption{Plantilla para mostrar la grilla de interconexionado}
+  \label{fig:pitchCeldaEstandar}
+\end{figure}
+
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.15\textwidth}
+                \includegraphics[width=1.075\textwidth]{figuras/and2_1x.png}
+                \caption{and2\_1x}
+                \label{fig:gull}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.15\textwidth}
+                \includegraphics[width=1\textwidth]{figuras/or2_1x.png}
+                \caption{or2\_1x}
+                \label{fig:tiger}
+        \end{subfigure} 
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.15\textwidth}
+                \includegraphics[width=1.31\textwidth]{figuras/xor2_1x.png}
+                \caption{xor\_1x}
+                \label{fig:mouse}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.15\textwidth}
+                \includegraphics[width=0.845\textwidth]{figuras/id_1x_.png}
+                \caption{buffer}
+                \label{fig:mouse}
+        \end{subfigure}
+        \caption{Pictures of animals}\label{fig:animals}
+\end{figure}
+
+
+
+
+
+%\begin{figure}[h]
+%  \centering
+%\begin{subfigure}[b]{0.20\textwidth}
+%                \centering
+%                \includegraphics[scale=0.9]{figuras/and2_1x.png}
+%                \caption{and2_1x}
+%                \label{fig:lay_and2_1x}
+%        \end{subfigure}
+%\begin{subfigure}[b]{0.20\textwidth}
+%                \centering
+%                \includegraphics[scale=1]{figuras/or2_1x.png}
+%                \caption{or2_1x}
+%                \label{fig:lay_or2_1x}
+%        \end{subfigure}
+%\begin{subfigure}[b]{0.20\textwidth}
+%                \centering
+%                \includegraphics[scale=1]{figuras/xor2_1x.png}
+%                \caption{xor2_1x}
+%                \label{fig:lay_xor2_1x}
+%        \end{subfigure}
+%\begin{subfigure}[b]{0.20\textwidth}
+%                \centering
+%                \includegraphics[scale=1]{figuras/id_1x.png
+%                \caption{buffer}
+%                \label{fig:lay_id_1x}
+%        \end{subfigure}
+%  \caption{4 celdas estándar}\label{fig:lay_standarCells}
+%\end{figure}
+
 
 %http://cmosedu.com/cmos1/electric/electric.htm
 % “Tiny-Chip” padframes [1.5 mm x 1.5 mm]
 
 \section{Ubicación y Cableado (\emph{Place \& Route})}
-Partimos desde la descripción estructural\footnote{El resultado de la síntesis hecha con lava es un netlist a nivel de compuerta, listo para ser usado por una herramienta de \emph{place \& route}Gate-level netlist vhdl.} del vhdl que producimos en el capítulo \ref{diseñoDigital}. De \emph{Electric} usaremos la herramienta llamada \emph{Silicon Compiler}, que se encarga de ubicar y conectar las celdas según el archivo vhdl. En el apéndice \ref{vhdlNetlist} mostramos el resultado de sintetizar a compuertas nuestro circuito. Las compuertas que se usan son compuertas lógicas genéricas, aún podemos modificar este netlist primero para hacer optimizaciones lógicas, que en nuestro caso esto no es conveniente ya que hemos elegido la arquitectura para lograr la mejor relación de compromiso entre velocidad y menor interconectividad. Otra optimización a realizar es eligiendo la fuerza de la celda.
+Partimos desde la descripción estructural\footnote{El resultado de la síntesis hecha con \textbf{lava} es un \emph{netlist} a nivel de compuerta, listo para ser usado por una herramienta de \gls{pnr}.} que producimos en el capítulo \ref{diseñoDigital}. De \emph{Electric} usaremos la herramienta llamada \textbf{\emph{Silicon Compiler}}, que se encarga de ubicar y conectar las celdas según el \emph{netlist} VHDL. En la figura \ref{fig:SCconf} vemos la configuración necesaria para hacer el \gls{pnr} con nuestras celdas estándar.
 
 
+% Configuración del Silicon Compiler
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{figuras/SCconf.png}
+  \caption{Configuración del Silicon Compiler}
+  \label{fig:SCconf}
+\end{figure}
 
-\emph{place \& route}
-
-
-
-Arquero para que este archivo pueda ser usado con Electric fué necesario hacer algunas modificaciones:
+Para que este archivo pueda ser usado por el \textbf{\emph{Silicon Compiler}} fué necesario hacer algunas modificaciones:
 \begin{enumerate}
-\item Reemplazar los nombres de las instancias de las celdas estándar que  seleccionamos en la sección \ref{celdasEstandars} y \emph{Electric} utilizará.
+\item Reemplazar los nombres de las instancias de las celdas estándar que seleccionamos en la sección \ref{celdasEstandars} y \emph{Electric} utilizará.
 \item En la parte del vhdl que comienza la descripción estructural es necesario agregar las celdas estandar que serán utilizadas en el circuito.
 \item Quitar todas las instancias de \verb|wire port map (...)| volviendo a conectar lo que queda desconectado al quitar estas instancias.
 \end{enumerate}  
 Estas tareas las realizamos modificando el código del programa de lava que crea el netlist vhdl llamado \verb|VhdlNew.hs|, y con un script\footnote{Adjuntamos el script en el apéndice \ref{scriptPerl}} en perl que es lanzado desde el mismo.
+
+\subsection{Sumadores de 8 bits}
+A modo de ejemplo ilustrativo, mostramos el layout de los 3 sumadores para el tamaño de 8 bits.
+
+% Layout de Ripple Carry 8 bits
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{figuras/lay_ripplecarry8bits.png}
+  \caption{Ripple Carry 8 bits}
+  \label{fig:lay_rc8}
+\end{figure}
+
+
+% Layout de Skalansky 8 bits
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.55]{figuras/lay_skalansky8bits.png}
+  \caption{Layout del sumador Skalansky 8 bits}
+  \label{fig:lay_sk8}
+\end{figure}
+
+% Layout de Brent-kung 8 bits
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.55]{figuras/lay_brentkung8bits.png}
+  \caption{Layout del sumador Brent-Kung 8 bits}
+  \label{fig:lay_bk8}
+\end{figure}
+
+
+
+
 \subsection{Métricas de Calidad de un circuito digital}
 
 Para cuantificar la calidad de un circuito, podemos analizar un circuito desde diferentes perspectivas: Costo, funcionalidad, robustez, performance y consumo de energía. Tomaremos estas dos últimas métricas, mas la del área (propiedad que define el costo) del circuito, para realizar la comparación entre las distintas arquitecturas analizadas.
