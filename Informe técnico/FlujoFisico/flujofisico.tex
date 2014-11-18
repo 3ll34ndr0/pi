@@ -148,7 +148,7 @@ Ahora es necesario mapear estas funciones lógicas a compuertas lógicas reales,
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{figuras/map-xnor.png}
-  \caption{Mapeo de funciones lógicas a celdas estándar}
+  \caption{Mapeo de una función lógica a una celda estándar}
   \label{fig:map-xnor}
 \end{figure}
 
@@ -157,14 +157,14 @@ Es común elegir las celdas estándar según el tipo de aplicación a desarrolla
 En nuestro caso, aprovechando que la suma se realiza con apenas 3 compuertas: \verb.and., \verb.or., \verb.xor., podemos construir nuestro propio conjunto de celdas. Como punto de partida, utilizamos celdas que fueron realizadas para un estudio sobre circuitos digitales operando por debajo de la región de inversión debil\cite{subthresholdArith}.
  %Una referencia al Rabaey es necesaria? 
 \subsection{Características}
-Aprovechamos estas celdas correctamente dimensionadas para lograr el apilamiento en filas y columnas. Para nuestros objetivos, modificamos las dimensiones de los transistores de canal P, para lograr un tiempo de crecida y bajada más simétricos, y así mejorar la velocidad.
+Aprovechamos estas celdas ya que están correctamente dimensionadas para lograr el apilamiento en filas y columnas, y una grilla de interconexionado amplia, que nos evitará problemas de este tipo. Para nuestros objetivos, modificamos las dimensiones de los transistores de canal P, para lograr un tiempo de crecida y bajada más simétricos, y así mejorar la velocidad.
 
-Otra característica de estas celdas es la distancia entre el riel de VSS hasta el riel de VDD. Esta distancia es de 128 $\lambda$ (En nuestra tecnología de 180~$\mathrm{nm}$, el valor de lambda es: $\lambda = 100~\mathrm{nm}$), lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories.
+Otra característica de estas celdas es la distancia entre el riel de VSS hasta el riel de VDD. Esta distancia es de 128 $\lambda$ (En nuestra tecnología de 180~$\mathrm{nm}$, el valor de lambda es: $\lambda = 100~\mathrm{nm}$), lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories, como podemos ver en la figura \ref{fig:pitchCeldaEstandar}
 
  \begin{figure}[h]
 \centering
 \includegraphics[scale=.7]{figuras/CeldEstandarAlto.eps}
-  \caption{Plantilla para mostrar la grilla de interconexionado}
+  \caption{Grilla de interconexionado de las celdas estándar}
   \label{fig:pitchCeldaEstandar}
 \end{figure}
 
@@ -174,7 +174,7 @@ Otra característica de estas celdas es la distancia entre el riel de VSS hasta 
                 \includegraphics[width=1.075\textwidth]{figuras/and2_1x.png}
                 \caption{and2\_1x}
                 \label{fig:gull}
-        \end{subfigure}%
+        \end{subfigure}\quad
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
         \begin{subfigure}[b]{0.15\textwidth}
@@ -188,47 +188,18 @@ Otra característica de estas celdas es la distancia entre el riel de VSS hasta 
                 \includegraphics[width=1.31\textwidth]{figuras/xor2_1x.png}
                 \caption{xor\_1x}
                 \label{fig:mouse}
-        \end{subfigure}
+        \end{subfigure}\qquad
         \begin{subfigure}[b]{0.15\textwidth}
                 \includegraphics[width=0.845\textwidth]{figuras/id_1x_.png}
                 \caption{buffer}
                 \label{fig:mouse}
         \end{subfigure}
-        \caption{Pictures of animals}\label{fig:animals}
+        \caption{Conjunto de celdas estándar}\label{fig:animals}
 \end{figure}
 
 
 
 
-
-%\begin{figure}[h]
-%  \centering
-%\begin{subfigure}[b]{0.20\textwidth}
-%                \centering
-%                \includegraphics[scale=0.9]{figuras/and2_1x.png}
-%                \caption{and2_1x}
-%                \label{fig:lay_and2_1x}
-%        \end{subfigure}
-%\begin{subfigure}[b]{0.20\textwidth}
-%                \centering
-%                \includegraphics[scale=1]{figuras/or2_1x.png}
-%                \caption{or2_1x}
-%                \label{fig:lay_or2_1x}
-%        \end{subfigure}
-%\begin{subfigure}[b]{0.20\textwidth}
-%                \centering
-%                \includegraphics[scale=1]{figuras/xor2_1x.png}
-%                \caption{xor2_1x}
-%                \label{fig:lay_xor2_1x}
-%        \end{subfigure}
-%\begin{subfigure}[b]{0.20\textwidth}
-%                \centering
-%                \includegraphics[scale=1]{figuras/id_1x.png
-%                \caption{buffer}
-%                \label{fig:lay_id_1x}
-%        \end{subfigure}
-%  \caption{4 celdas estándar}\label{fig:lay_standarCells}
-%\end{figure}
 
 
 %http://cmosedu.com/cmos1/electric/electric.htm
@@ -241,7 +212,7 @@ Partimos desde la descripción estructural\footnote{El resultado de la síntesis
 % Configuración del Silicon Compiler
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.7]{figuras/SCconf.png}
+\includegraphics[scale=0.65]{figuras/SCconf.png}
   \caption{Configuración del Silicon Compiler}
   \label{fig:SCconf}
 \end{figure}
