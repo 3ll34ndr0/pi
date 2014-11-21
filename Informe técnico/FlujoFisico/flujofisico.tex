@@ -96,7 +96,7 @@ El hecho de que no cuente con un sintetizador lógico, como señalamos en la tab
 En este punto, es importante mencionar un aspecto de la industria de los semiconductores. En los orígenes, la industria de semicoductores estaba verticalmente integrada. Esto significaba que la misma empresa que diseñaba el producto, también diseñaba las herramientas de software y fabricaba el chip. Pero hace poco mas de 20 años, surge la separación del proceso de diseño y fabricación. Hoy en día existen empresas que se dedican sólamente a desarrollar el producto, otras que se dedican únicamente a desarrollar herramientas de software para el diseño, otras que sólamente se dedican a fabricar los diseños de otras empresas, y también persisten las empresas que realizan todo el proceso (conocidas como \gls{icms}), abriendo las puertas a otras empresas de diseño sin fábrica (conocidas como \emph{fabless}), para evitar la capacidad ociosa instalada y disminuir sus costos.
 \subsection{Obleas multiproyectos}
 Dentro de este esquema, existe una empresa (MOSIS) que se dedica a recolectar proyectos de diseño que están en etapa de prototipo o de bajo volumen, creando obleas multiproyecto que se envían a fabricar, dividiendo los costos por la cantidad de proyectos que incluye. De esta forma, se logra acceder a la fabricación de semiconductores a muy bajo costo. Tiene sus limitaciones en cuanto a tecnologías de fabricación disponibles, cantidades, y tiempo de entrega largos, pero permite que proyectos educativos, de investigación o de baja escala sean económicamente factibles.
-Por ello, nuestro proceso deberá ser seleccionado dentro de la lista de lo que MOSIS ofrece\footnote{Esta lista está en constante cambio y actualización, se brinda aquí de modo ilustrativo. Para una lista actualizada visitar https://www.mosis.com/products/fab-processes }:
+Por ello, nuestras opciones serán algunna de las que MOSIS ofrece. En la tabla \ref{cuadro:procesosDisponibles} vemos una lista que está en constante cambio y actualización, se brinda aquí de modo ilustrativo. Para una lista actualizada visitar https://www.mosis.com/products/fab-processes.
 
 \begin{table}[h]
 \centering
@@ -133,7 +133,20 @@ Motorola PowerPC 7445 y 7455 (Apollo 6) & 2002           \\ \bottomrule
 \label{cuadro:procesadores180nm}
 \end{table}
 
-Se eligió TSMC porque es la única fábrica que MOSIS nos permite utilizar SCMOS para el diseño, para 180~nm.
+MOSIS especifica los procesos disponibles que soportan las reglas escalables en su documento \emph{\textbf{Design Rules. MOSIS Scalable CMOS (SCMOS), Revision 8.00.}}, en el cuál encontramos que para 180~nm sólo podemos elegir a la fábrica TSMC.
+
+Además, podemos optar entre las reglas \textbf{SCN6M\_SUBM} y las \textbf{SCN6M\_DEEP}. Decidimos utilizar la segunda, ya que tiene un valor de $\lambda$ menor, lo cual significa un tamaño de transistor resultado más óptimo.
+
+El proceso nos ofrece 6 capas de metal (cobre) para la interconexión, 1 capa de silicio policristalino (\emph{poly}) para crear la compuerta y también para la interconexión de las mismas (distancias cortas sólamente, por su mayor resistividad que el cobre), con 2 tipos de óxidos para crear el aislante de las compuertas, los que pueden ser alimentados con tensión máxima de 1,8V, y los que pueden ser alimentados con 3,3V (pensados principalmente como transistores para los circuitos de entrada y salida del chip). MOSIS denomina a las reglas de diseño que utilizaremos para esta tecnología como SCN6M\_DEEP, que significa: 
+\begin{itemize}
+\item S: Escalable
+\item C: Tecnología de fabricación CMOS
+\item 6M: 6 metales y un poly
+\item DEEP: Reglas \emph{deep submicron}.
+\end{itemize}
+Las reglas escalables se crearon originalmente para tecnologías desde 3um hasta 1um. Cuando aparecieron tecnologías nuevas, se hicieron modificaciones a las reglas para ajustarse a las nuevas posibilidades. Entonces se crearon primero las reglas \emph{submicron}, y luego las \emph{deep submicron}
+
+Una vez definido la herramienta de diseño (\textbf{Electric}) y el proceso de fabricación a utilizar (TSMC 180~nm), definimos la variable $\lambda$, que es la unidad que utilizará nuestro software para las dimensiones físicas. Electric define a $\lambda$ como la mitad del largo de canal mínimo para la tecnología que se está utilizando. En nuestro caso, el largo de canal mínimo es de 180~nm (de allí viene la designación del nombre), por lo tanto $\lambda $ sería 90~nm. Otra elección que hay que hacer es cuál de los 
 
 \section{Selección de las Celdas estándar}\label{celdasEstandars}
 El resultado de la síntesis que realizamos en el capítulo \ref{diseñoDigital} es un \emph{netlist} VHDL que contiene sólo compuertas lógicas. Estas son compuertas lógicas abstractas, es decir que nuestro circuito fué mapeado a un conjunto finito de funciones logicas como las \verb.and., \verb.or., \verb.xor., \verb.xnor., etc.
@@ -157,14 +170,24 @@ Es común elegir las celdas estándar según el tipo de aplicación a desarrolla
 En nuestro caso, aprovechando que la suma se realiza con apenas 3 compuertas: \verb.and., \verb.or., \verb.xor., podemos construir nuestro propio conjunto de celdas. Como punto de partida, utilizamos celdas que fueron realizadas para un estudio sobre circuitos digitales operando por debajo de la región de inversión debil\cite{subthresholdArith}.
  %Una referencia al Rabaey es necesaria? 
 \subsection{Características}
-Aprovechamos estas celdas ya que están correctamente dimensionadas para lograr el apilamiento en filas y columnas, y una grilla de interconexionado amplia, que nos evitará problemas de este tipo. Para nuestros objetivos, modificamos las dimensiones de los transistores de canal P, para lograr un tiempo de crecida y bajada más simétricos, y así mejorar la velocidad.
+Estas celdas están correctamente dimensionadas para lograr el apilamiento en filas y columnas, y una grilla de interconexionado amplia, que nos evitará problemas de este tipo. Para nuestros objetivos, modificamos las dimensiones de los transistores de canal P, para lograr un tiempo de crecida y bajada más simétricos, y así mejorar la velocidad. Resumimos las características de nuestras celdas estándar:
 
-Otra característica de estas celdas es la distancia entre el riel de VSS hasta el riel de VDD. Esta distancia es de 128 $\lambda$ (En nuestra tecnología de 180~$\mathrm{nm}$, el valor de lambda es: $\lambda = 100~\mathrm{nm}$), lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories, como podemos ver en la figura \ref{fig:pitchCeldaEstandar}
+
+\begin{description}
+\item[Altura] 128 $\lambda$\footnote{En la bibliografía en ingles se denomina \emph{pitch}}, es la distancia desde el riel de Vdd hasta Vss, lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories, como vemos en la figura \ref{fig:pitchCeldaEstandar}.  
+\item[Ancho del riel de alimentación] 8 $\lambda$
+\item[Tamaño de los transistores] Transistores \verb.n.: largo y ancho mínimo ($L_n = 2 \lambda$, $W_n =4 \lambda$, $\frac{W_n}{L_n}=2$). Transistores \verb.p.: Largo mínimo. Dos versiones, una de ancho mínimo con $\frac{W_p}{L_p}=2$ y otra de mayor fuerza $\frac{W_p}{L_p}=4$, a la que le agregamos \verb._1x. al final del nombre. 
+\item[Disposición de los pines] Se ubican siempre en la intersección de las pistas horizontales y verticales, que tienen una separación de $8 \lambda$, ver figura \ref{fig:pitchCeldaEstandar}.
+\item[Conexión a bulk] Todas las celdas tienen conexión a bulk cada $8\lambda$ para evitar el problema conocido como \emph{latch up} que surge a causa de malas conexiones entre el \emph{bulk} y la alimentación.
+\end{description}
+
+
+Otra característica de estas celdas es la distancia entre el riel de VSS hasta el riel de VDD. Esta distancia es de 128 $\lambda$, lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories, como podemos ver en la figura \ref{fig:pitchCeldaEstandar}.  
 
  \begin{figure}[h]
 \centering
 \includegraphics[scale=.7]{figuras/CeldEstandarAlto.eps}
-  \caption{Grilla de interconexionado de las celdas estándar}
+  \caption{Grilla de interconexionado y riel de alimentación de las celdas estándar}
   \label{fig:pitchCeldaEstandar}
 \end{figure}
 
@@ -206,7 +229,7 @@ Otra característica de estas celdas es la distancia entre el riel de VSS hasta 
 % “Tiny-Chip” padframes [1.5 mm x 1.5 mm]
 
 \section{Ubicación y Cableado (\emph{Place \& Route})}
-Partimos desde la descripción estructural\footnote{El resultado de la síntesis hecha con \textbf{lava} es un \emph{netlist} a nivel de compuerta, listo para ser usado por una herramienta de \gls{pnr}.} que producimos en el capítulo \ref{diseñoDigital}. De \emph{Electric} usaremos la herramienta llamada \textbf{\emph{Silicon Compiler}}, que se encarga de ubicar y conectar las celdas según el \emph{netlist} VHDL. En la figura \ref{fig:SCconf} vemos la configuración necesaria para hacer el \gls{pnr} con nuestras celdas estándar.
+Partimos desde la descripción estructural\footnote{El resultado de la síntesis hecha con \textbf{lava} es un \emph{netlist} a nivel de compuerta, listo para ser usado por una herramienta de \gls{pnr}.} que producimos en el capítulo \ref{diseñoDigital}. De \emph{Electric} usaremos la herramienta llamada \textbf{\emph{Silicon Compiler}}, que se encarga de ubicar y conectar las celdas según el \emph{netlist} VHDL. En la figura \ref{fig:SCconf} vemos la configuración necesaria para hacer el \gls{pnr} con nuestras celdas estándar. La configuración se realiza para ajustar la herramienta a las reglas de \gls(drc) y las dimensiones de nuestra celdas estándar. Pero la variable de ajuste para variar el \emph{floorplan} es \emph{Number of rows of cells}. Según la cantidad de filas que asignemos, será el resultado obtenido. Como regla de oro para todo \emph{layout} es que sea lo más cuadrado posible, ya que de esta forma es más eficiente el uso del área, cuando integramos nuestro circuito con otros de mayor jerarquía. La métrica de selección del resultado será el área que ocupe nuestro circuito, y la relación entre sus lados: cuanto más pequeño y cuadrado mejor. En las tablas \ref{tabla:rippleCarry}, \ref{tabla:skalansky} y \ref{tabla:brent-kung} vemos los resultados \gls(pnr) para todos los sumadores analizados, con 3 tamaños distintos y para diferentes alternativas de \emph{floorplan}, variando el parámetro \textbf{\emph{Number of rows of cells}}.
 
 
 % Configuración del Silicon Compiler
@@ -217,77 +240,117 @@ Partimos desde la descripción estructural\footnote{El resultado de la síntesis
   \label{fig:SCconf}
 \end{figure}
 
-Para que este archivo pueda ser usado por el \textbf{\emph{Silicon Compiler}} fué necesario hacer algunas modificaciones:
+La herramienta \textbf{\emph{Silicon Compiler}} requiere que el \emph{netlist} VHDL sea modificado levemente:
 \begin{enumerate}
-\item Reemplazar los nombres de las instancias de las celdas estándar que seleccionamos en la sección \ref{celdasEstandars} y \emph{Electric} utilizará.
-\item En la parte del vhdl que comienza la descripción estructural es necesario agregar las celdas estandar que serán utilizadas en el circuito.
-\item Quitar todas las instancias de \verb|wire port map (...)| volviendo a conectar lo que queda desconectado al quitar estas instancias.
-\end{enumerate}  
-Estas tareas las realizamos modificando el código del programa de lava que crea el netlist vhdl llamado \verb|VhdlNew.hs|, y con un script\footnote{Adjuntamos el script en el apéndice \ref{scriptPerl}} en perl que es lanzado desde el mismo.
+%\item Reemplazar los nombres de las instancias de las celdas estándar que seleccionamos en la sección \ref{celdasEstandars} y \emph{Electric} utilizará.
+\item Es necesario agregar las celdas estandar que serán utilizadas en el circuito, donde comienza la descripción estructural del VHDL.
+\item Los nombres no pueden usar los símbolos [ y ], por lo cual es necesario eliminarlos.
+\end{enumerate} 
+ 
+Estas tareas se realizan automáticamente si modificamos el código del programa de \textbf{lava} llamado \verb|VhdlNew.hs|, encargado de crear el \emph{netlist}, y con un script escrito en \textbf{perl} que mostramos en el apéndice \ref{scriptPerl}.
 
-\subsection{Sumadores de 8 bits}
-A modo de ejemplo ilustrativo, mostramos el layout de los 3 sumadores para el tamaño de 8 bits.
+\subsection{Distintas alternativas}
+A modo de ejemplo ilustrativo, mostramos el \emph{layout} de los 3 sumadores para el tamaño de 8 bits.
 
-% Layout de Ripple Carry 8 bits
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}cccccccccc@{}}
+\toprule
+\multicolumn{1}{l}{\textbf{Ripple Carry}} & \multicolumn{3}{c}{8}    & \multicolumn{3}{c}{16}      & \multicolumn{3}{c}{32}      \\ \midrule
+filas                                     & 3      & 4      & 5      & 5       & 6       & 7       & 8       & 7       & 6       \\
+ancho                                     & 1297   & 966    & 843    & 1562    & 1350    & 1142    & 1881    & 2169    & 2581    \\
+alto                                      & 665    & 839    & 958    & 1227    & 1196    & 1600    & 2000    & 1850    & 1360    \\
+área                                      & 862505 & 810474 & 807594 & 1916574 & 1614600 & 1827200 & 3762000 & 4012650 & 3510160 \\
+ancho/alto                                & 0,51   & 0,87   & 1,14   & 0,79    & 0,89    & 1,40    & 1,06    & 0,85    & 0,53    \\ \bottomrule
+\end{tabular}
+}
+\caption{Ubicación y conexionado para Ripple carry en 3 tamaños: 8, 16 y 32 bits}
+\label{tabla:rippleCarry}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}ccccccccccc@{}}
+\toprule
+\textbf{Skalansky} & \multicolumn{3}{c}{8}       & \multicolumn{4}{c}{16}                & \multicolumn{3}{c}{32}      \\ \midrule
+filas              & 3       & 4       & 5       & 4       & 5       & 6       & 7       & 6       & 7       & 8       \\
+ancho              & 1516    & 1167    & 954     & 3538    & 2042    & 1825    & 1536    & 3678    & 3229    & 2860    \\
+alto               & 810     & 973     & 1252    & 1345    & 1581    & 1878    & 2063    & 2639    & 2695    & 3072    \\
+área               & 1227960 & 1135491 & 1194408 & 4758610 & 3228402 & 3427350 & 3168768 & 9706242 & 8702155 & 8785920 \\
+ancho/alto         & 0,53    & 0,83    & 1,31    & 0,38    & 0,77    & 1,03    & 1,34    & 0,72    & 0,83    & 1,07    \\ \bottomrule
+\end{tabular}
+}
+\caption{Ubicación y conexionado para Skalanksy en 3 tamaños: 8, 16 y 32 bits}
+\label{tabla:skalansky}
+\end{table}
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}cccccccccccc@{}}
+\toprule
+\textbf{Brent-Kung} & \multicolumn{3}{c}{8}      & \multicolumn{4}{c}{16}                & \multicolumn{4}{c}{32}                \\ \midrule
+filas               & 3       & 4      & 5       & 4       & 5       & 6       & 7       & 6       & 7       & 8       & 9       \\
+ancho               & 1386    & 1090   & 945     & 2268    & 1757    & 1545    & 1429    & 3196    & 1983    & 2569    & 2424    \\
+alto                & 746     & 910    & 1199    & 1255    & 1436    & 1540    & 1959    & 2024    & 2871    & 2927    & 2882    \\
+área                & 1033956 & 991900 & 1133055 & 2846340 & 2523052 & 2379300 & 2799411 & 6468704 & 5693193 & 7519463 & 6985968 \\
+ancho/alto          & 0,54    & 0,83   & 1,27    & 0,55    & 0,82    & 1,00    & 1,37    & 0,63    & 1,45    & 1,14    & 1,19    \\ \bottomrule
+\end{tabular}
+}
+\caption{Ubicación y conexionado para Brent-Kung en 3 tamaños: 8, 16 y 32 bits}
+\label{tabla:brent-kung}
+\end{table}
+
+
+
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.7]{figuras/lay_ripplecarry8bits.png}
-  \caption{Ripple Carry 8 bits}
+\includegraphics[scale=1]{figuras/PnR9disenos.eps}
+  \caption{diseños}
   \label{fig:lay_rc8}
 \end{figure}
 
 
-% Layout de Skalansky 8 bits
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.55]{figuras/lay_skalansky8bits.png}
-  \caption{Layout del sumador Skalansky 8 bits}
-  \label{fig:lay_sk8}
-\end{figure}
+%\subsection{Métricas de Calidad de un circuito digital}
 
-% Layout de Brent-kung 8 bits
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.55]{figuras/lay_brentkung8bits.png}
-  \caption{Layout del sumador Brent-Kung 8 bits}
-  \label{fig:lay_bk8}
-\end{figure}
+%Para cuantificar la calidad de un circuito, podemos analizar un circuito desde diferentes perspectivas: Costo, funcionalidad, robustez, performance y consumo de energía. Tomaremos estas dos últimas métricas, mas la del área (propiedad que define el costo) del circuito, para realizar la comparación entre las distintas arquitecturas analizadas.
 
 
+%\subsection{Performance}
+
+%\begin{figure}[h!]
+%\vspace{-5pt}
+%  \centering
+%\includegraphics[scale=.3]{figuras/RO5.png}
+%  \caption{Layout del Oscilador anillo (N=5)}
+%\label{fig:RO5_lay}
+%\vspace{-10pt}
+%\end{figure}
+
+%Realizamos un oscilador anillo de 5 etapas, utilizando el inversor mas chico de nuestra librería de celdas estándar elegida. En la figura \ref{fig:RO5_lay} podemos ver el \emph{layout} que realizamos para esta prueba. Hacemos la extracción de parásitos y simulamos el circuito para obtener la forma de onda de la figura \ref{fig:RO5_wf}.
+
+%Como podemos deducir de la figura \ref{fig:RO5_wf}, el tiempo de propagación es de 32~pS, lo cual no significa que nuestros circuitos puedan correr a 31,25~GHz. Cuando medimos el tiempo de propagación usando este circuito, deberemos considerar que este es sólo una forma de comparar las tecnologías de fabricación y las topologías de las compuertas, pero de ninguna forma será la frecuencia máxima a la que pueda funcionar nuestro circuito, ya que la complejidad y cantidad de compuertas es enormemente mayor que la de un inversor. Según Rabaey\cite{rabaey2003} se puede esperar velocidades entre 50 a 100 veces mas bajas, aunque optimizando el diseño se puede lograr acercarnos un poco mas a esta frecuencia ideal. 
+
+%\begin{figure}[h!]
+%\vspace{-5pt}
+%  \centering
+%\includegraphics[scale=.6]{figuras/RO5.eps}
+%  \caption{Simulación con parásitos extraidos del layout de la figura \ref{fig:RO5_lay}}
+%\label{fig:RO5_wf}
+%\vspace{-10pt}
+%\end{figure}
 
 
-\subsection{Métricas de Calidad de un circuito digital}
-
-Para cuantificar la calidad de un circuito, podemos analizar un circuito desde diferentes perspectivas: Costo, funcionalidad, robustez, performance y consumo de energía. Tomaremos estas dos últimas métricas, mas la del área (propiedad que define el costo) del circuito, para realizar la comparación entre las distintas arquitecturas analizadas.
-
-\subsection{Performance}
-
-\begin{figure}[h!]
-\vspace{-5pt}
-  \centering
-\includegraphics[scale=.3]{figuras/RO5.png}
-  \caption{Layout del Oscilador anillo (N=5)}
-\label{fig:RO5_lay}
-\vspace{-10pt}
-\end{figure}
-
-Realizamos un oscilador anillo de 5 etapas, utilizando el inversor mas chico de nuestra librería de celdas estándar elegida. En la figura \ref{fig:RO5_lay} podemos ver el \emph{layout} que realizamos para esta prueba. Hacemos la extracción de parásitos y simulamos el circuito para obtener la forma de onda de la figura \ref{fig:RO5_wf}.
-
-Como podemos deducir de la figura \ref{fig:RO5_wf}, el tiempo de propagación es de 32~pS, lo cual no significa que nuestros circuitos puedan correr a 31,25~GHz. Cuando medimos el tiempo de propagación usando este circuito, deberemos considerar que este es sólo una forma de comparar las tecnologías de fabricación y las topologías de las compuertas, pero de ninguna forma será la frecuencia máxima a la que pueda funcionar nuestro circuito, ya que la complejidad y cantidad de compuertas es enormemente mayor que la de un inversor. Según Rabaey\cite{rabaey2003} se puede esperar velocidades entre 50 a 100 veces mas bajas, aunque optimizando el diseño se puede lograr acercarnos un poco mas a esta frecuencia ideal. 
-
-\begin{figure}[h!]
-\vspace{-5pt}
-  \centering
-\includegraphics[scale=.6]{figuras/RO5.eps}
-  \caption{Simulación con parásitos extraidos del layout de la figura \ref{fig:RO5_lay}}
-\label{fig:RO5_wf}
-\vspace{-10pt}
-\end{figure}
-
-
-\subsection{Tiempo mínimo de propagación}
-t_p = 32 p
+%\subsection{Tiempo mínimo de propagación}
+%t_p = 32 p
 
 %Para simular corners: opConditions.lib
 
+
+%https://sites.google.com/site/cecstdcell/
+%http://www.vlsitechnology.org/
 
