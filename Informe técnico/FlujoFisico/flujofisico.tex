@@ -54,7 +54,7 @@ Esto es un conjunto de capas lógicas junto a sus reglas de diseño, que proveen
 \item Mayor cantidad de herramientas integradas
 \item Flexibilidad para importar y exportar datos. 
 \item Disponibilidad de un Kit de diseño para el proceso de la tecnología seleccionada, conocido como \gls{pdk}.
-\end{itemize}
+\end{itemize}	ºº
 
 \subsection{Relevamiento}
 Luego de una inspección de esas características, las herramientas candidatas que cumplen con estas características son:
@@ -141,6 +141,7 @@ El proceso nos ofrece 6 capas de metal (cobre) para la interconexión, 1 capa de
 \begin{itemize}
 \item S: Escalable
 \item C: Tecnología de fabricación CMOS
+\item N: Pozo N.
 \item 6M: 6 metales y un poly
 \item DEEP: Reglas \emph{deep submicron}.
 \end{itemize}
@@ -187,7 +188,7 @@ Otra característica de estas celdas es la distancia entre el riel de VSS hasta 
  \begin{figure}[h]
 \centering
 \includegraphics[scale=.7]{figuras/CeldEstandarAlto.eps}
-  \caption{Grilla de interconexionado y riel de alimentación de las celdas estándar}
+  \caption{Grilla de interconexionado y riel de alimentación de las celdas estándar de $128 \lambda$. Por encima de cada celda, pueden pasar 16 pistas horizontales que la herramienta de conexionado tendrá a disposición, a partir del metal 3 para arriba. Notar la separación de $8~ \lambda$ para todas las pistas horizontales, y $8~\lambda$ para las verticales también. Sólo en la intersección de las pistas puede ubicarse los pines de entrada/salida de la celda, así como los contactos a \emph{bulk}.}
   \label{fig:pitchCeldaEstandar}
 \end{figure}
 
@@ -229,7 +230,23 @@ Otra característica de estas celdas es la distancia entre el riel de VSS hasta 
 % “Tiny-Chip” padframes [1.5 mm x 1.5 mm]
 
 \section{Ubicación y Cableado (\emph{Place \& Route})}
-Partimos desde la descripción estructural\footnote{El resultado de la síntesis hecha con \textbf{lava} es un \emph{netlist} a nivel de compuerta, listo para ser usado por una herramienta de \gls{pnr}.} que producimos en el capítulo \ref{diseñoDigital}. De \emph{Electric} usaremos la herramienta llamada \textbf{\emph{Silicon Compiler}}, que se encarga de ubicar y conectar las celdas según el \emph{netlist} VHDL. En la figura \ref{fig:SCconf} vemos la configuración necesaria para hacer el \gls{pnr} con nuestras celdas estándar. La configuración se realiza para ajustar la herramienta a las reglas de \gls(drc) y las dimensiones de nuestra celdas estándar. Pero la variable de ajuste para variar el \emph{floorplan} es \emph{Number of rows of cells}. Según la cantidad de filas que asignemos, será el resultado obtenido. Como regla de oro para todo \emph{layout} es que sea lo más cuadrado posible, ya que de esta forma es más eficiente el uso del área, cuando integramos nuestro circuito con otros de mayor jerarquía. La métrica de selección del resultado será el área que ocupe nuestro circuito, y la relación entre sus lados: cuanto más pequeño y cuadrado mejor. En las tablas \ref{tabla:rippleCarry}, \ref{tabla:skalansky} y \ref{tabla:brent-kung} vemos los resultados \gls(pnr) para todos los sumadores analizados, con 3 tamaños distintos y para diferentes alternativas de \emph{floorplan}, variando el parámetro \textbf{\emph{Number of rows of cells}}.
+Partimos desde la descripción estructural\footnote{El resultado de la síntesis hecha con \textbf{lava} es un \emph{netlist} VHDL a nivel de compuerta, listo para ser usado por una herramienta de \gls{pnr}.} que producimos en el capítulo \ref{diseñoDigital}. De \emph{Electric} usaremos la herramienta llamada \textbf{\emph{Silicon Compiler}}, que se encarga de ubicar y conectar las celdas según el \emph{netlist} VHDL.
+
+\subsection{Modificación al código fuente de la herramieta de síntesis lógica}
+
+La herramienta \textbf{\emph{Silicon Compiler}} requiere que el \emph{netlist} VHDL sea modificado levemente:
+\begin{enumerate}
+%\item Reemplazar los nombres de las instancias de las celdas estándar que seleccionamos en la sección \ref{celdasEstandars} y \emph{Electric} utilizará.
+\item\label{celdas} Es necesario agregar las celdas estándar como componente en la porción declarativa de la arquitectura de la entidad  en VHDL, que serán utilizadas instanciadas en el circuito.
+\item\label{caracteres} Los nombres no pueden usar los símbolos [ y ], por lo cual es necesario eliminarlos.
+\end{enumerate} 
+ 
+Modificamos el código del programa de \textbf{lava} llamado \verb|VhdlNew.hs|, encargado de crear el \emph{netlist} VHDL para realizar (\ref{celdas}), y para lograr (\ref{caracteres}) agregamos una línea para que lance un pequeño programa escrito en \textbf{perl} que mostramos en el apéndice \ref{scriptPerl}. Luego de esta modificación, cuando realizamos la síntesis lógica descripta en el capítulo \ref{diseñoDigital}, el \emp{netlist} VHDL obtenido ya puede ser utilizado por \textbf{\emph{Silicon Compiler}}.
+
+
+
+\subsection{Configuración de la herramienta de \gls{pnr}}
+En la figura \ref{fig:SCconf} vemos la configuración necesaria para hacer el \gls{pnr} con nuestras celdas estándar. La configuración se realiza para ajustar la herramienta a las reglas de \gls(drc) y las dimensiones de nuestra celdas estándar. La variable de ajuste para modificar el \emph{floorplan} es el parámetro \emph{Number of rows of cells}. Según la cantidad de filas que asignemos, será el resultado obtenido para cada circuito. 
 
 
 % Configuración del Silicon Compiler
@@ -240,19 +257,11 @@ Partimos desde la descripción estructural\footnote{El resultado de la síntesis
   \label{fig:SCconf}
 \end{figure}
 
-La herramienta \textbf{\emph{Silicon Compiler}} requiere que el \emph{netlist} VHDL sea modificado levemente:
-\begin{enumerate}
-%\item Reemplazar los nombres de las instancias de las celdas estándar que seleccionamos en la sección \ref{celdasEstandars} y \emph{Electric} utilizará.
-\item Es necesario agregar las celdas estandar que serán utilizadas en el circuito, donde comienza la descripción estructural del VHDL.
-\item Los nombres no pueden usar los símbolos [ y ], por lo cual es necesario eliminarlos.
-\end{enumerate} 
- 
-Estas tareas se realizan automáticamente si modificamos el código del programa de \textbf{lava} llamado \verb|VhdlNew.hs|, encargado de crear el \emph{netlist}, y con un script escrito en \textbf{perl} que mostramos en el apéndice \ref{scriptPerl}.
 
-\subsection{Distintas alternativas}
-A modo de ejemplo ilustrativo, mostramos el \emph{layout} de los 3 sumadores para el tamaño de 8 bits.
+\subsection{Distintas alternativas y resultados}
+La regla de oro para todo \emph{layout} es que sea lo más cuadrado posible, ya que de esta forma es más eficiente el uso del área cuando integramos nuestro circuito con otros de mayor jerarquía. La métrica de selección del resultado será el área que ocupe nuestro circuito y la relación entre sus lados: cuanto más pequeño\footnote{El área es una métrica de calidad del circuito, según lo planteamos en el capítulo \ref{especificaciones}.} y cuadrado mejor. En las tablas \ref{tabla:rippleCarry}, \ref{tabla:skalansky} y \ref{tabla:brent-kung} vemos los resultados para todos los sumadores analizados, con 3 tamaños distintos y para diferentes alternativas de \emph{floorplan}, variando el parámetro \textbf{\emph{Number of rows of cells}}.
 
-
+En la figura \ref{fig:diseños} presentamos todos los \emph{layout} seleccionados con el criterio recién mencionado. Resumimos con este gráfico el resultado de \gls{pnr} de cada arquitectura para 3 tamaños de sumandos distintos.
 \begin{table}[h]
 \centering
 \resizebox{\textwidth}{!}{%
@@ -269,7 +278,6 @@ ancho/alto                                & 0,51   & 0,87   & 1,14   & 0,79    &
 \caption{Ubicación y conexionado para Ripple carry en 3 tamaños: 8, 16 y 32 bits}
 \label{tabla:rippleCarry}
 \end{table}
-
 
 \begin{table}[h]
 \centering
@@ -306,13 +314,45 @@ ancho/alto          & 0,54    & 0,83   & 1,27    & 0,55    & 0,82    & 1,00    &
 \end{table}
 
 
-
 \begin{figure}[h]
 \centering
 \includegraphics[scale=1]{figuras/PnR9disenos.eps}
-  \caption{diseños}
-  \label{fig:lay_rc8}
+  \caption{Tres arquitecturas y tres tamaños de sumandos distintos. El gráfico está en escala, la unidad de los dos ejes es $\lambda$}
+  \label{fig:diseños}
 \end{figure}
+
+\section{Comparación de las distintas arquitecturas}
+
+\subsection{Performance y Potencia}
+Para realizar la comparación, necesitamos simular nuestros circuitos
+\subsubsection{Motores de simulación analógica}
+
+Para realizar una simulación que sea la mejor estimación de la performance y potencia, es necesario realizar una extracción del circuito a partir del \emph{layout}, y configurar \textbf{Electric} de la siguiente forma:
+
+\begin{itemize}
+\item Extracción de parásitos: Para que también extraiga las capacidades y resistores parásitos que significan las interconexiones: \\
+\begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Parasitics: Conservative RC. \end{footnotesize}
+\item Cargarle los modelo de transistores de la tecnología que estamos usando (TSMC 180~nm). Este es un archivo que nos brinda MOSIS que nosotros debemos editar para quitarle información de la tecnología (resistividad y capacidades de los metales, \emph{poly}, el sustrato y el silicio dopado $N^+$ y $P^+$).
+\item Seleccionara el formato (lenguage) del \emph{netlist spice} spice del simulador que utilizaremos: Las opciones son: Spice 2, Spice 3, HSpice, PSpice, Gnucap, SmartSpice,  Spice Opus, Xyce, HSpice for Assura, HSpice for Calibre. De los cuales, sólo 3 opciones son libres: Spice 3, Gnucap y Xyce.
+\end{itemize}
+
+\begin{description}
+\item[Gnucap] Simulador de circuitos analógicos y señal mixta, está diseñado para reemplazar Spice, pero con ventajas técnicas significantes. Más rápido e igual de preciso, diseñado para alta flexibilidad por medio de un sistema de plugins, algoritmos modernos, relación de compromiso entre precisión y velocidad controlado por el usuario, totalmente interactivo por medio de \emph{scripting}. Puede leer \emph{netlists} en formato tradicional \emph{spice 3}, Spectre\footnote{Motor de simulación de Cadence.} y  \emph{netlist} Verilog.
+
+\item[Ngspice] Simulador de circuitos de señal mixta. Se basa en tres paquetes de software libre: Spice3f5, Cider1b1 y Xpice. Implementa muchas mejoras y corrección de \emph{bugs}. Fué ampliamente incorporado en otros entornos de simulación de circuitos.
+
+\item[Xyce] Simulador de circuitos con compatibilidad Spice, con mejoras para lograr simulaciones de millones de transistores con la misma precisión. Implementa alto nivel de paralelismo, \emph{solvers} iterativos mejorados y simula efectos de radiación (corriente de fotones y destrucción de neutrones).
+\end{description}
+
+
+
+\end{description}
+
+
+\subsubsection{Medición de la performance}
+\subsubsection{Medición de la potencia}
+
+\subsection{Tablas comparativas de performance, potencia y área}
 
 
 %\subsection{Métricas de Calidad de un circuito digital}
