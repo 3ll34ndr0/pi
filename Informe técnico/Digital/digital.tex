@@ -263,7 +263,7 @@ p_{[i,i+3]} &= p_{i}p_{i+1}p_{i+2}p_{i+3}\nonumber
 \end{align}
 \end{equation}
 
-Podemos interpretar estas ecuaciones de la siguiente forma: las cuatro posiciones de bits propagan colectivamente un acarreo $c_\text{in}$ si y solo sí cada una de las posiciones propaga; y el bloque genera un acarreo si en la posición $i+3$ se genera uno, o se podrouce en la posición $i+2$ y es propagado por la posición $i+3$, etc.
+Podemos interpretar estas ecuaciones de la siguiente forma: las cuatro posiciones de bits propagan colectivamente un acarreo $c_\text{in}$ si y solo sí cada una de las posiciones propaga; y el bloque gener	a un acarreo si en la posición $i+3$ se genera uno, o se podrouce en la posición $i+2$ y es propagado por la posición $i+3$, etc.
 
 Con este procedimiento podemos llegar a expresar una generalización muy importante, para bloques adyacentes que se superponen $[i_1,j_i]$ y $[i_0,j_0]$, con $i_0 \leq i_1 - 1 \leq j_0 < j_i $:
 \begin{equation}
@@ -285,7 +285,7 @@ Ahora entonces definimos un operador acarreo $\circ$ para condensar estas operac
 (g,p) &= (g'',p'') \circ (g',p') = (g'' + g'p', p'p'')\nonumber
 \end{align}
 \end{equation}
-Este operador es un operador asociativo, y esto se puede demostrar utilizando la propiedad asociativa de los operadores OR y AND. Finalmente, ya tenemos un operador asociativo, y las entradas $(g''',p''')$,$(g'',p'')$,$(g',p'),\ldots$ que nos permiten plantea el problema de la construcción de la red (o bloque) de acarreos, como un problema de \emph{Prefijos Paralelos}:
+Este operador es un operador asociativo, y esto se puede demostrar utilizando la propiedad asociativa de los operadores OR y AND. Finalmente, ya tenemos un operador asociativo, y las entradas $(g''',p''')$,$(g'',p'')$,$(g',p'),\ldots$ que nos permiten plantear el problema de la construcción de la red (o bloque) de acarreos, como un problema de \emph{Prefijos Paralelos}:
 
 \begin{equation}
 \begin{align}

@@ -314,7 +314,7 @@ ancho/alto          & 0,54    & 0,83   & 1,27    & 0,55    & 0,82    & 1,00    &
 \end{table}
 
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[scale=1]{figuras/PnR9disenos.eps}
   \caption{Tres arquitecturas y tres tamaños de sumandos distintos. El gráfico está en escala, la unidad de los dos ejes es $\lambda$}
@@ -324,35 +324,131 @@ ancho/alto          & 0,54    & 0,83   & 1,27    & 0,55    & 0,82    & 1,00    &
 \section{Comparación de las distintas arquitecturas}
 
 \subsection{Performance y Potencia}
-Para realizar la comparación, necesitamos simular nuestros circuitos
-\subsubsection{Motores de simulación analógica}
+Para realizar la comparación, necesitamos simular nuestros circuitos luego de hacer una extracción del \emph{layout} del circuito, para obtener también las capacidades y resistores párasitos del mismo. A esta simulación se le suele denominar, simulación post \emph{layout}.
 
-Para realizar una simulación que sea la mejor estimación de la performance y potencia, es necesario realizar una extracción del circuito a partir del \emph{layout}, y configurar \textbf{Electric} de la siguiente forma:
+\subsubsection{Extracción del circuitos, las dimensiones físicas de los transisitores y elementos parásitos}
+
+Para realizar una simulación que sea la mejor estimación de la performance y potencia, es necesario realizar una extracción del circuito a partir del \emph{layout}, y para eso es necesario configurar \textbf{Electric} de la siguiente forma:
 
 \begin{itemize}
-\item Extracción de parásitos: Para que también extraiga las capacidades y resistores parásitos que significan las interconexiones: \\
+\item Parámetros del modelo de transistor: Cargar los modelo de transistores de la tecnología que estamos usando (TSMC 180~nm). Este es un archivo que nos brinda MOSIS, del cual la primera parte nosotros debemos comentar (ya que es toda la información propia de la tecnología y no solamente la específica para el simulador), y renombramos como {\footnotesize\verb#tsmc180nm.model#}. También es necesario realizar los siguientes cambios al archivo:\\
+\begin{footnotesize}\verb#.MODEL CMOSN NMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL N nmos# \\
+\verb#.MODEL CMOSP PMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL P nmos# \end{footnotesize} \\
+Luego de esos cambios, cargar el archivo en:\\
+\begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Use Header cards from file:.\end{footnotesize}
+	\item Del archivo recién mencionado obtenemos la resistividad de los metales, el \emph{poly}, el sustrato y el silicio dopado $N^+$ y $P^+$. También obtenemos la capacidad entre cada capa de material y el resto de las capas. Esta información la utilizamos para configurar \textbf{Electric} en: \\
+\begin{footnotesize}\verb.File -> Preferences -> Tools -> Parasitic. \end{footnotesize}
+\item Extracción de parásitos: Para realizar la extracción de las capacidades y resistores parásitos que significan las interconexiones: \\
 \begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Parasitics: Conservative RC. \end{footnotesize}
-\item Cargarle los modelo de transistores de la tecnología que estamos usando (TSMC 180~nm). Este es un archivo que nos brinda MOSIS que nosotros debemos editar para quitarle información de la tecnología (resistividad y capacidades de los metales, \emph{poly}, el sustrato y el silicio dopado $N^+$ y $P^+$).
-\item Seleccionara el formato (lenguage) del \emph{netlist spice} spice del simulador que utilizaremos: Las opciones son: Spice 2, Spice 3, HSpice, PSpice, Gnucap, SmartSpice,  Spice Opus, Xyce, HSpice for Assura, HSpice for Calibre. De los cuales, sólo 3 opciones son libres: Spice 3, Gnucap y Xyce.
+\item Seleccionar el formato (lenguaje) del \emph{netlist spice} del simulador que utilizaremos: Las opciones son: \textbf{Spice 2, Spice 3, HSpice, PSpice, Gnucap, SmartSpice,  Spice Opus, Xyce, HSpice for Assura, HSpice for Calibre}. De los cuales, sólo 3 opciones tienen licencias calificadas como software libre: \textbf{Spice 3, Gnucap} y \textbf{Xyce}. \textbf{Spice 3} hace referencia a la versión \textbf{Spice3f5} del estándar de facto para las simulaciones de circuitos analógicos, en general todos los programas pueden leer un \emph{netlist} en ese formato.
 \end{itemize}
 
+
+\begin{figure}
+%\vspace{-5pt}
+  \centering
+\includegraphics[scale=.5]{figuras/gnucapElectric3.png}
+  \caption{Configuración de Electric para la extracción del circuito y simulación en un motor tipo Spice.}
+\label{fig:gnucapElectric}
+%\vspace{-10pt}
+\end{figure}
+
+
+
+\subsubsection{Motores de simulación analógica}
+
+De la lista de opciones que nos brinda \textbf{Electric}, hacemos una selección y breve reseña de los simuladores de circuitos que tienen licencia calificadas como software libre:
+
+
 \begin{description}
-\item[Gnucap] Simulador de circuitos analógicos y señal mixta, está diseñado para reemplazar Spice, pero con ventajas técnicas significantes. Más rápido e igual de preciso, diseñado para alta flexibilidad por medio de un sistema de plugins, algoritmos modernos, relación de compromiso entre precisión y velocidad controlado por el usuario, totalmente interactivo por medio de \emph{scripting}. Puede leer \emph{netlists} en formato tradicional \emph{spice 3}, Spectre\footnote{Motor de simulación de Cadence.} y  \emph{netlist} Verilog.
+\item[Gnucap] Simulador de circuitos analógicos y señal mixta, está diseñado para reemplazar Spice, pero con ventajas técnicas significantes. Más rápido e igual de preciso, diseñado para alta flexibilidad por medio de un sistema de plugins, algoritmos modernos, relación de compromiso entre precisión y velocidad controlado por el usuario, totalmente interactivo por medio de \emph{scripting}. Puede leer \emph{netlists} en formato tradicional \textbf{Spice 3}, \textbf{Spectre}\footnote{Motor de simulación de Cadence.} y  \emph{netlist} Verilog.
 
 \item[Ngspice] Simulador de circuitos de señal mixta. Se basa en tres paquetes de software libre: Spice3f5, Cider1b1 y Xpice. Implementa muchas mejoras y corrección de \emph{bugs}. Fué ampliamente incorporado en otros entornos de simulación de circuitos.
 
 \item[Xyce] Simulador de circuitos con compatibilidad Spice, implementa mejoras para lograr simulaciones de millones de transistores con la misma precisión. Implementa alto nivel de paralelismo, \emph{solvers} iterativos mejorados y simula efectos de radiación (corriente de fotones y destrucción de neutrones).
 \end{description}
 
+\subsubsection{Selección del simulador}
+A partir de éstas características descriptas, decidimos utilizar \textbf{Gnucap} porque se ajusta a las necesidades del proyecto, y además es el de más fácil instalación en el sistema operativo que estamos utilizando (Debian "Wheezy"). Ahora que ya tenemos seleccionado el simulador y configurada la herramienta para realizar la extracción, lo primero que simularemos es un oscilador anillo de 31 etapas, para dar cuenta de lo que logramos con nuestro flujo de herramientas (\textbf{Electric} + \textbf{Gnucap}), en comparación con lo que MOSIS brinda de esa prueba:
+
+\begin{footnotesize}
+\begin{verbatim}
+ Ring Oscillator Freq.                                   
+  DIV1024 (31-stg,1.8V)               377.13  MHz        
+ Ring Oscillator Power                                   
+  DIV1024 (31-stg,1.8V)                 0.02  uW/MHz/gate
+\end{verbatim}
+\end{footnotesize}
+
+\subsubsection{Simulación de un oscilador anillo}
+Realizamos el layout del oscilador anillo de 31 etapas que mostramos en la figura \ref{fig:lay_31etapas}, y realizamos la simulación transitoria. Para ver la frecuencia de oscilación, guardamos los datos de la tensión de una salida de uno de los inversores, y para calcular la potencia, guardamos la corriente que sale de la fuente de alimentación. Nuestros resultados son:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Circuito	&	Frecuencia de oscilación	&	Potencia \\ \midrule
+Oscilador anillo de 31 etapas               & 325 MHz	& 0.026 uW/MHz/compuerta   \\ \bottomrule
+\end{tabular}
+\caption{Simulación post \emph{layout} del oscilador anillo de 31 etapas}
+\label{cuadro:RO31}
+\end{table}
+
+Justificamos la diferencia entre nuestros resultados y los datos brindados por el fabricante en la diferencia que existe entre nuestra implementación y la del fabricante, ya que no especifica exactamente las dimensiones físicas de las celdas estándar, lo cual impacta fuertemente en la performance y potencia. 
 
 
-\end{description}
+\begin{figure}
+%\vspace{-5pt}
+  \centering
+\includegraphics[scale=.35]{figuras/lay_31etapas.png}
+  \caption{Oscilador anillo de 31 etapas}
+\label{fig:lay_31etapas}
+%\vspace{-10pt}
+\end{figure}
+
+\subsubsection{Medición de la performance en los sumadores}
+Siguiendo lo que definimos en el capítulo \ref{especificaciones} para la performance, ahora seremos más específicos para los sumadores y definiremos las condiciones que nos permiten medir correctamente el tiempo de propagacion $t_p$ del camino crítico. Realizaremos una simulación  transitoria para que el estado de las entradas cambie de forma tal que exite el camino crítico. Para eso necesitamos generar un cambio de estado que genere acarreo en todos los bits, para que se propague la señal desde los bits menos significativos a los más significativos. Esto se puede lograr con los siguientes 2 vectores, veamos un ejemplo de sumandos de 8 bits: 
+$$(A_0,B_0) \to (A_1,B_1) = (0x00, 0xFF) \to (0x01,0xFF)$$ 
+
+De la figura \ref{fig:sim_rca8} extraemos los datos para ejemplificar la medición del $t_p$ de el sumador de \textbf{ripple carry} de 8 bits:
+$$t_{pHL} = 3.27~ns - 0,05~ns = 3.22~ns$$
+$$t_{pLH} = 6.07~ns - 2,64~ns = 3.43~ns$$
+$$t_p = \frac{(tpHL + tpLH )}{2} = 3.325~ns$$
 
 
-\subsubsection{Medición de la performance}
-\subsubsection{Medición de la potencia}
+\begin{figure}
+%\vspace{-5pt}
+  \centering
+\includegraphics[scale=.5]{figuras/sim_rca8bits.eps}
+  \caption{Simulación transitoria del circuito Ripple Carry 8 bits. De los vectores de entradas, sólo mostramos el bit menos significativo de la entrada A, porque es el único que cambia. Las señales de salidas están ordenadas para mostrar la más lenta cerca de la entrada y poder calcular el retardo.}
+\label{fig:sim_rca8}
+%\vspace{-10pt}
+\end{figure}
+\subsubsection{Medición de la potencia del sumador}
 
-\subsection{Tablas comparativas de performance, potencia y área}
+La actividad de una señal afecta tanto a la potencia estática de un circuito CMOS como a la potencia dinámica. La potencia estática depende del estado de la señal, y la potencia dinámica depende de la tasa de cambio de los pines en cada celda estándar. Nuestra simulación para la potencia comparte los mismos vectores de entrada que el de performance, ya que con estos vectores generamos la mayor actividad posible en los pines de salida y en las celdas internas del circuito. En la figura \ref{fig:sim_rca8_pow} podemos ver las formas de onda de la exitación y la corriente instantánea que sale de la fuente de alimentación. Para obtener el valor de la potencia del circuito, aplicamos la ecuación \ref{eq:pv}, que lo realizamos directamente con el simulador, obteniendo una potencia promedio total de:
+$$P_{av} = -734.35995~\mu\textrm{W}$$
+
+\subsubsection{\emph{Corners} de simulación}
+Para lograr una gráfica de la corriente instantánea sin discontinuidades, fué necesario ajustar los valores de \verb.abstol. y \verb.reltol., pero esto no es realmente necesario ya que demora el tiempo de simulación, incrementando menos del \%1 en presición. Aunque el simulador nos brinda la posibilidad de obtener alta presición, no podemos dedicar recursos a este fin ya que debido a las variaciones tan grande propio del proceso de fabricación, obtendremos diferentes características físicas de los transistores y capas de metales, lo cual impacta en diferencias en la fuerza que pueda tener un transistor, y en resistividad y capacidad de los elementos. Esto se traduce en transistores más rápidos o mas lentos que la media, capacidades y resistividades mayores o menores que la media. Por ello, no podemos esperar que el chip que obtengamos tenga las mismas características que nuestro modelo de simulación. Es más, el conjunto de chips que fabriquemos ya tendrá variaciones por cada chip, e inclusive podemos esperar variaciones dentro del mismo chip si el \emph{die} es grande.
+
+Es necesario realizar una batería de simulaciones, eligiendo las condiciones de temperatura y el modelo de los transistores, resistividad y capacidades parásitas para poder simular el rango mas amplio posible de situaciones esperadas. Se definen el caso típico, el peor caso y el mejor caso para cada métrica de diseño. Por ejemplo, la peor condición para la performance puede ser una temperatura de 0 grados, transistores lentos y capacidades mayores que la media, pero ésta no es la peor condición desde el punto de vista de consumo de energía. Por lo cuál, es muy importante definir a conciencia estas peores y mejores condiciones para simular, si esperamos que la simulación nos sirva para diseñar y lograr que la mayoría de los chips de un lote fabricado cumpla con las especificaciones de diseño. 
+
+Para obtener todos los modelos de simulación, deberíamos contratar el servicio de MOSIS para la fabricación. En nuestro caso, aprochamos que MOSIS brinda de forma pública en su sitio web, un único modelo de transistores como muestra de la tecnología. Tomamos ese modelo como el caso típico, y todas las simulaciones se hacen con 27 grados de temperatura ambiente y tensión de alimentación nominal (1.8~V).
+
+
+%737.42
+\begin{figure}
+%\vspace{-5pt}
+  \centering
+\includegraphics[scale=1.1]{figuras/rca8bits_power.eps}
+  \caption{Simulación transitoria del circuito Ripple Carry 8 bits. Mostramos la corriente instantánea a través de la fuente de alimentación, el valor negativo se debe a que la corriente sale de la fuente. }
+\label{fig:sim_rca8_pow}
+%\vspace{-10pt}
+\end{figure}
+
+\subsection{Tablas comparativas de
+ performance, potencia y área}
 
 
 %\subsection{Métricas de Calidad de un circuito digital}
@@ -362,14 +458,7 @@ Para realizar una simulación que sea la mejor estimación de la performance y p
 
 %\subsection{Performance}
 
-%\begin{figure}[h!]
-%\vspace{-5pt}
-%  \centering
-%\includegraphics[scale=.3]{figuras/RO5.png}
-%  \caption{Layout del Oscilador anillo (N=5)}
-%\label{fig:RO5_lay}
-%\vspace{-10pt}
-%\end{figure}
+
 
 %Realizamos un oscilador anillo de 5 etapas, utilizando el inversor mas chico de nuestra librería de celdas estándar elegida. En la figura \ref{fig:RO5_lay} podemos ver el \emph{layout} que realizamos para esta prueba. Hacemos la extracción de parásitos y simulamos el circuito para obtener la forma de onda de la figura \ref{fig:RO5_wf}.
 
