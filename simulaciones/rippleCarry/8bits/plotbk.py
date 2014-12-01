@@ -41,7 +41,9 @@ eje[9].set_ylabel('cout')
 f.subplots_adjust(hspace=0)
 plt.setp([a.get_xticklabels() for a in f.axes[:-1]], visible=False)
 
-# Escondo los ticks de todos los ejes Y:
+# Escondo los ticks de todos los ejes x (menos el último):
+plt.setp([a.get_xticklines() for a in f.axes[:-1]], visible=False)
+# Escondo las etiquetas de todos los ticks del eje x (menos el último)
 plt.setp([a.get_yticklabels() for a in f.axes[:]], visible=False)
 
 # Con este comando aparece la ventana con los gráficos

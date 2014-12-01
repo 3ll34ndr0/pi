@@ -1,6 +1,6 @@
 *** Vectores de simulación que generan un cambio de estado en el camino crítico.
 * Conjunto de pull-ups y pull-downs para fijar los valores de algunas entradas. Y Luego exito con una fuente de tensión "pulse" a la entrada "a0". 
-va0 a0 vss dc 0 pulse 0 1.8 0 0.1n 0.1n {periodo/2} periodo
+va0 a0 vss dc 0 pulse 0 1.8 {periodo/2} 0.1n 0.1n {periodo/2} periodo
 * Fuentes de alimentación
 VVDC_vss vss 0 DC '0V' AC '0V' 0
 VVDC_vdd vdd vss DC '1.8V' AC '0V' 0 tran 1.8

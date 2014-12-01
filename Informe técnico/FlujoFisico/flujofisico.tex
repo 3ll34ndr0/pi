@@ -1,4 +1,10 @@
 % hacer una macro para \emph{place \& route}
+\newcommand{\ns} {\textrm{ns}}
+\newcommand{\nanom} {\textrm{nm}}
+
+
+
+
 \chapter{Flujo de Diseño Físico}
 \section{Introducción}
 
@@ -76,7 +82,7 @@ Es importante mencionar que existen mas herramientas disponibles (y muy útiles)
 %\begin{table}[h]
 %\begin{tabular}{p{2cm}p{4cm}p{4cm}}
 %\caption{Comparativa de las ventajas y desventajas}
-%\label{tabla:comparación}
+%\label{tab:comparación}
 %\end{table}
 
 Resaltamos las ventajas y desventajas de cada herramienta, que nos permitirá hacer una selección en función de las necesidades del proyecto.
@@ -95,8 +101,9 @@ El hecho de que no cuente con un sintetizador lógico, como señalamos en la tab
 
 En este punto, es importante mencionar un aspecto de la industria de los semiconductores. En los orígenes, la industria de semicoductores estaba verticalmente integrada. Esto significaba que la misma empresa que diseñaba el producto, también diseñaba las herramientas de software y fabricaba el chip. Pero hace poco mas de 20 años, surge la separación del proceso de diseño y fabricación. Hoy en día existen empresas que se dedican sólamente a desarrollar el producto, otras que se dedican únicamente a desarrollar herramientas de software para el diseño, otras que sólamente se dedican a fabricar los diseños de otras empresas, y también persisten las empresas que realizan todo el proceso (conocidas como \gls{icms}), abriendo las puertas a otras empresas de diseño sin fábrica (conocidas como \emph{fabless}), para evitar la capacidad ociosa instalada y disminuir sus costos.
 \subsection{Obleas multiproyectos}
-Dentro de este esquema, existe una empresa (MOSIS) que se dedica a recolectar proyectos de diseño que están en etapa de prototipo o de bajo volumen, creando obleas multiproyecto que se envían a fabricar, dividiendo los costos por la cantidad de proyectos que incluye. De esta forma, se logra acceder a la fabricación de semiconductores a muy bajo costo. Tiene sus limitaciones en cuanto a tecnologías de fabricación disponibles, cantidades, y tiempo de entrega largos, pero permite que proyectos educativos, de investigación o de baja escala sean económicamente factibles.
-Por ello, nuestras opciones serán algunna de las que MOSIS ofrece. En la tabla \ref{cuadro:procesosDisponibles} vemos una lista que está en constante cambio y actualización, se brinda aquí de modo ilustrativo. Para una lista actualizada visitar https://www.mosis.com/products/fab-processes.
+Dentro de este esquema, existe una empresa (MOSIS) que se dedica a recolectar proyectos de diseño que están en etapa de prototipo o de bajo volumen, creando obleas multiproyecto que se envían a fabricar, dividiendo los costos por la cantidad de proyectos que incluye. De esta forma, se logra acceder a la fabricación de circuitos integrados a muy bajo costo. Tiene sus limitaciones en cuanto a tecnologías de fabricación disponibles, cantidades, y tiempo de entrega largos, pero permite que proyectos educativos, de investigación o de baja escala sean económicamente factibles. Es importante mencionar que MOSIS cuenta con un programa especial para las universidades, que permite acceder a ciertos nodos\footnote{Nodo es una forma alternativa de llamar al proceso tecnológico de fabricación que toma como segundo nombre el largo mínimo de canal de un trasistor MOS; por ejemplo: nodo de 180~\nanom ~se refiere al proceso con el cuál se puede fabricar un transistor con un mínimo de 180~\nanom~de ancho de canal.} a muy bajo costo.
+
+Por ello, nuestras opciones serán alguna de las que MOSIS ofrece. En la tabla \ref{tab:procesosDisponibles} vemos una lista que está en constante cambio y actualización, se brinda aquí de modo ilustrativo. Para una lista actualizada visitar https://www.mosis.com/products/fab-processes.
 
 \begin{table}[h]
 \centering
@@ -110,13 +117,13 @@ ON Semi             & 0.35~um - 0.7~um           \\
 Austria Micro Systems & 180~nm - 0.35~um           \\ \bottomrule
 \end{tabular}
 \caption{Procesos disponibles por medio de MOSIS}
-\label{cuadro:procesosDisponibles}
+\label{tab:procesosDisponibles}
 \end{table}
 
 De todas estas, elegimos TSMC 180~nm por dos razones: la primera es que cuanto mayor es la dimensión de la tecnología, más simples son las herramientas de software necesarias y más bajo es el costo de fabricación. La segunda, es que con esta tecnología se pueden realizar sistemas de gran complejidad y alta performance\footnote{Claro que cuanto más nueva es la tecnología, los circuitos digitales son más rápidos y disipan menor potencia dinámica. Pero también es cierto que mayores son los tiempos para diseñar, principalmente porque con cada nuevo nodo aparecen nuevos efectos físicos que deben ser manejados, dificultando las tareas.
 }
 
-Para dar cuenta de las capacidades de esta tecnología, vemos en la tabla \ref{cuadro:procesadores180nm} un conjunto de microprocesadores que la utilizaron cuando esta era la más avanzada en su tiempo (desde el año 1999 hasta 2001) e inclusive después. Pero el verdadero sustento de que esta tecnología es actual, es que al día de hoy se continúan desarrollando varias aplicaciones, siendo una mejor opción que nodos mas nuevos, por razones económicas. Con el desarrollo de nuevas técnicas para la disminución de consumo de energía\footnote{A modo de ejemplo, ver el procesador \emph{Phoenix}, que en modo alerta consume 29.6~pW y 2.8~pJ/ciclo modo activo\cite{phoenixP}.}, la gran colección de \emph{IP}\footnote{Intelectual Property, nombre usual dado a los diseños listos para ser usados en un sistema, cuando se decide enfocar el diseño solamente en lo novedoso del producto, comprando el IP de todo lo que no diseñaremos.} analógico\footnote{Los circuitos analógicos que ya fueron diseñados y probados para una tecnología deben ser diseñados nuevamente desde cero cuando se pasa de una tecnología a otra, ya que las arquitecturas de circuitos analógicos no son escalables (como si son los digitales)} y digital que cada fábrica ofrece, las ventajas de necesitar menor poder de cálculo que para los nodos actuales (22~nm), mucha experiencia acumulada por parte de los diseñadores, se consigue un menor TTM\footnote{Time To Market (TTM), sigla utilizada para designar el tiempo que necesita un producto para ser diseñado, fabricado, testeado y puesto en producción. Dependiendo de la aplicación, este tiempo va desde meses hasta años.} con menores costos.
+Para dar cuenta de las capacidades de esta tecnología, vemos en la tabla \ref{tab:procesadores180nm} un conjunto de microprocesadores que la utilizaron cuando ésta era la más avanzada en su tiempo (desde el año 1999 hasta 2001) e inclusive después. Pero el verdadero sustento de que esta tecnología es actual, es que al día de hoy se continúan desarrollando varias aplicaciones, siendo una mejor opción que nodos mas nuevos, por razones económicas. Con el desarrollo de nuevas técnicas para la disminución de consumo de energía\footnote{A modo de ejemplo, ver el procesador \emph{Phoenix}, que en modo alerta consume 29.6~pW y 2.8~pJ/ciclo modo activo\cite{phoenixP}.}, la gran colección de \emph{IP}\footnote{Intelectual Property, nombre usual dado a los diseños listos para ser usados en un sistema, cuando se decide enfocar el diseño solamente en lo novedoso del producto, comprando el IP de todo lo que no diseñaremos.} analógico\footnote{Los circuitos analógicos que ya fueron diseñados y probados para una tecnología deben ser diseñados nuevamente desde cero cuando se pasa de una tecnología a otra, ya que las arquitecturas de circuitos analógicos no son escalables (como si son los digitales)} y digital que cada fábrica ofrece, las ventajas de necesitar menor poder de cálculo que para los nodos actuales (22~nm), mucha experiencia acumulada por parte de los diseñadores, se consigue un menor TTM\footnote{Time To Market (TTM), sigla utilizada para designar el tiempo que necesita un producto para ser diseñado, fabricado, testeado y puesto en producción. Dependiendo de la aplicación, este tiempo va desde meses hasta años.} con menores costos.
 
 
 \begin{table}[h]
@@ -130,7 +137,7 @@ Intel Celeron (Willamette)               & 2002            \\
 Motorola PowerPC 7445 y 7455 (Apollo 6) & 2002           \\ \bottomrule
 \end{tabular}
 \caption{Procesadores fabricados en CMOS 180nm }
-\label{cuadro:procesadores180nm}
+\label{tab:procesadores180nm}
 \end{table}
 
 MOSIS especifica los procesos disponibles que soportan las reglas escalables en su documento \emph{\textbf{Design Rules. MOSIS Scalable CMOS (SCMOS), Revision 8.00.}}, en el cuál encontramos que para 180~nm sólo podemos elegir a la fábrica TSMC.
@@ -142,12 +149,25 @@ El proceso nos ofrece 6 capas de metal (cobre) para la interconexión, 1 capa de
 \item S: Escalable
 \item C: Tecnología de fabricación CMOS
 \item N: Pozo N.
-\item 6M: 6 metales y un poly
+\item 6M: 6 metales y un conductor policristalino (\emph{poly}) para crear las compuertas.
 \item DEEP: Reglas \emph{deep submicron}.
 \end{itemize}
 Las reglas escalables se crearon originalmente para tecnologías desde 3um hasta 1um. Cuando aparecieron tecnologías nuevas, se hicieron modificaciones a las reglas para ajustarse a las nuevas posibilidades. Entonces se crearon primero las reglas \emph{submicron}, y luego las \emph{deep submicron}
 
-Una vez definido la herramienta de diseño (\textbf{Electric}) y el proceso de fabricación a utilizar (TSMC 180~nm), definimos la variable $\lambda$, que es la unidad que utilizará nuestro software para las dimensiones físicas. Electric define a $\lambda$ como la mitad del largo de canal mínimo para la tecnología que se está utilizando. En nuestro caso, el largo de canal mínimo es de 180~nm (de allí viene la designación del nombre), por lo tanto $\lambda $ sería 90~nm. Otra elección que hay que hacer es cuál de los 
+Una vez definido la herramienta de diseño (\textbf{Electric}) y el proceso de fabricación a utilizar (TSMC 180~nm), definimos la variable $\lambda$, que es la unidad que utilizará nuestro software para las dimensiones físicas. \textbf{Electric} define a $\lambda$ como la mitad del largo de canal mínimo para la tecnología que se está utilizando. En nuestro caso, el largo de canal mínimo es de 180~nm (de allí viene la designación del nombre), por lo tanto $\lambda $ es de 90~\nanom.  
+
+
+\subsection{\emph{Corners} de simulación}
+
+Debido a las variaciones propias del proceso de fabricación, obtendremos variaciones en las dimensiones físicas de los transistores y capas de metales. Por ello podemos esperar que el chip que probemos en el laboratorio luego de la fabricación contenga transistores que pueden ser lentos, típicos o rápidos, y que las interconexiones sean mas o menos capacitivas y resistivas. Generalmente todos los transistores e interconexiones dentro del chip seran de un sólo tipo. Por ello, el fabricante nos brinda modelos de simulación para los distintos casos de transistores que podemos esperar; y lo mismo con las capas de metal, nos brinda unas tablas que representan las distintas resistividades y capacidades parásitas que podemos esperar.
+Existe también la variación de tensión que puede tener la alimentación del circuito que vayamos a estudiar, ya que el diseño de la malla interna de alimentación se calcula con un margen de tolerancia de caída de tensión máxima. Por lo tanto podemos esperar que la alimentación de nuestro circuito sea de un \%10 menor que la tensión nominal, por ejemplo.
+Por último, la temperatura ambiente impacta fuertemente en las características eléctricas del circuito integrado.
+
+Por todo esto que mencionamos, se definen casos de simulación para contemplar las peores y mejores condiciones que podemos esperar. Este conjunto de casos se denominan \emph{corners} de simulación. Por ejemplo, la peor condición para la performance 
+es una temperatura de 0 grados, transistores lentos, capacidades mayores que la media y la tensión de alimentación un \%10 menos que la nominal. Pero la peor condición desde el punto de vista del consumo de energía es 80 grados de temperatura ambiente, transistores rápidos, tensión nominal y capacidades mayores que la media.
+Como conclusión, debemos tener en cuenta las peores y mejores condiciones para realizar las simulaciones correspondientes, si esperamos que la simulación nos sirva para diseñar y lograr que la mayoría de los chips de un lote fabricado cumpla con las especificaciones de diseño. 
+
+En nuestro caso, utilizaremos un único modelo de transistores y capacidades y resistores parásitos que MOSIS brinda en su sitio web a modo de ejemplo del proceso de fabricación, ya que para obtener los \emph{corners} de simulación es necesario contratar el servicio previamente. Tomamos ese modelo como el caso típico, y todas las simulaciones se hacen con 27 grados de temperatura ambiente y tensión de alimentación nominal (1.8~V).
 
 \section{Selección de las Celdas estándar}\label{celdasEstandars}
 El resultado de la síntesis que realizamos en el capítulo \ref{diseñoDigital} es un \emph{netlist} VHDL que contiene sólo compuertas lógicas. Estas son compuertas lógicas abstractas, es decir que nuestro circuito fué mapeado a un conjunto finito de funciones logicas como las \verb.and., \verb.or., \verb.xor., \verb.xnor., etc.
@@ -232,7 +252,7 @@ Otra característica de estas celdas es la distancia entre el riel de VSS hasta 
 \section{Ubicación y Cableado (\emph{Place \& Route})}
 Partimos desde la descripción estructural\footnote{El resultado de la síntesis hecha con \textbf{lava} es un \emph{netlist} VHDL a nivel de compuerta, listo para ser usado por una herramienta de \gls{pnr}.} que producimos en el capítulo \ref{diseñoDigital}. De \emph{Electric} usaremos la herramienta llamada \textbf{\emph{Silicon Compiler}}, que se encarga de ubicar y conectar las celdas según el \emph{netlist} VHDL.
 
-\subsection{Modificación al código fuente de la herramieta de síntesis lógica}
+\subsection{Modificación al código fuente de la herramienta de síntesis lógica}
 
 La herramienta \textbf{\emph{Silicon Compiler}} requiere que el \emph{netlist} VHDL sea modificado levemente:
 \begin{enumerate}
@@ -259,7 +279,7 @@ En la figura \ref{fig:SCconf} vemos la configuración necesaria para hacer el \g
 
 
 \subsection{Distintas alternativas y resultados}
-La regla de oro para todo \emph{layout} es que sea lo más cuadrado posible, ya que de esta forma es más eficiente el uso del área cuando integramos nuestro circuito con otros de mayor jerarquía. La métrica de selección del resultado será el área que ocupe nuestro circuito y la relación entre sus lados: cuanto más pequeño\footnote{El área es una métrica de calidad del circuito, según lo planteamos en el capítulo \ref{especificaciones}.} y cuadrado mejor. En las tablas \ref{tabla:rippleCarry}, \ref{tabla:skalansky} y \ref{tabla:brent-kung} vemos los resultados para todos los sumadores analizados, con 3 tamaños distintos y para diferentes alternativas de \emph{floorplan}, variando el parámetro \textbf{\emph{Number of rows of cells}}.
+La regla de oro para todo \emph{layout} es que sea lo más cuadrado posible, ya que de esta forma es más eficiente el uso del área cuando integramos nuestro circuito con otros de mayor jerarquía. La métrica de selección del resultado será el área que ocupe nuestro circuito y la relación entre sus lados: cuanto más pequeño\footnote{El área es una métrica de calidad del circuito, según lo planteamos en el capítulo \ref{especificaciones}.} y cuadrado mejor. En las tablas \ref{tab:rippleCarry}, \ref{tab:skalansky} y \ref{tab:brent-kung} vemos los resultados para todos los sumadores analizados, con 3 tamaños distintos y para diferentes alternativas de \emph{floorplan}, variando el parámetro \textbf{\emph{Number of rows of cells}}.
 
 En la figura \ref{fig:diseños} presentamos todos los \emph{layout} seleccionados con el criterio recién mencionado. Resumimos con este gráfico el resultado de \gls{pnr} de cada arquitectura para 3 tamaños de sumandos distintos.
 \begin{table}[h]
@@ -276,7 +296,7 @@ ancho/alto                                & 0,51   & 0,87   & 1,14   & 0,79    &
 \end{tabular}
 }
 \caption{Ubicación y conexionado para Ripple carry en 3 tamaños: 8, 16 y 32 bits}
-\label{tabla:rippleCarry}
+\label{tab:rippleCarry}
 \end{table}
 
 \begin{table}[h]
@@ -293,7 +313,7 @@ ancho/alto         & 0,53    & 0,83    & 1,31    & 0,38    & 0,77    & 1,03    &
 \end{tabular}
 }
 \caption{Ubicación y conexionado para Skalanksy en 3 tamaños: 8, 16 y 32 bits}
-\label{tabla:skalansky}
+\label{tab:skalansky}
 \end{table}
 
 \begin{table}[h]
@@ -310,7 +330,7 @@ ancho/alto          & 0,54    & 0,83   & 1,27    & 0,55    & 0,82    & 1,00    &
 \end{tabular}
 }
 \caption{Ubicación y conexionado para Brent-Kung en 3 tamaños: 8, 16 y 32 bits}
-\label{tabla:brent-kung}
+\label{tab:brent-kung}
 \end{table}
 
 
@@ -323,7 +343,7 @@ ancho/alto          & 0,54    & 0,83   & 1,27    & 0,55    & 0,82    & 1,00    &
 
 \section{Comparación de las distintas arquitecturas}
 
-\subsection{Performance y Potencia}
+\subsection{Simulación post \emph{layout} para calcular performance y potencia}
 Para realizar la comparación, necesitamos simular nuestros circuitos luego de hacer una extracción del \emph{layout} del circuito, para obtener también las capacidades y resistores párasitos del mismo. A esta simulación se le suele denominar, simulación post \emph{layout}.
 
 \subsubsection{Extracción del circuitos, las dimensiones físicas de los transisitores y elementos parásitos}
@@ -332,13 +352,13 @@ Para realizar una simulación que sea la mejor estimación de la performance y p
 
 \begin{itemize}
 \item Parámetros del modelo de transistor: Cargar los modelo de transistores de la tecnología que estamos usando (TSMC 180~nm). Este es un archivo que nos brinda MOSIS, del cual la primera parte nosotros debemos comentar (ya que es toda la información propia de la tecnología y no solamente la específica para el simulador), y renombramos como {\footnotesize\verb#tsmc180nm.model#}. También es necesario realizar los siguientes cambios al archivo:\\
-\begin{footnotesize}\verb#.MODEL CMOSN NMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL N nmos# \\
-\verb#.MODEL CMOSP PMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL P nmos# \end{footnotesize} \\
+\begin{footnotesize}\verb#.MODEL CMOSN NMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL N NMOS# \\
+\verb#.MODEL CMOSP PMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL P PMOS# \end{footnotesize} \\
 Luego de esos cambios, cargar el archivo en:\\
 \begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Use Header cards from file:.\end{footnotesize}
 	\item Del archivo recién mencionado obtenemos la resistividad de los metales, el \emph{poly}, el sustrato y el silicio dopado $N^+$ y $P^+$. También obtenemos la capacidad entre cada capa de material y el resto de las capas. Esta información la utilizamos para configurar \textbf{Electric} en: \\
 \begin{footnotesize}\verb.File -> Preferences -> Tools -> Parasitic. \end{footnotesize}
-\item Extracción de parásitos: Para realizar la extracción de las capacidades y resistores parásitos que significan las interconexiones: \\
+\item Extracción de parásitos: Para realizar la extracción de las capacidades y resistores parásitos de las interconexiones: \\
 \begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Parasitics: Conservative RC. \end{footnotesize}
 \item Seleccionar el formato (lenguaje) del \emph{netlist spice} del simulador que utilizaremos: Las opciones son: \textbf{Spice 2, Spice 3, HSpice, PSpice, Gnucap, SmartSpice,  Spice Opus, Xyce, HSpice for Assura, HSpice for Calibre}. De los cuales, sólo 3 opciones tienen licencias calificadas como software libre: \textbf{Spice 3, Gnucap} y \textbf{Xyce}. \textbf{Spice 3} hace referencia a la versión \textbf{Spice3f5} del estándar de facto para las simulaciones de circuitos analógicos, en general todos los programas pueden leer un \emph{netlist} en ese formato.
 \end{itemize}
@@ -361,15 +381,17 @@ De la lista de opciones que nos brinda \textbf{Electric}, hacemos una selección
 
 
 \begin{description}
-\item[Gnucap] Simulador de circuitos analógicos y señal mixta, está diseñado para reemplazar Spice, pero con ventajas técnicas significantes. Más rápido e igual de preciso, diseñado para alta flexibilidad por medio de un sistema de plugins, algoritmos modernos, relación de compromiso entre precisión y velocidad controlado por el usuario, totalmente interactivo por medio de \emph{scripting}. Puede leer \emph{netlists} en formato tradicional \textbf{Spice 3}, \textbf{Spectre}\footnote{Motor de simulación de Cadence.} y  \emph{netlist} Verilog.
+\item[Gnucap] Simulador de circuitos analógicos y señal mixta, está diseñado para reemplazar Spice, pero con ventajas técnicas significantes. Más rápido e igual de preciso, diseñado para alta flexibilidad por medio de un sistema de \emph{plugins}, permite elegir qué algoritmos utilizará el \emph{solver}, relación de compromiso entre precisión y velocidad controlado por el usuario, totalmente interactivo por medio de \emph{scripting}. Puede leer \emph{netlists} en formato tradicional \textbf{Spice 3}, \textbf{Spectre}\footnote{Motor de simulación de Cadence.} y  \emph{netlist} Verilog.
 
-\item[Ngspice] Simulador de circuitos de señal mixta. Se basa en tres paquetes de software libre: Spice3f5, Cider1b1 y Xpice. Implementa muchas mejoras y corrección de \emph{bugs}. Fué ampliamente incorporado en otros entornos de simulación de circuitos.
+\item[Ngspice] Simulador de circuitos de señal mixta. Se basa en tres paquetes de software libre: Spice3f5, Cider1b1 y Xpice. Implementa muchas mejoras y cuenta con una comunidad de desarrolladores y usuarios que dan soporte y corrección de \emph{bugs}. Fué ampliamente incorporado en otros entornos de simulación de circuitos, por ser la continuación con licencia libre del Spice3f5.
 
 \item[Xyce] Simulador de circuitos con compatibilidad Spice, implementa mejoras para lograr simulaciones de millones de transistores con la misma precisión. Implementa alto nivel de paralelismo, \emph{solvers} iterativos mejorados y simula efectos de radiación (corriente de fotones y destrucción de neutrones).
 \end{description}
 
 \subsubsection{Selección del simulador}
-A partir de éstas características descriptas, decidimos utilizar \textbf{Gnucap} porque se ajusta a las necesidades del proyecto, y además es el de más fácil instalación en el sistema operativo que estamos utilizando (Debian "Wheezy"). Ahora que ya tenemos seleccionado el simulador y configurada la herramienta para realizar la extracción, lo primero que simularemos es un oscilador anillo de 31 etapas, para dar cuenta de lo que logramos con nuestro flujo de herramientas (\textbf{Electric} + \textbf{Gnucap}), en comparación con lo que MOSIS brinda de esa prueba:
+Desde el punto de vista de la instalación de las herramientas, Ngspice y Xcye son más complicadas con respecto a Gnucap. Las características distintivas de estos dos proyectos no son necesarias para las simulaciones de nuestros diseños en particular. Por ello decidimos utilizar \textbf{Gnucap} ya que es de múy fácil instalación en el sistema operativo que estamos utilizando (Debian "Wheezy"). 
+
+Ahora que ya tenemos seleccionado el simulador y configurada la herramienta para realizar la extracción, lo primero que simularemos es un oscilador anillo de 31 etapas, para dar cuenta de lo que logramos con nuestro flujo de herramientas (\textbf{Electric} + \textbf{Gnucap}), en comparación con lo que MOSIS brinda de esa prueba:
 
 \begin{footnotesize}
 \begin{verbatim}
@@ -381,7 +403,7 @@ A partir de éstas características descriptas, decidimos utilizar \textbf{Gnuca
 \end{footnotesize}
 
 \subsubsection{Simulación de un oscilador anillo}
-Realizamos el layout del oscilador anillo de 31 etapas que mostramos en la figura \ref{fig:lay_31etapas}, y realizamos la simulación transitoria. Para ver la frecuencia de oscilación, guardamos los datos de la tensión de una salida de uno de los inversores, y para calcular la potencia, guardamos la corriente que sale de la fuente de alimentación. Nuestros resultados son:
+Realizamos el layout del oscilador anillo de 31 etapas que mostramos en la figura \ref{fig:lay_31etapas}, y realizamos la simulación de régimen transitorio. Para ver la frecuencia de oscilación, guardamos los datos de la tensión de una salida de uno de los inversores, y para calcular la potencia, guardamos la corriente que sale de la fuente de alimentación. Nuestros resultados son:
 
 \begin{table}[h]
 \centering
@@ -391,10 +413,10 @@ Circuito	&	Frecuencia de oscilación	&	Potencia \\ \midrule
 Oscilador anillo de 31 etapas               & 325 MHz	& 0.026 uW/MHz/compuerta   \\ \bottomrule
 \end{tabular}
 \caption{Simulación post \emph{layout} del oscilador anillo de 31 etapas}
-\label{cuadro:RO31}
+\label{tab:RO31}
 \end{table}
 
-Justificamos la diferencia entre nuestros resultados y los datos brindados por el fabricante en la diferencia que existe entre nuestra implementación y la del fabricante, ya que no especifica exactamente las dimensiones físicas de las celdas estándar, lo cual impacta fuertemente en la performance y potencia. 
+Justificamos la diferencia entre nuestros resultados y los datos brindados por el fabricante en que no existe un detalle de la prueba de caracterizaciónn de la tecnología de fabricación. Es decir, no brinda las dimensiones físicas del inveror utilizado, cómo fué interconectado, etc, lo cual impacta fuertemente en la performance y potencia.
 
 
 \begin{figure}
@@ -406,54 +428,106 @@ Justificamos la diferencia entre nuestros resultados y los datos brindados por e
 %\vspace{-10pt}
 \end{figure}
 
-\subsubsection{Medición de la performance en los sumadores}
-Siguiendo lo que definimos en el capítulo \ref{especificaciones} para la performance, ahora seremos más específicos para los sumadores y definiremos las condiciones que nos permiten medir correctamente el tiempo de propagacion $t_p$ del camino crítico. Realizaremos una simulación  transitoria para que el estado de las entradas cambie de forma tal que exite el camino crítico. Para eso necesitamos generar un cambio de estado que genere acarreo en todos los bits, para que se propague la señal desde los bits menos significativos a los más significativos. Esto se puede lograr con los siguientes 2 vectores, veamos un ejemplo de sumandos de 8 bits: 
-$$(A_0,B_0) \to (A_1,B_1) = (0x00, 0xFF) \to (0x01,0xFF)$$ 
+\subsection{Medición de la performance en un sumador}\label{sec:performance}
+Siguiendo lo que definimos en el capítulo \ref{especificaciones} para la performance, ahora seremos más específicos para los sumadores y definiremos las condiciones que nos permiten medir correctamente el tiempo de propagacion $t_p$ del camino crítico. Realizaremos dos simulaciones de régimen transitorio para que el estado de las entradas cambie de forma tal que exite el camino crítico. Una simulación para encontrar $t_{pHL}$ y otra para $t_{pLH}$.
 
-De la figura \ref{fig:sim_rca8} extraemos los datos para ejemplificar la medición del $t_p$ de el sumador de \textbf{ripple carry} de 8 bits:
-$$t_{pHL} = 3.27~ns - 0,05~ns = 3.22~ns$$
-$$t_{pLH} = 6.07~ns - 2,64~ns = 3.43~ns$$
-$$t_p = \frac{(tpHL + tpLH )}{2} = 3.325~ns$$
+Para eso necesitamos generar cambios de estados que generen acarreo en todos los bits, ya que el bit mas significativo de la suma y el acarreo de salida, dependen de los acarreos del bit anterior. Si logramos que desde el bit menos significativo se propague hasta el más significativo, estamos exitando el camino crítico para que se propague la señal desde los bits menos significativos a los más significativos. Esto se puede lograr con las siguientes 2 transiciones (ejemplo para un sumador de 8 bits):
 
+\begin{equation}\label{eq:tfhl}
+(A_0,B_0) \to (A_1,B_1) = (0x00, 0xFF) \to (0x01,0xFF)
+\end{equation}
+\begin{equation}\label{eq:tflh}
+(A_1,B_1) \to (A_0,B_0) = (0x01,0xFF) \to (0x00, 0xFF)
+\end{equation}
+
+Como el estado final de una transición es el estado inicial de la otra, y viceversa, podemos realizar estas dos mediciones con una sóla simulación de régimen transitorio que cíclicamente pase de un estado al otro. Eso es lo que mostramos en la figura \ref{fig:sim_rca8}, que utilizamos para encontrar el camino crítico. Vemos que la señal \verb.s7. es la más lenta, y que la transición \ref{eq:tfhl} nos sirve para calcular $t_{pHL}$. La transición \ref{eq:tflh} nos permite calcular $t_{pLH}.
+	 	
 
 \begin{figure}
 %\vspace{-5pt}
   \centering
-\includegraphics[scale=.5]{figuras/sim_rca8bits.eps}
-  \caption{Simulación transitoria del circuito Ripple Carry 8 bits. De los vectores de entradas, sólo mostramos el bit menos significativo de la entrada A, porque es el único que cambia. Las señales de salidas están ordenadas para mostrar la más lenta cerca de la entrada y poder calcular el retardo.}
+\includegraphics[scale=.64]{figuras/sim_rca8bits_.eps}
+  \caption{Simulación de régimen transitorio del circuito Ripple Carry 8 bits. De los vectores de entradas, sólo mostramos el bit menos significativo de la entrada A, porque es el único que cambia. Las señales de salidas están ordenadas para mostrar la más lenta cerca de la entrada y poder calcular el retardo.}
 \label{fig:sim_rca8}
 %\vspace{-10pt}
 \end{figure}
-\subsubsection{Medición de la potencia del sumador}
 
-La actividad de una señal afecta tanto a la potencia estática de un circuito CMOS como a la potencia dinámica. La potencia estática depende del estado de la señal, y la potencia dinámica depende de la tasa de cambio de los pines en cada celda estándar. Nuestra simulación para la potencia comparte los mismos vectores de entrada que el de performance, ya que con estos vectores generamos la mayor actividad posible en los pines de salida y en las celdas internas del circuito. En la figura \ref{fig:sim_rca8_pow} podemos ver las formas de onda de la exitación y la corriente instantánea que sale de la fuente de alimentación. Para obtener el valor de la potencia del circuito, aplicamos la ecuación \ref{eq:pv}, que lo realizamos directamente con el simulador, obteniendo una potencia promedio total de:
-$$P_{av} = -734.35995~\mu\textrm{W}$$
+\begin{figure}
+%\vspace{-5pt}
+  \centering
+ \includegraphics[scale=.45]{figuras/rca8bits_zoom.eps}
+  \caption{Simulación de régimen transitorio del circuito Ripple Carry 8 bits. Para calcular $t_{pHL}$ y $t_{pLH}$ lo hacemos sobre la señal más lenta del circuito, que en este caso es el bit más significativo de la suma }
+\label{fig:sim_rca8_zoom} 
+%\vspace{-10pt}
+\end{figure}
+De la figura \ref{fig:sim_rca8_zoom} extraemos los datos para realizar la medición del $t_p$ del sumador de \textbf{ripple carry de 8 bits}:
 
-\subsubsection{\emph{Corners} de simulación}
-Para lograr una gráfica de la corriente instantánea sin discontinuidades, fué necesario ajustar los valores de \verb.abstol. y \verb.reltol., pero esto no es realmente necesario ya que demora el tiempo de simulación, incrementando menos del \%1 en presición. Aunque el simulador nos brinda la posibilidad de obtener alta presición, no podemos dedicar recursos a este fin ya que debido a las variaciones tan grande propio del proceso de fabricación, obtendremos diferentes características físicas de los transistores y capas de metales, lo cual impacta en diferencias en la fuerza que pueda tener un transistor, y en resistividad y capacidad de los elementos. Esto se traduce en transistores más rápidos o mas lentos que la media, capacidades y resistividades mayores o menores que la media. Por ello, no podemos esperar que el chip que obtengamos tenga las mismas características que nuestro modelo de simulación. Es más, el conjunto de chips que fabriquemos ya tendrá variaciones por cada chip, e inclusive podemos esperar variaciones dentro del mismo chip si el \emph{die} es grande.
+%t_0 = 1.8
+%t_1 = 3.64
+%4.96
+%7.05
 
-Es necesario realizar una batería de simulaciones, eligiendo las condiciones de temperatura y el modelo de los transistores, resistividad y capacidades parásitas para poder simular el rango mas amplio posible de situaciones esperadas. Se definen el caso típico, el peor caso y el mejor caso para cada métrica de diseño. Por ejemplo, la peor condición para la performance puede ser una temperatura de 0 grados, transistores lentos y capacidades mayores que la media, pero ésta no es la peor condición desde el punto de vista de consumo de energía. Por lo cuál, es muy importante definir a conciencia estas peores y mejores condiciones para simular, si esperamos que la simulación nos sirva para diseñar y lograr que la mayoría de los chips de un lote fabricado cumpla con las especificaciones de diseño. 
+$$t_{pHL} = t_2 - t_0 = 5.01~\ns - 1.8~\ns = 3.21~\ns$$
+$$t_{pLH} = t_3 - t_1 = 7.05~\ns - 3.61~ns = 3.44~\ns$$
+$$t_p = \frac{(t_{pHL} + t_{pLH} )}{2} = 3.325~\ns$$
 
-Para obtener todos los modelos de simulación, deberíamos contratar el servicio de MOSIS para la fabricación. En nuestro caso, aprochamos que MOSIS brinda de forma pública en su sitio web, un único modelo de transistores como muestra de la tecnología. Tomamos ese modelo como el caso típico, y todas las simulaciones se hacen con 27 grados de temperatura ambiente y tensión de alimentación nominal (1.8~V).
 
 
-%737.42
+\subsection{Medición de la potencia en un sumador}\label{sec:potencia}
+
+La actividad de una señal afecta tanto a la potencia estática de un circuito CMOS como a la potencia dinámica. La potencia estática depende del estado de la señal, y la potencia dinámica depende de la tasa de cambio de los pines en cada celda estándar. Nuestra simulación para la potencia comparte los mismos vectores de entrada que el de performance, ya que con estos vectores generamos la mayor actividad posible en los pines de salida. En la figura \ref{fig:sim_rca8_pow} podemos ver las formas de onda de la exitación y la corriente instantánea que sale de la fuente de alimentación. Para obtener el valor de la potencia del circuito, aplicamos la ecuación \ref{eq:pv}, que lo realizamos directamente con el simulador, obteniendo una potencia promedio total de:
+$$P_{av} = \frac{1}{\mathrm{{t_f - t_i}}}\int\limits_{t_i}^{t_f} p(t)dt = \mathrm{\frac{1.8~V}{3.5~\ns}}\int\limits_{3.5~\ns}^{7~\ns} i_{\mathrm{fuente}}(t)\mathrm{d}t $$
+$$P_{av} = -838.269~\mu\textrm{W}$$
+
 \begin{figure}
 %\vspace{-5pt}
   \centering
 \includegraphics[scale=1.1]{figuras/rca8bits_power.eps}
-  \caption{Simulación transitoria del circuito Ripple Carry 8 bits. Mostramos la corriente instantánea a través de la fuente de alimentación, el valor negativo se debe a que la corriente sale de la fuente. }
+  \caption{Simulación de régimen transitorio del circuito Ripple Carry 8 bits. Mostramos la corriente instantánea a través de la fuente de alimentación, el valor negativo se debe a que la corriente sale de la fuente. }
 \label{fig:sim_rca8_pow}
 %\vspace{-10pt}
 \end{figure}
 
+\subsection{Potencia y performance de todas las arquitecturas}
+La metodología que explicamos en las secciones \ref{sec:performance} y \ref{sec:potencia}, la aplicamos para todas las arquitecturas y todos los tamaños de bits que tomamos de prueba. En el apéndice \ref{gnucap_testbench} dejamos el código utilizado para realizar las simulaciones analógicas, junto con el código en \textbf{Python} para poder visualizar las formas de onda.
+\subsubsection{Producto performance-potencia}
+Si realizamos el producto $t_p$ por la potencia de cada implementación, tenemos una métrica múy representativa del compromiso entre velocidad y potencia. Cuanto mas chico sea este número, mejor nuestro circuito. En la tabla \ref{tab:comparativa} representamos esta métrica en la columna \textbf{PPP} (Producto Performance-Potencia).
+
 \subsection{Tablas comparativas de
  performance, potencia y área}
+	
+Presentamos en la siguiente tabla el resumen de todas las simulaciones hechas para calcular la performance (midiendo el $t_p$) y la potencia media de cada circuito. Comparamos nuestras implementaciones de \textbf{Brent-Kung} y \textbf{Skalansky} con el equivalente en tamaño del sumador de \textbf{Ripple carry}, para mostrar la mejora con respecto a este sumador.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}ccccccc@{}}
+\toprule
+Arquitectura & bits & área {[}um2{]}  & t_p {[}ns{]} & Potencia {[}uW{]} & PPP {[}pJ{]}\\ \midrule
+Ripple Carry & 8    & 7836.44             & 3.325       & 838.269  &   2,78       \\
+             & 16   & 16146                 & 9           &        &          \\
+             & 32   & 35101.6              & 40          &         &         \\ \cline{2-5}
+
+Brent Kung   & 8    & 9919                  & 2.32        &        &           \\
+             & 16   & 23793                 & 5.3         &        &           \\
+             & 32   & 56981.93            & 6.9         &          &         \\ \cline{2-5}
+Skalansky    & 8    & 11354.91            & 2.1         &          &         \\
+             & 16   & 32284.02            & 3.63        &          &         \\
+             & 32   & 87021.55            & 6.33        &          &         \\ \bottomrule
+\end{tabular}
+}
+\caption{Comparación de los resultados de las 3 arquitecturas}
+\label{tab:comparativa}
+\end{table}
+
 
 
 %\subsection{Métricas de Calidad de un circuito digital}
 
-%Para cuantificar la calidad de un circuito, podemos analizar un circuito desde diferentes perspectivas: Costo, funcionalidad, robustez, performance y consumo de energía. Tomaremos estas dos últimas métricas, mas la del área (propiedad que define el costo) del circuito, para realizar la comparación entre las distintas arquitecturas analizadas.
+%Para cuantificar la calidad de un circuito. podemos analizar un circuito desde diferentes perspectivas: Costo, funcionalidad. robustez, performance y consumo de energía. Tomaremos estas dos últimas métricas, mas la del área (propiedad que define el costo) del circuito, para realizar la comparación entre las distintas arquitecturas analizadas.
 
 
 %\subsection{Performance}
