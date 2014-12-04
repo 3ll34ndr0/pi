@@ -15,9 +15,9 @@
 %En cada capítulo empezar definiendo.
 %En cada capitulo las referencias.
 
-\chapter{ \textsc{ Especificaciones de diseño} }\label{especificaciones}
+\chapter{ \textsc{ Especificaciones de diseño} }\label{chap:especificaciones}
 
-\section{Introducción}
+\section{Introducción}\label{sec:intro_esp}
 Los sumadores binarios son utilizados en la adición, la resta, la multiplicación y la división. La velocidad de un sistema de procesamiento de señales, o un sistema de comunicación depende fuertemente de \textbf{estas unidades funcionales\cite{rabaey2003}}. Para cada una de esas operaciones, son necesarios sumadores de distinta cantidad de bits en el mismo diseño. Por lo cual, no se trata solamente de encontrar la arquitectura que para una determinada cantidad de bits logre el mejor compromiso de área, potencia y velocidad. Sino que también esta relacion se mantenga óptima para diferentes tamaños del sumador. 
 
 Por estas razones, precisamos diseñar un sumador de N-dígitos que sea lo más rápido posible, manteniendo una relación de compromiso óptima entre la velocidad, consumo de energía y área del circuito.

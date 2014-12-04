@@ -1,28 +1,63 @@
-%%%%%%%%%%%%%%%%% DEFINICIN DE MACROS %%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% Formato de capítulos %%%%%%%%%%%%%%%%%%%%%
+\newcommand{\sublinea}{\titlerule[.3mm] \vspace{.5mm} \titlerule[.75mm]}%
+\titleformat{\chapter}[display] %%% definicion a cambiar % 
+{\bfseries \sffamily \huge}%%% tipo de letra y tamao     % 
+{\filleft                                                % 
+ \LARGE \chaptertitlename\ %%% tamao Large               % 
+ \Huge \thechapter}%%% n en Large                        % 
+{3mm}%%% espacio entre etiqueta y cuerpo                 %
+{\filleft}                                               %
+[\vspace{0.5mm} \sublinea]                               % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% configuracin de pgina %%%%%%%%%%%%%%%%%%
+\addtolength{\hoffset}{-5pt}                             %  
+\addtolength{\voffset}{-25pt}                            %  
+\addtolength{\textwidth}{50pt}                           %
+\addtolength{\headheight}{12pt}                          % 
+\addtolength{\textheight}{75pt}                          %  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% MACRO FIGURA 					 %
+%%%%%%%%%%%%%%%%% DEFINICIN DE MACROS %%%%%%%%%%%%%%%%%%%%
+%%% MACRO FIGURA 										 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Comando:                                               %
 % \figura{nombre-fichero}{argumentos}{titulo}{etiqueta}  %
 % argumnetos: width=Xcm,height=Ycm,angle=z               %  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\figura}[4]{                                 %
-  \begin{figure}[htbp]                                   %
-	\centering                                       %
-	\includegraphics[#2]{#1}                         %
-	\caption{\footnotesize#3}                        %
-	\label{#4}                                       %
+   \begin{figure}[htbp]                                   %
+   	\centering                                           %
+	\includegraphics[#2]{#1}                             %
+	\caption{\footnotesize#3}                            %
+	\label{#4}                                           %
 \end{figure}                                             %  
              }                                           %
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\figu}[4]{                                 %
+   \begin{figure}[!hp]                                   %
+	\centering                                           %
+	\includegraphics[#2]{#1}                             %
+	\caption{\footnotesize#3}                            %
+	\label{#4}                                           %
+\end{figure}                                             %  
+             }                                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MACRO GRAD (Para colocar el simbolo ° ) % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$\hspace{1mm}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MACRO SUMARIO(SOLO PARA SER USADO DENTRO DE CAPITULOS) % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Comando:                                               %
-% \sumario{nombre de referencia de la seccion}           %
+% \sumario{nombre de referencia de la seccin}            %
 % ********** PARA SECCIONES ***************************  %     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\sumario}[1]{                                %
@@ -31,8 +66,9 @@
 \textsc{\ref{#1} $\circ$ \nameref{#1}}                   %
                           }                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Comando:                                               %
-% \subsumario{nombre de referencia de la subseccino}     %
+% \subsumario{nombre de referencia de la subseccin}      %
 % ********* PARA SUB-SECCIONES ************************* %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\subsumario}[1]{                             %
@@ -41,8 +77,9 @@
 \hspace*{1cm} {\small - \nameref{#1}}                    %
                           }                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Comando:                                               %
-% \subsumario{nombre de referencia de la subseccion}     %
+% \subsumario{nombre de referencia de la subseccin}      %
 % ********* PARA SUB-SUB-SECCIONES ********************* %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\subsubsumario}[1]{                          %
@@ -51,22 +88,18 @@
 \hspace*{2cm} {\small   \nameref{#1}}                    %
                           }                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% MACRO ECUACION                                         % 
+% MACRO ECUACIN                                          % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Comando:                                               %
 % \ecu{etiqueta}{contenido}                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\ecu}[2]{                                    %
   \begin{equation}                                       %
-     #2                                                  %
+    #2                                      			 %
     \label{#1}                                           %
   \end{equation}           }                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Referencia de Figura                                   % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,23 +107,57 @@
 % \reffig{nombre figura}                                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\reffig}[1]{                                 %
-  \textit{figura \ref{fig:#1}}                           %
+  \textit{Figura \ref{fig:#1}}                           %
                         }                                %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Referencia de Ecuacin                                 % 
+% Referencia de anexo                                    % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Comando:                                               %
-% \refecu{nombre ecuacin}                               %
+% \refanex{nombre anexo}                                %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\refecu}[1]{                                 %
-  \textit{ecuacin \ref{#1}}                             %
+\newcommand{\refanex}[1]{                                %
+  \textit{Anexo \ref{#1}}			  			     %
+}														 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Referencia de Seccion                                  % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comando:                                               %
+% \refsec{nombre seccion}                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\refsec}[1]{                                 %
+  \textit{Secci\'on \ref{sec:#1}}						 %
+}														 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Referencia de subseccion                               % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comando:                                               %
+% \refsubsec{nombre subseccion}                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\refsubsec}[1]{                              %
+  \textit{Secci\'on \ref{subsec:#1}}                     %
                         }                                %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+% Referencia de Capitulo                                 % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comando:                                               %
+% \refcap{nombre seccion}                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\refcap}[1]{                                 %
+  \textit{Cap\'itulo \ref{#1}}							 %
+}														 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Referencia de Ecuacin                                  % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comando:                                               %
+% \refecu{nombre ecuaci\'on}                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\refecu}[1]{                                 %
+  \textit{Ec\hspace{1mm}\ref{#1}}                        %
+                        }                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Salto de renglon                                       % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,35 +168,28 @@
 \vspace*{11pt}      }                                    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\referencia}[1]{                                  %
+  \textit{[\cite{#1}]}                           %
+                        }      							 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Unidades: Nanosegundos, micro metros, nanómetros, etc.
+%
+\newcommand{\ns} {\textrm{ns}}
+\newcommand{\nanom} {\textrm{nm}}
+\newcommand{\microm} {\mu\textrm{m}}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%% MACROS DE CUED TESIS %%%%%%%%%%%%%%%
-% VER QUE HACE CADA UNO!!!
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\PdfPsText}[2]{
-  \ifpdf
-     #1
-  \else
-     #2
-  \fi
-}
 
-\newcommand{\IncludeGraphicsH}[3]{
-  \PdfPsText{\includegraphics[height=#2]{#1}}{\includegraphics[bb = #3, height=#2]{#1}}
-}
 
-\newcommand{\IncludeGraphicsW}[3]{
-  \PdfPsText{\includegraphics[width=#2]{#1}}{\includegraphics[bb = #3, width=#2]{#1}}
-}
 
-\newcommand{\InsertFig}[3]{
-  \begin{figure}[!htbp]
-    \begin{center}
-      \leavevmode
-      #1
-      \caption{#2}
-      \label{#3}
-    \end{center}
-  \end{figure}
-}
-
+% Includes a MATLAB script.
+% The first parameter is the label, which also is the name of the script
+%   without the .m.
+% The second parameter is the optional caption.
+\newcommand{\matlabscript}[2]
+  {\begin{itemize}\item[]\lstinputlisting[caption=#2,label=#1]{#1.m}\end{itemize}}

@@ -32,6 +32,11 @@
 
 %Macros:
 \include{macros/macrofile1}
+\newcommand{\ns} {\textrm{ns}}
+\newcommand{\nanom} {\textrm{nm}}
+\newcommand{\microm} {$\mu\textrm{m}$}
+
+
 
 %\usepackage{cite}
 \ifpdf
@@ -70,10 +75,10 @@
 \part{Diseño Digital}\label{diseño_digital}
 \include{Digital/especificaciones}
 \include{Digital/digital}
+\include{Digital/implementacionHDL}
 \include{Verificacion/verificacion}
 \part{Diseño Físico}\label{diseño_físico}
 \include{FlujoFisico/flujofisico}
-\include{SignOutTapeOut/signouttapeout}
 \part{Comparación de resultados}\label{comparacion_resultados}
 \include{ComparacionResultados/comparacion}
 \part{Conclusiones}

@@ -1,9 +1,4 @@
 % hacer una macro para \emph{place \& route}
-\newcommand{\ns} {\textrm{ns}}
-\newcommand{\nanom} {\textrm{nm}}
-
-
-
 
 \chapter{Flujo de Diseño Físico}
 \section{Introducción}
@@ -279,7 +274,7 @@ En la figura \ref{fig:SCconf} vemos la configuración necesaria para hacer el \g
 
 
 \subsection{Distintas alternativas y resultados}
-La regla de oro para todo \emph{layout} es que sea lo más cuadrado posible, ya que de esta forma es más eficiente el uso del área cuando integramos nuestro circuito con otros de mayor jerarquía. La métrica de selección del resultado será el área que ocupe nuestro circuito y la relación entre sus lados: cuanto más pequeño\footnote{El área es una métrica de calidad del circuito, según lo planteamos en el capítulo \ref{especificaciones}.} y cuadrado mejor. En las tablas \ref{tab:rippleCarry}, \ref{tab:skalansky} y \ref{tab:brent-kung} vemos los resultados para todos los sumadores analizados, con 3 tamaños distintos y para diferentes alternativas de \emph{floorplan}, variando el parámetro \textbf{\emph{Number of rows of cells}}.
+La regla de oro para todo \emph{layout} es que sea lo más cuadrado posible, ya que de esta forma es más eficiente el uso del área cuando integramos nuestro circuito con otros de mayor jerarquía. La métrica de selección del resultado será el área que ocupe nuestro circuito y la relación entre sus lados: cuanto más pequeño\footnote{El área es una métrica de calidad del circuito, según lo planteamos en el capítulo \ref{especificaciones}.} y cuadrado mejor. En las tablas \ref{tab:rippleCarry}, \ref{tab:sklansky} y \ref{tab:brent-kung} vemos los resultados para todos los sumadores analizados, con 3 tamaños distintos y para diferentes alternativas de \emph{floorplan}, variando el parámetro \textbf{\emph{Number of rows of cells}}.
 
 En la figura \ref{fig:diseños} presentamos todos los \emph{layout} seleccionados con el criterio recién mencionado. Resumimos con este gráfico el resultado de \gls{pnr} de cada arquitectura para 3 tamaños de sumandos distintos.
 \begin{table}[h]
@@ -304,7 +299,7 @@ ancho/alto                                & 0,51   & 0,87   & 1,14   & 0,79    &
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}ccccccccccc@{}}
 \toprule
-\textbf{Skalansky} & \multicolumn{3}{c}{8}       & \multicolumn{4}{c}{16}                & \multicolumn{3}{c}{32}      \\ \midrule
+\textbf{Sklansky} & \multicolumn{3}{c}{8}       & \multicolumn{4}{c}{16}                & \multicolumn{3}{c}{32}      \\ \midrule
 filas              & 3       & 4       & 5       & 4       & 5       & 6       & 7       & 6       & 7       & 8       \\
 ancho              & 1516    & 1167    & 954     & 3538    & 2042    & 1825    & 1536    & 3678    & 3229    & 2860    \\
 alto               & 810     & 973     & 1252    & 1345    & 1581    & 1878    & 2063    & 2639    & 2695    & 3072    \\
@@ -313,7 +308,7 @@ ancho/alto         & 0,53    & 0,83    & 1,31    & 0,38    & 0,77    & 1,03    &
 \end{tabular}
 }
 \caption{Ubicación y conexionado para Skalanksy en 3 tamaños: 8, 16 y 32 bits}
-\label{tab:skalansky}
+\label{tab:sklansky}
 \end{table}
 
 \begin{table}[h]
@@ -487,6 +482,7 @@ $$P_{av} = -838.269~\mu\textrm{W}$$
 \label{fig:sim_rca8_pow}
 %\vspace{-10pt}
 \end{figure}
+El período de integración que elegimos está determinado por el $t_p$ del circuito, lo que físicamente quiere decir: Medimos la potencia del circuito cuando está funcionando a la mayor velocidad posible. 
 
 \subsection{Potencia y performance de todas las arquitecturas}
 La metodología que explicamos en las secciones \ref{sec:performance} y \ref{sec:potencia}, la aplicamos para todas las arquitecturas y todos los tamaños de bits que tomamos de prueba. En el apéndice \ref{gnucap_testbench} dejamos el código utilizado para realizar las simulaciones analógicas, junto con el código en \textbf{Python} para poder visualizar las formas de onda.
@@ -496,7 +492,7 @@ Si realizamos el producto $t_p$ por la potencia de cada implementación, tenemos
 \subsection{Tablas comparativas de
  performance, potencia y área}
 	
-Presentamos en la siguiente tabla el resumen de todas las simulaciones hechas para calcular la performance (midiendo el $t_p$) y la potencia media de cada circuito. Comparamos nuestras implementaciones de \textbf{Brent-Kung} y \textbf{Skalansky} con el equivalente en tamaño del sumador de \textbf{Ripple carry}, para mostrar la mejora con respecto a este sumador.
+Presentamos en la siguiente tabla el resumen de todas las simulaciones hechas para calcular la performance (midiendo el $t_p$) y la potencia media de cada circuito. Comparamos nuestras implementaciones de \textbf{Brent-Kung} y \textbf{Sklansky} con el equivalente en tamaño del sumador de \textbf{Ripple carry}, para mostrar la mejora con respecto a este sumador.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
@@ -514,7 +510,7 @@ Ripple Carry & 8    & 7836.44             & 3.325       & 838.269  &   2,78     
 Brent Kung   & 8    & 9919                  & 2.32        &        &           \\
              & 16   & 23793                 & 5.3         &        &           \\
              & 32   & 56981.93            & 6.9         &          &         \\ \cline{2-5}
-Skalansky    & 8    & 11354.91            & 2.1         &          &         \\
+Sklansky    & 8    & 11354.91            & 2.1         &          &         \\
              & 16   & 32284.02            & 3.63        &          &         \\
              & 32   & 87021.55            & 6.33        &          &         \\ \bottomrule
 \end{tabular}
