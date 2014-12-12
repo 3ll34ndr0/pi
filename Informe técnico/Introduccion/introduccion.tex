@@ -13,17 +13,20 @@ En el presente capítulo se describe de forma general la estructura y contenido 
 \section{Planteamiento del problema y motivación}
 En la actualidad los microprocesadores, DSP, microcontroladores, y otro hardware específico para cálculo computacional o de aplicación específica son desarrollados en tecnología CMOS submicrónica. El problema planteado es, ¿Cómo hacer para diseñar circuitos integrados en ésta tecnología, con herramientas flexibles, libres\footnote{En el sentido que no impongan restricciones de uso, estudio, mejora y distribución.} y accesibles para todo tipo de uso: académico y comercial?.
 
-Nos interesa este problema por varios motivos, pero el principal es poder acercar estas tecnologías sin restricciones a los estudiantes de grado. Las posibilidades de aplicaciones de los circuitos integrados son infinitas, ya que podemos controlar todas las dimensiones físicas de los transistores y elementos pasivos que integramos. Pero aumenta aún más el potencial si también existe la posibilidad de adaptar o mejorar las herramientas que utilizamos para el diseño. 
+Nos interesa este problema por varios motivos, pero el principal es poder acercar estas tecnologías sin restricciones a los estudiantes de grado. Las posibilidades de aplicaciones de los circuitos integrados son infinitas, ya que podemos controlar todas las dimensiones físicas de los transistores y elementos pasivos que integramos. Utilizando software libre, también existe la posibilidad de adaptar o mejorar las herramientas que utilizamos para el diseño.
 
-Otra motivación importante es la económica: Los costos por licencias de las herramientas de software, pueden transformar un proyecto de bajo volumen de producción en económicamente no factible. Damos un ejemplo real:
-El costo de 25 chips en tecnología de 0.35~\microm con un área máxima de 3\mmcuadrado, con encapsulado DIP-20 fabricados por medio de CMP\footnote{CMP es una organización que presta el servicio para la fabricación de circuitos integrados y MEMS para prototipado y bajo volumen de producción} es de \euro{2787.5}, resultando el costo de fabricación en \euro{111.5} por unidad. Pero si tenemos en cuenta el costo de las licencias de software por un año, tenemos que partir desde un orden de magnitud\footnote{El costo de licencia de un conjunto completo de herramientas por un año puede llegar hasta u\$d1.000.000. Este tipo de información no está públicamente disponible.} el costo total de fabricación recién mencionado.
+Otra motivación importante es la económica: Los costos por licencias de las herramientas de software, pueden transformar un proyecto de bajo volumen de producción en económicamente no factible. Damos un ejemplo real: 
 
-En función del problema planteado y de las motivaciones mencionadas, nos propusimos implementar un bloque digital que encontramos en todos los sistemas, que además puede ser el bloque de mayor requerimiento de performance. Este bloque es el sumador binario,    
-  
+\begin{quote}
+El costo de 25 chips en tecnología de 0.35~\microm con un área máxima de 3\mmcuadrado, con encapsulado DIP-20 fabricados por medio de CMP\footnote{CMP es una organización que presta el servicio para la fabricación de circuitos integrados y MEMS para prototipado y bajo volumen de producción} es de \euro{2787.5}, resultando el costo de fabricación en \euro{111.5} por unidad. Pero si tenemos en cuenta el costo de las licencias de software por un año, el costo total se incrementa en un orden de magnitud, como mínimo\footnote{El costo de licencia de un conjunto completo de herramientas por un año puede llegar hasta u\$d1.000.000. Este tipo de información no está públicamente disponible.}.
+\end{quote}
+
+En función del problema planteado y de las motivaciones mencionadas, nos propusimos implementar un sumador binario ya que es un circuito presente en la mayoría de los sistemas, que además puede ser el bloque de mayor requerimiento de performance.
 \section{Objetivo generales}
 
 
 \section{Objetivos particulares}
+Nos proponemos diseñar un circuito que pueda ser utilizado en un sistema digital, especificando las características más importantes que nos permitan determinar su utilización según requerimientos de performance, potencia y área.
 El objetivo del trabajo es diseñar un sumador de n-bits, por ser este el elemento central de cualquier tipo de circuito digital de cálculo: Los multiplicadores, los MAC (\emph{multiply and accumulate}), los filtros FIR, etc, que pueda ser enviado a fabricar utilizando
 procesos de fabricación CMOS para circuitos integrados. Integrar y documentar un flujo de diseño
 de este sistema digital utilizando herramientas de Software Libre, será un subproducto de este

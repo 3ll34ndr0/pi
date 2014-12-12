@@ -489,7 +489,7 @@ La metodología que explicamos en las secciones \ref{sec:performance} y \ref{sec
 \subsubsection{Producto performance-potencia}
 Si realizamos el producto $t_p$ por la potencia de cada implementación, tenemos una métrica múy representativa del compromiso entre velocidad y potencia. Cuanto mas chico sea este número, mejor nuestro circuito. En la tabla \ref{tab:comparativa} representamos esta métrica en la columna \textbf{PPP} (Producto Performance-Potencia).
 
-\subsection{Comparación de performance, potencia y área}
+\subsection{Comparación de performance, potencia y área}\label{subsec:comparativa}
 	
 Presentamos en la siguiente tabla el resumen de todas las simulaciones hechas para calcular la performance (midiendo el $t_p$) y la potencia media de cada circuito. Comparamos nuestras implementaciones de \textbf{Brent-Kung} y \textbf{Sklansky} con el equivalente en tamaño del sumador de \textbf{ripple carry}, para mostrar la mejora con respecto a este sumador.
 
@@ -522,7 +522,7 @@ Podemos ver que el sumador de \textbf{Sklansky} tiene una performance de hasta $
 
 Si comparamos estas dos arquitecturas entre sí, vemos que el Brent-Kung de 32 bits es apenas $\%9.1$ más lento que Sklansky, pero con $\%22.7$ menos de potencia y un área $\%52$ más chica.
 
-Por lo tanto, hemos logrado un conjunto de sumadores que según los requerimientos de área, potencia y performance, elegiremos la arquitectura más adecuada. Para 32 bits, la mayor velocidad se logra con Sklansky y el mejor compromiso entre velocidad, potencia y área con Brenk-Kung. Para todos los tamaños de sumadores, si la performance no es un problema, un ripple carry es la solución optima. 
+Por lo tanto, hemos logrado un conjunto de sumadores que según los requerimientos de área, potencia y performance, elegiremos la arquitectura más adecuada. Para sumadores de 32 bits, la mayor velocidad se logra con Sklansky y el mejor compromiso entre velocidad, potencia y área con Brenk-Kung. Para todos los tamaños de sumadores, si la performance no es un problema, un ripple carry es la solución optima de estos tres, ya que ahorra área y energía.
 
 
 
