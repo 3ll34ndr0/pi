@@ -1,0 +1,50 @@
+*** Test bench para sumador de rippleCarry	
+options dtmin=1e-15
+
+* Para que converga la corriente con mejor resolución: 
+* Se podría hacer más preciso aún, pero las simulaciones tardarían mas.
+options reltol= 10u
+options abstol= 10f
+
+* Para 8 bits. 
+
+* Cargo el circuito:
+
+get ext_rippleCarry8_1x.spi
+
+* Cargo la exitación de entrada
+.include inputs_rc8.spi
+* Seteo el parámetro para fijar la frecuencia en el circuito de exitación:
+param periodo = 3.5n
+
+* Comienzo la simulación llevando el circuito al punto de operación por defecto (Temperatura 27 grados)
+op
+
+
+* Elijo en qué puntos voy a medir qué cosa:
+* Primero los 2 puntos (entrada y salida) del path crítico:
+probe tran   v(a0) 
+probe tran + v(sum0)  v(sum1)  v(sum2)  v(sum3)  v(sum4)  v(sum5)  v(sum6) v(sum7) v(cout)
+probe tran + i(VVDC_vdd)
+*probe tran + v(sum8)  v(sum9)  v(sum10) v(sum11) v(sum12) v(sum13) v(sum14) v(sum15) 
+*probe tran + v(sum16) v(sum17) v(sum18) v(sum19) v(sum20) v(sum12) v(sum22) v(sum23)
+*probe tran + v(sum24) v(sum25) v(sum26) v(sum27) v(sum28) v(sum29) v(sum30) v(sum31)  
+
+* Luego elijo que voy a grabar para graficar y medir:
+store tran i(VVDC_vdd)
+
+* Mido el valor pico de la corriente:
+measure i_pico = max(probe="i(VVDC_vdd)" cross=0 last)
+
+
+* Comienzo la simulación en el tiempo:
+*trans 0 {2*periodo} 0.01n > rippleCarry8_PP5.out
+param t_i = {periodo}
+param t_f = {periodo*2}
+param t_tot = {t_f - t_i}
+measure area = integrate(probe="i(VVDC_vdd)" begin=t_i end=t_f) 
+param total_energy = area*1.8
+eval total_energy
+param av_power = total_energy/t_tot
+eval av_power
+
