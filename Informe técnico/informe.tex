@@ -29,13 +29,13 @@
 \usepackage{subcaption}
 \usepackage{booktabs}
 \usepackage{glossaries}
-
+\usepackage[gen]{eurosym}
 %Macros:
 \include{macros/macrofile1}
 \newcommand{\ns} {\textrm{ns}}
 \newcommand{\nanom} {\textrm{nm}}
-\newcommand{\microm} {$\mu\textrm{m}$}
-
+%\newcommand{\microm} {$\mu\textrm{m}$}
+\loadglsentries{defns}
 
 
 %\usepackage{cite}
@@ -54,7 +54,7 @@
 %\makeindex \label{indice}
 \hyphenation{ es-cla-re-ci-mien-to ma-te-ria-li-zar-se} 
 
-\loadglsentries{defns}
+
 
 \begin{document}
 \sloppy
@@ -69,24 +69,24 @@
 \listoffigures 
 \listoftables
 \makeglossary 
+\include{resumen}
 \include{Introduccion/introduccion}
 \mainmatter
 
-\part{Diseño Digital}\label{diseño_digital}
+\part{Diseño Digital}\label{disenio_digital}
 \include{Digital/especificaciones}
 \include{Digital/digital}
 \include{Digital/implementacionHDL}
 \include{Verificacion/verificacion}
-\part{Diseño Físico}\label{diseño_físico}
+\part{Diseño Físico}\label{disenio_fisico}
 \include{FlujoFisico/flujofisico}
-\part{Comparación de resultados}\label{comparacion_resultados}
-\include{ComparacionResultados/comparacion}
-\part{Conclusiones}
+\part{Conclusiones}\label{conclusiones}
 \include{Conclusiones/conclusiones}
 \appendix
 \include{Apendice/vhdl}
 \include{Apendice/scriptPerl}
 %\include{Apendice/cmos180nm}
+
 \backmatter
 
 
@@ -111,7 +111,6 @@
 % latex Nombre-del-archivo.tex
 
 
-%\nocite{jitter2,jitter3}
 
 
 \end{document}

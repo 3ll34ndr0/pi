@@ -11,9 +11,9 @@ data = genfromtxt(filename_str, skip_header=0,unpack=True)
 
 # http://matplotlib.sourceforge.net/api/figure_api.html#module-matplotlib.figure 
 print sys.argv[1]
-nob_str = raw_input('Ingresa cantidad de bits del sumador: ')
+nob_str = raw_input('Ingresa cantidad de señales a graficar: ')
 nob = int(nob_str)
-totalPlots = nob+2
+totalPlots = nob
 ###########################
 # nob subplots sharing both x/y axes
 f, eje = plt.subplots(totalPlots, sharex=True, sharey=False)
@@ -29,7 +29,7 @@ for i in range(1,totalPlots):
 
 # Escribo la segunda etiqueta:
 # Etiqueta de la ultima señal:
-eje[17].set_ylabel('cout')
+eje[totalPlots - 1].set_ylabel('cout')
 
 
 

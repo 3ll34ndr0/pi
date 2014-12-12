@@ -41,11 +41,11 @@ El procesos de ubicación de los componentes e interconexionado que acabamos de 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{figuras/Silicon_chip_3d.png}
-  \caption{Celda estándar con 3 capas de metales en color arena, y una capa de silício policristalino en color ladrillo. Azul y rojo son dopado $N^+$ y $P^+$ respectivamente}
+  \caption{Representación en tres dimenciones de una celda estándar con 3 capas de metales en color arena, y una capa de silício policristalino en color ladrillo. Azul y rojo son dopado $N^+$ y $P^+$ respectivamente}
   \label{fig:routing}
 \end{figure}
 
-\section{Relevamiento, comparación y selección de las herramientas disponibles}
+\section{Relevamiento, comparación y selección de las herramientas disponibles}\label{sec:herramientasDisponibles}
 Para realizar las tareas que describimos en la sección \ref{etapasDiseñoFisico}, será necesario buscar una o varias herramientas de software que se ajusten a los requerimientos del diseño y la tecnología de fabricación\footnote{Se utilizará una tecnología definida por Mead y Conway\cite{mead-conway80}, conocida como  \textbf{SCMOS} (Scalable CMOS).
 Esto es un conjunto de capas lógicas junto a sus reglas de diseño, que proveen un proceso casi independiente de la tecnología y dimensión, que sirve para muchos procesos CMOS disponibles a través de MOSIS.} del circuito integrado.
 
@@ -55,7 +55,7 @@ Esto es un conjunto de capas lógicas junto a sus reglas de diseño, que proveen
 \item Mayor cantidad de herramientas integradas
 \item Flexibilidad para importar y exportar datos. 
 \item Disponibilidad de un Kit de diseño para el proceso de la tecnología seleccionada, conocido como \gls{pdk}.
-\end{itemize}	ºº
+\end{itemize}
 
 \subsection{Relevamiento}
 Luego de una inspección de esas características, las herramientas candidatas que cumplen con estas características son:
@@ -82,7 +82,7 @@ Es importante mencionar que existen mas herramientas disponibles (y muy útiles)
 
 Resaltamos las ventajas y desventajas de cada herramienta, que nos permitirá hacer una selección en función de las necesidades del proyecto.
 \subsection{Selección}
-La herramienta que seleccionamos es \textbf{Electric}, ya que nos brinda una serie de ventajas comparativas, teniendo en cuenta que nuestro circuito es puramente combinacional y no demanda gran esfuerzo de \gls{pnr} a la herramienta:
+La herramienta que seleccionamos es \textbf{Electric}, ya que nos brinda una serie de ventajas comparativas, teniendo en cuenta que nuestro circuito es puramente combinacional y no demanda gran esfuerzo de \gls{pnr} a la herramienta. Podemos resumir :
 \begin{itemize}
 \item Fácil instalación
 \item Curva de aprendizaje suave
@@ -139,7 +139,7 @@ MOSIS especifica los procesos disponibles que soportan las reglas escalables en 
 
 Además, podemos optar entre las reglas \textbf{SCN6M\_SUBM} y las \textbf{SCN6M\_DEEP}. Decidimos utilizar la segunda, ya que tiene un valor de $\lambda$ menor, lo cual significa un tamaño de transistor resultado más óptimo.
 
-El proceso nos ofrece 6 capas de metal (cobre) para la interconexión, 1 capa de silicio policristalino (\emph{poly}) para crear la compuerta y también para la interconexión de las mismas (distancias cortas sólamente, por su mayor resistividad que el cobre), con 2 tipos de óxidos para crear el aislante de las compuertas, los que pueden ser alimentados con tensión máxima de 1,8V, y los que pueden ser alimentados con 3,3V (pensados principalmente como transistores para los circuitos de entrada y salida del chip). MOSIS denomina a las reglas de diseño que utilizaremos para esta tecnología como SCN6M\_DEEP, que significa: 
+El proceso nos ofrece 6 capas de metal (aluminio) para la interconexión, 1 capa de silicio policristalino (\emph{poly}) para crear la compuerta y también para la interconexión de las mismas (distancias cortas sólamente, por su mayor resistividad que el cobre), con 2 tipos de óxidos para crear el aislante de las compuertas, los que pueden ser alimentados con tensión máxima de 1,8V, y los que pueden ser alimentados con 3,3V (pensados principalmente como transistores para los circuitos de entrada y salida del chip). MOSIS denomina a las reglas de diseño que utilizaremos para esta tecnología como SCN6M\_DEEP, que significa: 
 \begin{itemize}
 \item S: Escalable
 \item C: Tecnología de fabricación CMOS
@@ -183,7 +183,7 @@ Ahora es necesario mapear estas funciones lógicas a compuertas lógicas reales,
 
 Es común elegir las celdas estándar según el tipo de aplicación a desarrollar. Existen celdas estandar que fueron diseñadas para bajo consumo, o alta velocidad, o de mínima área. También existe la posibilidad de diseñar celdas que busquen la mejor relación velocidad-consumo-area que puedan ser utilizadas en muchas aplicaciones. En circuitos integrados para sistemas alimentados a batería se intentará utilizar las celdas de menor consumo y evitar siempre que sea posible las de mayor velocidad, en función del presupuesto de potencia disponible para el mismo.
 
-En nuestro caso, aprovechando que la suma se realiza con apenas 3 compuertas: \verb.and., \verb.or., \verb.xor., podemos construir nuestro propio conjunto de celdas. Como punto de partida, utilizamos celdas que fueron realizadas para un estudio sobre circuitos digitales operando por debajo de la región de inversión debil\cite{subthresholdArith}.
+En nuestro caso, aprovechando que la suma se realiza con apenas 3 compuertas: \verb.and., \verb.or., \verb.xor., podemos construir nuestro propio conjunto de celdas. Como punto de partida, utilizamos celdas que fueron realizadas para un estudio sobre circuitos digitales operando por debajo de la región de inversión débil\cite{subthresholdArith}.
  %Una referencia al Rabaey es necesaria? 
 \subsection{Características}
 Estas celdas están correctamente dimensionadas para lograr el apilamiento en filas y columnas, y una grilla de interconexionado amplia, que nos evitará problemas de este tipo. Para nuestros objetivos, modificamos las dimensiones de los transistores de canal P, para lograr un tiempo de crecida y bajada más simétricos, y así mejorar la velocidad. Resumimos las características de nuestras celdas estándar:
@@ -274,7 +274,7 @@ En la figura \ref{fig:SCconf} vemos la configuración necesaria para hacer el \g
 
 
 \subsection{Distintas alternativas y resultados}
-La regla de oro para todo \emph{layout} es que sea lo más cuadrado posible, ya que de esta forma es más eficiente el uso del área cuando integramos nuestro circuito con otros de mayor jerarquía. La métrica de selección del resultado será el área que ocupe nuestro circuito y la relación entre sus lados: cuanto más pequeño\footnote{El área es una métrica de calidad del circuito, según lo planteamos en el capítulo \ref{especificaciones}.} y cuadrado mejor. En las tablas \ref{tab:rippleCarry}, \ref{tab:sklansky} y \ref{tab:brent-kung} vemos los resultados para todos los sumadores analizados, con 3 tamaños distintos y para diferentes alternativas de \emph{floorplan}, variando el parámetro \textbf{\emph{Number of rows of cells}}.
+La regla de oro para todo \emph{layout} es que sea lo más cuadrado posible, ya que de esta forma es más eficiente el uso del área cuando integramos nuestro circuito con otros de mayor jerarquía. La métrica de selección del resultado será el área que ocupe nuestro circuito y la relación entre sus lados: cuanto más pequeño\footnote{El área es una métrica de calidad del circuito, según lo planteamos en el capítulo \ref{chap:especificaciones}.} y cuadrado mejor. En las tablas \ref{tab:rippleCarry}, \ref{tab:sklansky} y \ref{tab:brent-kung} vemos los resultados para todos los sumadores analizados, con 3 tamaños distintos y para diferentes alternativas de \emph{floorplan}, variando el parámetro \textbf{\emph{Number of rows of cells}}.
 
 En la figura \ref{fig:diseños} presentamos todos los \emph{layout} seleccionados con el criterio recién mencionado. Resumimos con este gráfico el resultado de \gls{pnr} de cada arquitectura para 3 tamaños de sumandos distintos.
 \begin{table}[h]
@@ -332,7 +332,7 @@ ancho/alto          & 0,54    & 0,83   & 1,27    & 0,55    & 0,82    & 1,00    &
 \begin{figure}
 \centering
 \includegraphics[scale=1]{figuras/PnR9disenos.eps}
-  \caption{Tres arquitecturas y tres tamaños de sumandos distintos. El gráfico está en escala, la unidad de los dos ejes es $\lambda$}
+  \caption{Tres arquitecturas y tres tamaños de sumandos distintos. Los circuitos están en escala, la unidad de los dos ejes es $\lambda=90~\nanom$}
   \label{fig:diseños}
 \end{figure}
 
@@ -424,15 +424,15 @@ Justificamos la diferencia entre nuestros resultados y los datos brindados por e
 \end{figure}
 
 \subsection{Medición de la performance en un sumador}\label{sec:performance}
-Siguiendo lo que definimos en el capítulo \ref{especificaciones} para la performance, ahora seremos más específicos para los sumadores y definiremos las condiciones que nos permiten medir correctamente el tiempo de propagacion $t_p$ del camino crítico. Realizaremos dos simulaciones de régimen transitorio para que el estado de las entradas cambie de forma tal que exite el camino crítico. Una simulación para encontrar $t_{pHL}$ y otra para $t_{pLH}$.
+Siguiendo lo que definimos en el capítulo \ref{chap:especificaciones} para la performance, ahora seremos más específicos para los sumadores y definiremos las condiciones que nos permiten medir correctamente el tiempo de propagacion $t_p$ del camino crítico. Realizaremos dos simulaciones de régimen transitorio para que el estado de las entradas cambie de forma tal que exite el camino crítico. Una simulación para encontrar $t_{pHL}$ y otra para $t_{pLH}$.
 
 Para eso necesitamos generar cambios de estados que generen acarreo en todos los bits, ya que el bit mas significativo de la suma y el acarreo de salida, dependen de los acarreos del bit anterior. Si logramos que desde el bit menos significativo se propague hasta el más significativo, estamos exitando el camino crítico para que se propague la señal desde los bits menos significativos a los más significativos. Esto se puede lograr con las siguientes 2 transiciones (ejemplo para un sumador de 8 bits):
 
 \begin{equation}\label{eq:tfhl}
-(A_0,B_0) \to (A_1,B_1) = (0x00, 0xFF) \to (0x01,0xFF)
+(A_0,B_0) \to (A_1,B_1) = (\textrm{0x00}, \textrm{0xFF}) \to (\textrm{0x01},\textrm{0xFF})
 \end{equation}
 \begin{equation}\label{eq:tflh}
-(A_1,B_1) \to (A_0,B_0) = (0x01,0xFF) \to (0x00, 0xFF)
+(A_1,B_1) \to (A_0,B_0) = (\textrm{0x01},\textrm{0xFF}) \to (\textrm{0x00}, \textrm{0xFF})
 \end{equation}
 
 Como el estado final de una transición es el estado inicial de la otra, y viceversa, podemos realizar estas dos mediciones con una sóla simulación de régimen transitorio que cíclicamente pase de un estado al otro. Eso es lo que mostramos en la figura \ref{fig:sim_rca8}, que utilizamos para encontrar el camino crítico. Vemos que la señal \verb.s7. es la más lenta, y que la transición \ref{eq:tfhl} nos sirve para calcular $t_{pHL}$. La transición \ref{eq:tflh} nos permite calcular $t_{pLH}.
@@ -489,10 +489,9 @@ La metodología que explicamos en las secciones \ref{sec:performance} y \ref{sec
 \subsubsection{Producto performance-potencia}
 Si realizamos el producto $t_p$ por la potencia de cada implementación, tenemos una métrica múy representativa del compromiso entre velocidad y potencia. Cuanto mas chico sea este número, mejor nuestro circuito. En la tabla \ref{tab:comparativa} representamos esta métrica en la columna \textbf{PPP} (Producto Performance-Potencia).
 
-\subsection{Tablas comparativas de
- performance, potencia y área}
+\subsection{Comparación de performance, potencia y área}
 	
-Presentamos en la siguiente tabla el resumen de todas las simulaciones hechas para calcular la performance (midiendo el $t_p$) y la potencia media de cada circuito. Comparamos nuestras implementaciones de \textbf{Brent-Kung} y \textbf{Sklansky} con el equivalente en tamaño del sumador de \textbf{Ripple carry}, para mostrar la mejora con respecto a este sumador.
+Presentamos en la siguiente tabla el resumen de todas las simulaciones hechas para calcular la performance (midiendo el $t_p$) y la potencia media de cada circuito. Comparamos nuestras implementaciones de \textbf{Brent-Kung} y \textbf{Sklansky} con el equivalente en tamaño del sumador de \textbf{ripple carry}, para mostrar la mejora con respecto a este sumador.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
@@ -519,20 +518,13 @@ Sklansky    & 8    & 11354.91            & 2.1         &          &         \\
 \label{tab:comparativa}
 \end{table}
 
+Podemos ver que el sumador de \textbf{Sklansky} tiene una performance de hasta $6.33$ veces más rápido para tamaños de 32 bits, con $9$ veces mas de potencia y $2.5$ veces más de área. Por otro lado, el sumador de \negrita{Brenk-Kung} de 32 bits mejora la performance en $5.8$, con un costo en potencia de $~7.33$ más, y con una área $1.62$ veces más grande. 
+
+Si comparamos estas dos arquitecturas entre sí, vemos que el Brent-Kung de 32 bits es apenas $\%9.1$ más lento que Sklansky, pero con $\%22.7$ menos de potencia y un área $\%52$ más chica.
+
+Por lo tanto, hemos logrado un conjunto de sumadores que según los requerimientos de área, potencia y performance, elegiremos la arquitectura más adecuada. Para 32 bits, la mayor velocidad se logra con Sklansky y el mejor compromiso entre velocidad, potencia y área con Brenk-Kung. Para todos los tamaños de sumadores, si la performance no es un problema, un ripple carry es la solución optima. 
 
 
-%\subsection{Métricas de Calidad de un circuito digital}
-
-%Para cuantificar la calidad de un circuito. podemos analizar un circuito desde diferentes perspectivas: Costo, funcionalidad. robustez, performance y consumo de energía. Tomaremos estas dos últimas métricas, mas la del área (propiedad que define el costo) del circuito, para realizar la comparación entre las distintas arquitecturas analizadas.
-
-
-%\subsection{Performance}
-
-
-
-%Realizamos un oscilador anillo de 5 etapas, utilizando el inversor mas chico de nuestra librería de celdas estándar elegida. En la figura \ref{fig:RO5_lay} podemos ver el \emph{layout} que realizamos para esta prueba. Hacemos la extracción de parásitos y simulamos el circuito para obtener la forma de onda de la figura \ref{fig:RO5_wf}.
-
-%Como podemos deducir de la figura \ref{fig:RO5_wf}, el tiempo de propagación es de 32~pS, lo cual no significa que nuestros circuitos puedan correr a 31,25~GHz. Cuando medimos el tiempo de propagación usando este circuito, deberemos considerar que este es sólo una forma de comparar las tecnologías de fabricación y las topologías de las compuertas, pero de ninguna forma será la frecuencia máxima a la que pueda funcionar nuestro circuito, ya que la complejidad y cantidad de compuertas es enormemente mayor que la de un inversor. Según Rabaey\cite{rabaey2003} se puede esperar velocidades entre 50 a 100 veces mas bajas, aunque optimizando el diseño se puede lograr acercarnos un poco mas a esta frecuencia ideal. 
 
 %\begin{figure}[h!]
 %\vspace{-5pt}
@@ -544,11 +536,8 @@ Sklansky    & 8    & 11354.91            & 2.1         &          &         \\
 %\end{figure}
 
 
-%\subsection{Tiempo mínimo de propagación}
-%t_p = 32 p
 
 %Para simular corners: opConditions.lib
-
 
 %https://sites.google.com/site/cecstdcell/
 %http://www.vlsitechnology.org/

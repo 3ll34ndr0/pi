@@ -10,7 +10,7 @@ filename_str = sys.argv[1]
 data = genfromtxt(filename_str, skip_header=0,unpack=True)
 # http://matplotlib.sourceforge.net/api/figure_api.html#module-matplotlib.figure 
 
-nob = 32
+nob = 9
 totalPlots = nob+2
 ###########################
 # nob subplots sharing both x/y axes

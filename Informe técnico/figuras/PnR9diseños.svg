@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.16297262"
-     inkscape:cx="1489.2924"
-     inkscape:cy="1085.0431"
+     inkscape:zoom="1.3652297"
+     inkscape:cx="422.4644"
+     inkscape:cy="484.33969"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -212,54 +212,58 @@
        id="path4080"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
-    <text
-       xml:space="preserve"
-       style="font-size:11.20105076px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmex10;-inkscape-font-specification:cmex10"
-       x="-304.70093"
-       y="169.97441"
-       id="text3117"
-       sodipodi:linespacing="125%"
-       transform="matrix(0,-1,1,0,0,0)"><tspan
-         sodipodi:role="line"
-         id="tspan3119"
-         x="-304.70093"
+    <g
+       id="g3027"
+       transform="translate(560,0)">
+      <text
+         transform="matrix(0,-1,1,0,0,0)"
+         sodipodi:linespacing="125%"
+         id="text3117"
          y="169.97441"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans">Skalansky</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text3121"
-       y="169.58939"
-       x="-488.70471"
-       style="font-size:11.20105076px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmex10;-inkscape-font-specification:cmex10"
-       xml:space="preserve"
-       transform="matrix(0,-1,1,0,0,0)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
-         y="169.58939"
+         x="-304.70093"
+         style="font-size:11.20105076px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmex10;-inkscape-font-specification:cmex10"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans;font-size:12px"
+           y="169.97441"
+           x="-304.70093"
+           id="tspan3119"
+           sodipodi:role="line">Skalansky</tspan></text>
+      <text
+         transform="matrix(0,-1,1,0,0,0)"
+         xml:space="preserve"
+         style="font-size:11.20105076px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmex10;-inkscape-font-specification:cmex10"
          x="-488.70471"
-         id="tspan3123"
-         sodipodi:role="line">Brent-Kung</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:11.20105076px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmex10;-inkscape-font-specification:cmex10"
-       x="-652.23822"
-       y="169.71259"
-       id="text3125"
-       sodipodi:linespacing="125%"
-       transform="matrix(0,-1,1,0,0,0)"><tspan
-         sodipodi:role="line"
-         id="tspan3127"
-         x="-652.23822"
+         y="169.58939"
+         id="text3121"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3123"
+           x="-488.70471"
+           y="169.58939"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans;font-size:12px">Brent-Kung</tspan></text>
+      <text
+         transform="matrix(0,-1,1,0,0,0)"
+         sodipodi:linespacing="125%"
+         id="text3125"
          y="169.71259"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans">Ripple carry</tspan></text>
+         x="-652.23822"
+         style="font-size:11.20105076px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmex10;-inkscape-font-specification:cmex10"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans;font-size:12px"
+           y="169.71259"
+           x="-652.23822"
+           id="tspan3127"
+           sodipodi:role="line">Ripple carry</tspan></text>
+    </g>
     <text
        sodipodi:linespacing="125%"
        id="text3169"
-       y="722.86621"
+       y="162.86621"
        x="221.42728"
        style="font-size:9.47781181px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmex10;-inkscape-font-specification:cmex10"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
-         y="722.86621"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans;font-size:12px"
+         y="162.86621"
          x="221.42728"
          id="tspan3171"
          sodipodi:role="line">8 bits</tspan></text>
@@ -267,44 +271,38 @@
        xml:space="preserve"
        style="font-size:9.47781181px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmex10;-inkscape-font-specification:cmex10"
        x="361.77621"
-       y="722.69836"
+       y="162.69836"
        id="text3173"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3175"
          x="361.77621"
-         y="722.69836"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans">16 bits</tspan></text>
+         y="162.69836"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans;font-size:12px">16 bits</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text3177"
-       y="721.1413"
+       y="161.1413"
        x="571.53741"
        style="font-size:9.47781181px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmex10;-inkscape-font-specification:cmex10"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
-         y="721.1413"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans;font-size:12px"
+         y="161.1413"
          x="571.53741"
          id="tspan3179"
          sodipodi:role="line">32 bits</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Atene;-inkscape-font-specification:Atene"
-       x="192.43292"
-       y="155.01404"
+       x="229.78928"
+       y="717.55676"
        id="text3200"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3202"
-         x="192.43292"
-         y="155.01404"
-         style="font-size:12px">1000 l</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.11584258px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 242.75937,169.95984 -0.008,-8.93251 -0.008,4.75699 -65.45429,0.006 0,4.03811 0,-8.77461"
-       id="path3212"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccc" />
+         x="229.78928"
+         y="717.55676"
+         style="font-size:12px">1000</tspan></text>
     <path
        sodipodi:nodetypes="ccc"
        inkscape:connector-curvature="0"
@@ -312,28 +310,40 @@
        d="m 177.2892,166.28901 -0.0112,66.11657 4.7365,0"
        style="fill:none;stroke:#000000;stroke-width:1.11584258px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <text
-       sodipodi:linespacing="125%"
-       id="text3273"
-       y="719.05164"
-       x="689.89142"
-       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Atene;-inkscape-font-specification:Atene"
-       xml:space="preserve"><tspan
-         style="font-size:12px"
-         y="719.05164"
-         x="689.89142"
-         id="tspan3275"
-         sodipodi:role="line">l</tspan></text>
-    <text
        xml:space="preserve"
-       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Atene;-inkscape-font-specification:Atene"
-       x="163.30876"
-       y="175.11343"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Atene;-inkscape-font-specification:Atene"
+       x="154.48598"
+       y="187.01132"
        id="text3277"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3279"
-         x="163.30876"
-         y="175.11343"
-         style="font-size:12px">l</tspan></text>
+         x="154.48598"
+         y="187.01132"
+         style="font-size:16px">l</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Atene;-inkscape-font-specification:Atene"
+       x="137.99612"
+       y="638.12555"
+       id="text3200-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3202-6"
+         x="137.99612"
+         y="638.12555"
+         style="font-size:12px">1000</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3068"
+       y="727.01135"
+       x="680.48596"
+       style="font-size:56.19996262px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Atene;-inkscape-font-specification:Atene"
+       xml:space="preserve"><tspan
+         style="font-size:16px"
+         y="727.01135"
+         x="680.48596"
+         id="tspan3070"
+         sodipodi:role="line">l</tspan></text>
   </g>
 </svg>

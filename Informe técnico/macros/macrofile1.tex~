@@ -179,13 +179,16 @@
 %
 \newcommand{\ns} {\textrm{ns}}
 \newcommand{\nanom} {\textrm{nm}}
-\newcommand{\microm} {\mu\textrm{m}}
+\newcommand{\microm} {$\mu\textrm{m}$}
+\newcommand{\mmcuadrado} {$\textrm{mm}^2$}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-
+% Formato de las letras más cómodos.
+\newcommand{\negrita}[1]{\textbf{#1}}
+\newcommand{\cursi}[1]{\emph{#1}}
+\newcommand{\layout}{\emph{layout }}
+\newcommand{\netlist}{\emph{netlist }}
 
 % Includes a MATLAB script.
 % The first parameter is the label, which also is the name of the script

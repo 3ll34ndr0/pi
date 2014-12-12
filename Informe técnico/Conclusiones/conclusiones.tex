@@ -1,3 +1,37 @@
-\chapter{Conclusiones}
-...
+	\chapter{Conclusiones finales}
+\cursi{Nos hemos propuesto resolver un problema que se encuentra en todos los sistemas de procesamiento de señales y los microprocesadores, lo hemos logrado resolver utilizando herramientas de software libre, y los resultados obtenidos son del orden de magnitud que las soluciones propuestas en otros estudios en la misma tecnología. Para lograr este objetivo, y como subproducto del proceso, en la secciones \ref{subsec:nuevosHDL} y \ref{sec:herramientasDisponibles} brindamos un informe sobre el estado de la cuestión sobre las herramientas de software libre disponibles para el diseño de circuitos integrado.}
+
+  
+\section{Metodología}
+\paragraph{Gran flexibilidad} Podemos elegir qué herramientas utilizar a lo largo de todo el flujo de diseño. Según la complejidad o magnitud del diseño, hay distintas alternativas. Si en alguna de las etapas del diseño es necesario o preferible utilizar otra herramienta, hemos encontrado que es posible realizarlo gracias a la existencia de formatos estándar para los archivos que utilizan las herramientas de software.
+
+
+
+\negrita{Electric} resultó ser la herramienta más simple de instalar y utilizar, y que integra en un único entorno gráfico casi todas las herramientas necesarias para realizar el flujo físico. No incluye herramientas para realizar análisis de performance y potencia, pero utilizando la extracción del \cursi{layout} nos permitió elegir, sin ningún trabajo extra, un simulador analógico (entre varias alternativas posibles) y realizar simulaciones para calcular la potencia y performance. La herramienta de extracción de parásitos de Electric tiene un modelo de parámetros concentrados que realiza una simplificación pesimista. Fué suficiente para realizar el análisis comparativo de las arquitecturas, pero advertimos al lector que existe un camino muy directo y simple para conseguir mejores extracciones de parásitos. Si exportamos el \cursi{layout} en formato \verb.cif. y lo importamos desde Magic, podemos realizar la extracción y el netlist spice para la simulación, ya que la extracción de Magic es mejor que la de Electric y Alliance.
+
+La de extracción de parásitos es realmente crítica, porque será la que nos permita predecir el real funcionamiento de nuestro sistema. La medición de performance y potencia se realizó con \negrita{Gnucap} a partir del \cursi{netlist} spice que genera Electric a partir del \cursi{layout} final. Aunque esta metodología nos permite obtener la mayor presición posible, para circuitos mas grandes empieza a requerir de muchos recursos computacionales. Por ello, existe otra forma de realizar este análisis que se denomina  STA (Static Timing Analisys) que reduce enormemente el esfuerzo de cálculo. Para ello, nuevamente existe una alternativa que se basa en exportar el circuito desde Electric e importarlo en Magic para utilizar su herramienta de STA llamada \verb.vesta..
+
+El \gls{pnr} lo realizamos de forma automática, con la única intervención nuestra para determinar las dimensiones físicas deseadas, en términos de filas y columnas de celdas estándar apiladas.
+
+El HDL (\negrita{Lava}) que hemos utilizado es simplemente un conjunto de módulos de Haskell, por lo tanto realizamos el diseño digital utilizando un único lenguaje de programación de propósito general, aprovechando las ventajas del mismo. Además, hemos realizado la verificación formal de nuestros circuitos, de la misma forma en que describimos los mismos. Cabe mencionar la gran cantidad de alternativas para elegir el HDL, lo cuál permite al diseñador optar por el lenguaje que se ajuste a sus necesidades, con la condición de que tenga la capacidad de producir un \cursi{netlist} VHDL estructural.
+
+
+También es importante resaltar que esta metodología nos permite realizar \negrita{circuitos secuenciales}. Para ello, a partir del VHDL que nos genera Lava podemos utilizar una herramienta como YOSyS\cite{Yosys} para sintetizar este VHDL comportamental a un netlist a nivel de compuertas. Luego será necesario una traducción desde este \netlist  verilog a un \cursi{netlist} VHDL, si queremos continuar usando Electric. 
+
+
+\section{Resultados}
+Los resultados obtenidos para el sumador de Brent-Kung y Sklansky están en el mismo orden de magnitud que otros estudios\cite{ramanathan,Chatterjee} realizados en 180~\nanom. Considerando que no realizamos iteraciones para mejorar la implementación física, podemos afirmar que hay lugar para optimizar el resultado. Se pueden mejorar los resultados obtenidos por medio de la utilización de otros algoritmos para el \gls{pnr}}. Incluso hay mucho lugar para mejora si personalizamos las celdas estándar para favorecer alguna métrica a costa de otra. Además, si ampliamos nuestro conjunto de celdas estándar a versiones con mayor capacidad de manejo de corriente, sumado a un algoritmo de \gls{pnr} que las utilice allí donde es necesario.
+
+Otra fuente de mejora es realizar el \layout completamente personalizado, sin utilizar herramientas de \gls{pnr}, ya que en baja escala los resultados de un \layout realizado por una persona son más optimos, si entendemos cabalmente el funcionamiento del circuito. Esta última opción sólo será aplicable si la performance de todo el sistema dependiese de éste circuito, porque en general no será posible realizar el layout manualmente ya que lleva mucho más tiempo. Por eso resaltamos que la importancia de estos resultados es que se lograron con una metodología automatizada, lo que nos permite pensar en escalas de circuitos más grande que los sumadores que hemos implementado.
+
+
+\section{Aplicaciones}
+Hemos logrado implementar uno de los elementos constitutivos de los microprocesadores y los sistemas de procesamiento de señales, con mayores requerimientos de performance. Con este misma metología queda abierta la posibilidad para la implementación de circuitos combinacionales en general: unidades aritméticas, decodificadores, codificadores, funciones lógicas, etc. 
+
+También podemos diseñar circuitos analógicos, ya que hemos utilizado tres de las cuatro herramientas básicas para realizarlo: El simulador tipo spice (Gnucap), el editor de \layout y la herramienta de extracción de parásitos. La otra herramienta necesaria es el editor de esquemáticos, disponible en Electric.
+
+
+
+%El hecho de utilizar software libre genera una metodología de trabajo 
+
 

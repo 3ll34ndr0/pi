@@ -1,30 +1,43 @@
 \chapter{ \textsc{ Introducción } }
-\begin{abstract}
-En el presente capítulo se describe en rasgos generales el flujo para el diseño de Circuitos Integrados de Aplicación Específica (\emph{ASIC} por su sigla en inglés), y la metodología utilizada para llevar adelante el diseño, implementación y tape out del mismo.
-\end{abstract}
+En el presente capítulo se describe de forma general la estructura y contenido de todo el trabajo. Detallamos el planteo del problema y la motivación para llevarlo acabo. Luego definimos los objetivos generales y particulares, y enunciamos el plan de trabajo que nos hemos propuesto.
 \section{Estructura del Proyecto Integrador}
 
-Este proyecto cuenta con 4 partes: Las primeras tres partes:
- 
-\ref{seleccion_arquitectura}: Selección de la Arquitectura \\
-\ref{implementacion_fisica}: Implementación Física \\
-\ref{comparacion_resultados}: Comparación de resultados. 
+\begin{description}
+\item[Parte \ref{disenio_digital} Diseño digital:] Definimos las métricas que utilizaremos para seleccionar calificar la implementación de los sumadores. Seleccionamos tres arquitecturas para implementar y desarrollamos los fundamentos teóricos de estas implementaciones. Seleccionamos un lenguaje de descripción de \cursi{hardware}, implementamos los circuitos, simulamos y verificamos formalmente los mismo. Generamos tres \netlist VHDL de cada arquitectura para 3 tamaños de sumandos distintos: 8, 16 y 32 bits.
+\item[Parte \ref{disenio_fisico} - Implementación Física:] Explicamos el flujo de diseño físico, seleccionamos herramientas de software para realizarlo, seleccionamos una tecnología de fabricación, creamos nuestras celdas estándar y realizamos de forma automática el \layout del circuito. Simulamos los circuitos para obtener las mediciones de nuestras métricas de calidad y comparamos todas las implementaciones.
+\item[Parte \ref{conclusiones} - Conclusiones] Realizamos un resumen de lo que se logró, haciendo énfasis en la metodología, los resultados y las aplicaciones. Planteamos mejoras a nuestro trabajo y desafíos futuros para el diseño de circuitos integrados.
+\end{description}
 
-Estas tres partes forman un flujo de trabajo circular e iterativo.
-
-Y finaliza con un resumen de las conclusiones, además de conjunto de anexos técnicos ubicados al final para su consulta.
-
+%Relación conceptual entre capítulos
 
 \section{Planteamiento del problema y motivación}
-En la actualidad los microprocesadores, los DSP, los microcontroladores, y otro hardware específico para cálculo computacional son desarrollados en tecnología CMOS submicrónica. El problema planteado es, ¿Cómo hacer para diseñar circuitos integrados en esta tecnología, con herramientas flexibles, libres\footnote{En el sentido que no impongan restricciones de uso, estudio, mejora y distribución.} y accesibles para todo tipo de uso: academico y comercial?.
+En la actualidad los microprocesadores, DSP, microcontroladores, y otro hardware específico para cálculo computacional o de aplicación específica son desarrollados en tecnología CMOS submicrónica. El problema planteado es, ¿Cómo hacer para diseñar circuitos integrados en ésta tecnología, con herramientas flexibles, libres\footnote{En el sentido que no impongan restricciones de uso, estudio, mejora y distribución.} y accesibles para todo tipo de uso: académico y comercial?.
 
-\section{Objetivo}
+Nos interesa este problema por varios motivos, pero el principal es poder acercar estas tecnologías sin restricciones a los estudiantes de grado. Las posibilidades de aplicaciones de los circuitos integrados son infinitas, ya que podemos controlar todas las dimensiones físicas de los transistores y elementos pasivos que integramos. Pero aumenta aún más el potencial si también existe la posibilidad de adaptar o mejorar las herramientas que utilizamos para el diseño. 
 
-El objetivo del trabajo es diseñar un sumador de n-bits, por ser este el elemento central de cualquier tipo de circuito digital de cálculo: Los multiplicadores, los MAC (\emph{multiply-accumulate}), los filtros FIR, etc, que pueda ser enviado a fabricar utilizando
+Otra motivación importante es la económica: Los costos por licencias de las herramientas de software, pueden transformar un proyecto de bajo volumen de producción en económicamente no factible. Damos un ejemplo real:
+El costo de 25 chips en tecnología de 0.35~\microm con un área máxima de 3\mmcuadrado, con encapsulado DIP-20 fabricados por medio de CMP\footnote{CMP es una organización que presta el servicio para la fabricación de circuitos integrados y MEMS para prototipado y bajo volumen de producción} es de \euro{2787.5}, resultando el costo de fabricación en \euro{111.5} por unidad. Pero si tenemos en cuenta el costo de las licencias de software por un año, tenemos que partir desde un orden de magnitud\footnote{El costo de licencia de un conjunto completo de herramientas por un año puede llegar hasta u\$d1.000.000. Este tipo de información no está públicamente disponible.} el costo total de fabricación recién mencionado.
+
+En función del problema planteado y de las motivaciones mencionadas, nos propusimos implementar un bloque digital que encontramos en todos los sistemas, que además puede ser el bloque de mayor requerimiento de performance. Este bloque es el sumador binario,    
+  
+\section{Objetivo generales}
+
+
+\section{Objetivos particulares}
+El objetivo del trabajo es diseñar un sumador de n-bits, por ser este el elemento central de cualquier tipo de circuito digital de cálculo: Los multiplicadores, los MAC (\emph{multiply and accumulate}), los filtros FIR, etc, que pueda ser enviado a fabricar utilizando
 procesos de fabricación CMOS para circuitos integrados. Integrar y documentar un flujo de diseño
 de este sistema digital utilizando herramientas de Software Libre, será un subproducto de este
 diseño, para lograr la base de conocimiento necesaria en el diseño de circuitos integrados con
 tecnología CMOS. Este trabajo además de integrar todos los procesos de diseño de un Circuito
 Integrado, pretende facilitar el acceso a las herramientas de diseño de circuitos integrados a los estudiantes de grado.
 \section{Plan de Trabajo}
+Se estableció el siguiente plan de trabajo para guiar :
+\begin{enumerate}
+\item Estudiar las técnicas actuales para implementar sumadores rápidos y definir métricas de calidad.
+\item Relevar las herramientas de software disponibles para hacer diseño digital y diseño físico, y las tecnologías de fabricación de circuitos integrados.
+\item Implementar los circuitos en un lenguaje de descripción de hardware y realizar la implementación física.
+\item Realizar las simulaciones en base a las métricas de calidad y comparar los resultados.
+\item Generar conclusiones a partir de los resultados y proponer desafíos futuros.
+\end{enumerate}
+
 

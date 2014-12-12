@@ -1,14 +1,14 @@
 \chapter{\textsc{Implementación de los circuitos utilizando HDL} }\label{implementaciónHDL}
 \section{Introducción}
-Utilizamos un lenguaje de descripción de \emph{hardware} para implementar los distintos circuitos que evaluaremos, porque el problema planteado en el capítulo \ref{chap:especificaciones}, requiere que podamos crear un sumador de $n$ bits arbitrario, para lo cuál los HDL son la herramienta mas apropiada. Implementarlos por medio de esquemáticos llevaría mucho tiempo, por eso descartamos esa metodología. En cambio, cuando describimos un circuito con un HDL lo hacemos parametrizando el tamaño del mismo, y a la hora de simularlo o implementarlo físicamente, determinamos su tamaño y generamos automáticamente el circuito.
+Utilizamos un lenguaje de descripción de \emph{hardware} para implementar los distintos circuitos que evaluaremos, porque el problema planteado en el capítulo \ref{chap:especificaciones}, requiere que podamos crear un sumador de $n$ bits arbitrario, para lo cuál los HDL son la herramienta mas apropiada. Implementarlos por medio de esquemáticos llevaría mucho tiempo, por eso descartamos esa metodología. En cambio, cuando describimos un circuito con un HDL lo hacemos parametrizando el tamaño del mismo, y a la hora de simularlo o implementarlo físicamente, determinamos su tamaño y generamos automáticamente el circuito. 
 
-\subsection{Breve reseña de HDLs} 
+\subsection{Breve reseña de HDLs}
 VHDL y Verilog son los lenguajes más utilizados y conocidos para el diseño de circuitos integrados. VHDL nace como lenguaje de documentación del comportamiento de los circuitos integrados de aplicación específica (ASIC por su siglas en inglés). El departamento de defensa de Estados Unidos lo desarrolló para poder especificar a sus proveedores, cómo debía comportarse el sistema digital que les encargaba diseñar. Luego, surgio la idea de realizar una simulación lógica a partir de estos archivos VHDL. Lo siguiente fué el desarrollo de herramientas de síntesis lógica a partir de estos archivos, para generar una implementación física del circuito. Con Verilog sucedió algo muy parecido. Por esta historia en común, se puede decir que estos dos lenguajes tienen varias finalidades, siendo la implementación en \emph{hardware} tan sólo una de ellas, es decir, uno puede describir circuitos que no son sintetizables. Por esa razón, y a pesar de ser los más utilizados y conocidos para describir circuitos digitales, no siempre son la mejor alternativa a elegir.
 
-\subsections{Nuevos HDL}
-Podemos mencionar al menos 2 lenguajes de descripción de \emph{hardware} que están siendo utilizados para el diseño de circuitos integrados, que nacieron con el objetivo de aprovechar las ventajas de nuevos lenguajes de programación, bajo el paradigma de la programación funcional. Por ejemplo, \textbf{un circuito que no sea sintetizable, es un error de sintáxis} en estos lenguajes. Estos son, \textbf{Lava}\cite{Lava} y \textbf{Chisel}\cite{Chisel}, basados en \textbf{Haskell} y \textbf{Scala} respectivamente. 	
+\subsection{Nuevos HDL}\label{subsec:nuevosHDL}
+Podemos mencionar al menos 3 lenguajes de descripción de \emph{hardware} que están siendo utilizados para el diseño de circuitos integrados, que nacieron con el objetivo de aprovechar las ventajas de nuevos lenguajes de programación, bajo el paradigma de la programación funcional. Por ejemplo, un circuito que no sea sintetizable, es un error de sintáxis en estos lenguajes. Estos son, \textbf{Lava}\cite{Lava} y \negrita{C$\lambda$aSH}\cite{Clash} basados en \textbf{Haskell}, y \textbf{Chisel}\cite{Chisel}, basado en \textbf{Scala}. 	
 
-Otro lenguaje que debemos mencionar es \textbf{MyHDL}\cite{MyHDL}, un lenguaje basado en Python que brinda muchas ventajas de este lenguaje, que por estar basado en otro paradigma de programación, no lo agrupamos con los dos anteriores. Pero estos tres lenguajes nos permiten:
+Otro lenguaje que debemos mencionar es \textbf{MyHDL}\cite{MyHDL}, un lenguaje basado en Python que brinda muchas ventajas de este lenguaje, que por estar basado en otro paradigma de programación, no lo agrupamos con los dos anteriores. Pero estos cuatro lenguajes nos permiten:
 
 \begin{itemize}
 \item Usar un único lenguaje para describir (con distintos niveles de abstracción), simular, verificar e implementar el circuito.
@@ -21,6 +21,19 @@ Otro lenguaje que debemos mencionar es \textbf{MyHDL}\cite{MyHDL}, un lenguaje b
 Podemos elegir arbitrariamente cualquiera de estos lenguajes, ya que ninguno genera un \emph{overhead} en el circuito implementado, pero si en las tareas de aprendizaje del diseñador. Por lo tanto, para este proyecto en particular\footnote{Es un circuito puramente combinacional} se puede elegir el HDL basado en el conocimiento y experiencia de uso en Haskell, Python o Scala.
 
 Para describir el circuito, elegimos Lava. En Lava los circuitos son descriptos como funciones que operan sobre listas, tuplas o sobre circuitos. Esto último se debe a que el lenguaje Haskell permite la definición de funciones de alto orden, es decir podemos definir funciones que su dominio e imagen son funciones. 
+
+Lava es simplemente un conjunto de módulos de Haskell, por lo tanto estamos unificando un conjunto de tareas del diseño digital utilizando un lenguaje de programación de propósito general. Las ventajas de este acercamiento al diseño son varias: 
+
+\begin{itemize}
+\item Disponibilidad de todas las librerías existentes en Haskell para ampliar las posibilidades de nuestra herramienta.
+\item No se generan \cursi{bugs} típicos de implementar dos veces el mismo circuito en dos lenguajes de programación distintos: El primero en la implementación a nivel de sistema y el otro a nivel de \cursi{hardware}.
+\item Se pueden aplicar técnicas de programación propias del lenguaje como \cursi{testing} o \cursi{model checking} con el circuito.
+\item Permite manejar otros programas externos, por ejemplo lanzamos \negrita{minisat}\cite{minisat} para verificar formalmente nuestro circuito.  
+\end{itemize}
+
+
+Con la implementación del circuito utilizando este HDL, podemos generar un \negrita{netlist} VHDL, hacer simulación digital, verificación formal de propiedades, y la ventaja de  
+
 
 \section{Implementación en lenguaje de descripción de hardware}
 Ya hemos presentado una descripción esquemática del sumador binario de \(n\) bits en la figura \ref{fig:RCA} y en la \ref{fig:bkungadder}. El objetivo es implementar estos circuito en Lava parametrizando el tamaño \(n\) de los sumandos. 
@@ -307,7 +320,7 @@ Justificamos descartar la simulación como método de validación por la simple 
 
 Para este tipo de sistemas es aplicable la verificación formal automática, que desarrollaremos en el capítulo \ref{verificacion}.
 
-\subsection{Síntesis del Netlist VHDL}
+\subsection{Síntesis del \cursi{netlist} VHDL}
 
 Para continuar en nuestro flujo de diseño, precisamos generar el circuito en un lenguaje que nuestra herramienta de \emph{Place and Route} pueda manejar. Para eso Lava nos permite crear un netlist VHDL siguiendo dos pasos, el primero definiendo los nombres de los puertos y el bloque a ser creado:
 \begin{lstlisting}
