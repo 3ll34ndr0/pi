@@ -179,8 +179,10 @@
 %
 \newcommand{\ns} {\textrm{ns}}
 \newcommand{\nanom} {\textrm{nm}}
-\newcommand{\microm} {$\mu\textrm{m}$}
+\newcommand{\microm} {$\mu\textrm{m}$ }
+\newcommand{\micromcuadrado} {$\mu\textrm m}^2$}
 \newcommand{\mmcuadrado} {$\textrm{mm}^2$}
+
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

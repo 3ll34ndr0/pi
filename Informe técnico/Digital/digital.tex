@@ -398,7 +398,7 @@ y notamos que en la figura \ref{fig:bkungadder} se calcula $a_i \oplus b_i$, y q
 \end{figure}
 
 \subsection{Sumador de Sklansky}\label{subsec:sklansky}
-Para realizar este sumador, debemos desarrollar la red de cálculo paralelo de los acarreos, a la forma propuesta por Skalansky. Esta forma se conoce como \emph{divide and conquer}, y la evidenciamos con un ejemplo para sumandos de 16 bits en la figura \ref{fig:sklansky16}. Los puntos negros representan el operador punto (definido anteriormente como el operador de Brent-Kung)
+Para realizar este sumador, debemos desarrollar la red de cálculo paralelo de los acarreos, a la forma propuesta por Skalansky. Esta forma se conoce como \emph{divide and conquer}, y la evidenciamos con un ejemplo para sumandos de 16 bits en la figura \ref{fig:sklansky16}. Los puntos negros representan el operador punto (definido anteriormente como el operador de Brent-Kung), notar que tiene menos cantidad de etapas de operaciones (en proporción de (\log_2(n))\)) por lo tanto es un sumador más rápido que el de Brent-Kung, pero hay nodos que tienen un fan-out de hasta $\frac{n}{2}$, lo cuál resulta en mayor capacidades parásitas, haciendo más lento el circuito en ese nodo.
 
 \begin{figure}[h!]
 \vspace{-5pt}

@@ -61,7 +61,7 @@ Esto es un conjunto de capas lógicas junto a sus reglas de diseño, que proveen
 Luego de una inspección de esas características, las herramientas candidatas que cumplen con estas características son:
 
 \begin{description}
-\item[Open Circuit Design] Proyecto de software libre que reúne en un único sitio varias herramientas independientes, mencionamos sólo algunas:  \textbf{Magic}: Layout, \gls{drc} y extracción de parásitos; \textbf{Xcircuit}: Entrada de circuitos esquemáticos; \textbf{netgen}: \gls{lvs}; \textbf{IRSIM}: simulador digital a nivel de transistor como llaves ideales, con extracción de capacidad y resistores concentrados para hacer la simulación mas realista; \textbf{Qflow}: entorno para realizar la síntesis digital con celdas estándar, utiliza Yosys\cite{Yosys}; \textbf{graywolf}: programa que realiza el \emph{placement}; \textbf{Qrouter}: programa que realiza el conexionado.
+\item[Open Circuit Design] Proyecto de software libre que reúne en un único sitio varias herramientas independientes, mencionamos sólo algunas:  \textbf{Magic}: Layout, \gls{drc} y extracción de parásitos; \textbf{Xcircuit}: Entrada de circuitos esquemáticos; \textbf{netgen}: \gls{lvs}; \textbf{IRSIM}: simulador digital a nivel de transistor como llaves ideales, con modelo de retardo simplificado; \negrita{vesta}: herramienta para hacer \gls{sta}; \textbf{Qflow}: entorno para realizar la síntesis digital con celdas estándar, utiliza Yosys\cite{Yosys}; \textbf{graywolf}: programa que realiza el \emph{placement}; \textbf{Qrouter}: programa que realiza el conexionado.
 
 \item[Electric VLSI Design System\cite{Electric}] Es un sistema de automatización de diseño electrónico. Es un entorno integrado muy flexible que permite la descripción del circuito de varias formas (circuitos esquemáticos, \emph{netlist} VHDL y \emph{layout})). Cuenta también con herramientas para hacer \gls{drc}, \gls{lvs} y \gls{pnr}, simulación digital, visualización de formas de ondas, y un generador de \emph{pad frame}\footnote{El \emph{pad frame} es un conjunto de celdas que se ubican en el marco del \emph{die}, para conectar las señales del circuito con el exterior del chip.},entre otras herramientas.
 
@@ -72,15 +72,59 @@ Luego de una inspección de esas características, las herramientas candidatas q
 Es importante mencionar que existen mas herramientas disponibles (y muy útiles), pero al momento de realización de este trabajo, no forman parte de un flujo de diseño que las integre y por ello no son mencionadas aquí. 
 
 \subsection{Comparación}
-\include{FlujoFisico/tablaComparativa}
+En la tabla \ref{tabla:comparacion}Resaltamos las ventajas y desventajas de cada herramienta, que nos permitirá hacer una selección en función de las necesidades del proyecto.
 
-%\begin{table}[h]
-%\begin{tabular}{p{2cm}p{4cm}p{4cm}}
-%\caption{Comparativa de las ventajas y desventajas}
-%\label{tab:comparación}
-%\end{table}
 
-Resaltamos las ventajas y desventajas de cada herramienta, que nos permitirá hacer una selección en función de las necesidades del proyecto.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Tabla comparativa de ventajas y desventajas de las herramientas de diseño físico.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+    \begin{tabular}{  p{1.5cm}  p{6cm}  p{5cm} }
+    \toprule
+     & Ventajas & Desventajas  \\  \midrule
+%%%% ELECTRIC %%%%%
+    \negrita{Electric}
+%% Ventajas %%
+	& Fácil instalación, acepta Python 
+y Java como lenguajes para automatizar el diseño 
+o implementar nuevos algoritmos de \gls{pnr}.
+Todas las herramientas están integradas.
+	Soporta muchos formatos de entrada y salida, 
+que nos permite utilizar otras herramientas.
+%% Desventajas %%
+     & No tiene herramienta para \gls{sta}.
+No incluye un compilador lógico, sólo acepta \netlist VHDL
+para hacer \gls{pnr}.
+\\ \hline
+
+%%%% MAGIC %%%%%
+    \negrita{Open Circuit Design}
+%% Ventajas %%
+	& Para realizar \gls{sta} utiliza el estándar abierto Liberty.
+	Extracción de parásitos muy precisa. Permite integración con otras herramientas fácilmente.
+%% Desventajas %%
+	& Muchos programas para instalar por separado. Díficil de instalar
+en otros sistemas operativos no libres.
+\\ \hline
+
+%%%% ALLIANCE %%%%%
+    \negrita{Alliance} 
+%% Ventajas %%	
+	& Incluye varias opciones de celdas estándar convenientemente integradas en la herramienta. Tiene todas las herramientas necesarias para un flujo físico completo.
+%% Desventajas %%
+	& Las herramientas para \gls{sta} y conexionado no tienen una licencia libre. No facilita la integración con otras herramientas externas.
+\\ \bottomrule
+    \end{tabular}\label{tabla:Comparativa}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \subsection{Selección}
 La herramienta que seleccionamos es \textbf{Electric}, ya que nos brinda una serie de ventajas comparativas, teniendo en cuenta que nuestro circuito es puramente combinacional y no demanda gran esfuerzo de \gls{pnr} a la herramienta. Podemos resumir :
 \begin{itemize}
@@ -88,7 +132,7 @@ La herramienta que seleccionamos es \textbf{Electric}, ya que nos brinda una ser
 \item Curva de aprendizaje suave
 \item Cuenta con todas las herramientas necesarias integradas
 \end{itemize}
-El hecho de que no cuente con un sintetizador lógico, como señalamos en la tabla \ref{tablaComparativa}, no tiene importancia para esta selección, ya que uno de los resultados del diseño digital del capítulo \ref{diseñoDigital} es un \emph{netlist} VHDL. Por la naturaleza de la solución propuesta, no deseamos que este resultado sea modificado por alguna optimización lógica, ya que rompería la interconexión original de nuestro circuito. Si quisieramos comparar nuestra implementación del circuito con la implementación automática de la operación suma, entonces tendríamos que pasar a una de las otras herramientas. Pero eso sería un trabajo de comparación de un diseño \emph{custom} con uno automático, que no era el objetivo de este proyecto. 
+El hecho de que no cuente con un sintetizador lógico, como señalamos en la tabla \ref{tabla:Comparativa}, no tiene importancia para esta selección, ya que uno de los resultados del diseño digital del capítulo \ref{diseñoDigital} es un \emph{netlist} VHDL. Por la naturaleza de la solución propuesta, no deseamos que este resultado sea modificado por alguna optimización lógica, ya que rompería la interconexión original de nuestro circuito. Si quisieramos comparar nuestra implementación del circuito con la implementación automática de la operación suma, entonces tendríamos que pasar a una de las otras herramientas. Pero eso sería un trabajo de comparación de un diseño \emph{custom} con uno automático, que no era el objetivo de este proyecto. 
 %Open-Source VLSI CAD Tools: A Comparative Study
 
 \section{Selección del proceso de fabricación}\label{procesoFabricación}
@@ -499,28 +543,32 @@ Presentamos en la siguiente tabla el resumen de todas las simulaciones hechas pa
 \begin{table}[h]
 \centering
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}ccccccc@{}}
+\begin{tabular}{@{}ccccccccc@{}}
 \toprule
-Arquitectura & bits & área {[}um2{]}  & t_p {[}ns{]} & Potencia {[}uW{]} & PPP {[}pJ{]}\\ \midrule
-Ripple Carry & 8    & 7836.44             & 3.325       & 838.269  &   2,78       \\
-             & 16   & 16146                 & 9           &        &          \\
-             & 32   & 35101.6              & 40          &         &         \\ \cline{2-5}
-
-Brent Kung   & 8    & 9919                  & 2.32        &        &           \\
-             & 16   & 23793                 & 5.3         &        &           \\
-             & 32   & 56981.93            & 6.9         &          &         \\ \cline{2-5}
-Sklansky    & 8    & 11354.91            & 2.1         &          &         \\
-             & 16   & 32284.02            & 3.63        &          &         \\
-             & 32   & 87021.55            & 6.33        &          &         \\ \bottomrule
+	& 	& \multicolumn{2}{c}{Área} & \multicolumn{2}{c}{t_p} & \multicolumn{2}{c}{Potencia} & PPP\\
+%\cmidrule(r){3-4} \cmidrule(r){5-6}\cmidrule(r){7-8}
+Arquitectura & bits & {[}\micromcuadrado{]}	& \% & {[}ns{]} & \multicolumn{1}{c}{\%} & {[}\mu W{]} & \% &  {[}pJ{]}\\ \midrule
+Ripple Carry & 8    & 7836.44  	&       & 3.325	& & 734.36  &  &   2.4       \\
+             & 16   & 16146     &       & 9		& & 1033.07 &   &	6.2   \\
+             & 32   & 35101.6   &       & 40		& & 1032.97 &	&	11.9  \\ 
+\cline{3-9}
+Brent Kung   & 8    & 9919     	&126.58	& 1.95	& 58.65 & 1095.91   &149.23&	2.1   \\
+             & 16   & 23793     &147.36	& 4.1	& 68.22	& 1651.95   &159.91&    6.8   \\
+             & 32   & 56981.93  &162.33 & 6.9	& 60.00	& 2049.86   &198.44&    14.1  \\ 
+\cline{3-9}
+Sklansky    & 8    & 11354.91	&144.90	& 1.4	& 42.11	& 2330.71   &317.38   & 3.3   \\
+             & 16   & 32284.02  &199.95 & 3.1	& 51.58	& 2411.29   &233.41    &7.5   \\
+             & 32   & 87021.55  &247.91	& 5.2	& 45.22 & 3237.50   &313.42    &16.8  \\ \bottomrule
 \end{tabular}
 }
 \caption{Comparación de los resultados de las 3 arquitecturas}
 \label{tab:comparativa}
 \end{table}
 
-Podemos ver que el sumador de \textbf{Sklansky} tiene una performance de hasta $6.33$ veces más rápido para tamaños de 32 bits, con $9$ veces mas de potencia y $2.5$ veces más de área. Por otro lado, el sumador de \negrita{Brenk-Kung} de 32 bits mejora la performance en $5.8$, con un costo en potencia de $~7.33$ más, y con una área $1.62$ veces más grande. 
 
-Si comparamos estas dos arquitecturas entre sí, vemos que el Brent-Kung de 32 bits es apenas $\%9.1$ más lento que Sklansky, pero con $\%22.7$ menos de potencia y un área $\%52$ más chica.
+Podemos ver que el sumador de \textbf{Sklansky} tiene una performance de hasta $2.2$ veces más rápido para tamaños de 32 bits, con $3.13$ veces mas de potencia y $2.47$ veces más de área. Por otro lado, el sumador de \negrita{Brenk-Kung} de 32 bits mejora la performance en $1.67$ veces, con un costo en potencia de casi $~2$ veces más, y con una área $1.62$ veces más grande. 
+
+Si comparamos estas dos arquitecturas entre sí, vemos que el Brent-Kung de 32 bits es apenas más lento que Sklansky, pero con bastante menos de potencia y un área $\%52$ más chica.
 
 Por lo tanto, hemos logrado un conjunto de sumadores que según los requerimientos de área, potencia y performance, elegiremos la arquitectura más adecuada. Para sumadores de 32 bits, la mayor velocidad se logra con Sklansky y el mejor compromiso entre velocidad, potencia y área con Brenk-Kung. Para todos los tamaños de sumadores, si la performance no es un problema, un ripple carry es la solución optima de estos tres, ya que ahorra área y energía.
 

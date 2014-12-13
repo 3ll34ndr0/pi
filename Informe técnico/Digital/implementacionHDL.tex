@@ -6,7 +6,7 @@ Utilizamos un lenguaje de descripción de \emph{hardware} para implementar los d
 VHDL y Verilog son los lenguajes más utilizados y conocidos para el diseño de circuitos integrados. VHDL nace como lenguaje de documentación del comportamiento de los circuitos integrados de aplicación específica (ASIC por su siglas en inglés). El departamento de defensa de Estados Unidos lo desarrolló para poder especificar a sus proveedores, cómo debía comportarse el sistema digital que les encargaba diseñar. Luego, surgio la idea de realizar una simulación lógica a partir de estos archivos VHDL. Lo siguiente fué el desarrollo de herramientas de síntesis lógica a partir de estos archivos, para generar una implementación física del circuito. Con Verilog sucedió algo muy parecido. Por esta historia en común, se puede decir que estos dos lenguajes tienen varias finalidades, siendo la implementación en \emph{hardware} tan sólo una de ellas, es decir, uno puede describir circuitos que no son sintetizables. Por esa razón, y a pesar de ser los más utilizados y conocidos para describir circuitos digitales, no siempre son la mejor alternativa a elegir.
 
 \subsection{Nuevos HDL}\label{subsec:nuevosHDL}
-Podemos mencionar al menos 3 lenguajes de descripción de \emph{hardware} que están siendo utilizados para el diseño de circuitos integrados, que nacieron con el objetivo de aprovechar las ventajas de nuevos lenguajes de programación, bajo el paradigma de la programación funcional. Por ejemplo, un circuito que no sea sintetizable, es un error de sintáxis en estos lenguajes. Estos son, \textbf{Lava}\cite{Lava} y \negrita{C$\lambda$aSH}\cite{Clash} basados en \textbf{Haskell}, y \textbf{Chisel}\cite{Chisel}, basado en \textbf{Scala}. 	
+Podemos mencionar al menos 3 lenguajes de descripción de \emph{hardware} que están siendo utilizados para el diseño de circuitos integrados, que nacieron con el objetivo de aprovechar las ventajas de nuevos lenguajes de programación, bajo el paradigma de la programación funcional. Estos son, \textbf{Lava}\cite{Lava} y \negrita{C$\lambda$aSH}\cite{Clash} basados en \textbf{Haskell}, y \textbf{Chisel}\cite{Chisel}, basado en \textbf{Scala}. En este tipos de lenguajes, un circuito que no sea sintetizable es un error de sintáxis. 
 
 Otro lenguaje que debemos mencionar es \textbf{MyHDL}\cite{MyHDL}, un lenguaje basado en Python que brinda muchas ventajas de este lenguaje, que por estar basado en otro paradigma de programación, no lo agrupamos con los dos anteriores. Pero estos cuatro lenguajes nos permiten:
 
@@ -17,7 +17,7 @@ Otro lenguaje que debemos mencionar es \textbf{MyHDL}\cite{MyHDL}, un lenguaje b
 \item Describir circuitos que construimos a partir de subcircuitos, además de la posibilidad de reutilizar fácilmente patrones de conexión.
 \end{itemize}
 
-\subsection{Lava}
+\subsection{¿Por qué Lava?}
 Podemos elegir arbitrariamente cualquiera de estos lenguajes, ya que ninguno genera un \emph{overhead} en el circuito implementado, pero si en las tareas de aprendizaje del diseñador. Por lo tanto, para este proyecto en particular\footnote{Es un circuito puramente combinacional} se puede elegir el HDL basado en el conocimiento y experiencia de uso en Haskell, Python o Scala.
 
 Para describir el circuito, elegimos Lava. En Lava los circuitos son descriptos como funciones que operan sobre listas, tuplas o sobre circuitos. Esto último se debe a que el lenguaje Haskell permite la definición de funciones de alto orden, es decir podemos definir funciones que su dominio e imagen son funciones. 
