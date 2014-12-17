@@ -1,0 +1,63 @@
+\chapter{\textsc{ Descripción en Lava del sumador de Sklansky }}\label{chap:sklansky-lava}
+\lstset{language=Haskell} 
+\begin{lstlisting}
+sklansky :: [(Bit, Bit)] -> ([Bit], Bit)
+sklansky abs = (ss,cout)
+  where
+    gps            = map gpC abs
+    (cs,cout)      = (skl (mkFan dotOp) ->- unsnoc ->- (map fst -|- fst) ) gps
+    ((_,p) : gps') = gps
+    rs             = zip cs gps'
+    ss             = p : map sumC rs
+--
+-- 
+{-- La funcion dotOp utilizada es la
+ misma que la que definimos para Brent-Kung.
+
+dotOp ((g1, p1) ,(g, p)) = (go, po)
+   where
+      go = or2 (g, and2 (p, g1))
+      po = and2 (p, p1)
+--}
+
+{--
+Funciones auxiliares utilizadas en el top level de sklanksy:
+--}
+gpC:: (Bit,Bit) -> (Bit,Bit) -- Genera los g y p a partir de los bit de entrada a y b.
+gpC (a,b) = (a <&> b,a <#> b)
+
+sumC :: (Bit,(Bit,Bit)) -> Bit -- Realiza la ultima operacion (una XOR ) para calcular la suma
+sumC (cin, (_,p)) = cin <#> p
+
+mkFan :: ((a,a) -> a) -> Fan a
+mkFan op (i:is) = i:[op(i,k) | k <- is]
+
+fsT f = (f  -|- id)
+snD f = (id -|-  f)
+
+unsnoc as = (init as, last as)
+--
+
+-- Red de prefijo de sklansky:
+skl :: PP a
+skl _ [a] = [a]
+skl f as  = init los ++ ros'
+  where
+    (los,ros) = (skl f las, skl f ras)
+    ros'      = f (last los : ros)
+    (las,ras) = splitAt (cnd2 (length as)) as
+
+cnd2 n = n - n `div` 2 -- El techo de n/2
+--
+
+{--
+ Version del sumador que acomoda el tipo de datos de sklansky
+ para hacerlo compatible con el módulo para generar el netlist VHDL.
+ La version definida arriba toma una lista de tuplas. Y la que 
+ creamos aqui toma una tupla de listas:
+--}
+sklansky_ :: ([Bit], [Bit]) -> ([Bit], Bit) 
+sklansky_ (as,bs) = sklansky (zip as bs)
+--
+
+\end{lstlisting}

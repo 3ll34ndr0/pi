@@ -1,0 +1,28 @@
+\chapter{\textsc{ Banco de prueba para simulaciones en Gnucap}}\label{chap:gnucap_testbench}
+\section{Análisis de potencia de los sumadores}
+Estas simulaciones tardaron aproximadamente 10 minutos para los circuitos de 8 bits, 1 hora para los de 16 bits y 14 horas para los circuitos de 32 bits. La computadora en que realizamos las simulaciones tiene 4GB de RAM y las siguientes características detalladas  por el programa \verb.lshw.:
+\begin{verbatim}
+     *-cpu:0
+          description: CPU
+          product: Intel(R) Celeron(R) CPU 847 @ 1.10GHz
+          vendor: Intel Corp.
+          physical id: 41
+          bus info: cpu@0
+          version: 6.10.7
+          serial: 0002-06A7-0000-0000-0000-0000
+          slot: SOCKET 0
+          size: 800MHz
+          capacity: 3800MHz
+          width: 64 bits
+          clock: 100MHz
+    *-cpu:1
+          physical id: 1
+          bus info: cpu@1
+          version: 6.10.7
+          serial: 0002-06A7-0000-0000-0000-0000
+          size: 800MHz
+          capacity: 800MHz
+\end{verbatim}
+
+\lstinputlisting{Apendice/tb_potencia.gnucap}
+\section{Análisis de performance en los sumadores}

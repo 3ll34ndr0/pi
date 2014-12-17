@@ -1,0 +1,79 @@
+*** Test bench para análisis de potencia del sumador	
+* Para usar este script:
+* Para correr este script hacer:
+gnucap -i tb_potencia.gnucap
+
+* Pero antes es necesario hacer algunos enlaces simbolicos:
+
+* Extraccion post-layout:
+* ln -s ext_circuit.spi nombre_real_del_netlist_spice_extraido
+
+* Circuito de exitacion de las entradas:
+* ln -s inputs.spi nombre_real_archivo_exitacion
+* Este script asume que los nombres de las entradas son:
+* a0, a1, a2, ..., a_{n-1} (para el primer sumando)
+* b0, b2, b3, ..., b_{n-1} (para el segundo sumando)
+* s0, s2, s3, ..., s_{n-1} (para la suma)
+* cout (para el acarreo de salida)
+* Fin de la explicacion de uso.
+**************************
+
+**************************
+* Configuraciones posibles
+* Configuración para la frecuencia:
+* Seteo el parámetro para fijar la frecuencia en el circuito de exitación:
+param periodo = 2.2n	
+* Nombre de archivo donde se registran los valores
+* de potecia::
+log gnucap.log
+
+* Para que converga la corriente con mejor resolución: 
+* Se podría hacer más preciso aún, pero las simulaciones tardarían mas
+* sin tanta ganancia en precision.
+options dtmin=1e-15
+options reltol= 10u
+options abstol= 1f
+* Fin de la configuracion.
+******************
+
+*****************
+* Comienza el testbench:
+* Cargo el circuito:
+
+get ext_circuit.spi
+
+* Cargo la exitación de entrada
+.include inputs.spi
+
+* Comienzo la simulación llevando el circuito al punto de operación por defecto (Temperatura 27 grados)
+op
+
+* Elijo en qué puntos voy a medir qué cosa:
+* Si el circuito es más chico que 32 bits, da un error pero sigue todo bien.
+probe tran   v(a0) 
+probe tran + v(sum0)  v(sum1)  v(sum2)  v(sum3)  v(sum4)  v(sum5)  v(sum6) v(sum7) 
+probe tran + v(sum8)  v(sum9)  v(sum10) v(sum11) v(sum12) v(sum13) v(sum14) v(sum15) 
+probe tran + v(sum16) v(sum17) v(sum18) v(sum19) v(sum20) v(sum12) v(sum22) v(sum23)
+probe tran + v(sum24) v(sum25) v(sum26) v(sum27) v(sum28) v(sum29) v(sum30) v(sum31)  
+probe tran + v(cout)  i(VVDC_vdd)
+* Luego elijo que voy a grabar para graficar y medir:
+store tran i(VVDC_vdd)
+
+trans 0 {periodo*3} 0.01n > salida.spo
+
+measure area = integrate(probe="i(VVDC_vdd)" begin=0 end=6n)
+
+* Para potencia:
+param t_i = {2*periodo}
+param t_f = {3*periodo}
+param t_tot = {t_f - t_i}
+measure area = integrate(probe="i(VVDC_vdd)" begin=t_i end=t_f) 
+param total_energy = area*1.8
+eval total_energy
+param av_power = total_energy/t_tot
+eval av_power
+
+
+* con periodo 2.3 y paso 0.1n :
+* av_power=-989.59875E-6
+
