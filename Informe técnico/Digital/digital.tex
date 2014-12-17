@@ -19,9 +19,9 @@ Tal como mencionamos en la sección \ref{sec:intro_esp} (pág. \pageref{sec:intr
 % Selección de la Arquitectura 
 \subsection{Selección de la arquitectura}\label{sec:selección_arquitectura}
 
-Se puede afirmar que los sumadores llamados (según la bibliografía en inglés) como \emph{parallel prefix adders} son los mejores con respecto al producto potencia-retardo\footnote{Cuando decimos retardo, nos referimos al tiempo de propagación máximo de un circuito, nuestra métrica elegida para caracterizar la performance.}.  Estos sumadores se clasifican dentro de un mismo tipo, porque reducen el problema de calcular las señales de acarreo como el \textbf{problema de cálculo de prefijo}\footnote{En \ref{subsec:prefixProblem} definimos precisamente el problema}. A su vez, son implementaciones particulares de los sumadores  conocidos como \emph{carry look-ahead adders}, ya que todos se basan en el cálculo en paralelo de los acarreos.
-\subsubsection{\emph{Parallel prefix adders}}
-Brent-Kung\cite{brent-kung}, Sklansky\cite{sklansky}, Kogge-Stone \cite{kogge-stone}, Ladner-Fisher [3], Hans-Carlson\cite{kogge-stone} y Knowles\cite{knowles} son implementaciones de este tipo de sumadores, que se diferencian cada uno por minimizar alguna relación de compromiso, en el espacio de diseño para el retardo, área y potencia\cite{Sugla-Carlson} del circuito.
+Se puede afirmar que los sumadores llamados (según la bibliografía en inglés) como \emph{parallel prefix adders}\footnote{Nosotros los nombraremos como \cursi{sumadores de prefijo paralelo}.} son los mejores con respecto al producto potencia-retardo\footnote{Cuando decimos retardo, nos referimos al retardo de propagación máximo de un circuito, nuestra métrica elegida para caracterizar la performance.}.  Estos sumadores se clasifican dentro de un mismo tipo, porque reducen el problema de calcular las señales de acarreo como el \textbf{problema de cálculo de prefijo}\footnote{En \ref{subsec:prefixProblem} definimos precisamente el problema.}. A su vez, son implementaciones particulares de los sumadores  conocidos como \emph{carry look-ahead adders}, ya que todos se basan en el cálculo en paralelo de los acarreos.
+\subsubsection{\emph{Sumadores de prefijo paralelo}}
+Brent-Kung\cite{brent-kung}, Sklansky\cite{sklansky}, Kogge-Stone \cite{kogge-stone}, Ladner-Fisher\cite{ladner-fischer}, Hans-Carlson\cite{kogge-stone} y Knowles\cite{knowles} son implementaciones de este tipo de sumadores, que se diferencian cada uno por minimizar alguna relación de compromiso, en el espacio de diseño para el retardo, área y potencia\cite{Sugla-Carlson} del circuito.
 
 Si tenemos en cuenta el área utilizada por estos circuitos, no podemos asegurar que una de estas se clasifique globalmente como la mejor, ya que algunas implementaciones favorecen una métrica a costa de la otra. Citamos un estudio que presenta los siguientes resultados de la figuras \ref{retardo-bits} y \ref{area-bits} de un estudio comparativo \cite{estrada-gimenez} para tecnología CMOS 0.13~\microm.
 
@@ -31,7 +31,7 @@ De estas arquitecturas mencionadas, vamos a implementar un sumador rápido basad
 
 \begin{figure}[h]
   \centering
-\includegraphics[scale=0.34]{figuras/retardo-bits.png}
+\includegraphics[scale=0.49]{figuras/retardo-bits.png}
 \vspace{-5pt}
   \caption{Retardo respecto al tamaño de los operandos}
   \label{retardo-bits}
@@ -41,7 +41,7 @@ De estas arquitecturas mencionadas, vamos a implementar un sumador rápido basad
 
 \begin{figure}[h]
   \centering
-\includegraphics[scale=0.34]{figuras/area-bits.png}
+\includegraphics[scale=0.44]{figuras/area-bits.png}
 \vspace{-1pt}
   \caption{Área respecto al tamaño de los operandos}
   \label{area-bits}
@@ -49,7 +49,6 @@ De estas arquitecturas mencionadas, vamos a implementar un sumador rápido basad
 \end{figure}
 
 \begin{table}[h]
-
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
@@ -57,16 +56,14 @@ De estas arquitecturas mencionadas, vamos a implementar un sumador rápido basad
 Ripple Carry  & \(O(n)\) & \(O(n)\) \\ \hline
 Carry Look-Ahead  & \(O(\log(n))\) & \(O(n\log(n))\) \\ \hline
 Ladner-Fisher &\( O(\log_2(n))\) & \(O(n\log(n))   \) \\ \hline
-Sklansky &\( O(\log_2(n))\) & \(O(\log^2(n))\) \\ \hline
+Sklansky &\( O(\log_2(n))\) & \(O(n\log^2(n))\) \\ \hline
 Kogge-Stone & \( O(\log_2(n))\) & \\ \hline
-Han-Carlson &Falta &Falta \\ \hline 
-Brent-Kung & \(O(\log_2(n))\ & \(O(n\log_2(n))\) \\ \hline
-
+Han-Carlson &... &... \\ \hline 
+Brent-Kung & $O(\log_2(n))$ & \(O(n\log_2(n))\) \\ \hline
 \end{tabular}
-\label{sumadores}
-\caption{Resumen Características de Sumadores}
+\caption{Resumen de las funciones de retardo y área algunos sumadores}\label{tabla:sumadores}
 \end{table}
-Resumimos en la tabla \ref{sumadores} las características y diferencias entre los distintos sumadores\cite{6120598}. Incluimos en esta tabla al \textbf{ripple carry}, por ser la implementación más simple, y al \textbf{carry look-ahead} por ser el sumador que propone el cálculo en paralelo de los acarreos para disminuir logarítmicamente el retardo de suma.
+Resumimos en la tabla \ref{tabla:sumadores} las características y diferencias entre los distintos sumadores\cite{6120598}. Incluimos al \textbf{ripple carry}, por ser la implementación más simple, y al \textbf{carry look-ahead} por ser el sumador que propone el cálculo en paralelo de los acarreos para disminuir logarítmicamente el tiempo de retardo.
 
 %Agregar las referencias a los papers si se puede
 
@@ -79,7 +76,7 @@ Resumimos en la tabla \ref{sumadores} las características y diferencias entre l
 
 
 \section{Fundamentos teóricos de la suma}
-A los fines de poder implementar estos sumadores, desarrollaremos las equaciones que nos permitan llegar a la descripción del Hardware.
+A los fines de poder implementar estos sumadores, desarrollaremos las ecuaciones que nos permitan llegar a la descripción del \cursi{hardware}.
 
 \subsection{Semisumador y sumador completo}
 \subsubsection{Semisumador}
@@ -158,7 +155,7 @@ Este sumador se implementa conectando como muestra la figura \ref{fig:RCA} el bl
 El retardo del camino crítico de un sumador de $n$ bits es:
 
 \begin{equation}
-T_{RCA} = (n-1)T_m+ T_{FA}$
+T_{RCA} = (n-1)T_m+ T_{FA}
 \end{equation}
 
 Siendo $T_m$ el retardo del circuito de generación del acarreo de un sumador completo y $T_{FA}$ el retardo de un sumador completo. Es decir, el retardo es proporcional al tamaño de los operandos.
@@ -172,7 +169,7 @@ Siendo $T_m$ el retardo del circuito de generación del acarreo de un sumador co
  
 % El delay de un RCA está en pag. 77 de Computer Arithmetic de Behrooz Parhami
 
-\subsection{Carry Lookahead Adders}
+\subsection{Sumadores \cursi{carry lookahead}}
 
 La clave para sumar rápido es plantear el problema de la suma como el problema de generar las señales de acarreo en el menor tiempo posible; eso queda evidenciado al interpretar la ecuación \ref{s_i}. Por lo tanto, el objetivo será lograr un bloque generador de las señales de acarreo de baja latencia\cite{arithmeticComputer}.
 %Pag. 85 - Section 5.6 (ver como se cita en latex la página)
@@ -247,17 +244,11 @@ T_{CLA} = T_p + T_{AND_n} + T_{OR_n} + T_{FA}
 Se pueden realizar por medio de árboles binarios una reducción a celdas con un fan-in de dos (por ejemplo), pero agregando una etapa por cada reducción, en ese caso el retardo en este circuito sería en función del $\log_2 n$.
 
 
-%\subsection{Lower Bounds}
-%Teorema:
-%Si el número de entradas de cada compuerta combinacional está acotado por c, entonces para cada circuito %combinacional \(G\) que implemente un \(sumador(n)\), se da que:
-
-%\(c(G) \greatereq n/c \) and \(d(G) \greatereq \log_{c}(n)\)
-
 % INTERESANTE: Clock periods in contemporary microprocessors are rather short; they are shorter than 10 times the delay of a full-adder.
 
 \subsection{Sumadores de Prefijo Paralelos (\emph{Parallel Prefix Adders})}
-En la sección anterior vimos como desarrollar ecuaciones que nos permiten obtener las señales de acarreo a partir de las señales auxiliares, para poder calcular la suma del bit $n$, sin esperar a que el acarreo del bit $n-1$ sea computado. Aunque esta solución tal cuál como la presentamos deja de ser aplicable según aumenta $n$, nos permite abordar \textbf{el problema del cálculo de los acarreos como un problema de prefijos paralelos}.
-\subsubsection{Problema de Prefijos Paralelos (\emph{Parallel Prefix Problem})}\label{subsec:prefixProblem}
+En la sección anterior vimos como desarrollar ecuaciones que nos permiten obtener las señales de acarreo a partir de las señales auxiliares, para poder calcular la suma del bit $n$, sin esperar a que el acarreo del bit $n-1$ sea computado. Aunque esta solución tal cuál como la presentamos deja de ser aplicable según aumenta $n$, nos permite abordar \textbf{el problema del cálculo de los acarreos como un problema de prefijo paralelo}.
+\subsubsection{Problema de prefijo paralelo (\emph{parallel prefix problem})}\label{subsec:prefixProblem}
 El problema de prefijo paralelo es:
 
 \begin{equation}
@@ -304,31 +295,33 @@ Ahora entonces definimos un operador acarreo $\circ$ para condensar estas operac
 (g,p) &= (g'',p'') \circ (g',p') = (g'' + g'p', p'p'')\nonumber
 \end{align}
 \end{equation}
-Este operador es un operador asociativo, y esto se puede demostrar utilizando la propiedad asociativa de los operadores OR y AND. Finalmente, ya tenemos un operador asociativo, y las entradas $(g''',p''')$,$(g'',p'')$,$(g',p'),\ldots$ que nos permiten plantear el problema de la construcción de la red (o bloque) de acarreos, como un problema de \emph{Prefijos Paralelos}:
-
-\begin{equation}
+Este operador es un operador asociativo, y esto se puede demostrar utilizando la propiedad asociativa de los operadores OR y AND. Finalmente, ya tenemos un operador asociativo, y las entradas $(g''',p''')$,$(g'',p'')$,$(g',p'),\ldots$ que nos permiten plantear el problema de la construcción de la red (o bloque) de acarreos, como un \emph{problema de prefijo paralelo}:
+\begin{equation}\label{eq:ppProblem}
 \begin{align}
 \text{Dados:}\\
  & \text{Entradas:} (g_0,p_0),(g_1,p_1),\dotsc,(g_{k-1},p_{k-1}) \\
  & \text{Un operador} \circ \text{asociativo}\\ 
-\text{Computar}:
-(G_0,P_0) = &(g_{[0,0]},p_{[0,0]})\notag\\
-(G_1,P_1) = &(g_{[0,0]},p_{[0,0]})\circ(g_{[0,1]},p_{[0,1]})\notag\\
-&\vdots \nonumber \\
-(G_{k-1},P_{k-1}) = &(g_{[0,0]},p_{[0,0]})\circ(g_{[0,1]},p_{[0,1]})\circ \dotsc \circ(g_{[0,k-2]},p_{[0,k-2]})\circ(g_{[0,k-1]},p_{[0,k-1]})\notag
+\text{Computar}:\\
+(G_0,P_0) = &(g_{[0,0]},p_{[0,0]})\\
+(G_1,P_1) = &(g_{[0,0]},p_{[0,0]})\circ(g_{[0,1]},p_{[0,1]})\\
+&\vdots  \\
+(G_{k-1},P_{k-1}) = &(g_{[0,0]},p_{[0,0]})\circ(g_{[0,1]},p_{[0,1]})\circ \dotsc \circ(g_{[0,k-2]},p_{[0,k-2]})\circ(g_{[0,k-1]},p_{[0,k-1]})
 \end{align}
 \end{equation}
-Retomando la ecuación \ref{s_i} de la suma, y con estas ecuaciones que nos dan las señales propagadas o generadas del acarreo, podemos construir distintos sumadores, que varían en la red de cálculo del acarreo, particularmente en cómo se elija la asociación del operador punto. La implementación mas básica (y lenta) sería la de ir asociando en serie a este operador.  
-%Seria interesante hacer el gráfico de la red serial de acarreo.
-
-TODO: AGREGAR GRAFICO DE UNA RED SERIE
-
+Retomando la ecuación \ref{s_i} de la suma, y con estas ecuaciones que nos dan las señales propagadas o generadas del acarreo, podemos construir distintos sumadores, que varían en la red de cálculo del acarreo, particularmente en cómo se elija la asociación del operador \cursi{acarreo} (a veces también mencionado como \cursi{operador punto}). La implementación mas básica (y lenta) sería la de ir asociando en serie a este operador, como vemos en la figura \ref{fig:ppserie}. Todos los sumadores de prefijo paralelo se diferencian escencialmente en la forma de asociar.
+\begin{figure}[h!]
+  \centering
+\includegraphics[scale=1.4]{figuras/ppserie.eps}
+  \caption{Red de prefijo en serie, una forma gráfica de ver la ecuaciones del cálculo prefijo en \ref{eq:ppProblem}. Notar que cada línea representa dos bits. Los puntos negros representan al operador acarreo.}
+\label{fig:ppserie}
+%\vspace{-10pt}
+\end{figure}
 %118 del Parhami " Computer Arithmetic: Algorithms and Hardware Designs."
 
 
 
 \subsection {Sumador de Brent-Kung}
-Para tener en cuenta el problema de la interconexión entre las compuertas de forma tal que estas sean mínimas y que el área de celdas y de conexión se minimicen, se propone el sumador de Brent-Kung. Este sumador \cite{brent-kung} es una versión que considera el problema de la interconexión entre las compuertas, de una forma que minimice el área, a costa de un aumento en el retardo. Esto se expresa en la función de retardo que es \(2\log_2(n)-2\), a diferencia de los sumadores de Ladner-Fisher\cite{ladner-fischer}, Kugge-Stone\cite{kogge-stone} y Sklansky\cite{sklansky} que en \(\log_2(n)\) etapas calculan todos las señales de acarreo. 
+Para tener en cuenta el problema de la interconexión entre las compuertas de forma tal que estas sean mínimas y que el área de celdas y de conexión se minimicen, se propone el sumador de Brent-Kung\cite{brent-kung}. Este sumador es una versión que considera el problema de la interconexión entre las compuertas, de una forma que minimice el área, a costa de un aumento en el retardo. Esto se expresa en la función de retardo que es \(2\log_2(n)-2\), a diferencia de los sumadores de Ladner-Fisher\cite{ladner-fischer}, Kugge-Stone\cite{kogge-stone} y Sklansky\cite{sklansky} que en \(\log_2(n)\) etapas calculan todas las señales de acarreo. 
 
 
 \subsubsection {Operador de Brent-Kung}
@@ -364,15 +357,15 @@ Esas señales se generan en paralelo, dado dos números binarios \(a[n]\) and \(
   \label{gAndPs}
 \end{figure}
 
-\subsubsection {Red de Prefijos Paralelos}
-\noindent Con la figura \ref{bKung16}, detallamos ahora la red de prefijos paralelos con un fan-out máximo de dos, lo cuál diferencia a el sumador de Brent-Kung de los otros sumadores de prefijos paralelos. La red se realiza con 2 elementos: Los puntos negros son los operadores punto de Brent-Kung de la figura \ref{dotOp} y con buffers (los puntos blancos) que realizan una copia de la señal. Cada cable representa un par de bit \(g_i\),\(p_i\) de la figura \ref{fig:bkungadder}.
+\subsubsection {Red de Prefijo Paralelo}
+\noindent Con la figura \ref{bKung16}, detallamos ahora la red de prefijo paralelo con un fan-out máximo de dos, lo cuál diferencia a el sumador de Brent-Kung de los otros sumadores de prefijo paralelo. La red se realiza con 2 elementos: Los puntos negros son los operadores punto de Brent-Kung de la figura \ref{dotOp} y con buffers (los puntos blancos) que realizan una copia de la señal. Cada cable representa un par de bit \(g_i\),\(p_i\) de la figura \ref{fig:bkungadder}.
 
 \subsubsection {Circuito completo}
-Con la red de prefijos paralelos lista, podemos armar el circuito propuesto en el paper de Brent-Kung\cite{brent-kung}. A los fines de la implementación en HDL, mostramos el circuito visto de una forma alternativa en la figura \ref{fig:bkungadder}. Pero aprovechamos la oportunidad para generalizar un poco este resultado. Si retomamos la definición de la suma planteada en la ecuación \ref{s_i}:
+Con la red de prefijo paralelo lista, podemos armar el circuito propuesto en el paper de Brent-Kung\cite{brent-kung}. A los fines de la implementación en HDL, mostramos el circuito visto de una forma alternativa en la figura \ref{fig:bkungadder}. Pero aprovechamos la oportunidad para generalizar un poco este resultado. Si retomamos la definición de la suma planteada en la ecuación \ref{s_i}:
 $$
 s_i = a_i \oplus b_i\oplus c_i
 $$
-y notamos que en la figura \ref{fig:bkungadder} se calcula $a_i \oplus b_i$, y que con los $G_i$ y los $p_{i-1}$ podemos construir la suma. Por lo tanto, no importa de qué forma se generen estas señales en la red de prefijos paralelos, podemos calcular el valor de $s_i$, como vemos de forma más genérica en la figura \ref{fig:ppadder}.
+y notamos que en la figura \ref{fig:bkungadder} se calcula $a_i \oplus b_i$, y que con los $G_i$ y los $p_{i-1}$ podemos construir la suma. Por lo tanto, no importa de qué forma se generen estas señales en la red de prefijo paralelo, podemos calcular el valor de $s_i$, como vemos de forma más genérica en la figura \ref{fig:ppadder}.
 
 \begin{figure}[h]
   \centering
@@ -385,7 +378,7 @@ y notamos que en la figura \ref{fig:bkungadder} se calcula $a_i \oplus b_i$, y q
 \vspace{-5pt}
   \centering
 \includegraphics[scale=1.4]{figuras/bKung16.eps}
-  \caption{Red de prefijos paralelos para Brent-Kung (ejemplo de 16 bits)}
+  \caption{Red de prefijo paralelo para Brent-Kung (ejemplo de 16 bits)}
 \label{bKung16}
 \vspace{-10pt}
 \end{figure}
@@ -398,13 +391,13 @@ y notamos que en la figura \ref{fig:bkungadder} se calcula $a_i \oplus b_i$, y q
 \end{figure}
 
 \subsection{Sumador de Sklansky}\label{subsec:sklansky}
-Para realizar este sumador, debemos desarrollar la red de cálculo paralelo de los acarreos, a la forma propuesta por Skalansky. Esta forma se conoce como \emph{divide and conquer}, y la evidenciamos con un ejemplo para sumandos de 16 bits en la figura \ref{fig:sklansky16}. Los puntos negros representan el operador punto (definido anteriormente como el operador de Brent-Kung), notar que tiene menos cantidad de etapas de operaciones (en proporción de (\log_2(n))\)) por lo tanto es un sumador más rápido que el de Brent-Kung, pero hay nodos que tienen un fan-out de hasta $\frac{n}{2}$, lo cuál resulta en mayor capacidades parásitas, haciendo más lento el circuito en ese nodo.
+Para realizar este sumador, debemos desarrollar la red de cálculo paralelo de los acarreos, a la forma propuesta por Skalansky. Esta forma se conoce como \emph{divide and conquer}, y la evidenciamos con un ejemplo para sumandos de 16 bits en la figura \ref{fig:sklansky16}. Los puntos negros representan el operador punto (definido anteriormente como el operador de Brent-Kung), notar que tiene menos cantidad de etapas de operaciones (en proporción de $\log_2(n))$) por lo tanto es un sumador más rápido que el de Brent-Kung, pero hay nodos que tienen un fan-out de hasta $\frac{n}{2}$, lo cuál resulta en mayor capacidades parásitas, haciendo más lento el circuito en ese nodo.
 
 \begin{figure}[h!]
 \vspace{-5pt}
   \centering
 \includegraphics[scale=0.7]{figuras/sklansky16.eps}
-  \caption{Red de prefijos paralelos para Sklansky (ejemplo de 16 bits)}
+  \caption{Red de prefijo paralelo para Sklansky (ejemplo de 16 bits)}
 \label{fig:sklansky16}
 \vspace{-10pt}
 \end{figure}

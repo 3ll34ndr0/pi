@@ -1,5 +1,5 @@
 	\chapter{Conclusiones finales}
-\cursi{Nos hemos propuesto resolver un problema que se encuentra en todos los sistemas de procesamiento de señales y los microprocesadores, lo hemos logrado resolver utilizando herramientas de software libre, y los resultados obtenidos son del orden de magnitud que las soluciones propuestas en otros estudios en la misma tecnología. Para lograr este objetivo, y como subproducto del proceso, en la secciones \ref{subsec:nuevosHDL} y \ref{sec:herramientasDisponibles} brindamos un informe sobre el estado de la cuestión sobre las herramientas de software libre disponibles para el diseño de circuitos integrado.}
+\cursi{Nos hemos propuesto resolver un problema que se encuentra en todos los sistemas de procesamiento de señales y los microprocesadores, lo hemos logrado resolver utilizando herramientas de software libre, y los resultados obtenidos son del orden de magnitud que las soluciones propuestas en otros estudios en la misma tecnología. Para lograr este objetivo, y como subproducto del proceso, en la secciones \ref{subsec:nuevosHDL} y \ref{sec:herramientasDisponibles} brindamos un informe sobre el estado de la cuestión sobre las herramientas de software libre disponibles para el diseño de circuitos integrados. Brindamos en la sección de apéndices todo el código fuente de las distintas tareas que hemos automatizado.}
 
   
 \section{Metodología}
@@ -20,7 +20,7 @@ También es importante resaltar que esta metodología nos permite realizar \negr
 
 
 \section{Resultados}
-Los resultados obtenidos para el sumador de Brent-Kung y Sklansky están en el mismo orden de magnitud que otros estudios\cite{ramanathan,Chatterjee} realizados en 180~\nanom. Considerando que no realizamos iteraciones para mejorar la implementación física, podemos afirmar que hay lugar para optimizar el resultado. Se pueden mejorar los resultados obtenidos por medio de la utilización de otros algoritmos para el \gls{pnr}}. Incluso hay mucho lugar para mejora si personalizamos las celdas estándar para favorecer alguna métrica a costa de otra. Además, si ampliamos nuestro conjunto de celdas estándar a versiones con mayor capacidad de manejo de corriente, sumado a un algoritmo de \gls{pnr} que las utilice allí donde es necesario.
+Los resultados obtenidos para el sumador de Brent-Kung y Sklansky están en el mismo orden de magnitud que otros estudios\cite{ramanathan,Chatterjee} realizados en 180~\nanom. Considerando que no realizamos iteraciones para mejorar la implementación física, podemos afirmar que hay lugar para optimizar el resultado. Se pueden mejorar los resultados obtenidos por medio de la utilización de otros algoritmos para el \gls{pnr}. Incluso hay mucho lugar para mejora si personalizamos las celdas estándar para favorecer alguna métrica a costa de otra. Además, si ampliamos nuestro conjunto de celdas estándar a versiones con mayor capacidad de manejo de corriente, sumado a un algoritmo de \gls{pnr} que las utilice allí donde es necesario.
 
 Otra fuente de mejora es realizar el \layout completamente personalizado, sin utilizar herramientas de \gls{pnr}, ya que en baja escala los resultados de un \layout realizado por una persona son más optimos, si entendemos cabalmente el funcionamiento del circuito. Esta última opción sólo será aplicable si la performance de todo el sistema dependiese de éste circuito, porque en general no será posible realizar el layout manualmente ya que lleva mucho más tiempo. Por eso resaltamos que la importancia de estos resultados es que se lograron con una metodología automatizada, lo que nos permite pensar en escalas de circuitos más grande que los sumadores que hemos implementado.
 
@@ -36,8 +36,9 @@ Para diseñar circuitos secuenciales se requiere algunas tareas y herramientas e
 También podemos diseñar circuitos analógicos, ya que hemos utilizado tres de las cuatro herramientas básicas para realizarlo: El simulador tipo spice (Gnucap), el editor de \layout y la herramienta de extracción de parásitos. La otra herramienta necesaria es el editor de esquemáticos, pero que está disponible en Electric.
 
 \section{Desafíos futuros}
+Al realizar este proyecto integrador, hemos detectado la oportunidad de desarrollar líneas de trabajo en pos de profundizar algunos aspectos de la metodología o de la aplicación.  
 \begin{itemize}
-\item .
+\item Crear un flujo que una los resultados esperados de \gls{pnr} con la selección de la arquitectura a implementar, de forma automática.
 \item .
 \item .
 \end{itemize}

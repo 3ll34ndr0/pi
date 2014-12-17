@@ -45,7 +45,7 @@ Potencia total disipada & Tan bajo como sea posible                 \\
 Definiremos las métricas que nos permitan dar cuenta de la calidad del diseño.
 \subsection{Performance}
 
-El término performance puede representar distintas métricas, según desde qué perpectiva se esté realizando el análisis. Pero si nos enfocamos puramente en el diseño, la performance se define usualmente\cite{rabaey2003} como la duración del período del clock (o su frecuencia). El valor mínimo de período de clock que pueda ser usado para una tecnología y un diseño dado, está definido por múltiples factores, como el tiempo que le toma a las señales propagarse a través de la lógica (retardo de propagación), el tiempo que lleva entrar y salir los datos de los registros, la incertidumbre de llegada del reloj (\emph{clock uncertainty}). Pero el núcleo de todo análisis de performance reside en la performance de una sola compuerta.
+El término performance puede representar distintas métricas, según desde qué perpectiva se esté realizando el análisis. Pero si nos enfocamos puramente en el diseño, la performance en los sistemas síncronos se define usualmente\cite{rabaey2003} como la duración del período del reloj (o su frecuencia). El valor mínimo de período de clock que pueda ser usado para una tecnología y un diseño dado, está definido por múltiples factores, como el tiempo que le toma a las señales propagarse a través de la lógica (retardo de propagación), el tiempo que lleva entrar y salir los datos de los registros, la incertidumbre de llegada del reloj (\emph{clock uncertainty}). Pero el núcleo de todo análisis de performance reside en la performance de una sola compuerta.
 
 \subsubsection{Retardo de propagación}
 El retardo de propagación $t_p$ de una compuerta define cuán rápido responde un circuito a un cambio en su(s) entrada(s). Expresa el retardo experimentado por una señal cuando pasa a través de una compuerta. Medido entre el 50\% del punto de transición de entrada y salida, como mostramos en la figura \ref{fig:propagationDelay}, correspondiente al tiempo de propagación de una compuerta inversora. Ya que el tiempo de propagación es distinto según el flanco de entrada, se definen 2 tiempos de propagación. El $t_{pLH}$ es el tiempo de respuesta de una compuerta  para una transición de la salida desde bajo a alto, mientras que $t_{pHL}$ se refiere a el tiempo para una transición de la salida desde alto a bajo. El retardo de propagación $t_p$ se define como el promedio de estos dos.
@@ -100,14 +100,14 @@ Realizamos el análisis de potencia a lo largo de un período de tiempo $\mathrm
 P_{av} = \frac{1}{\mathrm{T}}\int\limits_0^T p(t)dt = \mathrm{\frac{V_{DD}}{T}}\int\limits_0^T i_{\mathrm{fuente}}(t)\mathrm{d}t 
 \label{eq:pv}
 \end{equation}
-El período de tiempo que tomaremos para la integral es el retardo de propagación del camino crítico.
+El período de tiempo que tomaremos para medir la potencia promedio lo elegiremos de forma tal que la medición resulte representativa del funcionamiento del circuito.
 
 \subsection{Área}
 La importancia de minimizar el área de los circuitos radica principalmente en que esta impacta fuertemente en el costo de cada \emph{die}\cite{HennessyPatterson}, ya que el costo es una función que depende de la cuarta potencia del área del circuito\cite{rabaey2003}. Además, los circuitos de menor área tienden a consumir menor energía. 
 
 
 \subsection{Resumen}
-A continuación resumimos en la tabla \ref{cuadro:metricas} las métricas que utilizaremos para la comparación de las distintas arquitecturas de sumadores:
+A continuación resumimos en la tabla \ref{tabla:metricas} las métricas que utilizaremos para la comparación de las distintas arquitecturas de sumadores:
 \begin{table}[h] 
 \centering
 \begin{tabular}{@{}ll@{}}
@@ -118,7 +118,7 @@ Potencia promedio disipada & [mW] \\
 Área de circuito  & [$\mu\textrm{m}^2$] \\ \bottomrule
 \end{tabular}
 \caption{Métricas de comparación}
-\label{cuadro:metricas}
+\label{tabla:metricas}
 \end{table}
 
 

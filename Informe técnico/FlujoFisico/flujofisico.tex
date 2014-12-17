@@ -138,7 +138,7 @@ El hecho de que no cuente con un sintetizador lógico, como señalamos en la tab
 \section{Selección del proceso de fabricación}\label{procesoFabricación}
 %En la industria del semiconductores bajo el modelo de diseño fuera de la planta de fabricación del chip.
 
-En este punto, es importante mencionar un aspecto de la industria de los semiconductores. En los orígenes, la industria de semicoductores estaba verticalmente integrada. Esto significaba que la misma empresa que diseñaba el producto, también diseñaba las herramientas de software y fabricaba el chip. Pero hace poco mas de 20 años, surge la separación del proceso de diseño y fabricación. Hoy en día existen empresas que se dedican sólamente a desarrollar el producto, otras que se dedican únicamente a desarrollar herramientas de software para el diseño, otras que sólamente se dedican a fabricar los diseños de otras empresas, y también persisten las empresas que realizan todo el proceso (conocidas como \gls{icms}), abriendo las puertas a otras empresas de diseño sin fábrica (conocidas como \emph{fabless}), para evitar la capacidad ociosa instalada y disminuir sus costos.
+En este punto, es importante mencionar un aspecto de la industria de los semiconductores. En los orígenes, la industria de semicoductores estaba verticalmente integrada. Esto significaba que la misma empresa que diseñaba el producto, también diseñaba las herramientas de software y fabricaba el chip. Pero hace poco mas de 20 años, surge la separación del proceso de diseño y fabricación. Hoy en día existen empresas que se dedican sólamente a desarrollar el producto, otras que se dedican únicamente a desarrollar herramientas de software para el diseño, otras que sólamente se dedican a fabricar los diseños de otras empresas, y también persisten las empresas que realizan todo el proceso (conocidas como \gls{idms}), abriendo las puertas a otras empresas de diseño sin fábrica (conocidas como \emph{fabless}), para evitar la capacidad ociosa instalada y disminuir sus costos.
 \subsection{Obleas multiproyectos}
 Dentro de este esquema, existe una empresa (MOSIS) que se dedica a recolectar proyectos de diseño que están en etapa de prototipo o de bajo volumen, creando obleas multiproyecto que se envían a fabricar, dividiendo los costos por la cantidad de proyectos que incluye. De esta forma, se logra acceder a la fabricación de circuitos integrados a muy bajo costo. Tiene sus limitaciones en cuanto a tecnologías de fabricación disponibles, cantidades, y tiempo de entrega largos, pero permite que proyectos educativos, de investigación o de baja escala sean económicamente factibles. Es importante mencionar que MOSIS cuenta con un programa especial para las universidades, que permite acceder a ciertos nodos\footnote{Nodo es una forma alternativa de llamar al proceso tecnológico de fabricación que toma como segundo nombre el largo mínimo de canal de un trasistor MOS; por ejemplo: nodo de 180~\nanom ~se refiere al proceso con el cuál se puede fabricar un transistor con un mínimo de 180~\nanom~de ancho de canal.} a muy bajo costo.
 
@@ -291,7 +291,7 @@ Otra característica de estas celdas es la distancia entre el riel de VSS hasta 
 \section{Ubicación y Cableado (\emph{Place \& Route})}
 Partimos desde la descripción estructural\footnote{El resultado de la síntesis hecha con \textbf{lava} es un \emph{netlist} VHDL a nivel de compuerta, listo para ser usado por una herramienta de \gls{pnr}.} que producimos en el capítulo \ref{diseñoDigital}. De \emph{Electric} usaremos la herramienta llamada \textbf{\emph{Silicon Compiler}}, que se encarga de ubicar y conectar las celdas según el \emph{netlist} VHDL.
 
-\subsection{Modificación al código fuente de la herramienta de síntesis lógica}
+\subsection{Modificación al código fuente de la herramienta de generación del \cursi{netlist} VHDL} 
 
 La herramienta \textbf{\emph{Silicon Compiler}} requiere que el \emph{netlist} VHDL sea modificado levemente:
 \begin{enumerate}
@@ -300,12 +300,12 @@ La herramienta \textbf{\emph{Silicon Compiler}} requiere que el \emph{netlist} V
 \item\label{caracteres} Los nombres no pueden usar los símbolos [ y ], por lo cual es necesario eliminarlos.
 \end{enumerate} 
  
-Modificamos el código del programa de \textbf{lava} llamado \verb|VhdlNew.hs|, encargado de crear el \emph{netlist} VHDL para realizar (\ref{celdas}), y para lograr (\ref{caracteres}) agregamos una línea para que lance un pequeño programa escrito en \textbf{perl} que mostramos en el apéndice \ref{scriptPerl}. Luego de esta modificación, cuando realizamos la síntesis lógica descripta en el capítulo \ref{diseñoDigital}, el \emp{netlist} VHDL obtenido ya puede ser utilizado por \textbf{\emph{Silicon Compiler}}.
+Modificamos el código del programa de \textbf{lava} llamado \verb|VhdlNew.hs|, encargado de crear el \emph{netlist} VHDL para realizar (\ref{celdas}), y para lograr (\ref{caracteres}) agregamos una línea para que lance un pequeño programa escrito en \textbf{perl} que mostramos en el apéndice \ref{scriptPerl}. Luego de esta modificación, cuando realizamos la síntesis lógica descripta en el capítulo \ref{diseñoDigital}, el \cursi{netlist} VHDL obtenido ya puede ser utilizado por \textbf{\emph{Silicon Compiler}}.
 
 
 
 \subsection{Configuración de la herramienta de \gls{pnr}}
-En la figura \ref{fig:SCconf} vemos la configuración necesaria para hacer el \gls{pnr} con nuestras celdas estándar. La configuración se realiza para ajustar la herramienta a las reglas de \gls(drc) y las dimensiones de nuestra celdas estándar. La variable de ajuste para modificar el \emph{floorplan} es el parámetro \emph{Number of rows of cells}. Según la cantidad de filas que asignemos, será el resultado obtenido para cada circuito. 
+En la figura \ref{fig:SCconf} vemos la configuración necesaria para hacer el \gls{pnr} con nuestras celdas estándar. La configuración se realiza para ajustar la herramienta a las reglas de \gls{drc} y las dimensiones de nuestra celdas estándar. La variable de ajuste para modificar el \emph{floorplan} es el parámetro \emph{Number of rows of cells}. Según la cantidad de filas que asignemos, será el resultado obtenido para cada circuito. 
 
 
 % Configuración del Silicon Compiler
@@ -324,7 +324,7 @@ En la figura \ref{fig:diseños} presentamos todos los \emph{layout} seleccionado
 \begin{table}[h]
 \centering
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}cccccccccc@{}}
+\begin{tabular}{@{}cccc|ccc|ccc@{}}
 \toprule
 \multicolumn{1}{l}{\textbf{Ripple Carry}} & \multicolumn{3}{c}{8}    & \multicolumn{3}{c}{16}      & \multicolumn{3}{c}{32}      \\ \midrule
 filas                                     & 3      & 4      & 5      & 5       & 6       & 7       & 8       & 7       & 6       \\
@@ -334,14 +334,14 @@ alto                                      & 665    & 839    & 958    & 1227    &
 ancho/alto                                & 0,51   & 0,87   & 1,14   & 0,79    & 0,89    & 1,40    & 1,06    & 0,85    & 0,53    \\ \bottomrule
 \end{tabular}
 }
-\caption{Ubicación y conexionado para Ripple carry en 3 tamaños: 8, 16 y 32 bits}
+\caption{Ubicación y conexionado para Ripple carry en 3 tamaños: 8, 16 y 32 bits. Las dimensiones de los lados y el área están en $\lambda$ y $\lambda^2$ respectivamente.}
 \label{tab:rippleCarry}
 \end{table}
 
 \begin{table}[h]
 \centering
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}ccccccccccc@{}}
+\begin{tabular}{@{}cccc|cccc|ccc@{}}
 \toprule
 \textbf{Sklansky} & \multicolumn{3}{c}{8}       & \multicolumn{4}{c}{16}                & \multicolumn{3}{c}{32}      \\ \midrule
 filas              & 3       & 4       & 5       & 4       & 5       & 6       & 7       & 6       & 7       & 8       \\
@@ -351,14 +351,14 @@ alto               & 810     & 973     & 1252    & 1345    & 1581    & 1878    &
 ancho/alto         & 0,53    & 0,83    & 1,31    & 0,38    & 0,77    & 1,03    & 1,34    & 0,72    & 0,83    & 1,07    \\ \bottomrule
 \end{tabular}
 }
-\caption{Ubicación y conexionado para Skalanksy en 3 tamaños: 8, 16 y 32 bits}
+\caption{Ubicación y conexionado para Skalanksy en 3 tamaños: 8, 16 y 32 bits. Las dimensiones de los lados y el área están en $\lambda$ y $\lambda^2$ respectivamente.}
 \label{tab:sklansky}
 \end{table}
 
 \begin{table}[h]
 \centering
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}cccccccccccc@{}}
+\begin{tabular}{@{}cccc|cccc|cccc@{}}
 \toprule
 \textbf{Brent-Kung} & \multicolumn{3}{c}{8}      & \multicolumn{4}{c}{16}                & \multicolumn{4}{c}{32}                \\ \midrule
 filas               & 3       & 4      & 5       & 4       & 5       & 6       & 7       & 6       & 7       & 8       & 9       \\
@@ -368,7 +368,7 @@ alto                & 746     & 910    & 1199    & 1255    & 1436    & 1540    &
 ancho/alto          & 0,54    & 0,83   & 1,27    & 0,55    & 0,82    & 1,00    & 1,37    & 0,63    & 1,45    & 1,14    & 1,19    \\ \bottomrule
 \end{tabular}
 }
-\caption{Ubicación y conexionado para Brent-Kung en 3 tamaños: 8, 16 y 32 bits}
+\caption{Ubicación y conexionado para Brent-Kung en 3 tamaños: 8, 16 y 32 bits. Las dimensiones de los lados y el área están en $\lambda$ y $\lambda^2$ respectivamente.}
 \label{tab:brent-kung}
 \end{table}
 
@@ -385,19 +385,19 @@ ancho/alto          & 0,54    & 0,83   & 1,27    & 0,55    & 0,82    & 1,00    &
 \subsection{Simulación post \emph{layout} para calcular performance y potencia}
 Para realizar la comparación, necesitamos simular nuestros circuitos luego de hacer una extracción del \emph{layout} del circuito, para obtener también las capacidades y resistores párasitos del mismo. A esta simulación se le suele denominar, simulación post \emph{layout}.
 
-\subsubsection{Extracción del circuitos, las dimensiones físicas de los transisitores y elementos parásitos}
+\subsubsection{Extracción del circuito, las dimensiones físicas de los transistores y elementos parásitos}
 
 Para realizar una simulación que sea la mejor estimación de la performance y potencia, es necesario realizar una extracción del circuito a partir del \emph{layout}, y para eso es necesario configurar \textbf{Electric} de la siguiente forma:
 
 \begin{itemize}
-\item Parámetros del modelo de transistor: Cargar los modelo de transistores de la tecnología que estamos usando (TSMC 180~nm). Este es un archivo que nos brinda MOSIS, del cual la primera parte nosotros debemos comentar (ya que es toda la información propia de la tecnología y no solamente la específica para el simulador), y renombramos como {\footnotesize\verb#tsmc180nm.model#}. También es necesario realizar los siguientes cambios al archivo:\\
+\item Parámetros del modelo de transistor: Cargar los modelos de transistores de la tecnología que estamos usando (TSMC 180~nm). Este es un archivo que nos brinda MOSIS, del cual la primera parte nosotros debemos comentar (ya que es toda la información propia de la tecnología y no solamente la específica para el simulador), y renombramos como {\footnotesize\verb#tsmc180nm.model#}. También es necesario realizar los siguientes cambios al archivo:\\
 \begin{footnotesize}\verb#.MODEL CMOSN NMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL N NMOS# \\
 \verb#.MODEL CMOSP PMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL P PMOS# \end{footnotesize} \\
 Luego de esos cambios, cargar el archivo en:\\
 \begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Use Header cards from file:.\end{footnotesize}
 	\item Del archivo recién mencionado obtenemos la resistividad de los metales, el \emph{poly}, el sustrato y el silicio dopado $N^+$ y $P^+$. También obtenemos la capacidad entre cada capa de material y el resto de las capas. Esta información la utilizamos para configurar \textbf{Electric} en: \\
 \begin{footnotesize}\verb.File -> Preferences -> Tools -> Parasitic. \end{footnotesize}
-\item Extracción de parásitos: Para realizar la extracción de las capacidades y resistores parásitos de las interconexiones: \\
+\item Extracción de parásitos: Para realizar la extracción de las capacidades y resistores parásitos de las interconexiones, seleccionamos: \\
 \begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Parasitics: Conservative RC. \end{footnotesize}
 \item Seleccionar el formato (lenguaje) del \emph{netlist spice} del simulador que utilizaremos: Las opciones son: \textbf{Spice 2, Spice 3, HSpice, PSpice, Gnucap, SmartSpice,  Spice Opus, Xyce, HSpice for Assura, HSpice for Calibre}. De los cuales, sólo 3 opciones tienen licencias calificadas como software libre: \textbf{Spice 3, Gnucap} y \textbf{Xyce}. \textbf{Spice 3} hace referencia a la versión \textbf{Spice3f5} del estándar de facto para las simulaciones de circuitos analógicos, en general todos los programas pueden leer un \emph{netlist} en ese formato.
 \end{itemize}
@@ -442,9 +442,10 @@ Ahora que ya tenemos seleccionado el simulador y configurada la herramienta para
 \end{footnotesize}
 
 \subsubsection{Simulación de un oscilador anillo}
-Realizamos el layout del oscilador anillo de 31 etapas que mostramos en la figura \ref{fig:lay_31etapas}, y realizamos la simulación de régimen transitorio. Para ver la frecuencia de oscilación, guardamos los datos de la tensión de una salida de uno de los inversores, y para calcular la potencia, guardamos la corriente que sale de la fuente de alimentación. Nuestros resultados son:
+Realizamos el layout del oscilador anillo de 31 etapas que mostramos en la figura \ref{fig:lay_31etapas}, y realizamos la simulación de régimen transitorio. Para ver la frecuencia de oscilación, guardamos los datos de la tensión de una salida de uno de los inversores, y para calcular la potencia, guardamos la corriente que sale de la fuente de alimentación. Nuestros resultados se pueden ver la tabla \ref{tab:RO31}.
 
 \begin{table}[h]
+\vspace{0.3cm}
 \centering
 \begin{tabular}{@{}lcc@{}}
 \toprule
@@ -455,7 +456,7 @@ Oscilador anillo de 31 etapas               & 325 MHz	& 0.026 uW/MHz/compuerta  
 \label{tab:RO31}
 \end{table}
 
-Justificamos la diferencia entre nuestros resultados y los datos brindados por el fabricante en que no existe un detalle de la prueba de caracterizaciónn de la tecnología de fabricación. Es decir, no brinda las dimensiones físicas del inveror utilizado, cómo fué interconectado, etc, lo cual impacta fuertemente en la performance y potencia.
+Justificamos la diferencia entre nuestros resultados y los datos brindados por el fabricante en que no existe un detalle de la prueba de caracterización de la tecnología de fabricación. Es decir, no brinda las dimensiones físicas del inveror utilizado, cómo fué interconectado, etc, lo cual impacta fuertemente en la performance y potencia.
 
 
 \begin{figure}
@@ -529,7 +530,7 @@ $$P_{av} = -838.269~\mu\textrm{W}$$
 El período de integración que elegimos está determinado por el $t_p$ del circuito, lo que físicamente quiere decir: Medimos la potencia del circuito cuando está funcionando a la mayor velocidad posible. 
 
 \subsection{Potencia y performance de todas las arquitecturas}
-La metodología que explicamos en las secciones \ref{sec:performance} y \ref{sec:potencia}, la aplicamos para todas las arquitecturas y todos los tamaños de bits que tomamos de prueba. En el apéndice \ref{gnucap_testbench} dejamos el código utilizado para realizar las simulaciones analógicas, junto con el código en \textbf{Python} para poder visualizar las formas de onda.
+La metodología que explicamos en las secciones \ref{sec:performance} y \ref{sec:potencia}, la aplicamos para todas las arquitecturas y todos los tamaños de bits que tomamos de prueba. En el apéndice \ref{chap:gnucap_testbench} dejamos el código utilizado para realizar las simulaciones analógicas, junto con el código en \textbf{Python} para poder visualizar las formas de onda.
 \subsubsection{Producto performance-potencia}
 Si realizamos el producto $t_p$ por la potencia de cada implementación, tenemos una métrica múy representativa del compromiso entre velocidad y potencia. Cuanto mas chico sea este número, mejor nuestro circuito. En la tabla \ref{tab:comparativa} representamos esta métrica en la columna \textbf{PPP} (Producto Performance-Potencia).
 

@@ -1,6 +1,6 @@
-\chapter{\textsc{Implementación de los circuitos utilizando HDL} }\label{implementaciónHDL}
+\chapter{\textsc{Implementación de los circuitos en lenguaje de descripción de \cursi{hardware}} }\label{implementaciónHDL}
 \section{Introducción}
-Utilizamos un lenguaje de descripción de \emph{hardware} para implementar los distintos circuitos que evaluaremos, porque el problema planteado en el capítulo \ref{chap:especificaciones}, requiere que podamos crear un sumador de $n$ bits arbitrario, para lo cuál los HDL son la herramienta mas apropiada. Implementarlos por medio de esquemáticos llevaría mucho tiempo, por eso descartamos esa metodología. En cambio, cuando describimos un circuito con un HDL lo hacemos parametrizando el tamaño del mismo, y a la hora de simularlo o implementarlo físicamente, determinamos su tamaño y generamos automáticamente el circuito. 
+Utilizamos un lenguaje de descripción de \emph{hardware} (HDL por su sigla en inglés) para implementar los distintos circuitos que evaluaremos, porque el problema planteado en el capítulo \ref{chap:especificaciones}, requiere que podamos crear un sumador de $n$ bits arbitrario, para lo cuál los HDL son la herramienta mas apropiada. Implementarlos por medio de esquemáticos llevaría mucho tiempo, por eso descartamos esa metodología. En cambio, cuando describimos un circuito con un HDL lo hacemos parametrizando el tamaño del mismo, y a la hora de simularlo o implementarlo físicamente, determinamos su tamaño y generamos automáticamente el circuito. 
 
 \subsection{Breve reseña de HDLs}
 VHDL y Verilog son los lenguajes más utilizados y conocidos para el diseño de circuitos integrados. VHDL nace como lenguaje de documentación del comportamiento de los circuitos integrados de aplicación específica (ASIC por su siglas en inglés). El departamento de defensa de Estados Unidos lo desarrolló para poder especificar a sus proveedores, cómo debía comportarse el sistema digital que les encargaba diseñar. Luego, surgio la idea de realizar una simulación lógica a partir de estos archivos VHDL. Lo siguiente fué el desarrollo de herramientas de síntesis lógica a partir de estos archivos, para generar una implementación física del circuito. Con Verilog sucedió algo muy parecido. Por esta historia en común, se puede decir que estos dos lenguajes tienen varias finalidades, siendo la implementación en \emph{hardware} tan sólo una de ellas, es decir, uno puede describir circuitos que no son sintetizables. Por esa razón, y a pesar de ser los más utilizados y conocidos para describir circuitos digitales, no siempre son la mejor alternativa a elegir.
@@ -8,7 +8,7 @@ VHDL y Verilog son los lenguajes más utilizados y conocidos para el diseño de 
 \subsection{Nuevos HDL}\label{subsec:nuevosHDL}
 Podemos mencionar al menos 3 lenguajes de descripción de \emph{hardware} que están siendo utilizados para el diseño de circuitos integrados, que nacieron con el objetivo de aprovechar las ventajas de nuevos lenguajes de programación, bajo el paradigma de la programación funcional. Estos son, \textbf{Lava}\cite{Lava} y \negrita{C$\lambda$aSH}\cite{Clash} basados en \textbf{Haskell}, y \textbf{Chisel}\cite{Chisel}, basado en \textbf{Scala}. En este tipos de lenguajes, un circuito que no sea sintetizable es un error de sintáxis. 
 
-Otro lenguaje que debemos mencionar es \textbf{MyHDL}\cite{MyHDL}, un lenguaje basado en Python que brinda muchas ventajas de este lenguaje, que por estar basado en otro paradigma de programación, no lo agrupamos con los dos anteriores. Pero estos cuatro lenguajes nos permiten:
+Otro lenguaje que queremos mencionar es \textbf{MyHDL}\cite{MyHDL}, un lenguaje basado en Python que brinda muchas ventajas de este lenguaje, que por estar basado en otro paradigma de programación, no lo agrupamos con los cuatro anteriores. Pero estos cinco lenguajes nos permiten:
 
 \begin{itemize}
 \item Usar un único lenguaje para describir (con distintos niveles de abstracción), simular, verificar e implementar el circuito.
@@ -18,9 +18,9 @@ Otro lenguaje que debemos mencionar es \textbf{MyHDL}\cite{MyHDL}, un lenguaje b
 \end{itemize}
 
 \subsection{¿Por qué Lava?}
-Podemos elegir arbitrariamente cualquiera de estos lenguajes, ya que ninguno genera un \emph{overhead} en el circuito implementado, pero si en las tareas de aprendizaje del diseñador. Por lo tanto, para este proyecto en particular\footnote{Es un circuito puramente combinacional} se puede elegir el HDL basado en el conocimiento y experiencia de uso en Haskell, Python o Scala.
+Podemos elegir arbitrariamente cualquiera de estos lenguajes, ya que el circuito que lograremos es independiente del lenguaje utilizado. Por lo tanto, para este proyecto en particular\footnote{Es un circuito puramente combinacional} se puede elegir el HDL basado en el conocimiento y experiencia de uso en Haskell, Python o Scala.
 
-Para describir el circuito, elegimos Lava. En Lava los circuitos son descriptos como funciones que operan sobre listas, tuplas o sobre circuitos. Esto último se debe a que el lenguaje Haskell permite la definición de funciones de alto orden, es decir podemos definir funciones que su dominio e imagen son funciones. 
+Para describir el circuito, elegimos Lava. Quien haya utilizado alguna vez un lenguaje de programación funcional, entenderá fácilmente cómo describir circuitos. Quien no conozca este paradigma de programación, podrá aprender a utilizar Lava por medio de su documentación\cite{Lava-tutorial} sin muchas dificultades, ya que el paradigma de programación se basa en definir a los programas como se definen las funciones matemáticas. En Lava los circuitos son descriptos como funciones que operan sobre listas, tuplas o sobre circuitos. Esto último se debe a que el lenguaje Haskell permite la definición de funciones de alto orden, es decir podemos definir funciones que su dominio e imagen son funciones. 
 
 Lava es simplemente un conjunto de módulos de Haskell, por lo tanto estamos unificando un conjunto de tareas del diseño digital utilizando un lenguaje de programación de propósito general. Las ventajas de este acercamiento al diseño son varias: 
 
@@ -131,7 +131,7 @@ par cir1 cir2 (a, b) = (c, d)
       d = cir2 b
 \end{verbatim}
 }
-Es muy útil definir una versión mas gráfica de la función {\footnotesize\verb|par|}, si definimos el operador infijo{\footnotesize \verb1-|-1}:
+Es muy útil definir una versión mas gráfica de la función {\footnotesize\verb|par|}, si definimos el operador infijo {\footnotesize \verb1-|-1}:
 {\footnotesize
 \begin{verbatim}
 cir1 -|- cir2 = par cir1 cir2 
@@ -186,19 +186,20 @@ Para ver una explicación con mayor nivel de detalles de cómo construir el circ
 
 \begin{figure}[h!]
 \centering
- \begin{subfigure}{0.3\textwidth}
+ \begin{subfigure}{0.4\textwidth}
     \centering
-    \includegraphics[scale=1.5]{figuras/sheeranrecurrence.eps}
+    \includegraphics[scale=2.2]{figuras/sheeranrecurrence.eps}
+%\vspace{0.05cm}
     \caption{Patrón de recurrencia}
     \label{sheeranrecurrence}
  \end{subfigure}
- \begin{subfigure}{0.4\textwidth}
+ \begin{subfigure}{0.5\textwidth}
     \centering
-    \includegraphics[scale 1.4]{figuras/wrapR.eps}
+    \includegraphics[scale=1.92]{figuras/wrapR.eps}
     \caption{Primeras iteraciones de ppNet}
     \label{firstsiter}
  \end{subfigure}
- \caption{Construcción de la red de prefijos paralelos}
+ \caption{Construcción de la red de prefijos paralelos de Brent-Kung.}
 \end{figure}
 
 
@@ -283,6 +284,11 @@ zipp (a:as, b:bs) = c:cs  -- da lo mismo que poner (c:cs)
 fastAdd = gAndPs ->- fork ->- dropG ->- dropP ->- sums
 \end{lstlisting}
 
+
+\subsection{Sumador de Sklansky}
+En el apéndice \ref{chap:sklansky-lava} brindamos la descripción en Lava del sumador.
+
+
 \subsection{Simulación}
 En Lava podemos simular el circuito usando la operación {\footnotesize\verb.simulate.}, el circuito y el estado de las entradas, por ejemplo:
 
@@ -302,15 +308,15 @@ simulateSeq halfAdd [(low,low),(high,low),(low,high)]
 
 \noindent que devuelve {\footnotesize\verb|[(low,low),(high,low),(high,low)]|}
 
-\subsubsection{Simulaciones con números decimales}
-Lava nos permite una interfase con números enteros, por si nos interesa simular usando como operandos números enteros. Esto lo logramos si definimos una función como la siguiente, que toma dos enteros y convierte el segundo en un número binario de la cantidad de bits que indica el primero:
+\subsubsection{Simulaciones con números enteros en base diez}
+Lava nos permite una interfase con números enteros, por si nos interesa simular utilizando esta representación numérica en vez de la binaria. Esto lo logramos si definimos una función como la siguiente, que toma dos enteros y convierte el segundo en un número binario de la cantidad de bits que indica el primero:
 \begin{lstlisting}
 int2bin 0 num = []
 
 int2bin n num = (bit:bits)
   where
-    (bit, num') = numBreak num
-     bits      = int2bin (n-1) num'
+    (bit, num_) = numBreak num
+     bits      = int2bin (n-1) num_
 \end{lstlisting}
 
 \subsubsection{Método de validación del hardware}

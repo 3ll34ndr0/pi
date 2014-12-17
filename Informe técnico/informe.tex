@@ -28,15 +28,13 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{booktabs}
-\usepackage{glossaries}
+\usepackage[toc]{glossaries}
 \usepackage[gen]{eurosym}
 %Macros:
 \include{macros/macrofile1}
-\newcommand{\ns} {\textrm{ns}}
-\newcommand{\nanom} {\textrm{nm}}
-%\newcommand{\microm} {$\mu\textrm{m}$}
-\loadglsentries{defns}
-
+%Glosario:
+\loadglsentries[main]{defns}
+\makeglossaries
 
 %\usepackage{cite}
 \ifpdf
@@ -44,9 +42,9 @@
                /Creator (TeX)
                /Producer (pdfTeX)
                /Author (Leandro Marsó)
-               /CreationDate (D:20130606000000)  %format D:YYYYMMDDhhmmss
+               /CreationDate (D:20141106000000)  %format D:YYYYMMDDhhmmss
                /ModDate (D:20131014000000)
-               /Subject (Diseño de Circuitos Integrados)
+               /Subject (Diseño de Circuitos Integrados utilizando software libre)
                /Keywords (Circuitos Integrados VLSI Sumador Rápido)}
     
 \fi
@@ -69,7 +67,7 @@
 \tableofcontents			%%% INCLUYE INDICE AL PRINCIPIO
 \listoffigures 
 \listoftables
-\makeglossary 
+\printglossaries
 
 \include{Introduccion/introduccion}
 \mainmatter
@@ -86,6 +84,10 @@
 \appendix
 \include{Apendice/vhdl}
 \include{Apendice/scriptPerl}
+\include{Apendice/sklansky-lava}
+\include{Apendice/gnucap}
+\include{Apendice/matplotlib}
+
 %\include{Apendice/cmos180nm}
 
 \backmatter
@@ -110,7 +112,6 @@
 % bibtex Nombre-del-archivo (sin el .tex)
 % latex Nombre-del-archivo.tex
 % latex Nombre-del-archivo.tex
-
 
 
 
