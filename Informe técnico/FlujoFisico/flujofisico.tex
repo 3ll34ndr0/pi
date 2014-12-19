@@ -549,9 +549,9 @@ Presentamos en la siguiente tabla el resumen de todas las simulaciones hechas pa
 	& 	& \multicolumn{2}{c}{Área} & \multicolumn{2}{c}{t_p} & \multicolumn{2}{c}{Potencia} & PPP\\
 %\cmidrule(r){3-4} \cmidrule(r){5-6}\cmidrule(r){7-8}
 Arquitectura & bits & {[}\micromcuadrado{]}	& \% & {[}ns{]} & \multicolumn{1}{c}{\%} & {[}\mu W{]} & \% &  {[}pJ{]}\\ \midrule
-Ripple Carry & 8    & 7836.44  	&       & 3.325	& & 734.36  &  &   2.4       \\
-             & 16   & 16146     &       & 9		& & 1033.07 &   &	6.2   \\
-             & 32   & 35101.6   &       & 40		& & 1032.97 &	&	11.9  \\ 
+Ripple Carry & 8    & 7836.44  	&       & 3.325	& & 838.27  &  &   2.4       \\
+             & 16   & 16146     &       & 6.01		& & 1033.07 &   &	6.2   \\
+             & 32   & 35101.6   &       & 11.5		& & 1032.97 &	&	11.9  \\ 
 \cline{3-9}
 Brent Kung   & 8    & 9919     	&126.58	& 1.95	& 58.65 & 1095.91   &149.23&	2.1   \\
              & 16   & 23793     &147.36	& 4.1	& 68.22	& 1651.95   &159.91&    6.8   \\
@@ -567,12 +567,11 @@ Sklansky    & 8    & 11354.91	&144.90	& 1.4	& 42.11	& 2330.71   &317.38   & 3.3 
 \end{table}
 
 
-Podemos ver que el sumador de \textbf{Sklansky} tiene una performance de hasta $2.2$ veces más rápido para tamaños de 32 bits, con $3.13$ veces mas de potencia y $2.47$ veces más de área. Por otro lado, el sumador de \negrita{Brenk-Kung} de 32 bits mejora la performance en $1.67$ veces, con un costo en potencia de casi $~2$ veces más, y con una área $1.62$ veces más grande. 
+Podemos ver que el sumador de \textbf{Sklansky} en comparación con el \negrita{ripple carry} tiene una performance de hasta 2.2 veces más rápido para tamaños de 32 bits, con 3.13 veces mas de potencia y 2.47 veces más de área. Por otro lado, el sumador de \negrita{Brent-Kung} de 32 bits mejora la performance en 1.67 veces, con un costo en potencia de casi 2 veces más, y con una área 1.62 veces más grande. 
 
-Si comparamos estas dos arquitecturas entre sí, vemos que el Brent-Kung de 32 bits es apenas más lento que Sklansky, pero con bastante menos de potencia y un área $\%52$ más chica.
+Si comparamos estas dos arquitecturas entre sí, vemos que el Brent-Kung de 32 bits es un 25$\%$ más lento que Sklansky, pero con un 37.7$\%$ menos de potencia y un área 52$\%$ más chica.
 
-Por lo tanto, hemos logrado un conjunto de sumadores que según los requerimientos de área, potencia y performance, elegiremos la arquitectura más adecuada. Para sumadores de 32 bits, la mayor velocidad se logra con Sklansky y el mejor compromiso entre velocidad, potencia y área con Brenk-Kung. Para todos los tamaños de sumadores, si la performance no es un problema, un ripple carry es la solución optima de estos tres, ya que ahorra área y energía.
-
+Por lo tanto, hemos logrado un conjunto de sumadores que según los requerimientos de área, potencia y performance, podremos elegir la arquitectura más adecuada. Para sumadores de 32 bits, la mayor velocidad se logra con Sklansky y el mejor compromiso entre velocidad, potencia y área con Brent-Kung. Para todos los tamaños de sumadores, si la performance no es un problema, un ripple carry es la solución optima de estos tres, ya que ahorra área y energía.
 
 
 %\begin{figure}[h!]
