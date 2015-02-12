@@ -142,9 +142,9 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="224.24219"
-     inkscape:cy="58.939059"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="405.91122"
+     inkscape:cy="47.541642"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:window-width="1364"
@@ -167,7 +167,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -384,7 +384,7 @@
        sodipodi:cy="-46.761318"
        sodipodi:rx="12.020006"
        sodipodi:ry="12.020006"
-       d="m 188.43128,-46.761318 a 12.020006,12.020006 0 0 1 -11.6328,12.013768"
+       d="m 188.43128,-46.761318 c 0,6.487726 -5.14844,11.804775 -11.6328,12.013768"
        sodipodi:start="0"
        sodipodi:end="1.5385772"
        sodipodi:open="true"
@@ -394,7 +394,7 @@
        sodipodi:open="true"
        sodipodi:end="1.5385772"
        sodipodi:start="0"
-       d="m 188.43128,-46.761318 a 12.020006,12.020006 0 0 1 -11.6328,12.013768"
+       d="m 188.43128,-46.761318 c 0,6.487726 -5.14844,11.804775 -11.6328,12.013768"
        sodipodi:ry="12.020006"
        sodipodi:rx="12.020006"
        sodipodi:cy="-46.761318"
@@ -434,7 +434,7 @@
        sodipodi:open="true"
        sodipodi:end="1.5385772"
        sodipodi:start="0"
-       d="m 188.43128,-46.761318 a 12.020006,12.020006 0 0 1 -11.6328,12.013768"
+       d="m 188.43128,-46.761318 c 0,6.487726 -5.14844,11.804775 -11.6328,12.013768"
        sodipodi:ry="12.020006"
        sodipodi:rx="12.020006"
        sodipodi:cy="-46.761318"
@@ -450,7 +450,7 @@
        sodipodi:cy="-46.761318"
        sodipodi:rx="12.020006"
        sodipodi:ry="12.020006"
-       d="m 188.43128,-46.761318 a 12.020006,12.020006 0 0 1 -11.6328,12.013768"
+       d="m 188.43128,-46.761318 c 0,6.487726 -5.14844,11.804775 -11.6328,12.013768"
        sodipodi:start="0"
        sodipodi:end="1.5385772"
        sodipodi:open="true"
@@ -489,5 +489,67 @@
          x="318.32513"
          sodipodi:role="line"
          id="tspan4380">formas de onda</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path2469-6"
+       d="m 425.13555,233.62389 70.84112,0 c 17.01776,0 30.72781,11.18544 30.72781,25.0825 0,13.88537 -13.71005,25.07081 -30.72781,25.07081 l -70.84112,0 c -17.01776,0 -30.72782,-11.18544 -30.72782,-25.07081 0,-13.89706 13.71006,-25.0825 30.72782,-25.0825 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       xml:space="preserve"
+       style="font-size:32.20616913px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
+       x="577.87378"
+       y="248.0712"
+       id="text3201-0"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="577.87378"
+         y="248.0712"
+         id="tspan3205-3"
+         style="font-size:12.88246727px">Electric VLSI</tspan></text>
+    <rect
+       style="fill:#ffffb0;fill-opacity:1;stroke:#000000;stroke-width:0.61316389;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3084"
+       width="27.445808"
+       height="29"
+       x="498.55609"
+       y="229.70055" />
+    <rect
+       y="263.70056"
+       x="498.55609"
+       height="29"
+       width="27.39838"
+       id="rect3896"
+       style="fill:#83a3ff;fill-opacity:1;stroke:#000000;stroke-width:0.61263388;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       style="fill:#aad400;fill-opacity:1;stroke:#000000;stroke-width:0.61264533;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3898"
+       width="27.399405"
+       height="29"
+       x="498.55609"
+       y="297.70056" />
+    <text
+       sodipodi:linespacing="100%"
+       id="text3900"
+       y="280.0712"
+       x="577.87378"
+       style="font-size:32.20616913px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
+       xml:space="preserve"><tspan
+         style="font-size:12.88246727px"
+         id="tspan3902"
+         y="280.0712"
+         x="577.87378"
+         sodipodi:role="line">GNUCAP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32.20616913px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
+       x="577.87378"
+       y="314.0712"
+       id="text3904"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="577.87378"
+         y="314.0712"
+         id="tspan3906"
+         style="font-size:12.88246727px">Python</tspan></text>
   </g>
 </svg>

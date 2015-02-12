@@ -234,7 +234,7 @@ Estas celdas están correctamente dimensionadas para lograr el apilamiento en fi
 
 
 \begin{description}
-\item[Altura] 128 $\lambda$\footnote{En la bibliografía en ingles se denomina \emph{pitch}}, es la distancia desde el riel de Vdd hasta Vss, lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories, como vemos en la figura \ref{fig:pitchCeldaEstandar}.  
+\item[Altura] 128 $\lambda$\footnote{En la bibliografía en ingles se denomina \emph{pitch}}, es la distancia desde el riel de \verb.VDD. hasta \verb.VSS., lo cual permite el ruteo horizontal de 16 pistas de metal por encima de las celdas, con metal 3 hasta capas superiories, como vemos en la figura \ref{fig:pitchCeldaEstandar}.  
 \item[Ancho del riel de alimentación] 8 $\lambda$
 \item[Tamaño de los transistores] Transistores \verb.n.: largo y ancho mínimo ($L_n = 2 \lambda$, $W_n =4 \lambda$, $\frac{W_n}{L_n}=2$). Transistores \verb.p.: Largo mínimo. Dos versiones, una de ancho mínimo con $\frac{W_p}{L_p}=2$ y otra de mayor fuerza $\frac{W_p}{L_p}=4$, a la que le agregamos \verb._1x. al final del nombre. 
 \item[Disposición de los pines] Se ubican siempre en la intersección de las pistas horizontales y verticales, que tienen una separación de $8 \lambda$, ver figura \ref{fig:pitchCeldaEstandar}.
@@ -312,7 +312,7 @@ En la figura \ref{fig:SCconf} vemos la configuración necesaria para hacer el \g
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.65]{figuras/SCconf.png}
-  \caption{Configuración del Silicon Compiler}
+  \caption{Configuración del Silicon Compiler de Electric}
   \label{fig:SCconf}
 \end{figure}
 
@@ -394,7 +394,7 @@ Para realizar una simulación que sea la mejor estimación de la performance y p
 \begin{footnotesize}\verb#.MODEL CMOSN NMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL N NMOS# \\
 \verb#.MODEL CMOSP PMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL P PMOS# \end{footnotesize} \\
 Luego de esos cambios, cargar el archivo en:\\
-\begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Use Header cards from file:.\end{footnotesize}
+\begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Use Header cards from file:.\end{footnotesize}, como vemos en la figura \ref{fig:gnucapElectric}
 	\item Del archivo recién mencionado obtenemos la resistividad de los metales, el \emph{poly}, el sustrato y el silicio dopado $N^+$ y $P^+$. También obtenemos la capacidad entre cada capa de material y el resto de las capas. Esta información la utilizamos para configurar \textbf{Electric} en: \\
 \begin{footnotesize}\verb.File -> Preferences -> Tools -> Parasitic. \end{footnotesize}
 \item Extracción de parásitos: Para realizar la extracción de las capacidades y resistores parásitos de las interconexiones, seleccionamos: \\
@@ -407,7 +407,7 @@ Luego de esos cambios, cargar el archivo en:\\
 %\vspace{-5pt}
   \centering
 \includegraphics[scale=.5]{figuras/gnucapElectric3.png}
-  \caption{Configuración de Electric para la extracción del circuito y simulación en un motor tipo Spice.}
+  \caption{Configuración de Electric: Especificar los modelos de transistores a utilizar por el motor tipo Spice.}
 \label{fig:gnucapElectric}
 %\vspace{-10pt}
 \end{figure}
@@ -442,7 +442,7 @@ Ahora que ya tenemos seleccionado el simulador y configurada la herramienta para
 \end{footnotesize}
 
 \subsubsection{Simulación de un oscilador anillo}
-Realizamos el layout del oscilador anillo de 31 etapas que mostramos en la figura \ref{fig:lay_31etapas}, y realizamos la simulación de régimen transitorio. Para ver la frecuencia de oscilación, guardamos los datos de la tensión de una salida de uno de los inversores, y para calcular la potencia, guardamos la corriente que sale de la fuente de alimentación. Nuestros resultados se pueden ver la tabla \ref{tab:RO31}.
+Realizamos el layout del oscilador anillo de 31 etapas que mostramos en la figura \ref{fig:lay_31etapas}, y realizamos la simulación de régimen transitorio. Para ver la frecuencia de oscilación, guardamos los datos de la tensión de una salida de uno de los inversores, y para calcular la potencia, guardamos la corriente instantanea que sale de la fuente de alimentación. Nuestros resultados se pueden ver la tabla \ref{tab:RO31}.
 
 \begin{table}[h]
 \vspace{0.3cm}

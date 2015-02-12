@@ -1,4 +1,5 @@
-\chapter{\textsc{ Descripción en Lava del sumador de Sklansky }}\label{chap:sklansky-lava}
+\chapter{\textsc{ Descripcion en Lava de los sumadores Sklansky y Brent-Kung}}\label{chap:sklansky-lava}
+\section{Sumador de Sklansky}
 \lstset{language=Haskell} 
 \begin{lstlisting}
 sklansky :: [(Bit, Bit)] -> ([Bit], Bit)
@@ -52,12 +53,109 @@ cnd2 n = n - n `div` 2 -- El techo de n/2
 
 {--
  Version del sumador que acomoda el tipo de datos de sklansky
- para hacerlo compatible con el módulo para generar el netlist VHDL.
+ para hacerlo compatible con el modulo para generar el netlist VHDL.
  La version definida arriba toma una lista de tuplas. Y la que 
  creamos aqui toma una tupla de listas:
 --}
 sklansky_ :: ([Bit], [Bit]) -> ([Bit], Bit) 
 sklansky_ (as,bs) = sklansky (zip as bs)
 --
+
+\end{lstlisting}
+
+
+\section{Sumador de Brent-Kung}
+
+\begin{lstlisting}
+dotOp ((g1, p1) ,(g, p)) = (go, po)
+   where
+      go = or2 (g, and2 (p, g1))
+      po = and2 (p, p1)
+--
+unzipl []        = ([],[])
+unzipl [a]       = ([a], [])
+unzipl (a:b:abs) = (a:as, b:bs)
+   where
+      (as, bs) = unzipl abs
+--
+zipl ([], [])     = []
+zipl ([a], [])    = []
+zipl (a:as, b:bs) = a:b:zipl(as, bs)
+--
+buf (gin,pin) = (gin, pin)
+{-- 
+dop toma un operador y un buffer y hace una funcion de 
+una lista de duplas a lista de duplas.
+Esto es lo que vamos a usar como red de 
+prefijo cuando tenemos dos entradas
+--}
+dop [a,b] = [a, dotOp(a,b)]
+--
+
+miti p = unzipl ->- (id -|- p) ->- zipl
+--
+
+comb []     = []
+comb [a]    = []
+comb (a:as) = dop [a, head as]++comb (tail as)
+--
+
+posComb (a:as)  = a: (comb (init as))++ [last as]
+--
+wrapR p = comb ->- miti p ->- posComb 
+ 
+{--
+Toda la version del sumador está hecha para que no
+ pida como parámetro el dotOp, con esta version no
+ se puede usar el programa de Mary para hacer los 
+dibujos de las redes, además de perder de vista 
+donde se puede poner un buffer real. Esto no es
+un gran problema ya que las herramientas de
+place & route tienen la capacidad de agregar
+o quitar buffers segun sea necesario.
+--}
+bKung [a] = []
+bKung [a, b] = dop [a, b]
+bKung as  = wrapR (bKung) as
+
+--
+gAndPs ([],[]) = []
+gAndPs (a:as, b:bs) = (g,p):gps
+   where
+      (g, p) = (and2 (a, b),xor2 (a, b))
+      gps    = gAndPs (as, bs)
+--
+
+fork as = (as, as)
+--
+
+evens :: [(Signal Bool,Signal Bool)] -> [Signal Bool]
+evens as = cs
+   where
+      (bs,cs) = unzipp as
+--
+
+odds ::  [(Signal Bool,Signal Bool)] -> [Signal Bool]
+odds as = bs
+   where
+      (bs,cs) = unzipp as
+
+--
+
+dropP :: ([Signal Bool], [(Signal Bool,Signal Bool)]) -> ([Signal Bool],[Signal Bool])
+dropP = id -|- odds
+--
+
+lastXor (as, bs) = map xor2 cs
+   where
+      cs = zipp (as, bs)
+--
+
+sums (a:as, bs) = (a: lastXor (as, init bs),carryOut)
+   where
+      carryOut = last bs
+--
+
+bKungFastAdder = gAndPs ->- fork ->- (evens -|- bKung) ->- dropP ->- sums
 
 \end{lstlisting}
