@@ -1,7 +1,3 @@
-\chapter{\textsc{ Librería de Lava para generar netlist VHDL}}\label{chap:vhdlnew-lava}
-\subsubsection{Librería modificada para generar un netlist VHDL apropiado para el Silicon Compiler de Electric}
-\lstset{language=Haskell} 
-\begin{lstlisting}
 module VhdlNew
   ( writeVhdlClk
   , writeVhdlNoClk
@@ -283,6 +279,3 @@ cat a b c = do
 
 ----------------------------------------------------------------
 -- the end.
-
-\end{lstlisting}
-
