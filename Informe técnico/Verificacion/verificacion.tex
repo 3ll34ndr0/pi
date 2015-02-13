@@ -22,8 +22,8 @@ La suma tiene las siguientes propiedades:
 \item Existencia del elemento neutro cero.
 \end{itemize}
 
-\subsection{Descripción de las propiedades en el RCA}
-Debido a que nuestro sumador de Brent-Kung asume que el acarreo de entrada es cero, debemos modificar nuestro sumador de referencia (un Ripple Carry Adder) para que desprecie el acarreo de entrada. Por lo tanto describimos nuevamente una versión del RCA de la siguiente forma:
+\subsection{Descripción de las propiedades en el Ripple Carry Adder}
+Debido a que nuestro sumador de Brent-Kung asume que el acarreo de entrada es cero, debemos modificar nuestro sumador de referencia (un Ripple Carry Adder) para que desprecie el acarreo de entrada. Por lo tanto describimos nuevamente una versión del Ripple Carry de la siguiente forma:
 
 %TODO Revisar porque no entiendo si esta bien o mal esta version del sumador.
 
@@ -32,7 +32,7 @@ adder2 ([],[]) = []
 adder2 (a:as, b:bs) = sum:sums
   where
     (sum, carry)     = halfAdd (a, b)
-    (sums, carryOut) = adder (carry, (as, bs))
+    (sums, carryOut) = adder2 (carry, (as, bs))
 \end{lstlisting}
 
 \subsubsection{Propiedad Conmutativa}
