@@ -1,10 +1,11 @@
-*** Vectores de simulación que generan un cambio de estado en el camino crítico.
+*** Ejemplo de archivo inputs.spi utilizado por el banco de prueba (testbench) anterior. 
+*** Vectores de simulacion que generan un cambio de estado en el camino critico.
 * Conjunto de pull-ups y pull-downs para fijar los valores de algunas entradas. Y Luego exito con una fuente de tensión "pulse" a la entrada "a0". 
-va0 a0 vss dc 0 pulse 0 1.8 0 0.1n 0.1n {periodo/2} periodo
+va0 a0 vss dc 0 pulse 0 vsupply 0 0.1n 0.1n {periodo/2} periodo
 
 *** Fuentes de alimentación
 VVDC_vss vss 0 DC '0V' AC '0V' 0
-VVDC_vdd vdd vss DC '1.8V' AC '0V' 0 tran 1.8
+VVDC_vdd vdd vss DC vsupply AC '0V' 0 tran vsupply
 
 * Conecto todas las entradas (exepto a0) del sumando 'a' a un cero:
 R_pulldown_0 vss a1 10k

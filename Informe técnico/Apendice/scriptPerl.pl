@@ -1,9 +1,3 @@
-\chapter{\textsc{ Script Perl }}\label{scriptPerl}
-\lstset{language=Perl}
-%\lstinputlisting{Apendice/scriptPerl.pl}[texcl=false,mathescape=false]
-
-\begin{lstlisting}[texcl=false,mathescape=false]
-
 #!/usr/bin/perl 
 
 #### Import Classes
@@ -77,5 +71,3 @@ while(my($key,$value) = each(%ports)) {
 	copy("stripped-$file","temp-$file");
 					}#while hash table
 
-
-\end{lstlisting}

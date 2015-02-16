@@ -1,8 +1,9 @@
 \chapter{\textsc{ Librería de Lava para generar netlist VHDL}}\label{chap:vhdlnew-lava}
 Librería modificada para generar un \cursi{netlist} VHDL apropiado para el Silicon Compiler de Electric. Se puede descargar la última versión de esta librería en \url{http://bit.ly/1vISP2r}
 
-\lstset{language=Haskell} 
-\begin{lstlisting}
+\lstset{language=Haskell,breaklines=true,extendedchars=true} 
+
+\begin{lstlisting}[mathescape=false]
 module VhdlNew
   ( writeVhdlClk
   , writeVhdlNoClk
@@ -179,7 +180,6 @@ writeDefinitions clocked file name inp out out' =
 
              And []        -> define v (Bool True)
              And [x]       -> port "id"   [x]
-             --And [x]       -> define v (Bool True) --modificación para probar, no funcionó.
              And [x,y]     -> port "and2" [x,y]
              And (x:xs)    -> define (w 0) (And xs)
                            >> define v (And [x,w 0])
@@ -262,7 +262,7 @@ writeDefinitions clocked file name inp out out' =
      system ("cat " ++ firstFile ++ " " ++ secondFile ++ " > " ++ file)
 --     cat firstFile secondFile file
      system ("rm " ++ firstFile ++ " " ++ secondFile)
-    -- Create a new vhdl netlist without the wire or id gates: 
+    -- Crear un netlist VHDL sin la instancia de 'wire' o 'id' ñ ó:
      system ("/home/lean/tfinal/programas/lava/la-va/Lava2000/Scripts/deleteWire.pl " ++ file)
      return ()
  where
