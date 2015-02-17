@@ -564,21 +564,30 @@ Sklansky    & 8    & 11354.91	&144.90	& 1.4	& 42.11	& 2330.71   &317.38   & 3.3 
 \end{table}
 
 
+\begin{figure}[h!]
+\vspace{-5pt}
+  \centering
+\includegraphics[scale=.7]{figuras/barra_performance.eps}
+  \caption{Comparación de la performance de las tres arquitecturas}
+\label{fig:barra_performance}
+\vspace{-10pt}
+\end{figure}
+
+\begin{figure}[h!]
+\vspace{-5pt}
+  \centering
+\includegraphics[scale=.7]{figuras/barra_potencia2.eps}
+  \caption{Comparación de la potencia de las tres arquitecturas}
+\label{fig:barra_potencia}
+\vspace{-10pt}
+\end{figure}
+
+
 Podemos ver que el sumador de \textbf{Sklansky} en comparación con el \negrita{ripple carry} tiene una performance de hasta 2.2 veces más rápido para tamaños de 32 bits, con 3.13 veces mas de potencia y 2.47 veces más de área. Por otro lado, el sumador de \negrita{Brent-Kung} de 32 bits mejora la performance en 1.67 veces, con un costo en potencia de casi 2 veces más, y con una área 1.62 veces más grande. 
 
 Si comparamos estas dos arquitecturas entre sí, vemos que el Brent-Kung de 32 bits es un 25$\%$ más lento que Sklansky, pero con un 37.7$\%$ menos de potencia y un área 52$\%$ más chica.
 
 Por lo tanto, hemos logrado un conjunto de sumadores que según los requerimientos de área, potencia y performance, podremos elegir la arquitectura más adecuada. Para sumadores de 32 bits, la mayor velocidad se logra con Sklansky y el mejor compromiso entre velocidad, potencia y área con Brent-Kung. Para todos los tamaños de sumadores, si la performance no es un problema, un ripple carry es la solución optima de estos tres, ya que ahorra área y energía.
-
-
-%\begin{figure}[h!]
-%\vspace{-5pt}
-%  \centering
-%\includegraphics[scale=.6]{figuras/RO5.eps}
-%  \caption{Simulación con parásitos extraidos del layout de la figura \ref{fig:RO5_lay}}
-%\label{fig:RO5_wf}
-%\vspace{-10pt}
-%\end{figure}
 
 
 
