@@ -1,0 +1,64 @@
+*** Test bench para medir la performance del sumador.	
+*** INSTRUCCIONES DE USO ****
+* Para correr este script hacer:
+gnucap -i tb_performance.gnucap
+
+*** Pero antes es necesario hacer algunos enlaces simbolicos:
+* ln -s ext_circuit.spi nombre_real_del_netlist_spice_extraido #Extraccion post-layout
+* ln -s inputs.spi nombre_real_archivo_exitacion #Circuito de exitacion de las entradas.
+
+*** Algunas aclaraciones ***
+* Este script asume que los nombres de las entradas/salidas son:
+* a0, a1, a2, ..., a_{n-1} (para el primer sumando)
+* b0, b2, b3, ..., b_{n-1} (para el segundo sumando)
+* sum0, sum2, sum3, ..., sum_{n-1} (para la suma)
+* cout (para el acarreo de salida)
+* Puede ser utilizado para cualquier tamaño desde 2 bits hasta 32 bits.
+*** Fin de las instrucciones de uso. ***
+**************************
+
+**************************
+*** SECCION DE CONFIGURACION DE PARAMETROS
+* Tension de alimentacion:
+param vsupply = 1.8
+
+* Configuracion para la frecuencia:
+* Seteo el parametro para fijar la frecuencia en el circuito de exitacion:
+param periodo = 10n	
+* Nombre de archivo donde registramos todos los mensajes de la simulacion:
+log performance.log
+
+*** Fin de la configuracion de parametros.***
+******************
+
+******************
+*** Comienza el testbench:
+* Cargo el circuito:
+
+get ext_circuit.spi
+
+* Cargo la exitacion de entrada
+.include inputs.spi
+
+* Comienzo la simulacion llevando el circuito al punto de operacion por defecto (Temperatura 27 grados)
+op
+
+* Elijo en que puntos voy a medir que cosa:
+* Si el circuito es más chico que 32 bits, da un error pero sigue todo bien.
+probe tran   v(a0) 
+probe tran + v(sum0)  v(sum1)  v(sum2)  v(sum3)  v(sum4)  v(sum5)  v(sum6) v(sum7) 
+probe tran + v(sum8)  v(sum9)  v(sum10) v(sum11) v(sum12) v(sum13) v(sum14) v(sum15) 
+probe tran + v(sum16) v(sum17) v(sum18) v(sum19) v(sum20) v(sum12) v(sum22) v(sum23)
+probe tran + v(sum24) v(sum25) v(sum26) v(sum27) v(sum28) v(sum29) v(sum30) v(sum31)  
+probe tran + v(cout)
+
+* Comienzo la simulación en el tiempo:
+trans 0 {periodo*3} 0.1n > salida_performance.spo
+
+* Calculo la integral de la ecuacion de potencia instantanea promedio:
+measure area = integrate(probe="i(VVDC_vdd)" begin=t_i end=t_f) 
+param total_energy = area*vsupply
+eval total_energy
+param av_power = total_energy/t_tot
+eval av_power
+
