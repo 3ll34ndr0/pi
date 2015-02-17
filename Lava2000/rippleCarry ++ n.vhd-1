@@ -1,0 +1,118 @@
+library ieee;
+
+use ieee.std_logic_1164.all;
+
+entity
+  rippleCarry ++ n
+is
+port
+  ( 
+ 
+    
+    cin : in std_logic
+  ; a[0] : in std_logic
+  ; a[1] : in std_logic
+  ; a[2] : in std_logic
+  ; a[3] : in std_logic
+  ; a[4] : in std_logic
+  ; a[5] : in std_logic
+  ; a[6] : in std_logic
+  ; a[7] : in std_logic
+  ; b[0] : in std_logic
+  ; b[1] : in std_logic
+  ; b[2] : in std_logic
+  ; b[3] : in std_logic
+  ; b[4] : in std_logic
+  ; b[5] : in std_logic
+  ; b[6] : in std_logic
+  ; b[7] : in std_logic
+
+  
+  ; sum[0] : out std_logic
+  ; sum[1] : out std_logic
+  ; sum[2] : out std_logic
+  ; sum[3] : out std_logic
+  ; sum[4] : out std_logic
+  ; sum[5] : out std_logic
+  ; sum[6] : out std_logic
+  ; sum[7] : out std_logic
+  ; cout : out std_logic
+  );
+end rippleCarry ++ n;
+
+architecture
+  structural
+of
+  rippleCarry ++ n
+is
+ --agregado para que Electric encuentre las celdas estandards
+component and2
+port( A, B : in std_logic;  Y : out std_logic);
+ end component;
+component or2
+port( A, B : in std_logic;  Y : out std_logic);
+ end component;
+component xor2
+port( A, B : in std_logic;  Y : out std_logic);
+ end component;
+component id
+port( A : in std_logic;  Y : out std_logic);
+ end component;
+--
+  signal w1 : std_logic;
+  signal w2 : std_logic;
+  signal w3 : std_logic;
+  signal w4 : std_logic;
+  signal w5 : std_logic;
+  signal w6 : std_logic;
+  signal w7 : std_logic;
+  signal w8 : std_logic;
+  signal w9 : std_logic;
+  signal w10 : std_logic;
+  signal w11 : std_logic;
+  signal w12 : std_logic;
+  signal w13 : std_logic;
+  signal w14 : std_logic;
+  signal w15 : std_logic;
+  signal w16 : std_logic;
+  signal w17 : std_logic;
+  signal w18 : std_logic;
+  signal w19 : std_logic;
+  signal w20 : std_logic;
+  signal w21 : std_logic;
+  signal w22 : std_logic;
+  signal w23 : std_logic;
+  signal w24 : std_logic;
+  signal w25 : std_logic;
+  signal w26 : std_logic;
+  signal w27 : std_logic;
+  signal w28 : std_logic;
+  signal w29 : std_logic;
+  signal w30 : std_logic;
+  signal w31 : std_logic;
+  signal w32 : std_logic;
+  signal w33 : std_logic;
+  signal w34 : std_logic;
+  signal w35 : std_logic;
+  signal w36 : std_logic;
+  signal w37 : std_logic;
+  signal w38 : std_logic;
+  signal w39 : std_logic;
+  signal w40 : std_logic;
+  signal w41 : std_logic;
+  signal w42 : std_logic;
+  signal w43 : std_logic;
+  signal w44 : std_logic;
+  signal w45 : std_logic;
+  signal w46 : std_logic;
+  signal w47 : std_logic;
+  signal w48 : std_logic;
+  signal w49 : std_logic;
+  signal w50 : std_logic;
+  signal w51 : std_logic;
+  signal w52 : std_logic;
+  signal w53 : std_logic;
+  signal w54 : std_logic;
+  signal w55 : std_logic;
+  signal w56 : std_logic;
+  signal w57 : std_logic;

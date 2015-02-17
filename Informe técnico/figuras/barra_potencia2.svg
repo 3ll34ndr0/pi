@@ -10,10 +10,10 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="441pt"
+   height="463.284"
    version="1.1"
-   viewBox="0 0 585 441"
-   width="585pt"
+   viewBox="0 0 500.85688 370.6272"
+   width="626.07111"
    id="svg7330"
    inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="barra_potencia2.svg">
@@ -25,6 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -42,14 +43,19 @@
      id="namedview7815"
      showgrid="false"
      inkscape:zoom="0.6836508"
-     inkscape:cx="426.00671"
-     inkscape:cy="269.41196"
+     inkscape:cx="393.3278"
+     inkscape:cy="230.89789"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg7330" />
+     inkscape:current-layer="svg7330"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <defs
-     id="defs7332">
+     id="defs7332"
+     style="stroke-linecap:square;stroke-linejoin:round">
     <style
        type="text/css"
        id="style7334">
@@ -183,64 +189,68 @@
      id="path7345"
      style="fill:#ff0000;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      d="m 73.125,396.9 25.6912,0 0,-84.498 -25.6912,0 z"
-     clip-path="url(#p5873ec822d)" />
+     clip-path="url(#p5873ec822d)"
+     transform="translate(-26.143122,-39.561556)" />
   <path
      inkscape:connector-curvature="0"
      id="path7348"
      style="fill:#ff0000;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      d="m 224.25,396.9 25.691,0 0,-104.133 -25.691,0 z"
      clip-path="url(#p5873ec822d)"
-     transform="translate(-48,0)" />
+     transform="translate(-74.143122,-39.561556)" />
   <path
      inkscape:connector-curvature="0"
      id="path7351"
      style="fill:#ff0000;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      d="m 375.375,396.9 25.691,0 0,-104.133 -25.691,0 z"
      clip-path="url(#p5873ec822d)"
-     transform="translate(-96,0)" />
+     transform="translate(-122.14312,-39.561556)" />
   <path
      inkscape:connector-curvature="0"
      id="path7354"
      style="fill:#008000;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      d="m 98.8162,396.9 25.6918,0 0,-110.468 -25.6918,0 z"
-     clip-path="url(#p5873ec822d)" />
+     clip-path="url(#p5873ec822d)"
+     transform="translate(-26.143122,-39.561556)" />
   <path
      inkscape:connector-curvature="0"
      id="path7357"
      style="fill:#008000;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      d="m 249.941,396.9 25.691,0 0,-166.517 -25.691,0 z"
      clip-path="url(#p5873ec822d)"
-     transform="translate(-48,0)" />
+     transform="translate(-74.143122,-39.561556)" />
   <path
      inkscape:connector-curvature="0"
      id="path7360"
      style="fill:#008000;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      d="m 401.066,396.9 25.691,0 0,-206.626 -25.691,0 z"
      clip-path="url(#p5873ec822d)"
-     transform="translate(-96,0)" />
+     transform="translate(-122.14312,-39.561556)" />
   <path
      inkscape:connector-curvature="0"
      id="path7363"
      style="fill:#0000ff;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      d="m 124.508,396.9 25.691,0 0,-234.936 -25.691,0 z"
-     clip-path="url(#p5873ec822d)" />
+     clip-path="url(#p5873ec822d)"
+     transform="translate(-26.143122,-39.561556)" />
   <path
      inkscape:connector-curvature="0"
      id="path7366"
      style="fill:#0000ff;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      d="m 275.632,396.9 25.692,0 0,-243.058 -25.692,0 z"
      clip-path="url(#p5873ec822d)"
-     transform="translate(-48,0)" />
+     transform="translate(-74.143122,-39.561556)" />
   <path
      inkscape:connector-curvature="0"
      id="path7369"
      style="fill:#0000ff;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      d="m 426.757,396.9 25.692,0 0,-326.34 -25.692,0 z"
      clip-path="url(#p5873ec822d)"
-     transform="translate(-96,0)" />
+     transform="translate(-122.14312,-39.561556)" />
   <g
      id="line2d_1"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <defs
        id="defs7374">
       <path
@@ -264,7 +274,8 @@
   </g>
   <g
      id="line2d_2"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <defs
        id="defs7382">
       <path
@@ -288,7 +299,8 @@
   </g>
   <g
      id="text_1"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <!-- 8 bits -->
     <defs
        id="defs7390">
@@ -380,7 +392,7 @@
   <g
      id="line2d_3"
      style="stroke-linecap:square;stroke-linejoin:round"
-     transform="translate(-48,0)">
+     transform="translate(-74.143122,-39.561556)">
     <g
        id="g7414"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -396,7 +408,8 @@
   </g>
   <g
      id="line2d_4"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7419"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -413,7 +426,7 @@
   <g
      id="text_2"
      style="stroke-linecap:square;stroke-linejoin:round"
-     transform="translate(-48,0)">
+     transform="translate(-74.143122,-39.561556)">
     <!-- 16 bits -->
     <defs
        id="defs7424">
@@ -493,7 +506,7 @@
   <g
      id="line2d_5"
      style="stroke-linecap:square;stroke-linejoin:round"
-     transform="translate(-96,0)">
+     transform="translate(-122.14312,-39.561556)">
     <g
        id="g7446"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -509,7 +522,8 @@
   </g>
   <g
      id="line2d_6"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7451"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -526,7 +540,7 @@
   <g
      id="text_3"
      style="stroke-linecap:square;stroke-linejoin:round"
-     transform="translate(-96,0)">
+     transform="translate(-122.14312,-39.561556)">
     <!-- 32 bits -->
     <defs
        id="defs7456">
@@ -605,7 +619,8 @@
   </g>
   <g
      id="line2d_7"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <defs
        id="defs7479">
       <path
@@ -629,7 +644,8 @@
   </g>
   <g
      id="line2d_8"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <defs
        id="defs7487">
       <path
@@ -653,7 +669,8 @@
   </g>
   <g
      id="text_4"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <!-- 0 -->
     <defs
        id="defs7495">
@@ -679,7 +696,8 @@
   </g>
   <g
      id="line2d_9"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7504"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -695,7 +713,8 @@
   </g>
   <g
      id="line2d_10"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7509"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -711,7 +730,8 @@
   </g>
   <g
      id="text_5"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <!-- 500 -->
     <defs
        id="defs7514">
@@ -753,7 +773,8 @@
   </g>
   <g
      id="line2d_11"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7527"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -769,7 +790,8 @@
   </g>
   <g
      id="line2d_12"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7532"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -785,7 +807,8 @@
   </g>
   <g
      id="text_6"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <!-- 1000 -->
     <g
        transform="matrix(0.12,0,0,-0.12,40.7,300.46781)"
@@ -827,7 +850,8 @@
   </g>
   <g
      id="line2d_13"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7549"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -843,7 +867,8 @@
   </g>
   <g
      id="line2d_14"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7554"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -859,7 +884,8 @@
   </g>
   <g
      id="text_7"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <!-- 1500 -->
     <g
        transform="matrix(0.12,0,0,-0.12,40.7,250.06781)"
@@ -901,7 +927,8 @@
   </g>
   <g
      id="line2d_15"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7571"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -917,7 +944,8 @@
   </g>
   <g
      id="line2d_16"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7576"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -933,7 +961,8 @@
   </g>
   <g
      id="text_8"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <!-- 2000 -->
     <g
        transform="matrix(0.12,0,0,-0.12,40.26125,199.66781)"
@@ -975,7 +1004,8 @@
   </g>
   <g
      id="line2d_17"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7593"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -991,7 +1021,8 @@
   </g>
   <g
      id="line2d_18"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7598"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -1007,7 +1038,8 @@
   </g>
   <g
      id="text_9"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <!-- 2500 -->
     <g
        transform="matrix(0.12,0,0,-0.12,40.26125,149.26781)"
@@ -1049,7 +1081,8 @@
   </g>
   <g
      id="line2d_19"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7615"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -1065,7 +1098,8 @@
   </g>
   <g
      id="line2d_20"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7620"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -1081,7 +1115,8 @@
   </g>
   <g
      id="text_10"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <!-- 3000 -->
     <g
        transform="matrix(0.12,0,0,-0.12,40.296875,98.867812)"
@@ -1123,7 +1158,8 @@
   </g>
   <g
      id="line2d_21"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7637"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -1139,7 +1175,8 @@
   </g>
   <g
      id="line2d_22"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <g
        id="g7642"
        style="stroke-linecap:square;stroke-linejoin:round">
@@ -1155,7 +1192,8 @@
   </g>
   <g
      id="text_11"
-     style="stroke-linecap:square;stroke-linejoin:round">
+     style="stroke-linecap:square;stroke-linejoin:round"
+     transform="translate(-26.143122,-39.561556)">
     <!-- 3500 -->
     <g
        transform="matrix(0.12,0,0,-0.12,40.296875,48.467812)"
@@ -1196,7 +1234,7 @@
     </g>
   </g>
   <g
-     transform="matrix(0,-0.12,-0.12,0,35.26125,260.28656)"
+     transform="matrix(0,-0.12,-0.12,0,9.118128,220.725)"
      id="g7670"
      style="stroke-linecap:square;stroke-linejoin:round">
     <use
@@ -1308,34 +1346,34 @@
      inkscape:connector-curvature="0"
      id="path7699"
      style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
-     d="m 73.125,44.1 453.375,0" />
+     d="m 46.981878,4.538444 453.375002,0" />
   <path
      inkscape:connector-curvature="0"
      id="path7702"
      style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
-     d="m 526.5,396.9 0,-352.8" />
+     d="m 500.35688,357.33844 0,-352.799996" />
   <path
      inkscape:connector-curvature="0"
      id="path7705"
      style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
-     d="m 73.125,396.9 453.375,0" />
+     d="m 46.981878,357.33844 453.375002,0" />
   <path
      inkscape:connector-curvature="0"
      id="path7708"
      style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
-     d="m 73.125,396.9 0,-352.8" />
+     d="m 46.981878,357.33844 0,-352.799996" />
   <path
-     d="m 367.972,119.029 140.128,0 0,-67.729 -140.128,0 0,67.729 z"
+     d="m 341.82888,79.467444 140.128,0 0,-67.729 -140.128,0 0,67.729 z"
      style="fill:#ffffff;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      id="path7712"
      inkscape:connector-curvature="0" />
   <path
-     d="m 373.732,68.0017 28.8,0 0,-10.08 -28.8,0 z"
+     d="m 347.58888,28.440144 28.8,0 0,-10.08 -28.8,0 z"
      style="fill:#ff0000;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      id="path7715"
      inkscape:connector-curvature="0" />
   <g
-     transform="matrix(0.144,0,0,-0.144,414.05225,68.00175)"
+     transform="matrix(0.144,0,0,-0.144,387.90913,28.440194)"
      id="g7726"
      style="stroke-linecap:square;stroke-linejoin:round">
     <use
@@ -1436,12 +1474,12 @@
        height="441" />
   </g>
   <path
-     d="m 373.732,89.1382 28.8,0 0,-10.08 -28.8,0 z"
+     d="m 347.58888,49.576644 28.8,0 0,-10.08 -28.8,0 z"
      style="fill:#008000;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      id="path7753"
      inkscape:connector-curvature="0" />
   <g
-     transform="matrix(0.144,0,0,-0.144,414.05225,89.13825)"
+     transform="matrix(0.144,0,0,-0.144,387.90913,49.576694)"
      id="g7762"
      style="stroke-linecap:square;stroke-linejoin:round">
     <use
@@ -1526,12 +1564,12 @@
        height="441" />
   </g>
   <path
-     d="m 373.732,110.275 28.8,0 0,-10.08 -28.8,0 z"
+     d="m 347.58888,70.713444 28.8,0 0,-10.08 -28.8,0 z"
      style="fill:#0000ff;stroke:#000000;stroke-linecap:square;stroke-linejoin:round"
      id="path7785"
      inkscape:connector-curvature="0" />
   <g
-     transform="matrix(0.144,0,0,-0.144,414.05225,110.27475)"
+     transform="matrix(0.144,0,0,-0.144,387.90913,70.713194)"
      id="g7792"
      style="stroke-linecap:square;stroke-linejoin:round">
     <use
@@ -1604,11 +1642,12 @@
     <clipPath
        id="p5873ec822d">
       <rect
-         height="352.8"
+         height="352.79999"
          width="453.375"
          x="73.125"
-         y="44.1"
-         id="rect7813" />
+         y="44.099998"
+         id="rect7813"
+         style="stroke-linecap:square;stroke-linejoin:round" />
     </clipPath>
   </defs>
 </svg>

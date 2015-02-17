@@ -1,0 +1,1 @@
+hugs -98 -P/home/lean/tfinal/programas/lava/la-va/Lava2000/Modules:/home/lean/tfinal/programas/lava/la-va/Lava2000/Modules/Compilers/Hugs: $1

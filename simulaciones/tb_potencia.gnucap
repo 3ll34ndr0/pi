@@ -13,7 +13,7 @@ gnucap -i tb_potencia.gnucap
 * Este script asume que los nombres de las entradas son:
 * a0, a1, a2, ..., a_{n-1} (para el primer sumando)
 * b0, b2, b3, ..., b_{n-1} (para el segundo sumando)
-* s0, s2, s3, ..., s_{n-1} (para la suma)
+* sum0, sum2, sum3, ..., sum_{n-1} (para la suma)
 * cout (para el acarreo de salida)
 * Fin de la explicacion de uso.
 **************************
@@ -60,8 +60,6 @@ probe tran + v(cout)  i(VVDC_vdd)
 store tran i(VVDC_vdd)
 
 trans 0 {periodo*3} 0.01n > salida.spo
-
-measure area = integrate(probe="i(VVDC_vdd)" begin=0 end=6n)
 
 * Para potencia:
 param t_i = {2*periodo}

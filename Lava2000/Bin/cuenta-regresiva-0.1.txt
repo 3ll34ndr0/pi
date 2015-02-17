@@ -1,0 +1,50 @@
+<script type="text/javascript">
+// Script inicial aparentemente creado por
+// http://www.javascriptkit.com
+// Modificado y adaptado por
+// http://cordobasemueve.org.ar para:
+// http://bouwersinbasura.blogspot.com
+// Puede reutilizar/modificar este script con la condición de
+// distribuirlo junto con este aviso. Córdoba 2010.
+
+function display_c(start){
+window.start = parseFloat(start);
+var end = 0 // change this to stop the counter at a higher value
+var refresh=1000; // Refresh rate in milli seconds
+if(window.start >= end ){
+mytime=setTimeout('mostrar_ct()',refresh)
+}
+else {alert("LLeg&oacute; la fecha ");}
+}
+
+function mostrar_ct() {
+//Ponga el MES (de 1 a 12) y el DIA (de 1 a 31), HORA, Minutos y segundos:
+var laocasion=new Date(2010, 4, 1, 0, 0, 0)
+laocasion.setMonth(laocasion.getMonth() - 1) //change to 0-11 month format
+// Calcula el tiempo que queda
+var today=new Date()
+var mes=Math.floor(laocasion.getMonth() - (today.getMonth() + 1)  );
+var dia=Math.floor(30 + laocasion.getDate() - today.getDate());
+var hora=Math.floor(23 - laocasion.getHours() - today.getHours());
+var minuto=Math.floor(59 + laocasion.getMinutes() - today.getMinutes());
+var segundo=Math.floor(59 + laocasion.getSeconds() - today.getSeconds());
+
+var mespluralono=(mes==1)? "mes" : "meses"
+var diapluralono=(dia==1)? "d&iacute;a" : "d&iacute;­as"
+var horapluralono=(hora==1)? "hora" : "horas"
+var minpluralono=(minuto==1)? "minuto" : "minutos"
+var segpluralono=(segundo==1)? "segundo" : "segundos"
+
+
+var x =  mes+" "+mespluralono+" "+dia+" "+diapluralono+" "+hora+" "+horapluralono+" "+minuto+" "+minpluralono+" y " + segundo+" "+segpluralono ;
+
+document.getElementById('ct').innerHTML = x;
+
+
+tt=display_c(window.start);
+}
+display_c("65465");
+</script>
+<div style="color: #284d22; font-size: 16px; padding-left: 68px; min-height: 64px; background: url(http://cordobasemueve.org.ar/iconos/Trashempty-64.png) top left no-repeat;">
+<span id='ct' style="background-color: #FFFFF"></span>
+</div>
