@@ -205,6 +205,9 @@ writeDefinitions clocked file name inp out out' =
              _             -> wrong Error.NoArithmetic
            where
             w i = v ++ "[" ++ show i ++ "]"
+            --w i = v ++ show i 
+
+
             
 
 

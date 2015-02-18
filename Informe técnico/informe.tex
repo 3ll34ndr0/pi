@@ -34,7 +34,7 @@ escapeinside=wz,		% Para escapar a LaTeX.
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{booktabs}
-\usepackage[toc]{glossaries}
+\usepackage[toc,translate=babel]{glossaries}
 \usepackage[gen]{eurosym}
 %Macros:
 \include{macros/macrofile1}
@@ -57,6 +57,25 @@ escapeinside=wz,		% Para escapar a LaTeX.
 
 %\makeindex \label{indice}
 \hyphenation{ GNU/Linux py-thon has-kell lay-out -net-list es-cla-re-ci-mien-to ma-te-ria-li-zar-se} 
+
+% Para cambiar los nombres por defecto:
+% Babel traducía table como cuadro. Yo lo cambio para tabla:
+\addto\captionsspanish{%
+  \renewcommand{\tablename}%
+    {Tabla}%
+}
+
+\addto\captionsspanish{%
+  \renewcommand{\listtablename}%
+    {Índice de tablas}%
+}
+
+% Relacionado al paquete "glossaries".
+\addto\captionsspanish{%
+  \renewcommand*{\glossaryname}{Glosario}%
+}
+
+
 
 
 
