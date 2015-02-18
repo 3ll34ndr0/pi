@@ -55,10 +55,5 @@ probe tran + v(cout)
 * Comienzo la simulación en el tiempo:
 trans 0 {periodo*3} 0.1n > salida_performance.spo
 
-* Calculo la integral de la ecuacion de potencia instantanea promedio:
-measure area = integrate(probe="i(VVDC_vdd)" begin=t_i end=t_f) 
-param total_energy = area*vsupply
-eval total_energy
-param av_power = total_energy/t_tot
-eval av_power
-
+* Lanzo desde gnucap un script de python para graficar todas las formas de ondas simuladas e inspeccionar (y medir) visualmente cual es el path critico:
+!plot.py salida_performance.spo
