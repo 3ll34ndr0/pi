@@ -3,14 +3,15 @@
 # La segunda línea (# coding: latin-1) es necesaria para poder usar acentos y ñ. 
 from numpy import * 
 import sys
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
+
 # Primero cargo el resultado de la simulación en un arreglo:
 filename_str = sys.argv[1]
 data = genfromtxt(filename_str, skip_header=0,unpack=True)
-
 print sys.argv[1] # Imprimo el nombre del archivo a graficar.
+
+# Cantidad de señales a graficar:
 totalPlots = len(data)
-###########################
 # totalPlots compartiendo los ejes x/y.
 f, eje = plt.subplots(totalPlots, sharex=True, sharey=False)
 

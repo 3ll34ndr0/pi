@@ -56,4 +56,5 @@ probe tran + v(cout)
 trans 0 {periodo*3} 0.1n > salida_performance.spo
 
 * Lanzo desde gnucap un script de python para graficar todas las formas de ondas simuladas e inspeccionar (y medir) visualmente cual es el path critico:
-!plot.py salida_performance.spo
+!./plot.py salida_performance.spo
+* El script tiene que estar en el mismo directorio y tener permisos de ejecución (chmod u+x plot.py)
