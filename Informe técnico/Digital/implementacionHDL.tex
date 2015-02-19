@@ -336,9 +336,9 @@ fastAdder n = writeVhdlInputOutputNoClk
               (varList n "sum", var "cout")
 \end{lstlisting}
 
-Y el segundo paso para crear el netlist, debemos especificar el valor real de sumador, por lo tanto valuamos el circuito con en número de bits del sumador y conseguiremos el archivo BrentKungFastAdder.vhl que mostramos en el apéndice \ref{vhdlNetlist}:
+Y el segundo paso para crear el netlist, debemos especificar el valor real de sumador, por lo tanto valuamos el circuito con en número de bits del sumador y conseguiremos el archivo \verb_BrentKungFastAdder.vhl_ que mostramos en el apéndice \ref{vhdlNetlist} a modo de ejemplo:
 \begin{lstlisting}
-Main> fastAdder 16
+Main> fastAdder 8
 Writing to file "BrentKungFastAdder.vhd" ... Done..
 \end{lstlisting}
 

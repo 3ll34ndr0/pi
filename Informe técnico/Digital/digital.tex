@@ -54,15 +54,20 @@ De estas arquitecturas mencionadas, vamos a implementar un sumador rápido basad
 \hline
 \multicolumn{1}{|c|}{\textbf{Arquitectura}} & \multicolumn{1}{c|}{\textbf{Retardo Máx.   }} & \multicolumn{1}{c|}{\textbf{Área}} \\ \hline
 Ripple Carry  & \(O(n)\) & \(O(n)\) \\ \hline
-Carry Look-Ahead  & \(O(\log(n))\) & \(O(n\log(n))\) \\ \hline
-Ladner-Fisher &\( O(\log_2(n))\) & \(O(n\log(n))   \) \\ \hline
-Sklansky &\( O(\log_2(n))\) & \(O(n\log^2(n))\) \\ \hline
-Kogge-Stone & \( O(\log_2(n))\) & \\ \hline
-Han-Carlson &... &... \\ \hline 
-Brent-Kung & $O(\log_2(n))$ & \(O(n\log_2(n))\) \\ \hline
+Carry Look-Ahead  & \(O(\log_2(n))\) & \(O(n\log_2(n))\) \\ \hline
+Ladner-Fisher &\( O(\log_2(n))\) & \(O(n\log_2(n))   \) \\ \hline
+Sklansky &\( O(\log_2(n))\) & \(O(n\log_2(n))\) \\ \hline
+Kogge-Stone & \( O(\log_2(n))\) & \(O(n\log_2n)\)\\ \hline
+%Han-Carlson & \( O(\log_2(n))\) &... \\ \hline % Lo quito ya que no encuentro la función de complejidad de área.
+Brent-Kung & $O(\log_2(n))$ & \(O(n)\) \\ \hline
 \end{tabular}
-\caption{Resumen de las funciones de retardo y área algunos sumadores}\label{tabla:sumadores}
+\caption{Resumen de las funciones de retardo y área de algunos sumadores}\label{tabla:sumadores}
 \end{table}
+
+% BKA  Cantidad de operadores (2*n)-2-log_2(n)
+% KSA  # de operadores n*log_2(n)-n+1
+
+
 Resumimos en la tabla \ref{tabla:sumadores} las características y diferencias entre los distintos sumadores\cite{6120598}. Incluimos al \textbf{ripple carry}, por ser la implementación más simple, y al \textbf{carry look-ahead} por ser el sumador que propone el cálculo en paralelo de los acarreos para disminuir logarítmicamente el tiempo de retardo.
 
 %Agregar las referencias a los papers si se puede
