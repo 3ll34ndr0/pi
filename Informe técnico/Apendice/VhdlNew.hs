@@ -160,11 +160,12 @@ writeDefinitions clocked file name inp out out' =
        ]
      
      let new =
-           do n <- readIORef var	
+           do n <- readIORef var
               let n' = n+1; v = "w" ++ show n'
               writeIORef var n'
               hPutStr firstHandle ("  signal " ++ v ++ " : std_logic;\n")
               return v
+
          
          define v s =
            case s of
@@ -179,11 +180,13 @@ writeDefinitions clocked file name inp out out' =
              And (x:xs)    -> define (w 0) (And xs)
                            >> define v (And [x,w 0])
 
+
              Or  []        -> define v (Bool False)
              Or  [x]       -> port "id"   [x]
              Or  [x,y]     -> port "or2"  [x,y]
              Or  (x:xs)    -> define (w 0) (Or xs)
                            >> define v (Or [x,w 0])
+
 
              Xor  []       -> define v (Bool False)
              Xor  [x]      -> port "id"   [x]
@@ -199,12 +202,10 @@ writeDefinitions clocked file name inp out out' =
 
              VarBool s     -> port "id" [s]
              DelayBool x y -> if clocked then port "delay" [x, y] else wrong Error.DelayEval
-             DlyBool x -> if clocked then port "dly" [x] else wrong Error.DlyEval
              
-
              _             -> wrong Error.NoArithmetic
            where
-            w i = v ++ "[" ++ show i ++ "]"
+            w i = v ++ "_" ++ show i
             
 
 
@@ -257,8 +258,9 @@ writeDefinitions clocked file name inp out out' =
      system ("cat " ++ firstFile ++ " " ++ secondFile ++ " > " ++ file)
 --     cat firstFile secondFile file
      system ("rm " ++ firstFile ++ " " ++ secondFile)
-    -- Create a new vhdl netlist without the wire or id gates: 
-     system ("/home/lean/tfinal/programas/lava/la-va/Lava2000/Scripts/deleteWire.pl " ++ file)
+-- Borra todos los corchetes ya que el Silicon Compiler de Electric no acepta nombres de puertos con corchetes: 
+     putStrLn "\nUtilizo Perl para borrar todos los corchetes de los puertos ..." 
+     system ("perl -i -p -e 's/\\[|\\]//g' " ++ file)
      return ()
  where
   sigs x = map unsymbol . flatten . struct $ x
@@ -279,3 +281,4 @@ cat a b c = do
 
 ----------------------------------------------------------------
 -- the end.
+
