@@ -9,104 +9,104 @@ port
   ( 
  
     
-    a[0] : in std_logic
-  ; a[1] : in std_logic
-  ; a[2] : in std_logic
-  ; a[3] : in std_logic
-  ; a[4] : in std_logic
-  ; a[5] : in std_logic
-  ; a[6] : in std_logic
-  ; a[7] : in std_logic
-  ; a[8] : in std_logic
-  ; a[9] : in std_logic
-  ; a[10] : in std_logic
-  ; a[11] : in std_logic
-  ; a[12] : in std_logic
-  ; a[13] : in std_logic
-  ; a[14] : in std_logic
-  ; a[15] : in std_logic
-  ; a[16] : in std_logic
-  ; a[17] : in std_logic
-  ; a[18] : in std_logic
-  ; a[19] : in std_logic
-  ; a[20] : in std_logic
-  ; a[21] : in std_logic
-  ; a[22] : in std_logic
-  ; a[23] : in std_logic
-  ; a[24] : in std_logic
-  ; a[25] : in std_logic
-  ; a[26] : in std_logic
-  ; a[27] : in std_logic
-  ; a[28] : in std_logic
-  ; a[29] : in std_logic
-  ; a[30] : in std_logic
-  ; a[31] : in std_logic
-  ; b[0] : in std_logic
-  ; b[1] : in std_logic
-  ; b[2] : in std_logic
-  ; b[3] : in std_logic
-  ; b[4] : in std_logic
-  ; b[5] : in std_logic
-  ; b[6] : in std_logic
-  ; b[7] : in std_logic
-  ; b[8] : in std_logic
-  ; b[9] : in std_logic
-  ; b[10] : in std_logic
-  ; b[11] : in std_logic
-  ; b[12] : in std_logic
-  ; b[13] : in std_logic
-  ; b[14] : in std_logic
-  ; b[15] : in std_logic
-  ; b[16] : in std_logic
-  ; b[17] : in std_logic
-  ; b[18] : in std_logic
-  ; b[19] : in std_logic
-  ; b[20] : in std_logic
-  ; b[21] : in std_logic
-  ; b[22] : in std_logic
-  ; b[23] : in std_logic
-  ; b[24] : in std_logic
-  ; b[25] : in std_logic
-  ; b[26] : in std_logic
-  ; b[27] : in std_logic
-  ; b[28] : in std_logic
-  ; b[29] : in std_logic
-  ; b[30] : in std_logic
-  ; b[31] : in std_logic
+    a0 : in std_logic
+  ; a1 : in std_logic
+  ; a2 : in std_logic
+  ; a3 : in std_logic
+  ; a4 : in std_logic
+  ; a5 : in std_logic
+  ; a6 : in std_logic
+  ; a7 : in std_logic
+  ; a8 : in std_logic
+  ; a9 : in std_logic
+  ; a10 : in std_logic
+  ; a11 : in std_logic
+  ; a12 : in std_logic
+  ; a13 : in std_logic
+  ; a14 : in std_logic
+  ; a15 : in std_logic
+  ; a16 : in std_logic
+  ; a17 : in std_logic
+  ; a18 : in std_logic
+  ; a19 : in std_logic
+  ; a20 : in std_logic
+  ; a21 : in std_logic
+  ; a22 : in std_logic
+  ; a23 : in std_logic
+  ; a24 : in std_logic
+  ; a25 : in std_logic
+  ; a26 : in std_logic
+  ; a27 : in std_logic
+  ; a28 : in std_logic
+  ; a29 : in std_logic
+  ; a30 : in std_logic
+  ; a31 : in std_logic
+  ; b0 : in std_logic
+  ; b1 : in std_logic
+  ; b2 : in std_logic
+  ; b3 : in std_logic
+  ; b4 : in std_logic
+  ; b5 : in std_logic
+  ; b6 : in std_logic
+  ; b7 : in std_logic
+  ; b8 : in std_logic
+  ; b9 : in std_logic
+  ; b10 : in std_logic
+  ; b11 : in std_logic
+  ; b12 : in std_logic
+  ; b13 : in std_logic
+  ; b14 : in std_logic
+  ; b15 : in std_logic
+  ; b16 : in std_logic
+  ; b17 : in std_logic
+  ; b18 : in std_logic
+  ; b19 : in std_logic
+  ; b20 : in std_logic
+  ; b21 : in std_logic
+  ; b22 : in std_logic
+  ; b23 : in std_logic
+  ; b24 : in std_logic
+  ; b25 : in std_logic
+  ; b26 : in std_logic
+  ; b27 : in std_logic
+  ; b28 : in std_logic
+  ; b29 : in std_logic
+  ; b30 : in std_logic
+  ; b31 : in std_logic
 
   
-  ; sum[0] : out std_logic
-  ; sum[1] : out std_logic
-  ; sum[2] : out std_logic
-  ; sum[3] : out std_logic
-  ; sum[4] : out std_logic
-  ; sum[5] : out std_logic
-  ; sum[6] : out std_logic
-  ; sum[7] : out std_logic
-  ; sum[8] : out std_logic
-  ; sum[9] : out std_logic
-  ; sum[10] : out std_logic
-  ; sum[11] : out std_logic
-  ; sum[12] : out std_logic
-  ; sum[13] : out std_logic
-  ; sum[14] : out std_logic
-  ; sum[15] : out std_logic
-  ; sum[16] : out std_logic
-  ; sum[17] : out std_logic
-  ; sum[18] : out std_logic
-  ; sum[19] : out std_logic
-  ; sum[20] : out std_logic
-  ; sum[21] : out std_logic
-  ; sum[22] : out std_logic
-  ; sum[23] : out std_logic
-  ; sum[24] : out std_logic
-  ; sum[25] : out std_logic
-  ; sum[26] : out std_logic
-  ; sum[27] : out std_logic
-  ; sum[28] : out std_logic
-  ; sum[29] : out std_logic
-  ; sum[30] : out std_logic
-  ; sum[31] : out std_logic
+  ; sum0 : out std_logic
+  ; sum1 : out std_logic
+  ; sum2 : out std_logic
+  ; sum3 : out std_logic
+  ; sum4 : out std_logic
+  ; sum5 : out std_logic
+  ; sum6 : out std_logic
+  ; sum7 : out std_logic
+  ; sum8 : out std_logic
+  ; sum9 : out std_logic
+  ; sum10 : out std_logic
+  ; sum11 : out std_logic
+  ; sum12 : out std_logic
+  ; sum13 : out std_logic
+  ; sum14 : out std_logic
+  ; sum15 : out std_logic
+  ; sum16 : out std_logic
+  ; sum17 : out std_logic
+  ; sum18 : out std_logic
+  ; sum19 : out std_logic
+  ; sum20 : out std_logic
+  ; sum21 : out std_logic
+  ; sum22 : out std_logic
+  ; sum23 : out std_logic
+  ; sum24 : out std_logic
+  ; sum25 : out std_logic
+  ; sum26 : out std_logic
+  ; sum27 : out std_logic
+  ; sum28 : out std_logic
+  ; sum29 : out std_logic
+  ; sum30 : out std_logic
+  ; sum31 : out std_logic
   ; cout : out std_logic
   );
 end Skalansky32;
@@ -499,26 +499,26 @@ port( A : in std_logic;  Y : out std_logic);
   signal w367 : std_logic;
   signal w368 : std_logic;
 begin
--- deleted   c_w2      :  id    port map (a[0], w2);
--- deleted   c_w3      :  id    port map (b[0], w3);
+-- deleted   c_w2      :  id    port map (a0, w2);
+-- deleted   c_w3      :  id    port map (b0, w3);
   c_w1      :  xor2  port map (w2, w3, w1);
   c_w5      :  and2  port map (w2, w3, w5);
--- deleted   c_w7      :  id    port map (a[1], w7);
--- deleted   c_w8      :  id    port map (b[1], w8);
+-- deleted   c_w7      :  id    port map (a1, w7);
+-- deleted   c_w8      :  id    port map (b1, w8);
   c_w6      :  xor2  port map (w7, w8, w6);
   c_w4      :  xor2  port map (w5, w6, w4);
   c_w11     :  and2  port map (w7, w8, w11);
   c_w12     :  and2  port map (w6, w5, w12);
   c_w10     :  or2   port map (w11, w12, w10);
--- deleted   c_w14     :  id    port map (a[2], w14);
--- deleted   c_w15     :  id    port map (b[2], w15);
+-- deleted   c_w14     :  id    port map (a2, w14);
+-- deleted   c_w15     :  id    port map (b2, w15);
   c_w13     :  xor2  port map (w14, w15, w13);
   c_w9      :  xor2  port map (w10, w13, w9);
   c_w18     :  and2  port map (w14, w15, w18);
   c_w19     :  and2  port map (w13, w10, w19);
   c_w17     :  or2   port map (w18, w19, w17);
--- deleted   c_w21     :  id    port map (a[3], w21);
--- deleted   c_w22     :  id    port map (b[3], w22);
+-- deleted   c_w21     :  id    port map (a3, w21);
+-- deleted   c_w22     :  id    port map (b3, w22);
   c_w20     :  xor2  port map (w21, w22, w20);
   c_w16     :  xor2  port map (w17, w20, w16);
   c_w26     :  and2  port map (w21, w22, w26);
@@ -527,15 +527,15 @@ begin
   c_w29     :  and2  port map (w20, w13, w29);
   c_w28     :  and2  port map (w29, w10, w28);
   c_w24     :  or2   port map (w25, w28, w24);
--- deleted   c_w31     :  id    port map (a[4], w31);
--- deleted   c_w32     :  id    port map (b[4], w32);
+-- deleted   c_w31     :  id    port map (a4, w31);
+-- deleted   c_w32     :  id    port map (b4, w32);
   c_w30     :  xor2  port map (w31, w32, w30);
   c_w23     :  xor2  port map (w24, w30, w23);
   c_w35     :  and2  port map (w31, w32, w35);
   c_w36     :  and2  port map (w30, w24, w36);
   c_w34     :  or2   port map (w35, w36, w34);
--- deleted   c_w38     :  id    port map (a[5], w38);
--- deleted   c_w39     :  id    port map (b[5], w39);
+-- deleted   c_w38     :  id    port map (a5, w38);
+-- deleted   c_w39     :  id    port map (b5, w39);
   c_w37     :  xor2  port map (w38, w39, w37);
   c_w33     :  xor2  port map (w34, w37, w33);
   c_w43     :  and2  port map (w38, w39, w43);
@@ -544,8 +544,8 @@ begin
   c_w46     :  and2  port map (w37, w30, w46);
   c_w45     :  and2  port map (w46, w24, w45);
   c_w41     :  or2   port map (w42, w45, w41);
--- deleted   c_w48     :  id    port map (a[6], w48);
--- deleted   c_w49     :  id    port map (b[6], w49);
+-- deleted   c_w48     :  id    port map (a6, w48);
+-- deleted   c_w49     :  id    port map (b6, w49);
   c_w47     :  xor2  port map (w48, w49, w47);
   c_w40     :  xor2  port map (w41, w47, w40);
   c_w53     :  and2  port map (w48, w49, w53);
@@ -554,8 +554,8 @@ begin
   c_w56     :  and2  port map (w47, w46, w56);
   c_w55     :  and2  port map (w56, w24, w55);
   c_w51     :  or2   port map (w52, w55, w51);
--- deleted   c_w58     :  id    port map (a[7], w58);
--- deleted   c_w59     :  id    port map (b[7], w59);
+-- deleted   c_w58     :  id    port map (a7, w58);
+-- deleted   c_w59     :  id    port map (b7, w59);
   c_w57     :  xor2  port map (w58, w59, w57);
   c_w50     :  xor2  port map (w51, w57, w50);
   c_w64     :  and2  port map (w58, w59, w64);
@@ -567,15 +567,15 @@ begin
   c_w69     :  and2  port map (w67, w46, w69);
   c_w68     :  and2  port map (w69, w24, w68);
   c_w61     :  or2   port map (w62, w68, w61);
--- deleted   c_w71     :  id    port map (a[8], w71);
--- deleted   c_w72     :  id    port map (b[8], w72);
+-- deleted   c_w71     :  id    port map (a8, w71);
+-- deleted   c_w72     :  id    port map (b8, w72);
   c_w70     :  xor2  port map (w71, w72, w70);
   c_w60     :  xor2  port map (w61, w70, w60);
   c_w75     :  and2  port map (w71, w72, w75);
   c_w76     :  and2  port map (w70, w61, w76);
   c_w74     :  or2   port map (w75, w76, w74);
--- deleted   c_w78     :  id    port map (a[9], w78);
--- deleted   c_w79     :  id    port map (b[9], w79);
+-- deleted   c_w78     :  id    port map (a9, w78);
+-- deleted   c_w79     :  id    port map (b9, w79);
   c_w77     :  xor2  port map (w78, w79, w77);
   c_w73     :  xor2  port map (w74, w77, w73);
   c_w83     :  and2  port map (w78, w79, w83);
@@ -584,8 +584,8 @@ begin
   c_w86     :  and2  port map (w77, w70, w86);
   c_w85     :  and2  port map (w86, w61, w85);
   c_w81     :  or2   port map (w82, w85, w81);
--- deleted   c_w88     :  id    port map (a[10], w88);
--- deleted   c_w89     :  id    port map (b[10], w89);
+-- deleted   c_w88     :  id    port map (a10, w88);
+-- deleted   c_w89     :  id    port map (b10, w89);
   c_w87     :  xor2  port map (w88, w89, w87);
   c_w80     :  xor2  port map (w81, w87, w80);
   c_w93     :  and2  port map (w88, w89, w93);
@@ -594,8 +594,8 @@ begin
   c_w96     :  and2  port map (w87, w86, w96);
   c_w95     :  and2  port map (w96, w61, w95);
   c_w91     :  or2   port map (w92, w95, w91);
--- deleted   c_w98     :  id    port map (a[11], w98);
--- deleted   c_w99     :  id    port map (b[11], w99);
+-- deleted   c_w98     :  id    port map (a11, w98);
+-- deleted   c_w99     :  id    port map (b11, w99);
   c_w97     :  xor2  port map (w98, w99, w97);
   c_w90     :  xor2  port map (w91, w97, w90);
   c_w104    :  and2  port map (w98, w99, w104);
@@ -607,8 +607,8 @@ begin
   c_w109    :  and2  port map (w107, w86, w109);
   c_w108    :  and2  port map (w109, w61, w108);
   c_w101    :  or2   port map (w102, w108, w101);
--- deleted   c_w111    :  id    port map (a[12], w111);
--- deleted   c_w112    :  id    port map (b[12], w112);
+-- deleted   c_w111    :  id    port map (a12, w111);
+-- deleted   c_w112    :  id    port map (b12, w112);
   c_w110    :  xor2  port map (w111, w112, w110);
   c_w100    :  xor2  port map (w101, w110, w100);
   c_w116    :  and2  port map (w111, w112, w116);
@@ -617,8 +617,8 @@ begin
   c_w119    :  and2  port map (w110, w109, w119);
   c_w118    :  and2  port map (w119, w61, w118);
   c_w114    :  or2   port map (w115, w118, w114);
--- deleted   c_w121    :  id    port map (a[13], w121);
--- deleted   c_w122    :  id    port map (b[13], w122);
+-- deleted   c_w121    :  id    port map (a13, w121);
+-- deleted   c_w122    :  id    port map (b13, w122);
   c_w120    :  xor2  port map (w121, w122, w120);
   c_w113    :  xor2  port map (w114, w120, w113);
   c_w127    :  and2  port map (w121, w122, w127);
@@ -630,8 +630,8 @@ begin
   c_w132    :  and2  port map (w130, w109, w132);
   c_w131    :  and2  port map (w132, w61, w131);
   c_w124    :  or2   port map (w125, w131, w124);
--- deleted   c_w134    :  id    port map (a[14], w134);
--- deleted   c_w135    :  id    port map (b[14], w135);
+-- deleted   c_w134    :  id    port map (a14, w134);
+-- deleted   c_w135    :  id    port map (b14, w135);
   c_w133    :  xor2  port map (w134, w135, w133);
   c_w123    :  xor2  port map (w124, w133, w123);
   c_w140    :  and2  port map (w134, w135, w140);
@@ -643,8 +643,8 @@ begin
   c_w145    :  and2  port map (w143, w109, w145);
   c_w144    :  and2  port map (w145, w61, w144);
   c_w137    :  or2   port map (w138, w144, w137);
--- deleted   c_w147    :  id    port map (a[15], w147);
--- deleted   c_w148    :  id    port map (b[15], w148);
+-- deleted   c_w147    :  id    port map (a15, w147);
+-- deleted   c_w148    :  id    port map (b15, w148);
   c_w146    :  xor2  port map (w147, w148, w146);
   c_w136    :  xor2  port map (w137, w146, w136);
   c_w154    :  and2  port map (w147, w148, w154);
@@ -659,15 +659,15 @@ begin
   c_w161    :  and2  port map (w159, w109, w161);
   c_w160    :  and2  port map (w161, w61, w160);
   c_w150    :  or2   port map (w151, w160, w150);
--- deleted   c_w163    :  id    port map (a[16], w163);
--- deleted   c_w164    :  id    port map (b[16], w164);
+-- deleted   c_w163    :  id    port map (a16, w163);
+-- deleted   c_w164    :  id    port map (b16, w164);
   c_w162    :  xor2  port map (w163, w164, w162);
   c_w149    :  xor2  port map (w150, w162, w149);
   c_w167    :  and2  port map (w163, w164, w167);
   c_w168    :  and2  port map (w162, w150, w168);
   c_w166    :  or2   port map (w167, w168, w166);
--- deleted   c_w170    :  id    port map (a[17], w170);
--- deleted   c_w171    :  id    port map (b[17], w171);
+-- deleted   c_w170    :  id    port map (a17, w170);
+-- deleted   c_w171    :  id    port map (b17, w171);
   c_w169    :  xor2  port map (w170, w171, w169);
   c_w165    :  xor2  port map (w166, w169, w165);
   c_w175    :  and2  port map (w170, w171, w175);
@@ -676,8 +676,8 @@ begin
   c_w178    :  and2  port map (w169, w162, w178);
   c_w177    :  and2  port map (w178, w150, w177);
   c_w173    :  or2   port map (w174, w177, w173);
--- deleted   c_w180    :  id    port map (a[18], w180);
--- deleted   c_w181    :  id    port map (b[18], w181);
+-- deleted   c_w180    :  id    port map (a18, w180);
+-- deleted   c_w181    :  id    port map (b18, w181);
   c_w179    :  xor2  port map (w180, w181, w179);
   c_w172    :  xor2  port map (w173, w179, w172);
   c_w185    :  and2  port map (w180, w181, w185);
@@ -686,8 +686,8 @@ begin
   c_w188    :  and2  port map (w179, w178, w188);
   c_w187    :  and2  port map (w188, w150, w187);
   c_w183    :  or2   port map (w184, w187, w183);
--- deleted   c_w190    :  id    port map (a[19], w190);
--- deleted   c_w191    :  id    port map (b[19], w191);
+-- deleted   c_w190    :  id    port map (a19, w190);
+-- deleted   c_w191    :  id    port map (b19, w191);
   c_w189    :  xor2  port map (w190, w191, w189);
   c_w182    :  xor2  port map (w183, w189, w182);
   c_w196    :  and2  port map (w190, w191, w196);
@@ -699,8 +699,8 @@ begin
   c_w201    :  and2  port map (w199, w178, w201);
   c_w200    :  and2  port map (w201, w150, w200);
   c_w193    :  or2   port map (w194, w200, w193);
--- deleted   c_w203    :  id    port map (a[20], w203);
--- deleted   c_w204    :  id    port map (b[20], w204);
+-- deleted   c_w203    :  id    port map (a20, w203);
+-- deleted   c_w204    :  id    port map (b20, w204);
   c_w202    :  xor2  port map (w203, w204, w202);
   c_w192    :  xor2  port map (w193, w202, w192);
   c_w208    :  and2  port map (w203, w204, w208);
@@ -709,8 +709,8 @@ begin
   c_w211    :  and2  port map (w202, w201, w211);
   c_w210    :  and2  port map (w211, w150, w210);
   c_w206    :  or2   port map (w207, w210, w206);
--- deleted   c_w213    :  id    port map (a[21], w213);
--- deleted   c_w214    :  id    port map (b[21], w214);
+-- deleted   c_w213    :  id    port map (a21, w213);
+-- deleted   c_w214    :  id    port map (b21, w214);
   c_w212    :  xor2  port map (w213, w214, w212);
   c_w205    :  xor2  port map (w206, w212, w205);
   c_w219    :  and2  port map (w213, w214, w219);
@@ -722,8 +722,8 @@ begin
   c_w224    :  and2  port map (w222, w201, w224);
   c_w223    :  and2  port map (w224, w150, w223);
   c_w216    :  or2   port map (w217, w223, w216);
--- deleted   c_w226    :  id    port map (a[22], w226);
--- deleted   c_w227    :  id    port map (b[22], w227);
+-- deleted   c_w226    :  id    port map (a22, w226);
+-- deleted   c_w227    :  id    port map (b22, w227);
   c_w225    :  xor2  port map (w226, w227, w225);
   c_w215    :  xor2  port map (w216, w225, w215);
   c_w232    :  and2  port map (w226, w227, w232);
@@ -735,8 +735,8 @@ begin
   c_w237    :  and2  port map (w235, w201, w237);
   c_w236    :  and2  port map (w237, w150, w236);
   c_w229    :  or2   port map (w230, w236, w229);
--- deleted   c_w239    :  id    port map (a[23], w239);
--- deleted   c_w240    :  id    port map (b[23], w240);
+-- deleted   c_w239    :  id    port map (a23, w239);
+-- deleted   c_w240    :  id    port map (b23, w240);
   c_w238    :  xor2  port map (w239, w240, w238);
   c_w228    :  xor2  port map (w229, w238, w228);
   c_w246    :  and2  port map (w239, w240, w246);
@@ -751,8 +751,8 @@ begin
   c_w253    :  and2  port map (w251, w201, w253);
   c_w252    :  and2  port map (w253, w150, w252);
   c_w242    :  or2   port map (w243, w252, w242);
--- deleted   c_w255    :  id    port map (a[24], w255);
--- deleted   c_w256    :  id    port map (b[24], w256);
+-- deleted   c_w255    :  id    port map (a24, w255);
+-- deleted   c_w256    :  id    port map (b24, w256);
   c_w254    :  xor2  port map (w255, w256, w254);
   c_w241    :  xor2  port map (w242, w254, w241);
   c_w260    :  and2  port map (w255, w256, w260);
@@ -761,8 +761,8 @@ begin
   c_w263    :  and2  port map (w254, w253, w263);
   c_w262    :  and2  port map (w263, w150, w262);
   c_w258    :  or2   port map (w259, w262, w258);
--- deleted   c_w265    :  id    port map (a[25], w265);
--- deleted   c_w266    :  id    port map (b[25], w266);
+-- deleted   c_w265    :  id    port map (a25, w265);
+-- deleted   c_w266    :  id    port map (b25, w266);
   c_w264    :  xor2  port map (w265, w266, w264);
   c_w257    :  xor2  port map (w258, w264, w257);
   c_w271    :  and2  port map (w265, w266, w271);
@@ -774,8 +774,8 @@ begin
   c_w276    :  and2  port map (w274, w253, w276);
   c_w275    :  and2  port map (w276, w150, w275);
   c_w268    :  or2   port map (w269, w275, w268);
--- deleted   c_w278    :  id    port map (a[26], w278);
--- deleted   c_w279    :  id    port map (b[26], w279);
+-- deleted   c_w278    :  id    port map (a26, w278);
+-- deleted   c_w279    :  id    port map (b26, w279);
   c_w277    :  xor2  port map (w278, w279, w277);
   c_w267    :  xor2  port map (w268, w277, w267);
   c_w284    :  and2  port map (w278, w279, w284);
@@ -787,8 +787,8 @@ begin
   c_w289    :  and2  port map (w287, w253, w289);
   c_w288    :  and2  port map (w289, w150, w288);
   c_w281    :  or2   port map (w282, w288, w281);
--- deleted   c_w291    :  id    port map (a[27], w291);
--- deleted   c_w292    :  id    port map (b[27], w292);
+-- deleted   c_w291    :  id    port map (a27, w291);
+-- deleted   c_w292    :  id    port map (b27, w292);
   c_w290    :  xor2  port map (w291, w292, w290);
   c_w280    :  xor2  port map (w281, w290, w280);
   c_w298    :  and2  port map (w291, w292, w298);
@@ -803,8 +803,8 @@ begin
   c_w305    :  and2  port map (w303, w253, w305);
   c_w304    :  and2  port map (w305, w150, w304);
   c_w294    :  or2   port map (w295, w304, w294);
--- deleted   c_w307    :  id    port map (a[28], w307);
--- deleted   c_w308    :  id    port map (b[28], w308);
+-- deleted   c_w307    :  id    port map (a28, w307);
+-- deleted   c_w308    :  id    port map (b28, w308);
   c_w306    :  xor2  port map (w307, w308, w306);
   c_w293    :  xor2  port map (w294, w306, w293);
   c_w313    :  and2  port map (w307, w308, w313);
@@ -816,8 +816,8 @@ begin
   c_w318    :  and2  port map (w316, w253, w318);
   c_w317    :  and2  port map (w318, w150, w317);
   c_w310    :  or2   port map (w311, w317, w310);
--- deleted   c_w320    :  id    port map (a[29], w320);
--- deleted   c_w321    :  id    port map (b[29], w321);
+-- deleted   c_w320    :  id    port map (a29, w320);
+-- deleted   c_w321    :  id    port map (b29, w321);
   c_w319    :  xor2  port map (w320, w321, w319);
   c_w309    :  xor2  port map (w310, w319, w309);
   c_w327    :  and2  port map (w320, w321, w327);
@@ -832,8 +832,8 @@ begin
   c_w334    :  and2  port map (w332, w253, w334);
   c_w333    :  and2  port map (w334, w150, w333);
   c_w323    :  or2   port map (w324, w333, w323);
--- deleted   c_w336    :  id    port map (a[30], w336);
--- deleted   c_w337    :  id    port map (b[30], w337);
+-- deleted   c_w336    :  id    port map (a30, w336);
+-- deleted   c_w337    :  id    port map (b30, w337);
   c_w335    :  xor2  port map (w336, w337, w335);
   c_w322    :  xor2  port map (w323, w335, w322);
   c_w343    :  and2  port map (w336, w337, w343);
@@ -848,8 +848,8 @@ begin
   c_w350    :  and2  port map (w348, w253, w350);
   c_w349    :  and2  port map (w350, w150, w349);
   c_w339    :  or2   port map (w340, w349, w339);
--- deleted   c_w352    :  id    port map (a[31], w352);
--- deleted   c_w353    :  id    port map (b[31], w353);
+-- deleted   c_w352    :  id    port map (a31, w352);
+-- deleted   c_w353    :  id    port map (b31, w353);
   c_w351    :  xor2  port map (w352, w353, w351);
   c_w338    :  xor2  port map (w339, w351, w338);
   c_w359    :  and2  port map (w352, w353, w359);
@@ -869,37 +869,37 @@ begin
   c_w354    :  or2   port map (w355, w367, w354);
 
   
-  c_sum[0]  :  id    port map (w1, sum[0]);
-  c_sum[1]  :  id    port map (w4, sum[1]);
-  c_sum[2]  :  id    port map (w9, sum[2]);
-  c_sum[3]  :  id    port map (w16, sum[3]);
-  c_sum[4]  :  id    port map (w23, sum[4]);
-  c_sum[5]  :  id    port map (w33, sum[5]);
-  c_sum[6]  :  id    port map (w40, sum[6]);
-  c_sum[7]  :  id    port map (w50, sum[7]);
-  c_sum[8]  :  id    port map (w60, sum[8]);
-  c_sum[9]  :  id    port map (w73, sum[9]);
-  c_sum[10] :  id    port map (w80, sum[10]);
-  c_sum[11] :  id    port map (w90, sum[11]);
-  c_sum[12] :  id    port map (w100, sum[12]);
-  c_sum[13] :  id    port map (w113, sum[13]);
-  c_sum[14] :  id    port map (w123, sum[14]);
-  c_sum[15] :  id    port map (w136, sum[15]);
-  c_sum[16] :  id    port map (w149, sum[16]);
-  c_sum[17] :  id    port map (w165, sum[17]);
-  c_sum[18] :  id    port map (w172, sum[18]);
-  c_sum[19] :  id    port map (w182, sum[19]);
-  c_sum[20] :  id    port map (w192, sum[20]);
-  c_sum[21] :  id    port map (w205, sum[21]);
-  c_sum[22] :  id    port map (w215, sum[22]);
-  c_sum[23] :  id    port map (w228, sum[23]);
-  c_sum[24] :  id    port map (w241, sum[24]);
-  c_sum[25] :  id    port map (w257, sum[25]);
-  c_sum[26] :  id    port map (w267, sum[26]);
-  c_sum[27] :  id    port map (w280, sum[27]);
-  c_sum[28] :  id    port map (w293, sum[28]);
-  c_sum[29] :  id    port map (w309, sum[29]);
-  c_sum[30] :  id    port map (w322, sum[30]);
-  c_sum[31] :  id    port map (w338, sum[31]);
+  c_sum0  :  id    port map (w1, sum0);
+  c_sum1  :  id    port map (w4, sum1);
+  c_sum2  :  id    port map (w9, sum2);
+  c_sum3  :  id    port map (w16, sum3);
+  c_sum4  :  id    port map (w23, sum4);
+  c_sum5  :  id    port map (w33, sum5);
+  c_sum6  :  id    port map (w40, sum6);
+  c_sum7  :  id    port map (w50, sum7);
+  c_sum8  :  id    port map (w60, sum8);
+  c_sum9  :  id    port map (w73, sum9);
+  c_sum10 :  id    port map (w80, sum10);
+  c_sum11 :  id    port map (w90, sum11);
+  c_sum12 :  id    port map (w100, sum12);
+  c_sum13 :  id    port map (w113, sum13);
+  c_sum14 :  id    port map (w123, sum14);
+  c_sum15 :  id    port map (w136, sum15);
+  c_sum16 :  id    port map (w149, sum16);
+  c_sum17 :  id    port map (w165, sum17);
+  c_sum18 :  id    port map (w172, sum18);
+  c_sum19 :  id    port map (w182, sum19);
+  c_sum20 :  id    port map (w192, sum20);
+  c_sum21 :  id    port map (w205, sum21);
+  c_sum22 :  id    port map (w215, sum22);
+  c_sum23 :  id    port map (w228, sum23);
+  c_sum24 :  id    port map (w241, sum24);
+  c_sum25 :  id    port map (w257, sum25);
+  c_sum26 :  id    port map (w267, sum26);
+  c_sum27 :  id    port map (w280, sum27);
+  c_sum28 :  id    port map (w293, sum28);
+  c_sum29 :  id    port map (w309, sum29);
+  c_sum30 :  id    port map (w322, sum30);
+  c_sum31 :  id    port map (w338, sum31);
 -- deleted --  c_cout    :  id    port map (w354, cout);
 end structural;

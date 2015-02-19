@@ -320,7 +320,7 @@ int2bin n num = (bit:bits)
 \end{lstlisting}
 
 \subsubsection{Método de validación del hardware}
-Para este diseño en particular, no utilizaremos la simulación como una forma de validar el correcto funcionamiento del circuito, por eso no avanzaremos en las distintas alternativas de simulación que nos permite el sistema, como puede ser la creación de un archivo VCD\footnote{\gls{vcd} es un formato basado en ASCII para loguear señales, que es utilizado por herramietas de simulación lógica. Para visualizarlo podemos utilizar el software GTKWave, de licencia libre.} a partir de vectores de entrada\footnote{Podemos usar una libreria de Haskell llamada \cursi{vcd} que nos permite escribir y leer archivos con este formato}.
+Para este diseño en particular, no utilizaremos la simulación como una forma de validar el correcto funcionamiento del circuito, por eso no avanzaremos en las distintas alternativas de simulación que nos permite el sistema, como puede ser la creación de un archivo VCD\footnote{\gls{vcd} es un formato basado en ASCII para loguear señales, que es utilizado por herramietas de simulación lógica. Para visualizarlo podemos utilizar el software GTKWave, de licencia libre.} a partir de vectores de entrada\footnote{Podemos usar una libreria de Haskell llamada \cursi{vcd} que nos permite escribir y leer archivos con este formato.}.
 
 Justificamos descartar la simulación como método de validación por la simple razón de que sólo simulando todos los posibles estados de las entradas se garantiza el correcto diseño del circuito. Por ejemplo, para un sumador de 64 bits, es necesario simular $2^{128}$ estados.
 
