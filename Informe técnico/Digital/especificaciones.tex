@@ -69,7 +69,7 @@ En un circuito digital con varias entradas y salidas, pueden existir mas de un c
 
 Para poder comparar la performance de distintas tecnologías, se busca un circuito que no incluya parámetros como el fan-in o fan-out, que influyen en los tiempos $t_f$, $t_r$ y $t_f$. Por ello, el circuito que es un estándar de facto para medir el tiempo de propagación, es el oscilador anillo (\emph{ring oscillator}), que es un número impar de inversores conectados en serie, con la salida conectada a la entrada. Este circuito oscilla espontaneamente, a una frecuencia de $T = 2 \times t_p \times N$, con $N$ el número de inversores en la cadena. 
 
-Contar con esta métrica nos permitirá tener una referencia del límite inferior impuesto por la tecnología que se esté utilizando. Por ejemplo, tomemos la tecnología TSMC de 180~nm: La frecuencia de un oscilador anillo de 31 etapas es de 377,13~MHz. Es decir que el tiempo de propagación de una celda inversora en esta tecnología es $t_p = 47,8~ps$
+Contar con esta métrica nos permitirá tener una referencia del límite inferior impuesto por la tecnología que se esté utilizando. Por ejemplo, tomemos la tecnología \gls{tsmc} de 180~nm: La frecuencia de un oscilador anillo de 31 etapas es de 377,13~MHz. Es decir que el tiempo de propagación de una celda inversora en esta tecnología es $t_p = 47,8~ps$
 
 
 %(TODO: Citar DIGITAL DESIGN OF SIGNAL PROCESSING SYSTEMS 5.5.1 )

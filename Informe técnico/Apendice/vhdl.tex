@@ -1,5 +1,5 @@
 \chapter{\textsc{ Netlist VHDL }}\label{vhdlNetlist}
-
+\noindent A modo explicativo adjuntamos este archivo generado por Lava.
 \begin{lstlisting}
 library ieee;
 
@@ -12,32 +12,32 @@ port
   ( 
  
     
-    a_0 : in std_logic
-  ; a_1 : in std_logic
-  ; a_2 : in std_logic
-  ; a_3 : in std_logic
-  ; a_4 : in std_logic
-  ; a_5 : in std_logic
-  ; a_6 : in std_logic
-  ; a_7 : in std_logic
-  ; b_0 : in std_logic
-  ; b_1 : in std_logic
-  ; b_2 : in std_logic
-  ; b_3 : in std_logic
-  ; b_4 : in std_logic
-  ; b_5 : in std_logic
-  ; b_6 : in std_logic
-  ; b_7 : in std_logic
+    a[0] : in std_logic
+  ; a[1] : in std_logic
+  ; a[2] : in std_logic
+  ; a[3] : in std_logic
+  ; a[4] : in std_logic
+  ; a[5] : in std_logic
+  ; a[6] : in std_logic
+  ; a[7] : in std_logic
+  ; b[0] : in std_logic
+  ; b[1] : in std_logic
+  ; b[2] : in std_logic
+  ; b[3] : in std_logic
+  ; b[4] : in std_logic
+  ; b[5] : in std_logic
+  ; b[6] : in std_logic
+  ; b[7] : in std_logic
 
   
-  ; sum_0 : out std_logic
-  ; sum_1 : out std_logic
-  ; sum_2 : out std_logic
-  ; sum_3 : out std_logic
-  ; sum_4 : out std_logic
-  ; sum_5 : out std_logic
-  ; sum_6 : out std_logic
-  ; sum_7 : out std_logic
+  ; sum[0] : out std_logic
+  ; sum[1] : out std_logic
+  ; sum[2] : out std_logic
+  ; sum[3] : out std_logic
+  ; sum[4] : out std_logic
+  ; sum[5] : out std_logic
+  ; sum[6] : out std_logic
+  ; sum[7] : out std_logic
   ; cout : out std_logic
   );
 end BrentKungFastAdder;
@@ -113,81 +113,81 @@ is
   signal w64 : std_logic;
   signal w65 : std_logic;
 begin
-  c_w2      :  wire  port map (a_0, w2);
-  c_w3      :  wire  port map (b_0, w3);
-  c_w1      :  xor2  port map (w2, w3, w1);
-  c_w6      :  wire  port map (a_1, w6);
-  c_w7      :  wire  port map (b_1, w7);
-  c_w5      :  xor2  port map (w6, w7, w5);
-  c_w8      :  and2  port map (w2, w3, w8);
-  c_w4      :  xor2  port map (w5, w8, w4);
-  c_w11     :  wire  port map (a_2, w11);
-  c_w12     :  wire  port map (b_2, w12);
-  c_w10     :  xor2  port map (w11, w12, w10);
-  c_w14     :  and2  port map (w6, w7, w14);
-  c_w15     :  and2  port map (w5, w8, w15);
-  c_w13     :  or2   port map (w14, w15, w13);
-  c_w9      :  xor2  port map (w10, w13, w9);
-  c_w18     :  wire  port map (a_3, w18);
-  c_w19     :  wire  port map (b_3, w19);
-  c_w17     :  xor2  port map (w18, w19, w17);
-  c_w21     :  and2  port map (w11, w12, w21);
-  c_w22     :  and2  port map (w10, w13, w22);
-  c_w20     :  or2   port map (w21, w22, w20);
-  c_w16     :  xor2  port map (w17, w20, w16);
-  c_w25     :  wire  port map (a_4, w25);
-  c_w26     :  wire  port map (b_4, w26);
-  c_w24     :  xor2  port map (w25, w26, w24);
-  c_w29     :  and2  port map (w18, w19, w29);
-  c_w30     :  and2  port map (w17, w21, w30);
-  c_w28     :  or2   port map (w29, w30, w28);
-  c_w32     :  and2  port map (w17, w10, w32);
-  c_w31     :  and2  port map (w32, w13, w31);
-  c_w27     :  or2   port map (w28, w31, w27);
-  c_w23     :  xor2  port map (w24, w27, w23);
-  c_w35     :  wire  port map (a_5, w35);
-  c_w36     :  wire  port map (b_5, w36);
-  c_w34     :  xor2  port map (w35, w36, w34);
-  c_w38     :  and2  port map (w25, w26, w38);
-  c_w39     :  and2  port map (w24, w27, w39);
-  c_w37     :  or2   port map (w38, w39, w37);
-  c_w33     :  xor2  port map (w34, w37, w33);
-  c_w42     :  wire  port map (a_6, w42);
-  c_w43     :  wire  port map (b_6, w43);
-  c_w41     :  xor2  port map (w42, w43, w41);
-  c_w46     :  and2  port map (w35, w36, w46);
-  c_w47     :  and2  port map (w34, w38, w47);
-  c_w45     :  or2   port map (w46, w47, w45);
-  c_w49     :  and2  port map (w34, w24, w49);
-  c_w48     :  and2  port map (w49, w27, w48);
-  c_w44     :  or2   port map (w45, w48, w44);
-  c_w40     :  xor2  port map (w41, w44, w40);
-  c_w52     :  wire  port map (a_7, w52);
-  c_w53     :  wire  port map (b_7, w53);
-  c_w51     :  xor2  port map (w52, w53, w51);
-  c_w55     :  and2  port map (w42, w43, w55);
-  c_w56     :  and2  port map (w41, w44, w56);
-  c_w54     :  or2   port map (w55, w56, w54);
-  c_w50     :  xor2  port map (w51, w54, w50);
-  c_w60     :  and2  port map (w52, w53, w60);
-  c_w61     :  and2  port map (w51, w55, w61);
-  c_w59     :  or2   port map (w60, w61, w59);
-  c_w63     :  and2  port map (w51, w41, w63);
-  c_w62     :  and2  port map (w63, w45, w62);
-  c_w58     :  or2   port map (w59, w62, w58);
-  c_w65     :  and2  port map (w63, w49, w65);
-  c_w64     :  and2  port map (w65, w27, w64);
-  c_w57     :  or2   port map (w58, w64, w57);
+  c_w2      :  wire  port map (a[0], w2);
+  c_w3      :  wire  port map (b[0], w3);
+  c_w1      :  xorG  port map (w2, w3, w1);
+  c_w6      :  wire  port map (a[1], w6);
+  c_w7      :  wire  port map (b[1], w7);
+  c_w5      :  xorG  port map (w6, w7, w5);
+  c_w8      :  andG  port map (w2, w3, w8);
+  c_w4      :  xorG  port map (w5, w8, w4);
+  c_w11     :  wire  port map (a[2], w11);
+  c_w12     :  wire  port map (b[2], w12);
+  c_w10     :  xorG  port map (w11, w12, w10);
+  c_w14     :  andG  port map (w6, w7, w14);
+  c_w15     :  andG  port map (w5, w8, w15);
+  c_w13     :  orG   port map (w14, w15, w13);
+  c_w9      :  xorG  port map (w10, w13, w9);
+  c_w18     :  wire  port map (a[3], w18);
+  c_w19     :  wire  port map (b[3], w19);
+  c_w17     :  xorG  port map (w18, w19, w17);
+  c_w21     :  andG  port map (w11, w12, w21);
+  c_w22     :  andG  port map (w10, w13, w22);
+  c_w20     :  orG   port map (w21, w22, w20);
+  c_w16     :  xorG  port map (w17, w20, w16);
+  c_w25     :  wire  port map (a[4], w25);
+  c_w26     :  wire  port map (b[4], w26);
+  c_w24     :  xorG  port map (w25, w26, w24);
+  c_w29     :  andG  port map (w18, w19, w29);
+  c_w30     :  andG  port map (w17, w21, w30);
+  c_w28     :  orG   port map (w29, w30, w28);
+  c_w32     :  andG  port map (w17, w10, w32);
+  c_w31     :  andG  port map (w32, w13, w31);
+  c_w27     :  orG   port map (w28, w31, w27);
+  c_w23     :  xorG  port map (w24, w27, w23);
+  c_w35     :  wire  port map (a[5], w35);
+  c_w36     :  wire  port map (b[5], w36);
+  c_w34     :  xorG  port map (w35, w36, w34);
+  c_w38     :  andG  port map (w25, w26, w38);
+  c_w39     :  andG  port map (w24, w27, w39);
+  c_w37     :  orG   port map (w38, w39, w37);
+  c_w33     :  xorG  port map (w34, w37, w33);
+  c_w42     :  wire  port map (a[6], w42);
+  c_w43     :  wire  port map (b[6], w43);
+  c_w41     :  xorG  port map (w42, w43, w41);
+  c_w46     :  andG  port map (w35, w36, w46);
+  c_w47     :  andG  port map (w34, w38, w47);
+  c_w45     :  orG   port map (w46, w47, w45);
+  c_w49     :  andG  port map (w34, w24, w49);
+  c_w48     :  andG  port map (w49, w27, w48);
+  c_w44     :  orG   port map (w45, w48, w44);
+  c_w40     :  xorG  port map (w41, w44, w40);
+  c_w52     :  wire  port map (a[7], w52);
+  c_w53     :  wire  port map (b[7], w53);
+  c_w51     :  xorG  port map (w52, w53, w51);
+  c_w55     :  andG  port map (w42, w43, w55);
+  c_w56     :  andG  port map (w41, w44, w56);
+  c_w54     :  orG   port map (w55, w56, w54);
+  c_w50     :  xorG  port map (w51, w54, w50);
+  c_w60     :  andG  port map (w52, w53, w60);
+  c_w61     :  andG  port map (w51, w55, w61);
+  c_w59     :  orG   port map (w60, w61, w59);
+  c_w63     :  andG  port map (w51, w41, w63);
+  c_w62     :  andG  port map (w63, w45, w62);
+  c_w58     :  orG   port map (w59, w62, w58);
+  c_w65     :  andG  port map (w63, w49, w65);
+  c_w64     :  andG  port map (w65, w27, w64);
+  c_w57     :  orG   port map (w58, w64, w57);
 
   
-  c_sum_0   :  wire  port map (w1, sum_0);
-  c_sum_1   :  wire  port map (w4, sum_1);
-  c_sum_2   :  wire  port map (w9, sum_2);
-  c_sum_3   :  wire  port map (w16, sum_3);
-  c_sum_4   :  wire  port map (w23, sum_4);
-  c_sum_5   :  wire  port map (w33, sum_5);
-  c_sum_6   :  wire  port map (w40, sum_6);
-  c_sum_7   :  wire  port map (w50, sum_7);
+  c_sum_0   :  wire  port map (w1, sum[0]);
+  c_sum_1   :  wire  port map (w4, sum[1]);
+  c_sum_2   :  wire  port map (w9, sum[2]);
+  c_sum_3   :  wire  port map (w16, sum[3]);
+  c_sum_4   :  wire  port map (w23, sum[4]);
+  c_sum_5   :  wire  port map (w33, sum[5]);
+  c_sum_6   :  wire  port map (w40, sum[6]);
+  c_sum_7   :  wire  port map (w50, sum[7]);
   c_cout    :  wire  port map (w57, cout);
 end structural;
 \end{lstlisting}

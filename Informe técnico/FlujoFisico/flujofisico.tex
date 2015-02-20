@@ -297,7 +297,9 @@ La herramienta \textbf{\emph{Silicon Compiler}} requiere que el \emph{netlist} V
 \item\label{caracteres} Los nombres no pueden usar los símbolos [ y ], por lo cual es necesario eliminarlos.
 \end{enumerate} 
  
-Modificamos el código del programa de \textbf{lava} llamado \verb|VhdlNew.hs|, encargado de crear el \emph{netlist} VHDL para realizar (\ref{celdas}), y para lograr (\ref{caracteres}) agregamos una línea para que lance un pequeño programa escrito en \textbf{perl} que mostramos en el apéndice \ref{scriptPerl}. Luego de esta modificación, cuando realizamos la síntesis lógica descripta en el capítulo \ref{diseñoDigital}, el \cursi{netlist} VHDL obtenido ya puede ser utilizado por \textbf{\emph{Silicon Compiler}}.
+Modificamos el código del programa de \textbf{lava} llamado \verb|VhdlNew.hs|, encargado de crear el \emph{netlist} \gls{VHDL} para realizar el item (\ref{celdas}) y (\ref{caracteres}). Agregamos una línea de llamada a sistema para que ejecute un simple comando en Perl que borra todas las ocurrencias de corchetes en el \cursi{netlist} final. Además, realizamos un mapeo fijo al conjunto de celdas estándard de la figura \ref{fig:animals}, cambiando los nombres que originalmente encontramos en la librería de Lava. Luego de esta modificación, cuando realizamos la síntesis lógica descripta en el capítulo \ref{diseñoDigital}, el \cursi{netlist} VHDL obtenido ya puede ser utilizado por \textbf{\emph{Silicon Compiler}}.
+
+Mostramos en el apéndice \ref{vhdlNetlist} el \cursi{netlist} producido originalmente por Lava sin nuestra modificación. Podemos ver que cada puerto de entrada y salida pasa por una instancia llamada \verb.wire. Nosotros la hemos mapeado a una celda llamada \verb.id. que no es mas que el \cursi{buffer} de nuestra librería de celdas estándard. Habilitamos en el apéndice \ref{scriptPerl} un pequeño programa escrito en \negrita{Perl} que quita estos \cursi{buffers} del \cursi{netlist} \gls{vhdl}. Para todas las simulaciones, nosotros hemos utilizado las versiones que conservan estos \cursi{buffers}.
 
 
 
@@ -391,12 +393,12 @@ Para realizar una simulación que sea la mejor estimación de la performance y p
 \begin{footnotesize}\verb#.MODEL CMOSN NMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL N NMOS# \\
 \verb#.MODEL CMOSP PMOS#\end{footnotesize} cambiar por \begin{footnotesize}\verb#.MODEL P PMOS# \end{footnotesize} \\
 Luego de esos cambios, cargar el archivo en:\\
-\begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Use Header cards from file:.\end{footnotesize}, como vemos en la figura \ref{fig:gnucapElectric}
-	\item Del archivo recién mencionado obtenemos la resistividad de los metales, el \emph{poly}, el sustrato y el silicio dopado $N^+$ y $P^+$. También obtenemos la capacidad entre cada capa de material y el resto de las capas. Esta información la utilizamos para configurar \textbf{Electric} en: \\
+\begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Use Header cards from file:.\end{footnotesize}, como vemos en la figura \ref{fig:gnucapElectric}. En el apéndice \ref{chap:cmosmodel} brindamos el archivo modificado que utilizamos para las simulaciones.
+\item Del archivo recién mencionado obtenemos la resistividad de los metales, el \emph{poly}, el sustrato y el silicio dopado $N^+$ y $P^+$. También obtenemos la capacidad entre cada capa de material y el resto de las capas. Esta información la utilizamos para configurar \textbf{Electric} en: \\
 \begin{footnotesize}\verb.File -> Preferences -> Tools -> Parasitic. \end{footnotesize}
 \item Extracción de parásitos: Para realizar la extracción de las capacidades y resistores parásitos de las interconexiones, seleccionamos: \\
 \begin{footnotesize}\verb.File -> Preferences -> Tools -> Spice/CDL -> Parasitics: Conservative RC. \end{footnotesize}
-\item Seleccionar el formato (lenguaje) del \emph{netlist spice} del simulador que utilizaremos: Las opciones son: \textbf{Spice 2, Spice 3, HSpice, PSpice, Gnucap, SmartSpice,  Spice Opus, Xyce, HSpice for Assura, HSpice for Calibre}. De los cuales, sólo 3 opciones tienen licencias calificadas como software libre: \textbf{Spice 3, Gnucap} y \textbf{Xyce}. \textbf{Spice 3} hace referencia a la versión \textbf{Spice3f5} del estándar de facto para las simulaciones de circuitos analógicos, en general todos los programas pueden leer un \emph{netlist} en ese formato.
+\item Seleccionar el formato (lenguaje) del \emph{netlist} \gls{spice} del simulador que utilizaremos: Las opciones son: \textbf{Spice 2, Spice 3, HSpice, PSpice, Gnucap, SmartSpice,  Spice Opus, Xyce, HSpice for Assura, HSpice for Calibre}. De los cuales, sólo 3 opciones tienen licencias calificadas como software libre: \textbf{Spice 3, Gnucap} y \textbf{Xyce}. \textbf{Spice 3} hace referencia a la versión \textbf{Spice3f5} del estándar de facto para las simulaciones de circuitos analógicos, en general todos los programas pueden leer un \emph{netlist} en ese formato.
 \end{itemize}
 
 
@@ -404,7 +406,7 @@ Luego de esos cambios, cargar el archivo en:\\
 %\vspace{-5pt}
   \centering
 \includegraphics[scale=.5]{figuras/gnucapElectric3.png}
-  \caption{Configuración de Electric: Especificar los modelos de transistores a utilizar por el motor tipo Spice.}
+  \caption{Configuración de Electric: Especificar los modelos de transistores a utilizar por el motor tipo \gls{spice}.}
 \label{fig:gnucapElectric}
 %\vspace{-10pt}
 \end{figure}
@@ -417,11 +419,11 @@ De la lista de opciones que nos brinda \textbf{Electric}, hacemos una selección
 
 
 \begin{description}
-\item[Gnucap] Simulador de circuitos analógicos y señal mixta, está diseñado para reemplazar Spice, pero con ventajas técnicas significantes. Más rápido e igual de preciso, diseñado para alta flexibilidad por medio de un sistema de \emph{plugins}, permite elegir qué algoritmos utilizará el \emph{solver}, relación de compromiso entre precisión y velocidad controlado por el usuario, totalmente interactivo por medio de \emph{scripting}. Puede leer \emph{netlists} en formato tradicional \textbf{Spice 3}, \textbf{Spectre}\footnote{Motor de simulación de Cadence.} y  \emph{netlist} Verilog.
+\item[Gnucap] Simulador de circuitos analógicos y señal mixta, está diseñado para reemplazar \gls{spice}, pero con ventajas técnicas significantes. Más rápido e igual de preciso, diseñado para alta flexibilidad por medio de un sistema de \emph{plugins}, permite elegir qué algoritmos utilizará el \emph{solver}, relación de compromiso entre precisión y velocidad controlado por el usuario, totalmente interactivo por medio de \emph{scripting}. Puede leer \emph{netlists} en formato tradicional \textbf{Spice 3}, \textbf{Spectre}\footnote{Motor de simulación de Cadence.} y  \emph{netlist} Verilog.
 
 \item[Ngspice] Simulador de circuitos de señal mixta. Se basa en tres paquetes de software libre: Spice3f5, Cider1b1 y Xpice. Implementa muchas mejoras y cuenta con una comunidad de desarrolladores y usuarios que dan soporte y corrección de \emph{bugs}. Fué ampliamente incorporado en otros entornos de simulación de circuitos, por ser la continuación con licencia libre del Spice3f5.
 
-\item[Xyce] Simulador de circuitos con compatibilidad Spice, implementa mejoras para lograr simulaciones de millones de transistores con la misma precisión. Implementa alto nivel de paralelismo, \emph{solvers} iterativos mejorados y simula efectos de radiación (corriente de fotones y destrucción de neutrones).
+\item[Xyce] Simulador de circuitos con compatibilidad \gls{spice}, implementa mejoras para lograr simulaciones de millones de transistores con la misma precisión. Implementa alto nivel de paralelismo, \emph{solvers} iterativos mejorados y simula efectos de radiación (corriente de fotones y destrucción de neutrones).
 \end{description}
 
 \subsubsection{Selección del simulador}
@@ -457,9 +459,8 @@ Justificamos la diferencia entre nuestros resultados y los datos brindados por e
 
 
 \begin{figure}
-%\vspace{-5pt}
   \centering
-\includegraphics[scale=.35]{figuras/lay_31etapas.png}
+\includegraphics[scale=.42]{figuras/lay_31etapas.png}
   \caption{Oscilador anillo de 31 etapas}
 \label{fig:lay_31etapas}
 %\vspace{-10pt}
@@ -565,21 +566,18 @@ Sklansky    & 8    & 11354.91	&144.90	& 1.4	& 42.11	& 2330.71   &317.38   & 3.3 
 
 
 \begin{figure}[h!]
-\vspace{-5pt}
   \centering
 \includegraphics[scale=.7]{figuras/barra_performance.eps}
   \caption{Comparación de la performance de las tres arquitecturas}
 \label{fig:barra_performance}
-\vspace{-10pt}
 \end{figure}
 
 \begin{figure}[h!]
-\vspace{-5pt}
+\vspace{5pt}
   \centering
 \includegraphics[scale=.7]{figuras/barra_potencia2.eps}
   \caption{Comparación de la potencia de las tres arquitecturas}
 \label{fig:barra_potencia}
-\vspace{-10pt}
 \end{figure}
 
 
@@ -587,6 +585,8 @@ Podemos ver que el sumador de \textbf{Sklansky} en comparación con el \negrita{
 
 Si comparamos estas dos arquitecturas entre sí, vemos que el Brent-Kung de 32 bits es un 25$\%$ más lento que Sklansky, pero con un 37.7$\%$ menos de potencia y un área 52$\%$ más chica.
 
+
+\subsubsection{Resumen}
 Por lo tanto, hemos logrado un conjunto de sumadores que según los requerimientos de área, potencia y performance, podremos elegir la arquitectura más adecuada. Para sumadores de 32 bits, la mayor velocidad se logra con Sklansky y el mejor compromiso entre velocidad, potencia y área con Brent-Kung. Para todos los tamaños de sumadores, si la performance no es un problema, un ripple carry es la solución optima de estos tres, ya que ahorra área y energía.
 
 
