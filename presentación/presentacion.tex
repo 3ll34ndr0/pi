@@ -6,6 +6,24 @@
 % 2. under the GNU Public License.
 %
 % See the file doc/licenses/LICENSE for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Unidades: Nanosegundos, micro metros, nanómetros, etc.
+%
+\newcommand{\ns} {\textrm{ns}}
+\newcommand{\nanom} {\textrm{nm}}
+\newcommand{\microm} {$\mu\textrm{m}$ }
+\newcommand{\micromcuadrado} {$\mu\textrm{m}^2$}
+\newcommand{\mmcuadrado} {$\textrm{mm}^2$}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Formato de las letras más cómodos.
+\newcommand{\negrita}[1]{\textbf{#1}}
+\newcommand{\cursi}[1]{\emph{#1}}
+\newcommand{\layout}{\emph{layout }}
+\newcommand{\netlist}{\emph{netlist }}
+
 
 
 
@@ -33,7 +51,18 @@
 \usepackage[latin1]{inputenc}
 \usepackage{times}
 \usepackage[T1]{fontenc}
-
+\usepackage{booktabs}
+\usepackage[gen]{eurosym}
+\usepackage{subcaption}
+%\usepackage{caption}
+\usepackage{wasysym}
+\usepackage{listings}
+\lstset{%                       % Configuración de parámetros de listing.
+  basicstyle=\small\ttfamily,     % Códigos con fuente TrueType.
+  breaklines=false,                % Rompe líneas demasiado largas.
+  xrightmargin=1cm,               % Margen derecho.
+  %escapeinside=wz,                % Para escapar a LaTeX.
+}%
 
 % Setup TikZ
 
@@ -122,33 +151,19 @@
 \end{frame}
 %-------------------------------------------------------------
 \begin{frame}{¿Qué es un circuito integrado?}
-  \begin{LARGE}
+  \begin{Large}
   \begin{center}
     \textbf{
-  ¿Cuánto podemos integrar?
+  ¿Cómo accedemos a fabricar circuitos integrados?
 }
 \end{center}
-\end{LARGE}
+\end{Large}
 
-  \begin{columns}[t]
-    \column{.43\textwidth}
-    \begin{exampleblock}{CMOS 350~nm de AMS}
-      18kGates/mm$^2$
-    \end{exampleblock}
-    \column{.43\textwidth}
-    \begin{exampleblock}{CMOS 180~nm de AMS}
-      118kGates/mm$^2$
-\end{exampleblock}
-    \end{columns}
-\end{frame}
-
-
-\begin{frame}{¿Qué es un circuito integrado?}
     \begin{table}[h]
       \centering
       \begin{tabular}{@{}lc@{}}
 	\toprule
-	Fabrica             & Proceso CMOS \\ \midrule
+	\textbf{Fabrica}             & \textbf{Proceso CMOS} \\ \midrule
 	TSMC                & 28~nm - 180~nm             \\
 	Globalfoundries     & 14~nm - 180~nm             \\
 	IBM                 & 32~nm -  250nm            \\
@@ -156,10 +171,66 @@
 	Austria Micro Systems & 180~nm - 0.35~um           \\ \bottomrule
       \end{tabular}
       \caption{Procesos disponibles por medio de MOSIS}
-      \label{tab:procesosDisponibles}
+      \label{tab:procesosMOSIS}
     \end{table}
 \end{frame}
-%%-------------------------------------------------------------
+%-------------------------------------------------------------
+\begin{frame}{¿Qué es un circuito integrado?}
+  \begin{Large}
+  \begin{center}
+    \textbf{
+  ¿Cómo accedemos a fabricar circuitos integrados?
+}
+\end{center}
+\end{Large}
+    \begin{table}[h]
+      \centering
+      \begin{tabular}{@{}lc@{}}
+	\toprule
+	\textbf{Fabrica}             & \textbf{Proceso CMOS} \\ \midrule
+	STMicroelectronics  & 28~nm - 130~nm             \\
+	Austria Micro Systems & 180~nm - 0.35~um           \\ \bottomrule
+      \end{tabular}
+      \caption{Procesos disponibles por medio de CMP}
+      \label{tab:procesosCMP}
+    \end{table}
+
+\end{frame}
+
+%-------------------------------------------------------------
+\begin{frame}{¿Qué es un circuito integrado?}
+  \begin{Large}
+  \begin{center}
+    \textbf{
+  ¿Cuánto podemos integrar?
+}
+\end{center}
+\end{Large}
+
+  \begin{columns}[t]
+    \column{.43\textwidth}
+    \begin{exampleblock}{CMOS 350~nm de AMS}
+    \begin{itemize}
+      \item 18kGates/mm$^2$
+      \item 650~\euro{}/mm$^2$
+      \item Área mínima 3~mm$^2$
+      \item 25 chips
+    \end{itemize}
+    \end{exampleblock}
+    \column{.43\textwidth}
+    \begin{exampleblock}{CMOS 180~nm de AMS}
+      
+    \begin{itemize}
+      \item 118~kGates/mm$^2$
+      \item 1200~\euro{}/mm$^2$
+      \item Área mínima 5~mm$^2$
+      \item 25 chips
+    \end{itemize}
+\end{exampleblock}
+    \end{columns}
+\end{frame}
+
+%-------------------------------------------------------------
 \begin{frame}[label=libertades]{¿Qué es el Software Libre?}
 \begin{definition}
   «Software libre» es el software que respeta la libertad de los usuarios y la comunidad. A grandes rasgos, significa que los usuarios tienen la libertad de ejecutar, copiar, distribuir, estudiar, modificar y mejorar el software. Es decir, el «software libre» es una cuestión de libertad, no de precio.
@@ -178,17 +249,16 @@ Un programa es software libre si los usuarios tienen las cuatro libertades esenc
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Las licencias de uso del software y su importancia}
-  \begin{definition}
-  Algo \alert{alerta} o no.
-
-\end{definition}
-  \hyperlink{libertades<2>}{\beamergotobutton{Cuatro libertades}}
-  \hypertarget{return}{}
-
-
-\end{frame}
-
+%-------------------------------------------------------------
+%\begin{frame}{Las licencias de uso del software y su importancia}
+%  \begin{definition}
+%  Algo \alert{alerta} o no.
+%
+%\end{definition}
+%  \hyperlink{libertades<2>}{\beamergotobutton{Cuatro libertades}}
+%  \hypertarget{return}{}
+%\end{frame}
+%-------------------------------------------------------------
 
 \subsection{Planteamiento del problema y motivación}
 
@@ -204,665 +274,1219 @@ Un programa es software libre si los usuarios tienen las cuatro libertades esenc
     \end{exampleblock}
 
     \column{.33\textwidth}
-    \begin{exampleblock}{Genotype matrix}
+    \begin{exampleblock}{Otras razones}
       $G\colon$
     \end{exampleblock}
     \end{columns}
 
 \end{frame}
+%-------------------------------------------------------------
 
 
-\begin{frame}{What is haplotyping and why is it important?}
-  You hopefully know this after the previous three talks\dots
-\end{frame}
-
-\begin{frame}[t]{General formalization of haplotyping.}
-  \begin{block}{Inputs}
-    \begin{itemize}
-    \item A \alert{genotype matrix} $G$.
-    \item The \alert{rows} of the matrix are \alert{taxa / individuals}.
-    \item The \alert{columns} of the matrix are \alert{SNP sites /
-        characters}. 
-    \end{itemize}
-  \end{block}
-  \begin{block}{Outputs}
-    \begin{itemize}
-    \item A \alert{haplotype matrix} $H$.
-    \item Pairs of rows in $H$ \alert{explain} the rows of $G$.
-    \item The haplotypes in $H$ are \alert{biologically plausible}. 
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-
-\begin{frame}[t]{Our formalization of haplotyping.}
-  \begin{block}{Inputs}
-    \begin{itemize}
-    \item A genotype matrix $G$.
-    \item The rows of the matrix are individuals / taxa.
-    \item The columns of the matrix are SNP sites / characters.
-    \item<alert@1->
-      The problem is directed: one haplotype is known.
-    \item<alert@1->
-      The input is biallelic: there are only two homozygous
-      states (0 and 1) and one heterozygous state (2).
-    \end{itemize}
-  \end{block}
-  \begin{block}{Outputs}
-    \begin{itemize}
-    \item A haplotype matrix $H$.
-    \item Pairs of rows in $H$ explain the rows of $G$.
-    \item<alert@1> The haplotypes in $H$ form a perfect phylogeny.
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-
-\begin{frame}{We can do perfect phylogeny haplotyping efficiently, but
-    \dots}
-  \begin{enumerate}
-  \item \alert{Data may be missing.}
-    \begin{itemize}
-    \item This makes the problem NP-complete \dots
-    \item \dots even for very restricted cases.
-    \end{itemize}
-    \textcolor{green!50!black}{Solutions:}
-    \begin{itemize}
-    \item Additional assumption like the rich data hypothesis. 
-    \end{itemize}
-  \item \alert{No perfect phylogeny is possible.}
-    \begin{itemize}
-    \item This can be caused by chromosomal crossing-over effects.
-    \item This can be caused by incorrect data.
-    \item This can be caused by multiple mutations at the same sites.
-    \end{itemize}
-    \textcolor{green!50!black}{Solutions:}
-    \begin{itemize}
-    \item Look for phylogenetic networks.
-    \item Correct data.
-    \item<alert@1->
-       Find blocks where a perfect phylogeny is possible.
-    \end{itemize}
-  \end{enumerate}
-\end{frame}
-
-
-
-\begin{frame}{How blocks help in perfect phylogeny haplotyping.}
-  \begin{enumerate}
-  \item Partition the site set into overlapping contiguous blocks.
-  \item Compute a perfect phylogeny for each block and combine them.
-  \item Use dynamic programming for finding the partition.
-  \end{enumerate}
-
-  \begin{tikzpicture}
-    \useasboundingbox (0,-1) rectangle (10,2);
-    
-    \draw[line width=2mm,dash pattern=on 1mm off 1mm]
-      (0,1) -- (9.99,1) node[midway,above] {Genotype matrix}
-      (0,0.6666) -- (9.99,0.6666)
-      (0,0.3333) -- (9.99,0.3333)
-      (0,0) -- (9.99,0) node[midway,below] {\only<1>{no perfect phylogeny}};
-
-    \begin{scope}[xshift=-.5mm]
-      \only<2->
-      {
-        \draw[red,block]            (0,.5)   -- (3,.5)
-          node[midway,below] {perfect phylogeny};
-      }
-        
-      \only<3->
-      {
-        \draw[green!50!black,block] (2.5,.5)   -- (7,.5)
-          node[pos=0.6,below] {perfect phylogeny};
-      }
-
-      \only<4->
-      {
-        \draw[blue,block]           (6.5,.5) -- (10,.5)
-          node[pos=0.6,below] {perfect phylogeny};
-      }
-    \end{scope}
-  \end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Objective of the integrated approach.}
-  \begin{enumerate}
-  \item Partition the site set into \alert{noncontiguous} blocks. 
-  \item Compute a perfect phylogeny for each block and combine them. 
-  \item<alert@1-> Compute partition while computing perfect
-    phylogenies. 
-  \end{enumerate}
-
-  \begin{tikzpicture}
-    \useasboundingbox (0,-1) rectangle (10,2);
-
-    \draw[line width=2mm,dash pattern=on 1mm off 1mm]
-      (0,1) -- (9.99,1) node[midway,above] {Genotype matrix}
-      (0,0.6666) -- (9.99,0.6666)
-      (0,0.3333) -- (9.99,0.3333)
-      (0,0) -- (9.99,0) node[midway,below] {\only<1>{no perfect phylogeny}};
-
-    \only<2->
-    {
-      \begin{scope}[xshift=-0.5mm]
-        \draw[red,block] (0,.5)   -- (3,.5) 
-          node[midway,below] {perfect phylogeny}
-                         (8,.5) -- (9,.5);
-
-        \draw[green!50!black,block]
-          (3,.5)   -- (6,.5)
-            node[pos=0.6,below] {perfect phylogeny}
-          (6.4,.5)   -- (8,.5)
-          (9,.5) -- (10,.5);
-
-        \draw[blue,block] (6,.5) -- (6.4,.5)
-          node[midway,below=5mm] {perfect phylogeny};
-      \end{scope}
-    }
-  \end{tikzpicture}
-\end{frame}
-
-
-\begin{frame}{The formal computational problem.}
-
-  We are interested in the computational complexity of \\
-  \alert{the function \alert{$\chi_{\operatorname{PP}}$}}:
-  \begin{itemize}
-  \item It gets genotype matrices as input.
-  \item It maps them to a number $k$.
-  \item This number is minimal such that the sites can be
-    covered by $k$ sets, each admitting a perfect phylogeny.
-    \\
-    (We call this a \alert{pp-partition}.)
-  \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Finding pp-partitions of haplotype matrices.}
-  We start with a special case:
-  \begin{itemize}
-  \item The inputs $M$ are \alert{already haplotype matrices}.
-  \item The inputs $M$ \alert{do not allow a perfect phylogeny}.
-  \item What is $\chi_{\operatorname{PP}}(M)$?
-  \end{itemize}
-  \begin{example}
-    \begin{columns}
-      \column{.3\textwidth}
-      $M\colon$
-      \footnotesize
-      \begin{tabular}{cccc}
-        0 & 0 & 0 & 1 \\
-        0 & 1 & 0 & 0 \\
-        1 & 0 & 0 & 0 \\
-        0 & 1 & 0 & 0 \\
-        1 & 0 & 0 & 0 \\
-        0 & 1 & 0 & 1 \\
-        1 & 1 & 0 & 0 \\
-        0 & 0 & 1 & 0 \\
-        1 & 0 & 1 & 0
-      \end{tabular}%
-      \only<2>
-      {%
-        \begin{tikzpicture}
-          \useasboundingbox (2.9,0);
-
-          \draw [red, opacity=0.7,line width=1cm] (1.7 ,1.9) -- (1.7 ,-1.7);
-          \draw [blue,opacity=0.7,line width=5mm] (0.85,1.9) -- (0.85,-1.7)
-                                                  (2.55,1.9) -- (2.55,-1.7);
-        \end{tikzpicture}
-      }
-      \column{.6\textwidth}
-      \begin{overprint}
-        \onslide<1>
-        No perfect phylogeny is possible.
-        
-        \onslide<2>
-        \textcolor{blue!70!bg}{Perfect phylogeny}
-        
-        \textcolor{red!70!bg}{Perfect phylogeny}
-        
-        $\chi_{\operatorname{PP}}(M) = 2$.
-        
-      \end{overprint}
-    \end{columns}
-  \end{example}
-\end{frame}
-
-\begin{frame}{Bad news about pp-partitions of haplotype matrices.}
-  \begin{theorem}
-    Finding \alert{optimal pp-partition of haplotype matrices}\\
-    is equivalent to finding \alert{optimal graph colorings}.
-  \end{theorem}
-
-  \begin{proof}[Proof sketch for first direction]
-    \begin{enumerate}
-    \item Let $G$ be a graph.
-    \item Build a matrix with a column for each vertex of $G$.
-    \item For each edge of $G$ add four rows inducing\\the
-      submatrix $\left(
-        \begin{smallmatrix}
-          0 & 0 \\
-          0 & 1 \\
-          1 & 0 \\
-          1 & 1
-        \end{smallmatrix}\right)$.
-    \item The submatrix enforces that the columns lie in different
-      perfect phylogenies. \qedhere  
-    \end{enumerate}
-  \end{proof}
-\end{frame}
-
-\begin{frame}{Implications for pp-partitions of haplotype matrices.}
-  \begin{corollary}
-    If $\chi_{\operatorname{PP}}(M) = 2$ for a haplotype matrix $M$,
-    we can find an optimal pp-partition in polynomial time. 
-  \end{corollary}
-
-  \begin{corollary}
-    Computing $\chi_{\operatorname{PP}}$ for haplotype matrices is
-    \begin{itemize}
-    \item $\operatorname{NP}$-hard,
-    \item not fixed-parameter tractable, unless
-      $\operatorname{P}=\operatorname{NP}$, 
-    \item very hard to approximate.
-    \end{itemize}
-  \end{corollary}
-\end{frame}
-
-\subsection{Distintas arquitecturas de sumadores}
-
-
-%\subsection{Hardness of PP-Partitioning of Genotype Matrices}
-
-
-\begin{frame}{Finding pp-partitions of genotype matrices.}
-  Now comes the general case:
-  \begin{itemize}
-  \item The inputs $M$ are \alert{genotype matrices}.
-  \item The inputs $M$ \alert{do not allow a perfect phylogeny}.
-  \item What is $\chi_{\operatorname{PP}}(M)$?
-  \end{itemize}
-  \begin{example}
-    \begin{columns}
-      \column{.3\textwidth}
-      $M\colon$
-      \footnotesize
-      \begin{tabular}{cccc}
-        2 & 2 & 2 & 2 \\
-        1 & 0 & 0 & 0 \\
-        0 & 0 & 0 & 1 \\
-        0 & 0 & 1 & 0 \\
-        0 & 2 & 2 & 0 \\
-        1 & 1 & 0 & 0 
-      \end{tabular}%
-      \only<2>
-      {%
-        \begin{tikzpicture}
-          \useasboundingbox (2.9,0);
-          
-          \draw [red, opacity=0.7,line width=1cm] (1.7 ,1.3) -- (1.7 ,-1.1);
-          \draw [blue,opacity=0.7,line width=5mm] (0.85,1.3) -- (0.85,-1.1)
-                                                  (2.55,1.3) -- (2.55,-1.1);
-        \end{tikzpicture}
-      }
-      \column{.6\textwidth}
-      \begin{overprint}
-        \onslide<1>
-        No perfect phylogeny is possible.
-        
-        \onslide<2>
-        \textcolor{blue!70!bg}{Perfect phylogeny}
-        
-        \textcolor{red!70!bg}{Perfect phylogeny}
-        
-        $\chi_{\operatorname{PP}}(M) = 2$.
-        
-      \end{overprint}
-    \end{columns}
-  \end{example}
-\end{frame}
-
-
-\begin{frame}{Bad news about pp-partitions of haplotype matrices.}
-  \begin{theorem}
-    Finding \alert{optimal pp-partition of genotype matrices}
-    is at least as hard as finding \alert{optimal colorings of
-      3-uniform hypergraphs}. 
-  \end{theorem}
-
-  \begin{proof}[Proof sketch]
-    \begin{enumerate}
-    \item Let $G$ be a 3-uniform hypergraph.
-    \item Build a matrix with a column for each vertex of $G$.
-    \item For each hyperedge of $G$ add four rows inducing\\ the submatrix
-      $\left(
-        \begin{smallmatrix}
-          2 & 2 & 2 \\
-          1 & 0 & 0 \\
-          0 & 1 & 0 \\
-          0 & 0 & 1
-        \end{smallmatrix}\right)
-      $.
-    \item The submatrix enforces that the three columns do not all lie
-      in the same perfect phylogeny. \qedhere
-    \end{enumerate}
-  \end{proof}
-\end{frame}
-
-\begin{frame}{Implications for pp-partitions of genotype matrices.}
-  \begin{corollary}
-    Even if we know $\chi_{\operatorname{PP}}(M) = 2$ for a genotype matrix $M$,\\
-    finding a pp-partition of any fixed size is still
-    \begin{itemize}
-    \item $\operatorname{NP}$-hard,
-    \item not fixed-parameter tractable, unless
-      $\operatorname{P}=\operatorname{NP}$, 
-    \item very hard to approximate.
-    \end{itemize}
-  \end{corollary}
-\end{frame}
-
+%\begin{frame}{What is haplotyping and why is it important?}
+%  You hopefully know this after the previous three talks\dots
+%\end{frame}
+%
+%\begin{frame}[t]{General formalization of haplotyping.}
+%  \begin{block}{Inputs}
+%    \begin{itemize}
+%    \item A \alert{genotype matrix} $G$.
+%    \item The \alert{rows} of the matrix are \alert{taxa / individuals}.
+%    \item The \alert{columns} of the matrix are \alert{SNP sites /
+%        characters}. 
+%    \end{itemize}
+%  \end{block}
+%  \begin{block}{Outputs}
+%    \begin{itemize}
+%    \item A \alert{haplotype matrix} $H$.
+%    \item Pairs of rows in $H$ \alert{explain} the rows of $G$.
+%    \item The haplotypes in $H$ are \alert{biologically plausible}. 
+%    \end{itemize}
+%  \end{block}
+%\end{frame}
+%
+%
+%\begin{frame}[t]{Our formalization of haplotyping.}
+%  \begin{block}{Inputs}
+%    \begin{itemize}
+%    \item A genotype matrix $G$.
+%    \item The rows of the matrix are individuals / taxa.
+%    \item The columns of the matrix are SNP sites / characters.
+%    \item<alert@1->
+%      The problem is directed: one haplotype is known.
+%    \item<alert@1->
+%      The input is biallelic: there are only two homozygous
+%      states (0 and 1) and one heterozygous state (2).
+%    \end{itemize}
+%  \end{block}
+%  \begin{block}{Outputs}
+%    \begin{itemize}
+%    \item A haplotype matrix $H$.
+%    \item Pairs of rows in $H$ explain the rows of $G$.
+%    \item<alert@1> The haplotypes in $H$ form a perfect phylogeny.
+%    \end{itemize}
+%  \end{block}
+%\end{frame}
+%
+%
+%\begin{frame}{We can do perfect phylogeny haplotyping efficiently, but
+%    \dots}
+%  \begin{enumerate}
+%  \item \alert{Data may be missing.}
+%    \begin{itemize}
+%    \item This makes the problem NP-complete \dots
+%    \item \dots even for very restricted cases.
+%    \end{itemize}
+%    \textcolor{green!50!black}{Solutions:}
+%    \begin{itemize}
+%    \item Additional assumption like the rich data hypothesis. 
+%    \end{itemize}
+%  \item \alert{No perfect phylogeny is possible.}
+%    \begin{itemize}
+%    \item This can be caused by chromosomal crossing-over effects.
+%    \item This can be caused by incorrect data.
+%    \item This can be caused by multiple mutations at the same sites.
+%    \end{itemize}
+%    \textcolor{green!50!black}{Solutions:}
+%    \begin{itemize}
+%    \item Look for phylogenetic networks.
+%    \item Correct data.
+%    \item<alert@1->
+%       Find blocks where a perfect phylogeny is possible.
+%    \end{itemize}
+%  \end{enumerate}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{How blocks help in perfect phylogeny haplotyping.}
+%  \begin{enumerate}
+%  \item Partition the site set into overlapping contiguous blocks.
+%  \item Compute a perfect phylogeny for each block and combine them.
+%  \item Use dynamic programming for finding the partition.
+%  \end{enumerate}
+%
+%  \begin{tikzpicture}
+%    \useasboundingbox (0,-1) rectangle (10,2);
+%    
+%    \draw[line width=2mm,dash pattern=on 1mm off 1mm]
+%      (0,1) -- (9.99,1) node[midway,above] {Genotype matrix}
+%      (0,0.6666) -- (9.99,0.6666)
+%      (0,0.3333) -- (9.99,0.3333)
+%      (0,0) -- (9.99,0) node[midway,below] {\only<1>{no perfect phylogeny}};
+%
+%    \begin{scope}[xshift=-.5mm]
+%      \only<2->
+%      {
+%        \draw[red,block]            (0,.5)   -- (3,.5)
+%          node[midway,below] {perfect phylogeny};
+%      }
+%        
+%      \only<3->
+%      {
+%        \draw[green!50!black,block] (2.5,.5)   -- (7,.5)
+%          node[pos=0.6,below] {perfect phylogeny};
+%      }
+%
+%      \only<4->
+%      {
+%        \draw[blue,block]           (6.5,.5) -- (10,.5)
+%          node[pos=0.6,below] {perfect phylogeny};
+%      }
+%    \end{scope}
+%  \end{tikzpicture}
+%\end{frame}
+%
+%\begin{frame}{Objective of the integrated approach.}
+%  \begin{enumerate}
+%  \item Partition the site set into \alert{noncontiguous} blocks. 
+%  \item Compute a perfect phylogeny for each block and combine them. 
+%  \item<alert@1-> Compute partition while computing perfect
+%    phylogenies. 
+%  \end{enumerate}
+%
+%  \begin{tikzpicture}
+%    \useasboundingbox (0,-1) rectangle (10,2);
+%
+%    \draw[line width=2mm,dash pattern=on 1mm off 1mm]
+%      (0,1) -- (9.99,1) node[midway,above] {Genotype matrix}
+%      (0,0.6666) -- (9.99,0.6666)
+%      (0,0.3333) -- (9.99,0.3333)
+%      (0,0) -- (9.99,0) node[midway,below] {\only<1>{no perfect phylogeny}};
+%
+%    \only<2->
+%    {
+%      \begin{scope}[xshift=-0.5mm]
+%        \draw[red,block] (0,.5)   -- (3,.5) 
+%          node[midway,below] {perfect phylogeny}
+%                         (8,.5) -- (9,.5);
+%
+%        \draw[green!50!black,block]
+%          (3,.5)   -- (6,.5)
+%            node[pos=0.6,below] {perfect phylogeny}
+%          (6.4,.5)   -- (8,.5)
+%          (9,.5) -- (10,.5);
+%
+%        \draw[blue,block] (6,.5) -- (6.4,.5)
+%          node[midway,below=5mm] {perfect phylogeny};
+%      \end{scope}
+%    }
+%  \end{tikzpicture}
+%\end{frame}
+%
+%
+%\begin{frame}{The formal computational problem.}
+%
+%  We are interested in the computational complexity of \\
+%  \alert{the function \alert{$\chi_{\operatorname{PP}}$}}:
+%  \begin{itemize}
+%  \item It gets genotype matrices as input.
+%  \item It maps them to a number $k$.
+%  \item This number is minimal such that the sites can be
+%    covered by $k$ sets, each admitting a perfect phylogeny.
+%    \\
+%    (We call this a \alert{pp-partition}.)
+%  \end{itemize}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Finding pp-partitions of haplotype matrices.}
+%  We start with a special case:
+%  \begin{itemize}
+%  \item The inputs $M$ are \alert{already haplotype matrices}.
+%  \item The inputs $M$ \alert{do not allow a perfect phylogeny}.
+%  \item What is $\chi_{\operatorname{PP}}(M)$?
+%  \end{itemize}
+%  \begin{example}
+%    \begin{columns}
+%      \column{.3\textwidth}
+%      $M\colon$
+%      \footnotesize
+%      \begin{tabular}{cccc}
+%        0 & 0 & 0 & 1 \\
+%        0 & 1 & 0 & 0 \\
+%        1 & 0 & 0 & 0 \\
+%        0 & 1 & 0 & 0 \\
+%        1 & 0 & 0 & 0 \\
+%        0 & 1 & 0 & 1 \\
+%        1 & 1 & 0 & 0 \\
+%        0 & 0 & 1 & 0 \\
+%        1 & 0 & 1 & 0
+%      \end{tabular}%
+%      \only<2>
+%      {%
+%        \begin{tikzpicture}
+%          \useasboundingbox (2.9,0);
+%
+%          \draw [red, opacity=0.7,line width=1cm] (1.7 ,1.9) -- (1.7 ,-1.7);
+%          \draw [blue,opacity=0.7,line width=5mm] (0.85,1.9) -- (0.85,-1.7)
+%                                                  (2.55,1.9) -- (2.55,-1.7);
+%        \end{tikzpicture}
+%      }
+%      \column{.6\textwidth}
+%      \begin{overprint}
+%        \onslide<1>
+%        No perfect phylogeny is possible.
+%        
+%        \onslide<2>
+%        \textcolor{blue!70!bg}{Perfect phylogeny}
+%        
+%        \textcolor{red!70!bg}{Perfect phylogeny}
+%        
+%        $\chi_{\operatorname{PP}}(M) = 2$.
+%        
+%      \end{overprint}
+%    \end{columns}
+%  \end{example}
+%\end{frame}
+%
+%\begin{frame}{Bad news about pp-partitions of haplotype matrices.}
+%  \begin{theorem}
+%    Finding \alert{optimal pp-partition of haplotype matrices}\\
+%    is equivalent to finding \alert{optimal graph colorings}.
+%  \end{theorem}
+%
+%  \begin{proof}[Proof sketch for first direction]
+%    \begin{enumerate}
+%    \item Let $G$ be a graph.
+%    \item Build a matrix with a column for each vertex of $G$.
+%    \item For each edge of $G$ add four rows inducing\\the
+%      submatrix $\left(
+%        \begin{smallmatrix}
+%          0 & 0 \\
+%          0 & 1 \\
+%          1 & 0 \\
+%          1 & 1
+%        \end{smallmatrix}\right)$.
+%    \item The submatrix enforces that the columns lie in different
+%      perfect phylogenies. \qedhere  
+%    \end{enumerate}
+%  \end{proof}
+%\end{frame}
+%
+%\begin{frame}{Implications for pp-partitions of haplotype matrices.}
+%  \begin{corollary}
+%    If $\chi_{\operatorname{PP}}(M) = 2$ for a haplotype matrix $M$,
+%    we can find an optimal pp-partition in polynomial time. 
+%  \end{corollary}
+%
+%  \begin{corollary}
+%    Computing $\chi_{\operatorname{PP}}$ for haplotype matrices is
+%    \begin{itemize}
+%    \item $\operatorname{NP}$-hard,
+%    \item not fixed-parameter tractable, unless
+%      $\operatorname{P}=\operatorname{NP}$, 
+%    \item very hard to approximate.
+%    \end{itemize}
+%  \end{corollary}
+%\end{frame}
+%
+%\subsection{Distintas arquitecturas de sumadores}
+%
+%
+%%\subsection{Hardness of PP-Partitioning of Genotype Matrices}
+%
+%
+%\begin{frame}{Finding pp-partitions of genotype matrices.}
+%  Now comes the general case:
+%  \begin{itemize}
+%  \item The inputs $M$ are \alert{genotype matrices}.
+%  \item The inputs $M$ \alert{do not allow a perfect phylogeny}.
+%  \item What is $\chi_{\operatorname{PP}}(M)$?
+%  \end{itemize}
+%  \begin{example}
+%    \begin{columns}
+%      \column{.3\textwidth}
+%      $M\colon$
+%      \footnotesize
+%      \begin{tabular}{cccc}
+%        2 & 2 & 2 & 2 \\
+%        1 & 0 & 0 & 0 \\
+%        0 & 0 & 0 & 1 \\
+%        0 & 0 & 1 & 0 \\
+%        0 & 2 & 2 & 0 \\
+%        1 & 1 & 0 & 0 
+%      \end{tabular}%
+%      \only<2>
+%      {%
+%        \begin{tikzpicture}
+%          \useasboundingbox (2.9,0);
+%          
+%          \draw [red, opacity=0.7,line width=1cm] (1.7 ,1.3) -- (1.7 ,-1.1);
+%          \draw [blue,opacity=0.7,line width=5mm] (0.85,1.3) -- (0.85,-1.1)
+%                                                  (2.55,1.3) -- (2.55,-1.1);
+%        \end{tikzpicture}
+%      }
+%      \column{.6\textwidth}
+%      \begin{overprint}
+%        \onslide<1>
+%        No perfect phylogeny is possible.
+%        
+%        \onslide<2>
+%        \textcolor{blue!70!bg}{Perfect phylogeny}
+%        
+%        \textcolor{red!70!bg}{Perfect phylogeny}
+%        
+%        $\chi_{\operatorname{PP}}(M) = 2$.
+%        
+%      \end{overprint}
+%    \end{columns}
+%  \end{example}
+%\end{frame}
+%
+%
+%\begin{frame}{Bad news about pp-partitions of haplotype matrices.}
+%  \begin{theorem}
+%    Finding \alert{optimal pp-partition of genotype matrices}
+%    is at least as hard as finding \alert{optimal colorings of
+%      3-uniform hypergraphs}. 
+%  \end{theorem}
+%
+%  \begin{proof}[Proof sketch]
+%    \begin{enumerate}
+%    \item Let $G$ be a 3-uniform hypergraph.
+%    \item Build a matrix with a column for each vertex of $G$.
+%    \item For each hyperedge of $G$ add four rows inducing\\ the submatrix
+%      $\left(
+%        \begin{smallmatrix}
+%          2 & 2 & 2 \\
+%          1 & 0 & 0 \\
+%          0 & 1 & 0 \\
+%          0 & 0 & 1
+%        \end{smallmatrix}\right)
+%      $.
+%    \item The submatrix enforces that the three columns do not all lie
+%      in the same perfect phylogeny. \qedhere
+%    \end{enumerate}
+%  \end{proof}
+%\end{frame}
+%
+%\begin{frame}{Implications for pp-partitions of genotype matrices.}
+%  \begin{corollary}
+%    Even if we know $\chi_{\operatorname{PP}}(M) = 2$ for a genotype matrix $M$,\\
+%    finding a pp-partition of any fixed size is still
+%    \begin{itemize}
+%    \item $\operatorname{NP}$-hard,
+%    \item not fixed-parameter tractable, unless
+%      $\operatorname{P}=\operatorname{NP}$, 
+%    \item very hard to approximate.
+%    \end{itemize}
+%  \end{corollary}
+%\end{frame}
+%
 
 \section{Implementación}
 
 \subsection{Diseño digital}
+\begin{frame}{Diseño digital}
+  Selección de la arquitectura.
 
-\begin{frame}{Automatic optimal pp-partitioning is hopeless, but\dots}
-  \begin{itemize}
-  \item The hardness results are \alert{worst-case} results for\\
-    \alert{highly artificial inputs}.
-  \item \alert{Real biological data} might have special properties
-    that make the problem \alert{tractable}.
-  \item One such property is that perfect phylogenies are often
-    perfect \alert{path} phylogenies:
+\begin{figure}[h]
+  \centering
+\includegraphics[scale=0.39]{figuras/retardo-bits.png}
+  \caption{Retardo respecto al tamaño de los operandos}
+  \label{retardo-bits}
+\end{figure}
 
-    In HapMap data, in 70\% of the blocks where a perfect phylogeny
-    is possible a perfect path phylogeny is also possible.
-  \end{itemize}  
+
+\end{frame}
+\begin{frame}{Diseño digital}
+  Selección de la arquitectura.
+
+\begin{figure}[h]
+  \centering
+\includegraphics[scale=0.39]{figuras/area-bits.png}
+\vspace{-1pt}
+  \caption{Área respecto al tamaño de los operandos}
+  \label{area-bits}
+\vspace{-15pt}
+\end{figure}
+\end{frame}
+
+\begin{frame}{}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Arquitectura}} & \multicolumn{1}{c|}{\textbf{Retardo Máx.   }} & \multicolumn{1}{c|}{\textbf{Área}} \\ \hline
+Ripple Carry  & \(O(n)\) & \(O(n)\) \\ \hline
+Carry Look-Ahead  & \(O(\log_2(n))\) & \(O(n\log_2(n))\) \\ \hline
+Ladner-Fisher &\( O(\log_2(n))\) & \(O(n\log_2(n))   \) \\ \hline
+Sklansky &\( O(\log_2(n))\) & \(O(n\log_2(n))\) \\ \hline
+Kogge-Stone & \( O(\log_2(n))\) & \(O(n\log_2n)\)\\ \hline
+%Han-Carlson & \( O(\log_2(n))\) &... \\ \hline % Lo quito ya que no encuentro la función de complejidad de área.
+Brent-Kung & $O(\log_2(n))$ & \(O(n)\) \\ \hline
+\end{tabular}
+\caption{Resumen de las funciones de retardo y área de algunos sumadores}\label{tabla:sumadores}
+\end{table}
+\hyperlink{sumadorPP}{\beamergotobutton{Implementación}}
+  \hypertarget{return}{}
+
+\end{frame}
+%----------------------------------------------------------------------------------
+\begin{frame}{Carry Look-ahead}
+
+Ya que una vez que el acarreo en la posición \(i\) es conocido, se puede calcular la suma como:
+\begin{equation}\label{s_i}
+s_i = a_i \oplus b_i\oplus c_i
+\end{equation}
+
+El acarreo se \emph{genera} ó se \emph{propaga}, según las siguientes ecuaciones:
+
+%\vee es el OR
+%\wedge es el AND
+%\oplus es el XOR
+%$$a_i=\lnot{a_i}\wedge\lnot{b_i}=\lnot{(a_i \vee b_i)}$$
+$$g_i=a_ib_i$$
+$$p_i=a_i \oplus b_i$$
+
+Cálculo recursivo del acarreo:
+\begin{equation}
+%c_{i+1}=g_i\vee (c_i \wedge p_i)
+c_{i+1}=g_i + c_i p_i
+\end{equation}
+
+\end{frame}
+%----------------------------------------------------------------------------------
+\begin{frame}{Desenrollando la recurrencia del acarreo}
+Uno puede desenrollar esta fórmula recursiva del acarreo hasta lograr una función que dependa directamente de los operandos ($a$ y $b$) y del acarreo de entrada $c_{\text{in}}$:
+\scriptsize{
+\begin{equation}
+\begin{aligned}
+c_i &= g_{i-1} + p_{i-1}c_{i-1}\notag\\
+&=g_{i-1}+p_{i-1}(g_{i-2}+p_{i-2}c_{i-2})=g_{i-1}+p_{i-1}g_{i-2}+p_{i-1}p_{i-2}c_{i-2}\notag\\
+&=g_{i-1} + p_{i-1}g_{i-2}+p_{i-1}p_{i-2}g_{i-3}+p_{i-1}p_{i-2}p_{i-3}c_{i-3}\notag\\
+&=g_{i-1} +p_{i-1}g_{i-2}+p_{i-1}p_{i-2}g_{i-3}+p_{i-1}p_{i-2}p_{i-3}g_{i-4}+p_{i-1}p_{i-2}p_{i-3}p_{i-4}c_{i-4}\label{gyp}	
+\end{aligned}
+\end{equation}
+}
+\end{frame}
+
+%----------------------------------------------------------------------------------
+\begin{frame}
+Podemos interpretar estas ecuaciones de la siguiente forma: las cuatro posiciones de bits propagan colectivamente un acarreo $c_\text{in}$ si y solo sí cada una de las posiciones propaga; y el bloque gener	a un acarreo si en la posición $i+3$ se genera uno, o se podrouce en la posición $i+2$ y es propagado por la posición $i+3$, etc.
+\end{frame}
+%----------------------------------------------------------------------------------
+\begin{frame}{Problema de prefijos paralelos}
+
+\begin{equation}
+\begin{aligned}
+\text{Dado:}\\
+ & \text{Entradas:} x_0,x_1,\dotsc,x_{k-1} \\
+ & \text{Un operador + asociativo}\\ 
+\text{Computar}:&x_0 \nonumber \\
+&x_0+x_1 \nonumber \\ 
+&x_0+x_1+x_2 \nonumber \\ 
+&\vdots \nonumber \\ 
+&x_0+x_1+x_2+\dotsb+x_{k-1} \nonumber
+\end{aligned}
+\end{equation}
+
 \end{frame}
 
 
-\begin{frame}{Example of a perfect path phylogeny.}
-  \begin{columns}[t]
-    \column{.3\textwidth}
-    \begin{exampleblock}{Genotype matrix}
-      $G\colon$
-      \begin{tabular}{ccc}
-        A & B & C \\\hline
-        2 & 2 & 2 \\
-        0 & 2 & 0 \\
-        2 & 0 & 0 \\
-        0 & 2 & 2 
-      \end{tabular}
-    \end{exampleblock}
-
-    \column{.3\textwidth}
-    \begin{exampleblock}{Haplotype matrix}
-      $H\colon$
-      \begin{tabular}{ccc}
-        A & B & C \\\hline
-        1 & 0 & 0 \\
-        0 & 1 & 1 \\
-        0 & 0 & 0 \\
-        0 & 1 & 0 \\
-        0 & 0 & 0 \\
-        1 & 0 & 0 \\
-        0 & 0 & 0 \\
-        0 & 1 & 1 
-      \end{tabular}
-    \end{exampleblock}
-
-    \column{.4\textwidth}
-    \begin{exampleblock}{Perfect path phylogeny}
-      \begin{center}
-        \begin{tikzpicture}[auto,thick]
-          \tikzstyle{node}=%
-          [%
-            minimum size=10pt,%
-            inner sep=0pt,%
-            outer sep=0pt,%
-            ball color=example text.fg,%
-            circle%
-          ]
-        
-          \node [node] {} [->]
-            child {node [node] {} edge from parent node[swap]{A}}
-            child {node [node] {}
-              child {node [node] {} edge from parent node{C}}
-              edge from parent node{B}
-            };
-        \end{tikzpicture}
-      \end{center}
-    \end{exampleblock}
-  \end{columns}
+%----------------------------------------------------------------------------------
+\begin{frame}{Cómputo del acarreo como un problema de prefijos paralelos}
+ 
+Pensemos la ecuación \ref{gyp} de la siguiente forma, asumiendo que $c_0=c_\text{in}$ viene desde otro bloque:
+\begin{equation}
+\begin{aligned}
+g_{[i,i+3]} &= g_{i+3}+g_{i+2}p_{i+3}+g_{i+1}p_{i+2}p_{i+3}+g_{i}p_{i+1}p_{i+2}p_{i+3}\nonumber\\
+p_{[i,i+3]} &= p_{i}p_{i+1}p_{i+2}p_{i+3}\nonumber
+\end{aligned}
+\end{equation}
 \end{frame}
+%----------------------------------------------------------------------------------
+
+\begin{frame}{Cómputo del acarreo como un problema de prefijos paralelos}
+  \scriptsize{
+\begin{equation}\label{eq:ppProblem}
+\begin{aligned}
+\text{Dados:}\\
+ & \text{Entradas:} (g_0,p_0),(g_1,p_1),\dotsc,(g_{k-1},p_{k-1}) \\
+ & \text{Un operador} \circ \text{asociativo}\\ 
+\text{Computar}:\\
+(G_0,P_0) = &(g_{[0,0]},p_{[0,0]})\\
+(G_1,P_1) = &(g_{[0,0]},p_{[0,0]})\circ(g_{[0,1]},p_{[0,1]})\\
+&\vdots  \\
+(G_{k-1},P_{k-1}) = &(g_{[0,0]},p_{[0,0]})\circ(g_{[0,1]},p_{[0,1]})\dotsc \circ(g_{[0,k-2]},p_{[0,k-2]})\circ(g_{[0,k-1]},p_{[0,k-1]}) \nonumber
+\end{aligned}
+\end{equation}
+}
+\end{frame}
+%-------------------------------------------------------------------------
+\begin{frame}{Operador de Brent-Kung}
+El operador $\circ$ se define como:
+\begin{equation}
+(g,p) \circ (\hat{g},\hat{p}) = (g\vee(p\wedge\hat{g}),p\wedge\hat{g})\label{gap}
+\end{equation}
+
+\begin{figure}[h!]
+  \centering
+\includegraphics[scale=1.0]{figuras/dotOp_schem.pdf}
+%\vspace{-5pt}
+  \caption{Operator Punto de Brent-Kung}
+  \label{dotOp}
+%\vspace{-15pt}
+\end{figure}
+\end{frame}
+%-------------------------------------------------------------------------
+
+\begin{frame}[label=sumadorPP]
+\begin{figure}[h]
+  \centering
+\includegraphics[scale=1.0]{figuras/arquitectura_schem_generico.eps}
+  \caption{Sumador de prefijo paralelo}
+  \label{fig:ppadder}
+\end{figure}
+
+\end{frame}
+%----------------------------------------------------------------------------------
+\begin{frame}
+
+\begin{figure}[h!]
+\vspace{-5pt}
+  \centering
+\includegraphics[scale=1.4]{figuras/bKung16.eps}
+  \caption{Red de prefijo paralelo para Brent-Kung (ejemplo de 16 bits)}
+\label{bKung16}
+\vspace{-10pt}
+\end{figure}
+
+\end{frame}
+%-------------------------------------------------------------------------
+\begin{frame}
+\begin{figure}[h]
+  \centering
+\includegraphics[scale=1.0]{figuras/arquitectura_schem.pdf}
+  \caption{Sumador de Brent-Kung}
+  \label{fig:bkungadder}
+\end{figure}
+\end{frame}
+%-------------------------------------------------------------------------
 
 
-\begin{frame}{The modified formal computational problem.}
-  We are interested in the computational complexity of \\
-  the function $\chi_{\alert{\operatorname{PPP}}}$:
+\begin{frame}
+\begin{figure}[h!]
+\vspace{-5pt}
+  \centering
+\includegraphics[scale=0.7]{figuras/sklansky16.eps}
+  \caption{Red de prefijo paralelo para Sklansky (ejemplo de 16 bits)}
+\label{fig:sklansky16}
+\vspace{-10pt}
+\end{figure}\end{frame}
+
+%-------------------------------------------------------------------------
+\begin{frame}{Implementación de los circuitos en lenguaje de descripción de hardware}
+\end{frame}
+%-------------------------------------------------------------------------
+\begin{frame}{Nuevos lenguajes de descripción de hardware}
+ \begin{itemize}
+    \item Usar un único lenguaje para describir, simular, verificar e implementar el circuito
+    \item Los circuitos se describen en Haskell, Scala o Python, el HDL es simplemente un conjunto de módulos o librerías
+    \item Generar automáticamente una descripción en VHDL o Verilog
+    \item Describir circuitos que construimos a partir de subcircuitos, además de la posibilidad de reutilizar fácilmente patrones de conexión
+ \end{itemize}
+
+
+\end{frame}
+%-------------------------------------------------------------------------
+
+\begin{frame}{¿Por qué Lava?}
   \begin{itemize}
-  \item It gets genotype matrices as input.
-  \item It maps them to a number $k$.
-  \item This number is minimal such that the sites can be
-    covered by $k$ sets, each admitting a perfect \alert{path} phylogeny.
-    \\
-    (We call this a ppp-partition.)
+    \item Conocimiento previo del lenguaje
+    \item Genera un netlist VHDL (Fácil integración con Electric)
+    \item Los circuitos son descriptos como funciones que operan sobre listas, tuplas o sobre circuitos
+    \item Fácil integración con un SAT solver para verificación formal
+  \end{itemize}
+
+\end{frame}
+%-------------------------------------------------------------------------
+
+\begin{frame}[fragile]{Operador de Brent-Kung en Lava}
+A partir de la definición del operador:
+\begin{equation*}
+(g,p) \circ (\hat{g},\hat{p}) = (g\vee(p\wedge\hat{g}),p\wedge\hat{g})\label{gap}
+\end{equation*}
+En Lava la escribimos:
+
+\lstset{language=Haskell}
+\begin{lstlisting}
+dotOp ((g1, p1) ,(g, p)) = (go, po)
+   where
+      go = or2 (g, and2 (p, g1))
+      po = and2 (p, p1)
+\end{lstlisting}
+\end{frame}
+%-------------------------------------------------------------------------
+\begin{frame}[fragile]{Red de prefijo paralelo de Brent-Kung en Lava}
+Funciones auxiliares:
+  \begin{figure}
+    \centering
+    \includegraphics[scale=2.00]{figuras/wrapR.eps}
+ \end{figure}
+\end{frame}
+%-------------------------------------------------------------------------
+\begin{frame}[fragile]
+  \begin{lstlisting}
+comb []     = []
+comb [a]    = []
+comb (a:as) = dop [a, head as] ++ comb (tail as)
+--
+posComb (a:as)  = a: (comb (init as))++ [last as]
+--
+half p = unzipl ->- (id -|- p) ->- zipl
+--
+wrap p = comb ->- half p ->- posComb 
+\end{lstlisting}
+\end{frame}
+%-------------------------------------------------------------------------
+\begin{frame}[fragile]
+\noindent Luego finalemente, podemos describir {\verb|ppNet|}:
+
+ \begin{figure}
+    \centering
+    \includegraphics[scale=2.0]{figuras/sheeranrecurrence.eps}
+ \end{figure}
+
+\begin{lstlisting}
+ppNet [a]    = []
+ppNet [a, b] = dop [a, b]
+ppNet as     = wrap ppNet as
+\end{lstlisting}
+
+\end{frame}
+%-------------------------------------------------------------------------
+
+
+
+
+
+
+%\begin{frame}{Automatic optimal pp-partitioning is hopeless, but\dots}
+%  \begin{itemize}
+%  \item The hardness results are \alert{worst-case} results for\\
+%    \alert{highly artificial inputs}.
+%  \item \alert{Real biological data} might have special properties
+%    that make the problem \alert{tractable}.
+%  \item One such property is that perfect phylogenies are often
+%    perfect \alert{path} phylogenies:
+%
+%    In HapMap data, in 70\% of the blocks where a perfect phylogeny
+%    is possible a perfect path phylogeny is also possible.
+%  \end{itemize}  
+%\end{frame}
+%
+%
+%\begin{frame}{Example of a perfect path phylogeny.}
+%  \begin{columns}[t]
+%    \column{.3\textwidth}
+%    \begin{exampleblock}{Genotype matrix}
+%      $G\colon$
+%      \begin{tabular}{ccc}
+%        A & B & C \\\hline
+%        2 & 2 & 2 \\
+%        0 & 2 & 0 \\
+%        2 & 0 & 0 \\
+%        0 & 2 & 2 
+%      \end{tabular}
+%    \end{exampleblock}
+%
+%    \column{.3\textwidth}
+%    \begin{exampleblock}{Haplotype matrix}
+%      $H\colon$
+%      \begin{tabular}{ccc}
+%        A & B & C \\\hline
+%        1 & 0 & 0 \\
+%        0 & 1 & 1 \\
+%        0 & 0 & 0 \\
+%        0 & 1 & 0 \\
+%        0 & 0 & 0 \\
+%        1 & 0 & 0 \\
+%        0 & 0 & 0 \\
+%        0 & 1 & 1 
+%      \end{tabular}
+%    \end{exampleblock}
+%
+%    \column{.4\textwidth}
+%    \begin{exampleblock}{Perfect path phylogeny}
+%      \begin{center}
+%        \begin{tikzpicture}[auto,thick]
+%          \tikzstyle{node}=%
+%          [%
+%            minimum size=10pt,%
+%            inner sep=0pt,%
+%            outer sep=0pt,%
+%            ball color=example text.fg,%
+%            circle%
+%          ]
+%        
+%          \node [node] {} [->]
+%            child {node [node] {} edge from parent node[swap]{A}}
+%            child {node [node] {}
+%              child {node [node] {} edge from parent node{C}}
+%              edge from parent node{B}
+%            };
+%        \end{tikzpicture}
+%      \end{center}
+%    \end{exampleblock}
+%  \end{columns}
+%\end{frame}
+%
+%
+%\begin{frame}{The modified formal computational problem.}
+%  We are interested in the computational complexity of \\
+%  the function $\chi_{\alert{\operatorname{PPP}}}$:
+%  \begin{itemize}
+%  \item It gets genotype matrices as input.
+%  \item It maps them to a number $k$.
+%  \item This number is minimal such that the sites can be
+%    covered by $k$ sets, each admitting a perfect \alert{path} phylogeny.
+%    \\
+%    (We call this a ppp-partition.)
+%  \end{itemize}
+%\end{frame}
+%-------------------------------------------------------------
+\subsection{Diseño físico}
+\begin{frame}{Flujo de diseño físico}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.43]{figuras/DisenioFisico.pdf}
+  \label{fig:diseñoFísico}
+\end{figure}
+\end{frame}
+%------------------------------------------------------------
+\begin{frame}{Selección del proceso de fabicación}
+  Seleccionamos TSMC 180nm por las siguientes razones:
+  \begin{itemize}
+      \item Existen herramientas de software libre para esta tecnología.
+      \item Bajo costo de fabricación 
+      \item Posibilidad de integrar sistemas de gran complejidad y alta performance
+    \end{itemize}
+
+\end{frame}
+%-------------------------------------------------------------
+\begin{frame}{Selección del proceso de fabicación}
+Ejemplos de microprocesadores que fueron fabricados en esta tecnología:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lc@{}}
+\toprule
+Procesador             & Año de lanzamiento \\ \midrule
+Intel Coppermine E                & 1999             \\
+AMD Athlon Thunderbird      & 2000             \\
+Intel Celeron (Willamette)               & 2002            \\
+Motorola PowerPC 7445 y 7455 (Apollo 6) & 2002           \\ \bottomrule
+\end{tabular}
+\caption{Procesadores fabricados en CMOS 180nm }
+\label{tab:procesadores180nm}
+\end{table}
+\end{frame}
+%-------------------------------------------------------------
+\begin{frame}{}
+\end{frame}
+%-------------------------------------------------------------
+\begin{frame}{Reglas de diseño para TSMC 180nm}
+  MOSIS denomina a las reglas de diseño \textbf{SCN6M\_DEEP}, que significa:
+%El proceso nos ofrece 6 capas de metal (aluminio) para la interconexión, 1 capa de silicio policristalino (\emph{poly}) para crear la compuerta y también para la interconexión de las mismas (distancias cortas sólamente, por su mayor resistividad que el cobre), con 2 tipos de óxidos para crear el aislante de las compuertas, los que pueden ser alimentados con tensión máxima de 1,8V, y los que pueden ser alimentados con 3,3V (pensados principalmente como transistores para los circuitos de entrada y salida del chip). MOSIS denomina a las reglas de diseño que utilizaremos para esta tecnología como SCN6M\_DEEP, que significa:\begin{frame}{180nm TSMC}
+  \begin{itemize}
+    \item S: Escalable
+    \item C: Tecnología de fabricación CMOS
+    \item N: Pozo N.
+    \item 6M: 6 metales y un conductor policristalino (\emph{poly}) para crear las compuertas.
+    \item DEEP: Reglas \emph{deep submicron} (lamda 90nm).
   \end{itemize}
 \end{frame}
 %-------------------------------------------------------------
+\begin{frame}{Mapeo de lógica a compuertas}
+Mapeo de una función lógica a una celda estándar
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.59]{figuras/map-xnor.png}
+  \label{fig:map-xnor}
+\end{figure}
+\end{frame}
+%------------------------------------------------------------
+\begin{frame}{Librería de celdas estándar}
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.20\textwidth}
+                \includegraphics[width=1.075\textwidth]{figuras/and2_1x.png}
+                \caption{and2}
+                \label{fig:gull}
+        \end{subfigure}\quad
+        \begin{subfigure}[b]{0.20\textwidth}
+                \includegraphics[width=1\textwidth]{figuras/or2_1x.png}
+                \caption{or2}
+                \label{fig:tiger}
+        \end{subfigure} 
+        \begin{subfigure}[b]{0.20\textwidth}
+                \includegraphics[width=1.31\textwidth]{figuras/xor2_1x.png}
+                \caption{xor}
+                \label{fig:mouse}
+        \end{subfigure}\qquad
+        \begin{subfigure}[b]{0.20\textwidth}
+                \includegraphics[width=0.845\textwidth]{figuras/id_1x_.png}
+                \caption{buffer}
+                \label{fig:mouse}
+        \end{subfigure}
+        \caption{Conjunto de celdas estándar}\label{fig:animals}
+\end{figure}
+\end{frame}
 
-\subsection{Diseño físico}
-\begin{frame}{Área}
+%------------------------------------------------------------
+
+\begin{frame}{Celdas estándar}
+Grilla de interconexionado y riel de alimentación de las celdas estándar de $128 \lambda$
+ \begin{figure}[h]
+\centering
+\includegraphics[scale=.7]{figuras/CeldEstandarAlto.eps}
+  \label{fig:pitchCeldaEstandar}
+\end{figure}
+\end{frame}
+%------------------------------------------------------------
+
+
+
+\begin{frame}{Ubicación y conexionado del \textit{ripple carry adder}}
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}cccc|ccc|ccc@{}}
+\toprule
+\multicolumn{1}{l}{\textbf{Ripple Carry}} & \multicolumn{3}{c}{8 bits}    & \multicolumn{3}{c}{16 bits}      & \multicolumn{3}{c}{32 bits}      \\ \midrule
+filas                                     & 3      & \alert{4}      & 5      & 5       & \alert{6}       & 7       & \alert{8}       & 7       & 6       \\
+ancho                                     & 1297   & 966    & 843    & 1562    & 1350    & 1142    & 1881    & 2169    & 2581    \\
+alto                                      & 665    & 839    & 958    & 1227    & 1196    & 1600    & 2000    & 1850    & 1360    \\
+área                                      & 862505 & 810474 & 807594 & 1916574 & 1614600 & 1827200 & 3762000 & 4012650 & 3510160 \\
+ancho/alto                                & 0,51   & 0,87   & 1,14   & 0,79    & 0,89    & 1,40    & 1,06    & 0,85    & 0,53    \\ \bottomrule
+\end{tabular}
+}
+\caption{Las dimensiones de los lados y el área están en $\lambda$ y $\lambda^2$ respectivamente.}
+\label{tab:rippleCarry}
+\end{table}
+
+\end{frame}
+%------------------------------------------------------------
+\begin{frame}{Ubicación y conexionado del sumador de \textit{Brent-Kung}}
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}cccc|cccc|cccc@{}}
+\toprule
+\textbf{Brent-Kung} & \multicolumn{3}{c}{8 bits}      & \multicolumn{4}{c}{16 bits}                & \multicolumn{4}{c}{32 bits}                \\ \midrule
+filas               & 3       & \alert{4}     & 5       & 4       & 5       & \alert{6}       & 7       & 6       & \alert{7}       & 8       & 9       \\
+ancho               & 1386    & 1090   & 945     & 2268    & 1757    & 1545    & 1429    & 3196    & 1983    & 2569    & 2424    \\
+alto                & 746     & 910    & 1199    & 1255    & 1436    & 1540    & 1959    & 2024    & 2871    & 2927    & 2882    \\
+área                & 1033956 & 991900 & 1133055 & 2846340 & 2523052 & 2379300 & 2799411 & 6468704 & 5693193 & 7519463 & 6985968 \\
+ancho/alto          & 0,54    & 0,83   & 1,27    & 0,55    & 0,82    & 1,00    & 1,37    & 0,63    & 1,45    & 1,14    & 1,19    \\ \bottomrule
+\end{tabular}
+}
+\caption{Las dimensiones de los lados y el área están en $\lambda$ y $\lambda^2$ respectivamente.}
+
+\label{tab:brent-kung}
+\end{table}
+
+
+\end{frame}
+%------------------------------------------------------------
+\begin{frame}{Ubicación y conexionado del sumador de \textit{Sklansky}}
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}cccc|cccc|ccc@{}}
+\toprule
+\textbf{Sklansky} & \multicolumn{3}{c}{8 bits}       & \multicolumn{4}{c}{16 bits}                & \multicolumn{3}{c}{32 bits}      \\ \midrule
+filas              & 3       & \alert{4}       & 5       & 4       & \alert{5}       & 6       & 7       & 6       & \alert{7}       & 8       \\
+ancho              & 1516    & 1167    & 954     & 3538    & 2042    & 1825    & 1536    & 3678    & 3229    & 2860    \\
+alto               & 810     & 973     & 1252    & 1345    & 1581    & 1878    & 2063    & 2639    & 2695    & 3072    \\
+área               & 1227960 & 1135491 & 1194408 & 4758610 & 3228402 & 3427350 & 3168768 & 9706242 & 8702155 & 8785920 \\
+ancho/alto         & 0,53    & 0,83    & 1,31    & 0,38    & 0,77    & 1,03    & 1,34    & 0,72    & 0,83    & 1,07    \\ \bottomrule
+\end{tabular}
+}
+\caption{Las dimensiones de los lados y el área están en $\lambda$ y $\lambda^2$ respectivamente.}
+\label{tab:sklansky}
+\end{table}
+\end{frame}
+%------------------------------------------------------------
+\begin{frame}{\textit{Layout} de todas las arquitecturas y tamaños}
   \begin{figure}
   \includegraphics[scale=0.450]{figuras/layout-disenos.pdf}
   \end{figure}
-  \end{frame}
+\end{frame}
 %-------------------------------------------------------------
-\begin{frame}{Performance}
+
+\begin{frame}{Simulación post \emph{layout} para calcular performance y potencia}
+Realizamos extracción de parásitos del \cursi{layout} y utililizamos un motor de simulación analógico tipo SPICE, llamado gnucap.
+\end{frame}
+%-------------------------------------------------------------
+\begin{frame}{Flujo para simulaciones analógicas}
+ \begin{figure}[h]
+  \centering
+\includegraphics[scale=0.68]{figuras/analog-flow.eps}
+\label{fig:aflow}
+%\vspace{-10pt}
+\end{figure}
+\end{frame}
+%%-------------------------------------------------------------
+\begin{frame}{Retardo de propagación}
+  \alert{Definición:}
+
+Retardo de propagación de un inversor:
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.65]{figuras/tiempo_retardo_tpHL-tpLH.eps}
+  \label{fig:propagationDelay}
+\end{figure}
+
+Se define usualmente el retardo de propagación como:
+
+$$ t_p = \frac{t_{pLH} + t_{pHL}}{2} $$
+
+\end{frame}
+%-------------------------------------------------------------
+\begin{frame}{Simulación post \emph{layout} para calcular performance}
+\begin{figure}
+  \centering
+\includegraphics[scale=.36]{figuras/sim_rca8bits_.eps}
+\end{figure}
+\end{frame}
+%-------------------------------------------------------------
+\begin{frame}{Simulación post \emph{layout} para calcular performance }
+Sumador de 8 bits de \cursi{ripple carry}
+\begin{figure}
+  \centering
+ \includegraphics[scale=.29]{figuras/rca8bits_zoom.eps}
+\end{figure}
+
+$$t_{pHL} = t_2 - t_0 = 5.01~\ns - 1.8~\ns = 3.21~\ns$$
+$$t_{pLH} = t_3 - t_1 = 7.05~\ns - 3.61~\ns = 3.44~\ns$$
+$$t_p = \frac{(t_{pHL} + t_{pLH} )}{2} = 3.325~\ns$$
+\end{frame}
+
+%-------------------------------------------------------------
+\begin{frame}{Potencia promedio disipada}
+  \alert{Definición:}
+
+La potencia promedio disipada total la podemos calcular si conocemos la corriente instantánea que brinda la fuente de tensión $V_{DD}$, como podemos ver en la ecuación \ref{eq:pv}.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.21]{figuras/powerSupply.eps}
+\end{figure}
+
+\begin{equation}
+P_{av} = \frac{1}{\mathrm{T}}\int\limits_0^T p(t)dt = \mathrm{\frac{V_{DD}}{T}}\int\limits_0^T i_{\mathrm{fuente}}(t)\mathrm{d}t 
+\label{eq:pv}
+\end{equation}
+\end{frame}
+
+%-------------------------------------------------------------
+\begin{frame}{Simulación de régimen transitorio del circuito Ripple Carry 8 bits}
+\begin{figure}
+  \centering
+\includegraphics[scale=0.7]{figuras/rca8bits_power.eps}
+\end{figure}
+El período de integración que elegimos está determinado por el $t_p$ del circuito, lo que físicamente quiere decir: Medimos la potencia del circuito cuando está funcionando a la mayor velocidad posible. 
+\end{frame}
+
+\begin{frame}{Simulación post \emph{layout} para calcular performance y potencia}
+  \begin{block}{Simulación post \cursi{layout}}
+Realizamos las simulaciones de todas las arquitecturas y de los tres tamaños.
+\end{block}
+\end{frame}
+%
+
+%-------------------------------------------------------------
+\begin{frame}{Resultados: Performance}
   \begin{figure}
   \includegraphics[scale=0.50]{figuras/barra_performance.pdf}
   \end{figure}
   \end{frame}
 %-------------------------------------------------------------
-\begin{frame}{Potencia}
+\begin{frame}{Resultados: Potencia}
   \begin{figure}
   \includegraphics[scale=0.50]{figuras/barra_potencia2.pdf}
   \end{figure}
   \end{frame}
 %-------------------------------------------------------------
+\begin{frame}{Resumen}
+Por lo tanto, hemos logrado un conjunto de sumadores que según los requerimientos de área, potencia y performance, podremos elegir la arquitectura más adecuada. 
 
-
-\begin{frame}{Good news about ppp-partitions of genotype matrices.}
-  \begin{theorem}
-    \alert{Optimal ppp-partitions of genotype matrices} can be
-    computed in \alert{polynomial time}. 
-  \end{theorem}
-  \begin{block}{Algorithm}
-    \begin{enumerate}
-    \item Build the following partial order:
-      \begin{itemize}
-      \item Can one column be above the other in a phylogeny?
-      \item Can the columns be the two children of the root of a
-        perfect path phylogeny?
-      \end{itemize}
-    \item Cover the partial order with as few compatible chain pairs 
-      as possible. 
-
-      For this, a maximal matching in a special graph needs to be
-      computed.
-    \end{enumerate}
+Para todos los tamaños de sumadores,   \begin{block}{Para sumadores de 32 bits}
+La mayor velocidad se logra con Sklansky y el mejor compromiso entre velocidad, potencia y área con Brent-Kung. 
   \end{block}
-  \hyperlink{algorithm<1>}{\beamergotobutton{The algorithm in action}}
-  \hypertarget{return}{}
-\end{frame}
+  \begin{block}{Para todos los tamaños}
+Si la performance no es un problema, un ripple carry es la solución optima de estos tres, ya que ahorra área y energía.
+
+  \end{block}
+
+
+  \end{frame}
+%-------------------------------------------------------------
+
+
+
+
+%\begin{frame}{Good news about ppp-partitions of genotype matrices.}
+%  \begin{theorem}
+%    \alert{Optimal ppp-partitions of genotype matrices} can be
+%    computed in \alert{polynomial time}. 
+%  \end{theorem}
+%  \begin{block}{Algorithm}
+%    \begin{enumerate}
+%    \item Build the following partial order:
+%      \begin{itemize}
+%      \item Can one column be above the other in a phylogeny?
+%      \item Can the columns be the two children of the root of a
+%        perfect path phylogeny?
+%      \end{itemize}
+%    \item Cover the partial order with as few compatible chain pairs 
+%      as possible. 
+%
+%      For this, a maximal matching in a special graph needs to be
+%      computed.
+%    \end{enumerate}
+%  \end{block}
+%  \hyperlink{algorithm<1>}{\beamergotobutton{The algorithm in action}}
+%  \hypertarget{return}{}
+%\end{frame}
 
 \section{Conclusiones}
-
 \begin{frame}
-  \frametitle<presentation>{Summary}
+  \frametitle<presentation>{Conclusiones}
 
   \begin{itemize}
   \item
-    Finding optimal pp-partitions is \alert{intractable}. 
-  \item
-    It is even intractable to find a pp-partition when \alert{just two 
-      noncontiguous  blocks are known to suffice}.
-  \item
-    For perfect \alert{path} phylogenies, optimal partitions can be
-    computed \alert{in polynomial time}.
+    Sumadores rápidos, eficientes o de bajo consumo.
   \end{itemize}
 \end{frame}
 
+%\begin{frame}
+%  \frametitle<presentation>{Summary}
+%
+%  \begin{itemize}
+%  \item
+%    Finding optimal pp-partitions is \alert{intractable}. 
+%  \item
+%    It is even intractable to find a pp-partition when \alert{just two 
+%      noncontiguous  blocks are known to suffice}.
+%  \item
+%    For perfect \alert{path} phylogenies, optimal partitions can be
+%    computed \alert{in polynomial time}.
+%  \end{itemize}
+%\end{frame}
+%
 
 \appendix
 \section{Resumen}
-
-\begin{frame}[label=algorithm]{The algorithm in action.}{Computation of
-    the partial order.}
-  \begin{columns}[t]
-    \column{.4\textwidth}
-    \begin{exampleblock}{Genotype matrix}
-      $G\colon$
-      \begin{tabular}{ccccc}
-        A & B & C & D & E \\\hline
-        2 & 2 & 2 & 2 & 2 \\
-        0 & 1 & 2 & 1 & 0 \\
-        1 & 0 & 0 & 1 & 2 \\
-        0 & 2 & 2 & 0 & 0
-      \end{tabular}
-    \end{exampleblock}
-    \column{.6\textwidth}
-    \begin{exampleblock}{Partial order}
-      \begin{tikzpicture}[node distance=15mm]
-        \tikzstyle{every node}=
-        [%
-          fill=green!50!black!20,%
-          draw=green!50!black,%
-          minimum size=7mm,%
-          circle,%
-          thick%
-        ]
-
-        \node (A) {A};
-        \node (B) [right of=A] {B};
-        \node (C) [below of=B] {C};
-        \node (D) [above of=A] {D};
-        \node (E) [below of=A] {E};
-
-        \path [thick,shorten >=1pt,-stealth'] (A) edge (E)
-                         (B) edge (C)
-                         (D) edge (A)
-                             edge[bend right] (E);
-
-        \uncover<2>{
-        \path [-,blue,thick](A) edge (B)
-                                edge (C)  
-                            (B) edge (E)
-                            (C) edge (E);}
-      \end{tikzpicture}
-
-      Partial order: \tikz[baseline] \draw[thick,-stealth'] (0pt,.5ex)
-      -- (5mm,.5ex); 
-
-      \uncover<2>{\textcolor{blue}{Compatible as children of root:
-          \tikz[baseline] \draw[thick] (0pt,.5ex) -- (5mm,.5ex);}} 
-    \end{exampleblock}
-  \end{columns}  
+\begin{frame}{Resumen}
 \end{frame}
 
-\begin{frame}{The algorithm in action.}{The matching in the special graph.}
-  \begin{columns}[t]
-    \column{.3\textwidth}
-    \begin{exampleblock}{Partial order}
-      \begin{tikzpicture}[node distance=15mm]
-        \tikzstyle{every node}=%
-        [%
-          fill=green!50!black!20,%
-          draw=green!50!black,%
-          minimum size=8mm,%
-          circle,%
-          thick%
-        ]
-
-        \node (A)              {$A$};
-        \node (B) [right of=A] {$B$};
-        \node (C) [below of=B] {$C$};
-        \node (D) [above of=A] {$D$};
-        \node (E) [below of=A] {$E$};
-
-        \path [thick,shorten >=1pt,-stealth'] (A) edge (E)
-                         (B) edge (C)
-                         (D) edge (A)
-                             edge[bend right] (E);
-
-        \path [-,blue,thick](A) edge (B)
-                                edge (C)  
-                            (B) edge (E)
-                            (C) edge (E);
-
-        \only<3->
-        {
-          \path[very thick,shorten >=1pt,-stealth',red] (D) edge (A) (B) edge (C);
-          \path [-,red,very thick](E) edge (B);
-        }
-      \end{tikzpicture}
-    \end{exampleblock}
-    \column{.7\textwidth}
-    \begin{exampleblock}{Matching graph}
-      \begin{tikzpicture}[node distance=15mm]
-        \tikzstyle{every node}=%
-        [%
-          fill=green!50!black!20,%
-          draw=green!50!black,%
-          minimum size=8mm,%
-          circle,%
-          thick,%
-          inner sep=0pt%
-        ]
-
-        \node (A)              {$A$};
-        \node (B) [right of=A] {$B$};
-        \node (C) [below of=B] {$C$};
-        \node (D) [above of=A] {$D$};
-        \node (E) [below of=A] {$E$};
-
-        \begin{scope}[xshift=4.75cm]
-          \node (A')               {$A'$};
-          \node (B') [right of=A'] {$B'$};
-          \node (C') [below of=B'] {$C'$};
-          \node (D') [above of=A'] {$D'$};
-          \node (E') [below of=A'] {$E'$};
-        \end{scope}
-        
-        \path [thick]    (A) edge (E')
-                         (B) edge (C')
-                         (D) edge (A')
-                             edge (E');
-
-        \path [blue,thick](A') edge (B')
-                               edge (C')  
-                          (B') edge (E')
-                          (C') edge (E');
-
-        \only<2->
-        {
-          \path[very thick,red] (D) edge (A')
-                           (B) edge (C')
-                           (B') edge (E');
-        }
-      \end{tikzpicture}
-    \end{exampleblock}
-  \end{columns}
-
-  \medskip
-  \uncover<2->{A \alert{maximal matching} in the matching graph
-    \uncover<3>{induces\\ \alert{perfect path phylogenies}.}}
-
-  \hfill\hyperlink{return}{\beamerreturnbutton{Return}}
-\end{frame}
+%\begin{frame}[label=algorithm]{The algorithm in action.}{Computation of
+%    the partial order.}
+%  \begin{columns}[t]
+%    \column{.4\textwidth}
+%    \begin{exampleblock}{Genotype matrix}
+%      $G\colon$
+%      \begin{tabular}{ccccc}
+%        A & B & C & D & E \\\hline
+%        2 & 2 & 2 & 2 & 2 \\
+%        0 & 1 & 2 & 1 & 0 \\
+%        1 & 0 & 0 & 1 & 2 \\
+%        0 & 2 & 2 & 0 & 0
+%      \end{tabular}
+%    \end{exampleblock}
+%    \column{.6\textwidth}
+%    \begin{exampleblock}{Partial order}
+%      \begin{tikzpicture}[node distance=15mm]
+%        \tikzstyle{every node}=
+%        [%
+%          fill=green!50!black!20,%
+%          draw=green!50!black,%
+%          minimum size=7mm,%
+%          circle,%
+%          thick%
+%        ]
+%
+%        \node (A) {A};
+%        \node (B) [right of=A] {B};
+%        \node (C) [below of=B] {C};
+%        \node (D) [above of=A] {D};
+%        \node (E) [below of=A] {E};
+%
+%        \path [thick,shorten >=1pt,-stealth'] (A) edge (E)
+%                         (B) edge (C)
+%                         (D) edge (A)
+%                             edge[bend right] (E);
+%
+%        \uncover<2>{
+%        \path [-,blue,thick](A) edge (B)
+%                                edge (C)  
+%                            (B) edge (E)
+%                            (C) edge (E);}
+%      \end{tikzpicture}
+%
+%      Partial order: \tikz[baseline] \draw[thick,-stealth'] (0pt,.5ex)
+%      -- (5mm,.5ex); 
+%
+%      \uncover<2>{\textcolor{blue}{Compatible as children of root:
+%          \tikz[baseline] \draw[thick] (0pt,.5ex) -- (5mm,.5ex);}} 
+%    \end{exampleblock}
+%  \end{columns}  
+%\end{frame}
+%
+%\begin{frame}{The algorithm in action.}{The matching in the special graph.}
+%  \begin{columns}[t]
+%    \column{.3\textwidth}
+%    \begin{exampleblock}{Partial order}
+%      \begin{tikzpicture}[node distance=15mm]
+%        \tikzstyle{every node}=%
+%        [%
+%          fill=green!50!black!20,%
+%          draw=green!50!black,%
+%          minimum size=8mm,%
+%          circle,%
+%          thick%
+%        ]
+%
+%        \node (A)              {$A$};
+%        \node (B) [right of=A] {$B$};
+%        \node (C) [below of=B] {$C$};
+%        \node (D) [above of=A] {$D$};
+%        \node (E) [below of=A] {$E$};
+%
+%        \path [thick,shorten >=1pt,-stealth'] (A) edge (E)
+%                         (B) edge (C)
+%                         (D) edge (A)
+%                             edge[bend right] (E);
+%
+%        \path [-,blue,thick](A) edge (B)
+%                                edge (C)  
+%                            (B) edge (E)
+%                            (C) edge (E);
+%
+%        \only<3->
+%        {
+%          \path[very thick,shorten >=1pt,-stealth',red] (D) edge (A) (B) edge (C);
+%          \path [-,red,very thick](E) edge (B);
+%        }
+%      \end{tikzpicture}
+%    \end{exampleblock}
+%    \column{.7\textwidth}
+%    \begin{exampleblock}{Matching graph}
+%      \begin{tikzpicture}[node distance=15mm]
+%        \tikzstyle{every node}=%
+%        [%
+%          fill=green!50!black!20,%
+%          draw=green!50!black,%
+%          minimum size=8mm,%
+%          circle,%
+%          thick,%
+%          inner sep=0pt%
+%        ]
+%
+%        \node (A)              {$A$};
+%        \node (B) [right of=A] {$B$};
+%        \node (C) [below of=B] {$C$};
+%        \node (D) [above of=A] {$D$};
+%        \node (E) [below of=A] {$E$};
+%
+%        \begin{scope}[xshift=4.75cm]
+%          \node (A')               {$A'$};
+%          \node (B') [right of=A'] {$B'$};
+%          \node (C') [below of=B'] {$C'$};
+%          \node (D') [above of=A'] {$D'$};
+%          \node (E') [below of=A'] {$E'$};
+%        \end{scope}
+%        
+%        \path [thick]    (A) edge (E')
+%                         (B) edge (C')
+%                         (D) edge (A')
+%                             edge (E');
+%
+%        \path [blue,thick](A') edge (B')
+%                               edge (C')  
+%                          (B') edge (E')
+%                          (C') edge (E');
+%
+%        \only<2->
+%        {
+%          \path[very thick,red] (D) edge (A')
+%                           (B) edge (C')
+%                           (B') edge (E');
+%        }
+%      \end{tikzpicture}
+%    \end{exampleblock}
+%  \end{columns}
+%
+%  \medskip
+%  \uncover<2->{A \alert{maximal matching} in the matching graph
+%    \uncover<3>{induces\\ \alert{perfect path phylogenies}.}}
+%
+%  \hfill\hyperlink{return}{\beamerreturnbutton{Return}}
+%\end{frame}
 
 \end{document}
 
